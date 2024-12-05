@@ -1,0 +1,28 @@
+## DO NOT EDIT!
+# This file was provisioned by Terraform
+# File origin: https://github.com/Arrow-air/tf-github/tree/main/src/templates/all/.editorconfig
+root = true
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+[{*.md,*.mdx,LICENSE*}]
+# double whitespace at end of line
+# denotes a line break in Markdown
+indent_size = off
+trim_trailing_whitespace = false
+[*.rs]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 4
+[{Makefile*,*.mk,*.sh}]
+indent_style = tab
+indent_size = 4
+[{*.ts,*.tsx,*.html,*.yml,*.yaml,*.toml,*.json,*.tf,*.hcl}]
+indent_size = 2
+# we might want to use https://www.npmjs.com/package/lintspaces instead, we can't lint the css and js comments atm
+[{*.js,*.css,Cargo.lock}]
+indent_size = unset

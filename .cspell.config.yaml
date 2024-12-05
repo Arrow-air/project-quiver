@@ -1,0 +1,27 @@
+---
+## DO NOT EDIT!
+# This file was provisioned by Terraform
+# File origin: https://github.com/Arrow-air/tf-github/tree/main/src/templates/all/.cspell.config.yaml
+
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: "0.2"
+language: "en"
+dictionaryDefinitions:
+  - name: project-words
+    path: "./.cspell.project-words.txt"
+    addWords: true
+dictionaries: ["project-words"]
+ignoreRegExp:
+  - '\..*'
+ignorePaths:
+  - "node_modules"
+  - "build"
+  - "*.css"
+  - "*.svg"
+  - "*/**Makefile"
+  - "target"
+  - "logs"
+  - "out"
+  - "coverage"
+  - "src/*.plan"
+noConfigSearch: true
