@@ -2,7 +2,7 @@
 # This file was provisioned by Terraform
 # File origin: https://github.com/Arrow-air/tf-github/tree/main/src/templates/all/Makefile
 
-DOCKER_NAME := arrow-pod-template-project
+DOCKER_NAME := arrow-quiver
 
 help: .help-base .help-cspell .help-markdown .help-editorconfig
 
