@@ -16,7 +16,7 @@ The addition of a new mass to the system will affect the center of gravity and t
 2. Adjust the Original Moment of Inertia:
 - Shift the original moment of inertia matrix to the new CG using the parallel axis theorem.
 3. Add the Effect of the New Mass:
-- Provide the moment of inertia of the new mass treat it as a point load or to compute its contribution to the moment of inertia relative to the new CG.
+- Provide the moment of inertia of the new mass or treat it as a point load to compute its contribution to the moment of inertia relative to the new CG.
 - Combine this with the adjusted original moment of inertia matrix to get the updated values.
 
 This process will be implemented using an Octave script to make them repeatable and efficient.
