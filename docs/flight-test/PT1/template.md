@@ -35,7 +35,7 @@ How the test will be conducted
 
 - [ ] Visual check (no cracks, loose fasteners, damage) 
 
-- [ ] Structural mounting points (battery, payload) secure: Checked
+- [ ] Structural mounting points (battery, payload) secure
 
 Photos from the airframe, details where necessary
 
