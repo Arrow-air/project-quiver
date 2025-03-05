@@ -35,7 +35,9 @@ How the test will be conducted
 ## 4. Preflight Checklist
 ### 4.1. Airframe Inspection
 
-- [ ] Visual check (no cracks, loose fasteners, damage) 
+!!! On markdown, you check a checkmark by placing an "x" between the brackets. !!!
+
+- [x] Visual check (no cracks, loose fasteners, damage) 
 
 - [ ] Structural mounting points (battery, payload) secure: Checked
 
