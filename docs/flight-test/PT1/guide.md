@@ -12,15 +12,17 @@ Flight Crew / Observers:
 Aircraft Designation:
 
 ## 2. Test Conditions
-Weather Condition:
 
-Temperature:
+Note everything here as accurate as possible. If it's an observation, make it clear. 
+Weather Condition: e.g., clear, overcast, precipitation
 
-Wind Speed / Direction:
+Temperature: 30 C / 80 F
+
+Wind Speed / Direction: 8.7 kts in SSE OR Estimation: 5 kts in west
 
 Humidity:
 
-Visibility:
+Visibility: 
 
 ## 3. Test Aim / Procedure
 
@@ -57,7 +59,7 @@ Photos from the airframe, details where necessary
 
 - [ ] Flight plan reviewed
 
-- [ ] IMSAFE 
+- [ ] IMSAFE (No Flying Under Influence)
  
 Anything missing on the aircraft, anything that doesn't feel right
 
@@ -65,8 +67,8 @@ Anything missing on the aircraft, anything that doesn't feel right
 
 ### 5.1. Ground Run:
 - Arm the vehicle
--  Give 20% throttle input
--  Observe the ground station for any errors, propellers are spinning with similar speeds in the right directions
+- Give 20% throttle input
+- Observe the ground station for any errors, propellers are spinning with similar speeds in the right directions
 
 - [ ] No errors on ground station
 
@@ -85,55 +87,29 @@ What did you do during the test, what inputs did you give, how did the aircraft 
 
 This section can be used for tests with multiple flight legs.
 
-**Leg ID (If Any)**
-
-#### Flight Feeling & Observations
--
--
-
-#### Pilot Actions/Inputs
--
--
-
-#### Aircraft Behavior
--
--
-
-#### Flight Plan Achievement
--
--
-
-#### Recommendations
--
--
-
-#### Voltage Reading
--
-
-
 eg
 
 **Leg ID (If Any)**
 
 #### Flight Feeling & Observations
--
--
+- The aircraft felt generally stable and responsive in calm wind conditions
+- I noted occasional minor drift to the left when in a steady hover
 
 #### Pilot Actions/Inputs
--
--
+- Executed a 360° turn at a moderate bank angle
+- Tested the autopilot’s loiter mode at 50 meters AGL
 
 #### Aircraft Behavior
--
--
+- Autopilot loiter mode held altitude within ±2 meters, drift was minimal
+- There was a slight yaw drift (Editor's note: NO PLEASE!!!)
 
 #### Flight Plan Achievement
--
--
+- Record battery consumption during hover tests: Completed
+-  Ascend to 500 ft: Not completed due to other drones in the area
 
 #### Recommendations
--
--
+- Plan a test in slightly higher wind for next session to assess crosswind performance
+- Revise PID gains for yaw oscillations
 
-#### Voltage Reading
--
+#### Voltage Reading After Flight
+- 53.6 V
