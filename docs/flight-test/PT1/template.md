@@ -47,6 +47,8 @@ Photos from the airframe, details where necessary
 
 ### 4.3. Avionics / Electronics
 
+- [ ] Check all physical connections on the PCB and Pixhawk.
+
 - [ ] Contactor working smoothly
 
 - [ ] All pre-flight checks OK on the ground station.
@@ -99,6 +101,10 @@ Anything missing on the aircraft, anything that doesn't feel right
 #### Recommendations
 -
 -
+
+#### Pixhawk Logs
+
+[here](./assets/readme)
 
 #### Voltage Reading
 -
