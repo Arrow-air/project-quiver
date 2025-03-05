@@ -51,9 +51,11 @@ Photos from the airframe, details where necessary
 
 ### 4.3. Avionics / Electronics
 
+- [ ] Check all physical connections on the PCB and Pixhawk.
+
 - [ ] Contactor working smoothly
 
-- [ ] All pre-flight checks OK on the ground station.
+- [ ] All pre-flight checks OK on the ground station
 
 - [ ] RC remote & telemetry connections stable
 
