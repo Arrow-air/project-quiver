@@ -113,5 +113,9 @@ eg
 - Plan a test in slightly higher wind for next session to assess crosswind performance
 - Revise PID gains for yaw oscillations
 
+#### Pixhawk Logs
+
+[here](./assets/readme)
+
 #### Voltage Reading After Flight
 - 53.6 V
