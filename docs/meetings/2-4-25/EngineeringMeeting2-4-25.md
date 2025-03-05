@@ -4,6 +4,7 @@ Date: February 4, 2025
 Created time: February 4, 2025 9:02 AM
 Recording: 2025-02-04 09-01-57.mp4 
 
+
 ### Notes
 
 - Suggestion to place HV positive trace on top layer of PCB and neg trace on bottom layer
