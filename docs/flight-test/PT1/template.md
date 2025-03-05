@@ -25,10 +25,10 @@ Visibility:
 ## 3. Test Aim / Procedure
 
 ### 3.1. Test Aim
-
+A summary of why the test will be conducted
 
 ### 3.2. Test Plan
-
+How the test will be conducted
 
 ## 4. Preflight Checklist
 ### 4.1. Airframe Inspection
@@ -65,8 +65,8 @@ Anything missing on the aircraft, anything that doesn't feel right
 
 ### 5.1. Ground Run:
 - Arm the vehicle
--  Give 20% throttle input
--  Observe the ground station for any errors, propellers are spinning with similar speeds in the right directions
+- Give 20% throttle input
+- Observe the ground station for any errors, propellers are spinning with similar speeds in the right directions
 
 - [ ] No errors on ground station
 
