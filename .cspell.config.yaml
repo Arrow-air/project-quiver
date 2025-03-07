@@ -25,4 +25,5 @@ ignorePaths:
   - "coverage"
   - "src/*.plan"
   - "**/parameters.param"
+  - "project-data"
 noConfigSearch: true
