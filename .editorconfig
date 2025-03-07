@@ -26,3 +26,10 @@ indent_size = 2
 # we might want to use https://www.npmjs.com/package/lintspaces instead, we can't lint the css and js comments atm
 [{*.js,*.css,Cargo.lock}]
 indent_size = unset
+[{*.bin,*.param,*.step,*.rpt,*.gbl,*.gbs,*.gbp,*.gbo,*.gml,*.gtl,*.gts,*.gtp}]
+end_of_line = unset
+charset = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+indent_style = unset
+indent_size = unset
