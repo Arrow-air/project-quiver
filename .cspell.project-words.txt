@@ -11,3 +11,6 @@ JLCPCB
 Matek
 Precharge
 SIYI
+Balmorhea
+hntch
+Ardupilot
