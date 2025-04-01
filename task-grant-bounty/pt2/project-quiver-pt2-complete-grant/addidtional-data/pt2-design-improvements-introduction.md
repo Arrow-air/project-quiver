@@ -4,7 +4,7 @@
 
 ![](https://holocron.so/uploads/73b4d877-design-improvments-1.png)
 
-- Reduce amount of screws (Three sould be enough).
+- Reduce amount of screws (Three should be enough).
 - Reduce weight if possible.
 - Optimized design for printing without support.
 
@@ -49,7 +49,7 @@
 
 ![](https://holocron.so/uploads/92c517f6-design-improvments-8.png)
 
-- Create PCB that integrates function of the battery connector, fuse, solid state relais
+- Create PCB that integrates function of the battery connector, fuse, solid state relay.
 
 ### 9.
 
