@@ -23,7 +23,7 @@ Table 1: Breakdown of the weight of the structure
 | Rivets/Screws/Paint                  | 100        | 1        | 100              |
 | **Total**                            |            |          | 3995             |
 
-Table 2: Breakdown of the weight of the main PCB assemby
+Table 2: Breakdown of the weight of the main PCB assembly
 
 | PCB Part                                            | Weight (g) | Quantity | Total Weight (g) |
 | --------------------------------------------------- | ---------- | -------- | ---------------- |
