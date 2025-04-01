@@ -2,9 +2,9 @@
 
 Note: This BOM is expandable and currently only provides an overview of the components.
 
-S1 = Main Strucutre
+S1 = Main Structure
 
-S2 = Secundary structure
+S2 = Secondary Structure
 
 E = Electronics
 
