@@ -8,7 +8,7 @@ Table 1: Structure parts and additional material
 | -------- | ------------------------------------------------------------------------------------------------------------------- | -------- |
 | 1        | Top plate 2mm aluminum                                                                                              | 1        |
 | 2        | Bottom plate 2mm aluminum                                                                                           | 1        |
-| 3        | Small square tube 40x40x2 aluminum (lenght: 124 mm)                                                                 | 2        |
+| 3        | Small square tube 40x40x2 aluminum (length: 124 mm)                                                                 | 2        |
 | 4        | Small square tube 40x40x2 aluminum (length: 289 mm)                                                                 | 1        |
 | 5        | Side rectangle 30x100x2 aluminum (length: 300 mm)                                                                   | 2        |
 | 6        | Attachment plate 4mm aluminum                                                                                       | 1        |
@@ -101,14 +101,14 @@ Table 1: Structure parts and additional material
 
 - Clean all parts from fat residues and dust.
 
-- Place the rectacgular parallel to each other and apply adhesive to the top around the rivet holes.
+- Place the rectangular tubes parallel to each other and apply adhesive to the top around the rivet holes.
 
   ![](https://holocron.so/uploads/77e2d875-image-9.png)
 
 
 - Turn around the assembly.
 
-- Rivet the aluminum sices to the assembly with 10x Rivet 2.
+- Rivet the aluminum sides to the assembly with 10x Rivet 2.
 
   ![](https://holocron.so/uploads/3f0db73c-image-10.png)
 
@@ -119,7 +119,7 @@ Table 1: Structure parts and additional material
 
 - Clean all parts from fat residues and dust.
 
-- Apply some adhesive on the top surface of the square tubes around the rivit holes.
+- Apply some adhesive on the top surface of the square tubes around the rivet holes.
 
   ![](https://holocron.so/uploads/9c2ac06d-image-11.png)
 
@@ -154,7 +154,7 @@ Table 1: Structure parts and additional material
   ![](https://holocron.so/uploads/7740620f-image-15.png)
 
 
-- Screw the adapers with 16x Screw 2 to the assembly. Use loctite to secure the screws!
+- Screw the adapters with 16x Screw 2 to the assembly. Use loctite to secure the screws!
 
   ![](https://holocron.so/uploads/7f79e32e-image-16.png)
 
@@ -195,7 +195,7 @@ Table 1: Structure parts and additional material
   ![](https://holocron.so/uploads/809c3a1a-image-21.png)
 
 
-- Use 8x Screw 2 to fix the two battery silders to the frame. Secure the screws with loctite.
+- Use 8x Screw 2 to fix the two battery sliders to the frame. Secure the screws with loctite.
 
   ![](https://holocron.so/uploads/77a03c2c-image-22.png)
 

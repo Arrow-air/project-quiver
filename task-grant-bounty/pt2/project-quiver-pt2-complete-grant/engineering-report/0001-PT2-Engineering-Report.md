@@ -231,7 +231,7 @@ Image 1: Rendering of the Quiver PT2 CAD assembly
 
 - Electrical Layout: Wiring harnesses shall be as short as possible and clearly labeled for ease of maintenance and fault isolation. All wiring must be heat-resistant and abrasion-resistant to withstand harsh operational environments.
 
-- Power Distribution: Install dedicated relais and fuses to protect critical flight electronics and payload circuits from potential short circuits or electrical surges.
+- Power Distribution: Install dedicated relays and fuses to protect critical flight electronics and payload circuits from potential short circuits or electrical surges.
 
 ### 3.5 Payload Handling and Camera
 
@@ -435,7 +435,7 @@ Image 3: Front compartment overview
 
 ![](https://holocron.so/uploads/f2c1ef94-quiver-pt2-front-compartment.png)
 
-Image 4: Front compartment with main PCB and wiring sceleton
+Image 4: Front compartment with main PCB and wiring skeleton
 
 ![](https://holocron.so/uploads/6fe6d90c-quiver-pt2-wiring-sceleton.png)
 
@@ -472,7 +472,7 @@ Image 6: Main PCB schematic
 
 ##### Main PCB Design Files
 
-Clieck here for KiCAD project files including CAD andmanufacturing files.
+Click here for KiCAD project files including CAD and manufacturing files.
 
 Table 8: Main PCB BOM
 
@@ -522,7 +522,7 @@ Table 8: Main PCB BOM
 
 Model: Flight Controller H743-SLIM V3
 
-- 7x Uarts (1,2,3,4,6,7,8) with built-in inversion.
+- 7x UART (1,2,3,4,6,7,8) with built-in inversion.
 
 - 13x PWM outputs(including “LED” pad)
 
@@ -580,7 +580,7 @@ The main positive aspects of the mLRS system are:
 - open source
 - rich features and outstanding performance for MAVLink systems
 
-Image 10: telemetry reciever and transmitter
+Image 10: telemetry receiver and transmitter
 
 ![](https://holocron.so/uploads/0e93eb25-quiver-pt2-telemetrie.png)
 
@@ -686,7 +686,7 @@ Image 19: Attachment interface
 
 ### 7.3 Wiring
 
-- All components (ecept the front compartment assmembly of SSR, Fuse and battery connector) have a direct connection to the main PCB. The pinouts are clearly labeled on the the PCB. Please follow the specific device manual to identify which cable color is for which pin function.
+- All components (except the front compartment assembly of SSR, Fuse and battery connector) have a direct connection to the main PCB. The pinouts are clearly labeled on the the PCB. Please follow the specific device manual to identify which cable color is for which pin function.
 - The EURO plug connectors offer an easy way to attach the cables to the PCB. Make sure the cable ends are stripped from the insulation and enough copper goes into the connector. Tighten the screws with a appropriate amount of torque.
 
 ## Geometry & Structure
@@ -834,7 +834,7 @@ Please note that these weights are not definitive values and should be verified 
 
 ### Main Chassis
 
-Three parallel aluminum plates, two rectangular alumnium tubes and two square tubes form the central chassis of the aircraft. These parts are riveted together. Additional adhesive is used between the faces to to dampen vibrations and make the structure even stiffer. The two upper plates are connected by the motor mounts on the corners and the two square tubes in the center. The two rectangular tubes connect the top section and the attachment plate that sits in the bottom of the main structure.
+Three parallel aluminum plates, two rectangular aluminum tubes and two square tubes form the central chassis of the aircraft. These parts are riveted together. Additional adhesive is used between the faces to to dampen vibrations and make the structure even stiffer. The two upper plates are connected by the motor mounts on the corners and the two square tubes in the center. The two rectangular tubes connect the top section and the attachment plate that sits in the bottom of the main structure.
 
 ---
 
@@ -852,19 +852,19 @@ The landing gear system employs 30 mm-diameter carbon fiber tubes attached with 
 
 ### Battery Space
 
-The battery sits in the middle of the aluminum structure. The structure is designed in a way, that the battery can slide between the two rectangular aluminum tubes. 3D printed sliders are used to slide the battery into the structure with ease. Because of the location of the battery inside the aluminum structur, it is well protected in case of a crash.
+The battery sits in the middle of the aluminum structure. The structure is designed in a way, that the battery can slide between the two rectangular aluminum tubes. 3D printed sliders are used to slide the battery into the structure with ease. Because of the location of the battery inside the aluminum structure, it is well protected in case of a crash.
 
 ---
 
 ### Electrical Compartment
 
-The electrical compartment consolidates the high and low power distribution as well as the all the signal distribution into one space. The battery connector is located in the front of the compartment next to the fuse and main SSR. Wires are attaching to the main PCB which integrates most of the functions of the drone (in detail description see chapter #7). By integrating most functions into one PCB a lot of space is safed and the cabling work is significantly reduced. All components are easily accessible for any troubleshooting or replacement.
+The electrical compartment consolidates the high and low power distribution as well as the all the signal distribution into one space. The battery connector is located in the front of the compartment next to the fuse and main SSR. Wires are attaching to the main PCB which integrates most of the functions of the drone (in detail description see chapter #7). By integrating most functions into one PCB a lot of space is saved and the cabling work is significantly reduced. All components are easily accessible for any troubleshooting or replacement.
 
 ---
 
 ### Belly Equipment
 
-The underside of the aircraft provides dedicated scewholes for the attachment of the altimeter , the gimbal camera  and the payload adapter. The attachment is connected to the payload adapter utilizing a quick release mechanism. The gimbal camera and the altimeter are located on a 3D-printed adapter.
+The underside of the aircraft provides dedicated screwholes for the attachment of the altimeter , the gimbal camera  and the payload adapter. The attachment is connected to the payload adapter utilizing a quick release mechanism. The gimbal camera and the altimeter are located on a 3D-printed adapter.
 
 8.3 FEA analysis
 

@@ -2,7 +2,7 @@
 
 ### Subsystem Weight Breakdown
 
-Below are several weight breakdowns for the major subsystems. The last table shows the overall subsystem weight breakdown. These figures are meant to serve as general estimates. Some weights were measured, some were taken from the CAD, some were taken from the slizer of the 3D printer, some were taken from documentation and some are simple estimates.
+Below are several weight breakdowns for the major subsystems. The last table shows the overall subsystem weight breakdown. These figures are meant to serve as general estimates. Some weights were measured, some were taken from the CAD, some were taken from the slicer of the 3D printer, some were taken from documentation and some are simple estimates.
 
 Table 1: Breakdown of the weight of the structure
 
@@ -23,7 +23,7 @@ Table 1: Breakdown of the weight of the structure
 | Rivets/Screws/Paint                  | 100        | 1        | 100              |
 | **Total**                            |            |          | 3995             |
 
-Table 2: Breakdown of the weight of the main PCB assenmby
+Table 2: Breakdown of the weight of the main PCB assemby
 
 | PCB Part                                            | Weight (g) | Quantity | Total Weight (g) |
 | --------------------------------------------------- | ---------- | -------- | ---------------- |
@@ -106,9 +106,9 @@ Table 4: Weight of the main assembly
 | Main switch                      | 10         | 1        | 10               |
 | Quick release attachment adapter | 66         | 1        | 66               |
 | Screws                           | 20         | 1        | 20               |
-| **Total witout battery**         |            |          | 8719.46          |
+| **Total without battery**         |            |          | 8719.46          |
 | **Total with battery**           |            |          | 19969.46         |
 
-### Remaining Paypload Capacity: 5,030 kg
+### Remaining Payload Capacity: 5,030 kg
 
 Please note that these weights are not definitive values and should be verified after prototype assembly and testing.
