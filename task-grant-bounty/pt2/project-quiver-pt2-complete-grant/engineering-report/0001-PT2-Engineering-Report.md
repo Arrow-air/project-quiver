@@ -207,11 +207,11 @@ Image 1: Rendering of the Quiver PT2 CAD assembly
 
 - Flight Controller: Utilizes a Mateksys H743-SLIM V3 flight controller with precision navigation, and autonomous flight modes.
 
-- Navigation Sensors: Utilizes Mateksys AP Periph DroneCAN M10Q-3100 GNSS module, providing high accuracy positioning.
+- Navigation Sensors: Utilizes Mateksys AP DroneCAN M10Q-3100 GNSS module, providing high accuracy positioning.
 
 ### 3.2 Structure and Geometry
 
-- Frame Material: Employ carbon fiber tubes interconnected with aluminum joints for strength-to-weight optimization. The frame main frame is made out of laser cutted aluminum plates and laser cutted aluminum rectangular tube.
+- Frame Material: Employ carbon fiber tubes interconnected with aluminum joints for strength-to-weight optimization. The frame main frame is made out of laser cut aluminum plates and laser cut aluminum rectangular tube.
 
 - Maximum Takeoff Weight (MTOW): Prototype must support a total weight exceeding 25 kg.
 
@@ -560,7 +560,7 @@ Image 8: PDB with power supply
 
 #### GNSS
 
-For the GPS a Mateksys AP Periph DroneCAN M10Q-3100 GNSS module is used. This module is no longer produced. Instead the Mateksys AP_Periph DroneCAN GNSS M9N-G4-3100 can be used.
+For the GPS a Mateksys AP DroneCAN M10Q-3100 GNSS module is used. This module is no longer produced. Instead the Mateksys AP DroneCAN GNSS M9N-G4-3100 can be used.
 
 Image 9: GNSS
 
@@ -717,7 +717,7 @@ These dimensions ensure balanced weight distribution in both folded and unfolded
 
 ### Subsystem Weight Breakdown
 
-Below are several weight breakdowns for the major subsystems. The last table shows the overall subsystem weight breakdown. These figures are meant to serve as general estimates. Some weights were measured, some were taken from the CAD, some were taken from the slizer of the 3D printer, some were taken from documentation and some are simple estimates.
+Below are several weight breakdowns for the major subsystems. The last table shows the overall subsystem weight breakdown. These figures are meant to serve as general estimates. Some weights were measured, some were taken from the CAD, some were taken from the slicer of the 3D printer, some were taken from documentation and some are simple estimates.
 
 Table 11: Breakdown of the weight of the structure
 
@@ -738,7 +738,7 @@ Table 11: Breakdown of the weight of the structure
 | Rivets/Screws/Paint                  | 100        | 1        | 100              |
 | **Total**                            |            |          | 3995             |
 
-Table 12: Breakdown of the weight of the main PCB assenmby
+Table 12: Breakdown of the weight of the main PCB assemby
 
 | PCB Part                                            | Weight (g) | Quantity | Total Weight (g) |
 | --------------------------------------------------- | ---------- | -------- | ---------------- |
@@ -821,10 +821,10 @@ Table 14: Weight of the main assembly
 | Main switch                      | 10         | 1        | 10               |
 | Quick release attachment adapter | 66         | 1        | 66               |
 | Screws                           | 20         | 1        | 20               |
-| **Total witout battery**         |            |          | 8719.46          |
+| **Total without battery**         |            |          | 8719.46          |
 | **Total with battery**           |            |          | 19969.46         |
 
-### Remaining Paypload Capacity: 5,030 kg
+### Remaining Payload Capacity: 5,030 kg
 
 Please note that these weights are not definitive values and should be verified after prototype assembly and testing.
 
@@ -864,7 +864,7 @@ The electrical compartment consolidates the high and low power distribution as w
 
 ### Belly Equipment
 
-The underside of the aircraft provides dedicated screwholes for the attachment of the altimeter , the gimbal camera  and the payload adapter. The attachment is connected to the payload adapter utilizing a quick release mechanism. The gimbal camera and the altimeter are located on a 3D-printed adapter.
+The underside of the aircraft provides dedicated screw holes for the attachment of the altimeter , the gimbal camera  and the payload adapter. The attachment is connected to the payload adapter utilizing a quick release mechanism. The gimbal camera and the altimeter are located on a 3D-printed adapter.
 
 8.3 FEA analysis
 
