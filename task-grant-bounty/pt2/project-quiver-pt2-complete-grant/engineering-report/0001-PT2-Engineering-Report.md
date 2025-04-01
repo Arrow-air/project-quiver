@@ -193,7 +193,7 @@ A comprehensive testing program is required for PT2, verifying core flight perfo
 
 ### 2.6 Regulatory Compliance
 
-PT2, and all subsequent Quiver systems shall be built to comply with [CFR Part 107 Small Unmanned Aircraft Systems](www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107) standards and requirements.
+PT2, and all subsequent Quiver systems shall be built to comply with CFR Part 107 Small Unmanned Aircraft Systems standards and requirements.
 
 ---
 
