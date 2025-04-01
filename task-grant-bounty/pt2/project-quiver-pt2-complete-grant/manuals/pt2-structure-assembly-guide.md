@@ -72,7 +72,7 @@ Table 1: Structure parts and additional material
 
 ### Step 2: Assemble the bottom plate with the small square tubes
 
-- Parts you need in this step: 1x Bottom plate, 2x Small square tube 40x40x2 aluminum (lenght: 124 mm), 1x Small square tube 40x40x2 aluminum (lenght: 289 mm), 13x Rivet 1
+- Parts you need in this step: 1x Bottom plate, 2x Small square tube 40x40x2 aluminum (length: 124 mm), 1x Small square tube 40x40x2 aluminum (length: 289 mm), 13x Rivet 1
 
 - Clean all parts from fat residues and dust.
 
