@@ -23,3 +23,9 @@ Pressfit
 KBMollysuh
 Mollysuh
 KBM
+RCOUT
+CTUN
+Curr
+HDOP
+Geofence
+ENABL
