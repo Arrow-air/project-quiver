@@ -61,3 +61,4 @@ loctite
 KBMollysuh
 Mollysuh
 KBM
+kicad

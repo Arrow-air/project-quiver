@@ -473,7 +473,7 @@ Image 6: Main PCB schematic
 ##### Main PCB Design Files
 
 The KiCAD project files including CAD and manufacturing files can be found in the following github folder of project Quiver:
-task-grant-bounty/pt2/project-quiver-pt2-complete-grant/addidtional-data/pt2-main-pcb-files/
+task-grant-bounty/pt2/project-quiver-pt2-complete-grant/additional-data/pt2-main-pcb-files/
 
 The compressed file "quiver-pt2-kicad-project.zip" includes the 3D step file.
 
