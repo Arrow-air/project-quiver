@@ -5,7 +5,7 @@
 
 # Project Description
 
-Project Quiver – Prototype 1 (PT1) underwent a comprehensive flight log review as part of its ongoing development and flight validation process. The goal of this phase was to evaluate PT1's performance under various flight conditions by manually reviewing all available flight test logs. This preliminary analysis is intended to identify potential issues for further investigation and to support the next stages of tuning and flight control refinement.
+Project Quiver – Prototype 1 (PT1) flight logs between folders 1-6 underwent a comprehensive flight log review as part of its ongoing development and flight validation process. The goal of this phase was to evaluate PT1's performance under various flight conditions by manually reviewing all available flight test logs. This preliminary analysis is intended to identify potential issues for further investigation and to support the next stages of tuning and flight control refinement.
 
 # Methodology
 
