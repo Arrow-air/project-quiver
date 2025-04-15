@@ -62,3 +62,9 @@ KBMollysuh
 Mollysuh
 KBM
 kicad
+RCOUT
+CTUN
+Curr
+HDOP
+Geofence
+ENABL
