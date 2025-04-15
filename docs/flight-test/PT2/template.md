@@ -104,7 +104,7 @@ Anything missing on the aircraft, anything that doesn't feel right
 
 #### Pixhawk Logs
 
-[here](./assets/readme)
+-
 
 #### Voltage Reading
 -
