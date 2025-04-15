@@ -117,7 +117,5 @@ eg
 
 #### Pixhawk Logs
 
-[here](./assets/readme)
-
 #### Voltage Reading After Flight
 - 53.6 V
