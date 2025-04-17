@@ -1,23 +1,30 @@
-[Chinese language comparison included 包含汉语对照]：
-# Status [状态]
+[Chinese language comparison included 包含汉语对照]: #
+# Status 
+[状态]: #
 
 `Valid`
+[有效]: #
 
-# Project Description [介绍]
+# Project Description 
+[介绍]: #
 
-
-
-# Methodology [方法]
-
-
-
-# Results and Deliverables [结果和交付]
+[基于近期的试飞结果和对pt1三维设计工作空间的优化需求，工程部门在经过商讨后决定设立此任务，以便于对pt1的部分外壳和结构做出改进。]: #
+[改进的部分包括新的Battery enclosure组装件，以及新的飞行控制器安装座组装件。另有新计划为飞行控制器设计保护舱盖，但此新计划预计将在本次组装件实地测试成功后再继续进行。]: #
+[另外，基于志愿，本次项目还附加了对Tattu 3.5电池卡扣的局部重新设计，其结构强度目前已强化至可用空间所允许的尽可能高的水平]: #
 
 
+# Methodology 
+[方法]: #
 
-## Files [文件]
+[本项目灵活使用了Onshape的传统装配和特有的时空关联（Context)功能：将原有单个部件工作空间的特征树划分、重制、装配后，转变为了多部件装配空间，并在此装配空间的原点或特点时空状态下的参考图元上设计新的部件。]: #
+[由于同时使用了先进的软件功能和传统的测量方法，新的battery enclosure得以保留了原有的安装孔位，且电池相对于机身的位置也没有产生变化。但battery enclosure的轻量化设计导致了原本安装于其上方的飞行控制器和GNSS接收机模块产生了位置变化，在首次飞行前需要重新测量这些设备的相对位置。]: #
 
 
+# Results and Deliverables 
+[结果和交付]: #
 
-# Remarks [备注]
+[Onshape链接]: #
+
+# Remarks 
+[备注]: #
 
