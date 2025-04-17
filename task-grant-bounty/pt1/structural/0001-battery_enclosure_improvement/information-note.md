@@ -90,8 +90,8 @@ Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1
 
 ## Bonus Images of Battery Latch
 [电池卡扣附加内容]: #
-![bruh](picture/battery_latch_1)
-![bruh](picture/battery_latch_2)
+![bruh](picture/battery_latch_1.jpg)
+![bruh](picture/battery_latch_2.jpg)
 
 # Remarks 
 [备注]: #
