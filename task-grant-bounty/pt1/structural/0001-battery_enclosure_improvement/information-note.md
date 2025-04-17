@@ -69,7 +69,7 @@ The design results of this battery enclosure are mainly due to a relatively deta
 ## Precautions
 [注意事项]: #
 
-- Due to the weight reduction design of the battery enclosure, the flight controller and GNSS receiver modules originally installed above it have changed their positions. Before intitial test flight with the new battery enclosure, the relative positions parameters of these devices need to be remeasured and edited.
+- Due to the weight reduction design of the battery enclosure, the flight controller and GNSS receiver modules originally installed above it have changed their previous positions. Before intitial test flight with the new battery enclosure, the relative positions parameters of these devices need to be remeasured and edited.
 
 [- 由于本次对battery enclosure的轻量化设计，导致原本安装于其上方的飞行控制器和GNSS接收机模块产生了位置变化，在使用新的battery enclosure进行首次试飞前，需要重新测量并编辑这些设备的相对位置参数。]: #
 
@@ -85,18 +85,17 @@ The design results of this battery enclosure are mainly due to a relatively deta
 
 Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1f4bb089b9ff/w/2e87b0a8422e7f67332b038a/e/94a416b6c0e768e8637b1dee
 
-[三维工作空间的Onshape链接：]: #
+[模型工作空间的Onshape链接：]: #
 
 ## Simple Instruction
 [简易指导]: # 
 
-![Full view of the new enclosure and flight controller mount (with Pixhawk 6x)](picture/explode_view.jpg)
+![bruh](picture/explode_view.jpg)
 *Full view of the new enclosure and flight controller mount (with Pixhawk 6x)*
-
 
 [新battery enclosure和飞行控制器安装座的全视图（包括Pixhawk 6x）]: #
 
-![Explode view](picture/explode_view.jpg)
+![bruh](picture/explode_view.jpg)
 *Explode view*
 
 [爆炸视图]: #
