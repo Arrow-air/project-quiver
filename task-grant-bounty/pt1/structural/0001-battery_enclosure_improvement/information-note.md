@@ -54,16 +54,28 @@ The design results of this battery enclosure are mainly due to a relatively deta
 ### New Flight Controller Mount
 [新飞行控制器安装座]: #
 
-[- 基于battery enclosure的新布局以及其所提供的剩余空间。将飞行控制器安装座的设计成了可以嵌入battery enclosure的独立框架。]: #
-[- 新减震结构是在旧款基础上的改良成果，将减震的方式由悬浮式改为了悬挂式。目的是为了降低飞行控制器的安装高度，节省空间，并为后续的保护舱盖预留设计空间。]: #
-[- 需要使用旧款减震器同款的橡胶球]: #
+- Based on the new layout of the battery enclosure and the extra space it provides, the flight controller mount is designed as a separate frame that can be embedded in the lid of battery enclosure.
 
+[- 基于battery enclosure的新布局以及其所提供的剩余空间。将飞行控制器安装座的设计成了可以嵌入battery enclosure盖子的独立框架。]: #
+
+- The new shock-absorbing structure is an improvement based on the old one, by changing the shock-absorbing method from upper suspension to lower suspension. The purpose is to reduce the installation height of the flight controller, and reserve design space for the subsequent protective hatch.
+
+[- 新减震结构是在旧款基础上的改良成果，将减震的方式由上悬浮式改为了下悬挂式。目的是为了降低飞行控制器的安装高度，并为后续的保护舱盖预留设计空间。]: #
+
+- Should use the same rubber ball as the old shock absorber.
+
+[- 应当使用旧款减震器同款的橡胶球]: #
 
 ## Precautions
 [注意事项]: #
 
-[- 由于本次对battery enclosure的轻量化设计，导致原本安装于其上方的飞行控制器和GNSS接收机模块产生了位置变化，在使用新的battery enclosure进行飞行前，需要重新测量并编辑这些设备的相对位置参数。]: #
-[- 在飞行控制器保护舱盖安装之前，大量灰尘依然有可能从飞行控制器安装座的框架开口部分进入battery enclosure。]: #
+- Due to the weight reduction design of the battery enclosure, the flight controller and GNSS receiver modules originally installed above it have changed their positions. Before intitial test flight with the new battery enclosure, the relative positions parameters of these devices need to be remeasured and edited.
+
+[- 由于本次对battery enclosure的轻量化设计，导致原本安装于其上方的飞行控制器和GNSS接收机模块产生了位置变化，在使用新的battery enclosure进行首次试飞前，需要重新测量并编辑这些设备的相对位置参数。]: #
+
+- Before the flight controller protective hatch is designed and installed, several amount of dust may still enter the battery enclosure through the frame opening of the flight controller mounting base.
+
+[- 在飞行控制器保护舱盖设计安装之前，一定数量的灰尘依然有可能从飞行控制器安装座的框架开口部分进入battery enclosure。]: #
 
 # Results and Deliverables 
 [成果和交付]: #
@@ -80,6 +92,7 @@ Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1
 
 ![Full view of the new enclosure and flight controller mount (with Pixhawk 6x)](picture/explode_view.jpg)
 *Full view of the new enclosure and flight controller mount (with Pixhawk 6x)*
+
 
 [新battery enclosure和飞行控制器安装座的全视图（包括Pixhawk 6x）]: #
 
