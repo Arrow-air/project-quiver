@@ -108,6 +108,6 @@ Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1
 # Remarks 
 [备注]: #
 
-This file contains Chinese original writing comments in code space.
+This file contains original Chinese comments in the code space, used Google Translate and GhatGPT4o to correct grammatical errors and embellishments.
 
-[此文件的代码空间内包含汉语原文注释]: #
+[此文件的代码空间内包含汉语原文注释，使用Google翻译和GhatGPT4o纠正语病和润色]: #
