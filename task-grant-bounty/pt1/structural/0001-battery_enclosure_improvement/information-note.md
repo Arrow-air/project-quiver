@@ -26,26 +26,44 @@
 ### New Battery Enclosure
 [新电池仓]: #
 
-[由于同时使用了先进的软件功能和传统的测量方法，新的battery enclosure得以保留了原有的机身安装孔位，且电池相对于机身的位置关系也维持了原样。]: #
-[将匀质平面和减轻孔转化成了多个对角线布局的“骨骼-薄板”混合体，从而减轻了重量，而“薄板”也起到了一定程度的防尘效果。]: #
-[取消了电池仓舱门结构，因为目前认为其防护性能一般且冗余。另外，目前认为电池连接器卡扣的安全性已满足固定电池的需求。]: #
+[- 由于同时使用了先进的软件功能和传统的测量方法，新的battery enclosure得以保留了原有的机身安装孔位，且电池相对于机身的位置关系也维持了原样。]: #
+[- 将匀质平面和减轻孔转化成了多个对角线布局的“骨骼-薄板”混合体，从而减轻了重量，而“薄板”也起到了一定程度的防尘效果。]: #
+[- 取消了电池仓舱门结构，因为目前认为其防护性能一般且冗余。另外，目前认为电池连接器卡扣的安全性已满足固定电池的需求。]: #
 
 ### New Flight Controller Mount
 [新飞行控制器安装座]: #
 
-[基于battery enclosure的新布局以及其所提供的剩余空间。将飞行控制器安装座的设计成了可以嵌入battery enclosure的独立框架。]: #
-[新减震结构是在旧款基础上的改良成果，将减震的方式由悬浮式改为了悬挂式。目的是为了降低飞行控制器的安装高度，节省空间，并为后续的保护舱盖预留设计空间。]: #
+[- 基于battery enclosure的新布局以及其所提供的剩余空间。将飞行控制器安装座的设计成了可以嵌入battery enclosure的独立框架。]: #
+[- 新减震结构是在旧款基础上的改良成果，将减震的方式由悬浮式改为了悬挂式。目的是为了降低飞行控制器的安装高度，节省空间，并为后续的保护舱盖预留设计空间。]: #
+[- 需要使用旧款减震器同款的橡胶球]: #
 
 
 ## Precautions
 [注意事项]: #
 
-[由于本次对battery enclosure的轻量化设计，导致原本安装于其上方的飞行控制器和GNSS接收机模块产生了位置变化，在使用新的battery enclosure进行飞行前，需要重新测量并编辑这些设备的相对位置参数。]: #
+[- 由于本次对battery enclosure的轻量化设计，导致原本安装于其上方的飞行控制器和GNSS接收机模块产生了位置变化，在使用新的battery enclosure进行飞行前，需要重新测量并编辑这些设备的相对位置参数。]: #
+[- 在飞行控制器保护舱盖安装之前，大量灰尘依然有可能从飞行控制器安装座的框架开口部分进入battery enclosure。
 
 # Results and Deliverables 
 [成果和交付]: #
 
-[Onshape链接]: #
+## Link
+[链接]: #
+
+Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1f4bb089b9ff/w/2e87b0a8422e7f67332b038a/e/94a416b6c0e768e8637b1dee
+
+[三维设计空间的Onshape链接：]: #
+
+## Simple Instruction
+[简易指导]: # 
+
+![Full view of the new enclosure and flight controller mount (with Pixhawk 6x)](/picture/explode_view.jpg)
+
+[新battery enclosure和飞行控制器安装座的全视图（包括Pixhawk 6x）]: #
+
+![Explode view](/picture/explode_view.jpg)
+
+[爆炸视图]: #
 
 # Remarks 
 [备注]: #
