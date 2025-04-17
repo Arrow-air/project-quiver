@@ -42,7 +42,7 @@
 [注意事项]: #
 
 [- 由于本次对battery enclosure的轻量化设计，导致原本安装于其上方的飞行控制器和GNSS接收机模块产生了位置变化，在使用新的battery enclosure进行飞行前，需要重新测量并编辑这些设备的相对位置参数。]: #
-[- 在飞行控制器保护舱盖安装之前，大量灰尘依然有可能从飞行控制器安装座的框架开口部分进入battery enclosure。
+[- 在飞行控制器保护舱盖安装之前，大量灰尘依然有可能从飞行控制器安装座的框架开口部分进入battery enclosure。]: #
 
 # Results and Deliverables 
 [成果和交付]: #
@@ -57,14 +57,17 @@ Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1
 ## Simple Instruction
 [简易指导]: # 
 
-![Full view of the new enclosure and flight controller mount (with Pixhawk 6x)](/picture/explode_view.jpg)
+![Full view of the new enclosure and flight controller mount (with Pixhawk 6x)](picture/explode_view.jpg)
 
 [新battery enclosure和飞行控制器安装座的全视图（包括Pixhawk 6x）]: #
 
-![Explode view](/picture/explode_view.jpg)
+![Explode view](picture/explode_view.jpg)
 
 [爆炸视图]: #
 
 # Remarks 
 [备注]: #
 
+This file contains Chinese original writing comments in code space.
+
+[此文件的代码空间内包含汉语原文注释]: #
