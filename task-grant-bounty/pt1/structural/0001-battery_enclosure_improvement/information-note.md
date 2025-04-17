@@ -52,12 +52,12 @@
 
 Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1f4bb089b9ff/w/2e87b0a8422e7f67332b038a/e/94a416b6c0e768e8637b1dee
 
-[三维设计空间的Onshape链接：]: #
+[三维工作空间的Onshape链接：]: #
 
 ## Simple Instruction
 [简易指导]: # 
 
-![Full view of the new enclosure and flight controller mount (with Pixhawk 6x)](picture/explode_view.jpg)
+![Full view of the new enclosure and flight controller mount (with Pixhawk 6x)](<picture/explode_view.jpg> "Full view of the new enclosure and flight controller mount (with Pixhawk 6x)")
 
 [新battery enclosure和飞行控制器安装座的全视图（包括Pixhawk 6x）]: #
 
