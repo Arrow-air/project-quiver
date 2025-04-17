@@ -16,13 +16,21 @@ Based on recent flight test results and the need to optimize the PT1 3D design w
 The improvements include a new assembly for the battery enclosure, as well as a redesigned mount for the flight controller. Additionally, there is a new plan to develop a protective hatch for the flight controller, though this will proceed only after the current assemblies pass flight testing.
 
 [改进的部分包括新的Battery enclosure的组装件，以及新的飞行控制器安装座的组装件。另有新计划为飞行控制器设计保护舱盖，但此新计划预计将在本次组装件试飞成功后再继续进行。]: #
+
+Furthermore, on a voluntary basis, this project also includes a partial redesign of the latch structure for the Tattu 3.5 battery. The structure has been reinforced to the maximum strength permissible within the available space.
+
 [另外，基于志愿，本次项目还附加了对Tattu 3.5电池卡扣的局部重新设计，其结构强度已强化至可用空间所允许的尽可能高的水平]: #
 
 
 # Methodology 
 [方法]: #
 
+This project flexibly uses Onshape's traditional assembly and unique spatiotemporal association functions: the feature tree of the original single-component workspace is divided, remade, and assembled to transform it into a multi-component assembly space, and new components are designed on the reference primitives at the origin or characteristic spatiotemporal state of this assembly space.
+
 [本项目灵活使用了Onshape的传统装配和特有的时空关联功能：将原有单个部件工作空间的特征树划分、重制、装配后，转变为了多部件装配空间，并在此装配空间的原点或特点时空状态下的参考图元上设计新的部件。]: #
+
+The design results of this battery enclosure are mainly due to a relatively detailed reference to the geometric shape of the battery.
+
 [本次battery enclosure的设计成果，主要是由于对电池的几何外形做了较为详尽的参照而得到的。]: #
 
 ## Concept
@@ -31,9 +39,17 @@ The improvements include a new assembly for the battery enclosure, as well as a 
 ### New Battery Enclosure
 [新电池仓]: #
 
+- By using both advanced software capabilities and traditional measurement methods, the new battery enclosure retains the original mounting holes and the battery's position relative to the cockpit remains the same.
+
 [- 由于同时使用了先进的软件功能和传统的测量方法，新的battery enclosure得以保留了原有的机身安装孔位，且电池相对于机身的位置关系也维持了原样。]: #
+
+- The homogeneous plane and lightening holes are transformed into a "skeleton-thin plate" hybrid with multiple diagonal layouts, thereby reducing weight, and the "thin plate" also plays a certain degree of dust protection.
+
 [- 将匀质平面和减轻孔转化成了多个对角线布局的“骨骼-薄板”混合体，从而减轻了重量，而“薄板”也起到了一定程度的防尘效果。]: #
-[- 取消了电池仓舱门结构，因为目前认为其防护性能一般且冗余。另外，目前认为电池连接器卡扣的安全性已满足固定电池的需求。]: #
+
+- The battery compartment door structure has been removed because its protection performance is currently considered redundant. In addition, it's currently believed that the safety factor of the battery latch meets the needs of fixing the battery.
+
+[- 取消了电池仓舱门结构，因为目前认为其防护性能冗余。另外，目前认为电池连接器卡扣的安全系数已满足固定电池的需求。]: #
 
 ### New Flight Controller Mount
 [新飞行控制器安装座]: #
