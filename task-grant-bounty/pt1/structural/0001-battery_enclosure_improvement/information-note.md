@@ -9,8 +9,13 @@
 # Project Description 
 [介绍]: #
 
-[基于近期的试飞结果和对pt1三维设计工作空间的优化需求，工程部门在经过商讨后决定设立此任务，以便于对pt1的部分外壳和结构做出改进。]: #
-[改进的部分包括新的Battery enclosure的组装件，以及新的飞行控制器安装座的组装件。另有新计划为飞行控制器设计保护舱盖，但此新计划预计将在本次组装件实地测试成功后再继续进行。]: #
+Based on recent flight test results and the need to optimize the PT1 3D design workspace, the engineering department has decided to initiate this task in order to improve certain parts of the PT1’s enclosure and structural components.
+
+[基于近期的试飞结果和对pt1三维设计工作空间的优化需求，工程部门决定设立此任务，以便于对pt1的部分外壳和结构做出改进。]: #
+
+The improvements include a new assembly for the battery enclosure, as well as a redesigned mount for the flight controller. Additionally, there is a new plan to develop a protective hatch for the flight controller, though this will proceed only after the current assemblies pass flight testing.
+
+[改进的部分包括新的Battery enclosure的组装件，以及新的飞行控制器安装座的组装件。另有新计划为飞行控制器设计保护舱盖，但此新计划预计将在本次组装件试飞成功后再继续进行。]: #
 [另外，基于志愿，本次项目还附加了对Tattu 3.5电池卡扣的局部重新设计，其结构强度已强化至可用空间所允许的尽可能高的水平]: #
 
 
@@ -59,6 +64,7 @@ Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1
 
 ![Full view of the new enclosure and flight controller mount (with Pixhawk 6x)](picture/explode_view.jpg)
 *Full view of the new enclosure and flight controller mount (with Pixhawk 6x)*
+
 [新battery enclosure和飞行控制器安装座的全视图（包括Pixhawk 6x）]: #
 
 ![Explode view](picture/explode_view.jpg)
