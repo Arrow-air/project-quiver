@@ -13,7 +13,7 @@ Based on recent flight test results and the need to optimize the PT1 3D design w
 
 [基于近期的试飞结果和对pt1三维设计工作空间的优化需求，工程部门决定设立此任务，对pt1的部分外壳和结构做出改进。]: #
 
-The improvements include a new **battery enclosure** assembly and a redesigned **flight controller mount**. Additionally, there is a plan to develop a protective hatch for the flight controller. However, this will proceed only after the current assemblies pass flight testing.
+The improvements include a new **Battery Enclosure** assembly and a redesigned **Flight Controller Mount**. Additionally, there is a plan to develop a protective hatch for the flight controller. However, this will proceed only after the current assemblies pass flight testing.
 
 [改进的部分包括新的Battery enclosure的组装件和新的飞行控制器安装座。另有新计划为飞行控制器设计保护舱盖，但此新计划预计将在本次组装件试飞成功后再继续进行。]: #
 
