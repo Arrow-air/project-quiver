@@ -115,7 +115,7 @@ Familiarize yourself with the PCB layout. The following picture shows the compon
 
 ### Step 13: Push the telemetry module into the connector on the PCB
 
-- Parts you need in this step: 1x Mateksys MLRS telemetry module
+- Parts you need in this step: 1x Mateksys mLRS telemetry module
 - Insert the telemetry module into the slot and fix it with some hot glue
 
   ![](https://holocron.so/uploads/900646bd-13.png)

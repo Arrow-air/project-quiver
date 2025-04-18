@@ -68,3 +68,4 @@ Curr
 HDOP
 Geofence
 ENABL
+mLRS
