@@ -113,7 +113,7 @@ Familiarize yourself with the PCB layout. The following picture shows the compon
   ![](https://holocron.so/uploads/4867c6ac-12.png)
 
 
-### Step 13: Push the telemtry module into the connector on the PCB
+### Step 13: Push the telemetry module into the connector on the PCB
 
 - Parts you need in this step: 1x Mateksys MLRS telemetry module
 - Insert the telemetry module into the slot and fix it with some hot glue
@@ -123,7 +123,7 @@ Familiarize yourself with the PCB layout. The following picture shows the compon
 
 ### Step 14: Screw the GNSS module onto the PCB and connect it to its designated connector
 
-- Parts you need in this step: Mateksys AP Periph DroneCAN M10Q-3100 GNSS module, 2x plstic screws and nuts
+- Parts you need in this step: Mateksys AP DroneCAN M10Q-3100 GNSS module, 2x plastic screws and nuts
 -  Screw the GNSS module onto the PCB and connect it to its designated connector. The arrow on top of the GNSS module should point to the center of the PCB
 
   ![](https://holocron.so/uploads/53c40f5b-14.png)
@@ -132,7 +132,7 @@ Familiarize yourself with the PCB layout. The following picture shows the compon
 ### Step 15: Screw the FC on top of the Mateksys PDB and create the FC wiring
 
 - Parts you need in this step: Mateksys H743 Slim V3, 4x M3 distance adapter (10mm), 4x plastic screws and nuts
-- Screw the flight controller with the distance adapters on top of the Matekys PDB. Make sure the soft anti-vibration pads are added to the holes of the FC. Use plastic screws
+- Screw the flight controller with the distance adapters on top of the Mateksys PDB. Make sure the soft anti-vibration pads are added to the holes of the FC. Use plastic screws
 - To connect the FC to the main PCB, wires are soldered to the upper pads of the FC. These wires attach to the two SMD connectors on the left and right side of the FC. It's not recommended to reproduce this assembly. If you need to do it, please look at the schematics to solder the wires to the corresponding connector pin
 
   ![](https://holocron.so/uploads/1fd0b1e4-15.png)
@@ -222,9 +222,9 @@ If you assembled it right your PCB should look almost like the following picture
   ![](https://holocron.so/uploads/31c6a082-2-03-7.png)
 
 
-### Step 4: Add the front comparment to the assembly
+### Step 4: Add the front compartment to the assembly
 
-- Parts you need in this step: 1x Assembly of the front comparment
+- Parts you need in this step: 1x Assembly of the front compartment
 - Add the front compartment to the main assembly and screw it to the frame
 - Connect the power cables to the PCB
 
