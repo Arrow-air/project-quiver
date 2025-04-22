@@ -12,7 +12,7 @@ A difference in performance between the diagonal motor pairs, as shown in the fo
 
 Picture 1: Power level before realignment
 
-![](https://holocron.so/uploads/3e66400b-image.png)
+![](https://raw.githubusercontent.com/Julius-eng/project-quiver-05032025/refs/heads/main/task-grant-bounty/pt2/troubleshooting/0001-diagonal-motor-pair-power-difference/pictures/01.png)
 
 When motors on a multirotor are not mounted perfectly horizontally, their thrust is slightly angled, creating unintended torque and directional forces. Since drones rely on pairs of clockwise (CW) and counterclockwise (CCW) spinning motors to balance torque, any misalignment disrupts this balance. The flight controller compensates by adjusting thrust, often increasing power to one diagonal motor pair (either CW or CCW) to counter the imbalance. This causes that motor pair to draw more current than the other, leading to uneven power usage and possible long-term wear or performance issues.
 
@@ -65,13 +65,13 @@ Conduct a controlled test flight and review logs to confirm the power draw is no
 
   Picture 2: Alignment check
 
-  ![](https://holocron.so/uploads/6e277a05-image.png)
+  ![](https://raw.githubusercontent.com/Julius-eng/project-quiver-05032025/refs/heads/main/task-grant-bounty/pt2/troubleshooting/0001-diagonal-motor-pair-power-difference/pictures/02.png)
 
   Some misalignments were visible:
 
   Picture 3: Small gap
 
-  ![](https://holocron.so/uploads/f9afd787-image.png)
+  ![](https://raw.githubusercontent.com/Julius-eng/project-quiver-05032025/refs/heads/main/task-grant-bounty/pt2/troubleshooting/0001-diagonal-motor-pair-power-difference/pictures/03.png)
 
   #### 3. Adjust Misaligned Motors:
   - The motor tilt was adjusted by hand. During alignment the spirit level was kept on the motors. All four motors were realigned
@@ -87,7 +87,7 @@ Conduct a controlled test flight and review logs to confirm the power draw is no
 
   Picture 4: Power level after realignment
 
-  ![](https://holocron.so/uploads/7a0de074-image.png)
+  ![](https://raw.githubusercontent.com/Julius-eng/project-quiver-05032025/refs/heads/main/task-grant-bounty/pt2/troubleshooting/0001-diagonal-motor-pair-power-difference/pictures/04.png)
 
 
 ## Files
