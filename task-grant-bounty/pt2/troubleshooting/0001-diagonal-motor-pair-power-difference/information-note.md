@@ -14,7 +14,7 @@ Picture 1: Power level before realignment
 
 ![](https://raw.githubusercontent.com/Julius-eng/project-quiver-05032025/refs/heads/main/task-grant-bounty/pt2/troubleshooting/0001-diagonal-motor-pair-power-difference/pictures/01.png)
 
-When motors on a multirotor are not mounted perfectly horizontally, their thrust is slightly angled, creating unintended torque and directional forces. Since drones rely on pairs of clockwise (CW) and counterclockwise (CCW) spinning motors to balance torque, any misalignment disrupts this balance. The flight controller compensates by adjusting thrust, often increasing power to one diagonal motor pair (either CW or CCW) to counter the imbalance. This causes that motor pair to draw more current than the other, leading to uneven power usage and possible long-term wear or performance issues.
+When motors on a drone are not mounted perfectly horizontally, their thrust is slightly angled, creating unintended torque and directional forces. Since drones rely on pairs of clockwise (CW) and counterclockwise (CCW) spinning motors to balance torque, any misalignment disrupts this balance. The flight controller compensates by adjusting thrust, often increasing power to one diagonal motor pair (either CW or CCW) to counter the imbalance. This causes that motor pair to draw more current than the other, leading to uneven power usage and possible long-term wear or performance issues.
 
 ### Steps to Fix the Imbalance:
 
@@ -77,7 +77,7 @@ Conduct a controlled test flight and review logs to confirm the power draw is no
   - The motor tilt was adjusted by hand. During alignment the spirit level was kept on the motors. All four motors were realigned
 
   #### 4. Secure the Motor:
-  - All motor mount screws were carefully tightend
+  - All motor mount screws were carefully tightened
 
   #### 5. Final Check:
   - A final check was performed between all motor pairs. No gaps are visible
@@ -92,8 +92,8 @@ Conduct a controlled test flight and review logs to confirm the power draw is no
 
 ## Files
 
-The photos can be found in a seperate github folder.
+The photos can be found in a separate github folder.
 
 # Remarks
 
-- In this case I was performing the realignment two times, because i overcorrected it the first time
+- In this case I was performing the realignment two times, because i over-corrected it the first time
