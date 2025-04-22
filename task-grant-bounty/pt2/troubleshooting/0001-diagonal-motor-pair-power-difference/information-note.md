@@ -74,16 +74,16 @@ Conduct a controlled test flight and review logs to confirm the power draw is no
   ![](https://holocron.so/uploads/f9afd787-image.png)
 
   #### 3. Adjust Misaligned Motors:
-  - The motor tilt was adjusted by hand. During alignment the spirit level was kept on the motors. All four motors were realigned.
+  - The motor tilt was adjusted by hand. During alignment the spirit level was kept on the motors. All four motors were realigned
 
   #### 4. Secure the Motor:
   - All motor mount screws were carefully tightend
 
   #### 5. Final Check:
-  - A final check was performed between all motor pairs. No gaps are visible.
+  - A final check was performed between all motor pairs. No gaps are visible
 
   #### 6. Test Flight:
-  - The logs show a much better power distribution between the motors. The alignment was successful.
+  - The logs show a much better power distribution between the motors. The alignment was successful
 
   Picture 4: Power level after realignment
 
@@ -96,4 +96,4 @@ The photos can be found in a seperate github folder.
 
 # Remarks
 
-- In this case I was performing the realignment two times, because i overcorrected it the first time.
+- In this case I was performing the realignment two times, because i overcorrected it the first time
