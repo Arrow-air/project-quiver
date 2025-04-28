@@ -69,3 +69,4 @@ HDOP
 Geofence
 ENABL
 mLRS
+MagFit
