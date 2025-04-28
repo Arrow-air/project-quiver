@@ -19,7 +19,7 @@ This was the first official test flight of **Prototype 2 (PT2)** conducted in Ge
 
 - Two consecutive flights were conducted in Altitude Hold mode.
 - Full telemetry was recorded using onboard `.BIN` logs.  
-- Post-flight analysis was performed with the Flight Log Analyser toolset to identify anomalies in sensor and actuator data.  
+- Post-flight analysis was performed with the Flight Log Analyzer tool set to identify anomalies in sensor and actuator data.  
 - Focus areas included: attitude control, motor outputs, compass behavior, vibration, battery and ESC data, GPS quality, and flight stability.
 
 ---
@@ -63,7 +63,7 @@ This was the first official test flight of **Prototype 2 (PT2)** conducted in Ge
 ### Motor Outputs
 ![enter image description here](images/motor_outputs.png)
 
-### Pilut Inputs
+### Pilot Inputs
 ![enter image description here](images/rc_inputs.png)
 
 ### Yaw Control
@@ -76,7 +76,7 @@ This was the first official test flight of **Prototype 2 (PT2)** conducted in Ge
 
 - Compass EMI and motor numbering mismatch will be addressed before the next flight.
 - Arm alignment will be verified mechanically using laser or leveling tools.
-- The current test provided valuable insights and validated the importance of both mechanical symmetry for multirotor balance.
+- The current test provided valuable insights and validated the importance of both mechanical symmetry for multi rotor balance.
 - Overall, it was a successful first flight.
 
 ---
