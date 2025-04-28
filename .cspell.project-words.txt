@@ -68,6 +68,8 @@ Curr
 HDOP
 Geofence
 ENABL
+bruh
+GNSS
 mLRS
 MagFit
 rels
