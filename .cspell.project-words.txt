@@ -80,3 +80,9 @@ BYGX
 kzrn
 Kalman
 MagFit
+stackable
+Multispectral
+Jetson
+QGIS
+AAPS
+Leica
