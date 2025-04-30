@@ -5,7 +5,10 @@ Valid
 # Project Description
 
 This list is to showcase the drone attachments that may be used for Project Quiver to stimulate R&D and market expansion in mission equipment subject.
-Most of the attachments in this list comes from the drone application scenarios that are currently common used in the world or under third-party R&D.
+
+# Methodology
+
+Most of the attachments in this list are mixed or cames from the drone application scenarios that are currently common used in the world or under third-party R&D.
 
 # Results and Deliverables
 
