@@ -4,14 +4,14 @@ Valid
 
 # Common Equipment (Ordinary things):
 
-### UAV Integrated Logistic:
+## UAV Integrated Logistic:
 - Universal Cargo Container:
   - Can be fixed into attachment interface, or can be released and deployed.
   - Optimized shape and direction for aerodynamic or space utilization. 
   - May have control interface or auxiliary storage unit for goods exchange.
   - May be transportable and stackable manually without aircraft.
 
-### General UAV Remote Sensing:
+## General UAV Remote Sensing:
 - Standard FPV Camera
   - Must connect to video transmitting system with video quality greater than 720p and 45 FPS.
   - Must not be gimbaled, and must be fixed toward certain flight direction.
@@ -52,7 +52,7 @@ Valid
   - Shall have raster-to-vector conversion function for survey data output.
   - Shall output standardized or universal data format (e.g.  KML / KMZ) for survey data archiving and exchanging (e.g. Google Earth, ArcGIS, QGIS, etc.).
     
-### UAV Interactive Device Series:
+## UAV Interactive Device Series:
 - General Airborne Speaker:
   - Shall be directional and loud enough to inform any living entities with distance ≥200m.
   - May broadcast the sound signal from live voice transmitting, pre-record and TTS system.
@@ -94,7 +94,7 @@ Valid
   - May optimize emitter aircraft's telemetry data packet to protect the bandwidth and link budget.
   - May have GNSS receiver shielding and aerospace grade inertial navigation system for emitter aircraft.
 
-### Advanced Flight Assistance Series:
+## Advanced Flight Assistance Series:
 - Arrow Airframe Parachute System (AAPS):
   - Shall have 100% reliability.
   - Shall design as an energy release or pressure-launched ballistic parachute.
@@ -111,6 +111,37 @@ Valid
 - Mechanical Comm-Link Extension System: (On-board and ground based antenna tracker)
   - The aircraft and ground system must have matching basic functions and antenna layout.
   - Shall use directional PCB panel antenna.
-  - Antenna must paired with high reliability 2-axis gimbal.
+  - Antenna must paired with high reliability 2 axis gimbal.
   - May use slip rings gimbal connectors to increase the reliability for complex flight missions.
   - May have two pairs of gimbaled antennas for fail safe and backup.
+
+## UAV Geophysics Sensors:  (Ref: https://fasttimesonline.co/the-future-of-drone-geophysics/)
+- Low Altitude Magneto Field Anomaly Sensor: https://discord.com/channels/853833144037277726/1362396188615250090/1362396413232807946
+  - Shall design with zero or minimal ferrite components to prevent sensor interference.
+  - Shall pair with extension pylon or certain distancing equipment to prevent sensor interference from aircraft body.
+  - Sensor shall use multi-axis magnetic compass with certain multi-axis fusion algorithm to output the readable survey data such as heatmap.
+  - Sensor assembly should maintain a stable heading and attitude during flight to ensure the continuity of survey data.
+
+- Compact Synthetic Aperture Radar:
+  - Shall design with high precise GNSS, IMU and PPS timing integration.
+  - Shall have an acceptable antenna size for matching aircraft dimension limit.
+  - TBD... (Frequency, Resolution, etc.)
+
+- General Aerial LiDAR Scanning Device: (Scanning the ground while aircraft continues flying).
+  - Shall design with high precise GNSS, IMU and PPS timing integration.
+  - Sensor shall be mounted on the location that cover as many ground directions as possible.
+  - May pair with fixed heading 3 axis gimbal to increase sensor pose accuracy and repeatability.
+  - Ideal detecting range must greater than 80~120m.
+  - Sensor must have ≥32 laser channels @ ≥20Hz, with accuracy greater than 1cm @ 100m.
+
+- Sentinel LiDAR Mapping System: (LiDAR scanner mounted on the top of the aircraft, and ready to perform stationary full-dome high precision 3d scanning while landed.)
+  - Shall design with high precise GNSS integration.
+  - May integrate with off-shelf compact commercial 3D scanning stations (e.g. Leica BLK ARC, BLK360).
+  - Scanning station must be mounted on the top of the aircraft with full coverage to full-dome directions, and the lower side coverage shall be as high as possible.
+  - May pair with 3 axis gimbal to provide artificial ground leveling.
+  - Shall have the ability of real world RGB colored point cloud output.
+
+- Aerial Water Body Sampling System:
+  - Shall be deploy, retrieve, transport by aircraft to collect certain amount of surface water for further examination.
+  - May perform in-flight water sample examination with integrated testers or sensors.
+  - Shall design to reduce close-water operation risks for the aircraft.
