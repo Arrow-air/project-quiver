@@ -2,16 +2,25 @@
 
 Valid
 
-# Common Equipment (Ordinary things):
+# Project Description
 
-## UAV Integrated Logistic:
+This list is to showcase the drone attachments that may be used for Project Quiver to stimulate R&D and market expansion in mission equipment subject.
+Most of the attachments in this list comes from the drone application scenarios that are currently common used in the world or under third-party R&D.
+
+# Results and Deliverables
+
+The following content is the list with application scenario classification:
+
+## Common Equipment (Ordinary things):
+
+### UAV Integrated Logistic:
 - Universal Cargo Container:
   - Can be fixed into attachment interface, or can be released and deployed.
   - Optimized shape and direction for aerodynamic or space utilization. 
   - May have control interface or auxiliary storage unit for goods exchange.
   - May be transportable and stackable manually without aircraft.
 
-## General UAV Remote Sensing:
+### General UAV Remote Sensing:
 - Standard FPV Camera
   - Must connect to video transmitting system with video quality greater than 720p and 45 FPS.
   - Must not be gimbaled, and must be fixed toward certain flight direction.
@@ -26,7 +35,7 @@ Valid
 
 - Advanced IR Optical Gas Imagining Camera:
   - Must connect to video transmitting system.
-  - The IR sensor sensitivity shall be suitable for most types of common, industrial, and petrochemical gases (Ref: https://www.flir.com/instruments/optical-gas-imaging/what-gases-can-i-see-cooled-vs.-uncooled/).
+  - The IR sensor sensitivity shall be suitable for most types of common, industrial, and petrochemical gases [(Reference)](https://www.flir.com/instruments/optical-gas-imaging/what-gases-can-i-see-cooled-vs.-uncooled/).
   - The lens shall have ≈50mm focus length in order to be universal in most applications (focus length is defined with 35mm equivalent focal length).
   - The Sensor refresh rate shall greater than 25 FPS.
   - Shall paired with 3 axis gimbal with vibration canceling design.
@@ -52,7 +61,7 @@ Valid
   - Shall have raster-to-vector conversion function for survey data output.
   - Shall output standardized or universal data format (e.g.  KML / KMZ) for survey data archiving and exchanging (e.g. Google Earth, ArcGIS, QGIS, etc.).
     
-## UAV Interactive Device Series:
+### UAV Interactive Device Series:
 - General Airborne Speaker:
   - Shall be directional and loud enough to inform any living entities with distance ≥200m.
   - May broadcast the sound signal from live voice transmitting, pre-record and TTS system.
@@ -85,7 +94,7 @@ Valid
   - May have additional cable or pipeline to transport any other required signal or substance through the tether.
   - May have tension adjusting mechanism for the tether.
 
-- Airborne Electrical Warfare System: (On-board anti-UAV jamming signal emitter, **Could be lots of issues for practical uses.)
+- Airborne Electrical Warfare System: (On-board anti-UAV jamming signal emitter, *Could be lots of issues for practical uses.)
   - Shall emit jamming signal in ISM and GNSS RF channels for common target engagement.
   - Shall have SDR controlled frequency band defining, noise signal generating and signal amplifying.
   - Shall use directional PCB panel emitter antenna for better targeting.
@@ -94,7 +103,7 @@ Valid
   - May optimize emitter aircraft's telemetry data packet to protect the bandwidth and link budget.
   - May have GNSS receiver shielding and aerospace grade inertial navigation system for emitter aircraft.
 
-## Advanced Flight Assistance Series:
+### Advanced Flight Assistance Series:
 - Arrow Airframe Parachute System (AAPS):
   - Shall have 100% reliability.
   - Shall design as an energy release or pressure-launched ballistic parachute.
@@ -115,8 +124,8 @@ Valid
   - May use slip rings gimbal connectors to increase the reliability for complex flight missions.
   - May have two pairs of gimbaled antennas for fail safe and backup.
 
-## UAV Geophysics Sensors:  (Ref: https://fasttimesonline.co/the-future-of-drone-geophysics/)
-- Low Altitude Magneto Field Anomaly Sensor: https://discord.com/channels/853833144037277726/1362396188615250090/1362396413232807946
+### UAV Geophysics Sensors: [(Reference)](https://fasttimesonline.co/the-future-of-drone-geophysics/)
+- Low Altitude Magneto Field Anomaly Sensor
   - Shall design with zero or minimal ferrite components to prevent sensor interference.
   - Shall pair with extension pylon or certain distancing equipment to prevent sensor interference from aircraft body.
   - Sensor shall use multi-axis magnetic compass with certain multi-axis fusion algorithm to output the readable survey data such as heatmap.
@@ -145,3 +154,6 @@ Valid
   - Shall be deploy, retrieve, transport by aircraft to collect certain amount of surface water for further examination.
   - May perform in-flight water sample examination with integrated testers or sensors.
   - Shall design to reduce close-water operation risks for the aircraft.
+
+# Remarks
+- This list may be updated from time to time.
