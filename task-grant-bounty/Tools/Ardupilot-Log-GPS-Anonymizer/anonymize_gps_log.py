@@ -9,8 +9,8 @@ def anonymize_gps_log(input_path, output_path):
         "GPS":   {"Lat": 7, "Lng": 8, "Alt": 9},
         "AHR2":  {"Lat": 6, "Lng": 7},
         "EAHR":  {"Lat": 5, "Lng": 6},  # assumed
-        "POS":   {"Lat": 2, "Lng": 3},  # ✅ corrected
-        "TERR":  {"Lat": 3, "Lng": 4},  # ✅ corrected
+        "POS":   {"Lat": 2, "Lng": 3},  # corrected
+        "TERR":  {"Lat": 3, "Lng": 4},  # corrected
         "ORGN":  {"Lat": 3, "Lng": 4}
     }
 
@@ -32,7 +32,7 @@ def anonymize_gps_log(input_path, output_path):
     with open(output_path, 'w') as f:
         f.writelines(output_lines)
 
-    print(f"✅ All GPS-related fields zeroed: {output_path}")
+    print(f" All GPS-related fields zeroed: {output_path}")
 
 
 
