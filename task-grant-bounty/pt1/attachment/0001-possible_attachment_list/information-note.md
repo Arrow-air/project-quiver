@@ -8,7 +8,7 @@ This list is to showcase the drone attachments that may be used for Project Quiv
 
 # Methodology
 
-Most of the attachments in this list are mixed or cames from the drone application scenarios that are currently common used in the world or under third-party R&D.
+Most of the attachments in this list are mixed or came from the drone application scenarios that are currently common used in the world or under third-party R&D.
 
 # Results and Deliverables
 
@@ -58,7 +58,7 @@ The following content is the list with application scenario classification:
 
 - Ground Target Machine Vision System: (Recognize and sort ground targets, can be use as ranch animal counting, predator detection or any target area identification.)
   - Shall connect to other camera or sensor system to acquire camera frames.
-  - Shall having on board machine vision computer (e.g. Raspberry Pi, Nvidia Jetson)  for imager processing and identification.
+  - Shall having on board machine vision computer (e.g. Raspberry Pi, Nvidia Jetson)  for image processing and identification.
   - May sort targets by size, shape, visible colors, or signal difference.
   - May having special target early warning function.
   - Shall have raster-to-vector conversion function for survey data output.
