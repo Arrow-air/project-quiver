@@ -80,3 +80,7 @@ BYGX
 kzrn
 Kalman
 MagFit
+EAHR
+ORGN
+anonymization
+Dataflash
