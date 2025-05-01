@@ -83,7 +83,7 @@ J7 → Battery Interface
 - 2 position Eurostyle plug with bare leads
     - solder into slots on battery interface
 
-J8 → Radar Altimer
+J8 → Radar Altimeter
 
 - 4 Position Eurostyle plug directly from radar altimeter
 
