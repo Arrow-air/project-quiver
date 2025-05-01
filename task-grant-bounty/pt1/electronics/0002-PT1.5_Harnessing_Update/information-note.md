@@ -39,9 +39,9 @@ The following components were removed from the PT1 design:
 The following components were added to the design:
 
 - “PT2 PCB”
-    - See information note for detailed review [insert link]
+    - See [information note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt1/electronics/0001-PDB_V1/information-note.md) for detailed review.
     - Handles all voltage regulation and power distribution
-    - Introduces various plug size Molex Eurostyle Terminal blocks [Include link to product specification]
+    - Introduces various plug size [Molex Eurostyle Terminal blocks](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/productspecificationpdf/395/39500/PS-39500-001-001.pdf?inline) 
     - Added physical switch for pre-charge control
     - XT60PW-M for ESC Output
 - Solid State Relay (SSR)
@@ -52,7 +52,7 @@ The following connectors are being reused:
 - compression lugs
 - XT30PW-F
 
-An updated To/From table was prepared for all connections in a CSV format [insert link]. Refer to this table to get specifics on pins and what connectors are used. This will eventually be used to create a detailed routing CAD diagram. 
+An updated To/From table was prepared for all connections in a [CSV format](https://docs.google.com/spreadsheets/d/16EMP2wPfAB1RD0uh3B_RAArtTbWv5ikxNuRASy50kpA/edit?gid=1237259679#gid=1237259679). Refer to this table to get specifics on pins and what connectors are used. This will eventually be used to create a detailed routing CAD diagram. 
 
 ### Cables Created
 
@@ -110,6 +110,11 @@ XT60PW-F are used for power delivery to the ESCs and 5 Position Eurostyle plugs 
 
 The pictures below give a brief description of the internal connections for the updated enclosure. Please see the PT 1.5 cockpit information note for additional details. 
 
+![image](https://github.com/user-attachments/assets/cf45d422-9dad-4e57-b60b-4e9aa96e5479)
+
+![image](https://github.com/user-attachments/assets/556f5af2-7406-41f9-9b71-69f66dac7ceb)
+
+
 # Remarks
 
 - Cable lengths and colors have not been recorded. This note will be updated when the information is available
@@ -121,3 +126,5 @@ The pictures below give a brief description of the internal connections for the 
     - This will increase the complexity of the harnessing and would require more information of cable lengths and where to place components.
 - Below is a rough drawing of the harnessing for PT 1.5
     - The drawing is incomplete because there was too many harnesses to fit in one screen.
+     ![image](https://github.com/user-attachments/assets/63169051-6ce5-4dea-b155-1f239acd61c4)
+
