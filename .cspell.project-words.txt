@@ -80,3 +80,6 @@ BYGX
 kzrn
 Kalman
 MagFit
+UBEC
+Eurostyle
+Altimeter
