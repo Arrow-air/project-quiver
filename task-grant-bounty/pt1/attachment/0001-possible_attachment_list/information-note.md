@@ -101,7 +101,7 @@ The following content is the list with application scenario classification:
   - Shall emit jamming signal in ISM and GNSS RF channels for common target engagement.
   - Shall have SDR controlled frequency band defining, noise signal generating and signal amplifying.
   - Shall use directional PCB panel emitter antenna for better targeting.
-  - Must have standing wave protection design for emitter aircraft (e.g. emitter antenna distancing pylon).
+  - Must have standing wave and sidelobes protection design for emitter aircraft (e.g. emitter antenna distancing pylon).
   - Shall have 915Mhz / 1.2Ghz backup frequency or SDR controlled frequency hopping for secondary telemetry and flight control.
   - May optimize emitter aircraft's telemetry data packet to protect the bandwidth and link budget.
   - May have GNSS receiver shielding and aerospace grade inertial navigation system for emitter aircraft.
@@ -137,7 +137,9 @@ The following content is the list with application scenario classification:
 - Compact Synthetic Aperture Radar:
   - Shall design with high precise GNSS, IMU and PPS timing integration.
   - Shall have an acceptable antenna size for matching aircraft dimension limit.
-  - TBD... (Frequency, Resolution, etc.)
+  - Shall have resolution and maximum range greater than 1m @ 2Km.
+  - RF frequency may depends on different ground object penetrating requirement of various applications.
+  - Scan direction may depends on different requirement of various applications.
 
 - General Aerial LiDAR Scanning Device: (Scanning the ground while aircraft continues flying).
   - Shall design with high precise GNSS, IMU and PPS timing integration.
