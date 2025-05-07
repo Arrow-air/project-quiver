@@ -83,3 +83,13 @@ MagFit
 UBEC
 Eurostyle
 Altimeter
+stackable
+Multispectral
+Jetson
+QGIS
+AAPS
+Leica
+EAHR
+ORGN
+anonymization
+Dataflash
