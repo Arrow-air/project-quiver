@@ -86,3 +86,7 @@ Jetson
 QGIS
 AAPS
 Leica
+EAHR
+ORGN
+anonymization
+Dataflash
