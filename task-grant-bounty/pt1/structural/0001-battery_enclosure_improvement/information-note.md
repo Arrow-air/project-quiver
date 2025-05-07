@@ -90,7 +90,7 @@ Onshape link to the model space: https://cad.onshape.com/documents/54f060b5ab7c1
 ## Simple Instruction
 [简易指导]: # 
 
-![bruh](picture/explode_view.jpg)
+![bruh](picture/total_view.jpg)
 *Full view of the new enclosure and flight controller mount (with Pixhawk 6x)*
 
 [新battery enclosure和飞行控制器安装座的全视图（包括Pixhawk 6x）]: #
