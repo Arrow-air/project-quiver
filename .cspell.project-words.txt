@@ -80,6 +80,12 @@ BYGX
 kzrn
 Kalman
 MagFit
+stackable
+Multispectral
+Jetson
+QGIS
+AAPS
+Leica
 EAHR
 ORGN
 anonymization
