@@ -43,7 +43,8 @@
     - a lot of request for a modular board approach
     - Board can also be segregated
         
-        ![image.png](attachment:ca98b681-b15e-4261-9326-bbbe3bb14625:image.png)
+        ![image](https://github.com/user-attachments/assets/4c9e4065-2821-49d8-a310-6fbcee60730d)
+
         
     - additional practices for EMI reduction: https://drive.google.com/file/d/1zd6G54uSHPU9XQ0gly3Un4Vb1Vb5CWO8/view?usp=drive_link
     - combination of improved segregation and modularity with cables to connect the two
@@ -74,11 +75,13 @@
 
 ## Baseline Design to Improve
 
-![image.png](attachment:f4cf35b1-ba57-4643-8039-3a8b4b79dbce:image.png)
+![image](https://github.com/user-attachments/assets/646977cd-678c-40a0-a6d3-0fedcb1fd33a)
+![image](https://github.com/user-attachments/assets/ad3a4f65-79cc-4101-8836-8745cdd79fd8)
+![image](https://github.com/user-attachments/assets/fe0922c6-6156-43fb-98dc-68d8a7d996c5)
 
-![image.png](attachment:98845ebb-1ea2-4fe2-be1b-3515eef59755:image.png)
 
-![image.png](attachment:ac0ec72a-6e4b-492f-8731-79b19ed840d3:image.png)
+
+
 
 ## Battery PCB
 
@@ -133,11 +136,13 @@
     - https://arkelectron.com/product/ark-pixhawk-autopilot-bus-carrier/
     - custom carrier that drops into main PCB and attached with cables
     
-    ![PIX32](attachment:cbe8a08f-e82e-4f80-95a8-e2ef6e1170f0:image.png)
+    ![image](https://github.com/user-attachments/assets/2110752f-0df8-4e22-a7d1-b6cb5c6de43f)
+
     
     PIX32
     
-    ![Cube](attachment:a398cd0b-2ccf-4538-aa29-aae156dbdca9:image.png)
+    ![image](https://github.com/user-attachments/assets/73253042-6875-4d25-8042-3820b3701adc)
+
     
     Cube
     
