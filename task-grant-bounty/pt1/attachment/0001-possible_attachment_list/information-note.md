@@ -23,12 +23,20 @@ The following content is the list with application scenario classification:
   - May have control interface or auxiliary storage unit for goods exchange.
   - May be transportable and stackable manually without aircraft.
 
+- Surface Water Sourcing System:
+  - Include pump and water container with 10~12 litres or variable capacity.
+  - Shall design with shore line or water surface landing ability.
+  - May include instant water tester and filter.
+  - The container shall design for easy detach or drain. 
+  - Water intake may have an extended structure to ensure a safe distance between the aircraft and the water body.
+
 ### General UAV Remote Sensing:
 - Standard FPV Camera
   - Must connect to video transmitting system with video quality greater than 720p and 45 FPS.
   - Must not be gimbaled, and must be fixed toward certain flight direction.
   - Shall not crop the video feed image or modify the timing, for ensure the direct attitude feedback to pilot.
   - Shall canceling the vibration from aircraft by certain designs.
+  - May integrate flight information HUD in the ground device's display.
 
 - Standard Magnification Gimbaled Camera:
   - Must connect to video transmitting system with image sensors format larger than 1/2 inch and 30 FPS.
@@ -42,6 +50,13 @@ The following content is the list with application scenario classification:
   - The lens shall have ≈50mm focus length in order to be universal in most applications (focus length is defined with 35mm equivalent focal length).
   - The Sensor refresh rate shall greater than 25 FPS.
   - Shall paired with 3 axis gimbal with vibration canceling design.
+
+- General Stabilized Sensor Device Carrier:
+  - Shall be compatible with 1/4-20 screw mount or similar mounting system. 
+  - Shall withstand 5~8Kg of weight with slightly amount of off-centered load.
+  - Shall have enough clearance reserved for large dimension devices.
+  - May design with optional follow focus function and control signal outlet for peripheral devices.
+  - Must paired with 3 axis gimbal with vibration canceling design.
 
 - Standard Geiger-Mueller Counter:
   - Shall design for close-ground and close-water radioactive sensing applications.
@@ -82,6 +97,13 @@ The following content is the list with application scenario classification:
   - Shall have down view camera paired with 3-axis gimbal to compensate the waves on the water body.
   - Shall have emergency release or cutoff design.
   - The system must be waterproof for at least storm condition.
+
+- Aerial Pellet Spreader:
+  - Shall be compatible with most of small size and hard pellets such as seeds, fertilizer or other granules.
+  - Shall include capacity sensor in the pellet storage.
+  - May design as adjustable centrifugal force or cyclonic aerodynamics dispersing mechanism.
+  - May design for rain or moisture proof.
+  - Must have anti-blockage design with pellet storage and pipeline system.
 
 - Multi-Purpose Robotic Arm System:
   - Could grab, drag, push most kind of small solid objects.
