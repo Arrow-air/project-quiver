@@ -93,3 +93,6 @@ EAHR
 ORGN
 anonymization
 Dataflash
+MOSFET
+MOSFETs
+Vreg
