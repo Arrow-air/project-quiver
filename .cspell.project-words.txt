@@ -92,3 +92,4 @@ anonymization
 Dataflash
 MOSFET
 MOSFETs
+Vreg
