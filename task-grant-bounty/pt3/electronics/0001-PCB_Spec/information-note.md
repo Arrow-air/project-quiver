@@ -33,7 +33,7 @@ This information note will cover the design choices made  over the course of two
 
 - PCB Size
 - Component placement
-- Enclosure dimenstions
+- Enclosure dimensions
 - Layers
 - Section for manufacturing constraints
   - PCB Trace width
@@ -53,7 +53,7 @@ PT3 introduces significant changes to Quiver's electrical architecture by dividi
   - MOSFET input (internal LED)
   - MOSFET status (external LED)
   - Precharge (external)
-    - Request to make this a pushbutton with an LED simialr to Feather PT2
+    - Request to make this a pushbutton with an LED similar to Feather PT2
 - Temperature sensors for SSR and pre-charge 
 - I/O
   - Inputs
