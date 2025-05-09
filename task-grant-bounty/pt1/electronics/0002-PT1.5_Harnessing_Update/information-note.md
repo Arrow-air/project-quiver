@@ -41,7 +41,7 @@ The following components were added to the design:
 - “PT2 PCB”
     - See [information note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt1/electronics/0001-PDB_V1/information-note.md) for detailed review.
     - Handles all voltage regulation and power distribution
-    - Introduces various plug size [Molex Eurostyle Terminal blocks](https://github.com/Arrow-air/project-quiver/blob/errrks-patch-1/task-grant-bounty/pt1/electronics/0002-PT1.5_Harnessing_Update/picture/PS-39500-001-001.pdf) 
+    - Introduces various plug size Molex Eurostyle Terminal blocks
     - Added physical switch for pre-charge control
     - XT60PW-M for ESC Output
 - Solid State Relay (SSR)
