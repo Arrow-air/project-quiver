@@ -101,7 +101,7 @@
     - same as PT2
         - fuse may change depending on space constraints
 - Status LEDs
-    - Vreg (internal)
+    - Voltage regulator (internal)
     - MOSFET input (internal)
     - MOSFET status (external)
     - Precharge (external)
@@ -115,7 +115,7 @@
     - HV
         - Main power out
         - pre charge
-    - Vreg
+    - Voltage regulators
         - 12V
         - 5V
             - 2 ports
