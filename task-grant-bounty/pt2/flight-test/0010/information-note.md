@@ -64,10 +64,10 @@ Takeoff Weight: 25 kg
 
 - All payload conditions have adequate control margin. 
 - Mean hover PWM values for each weight:
-	- 20.15 kg: 1528
-	- 22.4 kg: 1535
-	- 23.7 kg: 1569
-	- 25 kg: 1603
+  - 20.15 kg: 1528
+  - 22.4 kg: 1535
+  - 23.7 kg: 1569
+  - 25 kg: 1603
 - Attitude and yaw control was good in all payload conditions.
 - No vibration or GPS problems were observed.
 
