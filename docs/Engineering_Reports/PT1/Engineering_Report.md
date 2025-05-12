@@ -706,7 +706,7 @@ Summary of capabilities:
 - XT90 input and output connectors 
 
 #### 12V Regulator
-[MEAN WELL RSDW40G-12](https://www.mouser.com/ProductDetail/709-RSDW40G-12)
+MEAN WELL RSDW40G-12
 
 ![image](https://github.com/user-attachments/assets/13960d5f-7f96-4037-a489-a25e96aab6e5)
 
@@ -716,7 +716,7 @@ Summary of capabilities:
 
 
 #### 5V Regulator
-[TRACO Power TMU 3-1211](https://www.mouser.com/ProductDetail/495-TMU3-1211)
+TRACO Power TMU 3-1211
 
 - 3W Rating
 - Provides power for brush bullet relay and 5V on PWM rails
@@ -883,11 +883,11 @@ On the PCB, the contactor works in hand with a pre-charge circuit for safe opera
   </details>
 
 #### Automotive Connectors
-- [23 Pos Connector](https://www.mouser.com/ProductDetail/571-1-776087-1)
+- 23 Pos Connector (Mouser #: 571-1-776087-1)
   - Used for CAN, GPIO signals, and GND to the Pixhawk
-- [8 Pos Connector](https://www.mouser.com/ProductDetail/571-1-776280-1)
+- 8 Pos Connector (Mouser #: 571-1-776280-1)
   - Used for radar altimeter power and CAN needs
-- [14 Pos Connector](https://www.mouser.com/ProductDetail/571-1-776267-1)
+- 14 Pos Connector (Mouser #: 571-1-776267-1)
   - Used for power and signal to Brush Bullet Dispenser
 
  Detailed pinouts can be found in the TO/FROM table. 
@@ -1009,7 +1009,7 @@ It is important to note that the altimeter should not be tested in doors to get 
 <summary><h4>Telemetry</h4></summary>
 <br>
 
-[HM30 Air Unit](https://shop.reebot.com/products/mk32-hm30-mk15-air-unit?VariantsId=10820)
+SIYI HM30 Air Unit
 
 ![image](https://github.com/user-attachments/assets/be4fdc1a-d2c8-44c8-980a-f5e7c846466b)
 
@@ -1034,7 +1034,7 @@ Interface & Ports:
 <summary><h4>Gimbal Camera</h4></summary>
 <br>
   
-[Siyi A8](https://shop.reebot.com/products/siyi-a8-mini-gimbal-camera) 
+Siyi A8 Gimbal Camera
   
   ![image](https://github.com/user-attachments/assets/6b990223-65d6-430f-ab72-c1ee7a7d43f4)
 
@@ -1117,7 +1117,7 @@ A relay is used to control the motor inside of the dispenser. 5V and GND provide
 | Tattu Adapter | Spade Terminal  | UBEC Switch | Crimp or XT30 | UBEC Default | 16 | 50V | Positive cable to switch only  |
 | UBEC Switch  | XT30 | UBEC |  |  |  |  |  |
 | UBEC | XT30 M | PM02D | XT30 F | Cockpit height | 16 | 12V |  |
-| PM02D | XT30 (M or F?) | Pixhawk Power 1 | [2mm Pitch Molex 6-pin](https://www.molex.com/en-us/products/part-detail/5024430670) | Default  | 24 | 5V, I2C |  |
+| PM02D | XT30 (M or F?) | Pixhawk Power 1 | 2mm Pitch Molex 6-pin (Molex Part: 5024430670) | Default  | 24 | 5V, I2C |  |
 | PM02D | XT30 (M or F?) | HM30 TX | XT30 M |  | 16 | 12V |  |
 | HM30 TX | Ethernet | SIYI A8 Gimbal  | 8 Pin Molex |  |  | LAN & PWR |  |
 
