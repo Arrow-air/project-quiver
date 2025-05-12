@@ -92,7 +92,7 @@ PT3 introduces significant changes to Quiver's electrical architecture by dividi
     - 1 pin spare
   - ethernet switch
     - additional board required to add ethernet functionality to Pix32 V6 via telemetry
-  - temperature sensors on main power trace and DCDC converters
+  - temperature sensors on main power trace and voltage regulators 
 
 
 # Remarks
