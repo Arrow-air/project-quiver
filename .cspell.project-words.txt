@@ -94,3 +94,7 @@ ORGN
 anonymization
 Dataflash
 sidelobes
+Avionix
+Auterion
+Skynode
+Blox
