@@ -101,7 +101,7 @@ Project Quiver的目的是设计并制造一款实用性多用途多旋翼无人
 
 初期版本并未采用防水防尘设计，机体的唯一一个装备挂点位于机舱腹部，且飞行控制器（FCU）安装在电池仓顶部并暴露在外，以方便调测。
 
-目前首个任务装备为除草剂投放器“Brush Bullet Pod”（或称"Brush bullet dispener"），首个实验性商业项目为与与其相对应的植被分析、空中撒放服务。“Brush Pod”将通过标准化的快拆式任务载荷挂架安装至机舱上。
+目前首个任务装备为除草剂投放器“Brush Bullet Pod”（或称"Brush bullet dispenser"），首个实验性商业项目为与与其相对应的植被分析、空中撒放服务。“Brush Pod”将通过标准化的快拆式任务载荷挂架安装至机舱上。
   
 Project Quiver的主流设计流程将使用Onshape和Fusion 360作为电脑设计软件。它们将主要用以整体布局、结构设计和有限元法分析。
 由于项目未规定采用特定的工业设计软件，设计人员可以使用自身熟悉的各类软件和工作流程。所以在多个软件间工作时，将使用STEP或类似格式作为数据交换格式。
@@ -695,13 +695,13 @@ The signal layout can be thought of mainly two sections, the ESCs to the flight 
 <br>
 
 Summary of capabilities:
-- Pre-charge and Contactor control via Arduino MKR QIFI 1010
+- Pre-charge and Contactor control via Arduino MKR WIFI 1010
 - 12V power regulation, fused output
 - 5V power regulation fused output
 - 300A fused output
 - PWM, 5V, GND easy access with header pins
 - Communication protocols: CAN, UART, RS485, and Aux signals (PWM, GPIO, etc.)
-- 24, 14, & 8 position atuomotive connector for easy access to pins
+- 24, 14, & 8 position automotive connector for easy access to pins
 - XT90 input and output connectors 
 
 #### 12V Regulator
@@ -729,9 +729,9 @@ On the PCB, the contactor works in hand with a pre-charge circuit for safe opera
 
 ![image](https://github.com/user-attachments/assets/cd9126dc-1bea-4fef-b471-74b604b15c6c)
 
-- Arduino sends signal to [pre-charge relay (K1) ](https://www.mouser.com/datasheet/2/240/media-3323785.pdf) when it recieves command from flight controller for "contactor close"
+- Arduino sends signal to [pre-charge relay (K1) ](https://www.mouser.com/datasheet/2/240/media-3323785.pdf) when it receives command from flight controller for "contactor close"
   - this allows for a low current to pass through multiple [pre-charge resistors (R1-R3)](https://www.mouser.com/datasheet/2/54/pwr163-777985.pdf), bypassing the contactor, to the ESCs
-  - after 5 seconds, the Arduino sends signal to the [contactor relay (K2)](https://www.mouser.com/datasheet/2/240/media-3323426.pdf), effectivly closing the contactor
+  - after 5 seconds, the Arduino sends signal to the [contactor relay (K2)](https://www.mouser.com/datasheet/2/240/media-3323426.pdf), effectively closing the contactor
   - the precharge is then turned off 
 
 
@@ -1052,7 +1052,7 @@ Interface & Ports:
 
 [Relay](https://www.amazon.com/gp/product/B00LW15A4W/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
-A relay is used to control the motor inside of the dispenser. 5V and GND provided by PCB. Use the PWM 1 output on the PCB to send the signal from the flight controller to close the relay. The mottor was connected using the COM and NO pins on the relay. This left the motor in an off state by default. 
+A relay is used to control the motor inside of the dispenser. 5V and GND provided by PCB. Use the PWM 1 output on the PCB to send the signal from the flight controller to close the relay. The motor was connected using the COM and NO pins on the relay. This left the motor in an off state by default. 
 
 
 ![image](https://github.com/user-attachments/assets/b4e87b5c-fa6c-4776-ae2a-2b6d14b80e9c)
@@ -1062,7 +1062,7 @@ A relay is used to control the motor inside of the dispenser. 5V and GND provide
 
 ![image](https://github.com/user-attachments/assets/8b4354ae-9992-41d4-997b-5bc75e21ce94)
 
-- Connection from the Power PCB to the attachment interface for the brush bullet dispenser relied on self soldering heatshrink . This was mainly done to allow a conenction from a 20 AWG cable to 24 AWG cable. Some lines were doubled up to account for the higher current needs with a smaller cable. The following cable scheme was used:
+- Connection from the Power PCB to the attachment interface for the brush bullet dispenser relied on self soldering heat shrink . This was mainly done to allow a connection from a 20 AWG cable to 24 AWG cable. Some lines were doubled up to account for the higher current needs with a smaller cable. The following cable scheme was used:
 
   - 12V
     - 3 cables for positive
@@ -1114,7 +1114,7 @@ A relay is used to control the motor inside of the dispenser. 5V and GND provide
 | TL60-10 | XT60 | ESC4 | Crimp or XT60 | 83 | 8 | 50V |  |
 | ESC4 | Unsure  | Pixhawk CAN | 2mm Molex 4-pin  | 83 + ? | 24 | CAN L, H, GND | I2C Splitter |
 | Tattu Adapter | Spade Terminal  | UBEC Switch | Crimp or XT30 | UBEC Default | 16 | 50V | Positive cable to switch only  |
-| UBEC Swtich  | XT30 | UBEC |  |  |  |  |  |
+| UBEC Switch  | XT30 | UBEC |  |  |  |  |  |
 | UBEC | XT30 M | PM02D | XT30 F | Cockpit height | 16 | 12V |  |
 | PM02D | XT30 (M or F?) | Pixhawk Power 1 | [2mm Pitch Molex 6-pin](https://www.molex.com/en-us/products/part-detail/5024430670) | Default  | 24 | 5V, I2C |  |
 | PM02D | XT30 (M or F?) | HM30 TX | XT30 M |  | 16 | 12V |  |
