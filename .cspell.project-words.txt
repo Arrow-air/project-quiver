@@ -80,6 +80,9 @@ BYGX
 kzrn
 Kalman
 MagFit
+UBEC
+Eurostyle
+Altimeter
 stackable
 Multispectral
 Jetson
@@ -93,3 +96,5 @@ Dataflash
 MOSFET
 MOSFETs
 Vreg
+sidelobes
+
