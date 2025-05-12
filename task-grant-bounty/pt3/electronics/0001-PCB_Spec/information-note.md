@@ -61,7 +61,9 @@ PT3 introduces significant changes to Quiver's electrical architecture by dividi
     - Pre-charge switch
     - MOSFET control
   - Outputs
-    - 2 CAN Ports
+    - Communication port
+      - I2C
+      - CAN
     - HV power out
     - Pre-charge out
 
@@ -83,9 +85,14 @@ PT3 introduces significant changes to Quiver's electrical architecture by dividi
     - TBD during design
   - additional HV output
   - 10 pin payload connector
+    - 4 pins for ethernet
+    - 2 pins for CAN
+    - 1 pin for analog
+    - 2 pins for 12V and ground
+    - 1 pin spare
   - ethernet switch
     - additional board required to add ethernet functionality to Pix32 V6 via telemetry
-  - temperature sensor 
+  - temperature sensors on main power trace and DCDC converters
 
 
 # Remarks
