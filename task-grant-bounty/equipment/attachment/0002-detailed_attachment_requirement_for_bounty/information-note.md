@@ -5,7 +5,7 @@ Valid
 # Project Description
 
 Due to certain bounties will be created to stimulate the attachment R&D and 6 attachments were been selected during the vote and several discussions in the [Discord thread](https://discord.com/channels/853833144037277726/1362396188615250090/1371554269970300959).  
-Certain documents will be placed in this same directory to explain and showcase the detailed requirement of those selected attachments.
+Certain documents will be created in this same directory to explain and showcase the detailed requirement of those selected attachments.
 
 # Methodology
 
@@ -14,16 +14,16 @@ Also, this detailed requirements content will be established and refined based o
 
 # Results and Deliverables
 
-Winner of the voting:
+Selection list by the voting:
 
 - [Logistic] Universal Cargo Container
 - [Geophysics] General Aerial LiDAR Scanning Device
 
-Winner of addtional discussion:
+Selection list by addtional discussions:
   
 - [Sensing] Ground Target Machine Vision System
 - [Sensing] Standard Magnification Gimbaled Camera
 - [Sensing] General Stabilized Sensor Device Carrier (aka. Arrow Gimbal)
 - [Interactive] High Capacity Flood Light
 
-In total of 6 detailed requirement documents.
+In total of 6 detailed requirement documents will be created.
