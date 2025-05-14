@@ -29,7 +29,7 @@ The camera module can be attached or detached from a gimbal stablizer or other s
 - P-6: Must have dust and water splash proof ability.
 
 ## Manufacturing & Maintenance Process Technology:
-- M-1: Structure parts must be designed using materials with a thermal softening point above 110 degress Celsius.
+- M-1: Structure parts must be designed using materials with a thermal softening point above 110 ℃.
 - M-2: Structure parts must provide rigid support and connections to all connected parts.
 - M-3: Shall not include any kind of non-functional decorative features.
 - M-4: May include on-ground companion software for video encoding configuration and log output.
