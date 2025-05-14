@@ -21,7 +21,7 @@ Version: 14.05.25-1 Ranch Grill
 
 ## Manufacturing & Maintenance Process Technology:
 - M-1: Flexible PCBs for signal trace design are encouraged.
-- M-2: Structure parts must be designed using materials with a thermal softening point above 110 degress Celsius.
+- M-2: Structure parts must be designed using materials with a thermal softening point above 110 ℃.
 - 
 
 
