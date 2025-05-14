@@ -1,6 +1,6 @@
 # Comprehensive Requirement of Universal Cargo Container:
 
-Version: 05.14.25-1 (MM.DD.YY-V) 
+Version: 05.14.25-1 (MM.DD.YY-V)  
 Initial version
 
 ## General Objective Description:
