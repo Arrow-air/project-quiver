@@ -9,9 +9,8 @@ Instead of controlling a complex mechanical optical zooming lens, the camera can
 The camera module can be attached or detached from a gimbal stablizer or other structures through standardized mounting interface and connectors.
 
 ## Optional Functions:
-- OF-1: May support point tracking, flight heading alignment, or 3-axis locking functions.
-- OF-2: May include onboard logging for camera triggering, pose or GNSS data.
-- OF-3: May support on-ground wireless imagery and log download functions.
+- OF-1: May include onboard logging for camera triggering, pose or GNSS data.
+- OF-2: May support on-ground wireless imagery and log download functions.
 
 ## Architecture & Boundary:
 - AB-1: Shall accept 12~60V DC power supply and include an anti-spark design.
