@@ -1,5 +1,5 @@
-## Comprehensive Requirement of Standard Magnification Gimbaled Camera:
-
+# Comprehensive Requirement
+### "Standard Magnification Gimbaled Camera"
 Version: 14.05.25-1 Boar
 
 ## General Objective Description:
@@ -15,4 +15,4 @@ Version: 14.05.25-1 Boar
 ## Safety:
 
 ## Revision:
-- 14.05.25-1 Boar: Initial publish.
+- 14.05.25-1 Boar:
