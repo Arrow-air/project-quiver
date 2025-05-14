@@ -4,38 +4,41 @@ Version: 14.05.25-1 Boar
 
 ## General Objective Description:
 
-A camera module with two sensors, it contains a normal main lens and a high magnification lens, both are fixed focus. 
-Instead of controlling a single complex optical zooming lens, this camera can just switch between two different zooming via some kind of digital video switching mechanism. 
-The camera module can be attach or detach from a gimbal stablizer via certain standard mounting base and connector between them.
+A dual-sensor camera module, it integrates one normal main lens and one high magnification lens, both are fixed focus. 
+Instead of controlling a complex mechanical optical zooming lens, the camera can switch between two different optical path via digital video switching mechanism. 
+The camera module can be attached or detached from a gimbal stablizer or other structures through standardized mounting interface and connectors.
 
 ## Optional Functions:
-- OF-1: May include on-ground wireless imagery download functions.
-- OF-2: May include point tracking, fight heading following, or locking functions.
-- OF-3: May include built-in camera pose record, GNSS trigger record or track record function.
+- OF-1: May support point tracking, flight heading alignment, or 3-axis locking functions.
+- OF-2: May include onboard logging for camera triggering, pose or GNSS data.
+- OF-3: May support on-ground wireless imagery and log download functions.
 
 ## Architecture & Boundary:
-- AB-1: Shall accept 12~60V DC power supply with anti-spark design.
-- AB-2: Must connect to aircraft's video transmitting system
-- AB-3: Must have the ability to switch the video transmitting feed between two sensors.
-- AB-4: Shall paired with 3 axis gimbal with vibration canceling design.
-- AB-5: May include on-ground companion software for video encoding configuration.
-- AB-6: Shall support H.264 and MJPEG encodeing for balanced image quality and latency.
+- AB-1: Shall accept 12~60V DC power supply and include an anti-spark design.
+- AB-2: Must include real-time video stream switching mechanism that can be controlled by flight controller via any supported control signals.
+- AB-3: Must include a state machine interface for video stream routing status feedback, and be able to communicate with aircraft's telemetry system.
+- AB-4: Must be able to pair with 3-axis gimbal via standard 1/4 mounting interface or non-standard mounter.
+- AB-5: Shall support H.264 and MJPEG encoding for balanced image quality and latency.
+- AB-6: Shall use Ethernet over UDP protocol for video stream output.
 
 ## Performance:
-- P-1: Image sensors shall have diagonal size greater ≥ 1/2 inch and refresh rate ≥ 30 FPS.
-- P-2: May select global shutter sensor for components.
-- P-3: Main lens shall have focus length around 24mm (focus length are defined with 35mm equivalent focal length).
-- P-4: Magnified lens may have focus length ≥ 85mm (focus length are defined with 35mm equivalent focal length).
-- P-5: Shall include photo capture, video recording, SD card storage, and
-- P-6: Must have dust and water splash proof ablility.
+- P-1: Image sensors shall have diagonal size ≥ 1/2 inch and refresh rate ≥ 30 FPS.
+- P-2: May select global shutter sensor for components. 
+- P-3: Main lens shall have effective focus length of approximately 24 mm (35 mm equivalent).
+- P-4: Magnified lens may have effective focus length ≥ 85 mm (35 mm equivalent).
+- P-5: Must include still image capture, video recording and SD card storage functions.
+- P-6: Must have dust and water splash proof ability.
 
-## Manufacturing & Maintenece Process Technology:
-- M-1: The structure parts must design with materials with a thermal softening temperature higher than 110 degress Celsius.
+## Manufacturing & Maintenance Process Technology:
+- M-1: Structure parts must be designed using materials with a thermal softening point above 110 degress Celsius.
+- M-2: Structure parts must provide rigid support and connections to all connected parts.
+- M-3: Shall not include any kind of non-functional decorative features.
+- M-4: May include on-ground companion software for video encoding configuration and log output.
 
 ## Safety:
 - S-1: Must include over temperature protection mechanism.
-- S-2: Must include at least passive heatsink design.
-- S-3: Must include power line noise filering mechanism.
-
+- S-2: Must include at least a passive heatsink design.
+- S-3: Must include EMI and power line noise filtering mechanism.
+  
 ## Revision:
-- 14.05.25-1 Boar: EDITING
+- 14.05.25-1 Boar: Initial public release.
