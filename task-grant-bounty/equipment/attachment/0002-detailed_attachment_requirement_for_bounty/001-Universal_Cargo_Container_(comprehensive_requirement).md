@@ -38,4 +38,4 @@ Cargo inside may be dropped or released through the control from users or progra
 - S-5: Must include measures and structures to secure the cargo.
 
 ## Revision:
-- 14.05.25-1 Angel Investor: Initial publish.
+- 14.05.25-1 Angel Investor: Initial public release.
