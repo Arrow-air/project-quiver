@@ -3,7 +3,7 @@
 Version: 14.05.25-1 Ranch Grill
 
 ## General Objective Description:
-
+A 3-axis gimbal stabilizer with mounting interface and control signal connector outlet on it. Acting as a universal carrier platform for various cameras and imagery devices.
 
 
 ## Optional Functions:
