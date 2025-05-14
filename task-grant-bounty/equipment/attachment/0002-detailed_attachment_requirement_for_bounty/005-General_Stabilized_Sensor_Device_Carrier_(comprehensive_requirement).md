@@ -1,5 +1,5 @@
 # Comprehensive Requirement
-### General Stabilized Sensor Device Carrier (aka. Arrow Gimbal)
+### 005 - General Stabilized Sensor Device Carrier (aka. Arrow Gimbal)
 Version: 14.05.25-1 Ranch Grill
 
 ## General Objective Description:
@@ -19,7 +19,7 @@ Version: 14.05.25-1 Ranch Grill
 
 
 ## Manufacturing & Maintenance Process Technology:
-
+- M-1: Flexible PCBs for signal trace design are encouraged.
 
 
 ## Safety:
