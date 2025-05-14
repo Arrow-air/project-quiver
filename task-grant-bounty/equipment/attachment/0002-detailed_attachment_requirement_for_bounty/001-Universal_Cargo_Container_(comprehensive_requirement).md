@@ -12,7 +12,7 @@ Cargo inside may be dropped or released through the control from users or progra
 - OF-3: May reserve expansion attachment interface area and brand logo area.
 
 ## Architecture & Boundary:
-- AB-1: Any electrical functions shall accept 12~60V DC power supply with anti-spark design.
+- AB-1: Any electrical functions shall accept 12~60V DC power supply and include an anti-spark design.
 - AB-2: Any actuator (e.g. cargo release, servo) shall be controllable by companion computer or flight controller via CAN or analog signal.
 - AB-3: Any non-real-time modules (e.g. GUI or interface) shall be controllable by companion computer via CAN / UART or Ethernet.
 
