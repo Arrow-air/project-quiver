@@ -1,6 +1,6 @@
 # Comprehensive Requirement of Universal Cargo Container:
 
-Version: 14.05.25-1 (DD.MM.YY-V) Angel-Investor (Manually change this random phrase for any different edition for identify)
+Version: 14.05.25-1 (DD.MM.YY-V) Angel Investor (Manually change this random phrase for any different edition for identify)
 
 ## General Objective Description:
 A multipurpose container that can be rigidly mounted onto belly attachment interface, to statically carry and transport objects except un-packaged fluid or gas. 
@@ -12,7 +12,7 @@ Cargo inside may be dropped or released through the control from users or progra
   - OF-3: May reserve expansion attachment interface area and brand logo area.
 
 ## Architecture & Boundary:
-  - AB-1: Any electrical functions shall accept 12~60V DC power supply.
+  - AB-1: Any electrical functions shall accept 12~60V DC power supply with anti-spark design.
   - AB-2: Any actuator (e.g. cargo release, servo) shall be controllable by companion computer or flight controller via CAN or analog signal.
   - AB-3: Any non-real-time modules (e.g. GUI or interface) shall be controllable by companion computer via CAN / UART or Ethernet.
 
@@ -38,4 +38,4 @@ Cargo inside may be dropped or released through the control from users or progra
   - S-5: Must include measures and structures to secure the cargo.
 
 ## Revision:
-  - 14.05.25-1 Angel-Investor: Initial publish.
+  - 14.05.25-1 Angel Investor: Initial publish.
