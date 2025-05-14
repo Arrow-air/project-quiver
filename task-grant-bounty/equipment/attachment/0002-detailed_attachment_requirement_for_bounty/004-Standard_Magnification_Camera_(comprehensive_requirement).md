@@ -16,7 +16,7 @@ The camera module can be attached or detached from a gimbal stablizer or other s
 - AB-1: Shall accept 12~60V DC power supply and include an anti-spark design.
 - AB-2: Must include real-time video stream switching mechanism that can be controlled by flight controller via any supported control signals.
 - AB-3: Must include a state machine interface for video stream routing status feedback, and be able to communicate with aircraft's telemetry system.
-- AB-4: Must be able to pair with 3-axis gimbal via standard 1/4 mounting interface or non-standard mounter.
+- AB-4: Must be able to pair with 3-axis gimbal via standard 1/4 or non-standard mounting interface.
 - AB-5: Shall support H.264 and MJPEG encoding for balanced image quality and latency.
 - AB-6: Shall use Ethernet over UDP protocol for video stream output.
 
