@@ -1,18 +1,18 @@
-# Comprehensive Requirement of Standard Magnification Gimbaled Camera:
+## Comprehensive Requirement of Standard Magnification Gimbaled Camera:
 
 Version: 14.05.25-1 Boar
 
-## General Objective Description:
+### General Objective Description:
 
-## Optional Functions:
+### Optional Functions:
 
-## Architecture & Boundary:
+### Architecture & Boundary:
 
-## Performance:
+### Performance:
 
-## Manufacturing & Maintenece Process Technology:
+### Manufacturing & Maintenece Process Technology:
 
-## Safety:
+### Safety:
 
-## Revision:
+### Revision:
 - 14.05.25-1 Boar: Initial publish.
