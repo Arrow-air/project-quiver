@@ -26,7 +26,7 @@ Cargo inside may be dropped or released through the control from users or progra
 - P-7: May tolerate minor dimensional overhangs of oversized cargo.
 - P-8: Shall have dust and water splash proof ablility.
 
-## Manufacturing & Maintenece Process Technology
+## Manufacturing & Maintenance Process Technology
 - M-1: May be manufacturable using a variety of conventional and composite processes.
 - M-2: Modern design approaches such as 3D printing, thin skins, hollow frames, and non-standard shapes or mount directions are encouraged.
 
