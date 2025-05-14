@@ -1,6 +1,6 @@
 # Comprehensive Requirement of Universal Cargo Container:
 
-Version: 14.05.25-1 (DD.MM.YY-V)  
+Version: 14.05.25-1 (DD.MM.YY-V) Angel-Investor (Manually change this random phrase for any different edition for identify)
 
 ## General Objective Description:
 A multipurpose container that can be rigidly mounted onto belly attachment interface, to statically carry and transport objects except un-packaged fluid or gas. 
@@ -37,6 +37,5 @@ Cargo inside may be dropped or released through the control from users or progra
   - S-4: Must not perform any permanent structural deformation or load-induced malfunctions within the rated load and aircraft's operating acceleration.
   - S-5: Must include measures and structures to secure the cargo.
 
-
 ## Revision:
-  - 14.05.25-1: Initial publish.
+  - 14.05.25-1 Angel-Investor: Initial publish.
