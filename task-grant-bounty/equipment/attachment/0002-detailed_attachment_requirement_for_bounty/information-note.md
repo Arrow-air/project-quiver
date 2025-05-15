@@ -19,7 +19,7 @@ Selection list by the voting:
 - [Logistic] Universal Cargo Container
 - [Geophysics] General Aerial LiDAR Scanning Device
 
-Selection list by addtional discussions:
+Selection list by additional discussions:
   
 - [Sensing] Ground Target Machine Vision System
 - [Sensing] Standard Magnification Gimbaled Camera
