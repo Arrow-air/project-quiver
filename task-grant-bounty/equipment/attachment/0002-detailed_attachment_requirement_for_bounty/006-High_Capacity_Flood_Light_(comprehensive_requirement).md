@@ -31,8 +31,8 @@ A high brightness directional lighting lamp that can be used for various purpose
 - M-4: Shall use a long endurance thermal paste for heat removal.
 
 ## Safety:
-- S-1: Must include high capacity heatsink or active heat removal design.
-- S-2: Must include over-temprature protection with forced power derating design, instead of power off.
+- S-1: Must include high capacity heat sink or active heat removal design.
+- S-2: Must include over-temperature protection with forced power derating design, instead of power off.
 - S-3: May include an isolated power supply design.
   
 ## Revision:
