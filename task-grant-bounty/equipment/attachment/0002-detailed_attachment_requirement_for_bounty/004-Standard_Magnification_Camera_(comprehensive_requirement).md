@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 004 - Standard Magnification Camera
-Version: 14.05.25-1 Boar
+Version: 15.05.25-1 Boar
 
 ## General Objective Description:
 
@@ -18,7 +18,7 @@ The camera module can be attached or detached from a gimbal stablizer or other s
 - AB-3: Must include a state machine interface for video stream routing status feedback, and be able to communicate with aircraft's telemetry system.
 - AB-4: Must be able to pair with 3-axis gimbal via standard 1/4 or non-standard mounting interface.
 - AB-5: Shall support H.264 and MJPEG encoding for balanced image quality and latency.
-- AB-6: Shall use Ethernet over UDP protocol for video stream output.
+- AB-6: Shall use Ethernet over UDP protocol for RTSP video output.
 
 ## Performance:
 - P-1: Image sensors shall have diagonal size ≥ 1/2 inch and refresh rate ≥ 30 FPS.
@@ -40,4 +40,4 @@ The camera module can be attached or detached from a gimbal stablizer or other s
 - S-3: Must include EMI and power line noise filtering mechanism.
   
 ## Revision:
-- 14.05.25-1 Boar: Initial public release.
+- 15.05.25-1 Boar: Initial public release.
