@@ -30,14 +30,14 @@ An airborne LiDAR system designed to acquire high-precision point cloud data of 
 ## Manufacturing & Maintenance Process Technology:
 - M-1: Uses of off-shelf LiDAR sensor are encouraged.
 - M-2: The LiDAR sensor must be rigidly aligned with the navigation subsystem to preserve calibration integrity.
-- M-3: LiDAR sensor must have an rigid structure and dimension relation with all high precision navigaion subsystem.
+- M-3: LiDAR sensor must have an rigid structure and dimension relation with all high precision navigation subsystem.
 - M-4: Aluminum alloys and composite materials are encouraged.
 - M-5: Modern design approaches such as 3D printing, thin skins, hollow frames, and non-standard shapes or mount directions are encouraged.
 - M-6: Shall include sensor system storage and protection equipment.
 - M-7: Shall include on-ground companion software for LiDAR sensor and subsystem configuration and data output.
 
 ## Safety:
-- S-1: Must include heatsink or active heat removal design for LiDAR sensor and companion computer.
+- S-1: Must include heat sink or active heat removal design for LiDAR sensor and companion computer.
 - S-2: Shall include a full-weight-rated safety tether for structral fail-safe.
 - S-3: Must include laser safety warning signs.
 
