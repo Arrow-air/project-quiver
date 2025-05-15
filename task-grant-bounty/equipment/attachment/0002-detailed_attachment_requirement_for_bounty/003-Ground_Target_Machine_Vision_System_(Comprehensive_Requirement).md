@@ -23,7 +23,7 @@ An airborne image processing system mainly composed of computing units, designed
 - P-3: Must have performance and latency level as real-time system.
 - P-4: Shall support analysis result overlay and RTSP video output function.
 - P-5: Shall support analysis result logging function.
-- P-6: Must have dust and water splash proof ablility.
+- P-6: Must have dust and water splash proof ability.
 
 ## Manufacturing & Maintenance Process Technology:
 - M-1: Use of off-shelf computer are encouraged (e.g. Raspberry Pi, Nvidia Jetson).
