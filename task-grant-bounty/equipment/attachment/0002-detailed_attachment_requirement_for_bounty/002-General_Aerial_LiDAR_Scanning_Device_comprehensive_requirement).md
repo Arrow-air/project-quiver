@@ -23,7 +23,7 @@ An airborne LiDAR system designed to acquire high-precision point cloud data of 
 ## Performance:
 - P-1: Shall have ideal detecting range ≥ 100 m.
 - P-2: LiDAR sensor must include (1) ≥ 32 laser channels @ ≥ 20 Hz of scan rate, with (2) ≤ 1 cm @ 100 m of accuracy.
-- P-3: Must have dust and water splash proof ablility.
+- P-3: Must have dust and water splash proof ability.
 - P-4: Must be able to resist and filter normal operating vibration that comes from aircraft's propulsion system.
 - P-5: Shall have optimized aerodynamic enclosure shape to reduce the form drag.
 
@@ -38,7 +38,7 @@ An airborne LiDAR system designed to acquire high-precision point cloud data of 
 
 ## Safety:
 - S-1: Must include heat sink or active heat removal design for LiDAR sensor and companion computer.
-- S-2: Shall include a full-weight-rated safety tether for structral fail-safe.
+- S-2: Shall include a full-weight-rated safety tether for structural fail-safe.
 - S-3: Must include laser safety warning signs.
 
 ## Revision:
