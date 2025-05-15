@@ -34,6 +34,7 @@ An airborne LiDAR system designed to acquire high-precision point cloud data of 
 - M-4: Aluminum alloys and composite materials are encouraged.
 - M-5: Modern design approaches such as 3D printing, thin skins, hollow frames, and non-standard shapes or mount directions are encouraged.
 - M-6: Shall include sensor system storage and protection equipment.
+- M-7: Shall include on-ground companion software for LiDAR sensor and subsystem configuration and data output.
 
 ## Safety:
 - S-1: Must include heatsink or active heat removal design for LiDAR sensor and companion computer.
