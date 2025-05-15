@@ -18,7 +18,7 @@ A 3-axis gimbal stabilizer with mounting interface and control signal connector 
 ## Performance:
 - P-1: Shall have angular operating range with (1) ± 360° yaw (2) ± 90° pitch and (3) ± 90° roll.
 - P-2: Shall have angular resolution ≤ 0.02° and dynamic stabilization accuracy ≤ 0.1°.
-- P-3: Shall be able to resist and filter normal operating vibration that comes from aircraft's propulsion system.
+- P-3: Must be able to resist and filter normal operating vibration that comes from aircraft's propulsion system.
 
 ## Manufacturing & Maintenance Process Technology:
 - M-1: Flexible PCBs for signal routing design are encouraged.
