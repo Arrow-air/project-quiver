@@ -36,7 +36,7 @@ The camera module can be attached or detached from a gimbal stabilizer or other 
 
 ## Safety:
 - S-1: Must include over temperature protection mechanism.
-- S-2: Must include at least a passive heatsink design.
+- S-2: Must include at least a passive heat sink design.
 - S-3: Must include EMI and power line noise filtering mechanism.
   
 ## Revision:
