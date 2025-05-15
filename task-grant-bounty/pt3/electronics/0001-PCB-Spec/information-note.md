@@ -47,7 +47,10 @@ PT3 introduces significant changes to Quiver's electrical architecture by dividi
 - Replacing the third party SSR with a power MOSFET (will continue to refer to as SSR)
 - 150A - 200A Fuse
 - Custom Molex connector to interface with the Tattu Battery
-  - Molex EXTreme 46437-9206 manually latching with 46437-9306
+  - 2x Molex EXTreme 46437-9206
+  - 1x Molex 464379-301 (harvest guiding pins)
+  - Note polarity and CAN pins
+    ![image](https://github.com/user-attachments/assets/bc51998c-54ee-4694-96e2-ba4f28f30103)
 - Pre-charge circuitry with automotive fuse
 - Various status LEDs
   - MOSFET input (internal LED)
@@ -61,7 +64,9 @@ PT3 introduces significant changes to Quiver's electrical architecture by dividi
     - Pre-charge switch
     - MOSFET control
   - Outputs
-    - 2 CAN Ports
+    - Communication port
+      - I2C
+      - CAN
     - HV power out
     - Pre-charge out
 
@@ -83,9 +88,14 @@ PT3 introduces significant changes to Quiver's electrical architecture by dividi
     - TBD during design
   - additional HV output
   - 10 pin payload connector
+    - 4 pins for ethernet
+    - 2 pins for CAN
+    - 1 pin for analog
+    - 2 pins for 12V and ground
+    - 1 pin spare
   - ethernet switch
     - additional board required to add ethernet functionality to Pix32 V6 via telemetry
-  - temperature sensor 
+  - temperature sensors on main power trace and voltage regulators 
 
 
 # Remarks
