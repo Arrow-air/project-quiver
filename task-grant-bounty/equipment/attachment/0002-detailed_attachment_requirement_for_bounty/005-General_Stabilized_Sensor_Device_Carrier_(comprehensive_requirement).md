@@ -3,7 +3,7 @@
 Version: 15.05.25-1 Ranch Grill
 
 ## General Objective Description:
-A 3-axis gimbal stabilizer with mounting interface and control signal connector outlet. Serves as a universal carrier platform for various cameras and imagery payload. Optional with addtional angle lock and POI tracking functions.
+A 3-axis gimbal stabilizer with mounting interface and control signal connector outlet. Serves as a universal carrier platform for various cameras and imagery payload. Optional with additional angle lock and POI tracking functions.
 
 ## Optional Functions:
 - OF-1: May support location point tracking, flight heading alignment, or 3-axis locking functions.
@@ -29,7 +29,7 @@ A 3-axis gimbal stabilizer with mounting interface and control signal connector 
 
 ## Safety:
 - S-1: Must include mechanical multi-rotation end-stop design to prevent cable damage.
-- S-2: Shall include heatsink design for motor driver subsystem. 
+- S-2: Shall include heat sink design for motor driver subsystem. 
 
 ## Revision:
 15.05.25-1 Ranch Grill: Initial public release.
