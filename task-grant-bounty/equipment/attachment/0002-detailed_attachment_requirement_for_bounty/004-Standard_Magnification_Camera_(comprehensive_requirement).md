@@ -6,7 +6,7 @@ Version: 15.05.25-1 Boar
 
 A dual-sensor camera module, it integrates one normal main lens and one high magnification lens, both are fixed focus. 
 Instead of controlling a complex mechanical optical zooming lens, the camera can switch between two different optical path via digital video switching mechanism. 
-The camera module can be attached or detached from a gimbal stablizer or other structures through standardized mounting interface and connectors.
+The camera module can be attached or detached from a gimbal stabilizer or other structures through standardized mounting interface and connectors.
 
 ## Optional Functions:
 - OF-1: May include onboard logging for camera triggering, pose or GNSS data.
