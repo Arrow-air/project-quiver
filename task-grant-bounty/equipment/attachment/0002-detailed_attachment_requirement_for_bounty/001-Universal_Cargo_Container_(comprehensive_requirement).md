@@ -20,7 +20,7 @@ Cargo inside may be dropped or released through the control from users or progra
 - P-1: Maximum static carrying weight shall be determined and right under the aircraft's maximum payload limit.
 - P-2: Shall have optimized aerodynamic shape to reduce the form drag.
 - P-3: Shall maximize the use of redundant spaces in any dimensions.
-- P-4: Shall support ergonomics tool-less operation by ground personel, including when wearing personal protection equipment.
+- P-4: Shall support ergonomics tool-less operation by ground personnel, including when wearing personal protection equipment.
 - P-5: Shall have non-destructive design for maintenance operations.
 - P-6: May be manually transportable and stackable while detached from aircraft.
 - P-7: May tolerate minor dimensional overhangs of oversized cargo.
@@ -31,7 +31,7 @@ Cargo inside may be dropped or released through the control from users or progra
 - M-2: Modern design approaches such as 3D printing, thin skins, hollow frames, and non-standard shapes or mount directions are encouraged.
 
 ## Safety:
-- S-1: Must include either (1) A full-weight-rated safety tether, or (2) At least 2 rigid structure connections for structrual fail-safe.
+- S-1: Must include either (1) A full-weight-rated safety tether, or (2) At least 2 rigid structure connections for structural fail-safe.
 - S-2: Must not generate harmful vibration, inertia or center of gravity shifting.
 - S-3: Must include cargo placement guide or marker to ensure the center of gravity is adjustable and controllable.
 - S-4: Must not perform any permanent structural deformation or load-induced malfunctions within the rated load and aircraft's operating acceleration.
