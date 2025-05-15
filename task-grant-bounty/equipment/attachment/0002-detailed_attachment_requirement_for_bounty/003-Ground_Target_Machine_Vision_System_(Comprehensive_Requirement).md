@@ -32,7 +32,7 @@ An airborne image processing system mainly composed of computing units, designed
 - M-4: Shall include on-ground companion software for system configuration and data output.
 
 ## Safety:
-- S-1: Must include heatsink or active heat removal design for computing unit.
+- S-1: Must include heat sink or active heat removal design for computing unit.
 
 ## Revision:
 16.05.25-1 Beef Noodle: Initial public release.
