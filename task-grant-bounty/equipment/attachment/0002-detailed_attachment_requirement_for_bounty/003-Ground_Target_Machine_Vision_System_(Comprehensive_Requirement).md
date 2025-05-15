@@ -11,11 +11,15 @@ An airborne image processing system mainly composed of computing units, which us
 
 ## Architecture & Boundary:
 - AB-1: Must accept 12~60V DC power supply and include anti-spark and voltage regulating design.
-- AB-: Must connect to other camera to acquire static image frames.
-
+- AB-2: Must connect to other camera to acquire static image or video frames.
+- AB-3: Must support RTSP or USB video input and RSTP video output.
+- AB-4: The system must be controllable and communicate via Ethernet, and with a power and reset control via CAN.
 
 ## Performance:
-- P-: May sort targets by different size, shape, visible colors, or custom signal format.
+- P-1: May sort targets by different size, shape, visible colors, or custom signal format.
+- P-: Shall have 1080p 60fps video rated computing power.
+- P-: Shall have performance and latency level as real-time system.
+- P-: Must have dust and water splash proof ablility.
 
 
 ## Manufacturing & Maintenance Process Technology:
