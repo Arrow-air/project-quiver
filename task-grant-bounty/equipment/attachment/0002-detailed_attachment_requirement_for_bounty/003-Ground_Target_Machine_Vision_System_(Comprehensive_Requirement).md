@@ -35,4 +35,4 @@ An airborne image processing system mainly composed of computing units, designed
 - S-1: Must include heatsink or active heat removal design for computing unit.
 
 ## Revision:
-15.05.25-1 Beef Noodle: Initial public release.
+16.05.25-1 Beef Noodle: Initial public release.
