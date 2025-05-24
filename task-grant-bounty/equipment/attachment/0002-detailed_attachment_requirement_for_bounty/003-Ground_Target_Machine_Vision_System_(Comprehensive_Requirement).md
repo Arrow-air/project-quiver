@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 003 - Ground Target Machine Vision System
-Version: 19.05.25-2 Egg Noodle
+Version: 24.05.25-2 Pork Noodle
 
 ## General Objective Description:
 An airborne image processing system mainly composed of computing units, designed to uses machine vision or AI method to extract and classify objects from input image frames. The main source of the images is other airborne cameras. The system can be used for animal detection or regional analysis.
@@ -31,6 +31,7 @@ An airborne image processing system mainly composed of computing units, designed
 - M-3: Shall output with standardized format (e.g. KML / KMZ) for compatibility with survey data archiving and exchanging (e.g. Google Earth, ArcGIS, QGIS, etc.).
 - M-4: Shall include on-ground companion software for system configuration and data output.
 - M-5: Design approaches of baseboard or extension board are encouraged.
+- M-6: Shall be able to import and work with user predefined rules or AI model.
 
 ## Safety:
 - S-1: Must include heat sink or active heat removal design for computing unit.
@@ -38,3 +39,4 @@ An airborne image processing system mainly composed of computing units, designed
 ## Revision:
 16.05.25-1 Beef Noodle: Initial public release.
 19.05.25-2 Egg Noodle: Added M-5.
+24.05.25-3 Pork Noodle: Added M-6.
