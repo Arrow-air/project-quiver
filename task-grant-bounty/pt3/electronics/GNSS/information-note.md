@@ -36,10 +36,11 @@ The objective is to select an appropriate GNSS system for Project Quiver, ensuri
 
 The team recommends the following GNSS selections:
         
-   -   Transition to **Holybro DroneCAN H-RTK F9P Rover** or **Systork Wren Mini** for UAV operational deployments due to their compact form factor, integrated antennas, and DroneCAN protocol compatibility. These options provide reliability and precision for operational scalability.
-    -  **Mateksys M9N-G4-3100**  as secondary backup GNSS
-    - Use test campaign to finalise combinations and selections.
-
+   - Project Quiver PT3 will be designed in a way that **Holybro DroneCAN H-RTK F9P Rover** and **Systork Wren Mini**  may be integrated, these will be ordered first and tried, these will then also be experimented during the decentralized test campaign
+   - These options provide reliability and precision for operational scalability.
+   - **Mateksys M9N-G4-3100** will be used as secondary backup GNSS
+   - Use test campaign to finalise combinations and selections.
+       
 # References
 
 -   [Project Quiver - GNSS System Options](https://docs.google.com/presentation/d/18Xd6aV_LBQb4nk88YzbedioLXHt0NIIe_R7d0gYp22A/edit#slide=id.p)
