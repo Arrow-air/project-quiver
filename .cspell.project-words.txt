@@ -143,3 +143,7 @@ blox
 Systork
 Septentrio
 finalise
+Avionix
+Auterion
+Skynode
+Blox
