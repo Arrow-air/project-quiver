@@ -135,6 +135,14 @@ Datalink
 assy
 heatshrink
 CANB
+UAVs
+GLONASS
+chipset
+Drotek
+blox
+Systork
+Septentrio
+finalise
 Avionix
 Auterion
 Skynode
