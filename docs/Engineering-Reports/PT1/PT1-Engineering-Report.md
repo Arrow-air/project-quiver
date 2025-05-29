@@ -1059,7 +1059,7 @@ A relay is used to control the motor inside of the dispenser. 5V and GND provide
 ![image](https://github.com/user-attachments/assets/b4e87b5c-fa6c-4776-ae2a-2b6d14b80e9c)
 
 
-[Attachment Interface](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
+[Attachment Interface](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?)
 
 ![image](https://github.com/user-attachments/assets/8b4354ae-9992-41d4-997b-5bc75e21ce94)
 
