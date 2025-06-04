@@ -97,7 +97,7 @@ Multiple radar altimeters and LiDAR sensors were benchmarked, focusing on field-
 # References
 
 1. [Ainstein US-D1 Datasheet & Integration Guide](https://ainstein.ai)  
-2. [Benewake TF03 Wiki](https://wiki.benewake.com)  
+2. [Benewake TF03 Wiki](https://en.benewake.com/TF03/index.html)  
 3. [LightWare LiDAR Documentation](https://lightwarelidar.com)  
 4. [ArduPilot Rangefinder Setup](https://ardupilot.org/copter/docs/common-rangefinder-landingpage.html)  
 5. [NanoRadar MR72 Overview](http://en.nanoradar.cn)  
