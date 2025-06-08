@@ -1,10 +1,7 @@
 ** Drc report for QuiverAttachPCB.kicad_pcb **
-** Created on 2025-06-02T13:07:13-0500 **
+** Created on 2025-06-08T09:14:15-0500 **
 
-** Found 1 DRC violations **
-[lib_footprint_mismatch]: Footprint 'CONN12_2077601281_MOL' does not match copy in library 'Molex 2077601281'.
-    Local override; warning
-    @(110.0334 mm, 133.9586 mm): Footprint J1
+** Found 0 DRC violations **
 
 ** Found 0 unconnected pads **
 

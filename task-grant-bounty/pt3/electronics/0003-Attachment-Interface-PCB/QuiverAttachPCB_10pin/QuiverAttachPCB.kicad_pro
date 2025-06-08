@@ -503,7 +503,7 @@
       "plot": "../gerbers/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "QuiverAttachPCB.step",
       "svg": "",
       "vrml": ""
     },

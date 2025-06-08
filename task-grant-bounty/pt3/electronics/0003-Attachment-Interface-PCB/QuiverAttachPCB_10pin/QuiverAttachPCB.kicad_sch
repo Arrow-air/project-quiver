@@ -6,7 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Project Quiver Attachment Interface PCB")
-		(date "2025-06-02")
+		(date "2025-06-08")
+		(rev "1.1")
 		(company "Arrow Air")
 	)
 	(lib_symbols
@@ -2521,7 +2522,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 104.14) (xy 85.09 104.14)
+			(xy 78.74 104.14) (xy 86.36 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3189,6 +3190,28 @@
 			)
 		)
 	)
+	(global_label "12VSW"
+		(shape input)
+		(at 86.36 114.3 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dcb1fe8f-5805-40de-b84e-3f627781fe10")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 95.5137 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "CAN1_N"
 		(shape input)
 		(at 190.5 140.97 0)
@@ -3725,73 +3748,6 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 85.09 104.14 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a656013b-43fc-46ed-92c6-b8e61f54643e")
-		(property "Reference" "#PWR02"
-			(at 81.28 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+12V"
-			(at 88.9 104.1399 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 85.09 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 85.09 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "818ecf1a-bd56-4387-861a-3a8c6408bf1a")
-		)
-		(instances
-			(project "QuiverAttachPCB"
-				(path "/faf6ae05-859a-4da4-87ce-2d178afa08f0"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+12V")
 		(at 86.36 99.06 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4070,7 +4026,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 114.3 90)
+		(at 86.36 104.14 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4079,7 +4035,7 @@
 		(fields_autoplaced yes)
 		(uuid "fd087597-bd5f-4e41-acf3-c05bb2579522")
 		(property "Reference" "#PWR04"
-			(at 92.71 114.3 0)
+			(at 92.71 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4088,7 +4044,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 90.17 114.2999 90)
+			(at 90.17 104.1399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4097,7 +4053,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 114.3 0)
+			(at 86.36 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4106,7 +4062,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 114.3 0)
+			(at 86.36 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4115,7 +4071,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 86.36 114.3 0)
+			(at 86.36 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)

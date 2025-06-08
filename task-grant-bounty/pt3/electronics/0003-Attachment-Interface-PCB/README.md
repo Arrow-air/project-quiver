@@ -8,8 +8,6 @@ The Project Quiver payload attachment PCB is a simple 2-layer board designed for
 This board provides standardized connectivity and mounting options for various payload configurations.
 
 
-
-
 ## Design Features
 
 - **2-layer PCB design** for cost-effective manufacturing
@@ -78,15 +76,15 @@ This board provides standardized connectivity and mounting options for various p
 | 1   | ETH_RX+    | Ethernet receive positive |
 | 2   | 12VSW      | Switched 12V power |
 | 3   | ETH_RX-    | Ethernet receive negative |
-| 4   | GND        | Ground reference |
+| 4   | 12VSW      | Switched 12V power |
 | 5   | ETH_TX+    | Ethernet transmit positive |
-| 6   | +12V       | Main 12V power supply |
+| 6   | GND        | Ground reference |
 | 7   | ETH_TX-    | Ethernet transmit negative |
 | 8   | GND        | Ground reference |
 | 9   | CAN1_N     | CAN bus negative |
-| 10  | FMU_CH1    | Flight Management Unit Channel 1 |
+| 10  | 12V        | Main 12V power supply |
 | 11  | CAN1_P     | CAN bus positive |
-| 12  | GND        | Ground reference |
+| 12  | FMU_CH1    | Flight Management Unit Channel 1 |
 
 **Signal Descriptions:**
 - **ETH_RX+/ETH_RX-**: Ethernet receive differential pair
