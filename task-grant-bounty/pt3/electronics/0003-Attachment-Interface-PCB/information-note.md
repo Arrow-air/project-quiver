@@ -17,11 +17,11 @@ This grant is issued for the design and delivery of a 2-layer Attachment Interfa
 
 ### Prior Art and Challenges
 
-This PCB design was comissioned for the development of a more efficient interface between the Project Quiver drone and payload. The previous version used an off-the-shelf [quick release plate](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?) by JMRRC tech, which used a 10-pin POGO interface and a micro JST header.
+This PCB design was commissioned for the development of a more efficient interface between the Project Quiver drone and payload. The previous version used an off-the-shelf [quick release plate](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?) by JMRRC tech, which used a 10-pin POGO interface and a micro JST header.
 
 The previous implementation introduced two challenges:
 
-1) The thin wire guage needed for micro JST headers limited the maximum power and current consumption of the payload.
+1) The thin wire gauge needed for micro JST headers limited the maximum power and current consumption of the payload.
 2) The 10-pin layout, with doubled-up power and ground pins, limited the interface options for a payload, leaving at most a remaining 4 pins after 2x 12V, 2x 12V_GND, and a 5V and 5V_GND bus.
 
 ### Attempted Improvements
