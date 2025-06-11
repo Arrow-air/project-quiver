@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 004 - Standard Magnification Camera
-Version: 15.05.25-1 Boar
+Version: 12.06.25-2 Boar Pizza
 
 ## General Objective Description:
 
@@ -13,10 +13,10 @@ The camera module can be attached or detached from a gimbal stabilizer or other 
 - OF-2: May support on-ground wireless imagery and log download functions.
 
 ## Architecture & Boundary:
-- AB-1: Shall accept 12~60V DC power supply and include an anti-spark design.
+- AB-1: Shall accept 12V DC power supply and include an anti-spark design.
 - AB-2: Must include real-time video stream switching mechanism that can be controlled by flight controller via any supported control signals.
 - AB-3: Must include a state machine interface for video stream routing status feedback, and be able to communicate with aircraft's telemetry system.
-- AB-4: Must be able to pair with 3-axis gimbal via standard 1/4 or non-standard mounting interface.
+- AB-4: Must be able to pair with 3-axis gimbal via standard UNC 1/4"-20 or custom mating interface.
 - AB-5: Shall support H.264 and MJPEG encoding for balanced image quality and latency.
 - AB-6: Shall use Ethernet over UDP protocol for RTSP video output.
 
@@ -41,3 +41,4 @@ The camera module can be attached or detached from a gimbal stabilizer or other 
   
 ## Revision:
 - 15.05.25-1 Boar: Initial public release.
+- 12.06.25-2 Boar Pizza: Fix power limit at AB-1. Fix standard description in AB-4.
