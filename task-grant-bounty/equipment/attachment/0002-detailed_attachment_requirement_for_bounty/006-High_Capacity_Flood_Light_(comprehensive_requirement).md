@@ -1,19 +1,19 @@
 # Comprehensive Requirement
 ### 006 - High Capacity Flood Light
-Version: 15.05.25-1 Dragon Lady
+Version: 12.06.25-2 Lemon Candy
 
 ## General Objective Description:
 A high brightness directional lighting lamp that can be used for various purposes, powered directly by the aircraft power supply. With optional color and light effect changing functions.
 
 ## Optional Functions:
 - OF-1: May support flashing and breathing light effect functions.
-- OF-2: May design with multiple light source.
+- OF-2: May be designed with multiple light source.
 - OF-3: May support adjustable brightness function.
 - OF-4: May support external color changing filters function for special scenario.
 
 ## Architecture & Boundary:
 - AB-1: Must accept 48~60V DC power supply and include anti-spark and voltage regulating design.
-- AB-2：May be able to pair with 3-axis gimbal via standard 1/4 or non-standard mounting interface, excluding power supply wiring integration.
+- AB-2：May be able to pair with 3-axis gimbal via standard UNC 1/4"-20 or custom mating interface, excluding power supply wiring integration.
 - AB-3: May be controllable by CAN or analog control signal.
 - AB-4: May include a state machine interface for lamp status and control feedback.
 
@@ -36,4 +36,5 @@ A high brightness directional lighting lamp that can be used for various purpose
 - S-3: May include an isolated power supply design.
   
 ## Revision:
-- 15.05.25-1 Dragon Lady: Initial public release. 
+- 15.05.25-1 Dragon Lady: Initial public release.
+- 12.06.25-2 Lemon Candy: Fix standard description in AB-2.
