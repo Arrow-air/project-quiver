@@ -4,7 +4,7 @@ Valid
 
 # Project Description
 
-Due to certain bounties will be created to stimulate the attachment R&D and 6 attachments were been selected during the vote and several discussions in the [Discord thread](https://discord.com/channels/853833144037277726/1362396188615250090/1371554269970300959).  
+This works sets out to create bounties to stimulate payload attachment RnD. Via internal [voting and discussion](https://discord.com/channels/853833144037277726/1362396188615250090/1371554269970300959), 6 attachment options have been pushed forward for initial high priority development.  
 Certain documents will be created in this same directory to explain and showcase the detailed requirement of those selected attachments.
 
 # Methodology
