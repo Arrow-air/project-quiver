@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 003 - Ground Target Machine Vision System
-Version: 24.05.25-2 Pork Noodle
+Version: 12.06.25-4 Dragon Noodle
 
 ## General Objective Description:
 An airborne image processing system mainly composed of computing units, designed to uses machine vision or AI method to extract and classify objects from input image frames. The main source of the images is other airborne cameras. The system can be used for animal detection or regional analysis.
@@ -10,7 +10,7 @@ An airborne image processing system mainly composed of computing units, designed
 - OF-2: May support on-ground wireless data transfer functions.
 
 ## Architecture & Boundary:
-- AB-1: Must accept 12~60V DC power supply and include anti-spark and voltage regulating design.
+- AB-1: Must accept 12V DC power supply and include anti-spark and voltage regulating design.
 - AB-2: Must support interface-level integration with other airborne camera to acquire static image or video frames.
 - AB-3: Shall include GNSS and AHRS synchronization and logging capability.
 - AB-4: Must support RTSP or USB video input and RTSP video output.
@@ -40,3 +40,4 @@ An airborne image processing system mainly composed of computing units, designed
 16.05.25-1 Beef Noodle: Initial public release.
 19.05.25-2 Egg Noodle: Added M-5.
 24.05.25-3 Pork Noodle: Added M-6.
+12.06.25-4 Dragon Noodle: Fix power limit in AB-1.
