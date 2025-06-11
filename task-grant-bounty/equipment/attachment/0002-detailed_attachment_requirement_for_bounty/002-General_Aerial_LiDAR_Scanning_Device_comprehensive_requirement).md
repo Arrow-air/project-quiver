@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 006 - General Aerial LiDAR Scanning Device
-Version: 15.05.25-1 Glide
+Version: 12.06.25-2 Powered Glider
 
 ## General Objective Description:
 An airborne LiDAR system designed to acquire high-precision point cloud data of terrestrial objects. The system integrates inertial navigation, onboard point cloud processing, and embedded data storage subsystems. Color data fusion is not required at this stage of deployment.
@@ -11,12 +11,12 @@ An airborne LiDAR system designed to acquire high-precision point cloud data of 
 - OF-3: May support on-ground wireless point cloud and log download functions.
 
 ## Architecture & Boundary:
-- AB-1: Must accept 12~60V DC power supply and include anti-spark and voltage regulating design.
+- AB-1: Must accept 12V DC power supply (Or 48~60V DC via external power connection) and include anti-spark and voltage regulating design.
 - AB-2: May include an isolated power supply design for minimize the EMI and noise.
 - AB-3: Must include a high-precision navigation subsystem integrating GNSS, AHRS, PPS synchronization, and logging capabilities.
 - AB-4: Must design with a dedicated companion computer with ≥ 128 GB of data storage for subsystem architecture.
 - AB-5：The LiDAR sensor shall be mounted in a location maximizing ground coverage.
-- AB-6: May be able to pair with 3-axis gimbal via standard 1/4 or non-standard mounting interface, excluding power supply wiring integration, for improved pose accuracy and repeatability.
+- AB-6: May be able to pair with 3-axis gimbal via standard UNC 1/4"-20 or custom mating interface, excluding power supply wiring integration, for improved pose accuracy and repeatability.
 - AB-7: Must include a state machine interface for subsystem status feedback.
 - AB-8: The subsystem must be controllable and communicate via Ethernet, and with a limited control via CAN.
 
@@ -43,3 +43,4 @@ An airborne LiDAR system designed to acquire high-precision point cloud data of 
 
 ## Revision:
 - 15.05.25-1 Glide: Initial public release.
+- 12.06.25-2 Powered Glider: Fix power limit in AB-1. Fix standard description in AB-6.
