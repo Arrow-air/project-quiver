@@ -1,7 +1,7 @@
 <!--Chinese language comparison included 包含汉语对照-->
 # Status 
 
-Draft
+Valid
 
 # Project Description
 
@@ -29,6 +29,10 @@ The Fusion 360 software was used for this design and delivery. All new designs w
 
 ## Enclosure Assembly
 
+Total|Explode 
+:-:|:-:
+![](image/total_view.jpg)|![](image/enclosure_explode.jpg)
+
 The enclosure uses various designs to prevent rain from splashing, dripping or seeping into the electronic device area. The Enclosure Assembly is divided into 4 parts: Battery PCB enclosure, Main enclosure, Front lid and Top cap.
 
 - The opening part that needs to interact with various electronic devices uses a rain canopy design and a drip-proof design, and the gaps and edges of the enclosure uses a reverse slope design for water-proof.
@@ -52,6 +56,10 @@ Please visit the model space for more specific design details.
 
 ## GNSS Stand
 
+Total|Explode 
+:-:|:-:
+![](image/gnss_stand.jpg) | ![](image/gnss_stand_explode.jpg)
+
 - The GNSS receiver is placed about 2 cm above the FCU enclosure to reduce EMI interference. A new arch-type bracket is specially designed for this layout, which enables the GNSS module to be stably supported without direct contact with the FCU and its PCB.
 - The GNSS stand is divided into the bracket and the fastening frame. The bracket is the main structure, and the fastening frame is used to clamp the GNSS receiver's PCB with the main structure.
 
@@ -61,6 +69,10 @@ Please visit the model space for more specific design details.
 -->
 
 ## Attachment Interface
+
+Lower|Side Explode 
+:-:|:-:
+![](image/lower_attachment_interface.jpg) | ![](image/side_attachment_interface_explode.jpg)
 
 - New attachment interface is added on each side of the airframe. At the same time, the vertical plate is modified to close the central lightening hole and added screw holes and cable openings required for the attachment interface in its original position.
 - A side-facing cable opening is designed on the extension structure of the bottom attachment interface, and the opening is designed to prevent scratching the cable, also prevent rain from penetrating along the cable.
@@ -73,6 +85,10 @@ Please visit the model space for more specific design details.
 -->
 
 ## Altimeter Mounting Frame
+
+Total|Explode 
+:-:|:-:
+![](image/altimeter_mount.jpg) | ![](image/altimeter_mount_explode.jpg)
 
 After referencing and adjusting the 3D models of the two altimeters and adjusting their positions, the new altimeter mounting frame was designed based on their new positions.
 
@@ -90,12 +106,12 @@ After referencing and adjusting the 3D models of the two altimeters and adjustin
 
 The main results are:
 - 3D models of several new parts for 3D printing, some of them requires support structure enabled when printing.
-- Some old airframe metal parts need to be drilled or re-ordered.
+- New modification for some old airframe metal parts need to be drilled or re-ordered.
 
 <!--
 主要成果为：
 - 多个新部件的3d模型，以供3d打印，部分新零件在打印时需要使用支撑功能。
-- 部分旧的airframe金属部件需要钻孔或重新定制。
+- 对于部分旧airframe金属部件的新改动，需要钻孔或重新定制。
 -->
 
 # Remarks 
