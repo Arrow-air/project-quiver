@@ -90,7 +90,7 @@ Total|Explode
 :-:|:-:
 ![](image/altimeter_mount.jpg) | ![](image/altimeter_mount_explode.jpg)
 
-After referencing and adjusting the 3D models of the two altimeters and adjusting their positions, the new altimeter mounting frame was designed based on their new positions.
+After referencing and adjusting the 3D models of the two altimeters, the new altimeter mounting frame was designed based on their new positions.
 
 - The altimeter mounting frame includes a cable management slot that can limit the cable position of the altimeter and the bottom attachment interface to a certain extent to prevent the cables from moving and blocking the LiDAR altimeter.
 - The new altimeter mounting frame requires a new hole to be drilled on the attachment plate to complete the installation.
