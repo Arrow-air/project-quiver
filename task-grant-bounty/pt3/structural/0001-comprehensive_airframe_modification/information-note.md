@@ -47,7 +47,7 @@ Please visit the model space for more specific design details.
 
 - 在需要与各类电子设备交互的开口部分使用了雨檐设计和防滴落设计，而外壳的缝隙和边缘采用了具有反坡坡度的防渗水设计。
 - 为power connector PCB设计了新的外壳，具有现有更好的散热和对PCB的结构支撑作用，同时尽量减轻了非受力部分的结构重量。
-- main enclosure的一侧设有为telemetery天线预留的RP-SMA连接器安装支架。
+- main enclosure的一侧设有为telemetry天线预留的RP-SMA连接器安装支架。
 - top cap则延续了PT2的铰链操作的功能，并重新设计了整个外形和体积，以满足机身内RTK-GNSS接收机的净空需求。
 
 请访问model space以查看更多设计细节。
