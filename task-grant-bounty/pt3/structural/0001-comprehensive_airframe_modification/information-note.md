@@ -37,7 +37,7 @@ The enclosure uses various designs to prevent rain from splashing, dripping or s
 
 - The opening part that needs to interact with various electronic devices uses a rain canopy design and a drip-proof design, and the gaps and edges of the enclosure uses a reverse slope design for water-proof.
 - A new enclosure is designed for the power connector PCB, which has better heat dissipation and structural support for the PCB, while minimizing the structural weight of the non-stressed part.
-- One side of the main enclosure is designed with an RP-SMA connector mounting bracket reserved for the telemetery antenna.
+- One side of the main enclosure is designed with an RP-SMA connector mounting bracket reserved for the telemetry antenna.
 - The top cap continues the hinge operating function of PT2, and the entire shape and volume are redesigned to meet the clearance requirements of the RTK-GNSS receiver in the cockpit.
 
 Please visit the model space for more specific design details.
@@ -79,7 +79,7 @@ Lower|Side Explode
 - Considering the convenience of disassembly and replacement of mission equipment, all attachment interfaces are now installed on a new designed extender with an extension length of 3cm to increase the clearance between them and the fuselage.
 
 <!--
-- 在airframe两侧各新增了一个attachment interface。同时对vertical plate进行了改动，闭合了中央的减轻孔，并在其原有位置上增加了attachmen interface所需的螺丝孔位和线缆开口。
+- 在airframe两侧各新增了一个attachment interface。同时对vertical plate进行了改动，闭合了中央的减轻孔，并在其原有位置上增加了attachment interface所需的螺丝孔位和线缆开口。
 - 在底部attachment interface的延伸结构上设计了侧向的线缆开口，且开口处具有防刮蹭线缆和防雨水沿线缆渗入的设计。
 - 考虑到便于任务设备的拆装和更换，所有attachment interface现在均安装在新设计的延伸支架上，延伸长度为3cm，以增加其与机身之间的净空距。
 -->
