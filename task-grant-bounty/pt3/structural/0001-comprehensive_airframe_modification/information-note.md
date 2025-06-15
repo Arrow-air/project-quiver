@@ -102,6 +102,42 @@ After referencing and adjusting the 3D models of the two altimeters, the new alt
 - 新的高度计支架需要在attachment plate上钻出一新的孔位以完成安装。
 -->
 
+## Battery Wall Modifications
+
+Battery Wall
+:-:
+![](image/battery_wall.png)
+
+Three modifications on the battery walls were applied:
+
+- 4 holes on each side for attachment interface installation. The holes are sized based on M3 screw heads so that the screws can be placed through the holes and tightened with a screwdriver.
+- Motor arm connector lower screws were installed through chamfered holes between middle plate and battery walls previously, making them hard to replace. The screw holes were extended through the battery walls and cutouts were created for tightening the screws with an allen key.
+- Harness cutouts are created on the top and bottom surfaces for routing cables between layers. 
+
+## Battery Slider Modification
+
+Battery Slider
+:-:
+![](image/battery_slider.png)
+
+Dents aligned with side attachment interface installation holes were created on the slider for the screws and a screwdriver. One battery slider - battery wall installation hole was shifted so that it can be reached through the attachment interface hole.
+
+## Harness Cutouts on the Plates
+
+Plates
+:-:
+![](image/plates.png)
+
+Cutouts were created on the plates for routing cables between layers.
+
+## Main PCB Mount
+
+Without PCB | With PCB
+:-:|:-:
+![](image/pcb_mount_nopcb.png) | ![](image/pcb_mount_withpcb.png)
+
+Main PCB holder was modified so that the holes are aligned with PCB installation holes. Additional anchors were created for the flight controller and Raspberry Pi.
+
 # Results and Deliverables 
 
 The main results are:
