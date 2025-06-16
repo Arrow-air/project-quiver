@@ -9,8 +9,9 @@ In order to realize the functions of Quiver's next phase PT3 plan, it was decide
 
 - Enclosure Assembly: Since the main structure of PT2 is aluminum plate frame, and the enclosures of the power supply and avionics areas have only a limited protection level. Therefore, it was decided to design a new set of enclosures, and at the same time upgrade some of the original enclosures to meet their protection level for critical device areas.
 - GNSS Stand: After many discussions, it was decided that the RTK-GNSS module would be installed inside the cockpit, but new installation methods needed to be explored, so the new GNSS stand was designed.
-- Attachment Interface: The number of attachment interfaces increased from 1 to 3, and all attachment interfaces were added with extension structures to enhance ergonomics.
+- Attachment Interface: The number of attachment interfaces increased from 1 to 3, and all attachment interfaces were added with extension structures to enhance ergonomics. 
 - Altimeter Mounting Frame: An integrated mounting bracket was designed to reintegrate the installation layout of LiDAR and radar altimeter.
+- Multiple airframe structrual parts: In order to make the above major changes work properly, some of the original airframe parts were modified to ensure installation and wiring.
 
 <!-- 
 为了实现Quiver下一阶段的PT3计划中的功能，决定在PT2至PT3的升级工作中，对cockpit区域的外壳、GNSS模块、attachment interface和高度计安装方式进行大幅度改良：
@@ -19,13 +20,26 @@ In order to realize the functions of Quiver's next phase PT3 plan, it was decide
 - GNSS Stand：经过多次讨论决定，RTK-GNSS模块将安装在cockpit内部，但需要探索新的安装方式，因此设计了新的GNSS stand。
 - Attachment Interface：attachment interface由1个增加为3个，同时所有attachment interface均添加了延伸结构，以强化人机工效。
 - Altimeter Mounting Frame：设计了集成安装支架，以重新整合LiDAR和无线电高度计的安装布局。
+- Multiple airframe structrual parts：为了让以上主要改动正常运作，对部分原有的airframe部件进行了修改，以确保可安装及布线。
 -->
 
 # Methodology 
 
-The Fusion 360 software was used for this design and delivery. All new designs were based on the 3D models of the PT2 airframe, Main PCB, Battery connector PCB designed by Julius and various externally imported parts.
+The Fusion 360 software was used for this collaborative design and delivery. All new designs were based on the 3D models of the PT2 airframe, Main PCB, Battery connector PCB designed by Julius and various externally imported parts.
 
-<!--本次设计和交付均使用Fusion 360软件，所有的新设计均基于Julius所设计的PT2 airframe、Main PCB、Battery connector PCB和各类外部导入的零部件的3d模型。-->
+<!--本次协作设计和交付均使用Fusion 360软件，所有的新设计均基于Julius所设计的PT2 airframe、Main PCB、Battery connector PCB和各类外部导入的零部件的3d模型。-->
+
+# Results and Deliverables 
+
+The main results are:
+- 3D models of several new parts for 3D printing, some of them requires support structure enabled when printing.
+- New modification for some old airframe metal parts need to be drilled or re-ordered.
+
+<!--
+主要成果为：
+- 多个新部件的3d模型，以供3d打印，部分新零件在打印时需要使用支撑功能。
+- 对于部分旧airframe金属部件的新改动，需要钻孔或重新定制。
+-->
 
 ## Enclosure Assembly
 
@@ -137,17 +151,5 @@ Without PCB | With PCB
 ![](image/pcb_mount_nopcb.png) | ![](image/pcb_mount_withpcb.png)
 
 Main PCB holder was modified so that the holes are aligned with PCB installation holes. Additional anchors were created for the flight controller and Raspberry Pi.
-
-# Results and Deliverables 
-
-The main results are:
-- 3D models of several new parts for 3D printing, some of them requires support structure enabled when printing.
-- New modification for some old airframe metal parts need to be drilled or re-ordered.
-
-<!--
-主要成果为：
-- 多个新部件的3d模型，以供3d打印，部分新零件在打印时需要使用支撑功能。
-- 对于部分旧airframe金属部件的新改动，需要钻孔或重新定制。
--->
 
 # Remarks 
