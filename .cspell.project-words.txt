@@ -1,4 +1,4 @@
-Arrowair
+ccArrowair
 alperenag
 Tattu
 Onshape
@@ -152,3 +152,4 @@ RCOU
 PSCN
 PSCE
 PSCD
+commitlintrc
