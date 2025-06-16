@@ -11,7 +11,7 @@ In order to realize the functions of Quiver's next phase PT3 plan, it was decide
 - GNSS Stand: After many discussions, it was decided that the RTK-GNSS module would be installed inside the cockpit, but new installation methods needed to be explored, so the new GNSS stand was designed.
 - Attachment Interface: The number of attachment interfaces increased from 1 to 3, and all attachment interfaces were added with extension structures to enhance ergonomics. 
 - Altimeter Mounting Frame: An integrated mounting bracket was designed to reintegrate the installation layout of LiDAR and radar altimeter.
-- Multiple airframe structrual parts: In order to make the above major changes work properly, some of the original airframe parts were modified to ensure installation and wiring.
+- Multiple airframe structural parts: In order to make the above major changes work properly, some of the original airframe parts were modified to ensure installation and wiring.
 
 <!-- 
 为了实现Quiver下一阶段的PT3计划中的功能，决定在PT2至PT3的升级工作中，对cockpit区域的外壳、GNSS模块、attachment interface和高度计安装方式进行大幅度改良：
@@ -20,7 +20,7 @@ In order to realize the functions of Quiver's next phase PT3 plan, it was decide
 - GNSS Stand：经过多次讨论决定，RTK-GNSS模块将安装在cockpit内部，但需要探索新的安装方式，因此设计了新的GNSS stand。
 - Attachment Interface：attachment interface由1个增加为3个，同时所有attachment interface均添加了延伸结构，以强化人机工效。
 - Altimeter Mounting Frame：设计了集成安装支架，以重新整合LiDAR和无线电高度计的安装布局。
-- Multiple airframe structrual parts：为了让以上主要改动正常运作，对部分原有的airframe部件进行了修改，以确保可安装及布线。
+- Multiple airframe structural parts：为了让以上主要改动正常运作，对部分原有的airframe部件进行了修改，以确保可安装及布线。
 -->
 
 # Methodology 
