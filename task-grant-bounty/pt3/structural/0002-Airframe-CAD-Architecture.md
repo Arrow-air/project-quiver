@@ -105,7 +105,4 @@ The airframe was designed using Fusion 360 and evaluated through mechanical reas
 |		|	3400 - Battery	|	3410 - Battery	|	3411 - Battery	|
 
 
-### Overview of Changes
-
-
 # Remarks
