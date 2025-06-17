@@ -2,7 +2,7 @@
 # <p align="center">Project Quiver PT1 Engineering Report</p>  
 
 ### *<p align="center">Authors:</p>*
-<p align="center">21stCenturyAlex</p> <p align="center">alperenag</p> <p align="center">errrks.eth</p> <p align="center">Julius</p> <p align="center">KBM (Dow Fisher K)</p> <p align="center">ZeynepB</p> 
+<p align="center">21stCenturyAlex</p> <p align="center">alperenag</p> <p align="center">errrks.eth</p> <p align="center">Julius</p> <p align="center">Dow Fisher KBM</p> <p align="center">ZeynepB</p> 
 
 <br>
 <br>
@@ -948,7 +948,7 @@ A toggle switched was placed on the positive lead going to the UBEC from the bat
   
 ![image](https://github.com/user-attachments/assets/8d76d1ce-e5f8-4611-9f08-0283cbeaf11c)
 
-[TL60-10 Power Distribution Module XT60](https://www.aliexpress.us/item/3256807277265897.html?gatewayAdapt=glo2usa&mp=1&spm=a2g0o.productlist.0.0.69c33d1eTWCvNb)
+[TL60-10 Power Distribution Module XT60](https://www.aliexpress.us/item/1005007463580649.html?gatewayAdapt=4itemAdapt)
 Nothing too technical here. We opted for a simple splitter to handle all of the XT60 connections to the ESCs. 
 
 </details>
@@ -957,7 +957,7 @@ Nothing too technical here. We opted for a simple splitter to handle all of the 
 <summary><h4>ESC</h4></summary>
 <br>
   
-See Propulsion System section for detailed description on the [HobbyWing X6 Plus](https://www.hobbywing.com/en/products/xrotor-x6-plus269) 
+See Propulsion System section for detailed description on the [HobbyWing X6 Plus](https://hobbywing.com/en/products/xrotor-x6-plus269) 
 
 </details>
 
@@ -1059,7 +1059,7 @@ A relay is used to control the motor inside of the dispenser. 5V and GND provide
 ![image](https://github.com/user-attachments/assets/b4e87b5c-fa6c-4776-ae2a-2b6d14b80e9c)
 
 
-[Attachment Interface](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
+[Attachment Interface](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?)
 
 ![image](https://github.com/user-attachments/assets/8b4354ae-9992-41d4-997b-5bc75e21ce94)
 
