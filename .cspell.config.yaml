@@ -26,4 +26,6 @@ ignorePaths:
   - "src/*.plan"
   - "**/parameters.param"
   - "project-data"
+  - "**/*.{kicad*,step,numbers,drl,gbr,gbrjob,}"
+  - "**/fp-info-cache"
 noConfigSearch: true
