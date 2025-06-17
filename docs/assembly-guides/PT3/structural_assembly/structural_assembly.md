@@ -29,18 +29,45 @@ Table 1: Structure parts and additional material
 
 ## Preparation
 
-### Parts 1:3
-Parts 1 & 2: Aluminum 6 series, 2 mm thickness. Laser cut, sanded. 
+### Parts 1-3
+- All three are aluminum 6 series sheets, laser cut, sanded. 
+- Bounding box dimension is 300x300x2 mm for each.
 
-| Part 1 (Upper Plate) | Part 2 (Mid Plate) | Part 3 (Lower Plate)|
+| | Part 1 (Upper Plate) | Part 2 (Mid Plate) | Part 3 (Lower Plate)|
+|--|--|--|--|
+|Thickness|2 mm|2 mm|4 mm|
+| Image| ![](assets/images/part1.png) | ![](assets/images/part2.png) | ![](assets/images/part3.png) |  
+| CAD File|[Part 1](assets/models/part1.step)| [Part 2](assets/models/part2.step)| [Part 3](assets/models/part3.step)|
+
+### Parts 4-6
+- All three are aluminum 6 series, 40x40x2 mm square tubes, laser cut, sanded. 
+- Part 5 and Part 6 are identical, order 2 parts for the same geometry.
+
+| | Part 4 (Cockpit Support Beam CW Long) | Part 5 & 6 (Cockpit Support Beam CCW Back & Front) |
 |--|--|--|
-| ![](assets/part1.jpg) | ![](assets/image/part2.jpg) | ![](assets/image/part3.jpg) |  
-|[Part 1](https://www.mcmaster.com/97525A251)| [Part 2](https://www.mcmaster.com/97525A251)| [Part 3](https://www.mcmaster.com/97525A251)|
+|Length|289.2 mm|124.2 mm|
+| Image| ![](assets/images/part4.png) | ![](assets/images/part5_6.png) |
+| CAD File|[Part 4](assets/models/part4.step)| [Part 5 & 6](assets/models/part5_6.step)|
 
+## Parts 7-8
+- Both are aluminum 6 series, 1000x30x2 mm rectangular tubes, laser cut, sanded.
+- Length is 300 mm for each.
+- Parts are identical, order 2 parts for the same geometry.
 
+| | Part 7 & 8 (Battery Wall Left & Right) |
+|--|--|
+| Image| ![](assets/images/part7_8.png) |
+| CAD File|[Part 7 & 8](assets/models/part7_8.step)|
 
-Part 3: Aluminum 6 series, 4 mm thickness. Laser cut, sanded.
+## Part 9
+- Off-the-shelf component.
+- 30 mm option.
+- Link: https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html?spm=a2756.order-detail-ta-bn-b.0.0.78e1f19cegXkOZ
 
+## Parts 10-12
+- 30x2 mm circular carbon-fiber tubes with different lenghts.
+- Reference link: https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-12-20mm
+  - Order 5 x 1000 mm 
 ## Tool List
 
 - You need the following tools:
@@ -55,174 +82,7 @@ Part 3: Aluminum 6 series, 4 mm thickness. Laser cut, sanded.
   - Cleaning agent
 - Check if all the necessary parts are there
 
-## Assembly steps
 
-### Step 1: Prepare the top and bottom aluminum plate
-
-- Parts you need in this step: 1x Mid plate; 1x Upper plate
-
-- Get the top aluminum plate and the bottom aluminum plate ready.
-
-  ![](https://holocron.so/uploads/f220a43e-image-1.png)
-
-
-- Note: The plates are not symmetrical. The holes for the long square aluminum tube and the short aluminum tube are different. For the next step, you need to make sure that you are applying the chamfers to the correct side.
-
-  ![](https://holocron.so/uploads/52c9f27f-image-2.png)
-
-  ![](https://holocron.so/uploads/c6fe1584-image-3.png)
-
-
-- Use the chamfer bit and your cordless screwdriver to create chamfers on the drill holes for the folding motor arm adapter on the top and bottom aluminum plate. You can check with one of the designated screws if you chamfer is wide enough. The next picture shows which holes need the chamfer.
-
-  ![](https://holocron.so/uploads/49ec8cfb-image-2.png)
-
-  ![](https://holocron.so/uploads/810c6512-image-3.png)
-
-
-- Clean the two plates from any metal dust.
-
-- Set aside the top plate. You will need the bottom plate in the next step.
-
-### Step 2: Assemble the bottom plate with the small square tubes
-
-- Parts you need in this step: 1x Bottom plate, 2x Small square tube 40x40x2 aluminum (length: 124 mm), 1x Small square tube 40x40x2 aluminum (length: 289 mm), 13x Rivet 1
-
-- Clean all parts from fat residues and dust.
-
-- Lay down the three square tubes like in the picture and apply some adhesive near the holes.
-
-  ![](https://holocron.so/uploads/aa64cc3e-image-6.png)
-
-
-- Place the bottom plate over it and and rivet the components together with the 13 rivets shown in the next picture. Make sure the chamfers are facing upwards.
-
-  ![](https://holocron.so/uploads/955719c2-image-7.png)
-
-
-### Step 3:
-
-- Parts you need in this step: 4x Motor arm adapter, 24x Screw 1
-- Place the motor arm connectors under the 2mm plate. Orientate the motor arm adapters in the same folding direction.
-- Screw the motor arm adapters to the assembly with 24x Screw 1. Use loctite to secure the screws!
-
-  ![](https://holocron.so/uploads/2ba62c6d-image-8.png)
-
-
-### Step 4:
-
-- Parts you need in this step: 2x Side rectangle 30x100x2 aluminum, 10x Rivet 2
-
-- Clean all parts from fat residues and dust.
-
-- Place the rectangular tubes parallel to each other and apply adhesive to the top around the rivet holes.
-
-  ![](https://holocron.so/uploads/77e2d875-image-9.png)
-
-
-- Turn around the assembly.
-
-- Rivet the aluminum sides to the assembly with 10x Rivet 2.
-
-  ![](https://holocron.so/uploads/3f0db73c-image-10.png)
-
-
-### Step 5:
-
-- Parts you need in this step: 1x Top plate, 13x Rivet 1, 24x Screw 1
-
-- Clean all parts from fat residues and dust.
-
-- Apply some adhesive on the top surface of the square tubes around the rivet holes.
-
-  ![](https://holocron.so/uploads/9c2ac06d-image-11.png)
-
-
-- Place the top plate on top of the assembly and rivet it together with 13x Rivet 1. Use 24x Screw 1 to also screw the top plate to the motor arm connectors. Use loctite to secure the screws!
-
-  ![](https://holocron.so/uploads/1a612f27-image-12.png)
-
-
-### Step 6:
-
-- Parts you need in this step: 1x Attachment plate
-
-- Clean all parts from fat residues and dust.
-
-- Apply some adhesive on the top surface of the rectangular aluminum tubes near the rivet holes.
-
-  ![](https://holocron.so/uploads/8b1c1077-image-13.png)
-
-
-- Place the attachment plate on the structure and rivet it together with 10x Rivet 2.
-
-  ![](https://holocron.so/uploads/bdeb2593-image-14.png)
-
-
-### Step 7:
-
-- Parts you need in this step: 4x Aluminum landing leg adapter, 16x Screw 2
-
-- Place the landing leg adapters in the corners of the structure. The adapters are facing outside to the left and right of the structure.
-
-  ![](https://holocron.so/uploads/7740620f-image-15.png)
-
-
-- Screw the adapters with 16x Screw 2 to the assembly. Use loctite to secure the screws!
-
-  ![](https://holocron.so/uploads/7f79e32e-image-16.png)
-
-
-### Step 8:
-
-- Parts you need in this step: 4x CF landing leg beam (length: 400mm), Screw package from the aluminum landing leg adapters
-- Insert the four CF landing leg beams into the landing leg adapters. Use the screws that came with the landing gear adapters to secure the tubes in place. Use loctite to secure the screws.
-
-  ![](https://holocron.so/uploads/43f03364-image-17.png)
-
-
-### Step 9:
-
-- Parts you need in this step: 2x CF landing leg bottom beam (500mm), 4x Landing leg adapter bottom (printed), 24x Screw 3, 24x Washer 1, 24x Nut 1
-
-- Prepare the bottom lending legs with the 3D printed adapters like in the following picture.
-
-  ![](https://holocron.so/uploads/eca2b175-image-18.png)
-
-
-- Place the prepared bottom landing gear on the four carbon fiber tubes that were previously screwed into the structure.
-
-  ![](https://holocron.so/uploads/85cc37ea-image-19.png)
-
-
-- Fix the landing gear in place with 24x Screw 3, 24x Washer 1, 24x Nut 1.
-
-  ![](https://holocron.so/uploads/33299f27-image-20.png)
-
-
-### Step 10:
-
-- Parts you need in this step: 2x Battery slider, 8x Screw 2
-
-- Place the 3D printed battery sliders inside the frame. The angled end is orientated to the front of the structure (were the cutouts in the plates are).
-
-  ![](https://holocron.so/uploads/809c3a1a-image-21.png)
-
-
-- Use 8x Screw 2 to fix the two battery sliders to the frame. Secure the screws with loctite.
-
-  ![](https://holocron.so/uploads/77a03c2c-image-22.png)
-
-
-### Step 11:
-
-- Parts you need in this step: 4x CF motor beam (length: 360mm), Screw package from motor beam adapter
-- Place the 4 motor beams into the foldable motor beam adapter. Use the screw package that came with the foldable motor beam adapter to secure the motor beams to the structure. Secure the screws with loctite!
-
-  ![](https://holocron.so/uploads/25f76ac0-image-23.png)
-
-
-### The assembly of the quiver PT2 structure is finished.
 
 If you assembled it right your structure should look almost like the following picture.
 
