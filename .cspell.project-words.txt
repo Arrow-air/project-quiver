@@ -135,6 +135,10 @@ Datalink
 assy
 heatshrink
 CANB
+<<<<<<< errrks-Battery-PCB
+ENIG
+datasheets
+=======
 UAVs
 GLONASS
 chipset
@@ -172,3 +176,4 @@ RCIN
 POSZ
 Baro
 DEFLT
+>>>>>>> main
