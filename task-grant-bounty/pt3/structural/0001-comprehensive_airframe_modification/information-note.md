@@ -152,4 +152,12 @@ Without PCB | With PCB
 
 Main PCB holder was modified so that the holes are aligned with PCB installation holes. Additional anchors were created for the flight controller and Raspberry Pi.
 
+## Cockpit Support Beams
+
+Cockpit Support Beams
+:-:
+![](image/cockpit_support.png)
+
+Cutouts on the cockpit support beams are created for weight reduction of 200 g.
+
 # Remarks 
