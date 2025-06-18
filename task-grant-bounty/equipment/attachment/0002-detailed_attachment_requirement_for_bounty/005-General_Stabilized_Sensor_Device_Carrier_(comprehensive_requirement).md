@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 005 - General Stabilized Sensor Device Carrier (aka. Arrow Gimbal)
-Version: 12.06.25-2 Ranch Brisket
+Version: 19.06.25-3 Dragon Brisket
 
 ## General Objective Description:
 A 3-axis gimbal stabilizer with mounting interface and control signal connector outlet. Serves as a universal carrier platform for various cameras and imagery payload. Optional with additional angle lock and POI tracking functions.
@@ -8,6 +8,7 @@ A 3-axis gimbal stabilizer with mounting interface and control signal connector 
 ## Optional Functions:
 - OF-1: May support location point tracking, flight heading alignment, or 3-axis locking functions.
 - OF-2: May support GNSS data injection or integration.
+- OF-3: Shall include cable clips or reserved cable clip area for holding extra cables, such as external power supply.
 
 ## Architecture & Boundary:
 - AB-1: Shall accept 12V DC power supply and include an anti-spark design.
@@ -34,3 +35,4 @@ A 3-axis gimbal stabilizer with mounting interface and control signal connector 
 ## Revision:
 - 15.05.25-1 Ranch Grill: Initial public release.
 - 12.06.25-2 Ranch Brisket: Fix power limit in AB-1. Fix standard description in AB-3.
+- 19.06.25-3 Dragon Brisket: Add OF-3.
