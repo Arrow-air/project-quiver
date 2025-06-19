@@ -79,7 +79,7 @@ Table 1: Structure parts and additional material
 - Off-the-shelf component.
 - 30 mm option.
 - 4 parts in total.
-- Product Link: [Link](https://www.rjxhobby.com/rjx-1pcs-20mm-25mm-30mm-uav-tripod-aluminum-tilt-fixed-seat-landing-gear-connector?search=RJX3580&description=true)
+- Product Link: [Link](https://www.alibaba.com/product-detail/20mm-25mm-30mm-pipe-diameter-fixed_1601140918673.html?spm=a2756.trade-carp.valid-supplier.7.13873192MoJgE3)
 
 ## Part 14
 - Off-the-shelf component.
@@ -133,8 +133,70 @@ Table 1: Structure parts and additional material
   - Cleaning agent
 - Check if all the necessary parts are there
 
+# Assembly Steps
 
+## Step 1. Assemble the Cockpit Support Beams on Mid Plate
+- Parts needed:
+  - Part 2 (Mid Plate)
+  - Parts 4, 5, 6 (Cockpit Support Beams)
+  - Rivet 1 x13
 
-If you assembled it right your structure should look almost like the following picture.
+- Place the cockpit support beams on the mid plate as shown to the picture.
+- Apply adhesive on the cockpit support beams around the holes on the contact side.
+- Rivet the cockpit support beams from the mid plate on the holes shown in the picture.
+  - Make sure you rivet before the adhesive dries.
 
-![](https://holocron.so/uploads/a82bdebf-image-24.png)
+|Orientation|Adhesive Area|Rivet Holes|
+|--|--|--|
+|![](assets/images/step1_1.png)| ![](assets/images/step1_3.png) | ![](assets/images/step1_2.png) |
+
+## Step 2. Install the Battery Walls
+- Parts needed:
+  - Step 1 chassis
+  - Parts 7, 8 (Battery Walls)
+  - Rivet 2 x10
+- Place the battery walls on the sides of the chassis as shown in the picture.
+  - Make sure the dented side stays on the chassis side.
+- Rivet the battery walls from the mid plate on the holes shown in the picture.
+  - Make sure you rivet before the adhesive dries.
+
+|Orientation|Adhesive Area|Rivet Holes|
+|--|--|--|
+|![](assets/images/step2_1.png)| ![](assets/images/step2_3.png) | ![](assets/images/step2_2.png) |
+
+## Step 3. Install the Motor Arm Connectors
+- Parts needed:
+  - Step 2 chassis
+  - Part 9 x4 (Foldable Motor Arm Connectors)
+  - Screw 1 x16
+  - Screw 2 x8
+- Place the motor arm connectors on the chassis as shown in the picture.
+- Secure the motor arm connectors on the chassis.
+  - Use **Screw 1** for **red holes** and **Screw 2** for **green holes**.
+  - Use loctite.
+  - Use Washer 1.
+  - Use cordless screwdriver where possible, allen key inside the beam.
+ 
+|Orientation|Screw Holes|
+|--|--|
+|![](assets/images/step3_1.png)| ![](assets/images/step3_2.png) |
+
+## Step 4. Install the Lower Plate
+- Parts needed:
+  - Step 3 chassis
+  - Part 3 (Lower Plate)
+  - Rivet 2 x10
+- Place the lower plate on the chassis as shown to the picture.
+- Apply adhesive on the battery walls around the holes on the contact side.
+- Rivet the lower plate to the chassis on the holes shown in the picture.
+  - Make sure you rivet before the adhesive dries.
+
+|Orientation|Adhesive Area|Rivet Holes|
+|--|--|--|
+|![](assets/images/step4_1.png)| ![](assets/images/step4_3.png) | ![](assets/images/step4_2.png) |
+
+## Step 5. Assemble the Upper Plate
+- Parts needed:
+  - Part 1 (Upper Plate)
+  - 
+  - Rivet 2 x10
