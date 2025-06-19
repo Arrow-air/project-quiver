@@ -90,7 +90,7 @@ Table 1: Structure parts and additional material
 ## Parts 15-23
 - All 3D printed parts.
 - They have structural roles on the airframe. Use **PETG-CF** filament.
-- STL link:
+- STL link: [Parts 15-23](assets/models/parts15_23.zip)
 
 |Part|Quantity|
 |--|--|
@@ -109,7 +109,7 @@ Table 1: Structure parts and additional material
 - All 3D printed parts.
 - The parts should not interfere with GNSS signals. Use **PETG** filament.
 - **DO NOT** use any filament containing carbon fiber.
-- STL link:
+- STL link: [Parts 24-29](assets/models/parts24_29.zip)
 
 |Part|Quantity|
 |--|--|
@@ -126,7 +126,6 @@ Table 1: Structure parts and additional material
   - Allen key set
   - Wrench set
   - Cordless screwdriver or drill press
-  - Chamfering drill bit for 3mm holes
   - Riveting tool
   - Adhesive application tool
   - Loctite
