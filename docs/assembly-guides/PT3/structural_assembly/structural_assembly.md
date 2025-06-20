@@ -120,6 +120,12 @@ Table 1: Structure parts and additional material
 |Part 28| 1 |
 |Part 29| 4 |
 
+## Part 31
+- Off-the-shelf component.
+- Order without PCB.
+- 3 parts in total.
+- Product Link: [Link](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
+
 ## Tool List
 
 - You need the following tools:
@@ -127,10 +133,9 @@ Table 1: Structure parts and additional material
   - Wrench set
   - Cordless screwdriver or drill press
   - Riveting tool
-  - Adhesive application tool
-  - Loctite
-  - Adhesive (for aluminum parts). Note: The adhesive is mostly to reduce vibrations. It's not really needed for structural robustness. The additional strength is just a positive additional point.
-  - Cleaning agent
+  - Loctite Threadlocker Blue 242
+  - Adhesive: Loctite Superflex Silicon Sealant Model 593, 6.4 fl. oz.
+  - A cleaning agent to prepare 
 - Check if all the necessary parts are there
 
 # Assembly Steps
@@ -169,13 +174,14 @@ Table 1: Structure parts and additional material
   - Step 2 chassis
   - Part 9 x4 (Foldable Motor Arm Connectors)
   - Screw 1 x16
-  - Screw 2 x8
+  - Screw 4 x8
+  - Washer 1 x24
 - Place the motor arm connectors on the chassis as shown in the picture.
 - Secure the motor arm connectors on the chassis.
-  - Use **Screw 1** for **red holes** and **Screw 2** for **green holes**.
-  - Use loctite.
+  - Use **Screw 1** for **red holes** and **Screw 4** for **green holes**.
+  - Use Loctite Threadlocker.
   - Use Washer 1.
-  - Use cordless screwdriver where possible, allen key inside the beam.
+  - Use cordless screwdriver where possible, or else an allen key.
  
 |Orientation|Screw Holes|
 |--|--|
@@ -195,8 +201,156 @@ Table 1: Structure parts and additional material
 |--|--|--|
 |![](assets/images/step4_1.png)| ![](assets/images/step4_3.png) | ![](assets/images/step4_2.png) |
 
-## Step 5. Assemble the Upper Plate
+## Step 5. Install the Upper Plate
 - Parts needed:
-  - Part 1 (Upper Plate)
-  - 
+  - Step 4 chassis
+  - Rivet 1 x13
+  - Screw 1 x24
+  - Washer 1 x24
+
+- Place the upper plate over the chassis as shown to the picture.
+- Apply adhesive on the cockpit support beams around the holes on the contact side.
+- Rivet the cockpit support beams from the upper plate on the holes shown in the picture.
+  - Make sure you rivet before the adhesive dries.
+- Screw the motor arm connecters from the upper plate with Screw 1.
+  - Use Washer 1.
+  - Use Loctite Threadlocker.
+
+|Orientation|Adhesive Area|Rivet Holes|
+|--|--|--|
+|![](assets/images/step5_1.png)| ![](assets/images/step5_3.png) | ![](assets/images/step5_2.png) |
+- 
   - Rivet 2 x10
+
+## Step 6. Install the Battery Connector PCB Mount
+- Parts needed:
+  - Step 5 chassis
+  - Part 26 (Main PCB Mount)
+  - Insert 1 x20
+  - Screw 5 x20
+  - Washer 1 x20
+
+- Place Insert 1 to the holes shown in the picture, on the top and bottom sides of the main PCB mount.
+  - Use a soldering iron to place them inside the plastic.
+
+|Top|Bottom|
+|--|--|
+|![](assets/images/step6_2.png)| ![](assets/images/step6_1.png) |
+
+- Place the main PCB mount over the upper plate.
+  - Secure it with 5x Screw 5 in total from below the upper plate on the holes below.
+  - Use Washer 1 for the holes.
+
+![](assets/images/step6_3.png)
+
+## Step 7. Install the Main PCB Mount
+- Parts needed:
+  - Step 6 chassis
+  - Part 30 (BC PCB Mount)
+  - Insert 1 x10
+  - Screw 5 x3
+  - Washer 1 x3
+
+- Place Insert 1 to the holes shown in the picture, on the top and bottom sides of the BC PCB mount.
+  - Use a soldering iron to place them inside the plastic.
+
+|Top|Bottom|
+|--|--|
+|![](assets/images/step7_1.png)| ![](assets/images/step7_2.png) |
+
+- Place the Battery Connector PCB mount over the mid plate.
+  - Secure it with 3x Screw 5 in total from below the mid plate on the holes below.
+  - Use Washer 1 for the holes.
+
+![](assets/images/step7_3.png)
+
+## Step 8. Install the Battery Sliders
+- Parts needed:
+  - Step 7 chassis
+  - Part 16 (Battery Sliders)
+  - Insert 1 x8
+  - Screw 5 x8
+  - Washer 1 x8
+
+- Place Insert 1 to the holes shown in the picture on both of the battery slides.
+  - Use a soldering iron to place them inside the plastic.
+
+![](assets/images/step8_1.png)
+
+- Place the battery sliders inside the battery compartment.
+  - Be careful about the orientation of the angled end, they should point where the cutouts on the plates are.
+  - Secure it with 8x Screw 5 in total from sides of the frame.
+  - Use Washer 1 for the holes.
+
+|Orientation|Installation Holes|
+|--|--|
+|![](assets/images/step8_2.png)| ![](assets/images/step8_3.png) |
+
+## Step 9. Install the Landing Gear
+- Parts needed:
+  - Step 8 chassis
+  - Part 11, 12 (Landing Gear Horizontal & Vertical Tubes)
+  - Part 13 (Landing Gear Main Adapters)
+  - Part 15 (Landing Gear Tube Joints)
+  - Screw 2 x16
+  - Screw 3 x24
+  - Washer 1 x56
+  - Nut 1 x28
+  - Screw 6 x4
+- Place the landing gear main adapters below the chassis, as shown in the picture.
+  -  The adapters are facing outside to the left and right of the structure.
+  -  Screw the adapters with 16x Screw 2 to the chassis.
+  -  Use Loctite Threadlocker to secure the screws.
+
+|Orientation|Installation Holes|
+|--|--|
+|![](assets/images/step9_1.png)| ![](assets/images/step9_2.png) |
+
+- Insert the vertical landing gear tubes inside landing gear main adapters.
+  - Make sure the tubes are inserted all the way.
+  - Tighten the clamps with the screws provided in the landing gear main adapter package.
+  - Use Loctite Threadlocker to secure the screws.
+
+![](assets/images/step9_3.png)
+
+- Make sure the chassis stands level on the ground.
+  -  If not, measure and equalize the tube lenghts.
+  
+- Drill the tubes with 3 mm drill bit on the marked holes.
+  - Use Screw 6.
+  - Use Washer 1 on each side.
+  - Use Nut 1.
+
+ ![](assets/images/step9_7.png)
+
+- Assemble landing gear tube joints and the horizontal tubes as shown in the picture.
+  - Insert the vertical tubes inside the holes before tightening the screws.
+  - Use Screw 3.
+  - Use Washer 1 on each side.
+  - Use Nut 1.
+
+|Positioning|Installation Holes|
+|--|--|
+|![](assets/images/step9_5.png)| ![](assets/images/step9_4.png) |
+
+
+## Step 10. Install Side Attachment Interfaces
+- Parts needed:
+  - Step 9 chassis
+  - Part 21, 22 (Side Attachment Interface Spacers)
+  - Part 31 (Attachment Interfaces)
+  - Screw 6 x8
+  - Washer 1 x8
+
+- Place and secure side attachment interfaces and the spacers as shown in the pictures.
+  - Make sure the rectangular holes are aligned with the holes on the battery walls.
+  - Use the screwdriver holes inside the battery compartment to place the screws and the screwdriver.
+  - Use Screw 6.
+  - Use Washer 1.
+  - Use Loctite Threadlocker.
+
+
+|Positioning|Installation Holes|
+|--|--|
+|![](assets/images/step10_1.png)| ![](assets/images/step10_2.png) |
+  
