@@ -354,3 +354,49 @@ Table 1: Structure parts and additional material
 |--|--|
 |![](assets/images/step10_1.png)| ![](assets/images/step10_2.png) |
   
+## Step 11. Install Cockpit Enclosure
+- Parts needed:
+  - Step 10 chassis
+  - Part 27 (Main Enclosure)
+  - Part 28 (Enclosure Top Cap)
+  - Part 14 (Enclosure Hinge)
+  - Part 29 (Enclosure Cap Clips)
+  - Part 19 (Enclosure Anchors)
+  - Screw 1 x8
+  - Screw 7 x8
+  - Screw 8 x4
+  - Washer 1 x8
+  - Insert 1 x20
+
+- Place Insert 1 to the holes shown in the picture from outside on the main enclosure.
+  - Use a soldering iron to place them inside the plastic.
+
+![](assets/images/step11_1.png) 
+
+- Place the enclosure anchors and the main enclosure over the chassis.
+  - The anchors will fit on the circular cutouts on the battery walls.
+  - Mind the direction of the main enclosure.
+  - Screw the anchors to the main enclosure with Screw 1.
+    - Use Washer 1.
+    - DO NOT use Loctite Threadlocker.
+
+![](assets/images/step11_2.png) 
+
+- Place Insert 1 to the holes shown in the picture from outside on the top cap.
+  - Use a soldering iron to place them inside the plastic.
+
+![](assets/images/step11_3.png)
+
+- Place the enclosure clips on the top cap as shown in the picture.
+  - Screw the anchors to the main enclosure with Screw 8.
+    - DO NOT use Loctite Threadlocker.
+   
+![](assets/images/step11_4.png)
+
+- Place the top cap over the chassis.
+- Secure the enclosure hinges on the top cap and the main enclosure.
+  - Use Screw 7.
+  - DO NOT use Loctite Threadlocker.
+
+![](assets/images/step11_5.png)
+
