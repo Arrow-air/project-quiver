@@ -101,7 +101,7 @@
 - Product Link: [Link](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html?spm=a2756.order-detail-ta-bn-b.0.0.78e1f19cegXkOZ)
 
 ### Parts 10-12
-- 30x2 mm circular carbon-fiber tubes with different lenghts.
+- 30x2 mm circular carbon-fiber tubes with different lengths.
 - Reference link: [Link](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm)
   - Order 5 x 1000 mm or 10 x 500 mm
 
