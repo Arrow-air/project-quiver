@@ -152,6 +152,9 @@ RCOU
 PSCN
 PSCE
 PSCD
+PETG
+Threadlocker
+Superflex
 multirotor
 Tera
 Datasheet
