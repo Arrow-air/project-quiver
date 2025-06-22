@@ -68,6 +68,7 @@ All project-level documentation is located in the [`docs/`](docs/) folder. Key r
 * Payload specifications
 * Interface definitions
 * Phase planning and reviews
+* Meeting Notes and Recordings
 
 Refer to filenames inside that folder for phase-specific progress (e.g., `PT1-Engineering-Report.md`).
 
@@ -113,7 +114,7 @@ This may include:
 
 We welcome contributors! To get involved:
 
-1. Fork the repository
+1. Create a Branch the repository
 2. Read the [CONTRIBUTING.md](CONTRIBUTING.md)
 3. Open an issue or pull request
 
