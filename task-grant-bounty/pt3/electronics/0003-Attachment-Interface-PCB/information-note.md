@@ -70,8 +70,5 @@ For technical discussion, please view the [README.md](README.md) file in this di
 
 ## Remarks
 
-- This board will include two possible mounting configurations:
-  - Pogo pins on one side
-  - Solder pads on the mating board
 - Reference Molex part #2077601281 and mating part #2045231201
 - CAD and physical integration will align with the Quiver quick-release payload plate
