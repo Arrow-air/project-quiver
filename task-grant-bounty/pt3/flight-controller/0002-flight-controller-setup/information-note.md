@@ -146,7 +146,7 @@ Once setup:
 - Perform motor spin test using **Motor Test** in Mission Planner
 
 For full documentation:  
-[ArduPilot Hobbywing ESC Setup](https://ardupilot.org/copter/docs/common-dronecan-hobbywing-esc.html)
+[ArduPilot Hobbywing ESC Setup](https://ardupilot.org/copter/docs/common-hobbywing-dronecan-esc.html)
 
 
 ---
@@ -241,7 +241,7 @@ Use this to verify `sensor_id`.
 
 For more:  
 [Ainstein US-D1 Product Page](https://ainstein.ai/product/us-d1/)  
-[ArduPilot USD1 Integration](https://ardupilot.org/copter/docs/common-ainstein-usd1.html)
+[ArduPilot USD1 Integration](https://ardupilot.org/copter/docs/common-aerotenna-usd1.html)
 
 
 ---
@@ -257,7 +257,6 @@ The **Benewake TF03** is a robust time-of-flight LiDAR sensor capable of operati
 - **Weight**: 77 g
 - **Interface**: UART (default), can be configured for CAN
 
->  [Benewake Downloads](https://www.benewake.com/en/download)  
 >  Other models: TF02 (20–40m), TF-Luna (3–8m), also supported
 
 ---
@@ -311,7 +310,7 @@ To verify the TF03 is working:
 ---
 
 For more:  
-[ArduPilot Benewake Integration](https://ardupilot.org/copter/docs/common-benewake-tfmini.html)
+[ArduPilot Benewake Integration](https://ardupilot.org/copter/docs/common-benewake-tf02-lidar.html)
 
 
 ---
@@ -509,9 +508,8 @@ COMPASS_ORIENT = 6  ; Yaw270 (orientation fix for IST8310)
 - [Hobbywing DroneCAN ESC Setup — ArduPilot Documentation](https://ardupilot.org/copter/docs/common-hobbywing-dronecan-esc.html)
 - [Ainstein US-D1 Radar Altimeter Setup — ArduPilot Documentation](https://ardupilot.org/copter/docs/common-aerotenna-usd1.html)
 - [Benewake TF02/TF03 LiDAR Setup — ArduPilot Documentation](https://ardupilot.org/copter/docs/common-benewake-tf02-lidar.html)
-- [Holybro H-RTK F9P GPS Setup — Holybro Documentation](https://docs.holybro.com/gps-and-rtk-system/zed-f9p-h-rtk-series/setup-and-getting-started-ardupilot)
+- [Holybro H-RTK F9P GPS Setup — Holybro Documentation](https://ardupilot.org/copter/docs/common-holybro-rtk-f9p.html)
 
-- [Holybro H-RTK F9P Product](https://www.holybro.com/product/h-rtk-f9p-rover/)
-- [ArduPilot RTK Inject Guide](https://ardupilot.org/copter/docs/common-gps-inject.html)
-- [ArduPilot GPS Blending](https://ardupilot.org/copter/docs/common-dual-gps.html)
+- [ArduPilot RTK Inject Guide](https://ardupilot.org/copter/docs/common-rtk-correction.html)
+- [ArduPilot GPS Blending](https://ardupilot.org/copter/docs/common-gps-blending.html)
 - [ArduPilot Moving Baseline (Yaw)](https://ardupilot.org/copter/docs/common-gps-for-yaw.html)

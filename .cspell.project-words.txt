@@ -327,3 +327,5 @@ bomdiv
 chkbxs
 bomrowid
 Netlist
+Iavg
+Vavg
