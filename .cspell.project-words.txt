@@ -154,6 +154,11 @@ RCOU
 PSCN
 PSCE
 PSCD
+kellan
+pinout
+swappable
+JMRRC
+gerbers
 ENIG
 SPST
 SCLK
