@@ -349,7 +349,7 @@
 ![](assets/images/step9_3.png)
 
 - Make sure the chassis stands level on the ground.
-  -  If not, measure and equalize the tube lenghts.
+  -  If not, measure and equalize the tube lengths.
   
 - Drill the tubes with 3 mm drill bit on the marked holes.
   - Use Screw 6.
