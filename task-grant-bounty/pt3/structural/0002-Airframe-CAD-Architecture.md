@@ -109,6 +109,9 @@ Due to its file size, the CAD geometry is provided in Google Drive Arrow Teamspa
 |	3000 - Equipment	|	3200 - Peripheral	|	3280 - Telemetry	|	3281 - Telemetry	|
 |	3000 - Equipment	|	3300 - PCB	|	3310 - Main PCB	|	3311 - Main PCB	|
 |	3000 - Equipment	|	3300 - PCB	|	3320 - BC PCB	|	3321 - BC PCB	|
+|	3000 - Equipment	|	3300 - PCB	|	3330 - Attachment PCB	|	3331 - Right Attachment PCB	|
+|	3000 - Equipment	|	3300 - PCB	|	3330 - Attachment PCB	|	3332 - Left Attachment PCB	|
+|	3000 - Equipment	|	3300 - PCB	|	3330 - Attachment PCB	|	3333 - Bottom Attachment PCB	|
 |	3000 - Equipment	|	3400 - Battery	|	3410 - Battery	|	3411 - Battery	|
 
 # Remarks
