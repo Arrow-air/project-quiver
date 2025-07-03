@@ -154,6 +154,9 @@ RCOU
 PSCN
 PSCE
 PSCD
+manufacturability
+repairability
+Teamspace
 kellan
 pinout
 swappable
