@@ -173,3 +173,4 @@ RCIN
 POSZ
 Baro
 DEFLT
+commitlintrc
