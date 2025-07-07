@@ -333,3 +333,4 @@ bomdiv
 chkbxs
 bomrowid
 Netlist
+commitlintrc
