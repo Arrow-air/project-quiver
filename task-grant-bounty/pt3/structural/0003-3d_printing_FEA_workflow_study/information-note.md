@@ -19,9 +19,9 @@ Draft
 
 通常3D打印（增材制造）部件无法通过使用均质参数的FEA得出正确结果，有以下主要原因：
 
-1. 打印轨迹产生的不均匀强度分布和微观间隙，
-2. 各类不同设计下的层厚、infill密度和壁厚度。
-3. 层内和层间的分子连接方式不同，导致XY/XZ强度区别巨大。
+1. 各类不同设计下的层厚、infill密度和壁厚度。
+2. 层内和层间的分子连接方式不同，导致XY/XZ强度区别巨大。
+3. 打印轨迹产生的不均匀强度分布和微观间隙。
 
 这些特性导致3D打印件需要引入正交各向异性的参数来求解，并且需要针对宏观或微观需求来定制不同的工作流程。
 
@@ -29,19 +29,20 @@ Draft
 
 |Software|Functions|Availability|
 |-|-|-|
-|Fusion|Simulation for homogeneous or isotropic material|No (Can't match the current needs)|
-|Inventor (with Nastran)|Simulations for orthotropic|Yes (Cheap and well-functioning|
-|Siemens NX|Simulations for orthotropic|No (Expensive)|
+|Fusion|Simulation for homogeneous or isotropic materials|No (Can't match the current needs)|
+|Inventor (with Nastran)|Simulations for orthotropic materials|Yes (Cheap and well-functioning|
+|Siemens NX|Simulations for orthotropic materials|No (Expensive)|
 |Netfabb|Wall/infill preparation and heat/stress simulation for 3D printing process|No (Expensive)|
 |Digimat|Representative elementary volume (RVE) microscopic simulation|No (Too micro for current needs)|
 
-目前，各类支持各向异性和微观结构模拟的CAD软件都非常昂贵，所以此information note将主要围绕Fusion或Inventor支持的功能进行解释。
+目前，各类支持正交各向异性和微观结构模拟的CAD软件都非常昂贵，所以此information note将主要围绕Fusion或Inventor支持的功能进行解释。
 
 ## FEA Preparation
 
 TBD 正确的参数？
 1、从厂家的参数表获得 
 2、使用ASTM D638兼容的Tensile testing machine
+3、以上哪种是最佳方法？
 
 ## FEA workflow
 
