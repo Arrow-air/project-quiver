@@ -30,8 +30,8 @@ Draft
 |Software|Functions|Availability|
 |-|-|-|
 |Fusion|Simulation for homogeneous or isotropic material|No (Can't match the current needs)|
-|Inventor (with Nastran)|Simulations for orthotropic
-|Siemens NX|Anisotropic |No (Expensive)|
+|Inventor (with Nastran)|Simulations for orthotropic|Yes (Cheap and well-functioning|
+|Siemens NX|Simulations for orthotropic|No (Expensive)|
 |Netfabb|Wall/infill preparation and heat/stress simulation for 3D printing process|No (Expensive)|
 |Digimat|Representative elementary volume (RVE) microscopic simulation|No (Too micro for current needs)|
 
@@ -40,29 +40,30 @@ Draft
 ## FEA Preparation
 
 TBD 正确的参数？
-
-TBD 正确的切片方式？
-
-在使用FEA求解前，需要以手动的方式将模型抽壳，并将其中填入预取的infill模板
+1、从厂家的参数表获得 
+2、使用ASTM D638兼容的Tensile testing machine
 
 ## FEA workflow
 
+TBD 正确的切片方式？
 
+在使用FEA求解前，需要手动将模型抽壳至所需壁厚，并将其中填入所需的infill模板
+按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
 
 ## Actual Manufacturing
 
 可以通过以下方法进一步提高打印强度：
 
-|Items|Theory|
+|Procedures|Theory|
 |-|-|
-|Increase the printing temperature|Increase interlayer fusion connection and reduce cooling gradient|
-|Sufficient annealing treatment|Make molecular chains better connected and reduce internal stress
-|Minimize the print layer height|
-|Use Brick layer slicing|For most non-fiber filaments, XZ strength can be improved by 5 ~ 10 % during tensile testing, but this has not yet been verified by FEA|
+|Increase the printing temperature|Reduce cooling gradient for interlayer fusion connection|
+|Sufficient annealing treatment|Make molecular chains better connected and reduce internal stress|
+|Minimize the print layer height|Increase interlayer fusion area|
+|Enable brick layer slicing|Improve XZ ultimate tensile strength by 5 ~ 10 % during tensile stress test for most filaments|
 
 ## Compare To Injection Molding
 
-3D打印件的强度、均匀度和材料选项，在相同重量下远无法匹敌注塑件。但从生产周期和性价比上看，3D打印工艺则有绝对优势。以下是两者的一些对比：
+在相同重量下，3D打印件的强度远无法匹敌注塑件，同时3D打印在耗材选择上也不具有注塑件的灵活性。但3D打印工艺具有可快速设计和快速调整的特性，因此在非受力部件的应用上有绝对优势。以下是两者的一些对比：
 
 |-|3D Printing|Injected Molding|
 |-|-|-|
@@ -82,5 +83,7 @@ TBD 正确的切片方式？
  \* Controllable depends on different injection point designs. May use with simulator software such as Autodesk Moldflow.
 
 ## Uncharted Knowledge
+
+3D printed injection molding 
 
 # Remarks 
