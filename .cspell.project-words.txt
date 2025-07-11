@@ -154,6 +154,12 @@ RCOU
 PSCN
 PSCE
 PSCD
+PETG
+Threadlocker
+Superflex
+manufacturability
+repairability
+Teamspace
 kellan
 pinout
 swappable
