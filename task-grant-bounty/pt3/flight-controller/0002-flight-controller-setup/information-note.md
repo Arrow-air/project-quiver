@@ -512,4 +512,4 @@ COMPASS_ORIENT = 6  ; Yaw270 (orientation fix for IST8310)
 
 - [ArduPilot RTK Inject Guide](https://ardupilot.org/copter/docs/common-rtk-correction.html)
 - [ArduPilot GPS Blending](https://ardupilot.org/copter/docs/common-gps-blending.html)
-- [ArduPilot Moving Baseline (Yaw)](https://ardupilot.org/copter/docs/common-gps-for-yaw.html)
+- [ArduPilot Moving Baseline (Yaw)](https://ardupilot.org/copter/docs/common-gps-for-yaw.html) 
