@@ -133,7 +133,7 @@ Performance metrics such as rate tracking error, yaw authority, thrust margin, v
 **Goal:** Ensure failsafe triggers behave correctly  
 **Flight Mode:** Auto + Manual  
 **Pilot Directives:**
-- Simulate GPS loss (GPS_DISBALE or physical masking)
+- Simulate GPS loss (GPS_DISABLE or physical masking)
 - Simulate RC loss (turn TX off)
 
 **Check:**
