@@ -11,7 +11,7 @@ Draft
 
 # Methodology 
 
-将结合过往的3D打印操作经验，并在网络上搜索和整理相关的研究成果和论文，同时将收集到的资料交由AI助手ChatGPT-O3进行交叉比对。必要时将使用Inventor或Fusion进行实操和求解（可能消耗Token）。
+将结合过往的3D打印操作经验，并在网络上搜索和整理相关的研究成果和论文，同时将收集到的文章和标准交由AI助手ChatGPT-O3进行交叉比对。必要时将使用Inventor或Fusion进行实操和求解。
 
 # Results and Deliverables 
 
@@ -46,24 +46,55 @@ Draft
 ## Material Data Preparation
 
 TBD 正确的参数？
-1、从厂家的参数表获得 
-2、使用ASTM D638兼容的Tensile testing machine
-3、以上哪种是最佳方法？
+1. 从厂家的参数表获得 
+2. 使用兼容的Tensile testing machine
+3. 两者需要配合使用
+
+不像均质和各向同性FEA，正交各向异性FEA所需的参数更多，我们需要准备以下耗材丝参数用于：
 
 ### From Manufacturer's parameter card
 
+|Item|Symbol (Unit)|Actual Possible Situation|
+|-|-|-|
+|Density of fresh filament|ρ (g/cm3)|Usually provided perfectly|
+|Young's (Tensile) modulus|(Mpa)||
+|... X|Ex|Usually provided|
+|... Y|Ey|Direction of parallel tracks are almost impossible to control,<br>usually no Y data provide|
+|... Z|Ez|Usually provided|
+|Tensile strength|(Mpa)||
+|... X|σx|Usually provided|
+|... Y|σy|Direction of parallel tracks are almost impossible to control,<br>usually no Y data provide|
+|... Z|σz|Usually provided|
+||||
+||||
+||||
+||||
+
+
+对于声誉良好且测试环节完善的3D打印耗材丝制造商，通常我们可以在其商品页面找到对应材料的性能表或文档，例如：
+
+|BASF Ultrafuse® PLA|BambuLab|
+|-|-|
+|||
+
 ### From Tensile Testing Machine Result
 
+TBD 对于缺乏的参数，需要打印以下测试条，并以实测的方式获取参数：
 
+|Standard Name|Specimen|Method|Purpose|
+|-|-|-|-|
+|ISO 527-2|ASTM D638|Tensile testing by pulling apart|Get Young's modulus / Tensile modulus|
+|ISO 178|ASTM D790|Flexural or bending testing by press on center||
+|ISO 179-2|ASTM D6110|Charpy impact testing by strike on other side of the notch||
 
 ## FEA workflow
 
 TBD 正确的切片方式？
 
-在使用FEA求解前，需要手动将模型抽壳至所需壁厚，并将其中填入所需的infill模板
+在使用FEA求解前，需要手动将模型抽壳至所需壁厚，并将其中填入所需的infill模板。
 按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
 
-## Actual Manufacturing
+## Additional Tip For Actual 3D Printing Manufacturing
 
 可以通过以下方法进一步提高打印强度：
 
@@ -78,7 +109,7 @@ TBD 正确的切片方式？
 
 众所周知，在相同重量下，3D打印件的强度远无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。但3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。以下是两者的一些对比：
 
-（所有数值均使用典型值）
+（所有数值均使用ABS材料的典型值）
 
 |-|3D Printing|Injected Molding|
 |-|-|-|
@@ -90,18 +121,21 @@ TBD 正确的切片方式？
 |Build Pressure|1 ~ 35 Mpa<br>(Gear extrude)|2 ~ 200 Mpa<br>(Hydraulic screw press)|
 |XY Tensile Modulus (GPa)|1.6 ~ 2.2 (x0.8)|2.0 ~ 2.4 (x1.0)|
 |XZ Tensile Modulus (GPa)|0.8 ~ 1.3 (x0.4)|Isotropic *|
-|Dimensional Accuracy|0.01 ~ 0.3 mm|＜ 0.01 mm|
+|XY Tensile Strength (MPa)|32 ~ 42 (x0.8)|40 ~ 50 (x1.0)|
+|XZ Tensile Strength (MPa)|12 ~ 22 (x0.3)|Isotropic *|
 |-|-|-|
+|Dimensional Accuracy (mm)|0.01 ~ 0.3|≤ 0.01|
 |Design-To-Product Time|In hours|More than weeks|
 |Starting Cost|$ 0.25<br>(Electricity and filament consume)|$ 1000<br>(Mold design, manufacturing and transportation)|
 
- \* Controllable depends on different injection point designs. May use with simulator software such as Autodesk Moldflow.
+ \* Controlled by different injection point designs. May perform simulator with Autodesk Moldflow or similar software.
 
 ## Questions & Uncharted Knowledge
 
 - 3D打印件本身是否可以衍生设计作为模具使用？是否可以承受模具所受的温度和压力？
 - 是否有可靠的化学凝固的方式可以作为注塑的下位替代品？例如环氧树脂水晶滴胶或光敏树脂？
-- 是否有小批量且低成本的注塑工艺流程？
+- 有人曾经测试3D打印框架+环氧树脂填充的制造工艺。
 - 是否可以通过喷涂强化涂料来增加3D打印件外壁强度？
+- 是否有小批量且低成本的注塑工艺流程？
 
 # Remarks 
