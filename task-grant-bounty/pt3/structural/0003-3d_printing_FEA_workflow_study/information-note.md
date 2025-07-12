@@ -20,9 +20,9 @@ Draft
 通常3D打印（增材制造）部件无法通过使用均质参数的FEA得出正确结果，在宏观方面有以下主要原因：
 
 1. 各类不同的层厚、壁厚和infill密度设计，会直接影响力在部件内的传递。
-2. 层内的耗材分子连接连续性好，就像玻璃受热相变后又冷凝为单体。而层间则为较弱的二次熔融扩散连接，就像两块一经解冻又再次冷冻的肉，外壁相互之间粘合。这个特征导致部件的XY与XZ之间强度差别巨大。
+2. 层内的耗材分子连接连续性好，就像玻璃受热相变后又冷凝为单体。而层间则为强度较弱的二次熔融扩散连接，就像两块一经解冻又再次冷冻在一起的肉，外壁相互之间粘合。这个特征导致部件的XY（层内）与XZ（层间）方向之间强度差别巨大。
 
-这些特性导致3D打印件需要引入正交各向异性的方法来求解，并且各种不同的密度和填充参数均需要定制不同的工作流程。总而言之，相对于均质部件，3D打印部件的FEA流程实际上变化多样。
+这些特性致使3D打印件需要使用正交各向异性的FEA方法来求解，并且各种不同的密度和填充参数均需要定制不同的工作流程。总而言之，相对于均质部件，3D打印部件的FEA流程实际上变化多样。
 
 微观方面则有下列影响，虽然以我们现有技术手段无法对它们进行系统性的分析，但依然值得列出并关注：
 
@@ -76,7 +76,9 @@ TBD 正确的切片方式？
 
 ## Compare To Injection Molding
 
-在相同重量下，3D打印件的强度远无法匹敌注塑件，同时3D打印在耗材选择上也不具有注塑件的灵活性。但3D打印工艺具有可快速设计和快速调整的特性，因此在非受力部件的应用上有绝对优势。以下是两者的一些对比：
+众所周知，在相同重量下，3D打印件的强度远无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。但3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。以下是两者的一些对比：
+
+（所有数值均使用典型值）
 
 |-|3D Printing|Injected Molding|
 |-|-|-|
@@ -86,17 +88,20 @@ TBD 正确的切片方式？
 |Material Source|Common plastics<br>(ABS, PETG, PA...)|More specialty plastics<br>(PA-GF, PC, PAEK, PTE...)|
 |-|-|-|
 |Build Pressure|1 ~ 35 Mpa<br>(Gear extrude)|2 ~ 200 Mpa<br>(Hydraulic screw press)|
-|Typical XY Tensile Modulus (GPa)|1.6 ~ 2.2 (x0.8)|2.0 ~ 2.4 (x1.0)|
-|Typical XZ Tensile Modulus (GPa)|0.8 ~ 1.3 (x0.4)|Isotropic *|
+|XY Tensile Modulus (GPa)|1.6 ~ 2.2 (x0.8)|2.0 ~ 2.4 (x1.0)|
+|XZ Tensile Modulus (GPa)|0.8 ~ 1.3 (x0.4)|Isotropic *|
 |Dimensional Accuracy|0.01 ~ 0.3 mm|＜ 0.01 mm|
 |-|-|-|
 |Design-To-Product Time|In hours|More than weeks|
-|Starting Cost|$ 0.25<br>(Electricity and consumables)|$ 1000<br>(Mold design, manufacturing and transportation)|
+|Starting Cost|$ 0.25<br>(Electricity and filament consume)|$ 1000<br>(Mold design, manufacturing and transportation)|
 
  \* Controllable depends on different injection point designs. May use with simulator software such as Autodesk Moldflow.
 
-## Uncharted Knowledge
+## Questions & Uncharted Knowledge
 
-3D printed injection molding 
+- 3D打印件本身是否可以衍生设计作为模具使用？是否可以承受模具所受的温度和压力？
+- 是否有可靠的化学凝固的方式可以作为注塑的下位替代品？例如环氧树脂水晶滴胶或光敏树脂？
+- 是否有小批量且低成本的注塑工艺流程？
+- 是否可以通过喷涂强化涂料来增加3D打印件外壁强度？
 
 # Remarks 
