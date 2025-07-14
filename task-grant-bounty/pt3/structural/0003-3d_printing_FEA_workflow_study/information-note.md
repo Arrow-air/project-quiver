@@ -94,6 +94,8 @@ TBD 正确的切片方式？
 在使用FEA求解前，需要手动将模型抽壳至所需壁厚，并将其中填入所需的infill模板。
 按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
 
+TBD 模型的UCS定向
+
 ## Additional Tip For Actual 3D Printing Manufacturing
 
 如果FEA结果与测试差异过大（＞ 20 %）或因其他某些原因导致FEA结果无法确信，可以通过以下方法尝试提高打印强度：
@@ -116,16 +118,18 @@ TBD 正确的切片方式？
 |Sufficient annealing treatment|Make molecular chains better connecting in all direction and release internal stress|
 |Epoxy resin infill|Simulating the effect of reinforced concrete by taking advantage of the hollow nature of 3D printing|
 
-## Compare To Injection Molding
+## Compare To Other Technologies
 
-众所周知，在相同重量下且无论经过何种加工，3D打印件的强度远无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。但3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。以下是两者的一些对比：
+### Vs Injection Molding
+
+众所周知，在相同重量下且无论经过何种加工，且无论是否使用工业级设备，常见的FDM(Fused Deposition Modeling)3D打印件的强度远无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。但FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。以下是两者的一些对比：
 
 （所有数值均使用ABS材料的典型值）
 
-|-|3D Printing|Injected Molding|
+|-|FDM 3D Printing|Injection Molding|
 |-|-|-|
-|Material characteristics|Anisotropy|Isotropic *|
-|Material Options|Single filament|Multi-ingredient pellet mixable|
+|Material characteristics|Orthotropic|Isotropic *|
+|Material Customize|Single filament|Multi-ingredient pellet mixable|
 |Material Property|Higher thermal / humidity stability|Higher liquidity, Less additive required|
 |Material Source|Common plastics<br>(ABS, PETG, PA...)|More specialty plastics<br>(PEI, PC, PAEK, PTE...)|
 |-|-|-|
@@ -140,6 +144,26 @@ TBD 正确的切片方式？
 |Starting Cost|$ 0.25<br>(Electricity and filament consume)|$ 1000<br>(Mold design, manufacturing and transportation)|
 
  \* Controlled by different injection point designs. May perform simulator with Autodesk Moldflow or similar software.
+
+ ### Vs Other Advanced 3D Printing Technology 
+
+ 但是，实际上其他更先进的3D打印技术已经在逐渐逼近注塑级强度，同时还有着远比注塑更加低廉的成本。以下是一些对比：
+
+ (所有数值均使用PA12材料的典型值，且PA12具有一定韧性）
+
+ |-|FDM<br>(Fused Deposition Modeling)|SLS<br>(Selective laser sintering)|MJF<br>(Multi Jet Fusion)|
+ |-|-|-|-|
+ |Material characteristics|Orthotropic|80 ~ 90 % Isotropic|95 ~ 98% Isotropic|
+ |Material Customize|Single filament|Dyeable, Aluminum mixable|Dyeable|
+ |Material Property|Higher thermal / humidity stability|Higher liquidity, Less additive required|
+ |Material Source|All common 3d printing materials|PA11, PA12, PA12-GF, PP, TPU|PA11, PA12, PA12-GF, TPU|
+ |-|-|-|-|
+ |Raw Material Density (g/cm3)|1.05|0.93|1.01|
+ |XY Tensile Strength (MPa)|≈ 32|44 ~ 50|48 ~ 52|
+ |XZ Tensile Strength (MPa)|≈ 18|80 ~ 90 % Isotropic|95 ~ 98% Isotropic|
+ |-|-|-|-|
+ |Starting Cost|$ 0.25|$ 10|$ 8|
+ 
 
 ## Questions & Uncharted Knowledge
 
