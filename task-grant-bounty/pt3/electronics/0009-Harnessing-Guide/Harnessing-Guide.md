@@ -126,15 +126,15 @@ Eurostyle Plug
 | Signal Type | Examples | Color |
 | --- | --- | --- |
 | Ground | `GND`, `HV-` | Black |
-| 5V Power | `VDD_5V_*`, `5V` | Gray |
+| 5V Power | `VDD_5V_*`, `5V` | Red |
 | 12V Power | `12V`, `12V_PL`, `12VSW` | Red |
 | CAN High | `CAN1_H`, `CAN2_H` | Green |
-| CAN Low | `CAN1_L`, `CAN2_L` | Gray |
+| CAN Low | `CAN1_L`, `CAN2_L` | Yellow |
 | UART TX | `UART*_TX_*` | White |
-| UART RX | `UART*_RX_*` | Pink |
-| Ethernet RX+/- | `ETH_RX+`, `ETH_RX-` | White / Orange |
-| Ethernet TX+/- | `ETH_TX+`, `ETH_TX-` | Grey / Green |
-| Digital IO | `IO_*`, `FMU_CH*` | Blue |
+| UART RX | `UART*_RX_*` | Blue |
+| Ethernet RX+/- | `ETH_RX+`, `ETH_RX-` | Blue |
+| Ethernet TX+/- | `ETH_TX+`, `ETH_TX-` | White |
+| Digital IO | `IO_*`, `FMU_CH*` | White/Black |
 | HV Battery + | `HV+` | Red |
 | HV Battery - | `HV-` | Black |
 
