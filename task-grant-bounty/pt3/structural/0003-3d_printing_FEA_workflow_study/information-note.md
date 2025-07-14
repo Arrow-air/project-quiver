@@ -96,18 +96,29 @@ TBD 正确的切片方式？
 
 ## Additional Tip For Actual 3D Printing Manufacturing
 
-可以通过以下方法进一步提高打印强度：
+如果FEA结果与测试差异过大（＞ 20 %）或因其他某些原因导致FEA结果无法确信，可以通过以下方法尝试提高打印强度：
 
 |Procedures|Theory|
 |-|-|
-|Increase the printing temperature|Reduce cooling gradient for interlayer fusion connection|
-|Sufficient annealing treatment|Make molecular chains better connected and reduce internal stress|
-|Minimize the print layer height|Increase interlayer fusion area|
+|**Design**||
+|Use 1.5 ~ 2 times of wall thickness|Increase interlayer connection strength|
+|Double the amount of corner braces and reinforce beams|Directly improve overall strength|
+|Use chamfered corner design more often|Increase the bending strength around corners|
+|**Slicing**||
+|Use better force spreading infill patterns|Disperse the load force into different directions or other fasteners|
+|Optimizing print direction|Avoid shear and tension between layers by rotate the slicing|
 |Enable brick layer slicing|Improve XZ ultimate tensile strength by 5 ~ 10 % during tensile stress test for most filaments|
+|**Printing**||
+|Increase the nozzle and chamber temperature|Reduce cooling gradient for interlayer fusion connection|
+|Reduce cooling effect|Make molecular chains of fresh extruded traces better connecting between neighbor traces|
+|Minimize the print layer height|Increase interlayer fusion area|
+|**Post Processing**||
+|Sufficient annealing treatment|Make molecular chains better connecting in all direction and release internal stress|
+|Epoxy resin infill|Simulating the effect of reinforced concrete by taking advantage of the hollow nature of 3D printing|
 
 ## Compare To Injection Molding
 
-众所周知，在相同重量下，3D打印件的强度远无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。但3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。以下是两者的一些对比：
+众所周知，在相同重量下且无论经过何种加工，3D打印件的强度远无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。但3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。以下是两者的一些对比：
 
 （所有数值均使用ABS材料的典型值）
 
@@ -116,7 +127,7 @@ TBD 正确的切片方式？
 |Material characteristics|Anisotropy|Isotropic *|
 |Material Options|Single filament|Multi-ingredient pellet mixable|
 |Material Property|Higher thermal / humidity stability|Higher liquidity, Less additive required|
-|Material Source|Common plastics<br>(ABS, PETG, PA...)|More specialty plastics<br>(PA-GF, PC, PAEK, PTE...)|
+|Material Source|Common plastics<br>(ABS, PETG, PA...)|More specialty plastics<br>(PEI, PC, PAEK, PTE...)|
 |-|-|-|
 |Build Pressure|1 ~ 35 Mpa<br>(Gear extrude)|2 ~ 200 Mpa<br>(Hydraulic screw press)|
 |XY Tensile Modulus (GPa)|1.6 ~ 2.2 (x0.8)|2.0 ~ 2.4 (x1.0)|
@@ -134,7 +145,6 @@ TBD 正确的切片方式？
 
 - 3D打印件本身是否可以衍生设计作为模具使用？是否可以承受模具所受的温度和压力？
 - 是否有可靠的化学凝固的方式可以作为注塑的下位替代品？例如环氧树脂水晶滴胶或光敏树脂？
-- 有人曾经测试3D打印框架+环氧树脂填充的制造工艺。
 - 是否可以通过喷涂强化涂料来增加3D打印件外壁强度？
 - 是否有小批量且低成本的注塑工艺流程？
 
