@@ -511,5 +511,5 @@ COMPASS_ORIENT = 6  ; Yaw270 (orientation fix for IST8310)
 - [Holybro H-RTK F9P GPS Setup — Holybro Documentation](https://ardupilot.org/copter/docs/common-holybro-rtk-f9p.html)
 
 - [ArduPilot RTK Inject Guide](https://ardupilot.org/copter/docs/common-rtk-correction.html)
-- [ArduPilot GPS Blending](https://ardupilot.org/copter/docs/common-gps-blending.html)
+- [ArduPilot GPS Blending](https://ardupilot.org/copter/docs/common-gps-blending.html) 
 - [ArduPilot Moving Baseline (Yaw)](https://ardupilot.org/copter/docs/common-gps-for-yaw.html) 
