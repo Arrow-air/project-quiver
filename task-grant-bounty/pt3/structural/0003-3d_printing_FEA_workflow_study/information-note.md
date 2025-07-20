@@ -87,14 +87,18 @@ TBD 对于缺乏的参数，需要打印以下测试条，并以实测的方式�
 |ISO 178|ASTM D790|Flexural or bending testing by press on center||
 |ISO 179-2|ASTM D6110|Charpy impact testing by strike on other side of the notch||
 
-## FEA workflow
+## Shape Preparation
 
 TBD 正确的切片方式？
 
 在使用FEA求解前，需要手动将模型抽壳至所需壁厚，并将其中填入所需的infill模板。
 按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
 
-TBD 模型的UCS定向
+TBD 模型的UCS定向？
+
+按3D打印的常规理解方式，垂直方向即为正交的Z轴。
+
+TBD 每个元素的细分精度和预计需要的时间？
 
 ## Additional Tip For Actual 3D Printing Manufacturing
 
@@ -146,6 +150,8 @@ TBD 模型的UCS定向
  \* Controlled by different injection point designs. May perform simulator with Autodesk Moldflow or similar software.
 
  ### Vs Other Advanced 3D Printing Technology 
+
+ TBD 需要加入铝和不锈钢等金属SLS 3D打印件的参数以对比
 
  但是，实际上其他更先进的3D打印技术已经在逐渐逼近注塑级强度，同时还有着远比注塑更加低廉的成本。以下是一些对比：
 
