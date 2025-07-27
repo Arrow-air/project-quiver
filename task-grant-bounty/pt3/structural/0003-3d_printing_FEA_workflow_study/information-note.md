@@ -55,14 +55,12 @@ TBD 正确的参数？
 ### From Manufacturer's parameter card
 
 |Item|Symbol (Unit)|Actual Possible Situation|
-|-|-|-|
+|-:|-|-|
 |Density of fresh filament|ρ (g/cm3)|Usually provided perfectly|
-|Young's (Tensile) modulus|(Mpa)||
-|... X|Ex|Usually provided|
+|Young's (Tensile) modulus X|Ex (Mpa)|Usually provided|
 |... Y|Ey|Direction of parallel tracks are almost impossible to control,<br>usually no Y data provide|
 |... Z|Ez|Usually provided|
-|Tensile strength|(Mpa)||
-|... X|σx|Usually provided|
+|Tensile strength X|σx (Mpa)|Usually provided|
 |... Y|σy|Direction of parallel tracks are almost impossible to control,<br>usually no Y data provide|
 |... Z|σz|Usually provided|
 ||||
@@ -126,50 +124,43 @@ TBD 每个元素的细分精度和预计需要的时间？
 
 ### Vs Injection Molding
 
-众所周知，在相同重量下且无论经过何种加工，且无论是否使用工业级设备，常见的FDM(Fused Deposition Modeling)3D打印件的强度远无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。但FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。以下是两者的一些对比：
-
 （所有数值均使用ABS材料的典型值）
 
 |-|FDM 3D Printing|Injection Molding|
 |-|-|-|
-|Material characteristics|Orthotropic|Isotropic *|
 |Material Customize|Single filament|Multi-ingredient pellet mixable|
 |Material Property|Higher thermal / humidity stability|Higher liquidity, Less additive required|
-|Material Source|Common plastics<br>(ABS, PETG, PA...)|More specialty plastics<br>(PEI, PC, PAEK, PTE...)|
 |-|-|-|
 |Build Pressure|1 ~ 35 Mpa<br>(Gear extrude)|2 ~ 200 Mpa<br>(Hydraulic screw press)|
-|XY Tensile Modulus (GPa)|1.6 ~ 2.2 (x0.8)|2.0 ~ 2.4 (x1.0)|
-|XZ Tensile Modulus (GPa)|0.8 ~ 1.3 (x0.4)|Isotropic *|
-|XY Tensile Strength (MPa)|32 ~ 42 (x0.8)|40 ~ 50 (x1.0)|
-|XZ Tensile Strength (MPa)|12 ~ 22 (x0.3)|Isotropic *|
-|-|-|-|
-|Dimensional Accuracy (mm)|0.01 ~ 0.3|≤ 0.01|
-|Design-To-Product Time|In hours|More than weeks|
-|Starting Cost|$ 0.25<br>(Electricity and filament consume)|$ 1000<br>(Mold design, manufacturing and transportation)|
+|XY Tensile Modulus (GPa)|1.6 (80 %)|2.0 (100 %)|
+|XZ Tensile Modulus (GPa)|0.8 (40 %)|Isotropic *|
+|XY Tensile Strength (MPa)|32 (80 %)|40 (100%)|
+|XZ Tensile Strength (MPa)|12 (30 %)|Isotropic *|
 
- \* Controlled by different injection point designs. May perform simulator with Autodesk Moldflow or similar software.
+### A Brief Comparison Of Available Manufacturing Processes
 
- ### Vs Other Advanced 3D Printing Technology 
+ 众所周知，使用常见的FDM(Fused Deposition Modeling)3D打印方法，在相同规格下，无论是否使用工业级设备，其产品强度都无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。
+ 但FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。
+ 但是，实际上其他更先进的3D打印技术已经在逐渐逼近注塑级强度，同时还有着远比注塑更加低廉的成本，但材料类型又有限制。以下是一些对比：
 
- TBD 需要加入铝和不锈钢等金属SLS 3D打印件的参数以对比，尤其是造价部分
+（All material values in the table are typical values）
 
- 但是，实际上其他更先进的3D打印技术已经在逐渐逼近注塑级强度，同时还有着远比注塑更加低廉的成本。以下是一些对比：
+ |-|FDM|SLS<br>(Selective Laser Sintering)|MJF<br>(Multi Jet Fusion)|Injection Molding|Metal SLM<br>(Selective Laser Melting)|CNC Machining|
+ |-|-|-|-|-|-|-|
+ |Material characteristics|XZ Orthotropic|85 % Isotropic|97 % Isotropic|Isotropic *|90 % Isotropic|Isotropic|
+ |Material Source|Common 3d printing plastics|PA11, PA12, PA12-CF/GF, PP, TPU|PA11, PA12, PA12-CF/GF, TPU|Plastic universal|Titanium alloy, 316L, AlSi10Mg Aluminum alloy|Solid object universal|
+ |Material Customizability|Single filament|Dyeable,|Dyeable||||
+ |Representative Materials|ABS|PA12|PA12|ABS|AlSi10Mg|6061 Aluminum alloy|
+ |-|-|-|-|-|-|-|
+ |Raw Material Density (g/cm3)|1.05|0.93|1.01|1.03|2.66|2.7|
+ |XY Tensile Strength (MPa)|32|45|50|40|360|310|
+ |XZ Tensile Strength (MPa)|18|85 % XY|97 % XY|= XY|90 % XY|= XY|
+ |-|-|-|-|-|-|-|
+ |Dimensional Accuracy (mm)|0.05|0.1|0.05|0.01|0.1|0.01|
+ |Design-To-Deliver Time|Hours|Days|Days|Weeks|Days|Weeks|
+ |Typical Starting Cost $|0.5|10|8|800|35|50|
 
- (所有数值均使用PA12材料的典型值，且PA12具有一定韧性）
-
- |-|FDM<br>(Fused Deposition Modeling)|SLS<br>(Selective laser sintering)|MJF<br>(Multi Jet Fusion)|
- |-|-|-|-|
- |Material characteristics|Orthotropic|80 ~ 90 % Isotropic|95 ~ 98% Isotropic|
- |Material Customize|Single filament|Dyeable, Aluminum mixable|Dyeable|
- |Material Property|Higher thermal / humidity stability|Higher liquidity, Less additive required|
- |Material Source|All common 3d printing materials|PA11, PA12, PA12-GF, PP, TPU|PA11, PA12, PA12-GF, TPU|
- |-|-|-|-|
- |Raw Material Density (g/cm3)|1.05|0.93|1.01|
- |XY Tensile Strength (MPa)|≈ 32|44 ~ 50|48 ~ 52|
- |XZ Tensile Strength (MPa)|≈ 18|80 ~ 90 % Isotropic|95 ~ 98% Isotropic|
- |-|-|-|-|
- |Starting Cost|$ 0.25|$ 10|$ 8|
- 
+  \* Controlled by different injection point designs. May perform simulator with Autodesk Moldflow or similar software.
 
 ## Questions & Uncharted Knowledge
 
