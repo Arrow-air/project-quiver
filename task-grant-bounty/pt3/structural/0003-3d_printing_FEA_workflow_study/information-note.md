@@ -46,38 +46,46 @@ Draft
 ## Material Data Preparation
 
 TBD 正确的参数？
-1. 从厂家的参数表获得 
+
 2. 使用兼容的Tensile testing machine
 3. 两者需要配合使用
 
-不像均质和各向同性FEA，正交各向异性FEA所需的参数更多，我们需要准备以下耗材丝参数用于：
-
 ### From Manufacturer's parameter card
 
-|Item|Symbol (Unit)|Actual Possible Situation|
-|-:|-|-|
-|Density of fresh filament|ρ (g/cm3)|Usually provided perfectly|
-|Young's (Tensile) modulus X|Ex (Mpa)|Usually provided|
-|... Y|Ey|Direction of parallel tracks are almost impossible to control,<br>usually no Y data provide|
-|... Z|Ez|Usually provided|
-|Tensile strength X|σx (Mpa)|Usually provided|
-|... Y|σy|Direction of parallel tracks are almost impossible to control,<br>usually no Y data provide|
-|... Z|σz|Usually provided|
-||||
-||||
-||||
-||||
+不像均质材料的各向同性FEA，正交各向异性FEA所需的参数更多，需要进行大量准备。对于声誉良好且测试环节完善的3D打印耗材丝制造商，通常我们可以在其商品页面找到对应材料的性能表或文档。对于缺乏的材料，需要进行一系列的拉伸、弯曲和剪切试验来取得。
 
-
-对于声誉良好且测试环节完善的3D打印耗材丝制造商，通常我们可以在其商品页面找到对应材料的性能表或文档，例如：
-
-|BASF Ultrafuse® PLA|BambuLab|
+|BASF Ultrafuse ABS|BambuLab ABS|
 |-|-|
-|||
+|![](image/basf_abs_properties_1.jpg)|![](image/bambu_abs_properties.jpg)|
+
+(This sheet is only applicable for ambient temperature environments or non-thermal analysis workflows)
+
+|#|Item|Symbol (Unit)|Possible Ways To Obtain|
+|:-|-:|-|-|
+|1|Density of fresh filament|ρ (g/cm3)|Usually provided perfectly|
+|2|Young's (Tensile) Modulus X|Ex (Gpa *)|Usually provided|
+|3|... Y|Ey|Patterns of parallel traces have no testing standard,<br>usually no Y data provide|
+|4|... Z|Ez|Usually provided|
+|5|Tensile Strength X|σx (Mpa)|Usually provided|
+|6|... Y|σy|Patterns of parallel traces have no testing standard,<br>usually no Y data provide|
+|7|... Z|σz|Usually provided|
+|8|Shear Modulus XY|Gxy||
+|9|... YZ|Gyz||
+|10|... XZ|Gxz||
+|11|Shear Strength XY|τ12||
+|12|... YZ|τ23||
+|13|... XZ|τ13||
+|14|Poisson’s Ratio XY|νxy||
+|15|... YZ|νyz||
+|16|... XZ|νxz||
+
+\* Different software and workflows may use different magnitudes of units.
 
 ### From Tensile Testing Machine Result
 
-TBD 对于缺乏的参数，需要打印以下测试条，并以实测的方式获取参数：
+TBD 
+
+对于缺乏的参数，需要参照以下测试标准，将测试条以3种不同的方向打印，并以标准内指定的方式获取参数：
 
 |Standard Name|Specimen|Method|Purpose|
 |-|-|-|-|
@@ -87,9 +95,10 @@ TBD 对于缺乏的参数，需要打印以下测试条，并以实测的方式�
 
 ## Shape Preparation
 
-TBD 正确的切片方式？
+~~在使用FEA求解前，需要手动将模型抽壳至所需壁厚，并将其中填入所需的infill模板。~~
 
-在使用FEA求解前，需要手动将模型抽壳至所需壁厚，并将其中填入所需的infill模板。
+TBD 考虑到ASTM测试条的尺寸难以完整容纳各类infill模板，本次研究可能得出负面结论。
+
 按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
 
 TBD 模型的UCS定向？
@@ -100,7 +109,7 @@ TBD 每个元素的细分精度和预计需要的时间？
 
 ## Additional Tip For Actual 3D Printing Manufacturing
 
-如果FEA结果与测试差异过大（＞ 20 %）或因其他某些原因导致FEA结果无法确信，可以通过以下方法尝试提高打印强度：
+如果最终FEA结果与测试差异过大（＞ 20 %）或因其他某些原因导致FEA结果无法确信，目前已知只能通过以下方法尝试进一步提高打印强度：
 
 |Procedures|Theory|
 |-|-|
