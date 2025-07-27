@@ -131,14 +131,11 @@ TBD 每个元素的细分精度和预计需要的时间？
 
 ## Compare To Other Technologies
 
-### Vs Injection Molding
+### ~~Vs Injection Molding~~
 
-（所有数值均使用ABS材料的典型值）
+TBD 精简此章后删除此表格
 
 |-|FDM 3D Printing|Injection Molding|
-|-|-|-|
-|Material Customize|Single filament|Multi-ingredient pellet mixable|
-|Material Property|Higher thermal / humidity stability|Higher liquidity, Less additive required|
 |-|-|-|
 |Build Pressure|1 ~ 35 Mpa<br>(Gear extrude)|2 ~ 200 Mpa<br>(Hydraulic screw press)|
 |XY Tensile Modulus (GPa)|1.6 (80 %)|2.0 (100 %)|
@@ -146,7 +143,7 @@ TBD 每个元素的细分精度和预计需要的时间？
 |XY Tensile Strength (MPa)|32 (80 %)|40 (100%)|
 |XZ Tensile Strength (MPa)|12 (30 %)|Isotropic *|
 
-### A Brief Comparison Of Available Manufacturing Processes
+### Brief Comparison Of Available Manufacturing Processes
 
  众所周知，使用常见的FDM(Fused Deposition Modeling)3D打印方法，在相同规格下，无论是否使用工业级设备，其产品强度都无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。
  但FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。
@@ -157,9 +154,9 @@ TBD 每个元素的细分精度和预计需要的时间？
  |-|FDM|SLS<br>(Selective Laser Sintering)|MJF<br>(Multi Jet Fusion)|Injection Molding|Metal SLM<br>(Selective Laser Melting)|CNC Machining|
  |-|-|-|-|-|-|-|
  |Material characteristics|XZ Orthotropic|85 % Isotropic|97 % Isotropic|Isotropic *|90 % Isotropic|Isotropic|
- |Material Source|Common 3d printing plastics|PA11, PA12, PA12-CF/GF, PP, TPU|PA11, PA12, PA12-CF/GF, TPU|Plastic universal|Titanium alloy, 316L, AlSi10Mg Aluminum alloy|Solid object universal|
- |Material Customizability|Single filament|Dyeable,|Dyeable||||
- |Representative Materials|ABS|PA12|PA12|ABS|AlSi10Mg|6061 Aluminum alloy|
+ |Material Source|Common 3d printing plastics|PA11, PA12, PA12-CF/GF, PA-AF(Aluminum-filled), PP, TPU|PA11, PA12, PA12-CF/GF, TPU|Plastic universal|Titanium alloy, 316L, AlSi10Mg alloy|Solid block or sheet object universal|
+ |Material Customizability|Single filament|Dyeable|Dyeable|Multi ingredient mixable|Single powder|Single block|
+ |Representative Materials|ABS|PA12|PA12|ABS|AlSi10Mg alloy|6061 Aluminum alloy|
  |-|-|-|-|-|-|-|
  |Raw Material Density (g/cm3)|1.05|0.93|1.01|1.03|2.66|2.7|
  |XY Tensile Strength (MPa)|32|45|50|40|360|310|
