@@ -7,7 +7,7 @@ Draft
 
 由于Quiver项目长期以来使用3D打印方法制作原型和部分产品的结构件，但缺乏对其强度的具体研究，且最初级的FEA（有限元分析）工作流程仅适用于均质部件，无法为3D打印件提供可靠结果。为了解决这个问题，现决定收集并整理一些学术知识，以增进我们对3D打印结构的了解，并在成本可控的前提下改良我们的3D打印结构设计流程。
 
-同时，将收集一些注塑相关的参数，与3D打印件进行比较。
+同时，将收集各类成型技术相关的参数，并与各种3D打印工艺进行比较。
 
 # Methodology 
 
@@ -29,7 +29,8 @@ Draft
 1. 切片软件产生的转角、过挤出、欠挤出，以及速度和压力曲线的变化，导致的不均匀线宽、微观间隙、碳化差异等。
 2. 长时间打印，不同层之间因为温度梯度而产生的内应力（同时也是部件翘曲的原因）。
 3. 在不同环境下保存或不同厂家生产的耗材质量，其中的杂质会对整体强度造成影响，例如水汽等。
-
+4. 不同挤出机孔径所产生的不同空隙大小。
+   ...
 
 ## Software Selection
 
@@ -41,7 +42,7 @@ Draft
 |Netfabb|Wall/infill preparation and heat/stress simulation for 3D printing process|No (Expensive)|
 |Digimat|Representative elementary volume (RVE) microscopic simulation|No (Too micro for current needs)|
 
-目前，大部分支持正交各向异性和微观结构模拟的CAD软件都非常昂贵，所以此information note将主要围绕Fusion或Inventor支持的功能进行解释。
+目前，大部分支持正交各向异性和微观结构模拟的CAD软件都非常昂贵，所以此information note将主要围绕Fusion或Inventor这两个成本相对较低的软件所支持的功能来进行解释。
 
 ## Material Data Preparation
 
