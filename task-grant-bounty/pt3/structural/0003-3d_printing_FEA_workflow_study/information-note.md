@@ -5,19 +5,36 @@ Draft
 
 # Project Description
 
-由于Quiver项目长期以来使用3D打印方法制作原型和部分产品的结构件，但缺乏对其强度的具体研究，且最初级的FEA（有限元分析）工作流程仅适用于均质部件，无法为3D打印件提供可靠结果。为了解决这个问题，现决定收集并整理一些学术知识，以增进我们对3D打印结构的了解，并在成本可控的前提下改良我们的3D打印结构设计流程。
+Due to Project Quiver has long used **FDM 3D printing** (Fused Deposition Modeling of Additive Manufacturing) to create some prototypes and product structural components, but we still lacking specific research into its material strength characteristics. Furthermore, our very basic **FEA** (Finite Element Analysis) workflow only works for homogeneous parts like injection molding and metal, and cannot provide reliable results for 3D printed parts.
 
-同时，将收集各类成型技术相关的参数，并与各种3D打印工艺进行比较。
+To alleviate this problem, we have decided to collect and organize some academic knowledge and industry standards to begin to enhance our understanding of 3D printing structures and improve our 3D printing structure design process under the premise of controllable costs.
+
+At the same time, this article will also organize some collected relevant parameters of mainstream and experimental component forming technologies and make a simple comparison between them.
+
+<!-- 
+由于Project Quiver长期以来使用**FDM 3D打印** (Fused Deposition Modeling of Additive Manufacturing）制作部分原型和产品的结构件，但我们一直缺乏对其材料强度特性的具体研究，且最初级的**FEA**（有限元分析）工作流程仅适用于注塑、金属等均质部件，无法为3D打印件提供可靠结果。
+
+为了缓解这个问题，现决定收集并整理一些学术知识和业界标准，开始增进我们对3D打印结构的了解，并在成本可控的前提下改良我们的3D打印结构设计流程。
+
+同时，还将在这片文章中整理一些收集到的主流和实验性零部件成型技术的相关参数，并在它们之间进行简单对比。
+-->
 
 # Methodology 
 
-将结合过往的3D打印操作经验，并在网络上搜索和整理相关的研究成果和论文，同时将收集到的文章和标准交由AI助手ChatGPT-O3进行交叉比对。必要时将使用Inventor或Fusion进行实操和求解。
+Based on our past experience in 3D printing parts production, we will search and organize relevant research results and academic papers online. We will then use the AI assistant ChatGPT-o3 to cross-reference and compare these articles and standards (without using less logically rigorous language models like 4o). 
+
+We will use Inventor or Fusion for practical operations and generate solutions when necessary.
+<!--
+将基于我们过往的3D打印零部件制作经验，在网络上搜索和整理相关的研究成果和学术论文，同时将收集到的文章和标准交由AI助手ChatGPT-o3进行交叉查询和比对（不使用4o等逻辑严密度较低的语言模型）。
+
+必要时我们将使用Inventor或Fusion进行实操并求解。
+-->
 
 # Results and Deliverables 
 
 ## Overview
 
-通常3D打印（增材制造）部件无法通过使用简单均质参数的FEA得出正确结果，在宏观方面有以下主要原因：
+通常3D打印部件无法通过使用简单均质参数的FEA得出正确结果，在宏观方面有以下主要原因：
 
 1. 各类不同的层厚、壁厚和infill密度设计，会直接影响力在部件内的传递。
 2. 层内的耗材分子连接连续性好，就像玻璃受热相变后又冷凝为单体。而层间则为强度较弱的二次熔融扩散连接，就像两块一经解冻又再次冷冻在一起的肉，外壁相互之间粘合。这个特征导致部件的XY（层内）与XZ（层间）方向之间强度差别巨大。
@@ -34,7 +51,7 @@ Draft
 
 ## Software Selection
 
-市场上的FEA软件有许多选择，而不同软件则针对不同程度的FEA，例如有些仅适合简单形变，有些适合各向异性，甚至有些专门针对材料微观结构：
+市场上的FEA软件有许多选择，而不同软件则针对不同程度的FEA，例如有些仅适合简单形变，有些适合各向异性，甚至有些仅专门针对材料微观结构：
 
 |Software|Functions|Availability|
 |-|-|-|
@@ -50,7 +67,11 @@ Draft
 
 ### Start From Manufacturer's Parameter Card
 
-不像均质材料的各向同性FEA，正交各向异性FEA所需的参数更多，需要进行大量准备。对于声誉良好且测试环节完善的3D打印耗材丝制造商，通常我们可以在其商品页面找到对应材料的性能表或文档，如下图所示。对于缺乏的数据，则需要按下表内所述的标准进行一系列的拉伸、弯曲和剪切试验来取得，大部分情况下，测试条要以3种不同的方向打印。
+不像均质材料的各向同性FEA，正交各向异性FEA所需的参数更多，需要进行大量准备。
+
+对于声誉良好且测试环节完善的3D打印耗材丝制造商，通常我们可以在其商品页面找到对应材料的性能表或文档，如下图所示。
+
+对于缺乏的数据，则需要按下表内所述的标准进行一系列的拉伸、弯曲和剪切试验来取得，大部分情况下，测试条要以3种不同的方向打印。
 
 |BASF Ultrafuse ABS|BambuLab ABS|
 |-|-|
@@ -58,42 +79,38 @@ Draft
 
 (This sheet is only applicable for ambient temperature environments or non-thermal analysis workflows)
 
-TBD ISO和ASTM标准个别不能互换
-
 |#|Item|Symbol (Unit)|Possible Ways To Obtain|
 |:-|-:|-|-|
-|1|Density of fresh filament|ρ (g/cm3)|Usually seller provide|
-|2|Young's (Tensile) Modulus X|Ex (Gpa *)|Usually seller provide|
-|3|... Y|Ey|Test with ASTM D638|
-|4|... Z|Ez|Usually seller provide|
-|5|Tensile Strength X|σx (Mpa)|Usually seller provide|
-|6|... Y|σy|Test with ASTM D638|
-|7|... Z|σz|Usually seller provided|
-|8|Shear Modulus XY|Gxy|Test with ASTM D5379|
+|1|Density of fresh filament|ρ (g/cm3)|Usually provided perfectly / Test by ISO 1183-1|
+|2|Young's (Tensile) Modulus X|Ex (Gpa *)|Usually provided / Test by ISO 527-2|
+|3|... Y|Ey|Test by ISO 527-2|
+|4|... Z|Ez|Usually provided / Test by ISO 527-2|
+|5|Tensile Strength X|σx (Mpa)|Usually provided / Test by ISO 527-2|
+|6|... Y|σy|Test by ISO 527-2|
+|7|... Z|σz|Usually provided / Test by ISO 527-2|
+|8|Shear Modulus XY|Gxy|Test by ISO 4587|
 |9|... YZ|Gyz|...|
 |10|... XZ|Gxz|...|
-|11|Shear Strength XY|τ12|Test with ASTM D5379|
-|12|... YZ|τ23|...|
+|11|Shear Strength XY|τ12|Test by ISO 4587 / ISO 14129|
+|12|... YZ|τ23|Test by ISO 4587|
 |13|... XZ|τ13|...|
-|14|Poisson’s Ratio XY|νxy|Test with ASTM D638|
+|14|Poisson’s Ratio XY|νxy|Test by ISO 527-2 with laterally strain measuring|
 |15|... YZ|νyz|...|
 |16|... XZ|νxz|...|
 
 \* Different software and workflows may use different magnitudes of units.
 
-以下是耗材制造商常用的几个测试
+另外，以下是耗材制造商常用的其他几个基本测试标准，为了统一测试环境和数值，整套测试流程均建议以ISO标准来部署，在特殊情况下才转而使用ASTM标准。
 
-|ISO Standard|ASTM Standard|Method|Purpose|
-|-|-|-|-|
-|ISO 527-2|ASTM D638|Tensile testing by pulling apart|Get Young's modulus / Tensile modulus|
-|ISO 178|ASTM D790|Flexural or bending testing by press on center|Get flexural strength and modulus|
-|ISO 179-2|ASTM D6110|Charpy impact testing by strike on opposite side of the notch|Get impact strength charpy|
+|Standard|Method|Purpose|
+|-|-|-|
+|ISO 178|Flexural or bending testing by press on center|Get flexural strength and modulus|
+|ISO 179-2|Charpy impact testing by strike on opposite side of the notch|Get impact strength charpy|
+|ISO 180|
 
 ## Shape Preparation
 
-~~在使用FEA求解前，需要手动将模型抽壳至所需壁厚，并将其中填入所需的infill模板。~~
-
-TBD 考虑到ASTM测试条的尺寸难以完整容纳各类infill模板，本次研究可能得出负面结论。
+在使用FEA求解前，需要手动将标准测试条模型抽壳至所需壁厚，并将其内部填入所需的infill模板。并且，考虑到测试条的尺寸难以完整容纳比例过小的infill模板，所以应使用infill填充 ≥ 20 % 的设计。
 
 按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
 
@@ -122,7 +139,7 @@ TBD 每个元素的细分精度和预计需要的时间？
 |Reduce cooling effect|Make molecular chains of fresh extruded traces better connecting between neighbor traces|
 |Minimize the print layer height|Increase interlayer fusion area|
 |**Post Processing**||
-|Sufficient annealing treatment|Make molecular chains better connecting in all direction and release internal stress|
+|Sufficient annealing treatment|Make molecular chains better connecting in all direction and try release any internal stress|
 |Epoxy resin infill|Simulating the effect of reinforced concrete by taking advantage of the hollow nature of 3D printing|
 
 ## Compare To Other Technologies
@@ -141,7 +158,7 @@ TBD 精简此章后删除此表格
 
 TBD 可以在此加入电子束熔融、气溶胶喷射成型等工艺的表格，列出其所属工艺分类和主要用途，不需要详细比较参数。
 
- 众所周知，使用常见的FDM(Fused Deposition Modeling)3D打印方法，在相同规格下，无论是否使用工业级设备，其产品强度都无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。
+ 众所周知，使用常见的FDM 3D打印方法，在相同规格下，无论是否使用工业级设备，其产品强度都无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。
  但FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。
  但是，实际上其他更先进的3D打印技术已经在逐渐逼近注塑级强度，同时还有着远比注塑更加低廉的成本，但材料类型又有限制。以下是一些对比：
 
