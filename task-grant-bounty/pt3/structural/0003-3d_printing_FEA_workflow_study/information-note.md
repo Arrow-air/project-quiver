@@ -34,7 +34,7 @@ Draft
 
 ## Software Selection
 
-FEA软件有许多选择，而这些选择主要围绕不同程度的分析
+市场上的FEA软件有许多选择，而不同软件则针对不同程度的FEA，例如有些仅适合简单形变，有些适合各向异性，甚至有些专门针对材料微观结构：
 
 |Software|Functions|Availability|
 |-|-|-|
