@@ -5,14 +5,14 @@ Draft
 
 # Project Description
 
-Due to Project Quiver has long used **FDM 3D printing** (Fused Deposition Modeling of Additive Manufacturing) to create some prototypes and product structural components, but we still lacking specific research into its material strength characteristics. Furthermore, our very basic **FEA** (Finite Element Analysis) workflow can only works for homogeneous parts like injection molding and metal, and cannot provide reliable results for 3D printed parts.
+Due to Project Quiver has long used **FDM 3D printing** (Fused Deposition Modeling of Additive Manufacturing) to create various prototypes and structural components, but we still lacking specific research into its material strength characteristics. Furthermore, our very basic **FEA** (Finite Element Analysis) workflow can only works for homogeneous parts like injection molding and metal, and cannot provide reliable results for 3D printed parts.
 
 To alleviate this problem, we have decided to collect and organize some academic knowledge and industry standards to begin to enhance our understanding of 3D printing structures and improve our 3D printing structure design process under the premise of controllable costs.
 
 At the same time, this article will also organize some collected relevant parameters of mainstream and experimental component forming technologies and make a simple comparison between them.
 
 <!-- 
-由于Project Quiver长期以来使用**FDM 3D打印** (Fused Deposition Modeling of Additive Manufacturing）制作部分原型和产品的结构件，但我们一直缺乏对其材料强度特性的具体研究，且最初级的**FEA**（有限元分析）工作流程仅适用于注塑、金属等均质部件，无法为3D打印件提供可靠结果。
+由于Project Quiver长期以来使用**FDM 3D打印** (Fused Deposition Modeling of Additive Manufacturing）制作部分原型和结构件，但我们一直缺乏对其材料强度特性的具体研究，且最初级的**FEA**（有限元分析）工作流程仅适用于注塑、金属等均质部件，无法为3D打印件提供可靠结果。
 
 为了缓解这个问题，现决定收集并整理一些学术知识和业界标准，开始增进我们对3D打印结构的了解，并在成本可控的前提下改良我们的3D打印结构设计流程。
 
@@ -76,17 +76,26 @@ In short, compared to homogeneous parts, the FEA process for 3D printed parts is
 
 ## Software Selection
 
-市场上的FEA软件有许多选择，而不同软件则针对不同程度的FEA，例如有些仅适合简单形变，有些适合各向异性，甚至有些仅专门针对材料微观结构：
+There are many FEA software options on the market, and different software may be targeted at different levels of FEA. We need to choose the right software to perform the required FEA. Some software only works for simple deformation, some are suitable for anisotropy or nonlinearity, and some are even specialized only for microstructure of materials:
 
-|Software|Functions|Availability|
+<!--
+市场上的FEA软件有许多选择，不同软件可能针对不同程度的FEA。我们需要选择合适的软件才能进行所需的FEA。有些软件仅适合简单形变，有些适合各向异性或非线性，甚至有些仅专门针对材料微观结构：
+-->
+
+|Software|Simulation Functions|Availability|
 |-|-|-|
-|Fusion|Simulation for homogeneous or isotropic materials|No (Can't match the current needs)|
-|Inventor (with Nastran)|Simulations for orthotropic materials|Yes (Cheap and well-functioning|
-|Siemens NX|Simulations for orthotropic materials|No (Expensive)|
-|Netfabb|Wall/infill preparation and heat/stress simulation for 3D printing process|No (Expensive)|
-|Digimat|Representative elementary volume (RVE) microscopic simulation|No (Too micro for current needs)|
+|Autodesk Fusion|For homogeneous or isotropic materials|No (Below the current need)|
+|Autodesk Inventor (with Nastran)|For isotropic, orthotropic, linear or nonlinear methods|**Yes** (Not expensive and well-functioning)|
+|Siemens NX|...|No (Expensive)|
+|Autodesk Netfabb|Fusion integrable 3D printing infill preparation and heat/stress simulation|No (Not for FDM, also expensive)|
+|Digimat|For representative elementary volume (RVE) microscopic such as fabric fiber and micro mechanical|No (Too micro for current needs)|
+|...|||
 
-目前，大部分支持正交各向异性和微观结构模拟的CAD软件都非常昂贵，包括上述列表中的这些例举，所以此information note将主要围绕Fusion或Inventor这两个成本相对较低的软件所支持的功能来进行解释。
+Currently, most CAD software that supports orthotropic FEA methods are very expensive, including those examples in the above list. So this information note will mainly explain the functions supported by two relatively low-cost software: Autodesk Fusion and Autodesk Inventor.
+
+<!--
+目前，大部分支持正交各向异性FEA方法的CAD软件都非常昂贵，包括上述列表中的这些例举。所以此information note将主要围绕Fusion和Inventor这两个成本相对较低的软件所支持的功能来进行解释。
+-->
 
 ## Material Data Preparation
 
