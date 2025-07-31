@@ -17,22 +17,24 @@ Draft
 
 ## Overview
 
-通常3D打印（增材制造）部件无法通过使用均质参数的FEA得出正确结果，在宏观方面有以下主要原因：
+通常3D打印（增材制造）部件无法通过使用简单均质参数的FEA得出正确结果，在宏观方面有以下主要原因：
 
 1. 各类不同的层厚、壁厚和infill密度设计，会直接影响力在部件内的传递。
 2. 层内的耗材分子连接连续性好，就像玻璃受热相变后又冷凝为单体。而层间则为强度较弱的二次熔融扩散连接，就像两块一经解冻又再次冷冻在一起的肉，外壁相互之间粘合。这个特征导致部件的XY（层内）与XZ（层间）方向之间强度差别巨大。
 
-这些特性致使3D打印件需要使用正交各向异性的FEA方法来求解，并且各种不同的密度和填充参数均需要定制不同的工作流程。总而言之，相对于均质部件，3D打印部件的FEA流程实际上变化多样。
+这些特性致使3D打印件需要使用正交各向异性的FEA方法来求解，并且各种不同密度的填充参数均需要定制不同的工作流程。总而言之，相对于均质部件，3D打印部件的FEA流程实际上变化多样，很难有稳定的准确率。
 
 微观方面则有下列影响，虽然以我们现有技术手段无法对它们进行系统性的分析，但依然值得列出并关注：
 
 1. 切片软件产生的转角、过挤出、欠挤出，以及速度和压力曲线的变化，导致的不均匀线宽、微观间隙、碳化差异等。
 2. 长时间打印，不同层之间因为温度梯度而产生的内应力（同时也是部件翘曲的原因）。
 3. 在不同环境下保存或不同厂家生产的耗材质量，其中的杂质会对整体强度造成影响，例如水汽等。
-4. 不同挤出机孔径所产生的不同空隙大小。
+4. 不同设备或不同孔径的挤出机可产生不同截面的打印轨迹，导致打印轨迹之间的空隙大小也不相同。
    ...
 
 ## Software Selection
+
+FEA软件有许多选择，而这些选择主要围绕不同程度的分析
 
 |Software|Functions|Availability|
 |-|-|-|
@@ -42,18 +44,13 @@ Draft
 |Netfabb|Wall/infill preparation and heat/stress simulation for 3D printing process|No (Expensive)|
 |Digimat|Representative elementary volume (RVE) microscopic simulation|No (Too micro for current needs)|
 
-目前，大部分支持正交各向异性和微观结构模拟的CAD软件都非常昂贵，所以此information note将主要围绕Fusion或Inventor这两个成本相对较低的软件所支持的功能来进行解释。
+目前，大部分支持正交各向异性和微观结构模拟的CAD软件都非常昂贵，包括上述列表中的这些例举，所以此information note将主要围绕Fusion或Inventor这两个成本相对较低的软件所支持的功能来进行解释。
 
 ## Material Data Preparation
 
-TBD 正确的参数？
+### Start From Manufacturer's Parameter Card
 
-2. 使用兼容的Tensile testing machine
-3. 两者需要配合使用
-
-### From Manufacturer's parameter card
-
-不像均质材料的各向同性FEA，正交各向异性FEA所需的参数更多，需要进行大量准备。对于声誉良好且测试环节完善的3D打印耗材丝制造商，通常我们可以在其商品页面找到对应材料的性能表或文档。对于缺乏的材料，需要进行一系列的拉伸、弯曲和剪切试验来取得。
+不像均质材料的各向同性FEA，正交各向异性FEA所需的参数更多，需要进行大量准备。对于声誉良好且测试环节完善的3D打印耗材丝制造商，通常我们可以在其商品页面找到对应材料的性能表或文档，如下图所示。对于缺乏的数据，则需要按下表内所述的标准进行一系列的拉伸、弯曲和剪切试验来取得，大部分情况下，测试条要以3种不同的方向打印。
 
 |BASF Ultrafuse ABS|BambuLab ABS|
 |-|-|
@@ -61,38 +58,36 @@ TBD 正确的参数？
 
 (This sheet is only applicable for ambient temperature environments or non-thermal analysis workflows)
 
+TBD ISO和ASTM标准个别不能互换
+
 |#|Item|Symbol (Unit)|Possible Ways To Obtain|
 |:-|-:|-|-|
-|1|Density of fresh filament|ρ (g/cm3)|Usually provided perfectly|
-|2|Young's (Tensile) Modulus X|Ex (Gpa *)|Usually provided|
-|3|... Y|Ey|Patterns of parallel traces have no testing standard,<br>usually no Y data provide|
-|4|... Z|Ez|Usually provided|
-|5|Tensile Strength X|σx (Mpa)|Usually provided|
-|6|... Y|σy|Patterns of parallel traces have no testing standard,<br>usually no Y data provide|
-|7|... Z|σz|Usually provided|
-|8|Shear Modulus XY|Gxy||
-|9|... YZ|Gyz||
-|10|... XZ|Gxz||
-|11|Shear Strength XY|τ12||
-|12|... YZ|τ23||
-|13|... XZ|τ13||
-|14|Poisson’s Ratio XY|νxy||
-|15|... YZ|νyz||
-|16|... XZ|νxz||
+|1|Density of fresh filament|ρ (g/cm3)|Usually seller provide|
+|2|Young's (Tensile) Modulus X|Ex (Gpa *)|Usually seller provide|
+|3|... Y|Ey|Test with ASTM D638|
+|4|... Z|Ez|Usually seller provide|
+|5|Tensile Strength X|σx (Mpa)|Usually seller provide|
+|6|... Y|σy|Test with ASTM D638|
+|7|... Z|σz|Usually seller provided|
+|8|Shear Modulus XY|Gxy|Test with ASTM D5379|
+|9|... YZ|Gyz|...|
+|10|... XZ|Gxz|...|
+|11|Shear Strength XY|τ12|Test with ASTM D5379|
+|12|... YZ|τ23|...|
+|13|... XZ|τ13|...|
+|14|Poisson’s Ratio XY|νxy|Test with ASTM D638|
+|15|... YZ|νyz|...|
+|16|... XZ|νxz|...|
 
 \* Different software and workflows may use different magnitudes of units.
 
-### From Tensile Testing Machine Result
+以下是耗材制造商常用的几个测试
 
-TBD 
-
-对于缺乏的参数，需要参照以下测试标准，将测试条以3种不同的方向打印，并以标准内指定的方式获取参数：
-
-|Standard Name|Specimen|Method|Purpose|
+|ISO Standard|ASTM Standard|Method|Purpose|
 |-|-|-|-|
 |ISO 527-2|ASTM D638|Tensile testing by pulling apart|Get Young's modulus / Tensile modulus|
-|ISO 178|ASTM D790|Flexural or bending testing by press on center||
-|ISO 179-2|ASTM D6110|Charpy impact testing by strike on other side of the notch||
+|ISO 178|ASTM D790|Flexural or bending testing by press on center|Get flexural strength and modulus|
+|ISO 179-2|ASTM D6110|Charpy impact testing by strike on opposite side of the notch|Get impact strength charpy|
 
 ## Shape Preparation
 
@@ -141,8 +136,6 @@ TBD 精简此章后删除此表格
 |Build Pressure|1 ~ 35 Mpa<br>(Gear extrude)|2 ~ 200 Mpa<br>(Hydraulic screw press)|
 |XY Tensile Modulus (GPa)|1.6 (80 %)|2.0 (100 %)|
 |XZ Tensile Modulus (GPa)|0.8 (40 %)|Isotropic *|
-|XY Tensile Strength (MPa)|32 (80 %)|40 (100%)|
-|XZ Tensile Strength (MPa)|12 (30 %)|Isotropic *|
 
 ### Brief Comparison Of Available Manufacturing Processes
 
@@ -167,7 +160,7 @@ TBD 可以在此加入电子束熔融、气溶胶喷射成型等工艺的表格�
  |-|-|-|-|-|-|-|
  |Dimensional Accuracy (mm)|0.05|0.1|0.05|0.01|0.1|0.01|
  |Design-To-Deliver Time|Hours|Days|Days|Weeks|Days|Weeks|
- |Typical Starting Cost $|0.5|10|8|800|35|50|
+ |Typical Starting Cost $|0.5|10|8|800|25|10|
 
   \* Controlled by different injection point designs. May perform simulator with Autodesk Moldflow or similar software.
 
