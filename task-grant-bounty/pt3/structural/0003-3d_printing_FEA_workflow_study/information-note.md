@@ -115,52 +115,67 @@ For filament manufacturers with good reputations and comprehensive testing proce
 |-|-|
 |![](image/basf_abs_properties_1.jpg)|![](image/bambu_abs_properties.jpg)|
 
-对于缺乏的数据，则需要按下表内所述的标准进行一系列的拉伸、弯曲和剪切试验来取得：
+The following is a material characteristic table required for orthotropic FEA. For some items, the data provided by the manufacturer can be used directly. For some item where the data is missing from manufacturer, it is recommended to conduct a series of tensile and shear tests according to the standards described in the table below to obtain the following data:
 
-(This sheet is only applicable for ambient temperature environments or non-thermal analysis workflows)
+<!--
+以下是进行正交各向异性FEA所需的材料特征卡，部分项目可以直接使用厂家所提供的数据，对于部分缺乏的数据，则建议按下表内所述的标准，进行一系列的拉伸和剪切试验来取得：
+-->
+
+(In order to unify the test environment and values, it is recommended that the entire test process be deployed according to ISO standards, and ASTM standards should only be used in special circumstances. Also, this sheet is only applicable for ambient temperature environments or non-thermal analysis workflows.)
 
 |#|Item|Symbol (Unit)|Possible Ways To Obtain|
 |:-|-:|-|-|
 |1|Density of fresh filament|ρ (g/cm3)|Usually provided perfectly / Test by ISO 1183-1|
-|2|Young's (Tensile) Modulus X|Ex (Gpa *)|Usually provided / Test by ISO 527-2|
+|2|Young's (Tensile) Modulus X|Ex (Gpa)|Usually provided / Test by ISO 527-2|
 |3|... Y|Ey|Test by ISO 527-2|
 |4|... Z|Ez|Usually provided / Test by ISO 527-2|
 |5|Tensile Strength X|σx (Mpa)|Usually provided / Test by ISO 527-2|
 |6|... Y|σy|Test by ISO 527-2|
 |7|... Z|σz|Usually provided / Test by ISO 527-2|
-|8|Shear Modulus XY|Gxy|Test by ISO 4587|
+|8|Shear Modulus XY|Gxy (Gpa)|Test by ISO 4587|
 |9|... YZ|Gyz|...|
 |10|... XZ|Gxz|...|
-|11|Shear Strength XY|τ12|Test by ISO 4587 / ISO 14129|
-|12|... YZ|τ23|Test by ISO 4587|
+|11|Shear Strength XY|τ12 (Mpa)|Test by ISO 4587|
+|12|... YZ|τ23|...|
 |13|... XZ|τ13|...|
 |14|Poisson’s Ratio XY|νxy|Test by ISO 527-2 with laterally strain measuring|
 |15|... YZ|νyz|...|
 |16|... XZ|νxz|...|
 
-\* Different software and workflows may use different magnitudes of units.
+## To Fullfill By Standard Testing
 
-另外，以下是耗材制造商常用的其他几个基本测试标准，为了统一测试环境和数值，整套测试流程均建议以ISO标准来部署，在特殊情况下才转而使用ASTM标准。
+Additionally, the table below provides an diagram and description of the purpose of all required test standards, including the ISO 178 bend test, which is not strictly required for orthotropic FEA:
 
-|Standard|Method|Purpose|
-|-|-|-|
-|ISO 178|Flexural or bending testing by press on center|Get flexural strength and modulus|
-|ISO 179-2|Charpy impact testing by strike on the center point on the longitude side|Get charpy impact strength|
-|ISO 180|Izod impact testing by strike on a half part separated by the latitude centerline|Get izod impact strength|
+<!--
+另外，下表是所有所需的测试标准的图解和目的说明，其中包括了对于正交各向异性FEA来说并不严格必需的ISO 178弯曲测试。
+-->
 
-|Explanation of ISO 179-2 and ISO 180|
-|-|
-|[](image/izod_charpy_explain.jpg)|
+|Standard|Diagram|Method|Purpose to get|
+|-|-|-|-|
+|ISO 178|![](image/iso_178_bend_explain.jpg)|Flexural testing by press on center of the large surface|Flexural strength and modulus|
+|ISO 179-2(a) and ISO 180(b)|![](image/izod_charpy_explain.jpg)|Charpy and izod impact testing by strike on two different points of the longitude side|Charpy and izod impact strength|
+|ISO 527-2|![](image/iso_527-2_tensile_explain.jpg)|Slowly pulling apart the bone shaped specimen|Tensile modulus and strength|
+|ISO 4587|![](image/iso_4587_shear_explain.png)|Slowly pulling apart the single lap shaped specimen|Shear modulus and strength|
 
-## Print The Standard Testing Specimen
+## Print The Standard Testing Specimens
 
-应严格使用上一章所引用标准的测试条形状作为3d打印素材，且不得对测试条的造型进行任何缩放和修改。
+When preparing test specimens, 3D-printed models should strictly adhere to the dimensions specified by the respective standards, and any scaling or styling modifications should be avoided.
 
-在slicing时，要将测试条的，以ISO 527-2为例
+When slicing, the model should be rotated to generate specimens G-code in three different orientations. This allows the inter-layer performance of the specimen to vary between the XY, XZ, and YZ axes. Using ISO 527-2 as an example:
+
+<!--
+在准备测试样本时，应严格按照各个标准所规定的尺寸制作3d打印模型，且不应对模型进行任何缩放和造型修改。
+
+在slicing时，要旋转模型，以制作3种不同方向的样本G-code，用于使样本的inter-layer之间表现出在XY、XZ、YZ三个轴向上的不同性能，以ISO 527-2为例：
+-->
+
+![](image/iso_527_three_orientation.png)
+
+若需要测试的3d打印部件是非实心，且内部为有规律的infill模板，则也需要为测试样本使用相同的壁厚和infill。并且，考虑到测试条的尺寸难以完整容纳比例过小的infill模板，所以应使用infill填充 ≥ 20 % 的设计。
 
 ## Prepare The Shape To Solve
 
-在使用FEA求解前，需要手动将标准测试条模型抽壳至指定壁厚，并手动将其内部填入指定的infill模板。并且，考虑到测试条的尺寸难以完整容纳比例过小的infill模板，所以应使用infill填充 ≥ 20 % 的设计。
+在使用FEA求解前，需要手动将标准测试条模型抽壳至指定壁厚，并手动将其内部填入指定的infill模板。
 
 按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
 
