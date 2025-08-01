@@ -32,8 +32,8 @@ This board provides standardized connectivity and mounting options for various p
 
 ### Mechanical
 - **Mounting:** 4x M2 threaded holes
-- **Board dimensions:** 16mm height x 24mm width
-- **Board thickness:** 1.6mm standard
+- **Board dimensions:** 15.8mm height x 23.5mm width
+- **Board thickness:** 1.0mm **(thinner than standard 1,6mm!)**
 - **Material:** FR4
 
 ![PCB Dimensions](images/layout_dimensions.png "Detailed dimension drawing")
@@ -128,6 +128,8 @@ s for maximum flexibility. J1 provides the same signals with additional ground p
 | Version | Date | Changes |
 |---------|------|---------|
 | v1.0    | 2025-06-02 | Initial release |
+| v1.2    | 2025-07-31 | Center Molex header, adjust edge dimensions |
+
 
 ## Support
 
