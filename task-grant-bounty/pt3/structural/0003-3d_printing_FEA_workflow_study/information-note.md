@@ -101,15 +101,21 @@ Currently, most CAD software that supports orthotropic FEA methods are very expe
 
 ### Start From Manufacturer's Parameter Card
 
-不像均质材料的各向同性FEA，正交各向异性FEA所需的参数更多，需要进行大量准备。
+Compared to isotropic FEA for homogeneous materials, orthotropic FEA requires more parameters and takes a certain amount of time to collect characteristic data of the filament.
 
-对于声誉良好且测试环节完善的3D打印耗材丝制造商，通常我们可以在其商品页面找到对应材料的性能表或文档，如下图所示。
+For filament manufacturers with good reputations and comprehensive testing procedures, we can usually find the performance sheet or document of the corresponding filament on the product webpage, which should include most of the basic parameters, as example shown in the figure below:
 
-对于缺乏的数据，则需要按下表内所述的标准进行一系列的拉伸、弯曲和剪切试验来取得，大部分情况下，测试条要以3种不同的方向打印。
+<!--
+相比于均质材料的各向同性FEA，正交各向异性FEA所需的参数更多，需要花费一定时间收集filament的特性数据。
+
+对于声誉良好且测试环节完善的filament制造商，通常我们可以在其商品页面找到对应filament的性能表或文档，其中应包含大部分基础参数，例如下图所示：
+-->
 
 |BASF Ultrafuse ABS|BambuLab ABS|
 |-|-|
 |![](image/basf_abs_properties_1.jpg)|![](image/bambu_abs_properties.jpg)|
+
+对于缺乏的数据，则需要按下表内所述的标准进行一系列的拉伸、弯曲和剪切试验来取得：
 
 (This sheet is only applicable for ambient temperature environments or non-thermal analysis workflows)
 
@@ -139,12 +145,22 @@ Currently, most CAD software that supports orthotropic FEA methods are very expe
 |Standard|Method|Purpose|
 |-|-|-|
 |ISO 178|Flexural or bending testing by press on center|Get flexural strength and modulus|
-|ISO 179-2|Charpy impact testing by strike on opposite side of the notch|Get impact strength charpy|
-|ISO 180|
+|ISO 179-2|Charpy impact testing by strike on the center point on the longitude side|Get charpy impact strength|
+|ISO 180|Izod impact testing by strike on a half part separated by the latitude centerline|Get izod impact strength|
 
-## Shape Preparation
+|Explanation of ISO 179-2 and ISO 180|
+|-|
+|[](image/izod_charpy_explain.jpg)|
 
-在使用FEA求解前，需要手动将标准测试条模型抽壳至所需壁厚，并将其内部填入所需的infill模板。并且，考虑到测试条的尺寸难以完整容纳比例过小的infill模板，所以应使用infill填充 ≥ 20 % 的设计。
+## Print The Standard Testing Specimen
+
+应严格使用上一章所引用标准的测试条形状作为3d打印素材，且不得对测试条的造型进行任何缩放和修改。
+
+在slicing时，要将测试条的，以ISO 527-2为例
+
+## Prepare The Shape To Solve
+
+在使用FEA求解前，需要手动将标准测试条模型抽壳至指定壁厚，并手动将其内部填入指定的infill模板。并且，考虑到测试条的尺寸难以完整容纳比例过小的infill模板，所以应使用infill填充 ≥ 20 % 的设计。
 
 按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
 
