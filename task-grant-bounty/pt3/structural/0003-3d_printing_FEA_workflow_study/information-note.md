@@ -32,12 +32,12 @@ We will use Inventor or Fusion for practical operations and generate solutions w
 
 # Results and Deliverables 
 
-## Overview
+## The Problem
 
-3D printed parts often fail to produce accurate results using FEA with simple homogeneous parameters. The reasons can be divided into two aspects as Macroscopic and Microscopic. Although our current technical means cannot systematically analyze microscopic characteristics, but it's still worth listing and paying attention to them:
+FDM 3D printed parts often fail to produce accurate results using FEA with simple homogeneous parameters. The reasons can be divided into two aspects as Macroscopic and Microscopic. Although our current technical means cannot systematically analyze microscopic characteristics, but it's still worth listing and paying attention to them:
 
 <!--
-3D打印部件通常无法通过使用简单均质参数的FEA得出正确结果，原因则可区分为宏观和微观两大方面。虽然以我们的现有技术手段无法对微观特性进行系统性的分析，但依然值得一并列出并加以关注：
+FDM 3D打印部件通常无法通过使用简单均质参数的FEA得出正确结果，原因则可区分为宏观和微观两大方面。虽然以我们的现有技术手段无法对微观特性进行系统性的分析，但依然值得一并列出并加以关注：
 -->
 
 |Conditions|Results|
@@ -52,9 +52,9 @@ We will use Inventor or Fusion for practical operations and generate solutions w
 |Different device and extruders with different hole diameters can produce different cross-sections|Gaps size between printed tracks are also different, and the sizes are nonlinear|
 |...||
 
-These characteristics causes the require of orthotropic FEA methods to solve 3D printed parts, and various infill parameters require various customized workflows. 
+These characteristics causes the require of orthotropic FEA methods to solve FDM 3D printed parts, and various infill parameters require various customized workflows. 
 
-In short, compared to homogeneous parts, the FEA process for 3D printed parts is actually more varied and difficult to achieve stable accuracy.
+In short, compared to homogeneous parts, the FEA process for FDM 3D printed parts is actually more varied and difficult to achieve stable accuracy.
 
 <!--
 宏观：
@@ -68,9 +68,9 @@ In short, compared to homogeneous parts, the FEA process for 3D printed parts is
 4. 不同设备或不同孔径的挤出机可产生不同截面的打印轨迹，导致打印轨迹之间的空隙大小也不相同，并且呈非线性。
    ...
 
-这些特性导致3D打印件需要使用正交各向异性的FEA方法来求解，并且各种不同的infill参数均需要定制不同的工作流程。
+这些特性导致FDM 3D打印件需要使用正交各向异性的FEA方法来求解，并且各种不同的infill参数均需要定制不同的工作流程。
 
-总而言之，相对于均质部件，3D打印部件的FEA流程实际上变化多样，很难有稳定的准确率。
+总而言之，相对于均质部件，FDM 3D打印部件的FEA流程实际上变化多样，很难有稳定的准确率。
 
 -->
 
@@ -126,21 +126,30 @@ The following is a material characteristic table required for orthotropic FEA. F
 |#|Item|Symbol (Unit)|Possible Ways To Obtain|
 |:-|-:|-|-|
 |1|Density of fresh filament|ρ (g/cm3)|Usually provided perfectly / Test by ISO 1183-1|
-|2|Young's (Tensile) Modulus X|Ex (Gpa)|Usually provided / Test by ISO 527-2|
+|2|Young's / Tensile Modulus X|Ex (Gpa)|Usually provided / Test by ISO 527-2|
 |3|... Y|Ey|Test by ISO 527-2|
 |4|... Z|Ez|Usually provided / Test by ISO 527-2|
-|5|Tensile Strength X|σx (Mpa)|Usually provided / Test by ISO 527-2|
-|6|... Y|σy|Test by ISO 527-2|
-|7|... Z|σz|Usually provided / Test by ISO 527-2|
-|8|Shear Modulus XY|Gxy (Gpa)|Test by ISO 4587|
-|9|... YZ|Gyz|...|
-|10|... XZ|Gxz|...|
-|11|Shear Strength XY|τ12 (Mpa)|Test by ISO 4587|
-|12|... YZ|τ23|...|
-|13|... XZ|τ13|...|
-|14|Poisson’s Ratio XY|νxy|Test by ISO 527-2 with laterally strain measuring|
-|15|... YZ|νyz|...|
-|16|... XZ|νxz|...|
+|5|Shear Modulus XY|Gxy (Gpa)|Test by ISO 4587|
+|6|... YZ|Gyz|...|
+|7|... XZ|Gxz|...|
+|8|Poisson’s Ratio XY|νxy|Test by ISO 527-2 with laterally strain measuring|
+|9|... YZ|νyz|...|
+|10|... XZ|νxz|...|
+
+We may save the following intermediate results for later use during the test:
+
+<!--
+在进行测试时，可以保留以下中间结果，以备后续使用：
+-->
+
+|#|Item|Symbol (Unit)|Possible Ways To Obtain|
+|:-|-:|-|-|
+|1|Tensile Strength X|σx (Mpa)|Usually provided / Test by ISO 527-2|
+|2|... Y|σy|Test by ISO 527-2|
+|3|... Z|σz|Usually provided / Test by ISO 527-2|
+|4|Shear Strength XY|τ12 (Mpa)|Test by ISO 4587|
+|5|... YZ|τ23|...|
+|6|... XZ|τ13|...|
 
 ## To Fullfill By Standard Testing
 
@@ -157,7 +166,7 @@ Additionally, the table below provides an diagram and description of the purpose
 |ISO 527-2|![](image/iso_527-2_tensile_explain.jpg)|Slowly pulling apart the bone shaped specimen|Tensile modulus and strength|
 |ISO 4587|![](image/iso_4587_shear_explain.png)|Slowly pulling apart the single lap shaped specimen|Shear modulus and strength|
 
-## Print The Standard Testing Specimens
+## Test The Standard Testing Specimens
 
 When preparing test specimens, 3D-printed models should strictly adhere to the dimensions specified by the respective standards, and any scaling or styling modifications should be avoided.
 
@@ -171,21 +180,37 @@ When slicing, the model should be rotated to generate specimens G-code in three 
 
 ![](image/iso_527_three_orientation.png)
 
-若需要测试的3d打印部件是非实心，且内部为有规律的infill模板，则也需要为测试样本使用相同的壁厚和infill。并且，考虑到测试条的尺寸难以完整容纳比例过小的infill模板，所以应使用infill填充 ≥ 20 % 的设计。
+Filament制造商所使用的标准测试通常采用 100 % 实心填充的测试条，以体现其filament的理论最佳性能。
 
-## Prepare The Shape To Solve
+但如果计划进行FEA的project零部件是非实心3d打印件，且内部为规则的infill模板，则在为测试条slicing时，也需要使用与project零部件相同的壁厚和infill设置，以尽可能准确地模拟project零部件的内部结构。
 
-在使用FEA求解前，需要手动将标准测试条模型抽壳至指定壁厚，并手动将其内部填入指定的infill模板。
+并且，考虑到标准测试条的尺寸难以完整容纳比例过小的infill模板，所以标准测试仅适用于设计infill ≥ 20 % 的零部件。同时，测试条的壁厚也不能过大，否则会挤占infill的空间，影响测试结果可靠性。在极端情况下，甚至建议适度取消测试条的顶面和底面，以尽量保证infill和外壁结构简单纯粹。
 
-按不同打印层数切片的方式不实际，因为可能产生过大的元素数量，反而导致运算困难。
+## Send The Components To Solve
 
-TBD 模型的UCS定向？
+- 在使用FEA求解前，需要将project零部件的模型抽壳至预计slicing的壁厚，并通过手动建模的方式，将其内部填入slicing时预计使用的infill模板。
+  - 设计infill比例应大于 20 %
 
-按3D打印的常规理解方式，垂直方向即为正交的Z轴。
+- 在材料卡内填入所需参数（参见[Inventor官方文档](https://help.autodesk.com/view/NINCAD/2025/ENU/?guid=GUID-1379B1A4-009C-4D58-8CF7-CC84D4255B23) ）
+  - 应使用与零部件所对应infill参数的测试条经标准测试得出的参数。
 
-TBD 每个元素的细分精度和预计需要的时间？
+- 对部件的材料特性进行定向。
+  - 按3D打印的常规理解方式，垂直方向即为Z轴，即inter-layer关系，适用于Z轴向上且不需要改变安装方向的部件。
+  - 若需要模拟部件在打印后旋转并组装，或任何非inter-layer轴向上的场景，则需要对部件进行UCS定向（参见[Inventor官方文档](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-define-the-material-axes-in-Nastran.html)）
+
+- 对模型进行细分。
+  - 应在模型内部进行目视检查，以确定infill已被细分，且包含足够的元素。
+  - 可能产生极大的元素数量，预计细分和FEA运算的耗时为各向同性FEA的2~3倍。
+
+- 准备完成后，即可按既有场景开始求解，剩余工作流程类似于各向同性FEA。
+
+- 基于FEA解算结果，即可开始对project零部件进行全方位改良。
+  - 改良后的project零部件应经过实地载荷测试、试飞和观察，且实地测试结果和FEA结果之间的理想误差应小于 20 %
+  - 在存在较大误差时，宁可保留冗余结构，也不应精简结构和安全系数。
 
 ## Additional Tip For Actual 3D Printing Manufacturing
+
+经由FEA的
 
 如果最终FEA结果与测试差异过大（＞ 20 %）或因其他某些原因导致FEA结果无法确信，目前已知只能通过以下方法尝试进一步提高打印强度：
 
@@ -209,19 +234,7 @@ TBD 每个元素的细分精度和预计需要的时间？
 
 ## Compare To Other Technologies
 
-### ~~Vs Injection Molding~~
-
-TBD 精简此章后删除此表格
-
-|-|FDM 3D Printing|Injection Molding|
-|-|-|-|
-|Build Pressure|1 ~ 35 Mpa<br>(Gear extrude)|2 ~ 200 Mpa<br>(Hydraulic screw press)|
-|XY Tensile Modulus (GPa)|1.6 (80 %)|2.0 (100 %)|
-|XZ Tensile Modulus (GPa)|0.8 (40 %)|Isotropic *|
-
 ### Brief Comparison Of Available Manufacturing Processes
-
-TBD 可以在此加入电子束熔融、气溶胶喷射成型等工艺的表格，列出其所属工艺分类和主要用途，不需要详细比较参数。
 
  众所周知，使用常见的FDM 3D打印方法，在相同规格下，无论是否使用工业级设备，其产品强度都无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。
  但FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。
@@ -249,8 +262,13 @@ TBD 可以在此加入电子束熔融、气溶胶喷射成型等工艺的表格�
 ## Questions & Uncharted Knowledge
 
 - 3D打印件本身是否可以衍生设计作为模具使用？是否可以承受模具所受的温度和压力？
-- 是否有可靠的化学凝固的方式可以作为注塑的下位替代品？例如环氧树脂水晶滴胶或光敏树脂？
-- 是否可以通过喷涂强化涂料来增加3D打印件外壁强度？
+- 是否有可靠的化学凝固方法作为注塑的下位替代品？例如环氧树脂或光敏树脂？
+- 是否可以通过喷涂强化涂料的方法来增加3D打印件外壁的强度？
 - 是否有小批量且低成本的注塑工艺流程？
 
+## Summarize
+
+虽然此information note已经总结出了目前已知最接近真实FDM部件情况的FEA方法，但此FEA求解结果的正确性依然存在不确定性。同时，测试需要花费一定时间、资金和体力成本，可能会导致依赖FDM 3D打印制作的部件在最终效益上无法超越SLS或MJF等近似各向同性的部件。所以，我认为，仅在少数特殊情况下才应对部件进行正交各向同性FEA（例如必须满足低成本FDM生产、易于分发等条件），否则应当使用 “制造 - 测试 - 修改模型” 等非标准测试流程来提高量产部件的力学性能，或直接考虑使用SLS、MJF等FEA结果可预期的制造方式进行量产。
+
 # Remarks 
+（无下文）
