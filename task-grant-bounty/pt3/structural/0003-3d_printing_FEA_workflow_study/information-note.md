@@ -1,7 +1,7 @@
 <!--Chinese language comparison included 包含汉语对照-->
 # Status 
 
-Draft
+Valid
 
 # Project Description
 
@@ -184,13 +184,13 @@ Using ISO 527-2 as an example:
 
 The standard tests used by filament manufacturers typically utilize 100% solid-fill specimens to reflect the theoretical optimal performance of their filament.
 
-However, if the project part we plan to perform FEA on is a non-solid-fill part with a regular infill pattern inside, we should use the same wall thickness and infill settings as the project part when slicing the specimen, to simulate the internal structure of the project part as accurately as possible.
+However, if the project part we plan to perform FEA on is a non-solid-fill part with a regular infill pattern inside, we should use the same wall thickness and infill settings as the project part when slicing the specimen, to simulate the internal structure of the project part as accurately as possible：
 
 ![](image/20_percent_infill_explain.jpg)
 
 Furthermore, the size of a standard specimen may not fully accommodate an small ratio infill pattern, so the standard test is only applicable to parts designed with an infill of 20 % or more. And the specimen's wall thickness should be kept within a reasonable range, or it will interrupt on the infill and affect the reliability of the test results. In extreme cases, it's even recommended to omit the top and bottom surfaces of the specimen printings to maintain a simple infill with outer wall structure.
 
-For articles of the deployment test environment and specific test processes, please refer to the respective ISO standard documents.
+For articles on deploying the test environment, specific test procedures, and calculating various modulus, please also refer to the respective ISO standard documents.
 
 <!--
 Filament制造商所使用的标准测试通常采用 100 % 实心填充的测试条，以体现其filament的理论最佳性能。
@@ -200,10 +200,35 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
 
 并且，考虑到标准测试条的尺寸难以完整容纳比例过小的infill模板，所以标准测试仅适用于设计infill ≥ 20 % 的零部件。同时，测试条的壁厚也不能过大，否则会挤占infill的空间，影响测试结果可靠性。在极端情况下，甚至建议适度取消测试条打印件的顶面和底面，以尽量保证infill和外壁结构简单。
 
-关于部署测试环境和具体测试流程的文章，也请另行查阅各ISO标准文件。
+关于部署测试环境、具体测试流程和计算各个模量的文章，也请另行查阅各ISO标准文件。
 -->
 
 ## Send The Components To Solve
+
+The solution workflow process for orthotropic FEA is similar to that for isotropic FEA and does not have a steep learning curve, but the main differences are the material parameters and the axial specification in certain cases.
+
+- Before starting the solution, manually Shell feature the project part to the designed slicing wall thickness and fill the interior with the infill pattern expected for slicing.
+  - The designed infill ratio should be greater than 20%.
+
+- Fill in the required material parameters in the material card. (See the [Inventor official documentation](https://help.autodesk.com/view/NINCAD/2025/ENU/?guid=GUID-1379B1A4-009C-4D58-8CF7-CC84D4255B23))
+  - Should use the material parameters obtained from the test specimens with the same infill parameters.
+
+- Orient the part's material properties.
+  - According to the conventional understanding of FDM 3D printing, the vertical direction is the Z axis, also the inter-layer relationship, which is suitable for parts with the default Z axis pointing upward and no need to change the installation direction.
+  - If the part needs to be reoriented and assembled after printing, also means the inter-layer axis is not facing upward, and the part's UCS orientation must be adjusted. (See [Inventor official documentation](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-define-the-material-axes-in-Nastran.html))
+
+- Subdivide the model into finite elements.
+  - Perform visual inspect with the model interior to ensure that the infill has been subdivided and contains sufficient elements.
+  - This can result in a very large number of elements; expect the subdivision and FEA run time to be 2 to 3 times that of an isotropic FEA workflow.
+
+- Once all preparation is complete, we can start the solving the project part workspace.
+
+- Based on the FEA solution results, we can begin comprehensive improvements to the project parts.
+  - Any improved parts should undergo field stress testing, flight tests, and observation. The ideal error between field test results and FEA results should be less than 20 %.
+  - When addressing errors, it's better to retain redundant structures than to reduce the structure and safety factor.
+
+<!--
+正交各向异性FEA的求解工作流程类似于各向同性FEA，并无陡峭的学习曲线，但主要区别是材料参数和特定情况下的轴向指定。
 
 - 在开始求解前，需要通过手动建模的方式，将project零部件的模型抽壳至设计slicing的壁厚，并将其内部填入slicing时预计使用的infill模板。
   - 设计infill比例应大于 20 %
@@ -212,38 +237,43 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
   - 应使用infill参数相同的测试条所得出的材料参数。
 
 - 对部件的材料特性进行定向。
-  - 按3D打印的常规理解方式，垂直方向即为Z轴，即inter-layer关系，适用于Z轴向上且不需要改变安装方向的部件。
+  - 按FDM 3D打印的常规理解方式，垂直方向即为Z轴，即inter-layer关系，适用于默认Z轴向上且不需要改变安装方向的部件。
   - 若部件在打印后需要改变朝向并组装，即非inter-layer轴朝上的场景，则需要对部件进行UCS定向。（参见[Inventor官方文档](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-define-the-material-axes-in-Nastran.html)）
 
-- 对模型进行细分。
+- 将模型进行细分为有限元。
   - 应在模型内部进行目视检查，以确定infill已被细分，且包含足够的元素。
-  - 可能产生极大的元素数量，预计细分和FEA运算的耗时为各向同性FEA的2~3倍。
+  - 可能产生极大的元素数量，预计细分和FEA运算的耗时为各向同性FEA工作流的2至3倍。
 
-- 准备完成后，即可按既有场景开始求解，剩余工作流程类似于各向同性FEA。
+- 准备完成后，即可对project零部件场景开始求解。
 
 - 基于FEA解算结果，即可开始对project零部件进行全方位改良。
   - 改良后的project零部件应经过实地载荷测试、试飞和观察，且实地测试结果和FEA结果之间的理想误差应小于 20 %
   - 在处理误差时，宁可保留冗余结构，也不应精简结构和安全系数。
+-->
 
 ## Additional Tip For Actual 3D Printing Manufacturing
 
-然而，如果最终FEA结果与测试差异过大（＞ 20 %）或因其他原因导致FEA结果无法确信，目前已知只能通过以下方法尝试进一步提高打印强度：
+However, if the final FEA results differ greatly from the test results (> 20% error) or the FEA results are unreliable due to any reasons, the only known methods to further improve the printing strength are:
+
+<!--
+然而，如果最终FEA结果与测试差异过大（误差 ＞ 20 %）或因任何原因导致FEA结果无法确信，目前已知只能通过以下方法尝试进一步提高打印强度：
+-->
 
 |Procedures|Theory|
 |-|-|
 |**Design**||
 |Use 1.5 ~ 2 times of wall thickness|Increase interlayer connection strength|
-|Double the amount of corner braces and reinforce beams|Directly improve overall strength|
+|Double the amount of corner braces and reinforce beams|Directly improve wall strength|
 |Use chamfered corner design more often|Increase the bending strength around corners|
 |**Slicing**||
 |Use better force spreading infill patterns|Disperse the load force into different directions or other fasteners|
-|Optimizing print direction|Avoid shear and tension between layers by rotate the slicing|
-|Enable brick layer slicing|Improve XZ ultimate tensile strength by 5 ~ 10 % during tensile stress test for most filaments|
-|**Print**||
+|Optimizing print direction|Minimize shear and tension risks between layers by reorient the slicing|
+|Enable brick layer slicing|Improve theoretical tensile strength by 5 ~ 10 % for most filaments|
+|**Printing**||
 |Dry the filament at the specified temperature and time before printing|Maintain consistent filament performance at all lengths|
 |Increase the nozzle and chamber temperature|Reduce cooling gradient for interlayer fusion connection|
 |Reduce cooling effect|Make molecular chains of fresh extruded traces better connecting between neighbor traces|
-|Minimize the print layer height|Increase interlayer fusion area|
+|Minimize the print layer height|Increase interlayer fusion area for better connection|
 |**Post Processing**||
 |Sufficient annealing treatment|Make molecular chains better connecting in all direction and try release any internal stress|
 |Epoxy resin infill|Simulating the effect of reinforced concrete by taking advantage of the hollow nature of 3D printing|
