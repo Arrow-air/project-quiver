@@ -168,31 +168,45 @@ Additionally, the table below provides an diagram and description of the purpose
 
 ## Test The Standard Testing Specimens
 
-When preparing test specimens, 3D-printed models should strictly adhere to the dimensions specified by the respective standards, and any scaling or styling modifications should be avoided.
+When preparing test specimens, 3D-printed models should strictly adhere to the dimensions specified by the respective ISO standards, and any scaling or styling modifications should be avoided.
 
-When slicing, the model should be rotated to generate specimens G-code in three different orientations. This allows the inter-layer performance of the specimen to vary between the XY, XZ, and YZ axes. Using ISO 527-2 as an example:
+When slicing, the model should be rotated to generate the specimens G-code in three main axes. This allows the inter-layer performance of the specimen to vary between the XY, XZ, and YZ axes. 
+
+Using ISO 527-2 as an example:
 
 <!--
-在准备测试样本时，应严格按照各个标准所规定的尺寸制作3d打印模型，且不应对模型进行任何缩放和造型修改。
+在准备测试样本时，应严格按照各个ISO标准所规定的尺寸制作3d打印模型，且不应对模型进行任何缩放和造型修改。
 
-在slicing时，要旋转模型，以制作3种不同方向的样本G-code，用于使样本的inter-layer之间表现出在XY、XZ、YZ三个轴向上的不同性能，以ISO 527-2为例：
+在slicing时，要旋转模型，以生成3种主要轴向的样本G-code，用于使样本的inter-layer之间表现出在XY、XZ、YZ三个轴向上的不同性能，以ISO 527-2为例：
 -->
 
 ![](image/iso_527_three_orientation.png)
 
+The standard tests used by filament manufacturers typically utilize 100% solid-fill specimens to reflect the theoretical optimal performance of their filament.
+
+However, if the project part we plan to perform FEA on is a non-ssolid-fill part with a regular infill pattern inside, we should use the same wall thickness and infill settings as the project part when slicing the specimen, to simulate the internal structure of the project part as accurately as possible.
+
+Furthermore, the size of a standard specimen may not fully accommodate an small ratio infill pattern, so the standard test is only applicable to parts designed with an infill of 20 % or more. And the specimen's wall thickness should be kept within a reasonable range, or it will interrupt on the infill and affect the reliability of the test results. In extreme cases, it's even recommended to omit the top and bottom surfaces of the specimen printings to maintain a simple infill with outer wall structure.
+
+For articles of the deployment test environment and specific test processes, please refer to the respective ISO standard documents.
+
+<!--
 Filament制造商所使用的标准测试通常采用 100 % 实心填充的测试条，以体现其filament的理论最佳性能。
 
-但如果计划进行FEA的project零部件是非实心3d打印件，且内部为规则的infill模板，则在为测试条slicing时，也需要使用与project零部件相同的壁厚和infill设置，以尽可能准确地模拟project零部件的内部结构。
+但如果计划进行FEA的project零部件是非实心件，且内部为规则的infill模板，则在为测试条slicing时，也需要使用与project零部件相同的壁厚和infill设置，以尽可能准确地模拟project零部件的内部结构。
 
-并且，考虑到标准测试条的尺寸难以完整容纳比例过小的infill模板，所以标准测试仅适用于设计infill ≥ 20 % 的零部件。同时，测试条的壁厚也不能过大，否则会挤占infill的空间，影响测试结果可靠性。在极端情况下，甚至建议适度取消测试条的顶面和底面，以尽量保证infill和外壁结构简单纯粹。
+并且，考虑到标准测试条的尺寸难以完整容纳比例过小的infill模板，所以标准测试仅适用于设计infill ≥ 20 % 的零部件。同时，测试条的壁厚也不能过大，否则会挤占infill的空间，影响测试结果可靠性。在极端情况下，甚至建议适度取消测试条打印件的顶面和底面，以尽量保证infill和外壁结构简单。
+
+关于部署测试环境和具体测试流程的文章，也请另行查阅各ISO标准文件。
+-->
 
 ## Send The Components To Solve
 
-- 在使用FEA求解前，需要将project零部件的模型抽壳至预计slicing的壁厚，并通过手动建模的方式，将其内部填入slicing时预计使用的infill模板。
+- 在开始求解前，需要通过手动建模的方式，将project零部件的模型抽壳至设计slicing的壁厚，并将其内部填入slicing时预计使用的infill模板。
   - 设计infill比例应大于 20 %
 
-- 在材料卡内填入所需参数（参见[Inventor官方文档](https://help.autodesk.com/view/NINCAD/2025/ENU/?guid=GUID-1379B1A4-009C-4D58-8CF7-CC84D4255B23) ）
-  - 应使用与零部件所对应infill参数的测试条经标准测试得出的参数。
+- 在材料卡内填入所需材料参数（参见[Inventor官方文档](https://help.autodesk.com/view/NINCAD/2025/ENU/?guid=GUID-1379B1A4-009C-4D58-8CF7-CC84D4255B23) ）
+  - 应使用infill参数相同的测试条所得出的材料参数。
 
 - 对部件的材料特性进行定向。
   - 按3D打印的常规理解方式，垂直方向即为Z轴，即inter-layer关系，适用于Z轴向上且不需要改变安装方向的部件。
@@ -206,13 +220,11 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
 
 - 基于FEA解算结果，即可开始对project零部件进行全方位改良。
   - 改良后的project零部件应经过实地载荷测试、试飞和观察，且实地测试结果和FEA结果之间的理想误差应小于 20 %
-  - 在存在较大误差时，宁可保留冗余结构，也不应精简结构和安全系数。
+  - 在处理误差时，宁可保留冗余结构，也不应精简结构和安全系数。
 
 ## Additional Tip For Actual 3D Printing Manufacturing
 
-经由FEA的
-
-如果最终FEA结果与测试差异过大（＞ 20 %）或因其他某些原因导致FEA结果无法确信，目前已知只能通过以下方法尝试进一步提高打印强度：
+然而，如果最终FEA结果与测试差异过大（＞ 20 %）或因其他原因导致FEA结果无法确信，目前已知只能通过以下方法尝试进一步提高打印强度：
 
 |Procedures|Theory|
 |-|-|
@@ -224,7 +236,7 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
 |Use better force spreading infill patterns|Disperse the load force into different directions or other fasteners|
 |Optimizing print direction|Avoid shear and tension between layers by rotate the slicing|
 |Enable brick layer slicing|Improve XZ ultimate tensile strength by 5 ~ 10 % during tensile stress test for most filaments|
-|**Printing**||
+|**Print**||
 |Increase the nozzle and chamber temperature|Reduce cooling gradient for interlayer fusion connection|
 |Reduce cooling effect|Make molecular chains of fresh extruded traces better connecting between neighbor traces|
 |Minimize the print layer height|Increase interlayer fusion area|
@@ -232,9 +244,7 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
 |Sufficient annealing treatment|Make molecular chains better connecting in all direction and try release any internal stress|
 |Epoxy resin infill|Simulating the effect of reinforced concrete by taking advantage of the hollow nature of 3D printing|
 
-## Compare To Other Technologies
-
-### Brief Comparison Of Available Manufacturing Processes
+## Brief Comparison Of Available Manufacturing Processes
 
  众所周知，使用常见的FDM 3D打印方法，在相同规格下，无论是否使用工业级设备，其产品强度都无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。
  但FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。
@@ -261,14 +271,29 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
 
 ## Questions & Uncharted Knowledge
 
+- Can the 3D-printed part itself be used as a mold for a derivative design? Can it withstand the temperatures and pressures encountered in a mold?
+- Are there reliable chemical curing methods as a lower-end alternative to injection molding? For example, epoxy or photosensitive resin?
+- Can the outer wall of a 3D-printed part be strengthened by spraying a reinforcing coating?
+- Are there low-volume, low-cost injection molding processes?
+
+<!--
 - 3D打印件本身是否可以衍生设计作为模具使用？是否可以承受模具所受的温度和压力？
 - 是否有可靠的化学凝固方法作为注塑的下位替代品？例如环氧树脂或光敏树脂？
 - 是否可以通过喷涂强化涂料的方法来增加3D打印件外壁的强度？
 - 是否有小批量且低成本的注塑工艺流程？
+-->
 
 ## Summarize
 
-虽然此information note已经总结出了目前已知最接近真实FDM部件情况的FEA方法，但此FEA求解结果的正确性依然存在不确定性。同时，测试需要花费一定时间、资金和体力成本，可能会导致依赖FDM 3D打印制作的部件在最终效益上无法超越SLS或MJF等近似各向同性的部件。所以，我认为，仅在少数特殊情况下才应对部件进行正交各向同性FEA（例如必须满足低成本FDM生产、易于分发等条件），否则应当使用 “制造 - 测试 - 修改模型” 等非标准测试流程来提高量产部件的力学性能，或直接考虑使用SLS、MJF等FEA结果可预期的制造方式进行量产。
+While this information note summarizes the most accurate FEA method currently available for realistic FDM parts, but the accuracy of these FEA solutions remains uncertain. At the same time, standard testing requires a certain amount of time, money and physical effort, which may result in parts relying on FDM 3D printing being less cost-effective than parts with nearly isotropic properties such as SLS or MJF.
+
+Therefore, I believe that orthotropic FEA should only be performed on parts in special cases (Such as low-cost FDM production and easy distribution are required). Otherwise, non-standard testing processes such as "manufacturing-testing-remodeling" should be performed to improve the mechanical properties of mass-produced parts, or those mass production should be directly considered using manufacturing methods such as SLS and MJF where FEA results are predictable.
+
+<!--
+虽然此information note已经总结出了目前已知最接近真实FDM部件情况的FEA方法，但此FEA求解结果的正确性依然存在不确定性。同时，标准测试需要花费一定时间、资金和体力成本，可能会导致依赖FDM 3D打印的部件在效益上劣于SLS或MJF等近似各向同性的部件。
+
+所以我认为，仅在特殊情况下才应对部件进行正交各向同性FEA（例如必须满足低成本FDM生产、易于分发等条件），否则应当使用 “制造 - 测试 - 修改模型” 等非标准测试流程来提高量产部件的力学性能，或直接考虑使用SLS、MJF等FEA结果可预期的制造方式进行量产。
+-->
 
 # Remarks 
-（无下文）
+(End of document)
