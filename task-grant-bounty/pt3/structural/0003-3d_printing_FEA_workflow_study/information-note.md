@@ -299,7 +299,7 @@ In reality, there're other more advanced 3D printing technologies are gradually 
  |-|FDM|SLS<br>(Selective Laser Sintering)|MJF<br>(Multi Jet Fusion)|Injection Molding|Metal SLM<br>(Selective Laser Melting)|CNC Machining|
  |-|-|-|-|-|-|-|
  |Material characteristics|XZ Orthotropic|85 % Isotropic|97 % Isotropic|Isotropic *|90 % Isotropic|Isotropic|
- |Material Source|Common plastics filaments|PA11<br>PA12<br>PA12-CF/GF<br>PA-AF(Aluminum-fill)<br>PP<br>TPU|PA11<br>PA12<br>PA12-CF/GF<br>TPU|Plastics universal|Titanium alloy<br>316L steel<br>AlSi10Mg alloy|Solid block or sheet object universal|
+ |Material Source|Common plastics filaments|PEKK<br>PA11<br>PA12<br>PA12-CF/GF<br>PA-AF(Aluminum-fill)<br>PP<br>TPU|PA11<br>PA12<br>PA12-CF/GF<br>TPU|Plastics universal|Titanium alloy<br>316L steel<br>AlSi10Mg alloy|Solid block or sheet object universal|
  |Material Customizability|Single filament|Dyeable|Dyeable|Multi ingredient mixable|Single powder|Single block|
  |Representative Materials|ABS|PA12|PA12|ABS|AlSi10Mg alloy|6061 aluminum alloy|
  |-|-|-|-|-|-|-|
