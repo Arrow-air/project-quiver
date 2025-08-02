@@ -151,7 +151,7 @@ We may save the following intermediate results for later use during the test:
 |5|... YZ|τ23|...|
 |6|... XZ|τ13|...|
 
-## To Fullfill By Standard Testing
+### To Fullfill By Standard Testing
 
 Additionally, the table below provides an diagram and description of the purpose of all required test standards, including the ISO 178 bend test, which is not strictly required for orthotropic FEA:
 
@@ -166,7 +166,7 @@ Additionally, the table below provides an diagram and description of the purpose
 |ISO 527-2|![](image/iso_527-2_tensile_explain.jpg)|Slowly pulling to break apart the bone shaped specimen|Tensile modulus and strength|
 |ISO 4587|![](image/iso_4587_shear_explain.png)|Slowly pulling to break apart the single lap shaped specimen|Shear modulus and strength|
 
-## Test The Standard Testing Specimens
+### Test The Standard Testing Specimens
 
 When preparing test specimens, 3D-printed models should strictly adhere to the dimensions specified by the respective ISO standards, and any scaling or styling modifications should be avoided.
 
