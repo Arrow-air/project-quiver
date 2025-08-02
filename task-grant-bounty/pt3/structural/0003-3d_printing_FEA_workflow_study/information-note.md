@@ -205,12 +205,12 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
 - 在开始求解前，需要通过手动建模的方式，将project零部件的模型抽壳至设计slicing的壁厚，并将其内部填入slicing时预计使用的infill模板。
   - 设计infill比例应大于 20 %
 
-- 在材料卡内填入所需材料参数（参见[Inventor官方文档](https://help.autodesk.com/view/NINCAD/2025/ENU/?guid=GUID-1379B1A4-009C-4D58-8CF7-CC84D4255B23) ）
+- 在材料卡内填入所需材料参数。（参见[Inventor官方文档](https://help.autodesk.com/view/NINCAD/2025/ENU/?guid=GUID-1379B1A4-009C-4D58-8CF7-CC84D4255B23) ）
   - 应使用infill参数相同的测试条所得出的材料参数。
 
 - 对部件的材料特性进行定向。
   - 按3D打印的常规理解方式，垂直方向即为Z轴，即inter-layer关系，适用于Z轴向上且不需要改变安装方向的部件。
-  - 若需要模拟部件在打印后旋转并组装，或任何非inter-layer轴向上的场景，则需要对部件进行UCS定向（参见[Inventor官方文档](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-define-the-material-axes-in-Nastran.html)）
+  - 若部件在打印后需要改变朝向并组装，即非inter-layer轴朝上的场景，则需要对部件进行UCS定向。（参见[Inventor官方文档](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-define-the-material-axes-in-Nastran.html)）
 
 - 对模型进行细分。
   - 应在模型内部进行目视检查，以确定infill已被细分，且包含足够的元素。
