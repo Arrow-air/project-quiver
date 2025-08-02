@@ -246,18 +246,28 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
 
 ## Brief Comparison Of Available Manufacturing Processes
 
- 众所周知，使用常见的FDM 3D打印方法，在相同规格下，无论是否使用工业级设备，其产品强度都无法匹敌注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。
- 但FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。
- 但是，实际上其他更先进的3D打印技术已经在逐渐逼近注塑级强度，同时还有着远比注塑更加低廉的成本，但材料类型又有限制。以下是一些对比：
+It's well known, the common FDM 3D printing method, within the same material specifications, regardless of whether industrial-grade equipment is used or whether fiber filaments are involved, the strength of products cannot match that of injection molded parts. And 3D printing also lacks the flexibility of injection molding in terms of material selection. 
+
+However, the FDM 3D printing, with its rapid design and iteration capabilities, offers a clear advantage in the application of non-load-bearing parts, that's something injection molding cannot match.
+
+In reality, there're other more advanced 3D printing technologies are gradually approaching or even surpassing the strength of injection molding, while offering lower costs comparing to molding. However, these technologies also have limitations in terms of material selection. Here are some comparisons:
+
+<!--
+ 众所周知，使用常见的FDM 3D打印方法，在相同材料规格下，无论是否使用工业级设备或是否包含纤维丝，其产品强度都无法比拟注塑件，同时3D打印在材料选择上也不具有注塑件的灵活性。
+ 
+ 而FDM 3D打印工艺具有可快速设计、快速迭代的特性，因此在非受力部件的应用上有绝对优势，这又是注塑无法比拟的。
+
+ 但实际上，其他更先进的3D打印技术已经在逐渐逼近甚至超越了注塑级强度，同时有着比注塑更加低廉的成本，但在材料选择上又存在限制。以下是一些对比：
+-->
 
 （All material values in the table are typical values）
 
  |-|FDM|SLS<br>(Selective Laser Sintering)|MJF<br>(Multi Jet Fusion)|Injection Molding|Metal SLM<br>(Selective Laser Melting)|CNC Machining|
  |-|-|-|-|-|-|-|
  |Material characteristics|XZ Orthotropic|85 % Isotropic|97 % Isotropic|Isotropic *|90 % Isotropic|Isotropic|
- |Material Source|Common 3d printing plastics|PA11, PA12, PA12-CF/GF, PA-AF(Aluminum-filled), PP, TPU|PA11, PA12, PA12-CF/GF, TPU|Plastic universal|Titanium alloy, 316L, AlSi10Mg alloy|Solid block or sheet object universal|
+ |Material Source|Common plastics filaments|PA11<br>PA12<br>PA12-CF/GF<br>PA-AF(Aluminum-fill)<br>PP<br>TPU|PA11<br>PA12<br>PA12-CF/GF<br>TPU|Plastics universal|Titanium alloy<br>316L steel<br>AlSi10Mg alloy|Solid block or sheet object universal|
  |Material Customizability|Single filament|Dyeable|Dyeable|Multi ingredient mixable|Single powder|Single block|
- |Representative Materials|ABS|PA12|PA12|ABS|AlSi10Mg alloy|6061 Aluminum alloy|
+ |Representative Materials|ABS|PA12|PA12|ABS|AlSi10Mg alloy|6061 aluminum alloy|
  |-|-|-|-|-|-|-|
  |Raw Material Density (g/cm3)|1.05|0.93|1.01|1.03|2.66|2.7|
  |XY Tensile Strength (MPa)|32|45|50|40|360|310|
@@ -265,9 +275,9 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
  |-|-|-|-|-|-|-|
  |Dimensional Accuracy (mm)|0.05|0.1|0.05|0.01|0.1|0.01|
  |Design-To-Deliver Time|Hours|Days|Days|Weeks|Days|Weeks|
- |Typical Starting Cost $|0.5|10|8|800|25|10|
+ |Typical Starting Cost $|0.5|8|10|800|25|12|
 
-  \* Controlled by different injection point designs. May perform simulator with Autodesk Moldflow or similar software.
+  \* Controlled by different injection point designs. May perform simulation with Autodesk Moldflow or similar software.
 
 ## Questions & Uncharted Knowledge
 
