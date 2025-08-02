@@ -88,13 +88,13 @@ There are many FEA software options on the market, and different software may be
 |Autodesk Inventor (with Nastran)|For isotropic, orthotropic, linear or nonlinear methods|**Yes** (Not expensive and well-functioning)|
 |Siemens NX|...|No (Expensive)|
 |Autodesk Netfabb|Fusion integrable 3D printing infill preparation and heat/stress simulation|No (Not for FDM, also expensive)|
-|Digimat|For representative elementary volume (RVE) microscopic such as fabric fiber and micro mechanical|No (Too micro for current needs)|
+|Digimat|For representative elementary volume (RVE) microscopic such as fabric fiber and micro mechanical|No (Too microscopic for current need)|
 |...|||
 
-Currently, most CAD software that supports orthotropic FEA methods are very expensive, including those examples in the above list. So this information note will mainly explain the functions supported by two relatively low-cost software: Autodesk Fusion and Autodesk Inventor.
+Currently, most CAD software that supports orthotropic FEA methods are very expensive, including those examples in the above list. So this information note will mainly explain the functions supported by the low-cost software: **Autodesk Inventor**.
 
 <!--
-目前，大部分支持正交各向异性FEA方法的CAD软件都非常昂贵，包括上述列表中的这些例举。所以此information note将主要围绕Fusion和Inventor这两个成本相对较低的软件所支持的功能来进行解释。
+目前，大部分支持正交各向异性FEA方法的CAD软件都非常昂贵，包括上述列表中的这些例举。所以此information note将主要围Inventor这个成本相对较低的软件所支持的功能来进行解释。
 -->
 
 ## Material Data Preparation
@@ -162,15 +162,15 @@ Additionally, the table below provides an diagram and description of the purpose
 |Standard|Diagram|Method|Purpose to get|
 |-|-|-|-|
 |ISO 178|![](image/iso_178_bend_explain.jpg)|Flexural testing by press on center of the large surface|Flexural strength and modulus|
-|ISO 179-2(a) and ISO 180(b)|![](image/izod_charpy_explain.jpg)|Charpy and izod impact testing by strike on two different points of the longitude side|Charpy and izod impact strength|
-|ISO 527-2|![](image/iso_527-2_tensile_explain.jpg)|Slowly pulling apart the bone shaped specimen|Tensile modulus and strength|
-|ISO 4587|![](image/iso_4587_shear_explain.png)|Slowly pulling apart the single lap shaped specimen|Shear modulus and strength|
+|ISO 179-2(a) and ISO 180(b)|![](image/izod_charpy_explain.jpg)|Charpy(a) and izod(b) destructive impact testing by strike on two different points of the longitude side|Charpy and izod impact strength|
+|ISO 527-2|![](image/iso_527-2_tensile_explain.jpg)|Slowly pulling to break apart the bone shaped specimen|Tensile modulus and strength|
+|ISO 4587|![](image/iso_4587_shear_explain.png)|Slowly pulling to break apart the single lap shaped specimen|Shear modulus and strength|
 
 ## Test The Standard Testing Specimens
 
 When preparing test specimens, 3D-printed models should strictly adhere to the dimensions specified by the respective ISO standards, and any scaling or styling modifications should be avoided.
 
-When slicing, the model should be rotated to generate the specimens G-code in three main axes. This allows the inter-layer performance of the specimen to vary between the XY, XZ, and YZ axes. 
+When slicing, the model should be rotated to generate 3 different orientated specimens G-code for three main axes. This allows the inter-layer performance of the specimen to vary between the XY, XZ, and YZ axes. 
 
 Using ISO 527-2 as an example:
 
@@ -184,7 +184,9 @@ Using ISO 527-2 as an example:
 
 The standard tests used by filament manufacturers typically utilize 100% solid-fill specimens to reflect the theoretical optimal performance of their filament.
 
-However, if the project part we plan to perform FEA on is a non-ssolid-fill part with a regular infill pattern inside, we should use the same wall thickness and infill settings as the project part when slicing the specimen, to simulate the internal structure of the project part as accurately as possible.
+However, if the project part we plan to perform FEA on is a non-solid-fill part with a regular infill pattern inside, we should use the same wall thickness and infill settings as the project part when slicing the specimen, to simulate the internal structure of the project part as accurately as possible.
+
+![](image/20_percent_infill_explain.jpg)
 
 Furthermore, the size of a standard specimen may not fully accommodate an small ratio infill pattern, so the standard test is only applicable to parts designed with an infill of 20 % or more. And the specimen's wall thickness should be kept within a reasonable range, or it will interrupt on the infill and affect the reliability of the test results. In extreme cases, it's even recommended to omit the top and bottom surfaces of the specimen printings to maintain a simple infill with outer wall structure.
 
@@ -194,6 +196,7 @@ For articles of the deployment test environment and specific test processes, ple
 Filament制造商所使用的标准测试通常采用 100 % 实心填充的测试条，以体现其filament的理论最佳性能。
 
 但如果计划进行FEA的project零部件是非实心件，且内部为规则的infill模板，则在为测试条slicing时，也需要使用与project零部件相同的壁厚和infill设置，以尽可能准确地模拟project零部件的内部结构。
+
 
 并且，考虑到标准测试条的尺寸难以完整容纳比例过小的infill模板，所以标准测试仅适用于设计infill ≥ 20 % 的零部件。同时，测试条的壁厚也不能过大，否则会挤占infill的空间，影响测试结果可靠性。在极端情况下，甚至建议适度取消测试条打印件的顶面和底面，以尽量保证infill和外壁结构简单。
 
@@ -237,6 +240,7 @@ Filament制造商所使用的标准测试通常采用 100 % 实心填充的测�
 |Optimizing print direction|Avoid shear and tension between layers by rotate the slicing|
 |Enable brick layer slicing|Improve XZ ultimate tensile strength by 5 ~ 10 % during tensile stress test for most filaments|
 |**Print**||
+|Dry the filament at the specified temperature and time before printing|Maintain consistent filament performance at all lengths|
 |Increase the nozzle and chamber temperature|Reduce cooling gradient for interlayer fusion connection|
 |Reduce cooling effect|Make molecular chains of fresh extruded traces better connecting between neighbor traces|
 |Minimize the print layer height|Increase interlayer fusion area|
