@@ -333,3 +333,14 @@ bomdiv
 chkbxs
 bomrowid
 Netlist
+Nastran
+Netfabb
+Digimat
+Ultrafuse
+Bambu
+ASTM
+Charpy
+interlayer
+PEKK
+Moldflow
+Flexural
