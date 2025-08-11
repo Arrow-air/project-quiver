@@ -54,7 +54,9 @@ The PT3 structural design is an evolution of the PT2 airframe, preserving core g
 
 **Enclosure Assembly** 
 
-![image.png](attachment:75a43173-231e-40e4-a34b-5237c91e17bc:image.png)
+Total|Explode 
+:-:|:-:
+![](images/Quiver_PT3_Drone_Assemblyv30_enclosure.png) | ![](images/enclosure_explode.png)
 
 A comprehensive redesign of the battery and avionics enclosures in PT3 added weather resistance, improved heat management, and enhanced PCB structural support without sacrificing the maintainability achieved in PT2. The enclosure assemblies are divided into four primary components: the Battery PCB enclosure, the Main enclosure, the Front lid, and the Top cap.
 
