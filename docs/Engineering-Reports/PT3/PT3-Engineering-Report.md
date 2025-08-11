@@ -205,6 +205,28 @@ Future work should focus on further increasing computing power by migrating to a
 
 ## Appendices (Detailed references)
 
-- Detailed PCB Information Notes
-- Structural Modification Diagrams
-- Complete Test Plans & Results Logs
+### Electronics
+- [Battery PCB Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/electronics/0002-Battery-PCB/information-note.md)
+- [Attachment Interface PCB Information Note](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB)
+- [Rangefinder Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/electronics/0005-Rangefinder/information-note.md)
+- [GNSS Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/electronics/0006-GNSS/information-note.md)
+- [Main PCB Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/electronics/0007-Main-PCB/information_note.md)
+- [FC Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/electronics/0008-FC-PCB/information_note.md)
+
+### Flight Controller
+- [FC Roadmap Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/flight-controller/0001-fc-roadmap/information-note.md)
+- [FC Setup Guide](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/flight-controller/0002-flight-controller-setup/information-note.md)
+
+### Airframe
+- [PT3 Airframe Modifciations Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/structural/0001-comprehensive_airframe_modification/information-note.md)
+- [Airframe CAD Architecture Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/structural/0002-Airframe-CAD-Architecture.md)
+
+### Assembly Guides
+- [All](https://github.com/Arrow-air/project-quiver/tree/main/docs/assembly-guides/PT3)
+
+### Misc
+- [Performance Metrics Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Tools/Performance-Metrics/information-note.md)
+
+
+
+
