@@ -333,3 +333,9 @@ bomdiv
 chkbxs
 bomrowid
 Netlist
+Iavg
+Vavg
+desync
+Quicktune
+Decel
+decel
