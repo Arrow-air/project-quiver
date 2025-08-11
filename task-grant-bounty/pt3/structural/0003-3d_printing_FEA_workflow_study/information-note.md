@@ -5,39 +5,39 @@ Valid
 
 # Project Description
 
-Due to Project Quiver has long used **FDM 3D printing** (Fused Deposition Modeling of Additive Manufacturing) to create various prototypes and structural components, but we still lacking specific research into its material strength characteristics. Furthermore, our very basic **FEA** (Finite Element Analysis) workflow can only works for homogeneous parts like injection molding and metal, and cannot provide reliable results for 3D printed parts.
+Due to Project Quiver has long used **FDM 3D printing** (Fused Deposition Modeling of Additive Manufacturing) to create various prototypes and structural components, but still lacking specific research into its material strength characteristics. Furthermore, the very basic **FEA** (Finite Element Analysis) workflow can only works for homogeneous parts like injection molding and metal, and cannot provide reliable results for 3D printed parts.
 
-To alleviate this problem, we have decided to collect and organize some academic knowledge and industry standards to begin to enhance our understanding of 3D printing structures and improve our 3D printing structure design process under the premise of controllable costs.
+To alleviate this problem, the project have decided to collect and organize some academic knowledge and industry standards to begin to enhance the understanding of 3D printing structures and improve the project 3D printing structure design process under the premise of controllable costs.
 
 At the same time, this article will also organize some collected relevant parameters of mainstream and experimental component forming technologies and make a simple comparison between them.
 
 <!-- 
-由于Project Quiver长期以来使用**FDM 3D打印** (Fused Deposition Modeling of Additive Manufacturing）制作部分原型和结构件，但我们一直缺乏对其材料强度特性的具体研究，且最初级的**FEA**（有限元分析）工作流程仅适用于注塑、金属等均质部件，无法为3D打印件提供可靠结果。
+由于Project Quiver长期以来使用**FDM 3D打印** (Fused Deposition Modeling of Additive Manufacturing）制作部分原型和结构件，但一直缺乏对其材料强度特性的具体研究，且最初级的**FEA**（有限元分析）工作流程仅适用于注塑、金属等均质部件，无法为3D打印件提供可靠结果。
 
-为了缓解这个问题，现决定收集并整理一些学术知识和业界标准，开始增进我们对3D打印结构的了解，并在成本可控的前提下改良我们的3D打印结构设计流程。
+为了缓解这个问题，现项目决定收集并整理一些学术知识和业界标准，开始增进对3D打印结构的了解，并在成本可控的前提下改良项目的3D打印结构设计流程。
 
 同时，还将在这片文章中整理一些收集到的主流和实验性零部件成型技术的相关参数，并在它们之间进行简单对比。
 -->
 
 # Methodology 
 
-Based on our past experience in 3D printing parts production, we will search and organize relevant research results and academic papers online. We will then use the AI assistant ChatGPT-o3 to cross-reference and compare these articles and standards (without using less logically rigorous language models like 4o). 
+Based on the past experience in 3D printing parts production, this project will search and organize relevant research results and academic papers online. This project will then use the AI assistant ChatGPT-o3 to cross-reference and compare these articles and standards (without using less logically rigorous language models like 4o). 
 
-We will use Inventor or Fusion for practical operations and generate solutions when necessary.
+Also will use Inventor or Fusion for practical operations and generate solutions when necessary.
 <!--
-将基于我们过往的3D打印零部件制作经验，在网络上搜索和整理相关的研究成果和学术论文，同时将收集到的文章和标准交由AI助手ChatGPT-o3进行交叉查询和比对（不使用4o等逻辑严密度较低的语言模型）。
+基于过往的3D打印零部件制作经验，此项目将在网络上搜索和整理相关的研究成果和学术论文。同时项目将收集到的文章和标准交由AI助手ChatGPT-o3进行交叉查询和比对（不使用4o等逻辑严密度较低的语言模型）。
 
-必要时我们将使用Inventor或Fusion进行实操并求解。
+必要时也将使用Inventor或Fusion进行实操并求解。
 -->
 
 # Results and Deliverables 
 
 ## The Problem
 
-FDM 3D printed parts often fail to produce accurate results using FEA with simple homogeneous parameters. The reasons can be divided into two aspects as Macroscopic and Microscopic. Although our current technical means cannot systematically analyze microscopic characteristics, but it's still worth listing and paying attention to them:
+FDM 3D printed parts often fail to produce accurate results using FEA with simple homogeneous parameters. The reasons can be divided into two aspects as Macroscopic and Microscopic. Although the current project technical means cannot systematically analyze microscopic characteristics, but it's still worth listing and paying attention to them:
 
 <!--
-FDM 3D打印部件通常无法通过使用简单均质参数的FEA得出正确结果，原因则可区分为宏观和微观两大方面。虽然以我们的现有技术手段无法对微观特性进行系统性的分析，但依然值得一并列出并加以关注：
+FDM 3D打印部件通常无法通过使用简单均质参数的FEA得出正确结果，原因则可区分为宏观和微观两大方面。虽然以项目现有技术手段无法对微观特性进行系统性的分析，但依然值得一并列出并加以关注：
 -->
 
 |Conditions|Results|
@@ -76,10 +76,10 @@ In short, compared to homogeneous parts, the FEA process for FDM 3D printed part
 
 ## Software Selection
 
-There are many FEA software options on the market, and different software may be targeted at different levels of FEA. We need to choose the right software to perform the required FEA. Some software only works for simple deformation, some are suitable for anisotropy or nonlinearity, and some are even specialized only for microstructure of materials:
+There are many FEA software options on the market, and different software may be targeted at different levels of FEA. The project need to choose the right software to perform the required FEA. Some software only works for simple deformation, some are suitable for anisotropy or nonlinearity, and some are even specialized only for microstructure of materials:
 
 <!--
-市场上的FEA软件有许多选择，不同软件可能针对不同程度的FEA。我们需要选择合适的软件才能进行所需的FEA。有些软件仅适合简单形变，有些适合各向异性或非线性，甚至有些仅专门针对材料微观结构：
+市场上的FEA软件有许多选择，不同软件可能针对不同程度的FEA。项目需要选择合适的软件才能进行所需的FEA。有些软件仅适合简单形变，有些适合各向异性或非线性，甚至有些仅专门针对材料微观结构：
 -->
 
 |Software|Simulation Functions|Availability|
@@ -103,12 +103,12 @@ Currently, most CAD software that supports orthotropic FEA methods are very expe
 
 Compared to isotropic FEA for homogeneous materials, orthotropic FEA requires more parameters and takes a certain amount of time to collect characteristic data of the filament.
 
-For filament manufacturers with good reputations and comprehensive testing procedures, we can usually find the performance sheet or document of the corresponding filament on the product webpage, which should include most of the basic parameters, as example shown in the figure below:
+For filament manufacturers with good reputations and comprehensive testing procedures, research personnel can usually find the performance sheet or document of the corresponding filament on the product webpage, which should include most of the basic parameters, as example shown in the figure below:
 
 <!--
 相比于均质材料的各向同性FEA，正交各向异性FEA所需的参数更多，需要花费一定时间收集filament的特性数据。
 
-对于声誉良好且测试环节完善的filament制造商，通常我们可以在其商品页面找到对应filament的性能表或文档，其中应包含大部分基础参数，例如下图所示：
+对于声誉良好且测试环节完善的filament制造商，研究人员通常可以在其商品页面找到对应filament的性能表或文档，其中应包含大部分基础参数，例如下图所示：
 -->
 
 |BASF Ultrafuse ABS|BambuLab ABS|
@@ -184,7 +184,7 @@ Using ISO 527-2 as an example:
 
 The standard tests used by filament manufacturers typically utilize 100% solid-fill specimens to reflect the theoretical optimal performance of their filament.
 
-However, if the project part we plan to perform FEA on is a non-solid-fill part with a regular infill pattern inside, we should use the same wall thickness and infill settings as the project part when slicing the specimen, to simulate the internal structure of the project part as accurately as possible：
+However, if the project part which plan to perform FEA on is a non-solid-fill part with a regular infill pattern inside, the test should use the same wall thickness and infill settings as the project part when slicing the specimen, to simulate the internal structure of the project part as accurately as possible：
 
 ![](image/20_percent_infill_explain.jpg)
 
@@ -195,8 +195,7 @@ For articles on deploying the test environment, specific test procedures, and ca
 <!--
 Filament制造商所使用的标准测试通常采用 100 % 实心填充的测试条，以体现其filament的理论最佳性能。
 
-但如果计划进行FEA的project零部件是非实心件，且内部为规则的infill模板，则在为测试条slicing时，也需要使用与project零部件相同的壁厚和infill设置，以尽可能准确地模拟project零部件的内部结构。
-
+但如果计划进行FEA的project零部件是非实心件，且内部为规则的infill模板，则在为测试所需的测试条进行slicing时，也需要使用与project零部件相同的壁厚和infill设置，以尽可能准确地模拟project零部件的内部结构。
 
 并且，考虑到标准测试条的尺寸难以完整容纳比例过小的infill模板，所以标准测试仅适用于设计infill ≥ 20 % 的零部件。同时，测试条的壁厚也不能过大，否则会挤占infill的空间，影响测试结果可靠性。在极端情况下，甚至建议适度取消测试条打印件的顶面和底面，以尽量保证infill和外壁结构简单。
 
@@ -221,9 +220,9 @@ The solution workflow process for orthotropic FEA is similar to that for isotrop
   - Perform visual inspect with the model interior to ensure that the infill has been subdivided and contains sufficient elements.
   - This can result in a very large number of elements; expect the subdivision and FEA run time to be 2 to 3 times that of an isotropic FEA workflow.
 
-- Once all preparation is complete, we can start the solving the project part workspace.
+- Once all preparation is complete, start to solve the project part workspace.
 
-- Based on the FEA solution results, we can begin comprehensive improvements to the project parts.
+- Based on the FEA solution results, the project can begin comprehensive improvements to the corresponding parts.
   - Any improved parts should undergo field stress testing, flight tests, and observation. The ideal error between field test results and FEA results should be less than 20 %.
   - When addressing errors, it's better to retain redundant structures than to reduce the structure and safety factor.
 
@@ -244,9 +243,9 @@ The solution workflow process for orthotropic FEA is similar to that for isotrop
   - 应在模型内部进行目视检查，以确定infill已被细分，且包含足够的元素。
   - 可能产生极大的元素数量，预计细分和FEA运算的耗时为各向同性FEA工作流的2至3倍。
 
-- 准备完成后，即可对project零部件场景开始求解。
+- 准备完成后，对project零部件场景开始求解。
 
-- 基于FEA解算结果，即可开始对project零部件进行全方位改良。
+- 基于FEA解算结果，项目即可开始对相应的零部件进行全方位改良。
   - 改良后的project零部件应经过实地载荷测试、试飞和观察，且实地测试结果和FEA结果之间的理想误差应小于 20 %
   - 在处理误差时，宁可保留冗余结构，也不应精简结构和安全系数。
 -->
@@ -331,12 +330,12 @@ In reality, there're other more advanced 3D printing technologies are gradually 
 
 While this information note summarizes the most accurate FEA method currently available for realistic FDM parts, but the accuracy of these FEA solutions remains uncertain. At the same time, standard testing requires a certain amount of time, money and physical effort, which may result in parts relying on FDM 3D printing being less cost-effective than parts with nearly isotropic properties such as SLS or MJF.
 
-Therefore, I believe that orthotropic FEA should only be performed on parts in special cases (Such as low-cost FDM production and easy distribution are required). Otherwise, non-standard testing processes such as "manufacturing-testing-remodeling" should be performed to improve the mechanical properties of mass-produced parts, or those mass production should be directly considered using manufacturing methods such as SLS and MJF where FEA results are predictable.
+Therefore, This study result believe that orthotropic FEA should only be performed on parts in special cases (Such as low-cost FDM production and easy distribution are required). Otherwise, non-standard testing processes such as "manufacturing-testing-remodeling" should be performed to improve the mechanical properties of mass-produced parts, or those mass production should be directly considered using manufacturing methods such as SLS and MJF where FEA results are predictable.
 
 <!--
 虽然此information note已经总结出了目前已知最接近真实FDM部件情况的FEA方法，但此FEA求解结果的正确性依然存在不确定性。同时，标准测试需要花费一定时间、资金和体力成本，可能会导致依赖FDM 3D打印的部件在效益上劣于SLS或MJF等近似各向同性的部件。
 
-所以我认为，仅在特殊情况下才应对部件进行正交各向同性FEA（例如必须满足低成本FDM生产、易于分发等条件），否则应当使用 “制造 - 测试 - 修改模型” 等非标准测试流程来提高量产部件的力学性能，或直接考虑使用SLS、MJF等FEA结果可预期的制造方式进行量产。
+所以本次学习成果认为，仅在特殊情况下才应对部件进行正交各向同性FEA（例如必须满足低成本FDM生产、易于分发等条件），否则应当使用 “制造 - 测试 - 修改模型” 等非标准测试流程来提高量产部件的力学性能，或直接考虑使用SLS、MJF等FEA结果可预期的制造方式进行量产。
 -->
 
 # Remarks 
