@@ -39,7 +39,9 @@ The PT3 airframe CAD model introduces weight optimizations, multiple features fo
 
 A detailed part list and link to the .step file can be found in the information note included in the report appendix. 
 
-<img width="2048" height="576" alt="image" src="https://github.com/user-attachments/assets/af808e1c-eb86-44ba-9522-8442d3196277" />
+![](images/PT3_Drone_SideBySide_Transparent.png)
+
+
 
 
 ## Detailed Technical Improvements (PT3)
