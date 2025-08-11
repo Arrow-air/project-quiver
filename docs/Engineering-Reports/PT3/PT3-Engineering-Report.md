@@ -118,7 +118,7 @@ A brief summary is provided below of the PCBs and their functionality. Detailed 
 
 ### Battery PCB
 
-![image.png](attachment:7b4438a9-728e-4423-92fe-41ffee838e94:image.png)
+![](images/BatPCBTrans.png)
 
 The newly designed Battery PCB is responsible for managing, protecting, and monitoring the primary power flow from the Tattu Smart Battery to the Main PCB. It integrates power switching, pre-charge control with a bypass, and telemetry functions into a single board, using a combination of MOSFETs, SSRs, voltage regulators, fuses, TVS diodes, temperature sensors, and indicator LEDs.
 
@@ -130,7 +130,7 @@ By combining critical protection, switching, and monitoring functions into a ded
 
 ### Main PCB
 
-![mainPCB (2).png](attachment:920cbb26-68a1-4ec1-aaa3-a4f2d2eac7b4:mainPCB_(2).png)
+![](images/mainPCBTrans.png)
 
 The PT3 Main PCB serves as the primary hub for distributing power, data, and control signals between the flight controller and the aircraft’s major subsystems. Its design is heavily based on the PT2 Main PCB, retaining the overall functional block layout and many proven interconnection schemes, but with a number of targeted upgrades to improve flexibility, serviceability, and system integration.
 
@@ -144,7 +144,7 @@ The Main PCB functions as a central hub, managing power and communication betwee
 
 ### FC PCB
 
-![FCPCB (2).png](attachment:8c3acb37-36e4-423b-b697-ed52f69d4a20:FCPCB_(2).png)
+![](images/FCPCBTrans.png)
 
 The FC PCB is an adapter board for the Pix 32 V6 flight controller. It includes breakouts for the various PWM, GPIO, GPS, I²C, CAN, S.BUS, and power pins on the flight controller. Various components were included based on the documentation provided by Holybro for the Pix32 V6 Schematic. Diagnostic LEDs indicate FC power state and sensor activity, while probe points facilitate troubleshooting without interrupting harness connections.
 
