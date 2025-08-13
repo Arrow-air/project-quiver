@@ -68,7 +68,7 @@ The main enclosure includes a reserved RP-SMA mounting bracket for the telemetry
 
 ![image.png](attachment:e1f23674-4132-4695-9b84-46ea3ea4b8b6:image.png)
 
-The GNSS receiver is mounted 2 cm above the FCU enclosure to reduce EMI, supported by a custom arch bracket that provides stability without contacting the FCU or its PCB.
+The GNSS receiver is mounted 2 cm above the FCU enclosure to reduce EMI, supported by a custom arch bracket that provides stability without contacting the FC or its PCB.
 
 **Attachment Interface** 
 
