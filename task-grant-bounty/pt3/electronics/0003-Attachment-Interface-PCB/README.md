@@ -33,7 +33,7 @@ This board provides standardized connectivity and mounting options for various p
 ### Mechanical
 - **Mounting:** 4x M2 threaded holes
 - **Board dimensions:** 15.8mm height x 23.5mm width
-- **Board thickness:** 1.0mm **(thinner than standard 1,6mm!)**
+- **Board thickness:** 1.2mm **(thinner than standard 1,6mm!)**
 - **Material:** FR4
 
 ![PCB Dimensions](images/layout_dimensions.png "Detailed dimension drawing")
