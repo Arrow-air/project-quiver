@@ -9,7 +9,7 @@ To improve the assembly process and structural safety of Quiver PT3 enclosure, a
 
 - Main enclosure:
   - Latch mechanism: A replacement and upgrade was made, due to the original main enclosure which relied on four individual latches for retention and lacked of rigidity with a reasonable assembly process. 
-  - Telemetery antenna outlet: An offset has been applied to the rear antenna, which shifted further away from the front antenna to reduce antenna coupling and enhance antenna isolation.
+  - Telemetry antenna outlet: An offset has been applied to the rear antenna, which shifted further away from the front antenna to reduce antenna coupling and enhance antenna isolation.
   - Top cap: The thickness of the center top cap area have been reduced to optimizing signal reception performance of RTK-GNSS module, also a special structural strength compensation has been added.
 - Altitude sensor mount: A screw depth correction has been performed to the radar sensor mount, and the LiDAR sensor mounting orientation has been rotated to ensure the space for the new gimbal camera mount.
 
@@ -18,7 +18,7 @@ To improve the assembly process and structural safety of Quiver PT3 enclosure, a
 
 - Main enclosure: 
   - Latch mechanism：进行了替换和升级，因为原main enclosure由4个独立的latch作为限位手段，且缺乏刚性固定和合理的组装流程。
-  - Telemetery antenna outlet: 对后侧天线执行了偏移，使其进一步远离前侧天线，以减小天线耦合并强化天线隔离。
+  - Telemetry antenna outlet: 对后侧天线执行了偏移，使其进一步远离前侧天线，以减小天线耦合并强化天线隔离。
   - Top cap: 减小顶部中心区域的厚度，优化RTK-GNSS模块的信号接收性能，并专门补偿了结构强度。
 - Altitude sensor mount: 修正了radar sensor mount的螺丝深度，旋转了LiDAR sensor的安装方向以保障新的云台相机mount的空间。
 -->
@@ -68,13 +68,13 @@ The new mating mechanism need to be accessed from inside the battery bay.
 新的紧固机制需要从battery bay内进行操作。
 -->
 
-### Telemetery Antenna Outlet
+### Telemetry Antenna Outlet
 
 |Old|New|
 |-|-|
 |![](image/antenna_old.jpg)|![](image/antenna_new.jpg)
 
-- The distance of 'array replication' have been adjusted for more than 1 cm, provided a distance increasement between two antennas. 
+- The distance of 'array replication' have been adjusted for more than 1 cm, provided a distance increase between two antennas. 
 - And some fillet is applied to interior sharp corners to prevent cable damage or personnel injury from scratching in extreme cases (not shown in images).
 
 <!--
