@@ -42,8 +42,8 @@
 ### Table 2. Fasteners
 |	Fastener ID	|	Fastener Description	|	Quantity	|	McMaster-Carr Reference	|
 |	--	|	--	|	--	|	--	|
-|	 Rivet 1	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	26	|	[97525A251](https://www.mcmaster.com/97525A251)	|
-|	 Rivet 2	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	20	|	[97525A226](https://www.mcmaster.com/97525A226)	|
+|	 Rivet 1	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	36	|	[97525A251](https://www.mcmaster.com/97525A251)	|
+|	 Rivet 2	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
 |	Screw 1	|	Socket Head Screw M3x10	|	48	|	[91290A115](https://www1.mcmaster.com/91290A115)	|
 |	 Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[97654A373](https://www.mcmaster.com/97654A373)	|
 |	 Screw 3	|	Socket Head Screw M3x16               	|	24	|	[91292A115](https://www.mcmaster.com/91292A115)	|
@@ -183,8 +183,8 @@
   - Parts 4, 5, 6 (Cockpit Support Beams)
   - Rivet 1 x13
 
-- Place the cockpit support beams on the mid plate as shown to the picture.
 - Apply adhesive on the cockpit support beams around the holes on the contact side.
+- Place the cockpit support beams on the mid plate as shown to the picture.
 - Rivet the cockpit support beams from the mid plate on the holes shown in the picture.
   - Make sure you rivet before the adhesive dries.
 
@@ -196,7 +196,8 @@
 - Parts needed:
   - Step 1 chassis
   - Parts 7, 8 (Battery Walls)
-  - Rivet 2 x10
+  - Rivet 1 x10
+- Apply adhesive on the battery walls around the holes on the contact side.
 - Place the battery walls on the sides of the chassis as shown in the picture.
   - Make sure the dented side stays on the chassis side.
 - Rivet the battery walls from the mid plate on the holes shown in the picture.
