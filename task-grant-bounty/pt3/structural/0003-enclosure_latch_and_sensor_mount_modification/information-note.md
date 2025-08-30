@@ -1,7 +1,10 @@
-<!--Chinese language comparison included 包含汉语对照-->
+<!--Partial original Chinese writing included 包含部分汉语原文-->
 # Status 
 
 Valid
+Revision History: V1
+Replacement Log: None
+Reference: 0001 - PT3 Comprehensive Airframe Modification
 
 # Project Description
 
@@ -116,6 +119,6 @@ Redesigned most of the structure.
 
 # Remarks 
 
-- KBM was recommending to seek for more compact altitude sensors models for future development.
+- KBM(the author) is recommending to seek for more compact altitude sensor options for future development.
 
 (End of document)
