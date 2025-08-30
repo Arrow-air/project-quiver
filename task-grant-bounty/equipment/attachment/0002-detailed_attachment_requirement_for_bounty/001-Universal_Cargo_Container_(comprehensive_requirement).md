@@ -17,7 +17,7 @@ Cargo inside may be dropped or released through the control from users or progra
 - AB-3: Any non-real-time modules (e.g. GUI or interface) shall be controllable by companion computer via CAN / UART or Ethernet.
 
 ## Performance:
-- P-1: Maximum static carrying weight shall be determined and right under the aircraft's maximum payload limit.
+- P-1: Maximum static carrying weight shall be determined and right under 7 KG as the aircraft's maximum payload limit.
 - P-2: Shall have optimized aerodynamic shape to reduce the form drag.
 - P-3: Shall maximize the use of redundant spaces in any dimensions.
 - P-4: Shall support ergonomics tool-less operation by ground personnel, including when wearing personal protection equipment.
