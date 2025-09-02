@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 003 - Ground Target Machine Vision System
-Version: 12.06.25-4 Dragon Noodle
+Version: 03.09.25-5 Deer Noodle
 
 ## General Objective Description:
 An airborne image processing system mainly composed of computing units, designed to uses machine vision or AI method to extract and classify objects from input image frames. The main source of the images is other airborne cameras. The system can be used for animal detection or regional analysis.
@@ -26,7 +26,7 @@ An airborne image processing system mainly composed of computing units, designed
 - P-6: Must have dust and water splash proof ability.
 
 ## Manufacturing & Maintenance Process Technology:
-- M-1: Use of off-shelf computer are encouraged (e.g. Raspberry Pi, Nvidia Jetson).
+- M-1: Use of off-shelf computer are encouraged (The core components may consist of highly integrated modules(e.g., Raspberry Pi, Nvidia Jetson) available on the market for better design).
 - M-2: Shall support raster-to-vector conversion function for survey data output.
 - M-3: Shall output with standardized format (e.g. KML / KMZ) for compatibility with survey data archiving and exchanging (e.g. Google Earth, ArcGIS, QGIS, etc.).
 - M-4: Shall include on-ground companion software for system configuration and data output.
@@ -41,3 +41,4 @@ An airborne image processing system mainly composed of computing units, designed
 19.05.25-2 Egg Noodle: Added M-5.
 24.05.25-3 Pork Noodle: Added M-6.
 12.06.25-4 Dragon Noodle: Fix power limit in AB-1.
+03.09.25-5 Deer Noodle: CHANGE M-1 for components source clarification.
