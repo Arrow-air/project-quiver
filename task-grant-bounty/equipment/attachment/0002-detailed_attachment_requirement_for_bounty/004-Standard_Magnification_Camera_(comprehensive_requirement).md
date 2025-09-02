@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 004 - Standard Magnification Camera
-Version: 03.09.25-3 Goat Pizza
+Version: 03.09.25-4 Tomato Pizza
 
 ## General Objective Description:
 
@@ -33,6 +33,7 @@ The camera module can be attached or detached from a gimbal stabilizer or other 
 - M-2: Structure parts must provide rigid support and connections to all connected parts.
 - M-3: Shall not include any kind of non-functional decorative features.
 - M-4: May include on-ground companion software for video encoding configuration and log output.
+- M-5: The core components may consist of highly integrated modules(e.g., camera sensor array and video feed switch) available on the market for better design.
 
 ## Safety:
 - S-1: Must include over temperature protection mechanism.
@@ -43,3 +44,4 @@ The camera module can be attached or detached from a gimbal stabilizer or other 
 - 15.05.25-1 Boar: Initial public release.
 - 12.06.25-2 Boar Pizza: FIX power limit at AB-1. Fix standard description in AB-4.
 - 03.09.25-3 Goat Pizza: ADD detailed explanation for P-1 and P-2.
+- 03.09.25-4 Tomato Pizza: ADD M-5 for components source clarification.
