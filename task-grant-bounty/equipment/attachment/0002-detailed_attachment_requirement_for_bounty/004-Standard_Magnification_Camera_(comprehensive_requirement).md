@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 004 - Standard Magnification Camera
-Version: 12.06.25-2 Boar Pizza
+Version: 03.09.25-3 Goat Pizza
 
 ## General Objective Description:
 
@@ -21,8 +21,8 @@ The camera module can be attached or detached from a gimbal stabilizer or other 
 - AB-6: Shall use Ethernet over UDP protocol for RTSP video output.
 
 ## Performance:
-- P-1: Image sensors shall have diagonal size ≥ 1/2 inch and refresh rate ≥ 30 FPS.
-- P-2: May select global shutter sensor for components. 
+- P-1: Image sensors shall have diagonal size ≥ 1/2 inch and refresh rate ≥ 30 FPS for ensure the image quality.
+- P-2: May select global shutter sensor to prevent the jelly effect caused by propulsion vibration. 
 - P-3: Main lens shall have effective focus length of approximately 24 mm (35 mm equivalent).
 - P-4: Magnified lens may have effective focus length ≥ 85 mm (35 mm equivalent).
 - P-5: Must include still image capture, video recording and SD card storage functions.
@@ -41,4 +41,5 @@ The camera module can be attached or detached from a gimbal stabilizer or other 
   
 ## Revision:
 - 15.05.25-1 Boar: Initial public release.
-- 12.06.25-2 Boar Pizza: Fix power limit at AB-1. Fix standard description in AB-4.
+- 12.06.25-2 Boar Pizza: FIX power limit at AB-1. Fix standard description in AB-4.
+- 03.09.25-3 Goat Pizza: ADD detailed explanation for P-1 and P-2.
