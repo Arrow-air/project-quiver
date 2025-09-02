@@ -1,6 +1,6 @@
 # Comprehensive Requirement
 ### 002 - General Aerial LiDAR Scanning Device
-Version: 12.06.25-2 Powered Glider
+Version: 03.09.25-3 Nuclear Glider
 
 ## General Objective Description:
 An airborne LiDAR system designed to acquire high-precision point cloud data of terrestrial objects. The system integrates inertial navigation, onboard point cloud processing, and embedded data storage subsystems. Color data fusion is not required at this stage of deployment.
@@ -28,7 +28,7 @@ An airborne LiDAR system designed to acquire high-precision point cloud data of 
 - P-5: Shall have optimized aerodynamic enclosure shape to reduce the form drag.
 
 ## Manufacturing & Maintenance Process Technology:
-- M-1: Uses of off-shelf LiDAR sensor are encouraged.
+- M-1: Uses of off-shelf LiDAR sensor are encouraged (The core components may consist of highly integrated modules available on the market for better design).
 - M-2: The LiDAR sensor must be rigidly aligned with the navigation subsystem to preserve calibration integrity.
 - M-3: LiDAR sensor must have an rigid structure and dimension relation with all high precision navigation subsystem.
 - M-4: Aluminum alloys and composite materials are encouraged.
@@ -44,3 +44,4 @@ An airborne LiDAR system designed to acquire high-precision point cloud data of 
 ## Revision:
 - 15.05.25-1 Glide: Initial public release.
 - 12.06.25-2 Powered Glider: Fix power limit in AB-1. Fix standard description in AB-6.
+- 03.09.25-3 Nuclear Glider: CHANGE M-1 for components source clarification.
