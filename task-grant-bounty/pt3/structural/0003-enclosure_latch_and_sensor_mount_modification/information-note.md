@@ -1,10 +1,13 @@
 <!--Partial original Chinese writing included 包含部分汉语原文-->
 # Status 
 
-Valid
-Revision History: V1
-Replacement Log: None
-Reference: 0001 - PT3 Comprehensive Airframe Modification
+`Valid`
+
+`Revision History: V1.1`
+
+`Replacement Log: None`
+
+`Reference: 0001 - PT3 Comprehensive Airframe Modification`
 
 # Project Description
 
