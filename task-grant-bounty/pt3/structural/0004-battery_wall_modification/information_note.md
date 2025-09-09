@@ -23,6 +23,19 @@ Fusion 360 is used to make the necessary changes on the main assembly.
 
 # Results and Deliverables
 
+## Battery Slider Hole Misalignment
+A new hole was created, making the battery wall symmetric.
 
+| Old | New |
+|-|-|
+|![.](./image/slider_int_old.png) |![.](./image/slider_int_new.png) |
+
+## Motor Arm Connector Bolt Installation Cutouts
+The cutouts were enlarged to allow proper bolt installation and improved accessibility.
+
+| Old | New |
+|-|-|
+|![.](./image/inst_cutout_old.png) |![.](./image/inst_cutout_new.png) |
 
 # Remarks
+The design should be validated in the next prototype build. Additional modification may be required.
