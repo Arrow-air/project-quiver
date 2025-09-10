@@ -259,7 +259,7 @@
 |--|--|--|
 |![](assets/images/step5_1.png)| ![](assets/images/step5_3.png) | ![](assets/images/step5_2.png) |
 
-### Step 6. Install the Battery Connector PCB Mount
+### Step 6. Install the Main PCB Mount
 - Parts needed:
   - Step 5 chassis
   - Part 26 (Main PCB Mount)
@@ -273,7 +273,7 @@
 
 |Top|Bottom|
 |--|--|
-|![](assets/images/step6_2.png)| ![](assets/images/step6_1.png) |
+|![](assets/images/step6_1.png)| ![](assets/images/step6_2.png) |
 
 - Place Insert 3 to the holes shown in the picture, on the top side of the main PCB mount.
   - Use a soldering iron to place them inside the plastic.
@@ -288,7 +288,7 @@
 
 ![](assets/images/step6_3.png)
 
-### Step 7. Install the Main PCB Mount
+### Step 7. Install the Battery Connector PCB Mount
 - Parts needed:
   - Step 6 chassis
   - Part 30 (BC PCB Mount)
