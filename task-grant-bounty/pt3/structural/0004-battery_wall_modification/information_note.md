@@ -9,6 +9,8 @@
 
 `Replacement Log: None`
 
+`Reference: 0001 - PT3 Comprehensive Airframe Modification`
+
 # Project Description
 
 This information note covers two corrective modifications on the battery wall that were identified during the assembly of PT3.
