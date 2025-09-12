@@ -31,7 +31,7 @@ To improve the assembly process and structural safety of Quiver PT3 enclosure, a
 
 # Methodology 
 
-This design and delivery was conducted using Fusion 360. All modifications were based on '0001-comprehensive_airframe_modification' and subsequent minor revisions (such as Julius's modification of the GNSS stand).
+This design and delivery was conducted using Fusion 360. All modifications were based on '0001-comprehensive_airframe_modification' and subsequent minor revisions before this delivery.
 
 The top cap have been remodeled for this change, due to a time line dependencies error was introduced during the latch mechanism modification. Causing its fillet surface may having slightly difference from the previous version but does not affect performance.
 
@@ -53,6 +53,19 @@ The main results are:
   - Top cap
   - Altitude sensor mount
 - New hole features of main enclosure modification on the vertical airframe metal parts (need to be drilled manually or re-ordered).
+
+## Before the Change
+
+Some minor design logs for the RTK-GNSS module before this modification shall include in this delivery.
+
+Due to there's no reserved install location for RTK-GNSS module (which should stay close to the center of the aircraft), this 3d printed double-deck module mounting bracket has been decided to put into the design, without causing negetive impact to the flight controller unit :
+
+- The first version of corresponding part has a design fault that may cause very difficult connector maintenance. 
+- The second version solved the issue by raising the mount and creating enough clearance for the connector.
+
+|Planning|First Version (KBM)|Second Version (Julius)|
+|-|-|-|
+|![](image/gnss-stand_plan.png)|![](image\gnss-stand_kbm_version.png)|![](image/gnss-stand_julius_version.png)| 
 
 ## Main Enclosure 
 
