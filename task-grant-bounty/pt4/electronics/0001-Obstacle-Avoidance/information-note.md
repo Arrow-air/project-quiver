@@ -1,11 +1,23 @@
-# Information Note — Quiver PT4 Proximity Sensors (LiDAR + Radar)
+# Obstacle Avoidance Proximity Sensors (LiDAR + Radar)
 
-## Project Description
-### **Purpose** 
-Choose and integrate a **top-mounted 360° LiDAR** and a **forward mmWave radar** for Quiver PT4 (chassis-integrated; side/belly payload mounts remain free).
+# Status
 
-### **Decision** 
+`Valid`
+
+`Revision History: v1`
+
+`Replacement Log: None`
+
+
+# Project Description
+
+## **Purpose** 
+Choose and integrate a **top-mounted 360° LiDAR** and a **forward mmWave radar** for Quiver PT3/PT4 (chassis-integrated; side/belly payload mounts remain free).
+
+## **Decision** 
 Proceed with **Slamtec RPLIDAR S2L** (top) + **Nanoradar MR82** (forward). **Integration order for MR82:** attempt **direct CAN** with ArduPilot first; only if that’s unviable, use a **companion-computer MAVLink bridge**.
+
+# Methodology
 
 ## Shortlist — Direct-to-ArduPilot LiDARs
 
@@ -36,7 +48,10 @@ Proceed with **Slamtec RPLIDAR S2L** (top) + **Nanoradar MR82** (forward). **Int
 | **InnoSenT IMD-2000**           | 24 GHz    | to \~50 m       | \~98°×48°     | UART         | 25×20×12 mm  | Companion → `OBSTACLE_DISTANCE(_3D)`           |
 | **Nanoradar MR72**     | 77 GHz    | 0.2–80 m        | fan beams     | **CAN**      | module-class | **Direct (CAN)** on Copter 4.5+                |
 
-## Selected PT4 Configuration
+
+# Results and Deliverables
+
+## Selected PT3/4 Configuration
 
 ### Top (chassis, under radome): **Slamtec RPLIDAR S2L**
 
@@ -109,7 +124,7 @@ Proceed with **Slamtec RPLIDAR S2L** (top) + **Nanoradar MR82** (forward). **Int
 * Low-speed OA trials (Simple/BendyRuler); increase speed after consistent detection at range.
 * Ensure no FC brownouts; stable CAN errors; consistent timestamps.
 
-## References
+# References
 
 1. [ArduPilot — Nanoradar MR72 (Copter): setup, CAN protocol, non-DroneCAN note, Copter 4.5+](https://ardupilot.org/copter/docs/common-rangefinder-mr72.html)
 2. [Nanoradar MR82 product page: range, IP rating, interfaces, mass, power](https://www.nanoradar.com/Products_1/7.html#c_navigation_199-17399536465290)
