@@ -63,9 +63,9 @@ Due to there's no reserved install location for RTK-GNSS module (which should st
 - The first version of corresponding part has a design fault that may cause very difficult connector maintenance. 
 - The second version solved the issue by raising the mount and creating enough clearance for the connector.
 
-|Planning|First Version (KBM)|Second Version (Julius)|
+|Planning|First Version|Second Version|
 |-|-|-|
-|![](image/gnss-stand_plan.png)|![](image\gnss-stand_kbm_version.png)|![](image/gnss-stand_julius_version.png)| 
+|![](image/gnss-stand_plan.png)|![](image/gnss-stand_kbm_version.png)|![](image/gnss-stand_julius_version.png)| 
 
 ## Main Enclosure 
 
@@ -135,6 +135,6 @@ Redesigned most of the structure.
 
 # Remarks 
 
-- KBM(the author) is recommending to seek for more compact altitude sensor options for future development.
+- It is recommended to seek for more compact altitude sensor options for future development.
 
 (End of document)
