@@ -54,8 +54,9 @@
 |	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/91294A130)	|
 |	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91290A140)	|
 |	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/91294A138)	|
-|	Insert 1	|	M3 Threaded Inserts	|	50	|	[97163A161](https://www.mcmaster.com/97163A161)	|
+|	Insert 1	|	M3 Threaded Inserts	|	42	|	[97163A161](https://www.mcmaster.com/97163A161)	|
 |	Insert 2	|	M4 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
+|	Insert 3	|	M2.5 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
 |	Washer 1	|	General Purpose Washer 3.2 mm ID, 6 mm OD	|	158	|	[98689A112](https://www.mcmaster.com/98689A112)	|
 |	 Washer 2	|	General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
 |	 Nut 1	|	Nylon-Insert Locknut M3	|	39	|	[90576A811](https://www.mcmaster.com/90576A811)	|
@@ -258,11 +259,12 @@
 |--|--|--|
 |![](assets/images/step5_1.png)| ![](assets/images/step5_3.png) | ![](assets/images/step5_2.png) |
 
-### Step 6. Install the Battery Connector PCB Mount
+### Step 6. Install the Main PCB Mount
 - Parts needed:
   - Step 5 chassis
   - Part 26 (Main PCB Mount)
-  - Insert 1 x20
+  - Insert 1 x12
+  - Insert 3 x8
   - Screw 5 x20
   - Washer 1 x20
 
@@ -271,7 +273,14 @@
 
 |Top|Bottom|
 |--|--|
-|![](assets/images/step6_2.png)| ![](assets/images/step6_1.png) |
+|![](assets/images/step6_1.png)| ![](assets/images/step6_2.png) |
+
+- Place Insert 3 to the holes shown in the picture, on the top side of the main PCB mount.
+  - Use a soldering iron to place them inside the plastic.
+
+|Top|
+|--|
+|![](assets/images/step6_4.png)|
 
 - Place the main PCB mount over the upper plate.
   - Secure it with 5x Screw 5 in total from below the upper plate on the holes below.
@@ -279,7 +288,7 @@
 
 ![](assets/images/step6_3.png)
 
-### Step 7. Install the Main PCB Mount
+### Step 7. Install the Battery Connector PCB Mount
 - Parts needed:
   - Step 6 chassis
   - Part 30 (BC PCB Mount)
