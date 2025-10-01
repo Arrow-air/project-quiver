@@ -44,6 +44,7 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
         - F5 & F6
         - U3
         - R22
+- J45 & J46 replaced with a screw terminal tap
 - J46 updated to a 6 pin Phoenix connector
     - Pre charge bypass signal assigned to Pin 6
 - Ethernet changes
