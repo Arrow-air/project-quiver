@@ -40,7 +40,7 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
 - List of components updated/removed
     - J1-J3
     - U3
-    - Q1
+    - Q1 & Q2 MOSFETs removed
     - K1
     - IC1
     - R17 removed
