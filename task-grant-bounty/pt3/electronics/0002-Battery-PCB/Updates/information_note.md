@@ -27,7 +27,7 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
 <sub>***Previous Schematic with highlighted changes***</sub>
 
 ![](assets/NEW.png)
-<sub>***Schematic with additional components highlighted***</sub>
+<sub>***Updated Schematic with new components highlighted***</sub>
 
 ![](assets/PCB1.png)
 
