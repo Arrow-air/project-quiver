@@ -8,7 +8,7 @@
 
 `Replacement Log: None`
 
-`Reference: Updates to PT 3 Main PCB Information Note`
+`Reference: Updates to PT3 Main PCB Information Note`
 
 # Project Description
 
@@ -23,30 +23,18 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
 # Results and Deliverables
 
 ## Updated Schematics and CAD files
+![](assets/OLD.png)
+<sub>***Previous Schematic with highlighted changes***</sub>
 
-![image.png](attachment:e0c83575-6da0-477a-9265-bd6253ac7d1e:image.png)
+![](assets/NEW1.png)
+![](assets/NEW2.png)
+<sub>***Schematic with additional components highlighted***</sub>
 
-old with updates highlighted
+![](assets/PCB1.png)
 
-![image.png](attachment:dd2e10c7-4ac1-4a5d-b7d2-8b318abbfdd2:image.png)
-
-![image.png](attachment:9a60863b-8bb2-4250-b758-d33384450502:image.png)
-
-New with additions highlighted
-
-![image.png](attachment:93f4fb7f-f7d2-450e-a167-9fc379d512f5:image.png)
-
-![image.png](attachment:2b244c3c-ce25-4837-8fe2-cdfb44d59bb9:image.png)
-
-![image.png](attachment:c4f26b92-f463-428b-9347-c331fb2b7cdf:image.png)
-
-![image.png](attachment:ad7d2740-6dbd-4e62-9ddc-73d08db87bf1:image.png)
-
-![image.png](attachment:da998684-549c-4faa-a936-4860e7fab6bb:image.png)
-
-![image.png](attachment:d881cc29-66b7-4ec0-abfe-887d680184a7:image.png)
-
-![image.png](attachment:84326446-a6f3-454a-afdb-05553bb6d631:image.png)
+|           F.CU                            |                 In1.CU                      |                      In2.CU                 |                    In3.CU                   |           In4.CU                            |                 B.CU                      |
+|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|
+| ![](assets/PCB2.png)| ![](assets/PCB3.png) | ![](assets/PCB4.png) |![](assets/PCB5.png)| ![](assets/PCB6.png)| ![](assets/PCB7.png) |
 
 ## PCB Updates
 
