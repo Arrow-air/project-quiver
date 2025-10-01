@@ -23,14 +23,17 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
 # Results and Deliverables
 
 ## Updated Schematics and CAD files
+![](assets/OLD_FC_PCB.png)
+<sub>***Previous Schematic with highlighted changes***</sub>
 
-![image.png](attachment:d8df6b62-205a-4a2b-9ecc-9e15bcd1fee3:image.png)
+![](assets/NEW_FC_PCB.png)
+<sub>***Schematic with additional components highlighted***</sub>
 
-<sub>***Previous Schematic with Highlighted changes***</sub>
+![](assets/PCB1.png)
 
-![image.png](attachment:e47ae7e0-659b-4982-bf1a-ca2e5aebbfe0:image.png)
-
-<sub>Updated ***Schematic with Highlighted changes***</sub>
+|           F.CU                            |                 In1.CU                      |                      In2.CU                 |                    B.CU                   |
+|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|
+| ![](assets/PCB2.png)| ![](assets/PCB3.png) | ![](assets/PCB4.png) |![](assets/PCB5.png)|
 
 ## PCB Updates
 
@@ -43,32 +46,6 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
     - Pix32 position adjustment to fit screw holes
     - Pix32 screw hole diameter increased for better tolerance
     - Bigger offset around mounting holes to better space components and traces from edges
-
-![image.png](attachment:bd131c59-e723-4c2c-9788-3099bb19e461:image.png)
-
-![image.png](attachment:1b825b90-d37e-4e87-bedc-6b2f19838cca:image.png)
-
-![image.png](attachment:d6c11e60-42b2-4503-ade2-314005f6876d:image.png)
-
-![image.png](attachment:dba98b9a-ea19-46a6-abcb-1d9add5fdca1:image.png)
-
-![image.png](attachment:60949b9c-5833-4755-8e14-3c5db7709e04:image.png)
-
-### PCB Build Specifications
-
-- Base material: FR-4
-- Dimensions: XXXX mm x XXXX mm
-- Layers: 4
-- PCB thickness: 1.6 mm
-- PCB Color: Blue
-- Silkscreen: White
-- Material Type: FR-4 TG155
-- Via Covering: Plugged
-- Min via hole size/diameter: 0.3mm/(0.4/0.45mm)
-- Surface finish: ENIG
-- Gold Thickness: 2U”
-- Outer/Inner Copper Weight: 2 oz each
-- Board Outline Tolerance: ±0.2mm(Regular)
 
 # Remarks
 
