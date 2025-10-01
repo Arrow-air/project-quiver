@@ -24,11 +24,11 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
 
 ## Updated Schematics and CAD files
 ![](assets/OLD.png)
-<sub>***Previous Schematic with highlighted changes***</sub>
+<sub>***Previous schematic with highlighted changes***</sub>
 
 ![](assets/NEW1.png)
 ![](assets/NEW2.png)
-<sub>***Schematic with additional components highlighted***</sub>
+<sub>***Updated schematics with new components highlighted***</sub>
 
 ![](assets/PCB1.png)
 
