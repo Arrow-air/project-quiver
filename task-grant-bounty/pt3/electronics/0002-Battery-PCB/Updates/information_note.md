@@ -43,7 +43,8 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
     - Q1
     - K1
     - IC1
-    - R15-R17
+    - R17 removed
+    - R15 & R16 reduced to 33 Ohms
     - LED5 & LED6
         - R32-R35
     - JP9 & JP10
@@ -70,7 +71,8 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
     - higher rating
 - Updated resistor values for pre-charge circuit
     - make note about why it was done
-    - Updated from 150 Ohms to 50 Ohms
+    - Updated from 150 Ohms to 33 Ohms
+    - Only two resistors used now
 - Removed all Euro style plug connectors
 - Bypass circuitry moved to this PCB
     - incoming signal from Main PCB
