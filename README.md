@@ -124,5 +124,5 @@ Please ensure your contributions follow the repo's formatting, linting, and cond
 
 ## 📝 License
 
-This project is open-source
+This project is open-source under CERN Open Hardware Licence Version 2 - Strongly Reciprocal
 
