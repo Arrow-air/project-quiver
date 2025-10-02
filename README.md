@@ -3,7 +3,9 @@
 [![GitHub Issues](https://img.shields.io/github/issues/Arrow-air/project-quiver)](https://github.com/Arrow-air/project-quiver/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/Arrow-air/project-quiver)](https://github.com/Arrow-air/project-quiver/stargazers)
 
-**Project Quiver** is an open-source UAV initiative developed under the Arrow Air DAO. It aims to design and build scalable, modular drone systems for real-world utility. This repository hosts the core documentation, source code, engineering plans, and governance artifacts for the Quiver development lifecycle.
+**Project Quiver** is an open-source initiative to design and build scalable, modular multi-rotor UAV systems for real-world utility. Developed under Arrow Air DAO, it advances Arrow’s mission to create both manned and unmanned aircraft for the commercial aviation market while pioneering new approaches in manufacturing, materials science, and structural design. 
+
+This repository hosts the core documentation, source code, engineering plans, and governance artifacts for the Quiver development lifecycle.
 
 ---
 
@@ -15,7 +17,7 @@
 | `.make/`                    | Build automation and infrastructure setup files                  |
 | `docs/`                     | Project documentation, reports, and specifications               |
 | `src/`                      | Source code for the project (core logic, scripts, tooling, etc.) |
-| `task-grant-bounty/`        | DAO-related tasks, grants, and bounty tracking                   |
+| `task-grant-bounty/`        | Completed DAO-related tasks, grants, bounties, and respective information notes                |
 | `.commitlintrc.yml`         | Commit linting configuration                                     |
 | `.cspell.config.yaml`       | Code spell-checker config                                        |
 | `.cspell.project-words.txt` | Custom vocabulary list for spell-checking                        |
@@ -68,7 +70,9 @@ All project-level documentation is located in the [`docs/`](docs/) folder. Key r
 * Payload specifications
 * Interface definitions
 * Phase planning and reviews
-* Meeting Notes and Recordings
+* Assembly guides
+* Flight test reports
+
 
 Refer to filenames inside that folder for phase-specific progress (e.g., `PT1-Engineering-Report.md`).
 
@@ -97,8 +101,9 @@ The `task-grant-bounty/` folder contains grant tracking, bounty records, and gov
 This may include:
 
 * Deliverables for funded tasks
-* Contributor reward tracking
-* Proposal status notes
+* information notes detailing work completed
+* CAD files
+* In house developed tools 
 
 ---
 
