@@ -42,20 +42,22 @@
 ### Table 2. Fasteners
 |	Fastener ID	|	Fastener Description	|	Quantity	|	McMaster-Carr Reference	|
 |	--	|	--	|	--	|	--	|
-|	 Rivet 1	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	36	|	[97525A251](https://www.mcmaster.com/97525A251)	|
-|	 Rivet 2	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
-|	Screw 1	|	Socket Head Screw M3x10	|	48	|	[91290A115](https://www1.mcmaster.com/91290A115)	|
-|	 Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[97654A373](https://www.mcmaster.com/97654A373)	|
+|	 Rivet 1	|	4mm Diameter for 1 mm - 2.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A224/)	|
+|	 Rivet 2	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A251)	|
+|	 Rivet 3	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
+|	Screw 1	|	Socket Head Screw M3x10	|	48	|	[91290A115](https://www.mcmaster.com/91292A113)	|
+|	 Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[97654A373](https://www.mcmaster.com/92095A190)	|
 |	 Screw 3	|	Socket Head Screw M3x16               	|	24	|	[91292A115](https://www.mcmaster.com/91292A115)	|
-|	Screw 4	|	Socket Head Screw M3x12	|	12	|	[91290A117](https://www1.mcmaster.com/91290A117)	|
-|	Screw 5	|	Socket Head Screw M3x8	|	23	|	[91290A113](https://www1.mcmaster.com/91290A113)	|
-|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91290A136](https://www1.mcmaster.com/91290A136)	|
-|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	8	|	[92125A128](https://www.mcmaster.com/92125A128)	|
-|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/91294A130)	|
-|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91290A140)	|
-|	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/91294A138)	|
-|	Insert 1	|	M3 Threaded Inserts	|	50	|	[97163A161](https://www.mcmaster.com/97163A161)	|
+|	Screw 4	|	Socket Head Screw M3x12	|	12	|	[91290A117](https://www.mcmaster.com/91292A114)	|
+|	Screw 5	|	Socket Head Screw M3x8	|	23	|	[91290A113](https://www.mcmaster.com/91292A112)	|
+|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91290A136](https://www.mcmaster.com/91292A024)	|
+|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	8	|	[92125A128](https://www.mcmaster.com/92125A128/)	|
+|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/92125A130/)	|
+|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91292A108)	|
+|	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/92125A138/)	|
+|	Insert 1	|	M3 Threaded Inserts	|	42	|	[97163A161](https://www.mcmaster.com/97163A161)	|
 |	Insert 2	|	M4 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
+|	Insert 3	|	M2.5 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
 |	Washer 1	|	General Purpose Washer 3.2 mm ID, 6 mm OD	|	158	|	[98689A112](https://www.mcmaster.com/98689A112)	|
 |	 Washer 2	|	General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
 |	 Nut 1	|	Nylon-Insert Locknut M3	|	39	|	[90576A811](https://www.mcmaster.com/90576A811)	|
@@ -66,11 +68,11 @@
 
 ### Parts 1-3
 - All three are aluminum 6 series sheets, laser cut, sanded. 
-- Bounding box dimension is 300x300x2 mm for each.
+- Bounding box dimension is 300x300 mm for each.
 
 | | Part 1 (Upper Plate) | Part 2 (Mid Plate) | Part 3 (Lower Plate)|
 |--|--|--|--|
-|Thickness|2 mm|2 mm|4 mm|
+|Thickness|1 mm|1 mm|4 mm|
 | Image| ![](assets/images/part1.png) | ![](assets/images/part2.png) | ![](assets/images/part3.png) |  
 | CAD File|[Part 1](assets/models/part1.step)| [Part 2](assets/models/part2.step)| [Part 3](assets/models/part3.step)|
 
@@ -258,11 +260,12 @@
 |--|--|--|
 |![](assets/images/step5_1.png)| ![](assets/images/step5_3.png) | ![](assets/images/step5_2.png) |
 
-### Step 6. Install the Battery Connector PCB Mount
+### Step 6. Install the Main PCB Mount
 - Parts needed:
   - Step 5 chassis
   - Part 26 (Main PCB Mount)
-  - Insert 1 x20
+  - Insert 1 x12
+  - Insert 3 x8
   - Screw 5 x20
   - Washer 1 x20
 
@@ -271,7 +274,14 @@
 
 |Top|Bottom|
 |--|--|
-|![](assets/images/step6_2.png)| ![](assets/images/step6_1.png) |
+|![](assets/images/step6_1.png)| ![](assets/images/step6_2.png) |
+
+- Place Insert 3 to the holes shown in the picture, on the top side of the main PCB mount.
+  - Use a soldering iron to place them inside the plastic.
+
+|Top|
+|--|
+|![](assets/images/step6_4.png)|
 
 - Place the main PCB mount over the upper plate.
   - Secure it with 5x Screw 5 in total from below the upper plate on the holes below.
@@ -279,7 +289,7 @@
 
 ![](assets/images/step6_3.png)
 
-### Step 7. Install the Main PCB Mount
+### Step 7. Install the Battery Connector PCB Mount
 - Parts needed:
   - Step 6 chassis
   - Part 30 (BC PCB Mount)
