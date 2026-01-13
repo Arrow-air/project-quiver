@@ -42,18 +42,19 @@
 ### Table 2. Fasteners
 |	Fastener ID	|	Fastener Description	|	Quantity	|	McMaster-Carr Reference	|
 |	--	|	--	|	--	|	--	|
-|	 Rivet 1	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	36	|	[97525A251](https://www.mcmaster.com/97525A251)	|
-|	 Rivet 2	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
-|	Screw 1	|	Socket Head Screw M3x10	|	48	|	[91290A115](https://www1.mcmaster.com/91290A115)	|
-|	 Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[97654A373](https://www.mcmaster.com/97654A373)	|
+|	 Rivet 1	|	4mm Diameter for 1 mm - 2.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A224/)	|
+|	 Rivet 2	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A251)	|
+|	 Rivet 3	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
+|	Screw 1	|	Socket Head Screw M3x10	|	48	|	[91290A115](https://www.mcmaster.com/91292A113)	|
+|	 Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[97654A373](https://www.mcmaster.com/92095A190)	|
 |	 Screw 3	|	Socket Head Screw M3x16               	|	24	|	[91292A115](https://www.mcmaster.com/91292A115)	|
-|	Screw 4	|	Socket Head Screw M3x12	|	12	|	[91290A117](https://www1.mcmaster.com/91290A117)	|
-|	Screw 5	|	Socket Head Screw M3x8	|	23	|	[91290A113](https://www1.mcmaster.com/91290A113)	|
-|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91290A136](https://www1.mcmaster.com/91290A136)	|
-|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	8	|	[92125A128](https://www.mcmaster.com/92125A128)	|
-|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/91294A130)	|
-|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91290A140)	|
-|	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/91294A138)	|
+|	Screw 4	|	Socket Head Screw M3x12	|	12	|	[91290A117](https://www.mcmaster.com/91292A114)	|
+|	Screw 5	|	Socket Head Screw M3x8	|	23	|	[91290A113](https://www.mcmaster.com/91292A112)	|
+|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91290A136](https://www.mcmaster.com/91292A024)	|
+|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	8	|	[92125A128](https://www.mcmaster.com/92125A128/)	|
+|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/92125A130/)	|
+|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91292A108)	|
+|	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/92125A138/)	|
 |	Insert 1	|	M3 Threaded Inserts	|	42	|	[97163A161](https://www.mcmaster.com/97163A161)	|
 |	Insert 2	|	M4 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
 |	Insert 3	|	M2.5 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
@@ -67,11 +68,11 @@
 
 ### Parts 1-3
 - All three are aluminum 6 series sheets, laser cut, sanded. 
-- Bounding box dimension is 300x300x2 mm for each.
+- Bounding box dimension is 300x300 mm for each.
 
 | | Part 1 (Upper Plate) | Part 2 (Mid Plate) | Part 3 (Lower Plate)|
 |--|--|--|--|
-|Thickness|2 mm|2 mm|4 mm|
+|Thickness|1 mm|1 mm|4 mm|
 | Image| ![](assets/images/part1.png) | ![](assets/images/part2.png) | ![](assets/images/part3.png) |  
 | CAD File|[Part 1](assets/models/part1.step)| [Part 2](assets/models/part2.step)| [Part 3](assets/models/part3.step)|
 
