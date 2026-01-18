@@ -1,4 +1,9 @@
-# **Project Quiver PT3 Structural Assembly Guide**
+---
+title: Structural Assembly Guide
+sidebar_position: 1
+---
+
+# Project Quiver PT3 Structural Assembly Guide
 
 ## BOM for the Assembly
 
