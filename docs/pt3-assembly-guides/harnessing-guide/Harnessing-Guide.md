@@ -1,3 +1,8 @@
+---
+title: Harnessing Guide
+sidebar_position: 3
+---
+
 # Main PCB & Battery Control PCB Wiring Harness Manufacturing Guide
 
 ## Purpose
