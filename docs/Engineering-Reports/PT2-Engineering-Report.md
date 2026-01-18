@@ -1,6 +1,12 @@
-# **Project Quiver PT2 Engineering Report**
+---
+title: PT2 Engineering Report
+sidebar_position: 2
+description: Engineering report for Project Quiver Prototype 2
+---
 
-Project Quiver PT1 Engineering Report: Insert Link
+# Project Quiver PT2 Engineering Report
+
+See also: [PT1 Engineering Report](./PT1-Engineering-Report)
 
 ---
 
