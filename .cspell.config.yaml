@@ -28,4 +28,12 @@ ignorePaths:
   - "project-data"
   - "**/*.{kicad*,step,numbers,drl,gbr,gbrjob,}"
   - "**/fp-info-cache"
+  - "flight-test"
+  - "**/*.db"
+  - "**/*.csv"
+  - "**/*.ipc"
+  - "**/*.net"
+  - "**/*.ini"
+  - "**/*.tmp"
+  - "**/*.BIN"
 noConfigSearch: true

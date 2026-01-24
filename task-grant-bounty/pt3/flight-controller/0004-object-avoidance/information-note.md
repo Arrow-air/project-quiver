@@ -84,9 +84,9 @@ Hexsoon 77G mmWave Radar; LDRobot LD-06 TOF; LightWare SF40/C (360°); LightWare
   
 - **Useful Links**
 
-	-   https://ardupilot.org/copter/docs/common-rangefinder-setup.html
-	- https://ardupilot.org/copter/docs/common-rplidar-a2.html
-	- https://ardupilot.org/copter/docs/common-rangefinder-mr72.html
+    - https://ardupilot.org/copter/docs/common-rangefinder-setup.html
+    - https://ardupilot.org/copter/docs/common-rplidar-a2.html
+    - https://ardupilot.org/copter/docs/common-rangefinder-mr72.html
 
 -   **Speed note:**  Forward speed is  **TBD**  and will be finalized after flight tests; selection is sized conservatively
 
