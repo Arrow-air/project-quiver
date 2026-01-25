@@ -5,7 +5,7 @@
 
 `Valid`
 
-`Revision History: None`
+`Revision History: v1.2`
 
 `Replacement Log: None`
 

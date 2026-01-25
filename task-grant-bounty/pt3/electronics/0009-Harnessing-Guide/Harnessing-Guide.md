@@ -1,3 +1,7 @@
+
+`Revision History: V1.1`
+
+`Replacement Log: Added pre-crimped wires and installation instructions`
 # Main PCB & Battery Control PCB Wiring Harness Manufacturing Guide
 
 ## Purpose
@@ -26,6 +30,7 @@ Use the following wiring table for all of the connections TO/FROM for all of PT3
     - 26 AWG silicon
     - 20 AWG silicon
     - 6 AWG silicone (HV power)
+    - 26 AWG Pre-crimped cables for Molex Micro-Lock (MFR#: 79758-1149)
 - **Crimp Tools**
     - Engineer PA-09
         - JST-GH and Molex Micro-Lock compatible
@@ -106,6 +111,13 @@ Eurostyle Plug
 ### 3. Connector Assembly
 
 - Insert crimped wires into JST, Molex, or Phoenix housings per the wiring diagram.
+  - [Molex Micro lock instructions](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf?inline) Refer to Section 6
+  - Phoenix instructions:
+    - Insert flat head screwdriver into red highlighted area.
+    - You will feel the mechanism give way and clasp (blue arrow) will detract
+    
+<img width="742" height="571" alt="image" src="https://github.com/user-attachments/assets/37765012-2bba-4ea3-9e3d-83b3f4c329b4" />
+
 - Match **pin numbers** at both ends of the cable using the table.
 - Ensure proper keying and orientation
 
@@ -121,7 +133,7 @@ Eurostyle Plug
 
 ---
 
-## Wire Color Coding Reference
+## Suggested Wire Color Coding Reference
 
 | Signal Type | Examples | Color |
 | --- | --- | --- |
@@ -138,6 +150,7 @@ Eurostyle Plug
 | HV Battery + | `HV+` | Red |
 | HV Battery - | `HV-` | Black |
 
+***Some cables will come from the equipment manufacturer and will not follow this convention***
 ---
 
 ## Final Checklist (Main + BC_PCB)
