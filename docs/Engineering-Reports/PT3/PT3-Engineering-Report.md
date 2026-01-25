@@ -66,47 +66,29 @@ The main enclosure includes a reserved RP-SMA mounting bracket for the telemetry
 
 **GNSS Stand**
 
-![image.png](attachment:e1f23674-4132-4695-9b84-46ea3ea4b8b6:image.png)
-
 The GNSS receiver is mounted 2 cm above the FCU enclosure to reduce EMI, supported by a custom arch bracket that provides stability without contacting the FC or its PCB.
 
 **Attachment Interface** 
 
-![image.png](attachment:0623b2f6-f7df-4119-9429-32feb5264082:image.png)
-
 PT3 retains the quick release  mechanism from previous prototypes while expanding capacity to support three payloads. Each interface is mounted on a modified plate with dedicated screw and cable openings, and fitted with a 3 cm extension adapter to improve clearance from the aircraft body and ease maintenance. Side facing cable ports prevent abrasion and water ingress, enhancing durability in operational environments
 
-**Sensor Mounting Frame** 
-
-**THIS SECTION REQUIRES UPDATED IMAGES AND TEXT TO INCLUDE RADAR, LIDAR, AND GIMBAL CAMERA**
-
 **Battery Wall Modifications**
-
-![image.png](attachment:c880991f-9714-4649-82fc-38ad36ffd2d0:image.png)
 
 The PT3 battery walls retain PT2’s core geometry, with modifications improving attachment integration, cable management, and maintenance access.  M3 screw holes were added on each side to accommodate the payload clearance adapters. Larger clearance holes were incorporated to allow a screwdriver to pass through for direct access to the fasteners, simplifying installation and removal without disassembling surrounding components. Chamfered access holes and extended cutouts simplify motor arm connector screw replacement, and additional harness cutouts on the top and bottom surfaces enable cleaner routing of cables between layers.
 
 **Battery Slider Modification**
 
-![image.png](attachment:cb29403b-03ed-4c5e-b8db-d267e1040f51:image.png)
-
-The battery slider was updated to align with the larger clearances on the PT3 battery walls. Recesses were added in line with the side attachment interface mounting holes to provide screwdriver access, and ~~one of the slider’s mounting holes was relocated so it can be reached directly through the attachment interface opening.~~
+The battery slider was updated to align with the larger clearances on the PT3 battery walls. Recesses were added in line with the side attachment interface mounting holes to provide screwdriver access.
 
 **Harness Cutouts on the Plates**
-
-![image.png](attachment:bbe26a2c-c497-449c-a057-fea090358ee5:image.png)
 
 Routing provisions added to route cables between layers. 
 
 **Main PCB Mount**
 
-![image.png](attachment:1b66f6b2-88b4-4b34-8fe9-66cb7c9bb0d1:image.png)
-
 Main PCB holder was modified so that the holes are aligned with PCB installation holes. Additional anchors were created for the flight controller and Raspberry Pi.
 
 **Cockpit Support Beams**
-
-![image.png](attachment:8b90c24b-0cbe-4fca-8cd5-f97efa6f84fb:image.png)
 
 Cutouts on the cockpit support beams are created for weight reduction of 200 g.
 
@@ -115,8 +97,6 @@ Cutouts on the cockpit support beams are created for weight reduction of 200 g.
 PT3 moves away from the single, centralized PCB approach of PT2 in favor of a distributed architecture built around four custom boards: the Battery PCB, Main PCB, Flight Controller (FC) PCB, and Attachment Interface PCB. This modular layout allows each board to be optimized for its specific role, reducing interdependencies and simplifying maintenance. PT3 improves redundancy in critical systems and creates flexibility for integrating different payloads, sensors, and other equipment. The design also enhances troubleshooting and upgrade workflows, as individual PCBs can be serviced or replaced without disturbing unrelated subsystems. To further aid diagnostics and field servicing, various probe points and status LEDs have been incorporated, providing users with accessible test locations and clear visual indicators of system status.
 
 A brief summary is provided below of the PCBs and their functionality. Detailed description of their operation, components, and manufacturing can be found in their respective information notes, which are included in the appendix of this report.
-
-***ALL CAD FILES NEED TO BE UPLOADED TO GITHUB***
 
 ### Battery PCB
 
@@ -129,6 +109,8 @@ Key functions include safe ESC pre-charge, over current protection via high capa
 The PCB design supports both pre-charge and full-power states. Custom high current Molex connectors handle the main power path, while Eurostyle connectors provide interface points for the flight controller and auxiliary systems. The board’s 4-layer FR-4 construction, ENIG finish, and robust copper weight ensure durability under high load conditions. The design also incorporates mechanical reinforcement and a heat-sinking interface to the airframe for thermal management. Multiple test points allow quick verification of voltages, gate signals, and system readiness.
 
 By combining critical protection, switching, and monitoring functions into a dedicated module, the Battery PCB reduces wiring complexity, improves maintainability, and enhances operational reliability in PT3.
+
+[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0002-Battery-PCB/KiCAD-Files)
 
 ### Main PCB
 
@@ -144,11 +126,15 @@ In addition to payload integration improvements, the board maintains robust powe
 
 The Main PCB functions as a central hub, managing power and communication between subsystems, including Ethernet and advanced CAN networks. The Flight Controller PCB accommodates the Pix32 V6 and includes advanced EMI filtering and power protection features, as discussed during the selection phase.
 
+[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0007-Main-PCB/KiCAD-Files)
+
 ### FC PCB
 
 ![](images/FCPCBTrans.png)
 
 The FC PCB is an adapter board for the Pix 32 V6 flight controller. It includes breakouts for the various PWM, GPIO, GPS, I²C, CAN, S.BUS, and power pins on the flight controller. Various components were included based on the documentation provided by Holybro for the Pix32 V6 Schematic. Diagnostic LEDs indicate FC power state and sensor activity, while probe points facilitate troubleshooting without interrupting harness connections.
+
+[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0008-FC-PCB/KiCAD-Files)
 
 ### Attachment Interface PCB
 
@@ -185,13 +171,6 @@ A Raspberry Pi companion computer is integrated into PT3 to handle tasks that ex
 
 Although not included in the baseline configuration, the Main PCB incorporates a reserved interface for a Mateksys telemetry unit, allowing rapid integration of an additional radio if operational requirements change. By combining multiple systems with hard-wired digital buses, PT3 maintains robust communications across diverse mission profiles and environmental conditions.
 
-## Testing, Validation & Results
-
-- Modular Test Strategy
-- Key Performance Metrics
-- Results Summary (brief table highlighting major outcomes)
-
-***WILL BE UPDATED AFTER PUBLISHED TEST REPORTS***
 
 ## Performance Metrics & Comparative Analysis
 
