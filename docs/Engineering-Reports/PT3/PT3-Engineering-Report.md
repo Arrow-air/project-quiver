@@ -159,7 +159,7 @@ The flight controller for PT3 was selected after an evaluation of available auto
 
 ### Navigation and Altimetry Systems
 
-PT3 introduces a redundant navigation system composed of dual real time kinematic (RTK) GNSS modules and complementary altitude sensors. The primary GNSS solution uses either the **Holybro DroneCAN H‑RTK F9P Rover** or the **Systork Wren Mini.** Both are built around the u‑blox F9P receiver and communicate over DroneCAN. To ensure redundancy, a **Mateksys M9N‑G4‑3100** provides an affordable backup. The primary GNSS unit is mounted on a custom 3D printed arch bracket that raises it by 2 cm above the flight controller, reducing electromagnetic interference and giving a clean line of sight to staellites. The Mateksys module has a dedicated mounting location on the Main PCB. The autopilot blends data from these GNSS sources and promotes the backup if the primary fails.
+PT3 introduces a redundant navigation system composed of dual real time kinematic (RTK) GNSS modules and complementary altitude sensors. The primary GNSS solution uses either the **Holybro DroneCAN H‑RTK F9P Rover** or the **Systork Wren Mini.** Both are built around the u‑blox F9P receiver and communicate over DroneCAN. To ensure redundancy, a **Mateksys M9N‑G4‑3100** provides an affordable backup. The primary GNSS unit is mounted on a custom 3D printed arch bracket that raises it by 2 cm above the flight controller, reducing electromagnetic interference and giving a clean line of sight to satellites. The Mateksys module has a dedicated mounting location on the Main PCB. The autopilot blends data from these GNSS sources and promotes the backup if the primary fails.
 
 Altitude measurement in PT3 combines the strengths of radar and LiDAR. Where PT1 used an **Ainstein US‑D1 radar altimeter** and PT2 relied on a **Benewake TF03‑180 LiDAR**, PT3 accommodates both to ensure accurate altitude sensing across varied terrain. The US‑D1 provides reliable readings from 5 m up to 400 m using a 24 GHz radar that is unaffected by fog, dust or rain. The TF03‑180 LiDAR delivers high‑resolution measurements from 0.1 m to 180 m for precise low‑altitude hovering and terrain following. Both sensors are mounted on a dedicated bracket on one front of the airframe. The custom designed bracket spaces them to prevent interference and angles them downward to measure ground clearance directly beneath the aircraft. The sensors connect to the flight controller via CAN and their outputs are fused by the autopilot to maintain accurate altitude control across a wide range of operating conditions.
 
@@ -197,7 +197,7 @@ Future work should focus on further increasing computing power by migrating to a
 - [FC Setup Guide](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/flight-controller/0002-flight-controller-setup/information-note.md)
 
 ### Airframe
-- [PT3 Airframe Modifciations Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/structural/0001-comprehensive_airframe_modification/information-note.md)
+- [PT3 Airframe Modifications Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/structural/0001-comprehensive_airframe_modification/information-note.md)
 - [Airframe CAD Architecture Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/structural/0002-Airframe-CAD-Architecture.md)
 
 ### Assembly Guides
