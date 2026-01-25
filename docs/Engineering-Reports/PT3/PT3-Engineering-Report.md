@@ -138,8 +138,6 @@ The FC PCB is an adapter board for the Pix 32 V6 flight controller. It includes 
 
 ### Attachment Interface PCB
 
-![Dummy Att PCB v1.png](attachment:1d8c895c-f1f4-4a72-a0ce-18c8f26e767d:Dummy_Att_PCB_v1.png)
-
 Provides the electrical interface for modular payloads through the aircraft’s quick-release attachment system. It routes regulated power and data lines from the Main PCB to the payload and supports multiple communication standards to accommodate different equipment types. The design allows hot-swapping of payloads without disturbing the main PCB.
 
 ### Flight Controller Selection & Integration
@@ -155,7 +153,9 @@ Provides the electrical interface for modular payloads through the aircraft’s 
 
 The flight controller for PT3 was selected after an evaluation of available autopilot boards.  Candidates included the Pixhawk 6 X, 6 X Pro, Cube Pilot Plus, H743‑Slim V3, uAvionix George and Auterion Skynode.  After weighing cost, sensor quality, interface support and redundancy, the **Pix32 V6** was selected as the baseline FC for PT3.  This choice balances performance and affordability for prototyping while providing a clear upgrade path to a Pixhawk 6 X or Cube Orange in later iterations. The Pix32 V6 offers a well documented software stack and a various form factors that integrates easily with the Main PCB. 
 
-***INCLUDE IMAGE OF PIX32 V6 VARIANT USED***
+![FC Module](https://github.com/Arrow-air/project-quiver/blob/errrks-PT3-Report/docs/Engineering-Reports/PT3/images/Pix32V6.png)
+
+
 
 ### Navigation and Altimetry Systems
 
