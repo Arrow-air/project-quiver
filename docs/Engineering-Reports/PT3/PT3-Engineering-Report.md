@@ -201,7 +201,7 @@ Future work should focus on further increasing computing power by migrating to a
 - [Airframe CAD Architecture Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/structural/0002-Airframe-CAD-Architecture.md)
 
 ### Assembly Guides
-- [All](https://github.com/Arrow-air/project-quiver/tree/main/docs/assembly-guides/PT3)
+- [All](https://github.com/Arrow-air/project-quiver/tree/main/docs/pt3-assembly-guides)
 
 ### Misc
 - [Performance Metrics Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Tools/Performance-Metrics/information-note.md)
