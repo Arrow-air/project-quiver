@@ -2,6 +2,8 @@
 
 This folder is no longer in active use. It serves as a historical record of early flight tests conducted during the initial development and validation phases of the project.
 
+Current and future flight tests will be logged and tracked on our [flight tracking platform](https://project-flight-tracking.vercel.app/).
+
 ## Contents
 
 - **PT1/** - Prototype 1 flight test logs and documentation
