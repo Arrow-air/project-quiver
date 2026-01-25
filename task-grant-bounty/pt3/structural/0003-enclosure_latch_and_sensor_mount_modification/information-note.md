@@ -58,7 +58,7 @@ The main results are:
 
 Some minor design logs for the RTK-GNSS module before this modification shall include in this delivery.
 
-Due to there's no reserved install location for RTK-GNSS module (which should stay close to the center of the aircraft), this 3d printed double-deck module mounting bracket has been decided to put into the design, without causing negetive impact to the flight controller unit :
+Due to there's no reserved install location for RTK-GNSS module (which should stay close to the center of the aircraft), this 3d printed double-deck module mounting bracket has been decided to put into the design, without causing negative impact to the flight controller unit :
 
 - The first version of corresponding part has a design fault that may cause very difficult connector maintenance. 
 - The second version solved the issue by raising the mount and creating enough clearance for the connector.
@@ -77,7 +77,7 @@ Contains multiple modification shown below :
 |-|-|-|
 |![](image/latch_old.jpg)|![](image/latch_new.jpg)|![](image/latch_new_detail.jpg)|
 
-Those 4 individual latches and their corresponding screw holes on the enclosure have been removed, and an integrated screw insert design with rigid mating is introduced, and a serie of new screw holes need to be drilled on the vertical wall. 
+Those 4 individual latches and their corresponding screw holes on the enclosure have been removed, and an integrated screw insert design with rigid mating is introduced, and a series of new screw holes need to be drilled on the vertical wall. 
 
 The new mating mechanism need to be accessed from inside the battery bay.
 

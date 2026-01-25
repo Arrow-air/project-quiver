@@ -50,7 +50,7 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
     - JP9 & JP10
     - J6
     - R14 (reassigned to pre-charge bypass)
-    - J7 & J8 Press fit connectors replaced with screwterminal bracket (need to explain change)
+    - J7 & J8 Press fit connectors replaced with screw terminal bracket (need to explain change)
     - J11 & J4 connector replaced with screw terminal bracket
 - List of new components for Pre-charge bypass
     - R14

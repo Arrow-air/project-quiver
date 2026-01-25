@@ -111,7 +111,7 @@ Eurostyle Plug
 ### 3. Connector Assembly
 
 - Insert crimped wires into JST, Molex, or Phoenix housings per the wiring diagram.
-  - [Molex Micro lock instructuions](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf?inline) Refer to Section 6
+  - [Molex Micro lock instructions](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf?inline) Refer to Section 6
   - Phoenix instructions:
     - Insert flat head screwdriver into red highlighted area.
     - You will feel the mechanism give way and clasp (blue arrow) will detract

@@ -1,32 +1,22 @@
+---
+title: PT1 Engineering Report
+sidebar_position: 1
+description: Engineering report for Project Quiver Prototype 1
+---
 
-# <p align="center">Project Quiver PT1 Engineering Report</p>  
+# Project Quiver PT1 Engineering Report
 
-### *<p align="center">Authors:</p>*
-<p align="center">21stCenturyAlex</p> <p align="center">alperenag</p> <p align="center">errrks.eth</p> <p align="center">Julius</p> <p align="center">Dow Fisher KBM</p> <p align="center">ZeynepB</p> 
+| | |
+|---|---|
+| **Authors** | 21stCenturyAlex, alperenag, errrks.eth, Julius, Dow Fisher KBM, ZeynepB |
+| **Editor** | errrks.eth |
+| **Date** | April 2025 |
 
-<br>
-<br>
-<br>
-<br>
+![PT1 Hero](https://github.com/user-attachments/assets/750a092e-53ae-4686-815c-2f8678f57a84)
 
-### *<p align="center">Editor:</p>*
-<p align="center">errrks.eth</p>
-<br>
-<br>
+---
 
-*<p align="center">April 2025</p>*
-
-![Screenshot 2025-04-09 225339](https://github.com/user-attachments/assets/750a092e-53ae-4686-815c-2f8678f57a84)
-
-<hr />
-<br>
-<br>
-<br>
-<br>
-
-
-
-# 1. **Introduction**
+## 1. Introduction
 
 The purpose of Project Quiver is to design and manufacture a practical multi-purpose multi-rotor unmanned aerial vehicle. This aligns with Arrow’s mission of developing manned and unmanned aircraft for the commercial aviation market while generating new concepts in manufacturing, materials science, structural design, and related technologies. Equipped with internet native collaborators and Web3 infrastructure, Arrow aims to break up the lack of innovation in the global drone market.   
 
@@ -672,7 +662,8 @@ The signal layout can be thought of mainly two sections, the ESCs to the flight 
 
 <details>
 <summary><h4>Battery</h4></summary>
-<br>
+
+
  Tattu 3.5 14S - 53.2V 30000 mAh
   
   ![image](https://github.com/user-attachments/assets/f9de309c-b8de-4f88-8e58-4c6bc1f1584d)
@@ -693,7 +684,8 @@ The signal layout can be thought of mainly two sections, the ESCs to the flight 
 
 <details>
 <summary><h4>Power PCB</h4></summary>
-<br>
+
+
 
 Summary of capabilities:
 - Pre-charge and Contactor control via Arduino MKR WIFI 1010
@@ -742,13 +734,11 @@ On the PCB, the contactor works in hand with a pre-charge circuit for safe opera
 - used to send a timed enable signal for the pre-charge circuit
 - after a short period, enable signal sent to close contactor
 
-  <details>
-  <summary><h5>Sketch</h5></summary>
-  <br>
+##### Sketch
 
-   [Quiver PT1 sketch.zip](https://github.com/user-attachments/files/19173234/Quiver.PT1.sketch.zip)
-      
-      ```Arduino
+[Quiver PT1 sketch.zip](https://github.com/user-attachments/files/19173234/Quiver.PT1.sketch.zip)
+
+```cpp
       #include "thingProperties.h"
       #include "WiFiNINA.h"
       #include "utility/wifi_drv.h"
@@ -874,13 +864,8 @@ On the PCB, the contactor works in hand with a pre-charge circuit for safe opera
       
       void onPrechargeControlChange() {
         digitalWrite(precharge_pin, precharge_control ? HIGH : LOW);
-      }
-      
-        
-      ```
-
-
-  </details>
+}
+```
 
 #### Automotive Connectors
 - 23 Pos Connector (Mouser #: 571-1-776087-1)
@@ -897,33 +882,34 @@ On the PCB, the contactor works in hand with a pre-charge circuit for safe opera
 ![image](https://github.com/user-attachments/assets/00324fd2-4791-43d9-abb5-c59f96e81a34)
 
 **Table 3. Mouser BOM**
-| Line | Part Number           | Qty Ordered | Qty Shipped | Backorder | Unit Price | Extended Price | Details                                                                                                                                                                                          |
-|------|-----------------------|-------------|-------------|-----------|------------|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | 504-AMX-300           | 1           | 1           | 0         | 9.310      | 9.31           | SD: F1 / AMX-300; Description: Bussmann / Eaton AMX Fuse, 300 A, 125 / Automotive Fuses; Info: US HTS:8536100040 ECCN:EAR99 COO:CN                                                       |
-| 2    | 693-3403.0170.11      | 2           | 2           | 0         | 0.660      | 1.32           | SD: F2 / 3403.0170.11; Description: Schurter UMT 250 2.5A 277V Sl / Surface Mount Fuses; Info: US HTS:8536100040 ECCN:EAR99 COO:CH                                                      |
-| 3    | 576-178.6165.0002     | 7           | 7           | 0         | 3.610      | 25.27          | SD: F3, F14, F16, F22 / 178.6165.0002; Description: Littelfuse FLR (ATO) PCB 4-pin / Fuse Holder; Info: US HTS:8536908585 ECCN:EAR99 COO:MX                                                 |
-| 4    | 710-7461383           | 2           | 2           | 0         | 2.710      | 5.42           | SD: J1, J2 / 7461383; Description: Wurth Elektronik WP-SHFU Pin-Plate 16 / Terminals; Info: US HTS:8536904000 ECCN:EAR99 COO:DE                                                        |
-| 5    | 571-282834-4          | 1           | 1           | 0         | 1.920      | 1.92           | SD: J8 / 282834-4; Description: TE Connectivity 4P SIDE ENTRY 2.54mm / Fixed Terminal Blocks; Info: US HTS:8536694040 ECCN:EAR99 COO:IT                                                   |
-| 6    | 200-TSW10625GTRA      | 1           | 1           | 0         | 2.300      | 2.30           | SD: J9 / TSW-106-25-G-T-RA; Description: Samtec Classic PCB Header S / Headers & Wire Housings; Info: US HTS:8536694040 ECCN:EAR99 COO:US                                               |
-| 7    | 571-1-776280-1        | 1           | 1           | 0         | 8.520      | 8.52           | SD: J12 / 1-776280-1; Description: TE Connectivity 8 POS RTANG HDR ASSY / Automotive Connectors; Info: US HTS:8536694040 ECCN:EAR99 COO:MX                                               |
-| 8    | 200-SSW11401TS        | 2           | 2           | 0         | 1.830      | 3.66           | SD: J14, J15 / SSW-114-01-T-S; Description: Samtec Tiger Buy Socket Str / Headers & Wire Housings; Info: US HTS:8536694040 ECCN:EAR99 COO:VN                                              |
-| 9    | 571-1-776087-1        | 1           | 1           | 0         | 11.410     | 11.41          | SD: J17 / 1-776087-1; Description: TE Connectivity / AMP HDR 23POS R/A BLK / Automotive Connectors; Info: US HTS:8536694040 ECCN:EAR99 COO:MX                                            |
-| 10   | 571-1-776267-1        | 1           | 1           | 0         | 8.390      | 8.39           | SD: J19 / 1-776267-1; Description: TE Connectivity / AMP 14POS RTANG HDR ASSY / Automotive Connectors; Info: US HTS:8536694040 ECCN:EAR99 COO:US                                           |
-| 11   | 849-CPC1718J          | 2           | 2           | 0         | 7.570      | 15.14          | SD: K1 / CPC1718J; Description: IXYS Integrated Circuits DC Only Single Pole / Solid State Relays - PCB Mount; Info: US HTS:8541498000 ECCN:EAR99 COO:PH                                  |
-| 12   | 849-CPC1916Y          | 2           | 2           | 0         | 5.870      | 11.74          | SD: K2 / CPC1916Y; Description: IXYS Integrated Circuits 100V Single Pole SIP / Solid State Relays - PCB Mount; Info: US HTS:8541498000 ECCN:EAR99 COO:PH                                 |
-| 13   | 720-LST676-Q1R2-1-Z     | 2           | 2           | 0         | 0.300      | 0.60           | SD: LED1 / LS T676-Q1R2-1-Z; Description: ams OSRAM Super Red, 645nm 180 / Standard LEDs - SMD; Info: US HTS:8541410000 ECCN:EAR99 COO:CN                                             |
-| 14   | 495-TMU3-1211         | 2           | 2           | 0         | 8.900      | 17.80          | SD: PS1 / TMU 3-1211; Description: TRACO Power 3W 10.8-13.2Vin 5V 6 / Isolated DC/DC Converters - Through Hole; Info: US HTS:8504409580 ECCN:EAR99 COO:TW                           |
-| 15   | 522-FMMT555TA         | 2           | 2           | 0         | 0.310      | 0.62           | SD: Q1 / FMMT555TA; Description: Diodes Incorporated PNP High Voltage / Bipolar Transistors - BJT; Info: US HTS:8541210095 ECCN:EAR99 COO:CN                                          |
-| 16   | 652-PWR163S-25-50R0F    | 4           | 4           | 0         | 3.940      | 15.76          | SD: R1, R2, R3 / PWR163S-25-50R0F; Description: Bourns 25watts 1% 50 Ohm DP / Thick Film Resistors - SMD; Info: US HTS:8533290000 ECCN:EAR99 COO:CR                                   |
-| 17   | 603-RC0805FR-07220RL    | 4           | 4           | 0         | 0.100      | 0.40           | SD: R4, R5 / RC0805FR-07220RL; Description: YAGEO 220 Ohms 125 mW 0805 / Thick Film Resistors - SMD; Info: US HTS:8533210030 ECCN:EAR99 COO:TW                                      |
-| 18   | 603-RC0805FR-07100KL    | 4           | 4           | 0         | 0.100      | 0.40           | SD: R6, R9 / RC0805FR-07100KL; Description: YAGEO 100 kOhms 125 mW 080 / Thick Film Resistors - SMD; Info: US HTS:8533210030 ECCN:EAR99 COO:TW                                      |
-| 19   | 603-RC0805FR-077K5L     | 4           | 4           | 0         | 0.100      | 0.40           | SD: R7, R11 / RC0805FR-077K5L; Description: YAGEO 7.5 kOhms 125 mW 080 / Thick Film Resistors - SMD; Info: US HTS:8533210030 ECCN:EAR99 COO:TW                                      |
-| 20   | 603-RC0603FR-07680RL    | 2           | 2           | 0         | 0.100      | 0.20           | SD: R8 / RC0603FR-07680RL; Description: YAGEO 680 Ohms 100mW 0603 / Thick Film Resistors - SMD; Info: US HTS:8533210030 ECCN:EAR99 COO:TW                                      |
-| 21   | 179-SLW-913535-2ASMT    | 2           | 2           | 0         | 0.530      | 1.06           | SD: S1 / SLW-913535-2A-SMT; Description: CUI Devices 9.1 x 3.5 x 3.5 mm, / Slide Switches; Info: US HTS:8536509050 ECCN:EAR99 COO:CN                                          |
-| 22   | 782-ABX00023          | 1           | 1           | 0         | 38.600     | 38.60          | SD: G: ARDUINO MKR 1010 / ABX00023; Description: Arduino MKR WIFI 1010 / WiFi Development Tools - 802.11; Info: US HTS:8517620090 ECCN:5A992.C COO:IT                            |
-| 23   | 910-TS391LT10         | 1           | 1           | 0         | 28.950     | 28.95          | SD: MFG Part No: TS391LT10; Description: Chip Quik Paste NoClean 35g Sn / Solder; Info: US HTS:8311900000 ECCN:EAR99 COO:CA                                                     |
-| 24   | 709-RSDW40G-12        | 1           | 1           | 0         | 46.790     | 46.79          | SD: PS2 / RSDW40G-12; Description: MEAN WELL 18-75Vin 12V 3.333A / Isolated DC/DC Converters - Through Hole; Info: US HTS:8504409580 ECCN:EAR99 COO:TW                       |
-| 25   | 710-885012108012      | 4           | 4           | 0         | 1.300      | 5.20           | SD: C1, C2 / 885012108012; Description: Wurth Elektronik WCAP-CSGP 47uF 1206 / Multilayer Ceramic Capacitors MLCC - SMD/SMT; Info: US HTS:8532240020 ECCN:EAR99 COO:TW          |
+
+| Ref | Part Number | Qty | Price | Description |
+|-----|-------------|-----|-------|-------------|
+| F1 | 504-AMX-300 | 1 | $9.31 | Bussmann/Eaton AMX Fuse, 300A |
+| F2 | 693-3403.0170.11 | 2 | $0.66 | Schurter UMT 250 2.5A Fuse |
+| F3, F14, F16, F22 | 576-178.6165.0002 | 7 | $3.61 | Littelfuse FLR (ATO) PCB Fuse Holder |
+| J1, J2 | 710-7461383 | 2 | $2.71 | Wurth Elektronik Pin-Plate Terminals |
+| J8 | 571-282834-4 | 1 | $1.92 | TE Connectivity 4P Terminal Block |
+| J9 | 200-TSW10625GTRA | 1 | $2.30 | Samtec PCB Header |
+| J12 | 571-1-776280-1 | 1 | $8.52 | TE 8 POS Automotive Connector |
+| J14, J15 | 200-SSW11401TS | 2 | $1.83 | Samtec Socket Header |
+| J17 | 571-1-776087-1 | 1 | $11.41 | TE 23POS Automotive Connector |
+| J19 | 571-1-776267-1 | 1 | $8.39 | TE 14POS Automotive Connector |
+| K1 | 849-CPC1718J | 2 | $7.57 | IXYS DC Solid State Relay |
+| K2 | 849-CPC1916Y | 2 | $5.87 | IXYS 100V Solid State Relay |
+| LED1 | 720-LST676-Q1R2-1-Z | 2 | $0.30 | ams OSRAM Red LED |
+| PS1 | 495-TMU3-1211 | 2 | $8.90 | TRACO Power 3W DC/DC Converter |
+| Q1 | 522-FMMT555TA | 2 | $0.31 | Diodes Inc PNP Transistor |
+| R1-R3 | 652-PWR163S-25-50R0F | 4 | $3.94 | Bourns 25W 50 Ohm Resistor |
+| R4, R5 | 603-RC0805FR-07220RL | 4 | $0.10 | YAGEO 220 Ohm Resistor |
+| R6, R9 | 603-RC0805FR-07100KL | 4 | $0.10 | YAGEO 100k Ohm Resistor |
+| R7, R11 | 603-RC0805FR-077K5L | 4 | $0.10 | YAGEO 7.5k Ohm Resistor |
+| R8 | 603-RC0603FR-07680RL | 2 | $0.10 | YAGEO 680 Ohm Resistor |
+| S1 | 179-SLW-913535-2ASMT | 2 | $0.53 | CUI Slide Switch |
+| Arduino | 782-ABX00023 | 1 | $38.60 | Arduino MKR WIFI 1010 |
+| Solder | 910-TS391LT10 | 1 | $28.95 | Chip Quik Solder Paste |
+| PS2 | 709-RSDW40G-12 | 1 | $46.79 | MEAN WELL 12V DC/DC Converter |
+| C1, C2 | 710-885012108012 | 4 | $1.30 | Wurth 47uF Capacitor |
 
 
 
@@ -931,7 +917,8 @@ On the PCB, the contactor works in hand with a pre-charge circuit for safe opera
 
 <details>
 <summary><h4>UBEC</h4></summary>
-<br>
+
+
 
 ![image](https://github.com/user-attachments/assets/b93a61c9-8da2-4238-8c58-437d632dc7aa)
 
@@ -944,8 +931,8 @@ A toggle switched was placed on the positive lead going to the UBEC from the bat
 
 <details>
 <summary><h4>XT60 Splitter</h4></summary>
-<br>
-  
+
+
 ![image](https://github.com/user-attachments/assets/8d76d1ce-e5f8-4611-9f08-0283cbeaf11c)
 
 [TL60-10 Power Distribution Module XT60](https://www.aliexpress.us/item/1005007463580649.html?gatewayAdapt=4itemAdapt)
@@ -955,7 +942,8 @@ Nothing too technical here. We opted for a simple splitter to handle all of the 
 
 <details>
 <summary><h4>ESC</h4></summary>
-<br>
+
+
   
 See Propulsion System section for detailed description on the [HobbyWing X6 Plus](https://hobbywing.com/en/products/xrotor-x6-plus269) 
 
@@ -963,7 +951,8 @@ See Propulsion System section for detailed description on the [HobbyWing X6 Plus
 
 <details>
 <summary><h4>Flight Controller</h4></summary>
-<br>
+
+
 
 [Pixhawk 6X Version 1](https://holybro.com/collections/autopilot-flight-controllers/products/pixhawk-6x)
 
@@ -974,7 +963,8 @@ See Propulsion System section for detailed description on the [HobbyWing X6 Plus
 
 <details>
 <summary><h4>Radar Altimeter</h4></summary>
-<br>
+
+
 
 [Us-D1 Radar Altimeter](https://ainstein.ai/us-d1-all-weather-radar-altimeter/)
 
@@ -998,7 +988,8 @@ It is important to note that the altimeter should not be tested in doors to get 
 
 <details>
 <summary><h4>GPS</h4></summary>
-<br>
+
+
 
 - M9N and M10 GPS from Hollybro
 - connects to GPS1 and GPS2 ports on pixhawk
@@ -1007,7 +998,8 @@ It is important to note that the altimeter should not be tested in doors to get 
 
 <details>
 <summary><h4>Telemetry</h4></summary>
-<br>
+
+
 
 SIYI HM30 Air Unit
 
@@ -1032,7 +1024,8 @@ Interface & Ports:
 
 <details>
 <summary><h4>Gimbal Camera</h4></summary>
-<br>
+
+
   
 Siyi A8 Gimbal Camera
   
@@ -1043,7 +1036,8 @@ Siyi A8 Gimbal Camera
 
 <details>
 <summary><h4>Brush Bullet Dispenser</h4></summary>
-<br>
+
+
 
 [Brush Bullet Applicator Pod](https://brush-bullet.myshopify.com/products/applicator-pod)  
 

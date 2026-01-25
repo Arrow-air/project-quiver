@@ -1,4 +1,6 @@
-# Status  
+---
+title: Flight Controller Setup
+---
 
 `Valid`
 
