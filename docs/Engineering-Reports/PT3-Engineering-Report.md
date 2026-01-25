@@ -1,8 +1,14 @@
+---
+title: PT3 Engineering Report
+sidebar_position: 3
+description: Engineering report for Project Quiver Prototype 3
+---
+
 # Project Quiver PT3 Engineering Report
 
 ## Executive Summary
 
-Building upon the designs of PT1 and PT2, Quiver PT3 represents a leap forward in design and manufacturing quality.  Significant advancements were made to enhance the reliability, modularity, and operational capabilities based on the lessons learned from building and testing the previous prototypes.  PT3 included a comprehensive redesign to structural components, payload integration, PCBs, navigation accuracy, and sensing technology.  Developments include multiple custom PCBs, redundant GNSS with RTK capabilities, dual radar and LiDAR altimeters, expanded payload interfaces, and various airframe changes that have improved the assembly, maintenance, and  expanded the operational capabilities of PT3.  These improvements have resulted in an acceleration towards the goal a multipurpose UAV platform capable of reliable and flexible operations. 
+Building upon the designs of PT1 and PT2, Quiver PT3 represents a leap forward in design and manufacturing quality.  Significant advancements were made to enhance the reliability, modularity, and operational capabilities based on the lessons learned from building and testing the previous prototypes.  PT3 included a comprehensive redesign to structural components, payload integration, PCBs, navigation accuracy, and sensing technology.  Developments include multiple custom PCBs, redundant GNSS with RTK capabilities, dual radar and LiDAR altimeters, expanded payload interfaces, and various airframe changes that have improved the assembly, maintenance, and expanded the operational capabilities of PT3.  These improvements have resulted in an acceleration towards the goal a multipurpose UAV platform capable of reliable and flexible operations. 
 
 ## Introduction
 
@@ -39,10 +45,7 @@ The PT3 airframe CAD model introduces weight optimizations, multiple features fo
 
 A detailed part list and link to the .step file can be found in the information note included in the report appendix. 
 
-![](images/PT3_Drone_SideBySide_Transparent.png)
-
-
-
+![](PT3/images/PT3_Drone_SideBySide_Transparent.png)
 
 ## Detailed Technical Improvements (PT3)
 
@@ -56,11 +59,11 @@ The PT3 structural design is an evolution of the PT2 airframe, preserving core g
 
 Total|Explode 
 :-:|:-:
-![](images/Quiver_PT3_Drone_Assemblyv30_enclosure.png) | ![](images/enclosure_explode.png)
+![](PT3/images/Quiver_PT3_Drone_Assemblyv30_enclosure.png) | ![](PT3/images/enclosure_explode.png)
 
 A comprehensive redesign of the battery and avionics enclosures in PT3 added weather resistance, improved heat management, and enhanced PCB structural support without sacrificing the maintainability achieved in PT2. The enclosure assemblies are divided into four primary components: the Battery PCB enclosure, the Main enclosure, the Front lid, and the Top cap.
 
-Multiple design techniques were applied to protect the electronics weatherproof from rain and dust. Openings to the electrical compartments feature integrated rain canopies and drip-proof structures, while enclosure gaps and edges use reverse slope geometries to further improve water resistance. A dedicated enclosure was developed for the Battery PCB, incorporating a heat sync that interfaces with the aluminum airframe for heat dissipation. Additionally, mechanical reinforcements were added for the PCB while minimizing the mass of non load bearing sections.
+Multiple design techniques were applied to protect the electronics weatherproof from rain and dust. Openings to the electrical compartments feature integrated rain canopies and drip-proof structures, while enclosure gaps and edges use reverse slope geometries to further improve water resistance. A dedicated enclosure was developed for the Battery PCB, incorporating a heat sink that interfaces with the aluminum airframe for heat dissipation. Additionally, mechanical reinforcements were added for the PCB while minimizing the mass of non load bearing sections.
 
 The main enclosure includes a reserved RP-SMA mounting bracket for the telemetry antenna, ensuring robust mechanical support and straightforward integration. The top cap retains the hinged operation of PT2 but has been completely reshaped and resized to provide the clearance required for the RTK-GNSS receiver located in the cockpit.
 
@@ -70,7 +73,7 @@ The GNSS receiver is mounted 2 cm above the FCU enclosure to reduce EMI, support
 
 **Attachment Interface** 
 
-PT3 retains the quick release  mechanism from previous prototypes while expanding capacity to support three payloads. Each interface is mounted on a modified plate with dedicated screw and cable openings, and fitted with a 3 cm extension adapter to improve clearance from the aircraft body and ease maintenance. Side facing cable ports prevent abrasion and water ingress, enhancing durability in operational environments
+PT3 retains the quick release mechanism from previous prototypes while expanding capacity to support three payloads. Each interface is mounted on a modified plate with dedicated screw and cable openings, and fitted with a 3 cm extension adapter to improve clearance from the aircraft body and ease maintenance. Side facing cable ports prevent abrasion and water ingress, enhancing durability in operational environments.
 
 **Battery Wall Modifications**
 
@@ -100,11 +103,11 @@ A brief summary is provided below of the PCBs and their functionality. Detailed 
 
 ### Battery PCB
 
-![](images/BatPCBTrans.png)
+![](PT3/images/BatPCBTrans.png)
 
 The newly designed Battery PCB is responsible for managing, protecting, and monitoring the primary power flow from the Tattu Smart Battery to the Main PCB. It integrates power switching, pre-charge control with a bypass, and telemetry functions into a single board, using a combination of MOSFETs, SSRs, voltage regulators, fuses, TVS diodes, temperature sensors, and indicator LEDs.
 
-Key functions include safe ESC pre-charge, over current protection via high capacity fuses, and  telemetry. Battery status is transmitted over CAN, while temperature data is sent over I²C. Status LEDs and dedicated probe points are positioned to give clear visual indicators and accessible test locations for diagnostics in the field.
+Key functions include safe ESC pre-charge, over current protection via high capacity fuses, and telemetry. Battery status is transmitted over CAN, while temperature data is sent over I²C. Status LEDs and dedicated probe points are positioned to give clear visual indicators and accessible test locations for diagnostics in the field.
 
 The PCB design supports both pre-charge and full-power states. Custom high current Molex connectors handle the main power path, while Eurostyle connectors provide interface points for the flight controller and auxiliary systems. The board’s 4-layer FR-4 construction, ENIG finish, and robust copper weight ensure durability under high load conditions. The design also incorporates mechanical reinforcement and a heat-sinking interface to the airframe for thermal management. Multiple test points allow quick verification of voltages, gate signals, and system readiness.
 
@@ -114,7 +117,7 @@ By combining critical protection, switching, and monitoring functions into a ded
 
 ### Main PCB
 
-![](images/mainPCBTrans.png)
+![](PT3/images/mainPCBTrans.png)
 
 The PT3 Main PCB serves as the primary hub for distributing power, data, and control signals between the flight controller and the aircraft’s major subsystems. Its design is heavily based on the PT2 Main PCB, retaining the overall functional block layout and many proven interconnection schemes, but with a number of targeted upgrades to improve flexibility, serviceability, and system integration.
 
@@ -130,9 +133,9 @@ The Main PCB functions as a central hub, managing power and communication betwee
 
 ### FC PCB
 
-![](images/FCPCBTrans.png)
+![](PT3/images/FCPCBTrans.png)
 
-The FC PCB is an adapter board for the Pix 32 V6 flight controller. It includes breakouts for the various PWM, GPIO, GPS, I²C, CAN, S.BUS, and power pins on the flight controller. Various components were included based on the documentation provided by Holybro for the Pix32 V6 Schematic. Diagnostic LEDs indicate FC power state and sensor activity, while probe points facilitate troubleshooting without interrupting harness connections.
+The FC PCB is an adapter board for the Pix32 V6 flight controller. It includes breakouts for the various PWM, GPIO, GPS, I²C, CAN, S.BUS, and power pins on the flight controller. Various components were included based on the documentation provided by Holybro for the Pix32 V6 Schematic. Diagnostic LEDs indicate FC power state and sensor activity, while probe points facilitate troubleshooting without interrupting harness connections.
 
 [KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0008-FC-PCB/KiCAD-Files)
 
@@ -151,11 +154,9 @@ Provides the electrical interface for modular payloads through the aircraft’s 
 | Mateksys H743-SLIM V3 | Minimalistic, low-cost, ArduPilot compatible | Extremely cheap, small form factor | Manual wiring required, reliability concerns |
 | Pix32 V6 | Modular design, no onboard Ethernet | Affordable, flexible PCB integration | Requires adapter for Ethernet, breakout board needed |
 
-The flight controller for PT3 was selected after an evaluation of available autopilot boards.  Candidates included the Pixhawk 6 X, 6 X Pro, Cube Pilot Plus, H743‑Slim V3, uAvionix George and Auterion Skynode.  After weighing cost, sensor quality, interface support and redundancy, the **Pix32 V6** was selected as the baseline FC for PT3.  This choice balances performance and affordability for prototyping while providing a clear upgrade path to a Pixhawk 6 X or Cube Orange in later iterations. The Pix32 V6 offers a well documented software stack and a various form factors that integrates easily with the Main PCB. 
+The flight controller for PT3 was selected after an evaluation of available autopilot boards.  Candidates included the Pixhawk 6 X, 6 X Pro, Cube Pilot Plus, H743‑Slim V3, uAvionix George and Auterion Skynode.  After weighing cost, sensor quality, interface support and redundancy, the **Pix32 V6** was selected as the baseline FC for PT3.  This choice balances performance and affordability for prototyping while providing a clear upgrade path to a Pixhawk 6 X or Cube Orange in later iterations. The Pix32 V6 offers a well documented software stack and various form factors that integrate easily with the Main PCB. 
 
-![FC Module](https://github.com/Arrow-air/project-quiver/blob/errrks-PT3-Report/docs/Engineering-Reports/PT3/images/Pix32V6.png)
-
-
+![FC Module](PT3/images/Pix32V6.png)
 
 ### Navigation and Altimetry Systems
 
@@ -205,7 +206,3 @@ Future work should focus on further increasing computing power by migrating to a
 
 ### Misc
 - [Performance Metrics Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Tools/Performance-Metrics/information-note.md)
-
-
-
-
