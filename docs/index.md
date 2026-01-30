@@ -62,7 +62,7 @@ On the platform side, the main remaining efforts are scaling up manufacturing th
 
 ## Getting Involved
 
-The biggest near-term opportunity is attachment development -- designing, building, and testing new payloads that plug into Quiver's three modular interfaces. If you have an idea for a mission attachment, you can apply for a dev-kit loan, enter a contest, or pick up a grant or bounty.
+The biggest near-term opportunity is attachment development -- designing, building, and testing new payloads that plug into Quiver's three modular interfaces. For inspiration, see the [possible attachment list](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/equipment/attachment/0001-possible_attachment_list/information-note.md) and the [priority attachment requirements](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/equipment/attachment/0002-detailed_attachment_requirement_for_bounty/information-note.md) that were selected by community vote. If you want to work on a mission attachment, you can apply for a dev-kit loan, enter a contest, or pick up a grant or bounty.
 
 Contributors are also welcome across the core platform: electronics, structural design, flight controller configuration, flight testing, and tooling. All work is coordinated through the GitHub repository, the Arrow Discord, and the [DAO forum](https://dao.arrowair.com).
 
