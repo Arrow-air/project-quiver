@@ -23,18 +23,20 @@ The platform supports a maximum takeoff weight of 25 kg with 5-8 kg of payload c
 
 ## Platform Overview
 
-Quiver has been developed across three prototype iterations, each building on lessons from the previous:
+Quiver has been developed across three prototype iterations and a production dev-kit, each building on lessons from the previous:
 
-| | PT1 | PT2 | PT3 (Current) |
-|---|---|---|---|
-| Flight Controller | Pixhawk 6X | Mateksys H743 | Pix32 V6 |
-| PCB Strategy | Repurposed single board | Custom main PCB | Four custom PCBs |
-| Payload Interfaces | 1 | 1 | 3 |
-| GNSS | Basic dual module | Initial RTK | Dual RTK + backup |
-| Companion Computer | None | Optional Raspberry Pi | Optional Raspberry Pi with Ethernet |
-| Communications | CAN, Serial, Analog | CAN, Serial, Analog | CAN, Serial, Analog, Ethernet |
-| Power Management | Arduino contactor | SSR with pre-charge | Battery PCB with temp monitoring & kill switch |
-| Weatherproofing | No | No | Yes |
+| | PT1 | PT2 | PT3 | Dev-kit (Current) |
+|---|---|---|---|---|
+| Flight Controller | Pixhawk 6X | Mateksys H743 | Pix32 V6 | Pix32 V6 |
+| PCB Strategy | Repurposed single board | Custom main PCB | Four custom PCBs | Updated connector layout and bus bar integration |
+| Payload Interfaces | 1 | 1 | 3 | 3 |
+| Structure | 3D printed + aluminum plates | Aluminum plates, tubes & rivets | Aluminum plates, tubes & rivets | Thinner aluminum for weight savings |
+| Landing Gear | Fixed | Fixed | Fixed | Detachable |
+| Obstacle Avoidance | Downward facing radar only | Downward facing radar only | Downward facing radar only | 360 LiDAR + forward-facing and downward-facing radar |
+| Companion Computer | None | Optional Raspberry Pi | Optional Raspberry Pi with Ethernet | Optional Raspberry Pi with Ethernet |
+| Communications | CAN, Serial, Analog | CAN, Serial, Analog | CAN, Serial, Analog, Ethernet | CAN, Serial, Analog, Ethernet |
+| Power Management | Arduino contactor | SSR with pre-charge | Battery PCB with SOC, temp monitoring, & kill switch | Battery PCB with SOC, temp monitoring, & kill switch |
+| Weatherproofing | No | No | No | Yes |
 
 The airframe uses laser-cut aluminum plates and tubes for the primary structure, carbon fiber tubes for motor arms and landing gear, and 3D-printed components for enclosures and adapters. Motor arms fold for transport, bringing the platform down to a case-portable size.
 
@@ -44,7 +46,7 @@ All CAD files (Fusion 360 / STEP), KiCAD PCB designs, ArduPilot configurations, 
 
 PT3 is the current production design. The airframe, electronics, and harnessing are finalized, and the platform has been regularly tested in both the US and Germany. It is considered stable enough for developers and businesses to build on with some support.
 
-The DAO has funded the build of 8 drones in the US and 6 in Germany to serve as dev-kits. These units can be loaned, sold, or given away to support ecosystem growth and further testing and refinement of the core platform. Assembly guides and documentation are complete, and the platform uses standard QGroundControl or Mission Planner for ground control.
+The DAO has funded the build of 8 drones in the US and 4 in Germany to serve as dev-kits. These units can be loaned, sold, or given away to support ecosystem growth and further testing and refinement of the core platform. Assembly guides and documentation are complete, and the platform uses standard QGroundControl or Mission Planner for ground control.
 
 ## Roadmap
 
