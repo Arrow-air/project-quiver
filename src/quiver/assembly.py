@@ -1,7 +1,8 @@
 """Top-level Quiver drone assembly.
 
-Composes all subassemblies into the complete drone. Run this file
-directly to export the full assembly or view it in ocp-vscode.
+Composes BOM categories (airframe structure, supporting structure,
+equipment) into the complete drone. Run this file directly to export
+the full assembly or view it in ocp-vscode.
 
 Usage:
     python -m quiver.assembly              # export full assembly STEP
@@ -13,12 +14,9 @@ from pathlib import Path
 
 from build123d import Compound, export_step
 
-from quiver.frame.assembly import make_assembly as frame
-from quiver.arms.assembly import make_assembly as arms
-from quiver.landing_gear.assembly import make_assembly as landing_gear
-from quiver.enclosure.assembly import make_assembly as enclosure
-from quiver.electronics.assembly import make_assembly as electronics
-from quiver.attachments.interfaces.assembly import make_assembly as attachments
+from quiver.airframe_structure.assembly import make_assembly as airframe_structure
+from quiver.supporting_structure.assembly import make_assembly as supporting_structure
+from quiver.equipment.assembly import make_assembly as equipment
 
 EXPORT_DIR = Path(__file__).parent.parent / "export"
 
@@ -26,12 +24,9 @@ EXPORT_DIR = Path(__file__).parent.parent / "export"
 def make_assembly() -> Compound | None:
     """Build the complete Quiver drone assembly."""
     subassemblies = [
-        frame(),
-        arms(),
-        landing_gear(),
-        enclosure(),
-        electronics(),
-        attachments(),
+        airframe_structure(),
+        supporting_structure(),
+        equipment(),
     ]
     children = [s for s in subassemblies if s is not None]
     if not children:
