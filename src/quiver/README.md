@@ -1,6 +1,6 @@
 # Quiver CAD Assembly
 
-Parametric CAD for the Arrow Air Quiver multi-purpose quadcopter platform,
+Parametric CAD for the Arrow Quiver multi-purpose quadcopter platform,
 built with [build123d](https://github.com/gumyr/build123d).
 
 ## Folder structure
