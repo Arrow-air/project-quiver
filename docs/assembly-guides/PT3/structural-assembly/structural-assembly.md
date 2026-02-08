@@ -66,35 +66,101 @@
 
 ## Preparation
 
-### Parts 1-3
+### 1111, 1112 & 1113
+- Rack plates.
 - All three are aluminum 6 series sheets, laser cut, sanded. 
 - Bounding box dimension is 300x300 mm for each.
 
-| | Part 1 (Upper Plate) | Part 2 (Mid Plate) | Part 3 (Lower Plate)|
+| | 1111 (Upper Plate) | 1112 (Mid Plate) | 1113 (Lower Plate)|
 |--|--|--|--|
 |Thickness|1 mm|1 mm|4 mm|
-| Image| ![](assets/images/part1.png) | ![](assets/images/part2.png) | ![](assets/images/part3.png) |  
-| CAD File|[Part 1](assets/models/part1.step)| [Part 2](assets/models/part2.step)| [Part 3](assets/models/part3.step)|
+| Image| ![](assets/images/1111.png) | ![](assets/images/1112.png) | ![](assets/images/1113.png) |  
+| CAD File|[Part 1](assets/models/1111.step)| [Part 2](assets/models/1112.step)| [Part 3](assets/models/1113.step)|
 
-### Parts 4-6
+### 1211, 1212 & 1213
+- Cockpit support beams.
 - All three are aluminum 6 series, 40x40x2 mm square tubes, laser cut, sanded. 
-- Part 5 and Part 6 are identical, order 2 parts for the same geometry.
+- 1212 and 1213 are identical, order 2 parts for the same geometry.
 
-| | Part 4 (Cockpit Support Beam CW Long) | Part 5 & 6 (Cockpit Support Beam CCW Back & Front) |
+| | 1211 (Cockpit Support Beam CW Long) | 1212 & 1213 (Cockpit Support Beam CCW Back & Front) |
 |--|--|--|
 |Length|289.2 mm|124.2 mm|
-| Image| ![](assets/images/part4.png) | ![](assets/images/part5_6.png) |
-| CAD File|[Part 4](assets/models/part4.step)| [Part 5 & 6](assets/models/part5_6.step)|
+| Image| ![](assets/images/1211.png) | ![](assets/images/1212_1213.png) |
+| CAD File|[Part 4](assets/models/1211.step)| [Part 5 & 6](assets/models/1212_1213.step)|
 
-### Parts 7-8
+### 1221 & 1222
+- Battery walls.
 - Both are aluminum 6 series, 1000x30x2 mm rectangular tubes, laser cut, sanded.
 - Length is 300 mm for each.
 - Parts are identical, order 2 parts of the same geometry.
 
-| | Part 7 & 8 (Battery Wall Left & Right) |
+| | 1221 & 1222 (Battery Wall Left & Right) |
 |--|--|
-| Image| ![](assets/images/part7_8.png) |
-| CAD File|[Part 7 & 8](assets/models/part7_8.step)|
+| Image| ![](assets/images/1221_1222.png) |
+| CAD File|[1221 & 1222](assets/models/1221_1222.step)|
+
+### 1311, 1312, 1313 & 1314
+- Landing gear vertical tubes.
+- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
+- Length is 400 mm for each.
+- Parts are identical, order 4 parts of the same geometry or cut to length.
+
+### 1321 & 1322
+- Landing gear horizontal tubes.
+- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
+- Length is 500 mm for each.
+- Parts are identical, order 2 parts of the same geometry or cut to length.
+
+### 1331, 1332, 1333 & 1334
+- Landing gear main adapters.
+- Custom detachable version for 30 mm tube diameter.
+- Contact RJXHobby for the customization.
+  - Request 30 mm diameter variant of [this one](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone)'s bolt pattern.
+- Parts are identical, order 4 parts of the same geometry.
+- **Note:** If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
+
+| | 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
+|--|--|
+| Image| ![](assets/images/133X.jpeg) |
+
+### 1341, 1342, 1343 & 1344
+- Landing gear tube joints.
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- Parts are identical, order or print 4 parts of the same geometry.
+
+| | 1341 & 1342 (Landing Gear Tube Joint) |
+|--|--|
+| Image| ![](assets/images/134X.png) |
+| CAD File|[1221 & 1222](assets/models/134X.step)|
+
+### 1351, 1352, 1353 & 1354
+- Landing gear foam wraps.
+- Pipe insulation foam, 28 mm inner diameter, 46 mm outer diameter.
+- Length is 67 mm for each.
+- Parts are identical, cut 4 pieces to length.
+- Product Link: [Link](https://a.co/d/06ePWuUq)
+
+| | 1351, 1352, 1353 & 1354 (Landing Gear Foam Wrap) |
+|--|--|
+| Image| ![](assets/images/135X.png) |
+
+### 1411, 1421, 1431 & 1441
+- Motor arm foldable connectors.
+- 30 mm tube diameter version.
+- Parts are identical, order 4 parts.
+- Product Link: [Link](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html?spm=a2756.order-detail-ta-bn-b.0.0.78e1f19cegXkOZ)
+
+| | 1411, 1421, 1431 & 1441 (Motor Arm Foldable Connectors) |
+|--|--|
+| Image| ![](assets/images/14X1.png) |
+
+### 1412, 1422, 1432 & 1442
+- Motor arms.
+- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
+- Length is 360 mm for each.
+- Parts are identical, order 4 parts of the same geometry or cut to length.
 
 ### Part 9
 - Off-the-shelf component.
