@@ -2,8 +2,10 @@
 
 from pathlib import Path
 
-from build123d import Color, Compound, import_step
+from build123d import Color, Compound, Solid, import_step
 from OCP.BRepBuilderAPI import BRepBuilderAPI_Copy
+from OCP.TopAbs import TopAbs_ShapeEnum
+from OCP.TopoDS import TopoDS_Iterator
 
 # Material colors for visualization
 ALUMINUM = Color(0.75, 0.75, 0.76)
@@ -26,6 +28,19 @@ def _load_from(directory: Path) -> dict[str, Compound]:
     return parts
 
 
+def _collect_solids(shape):
+    """Recursively collect all Solid shapes from a TopoDS hierarchy."""
+    solids = []
+    if shape.ShapeType() == TopAbs_ShapeEnum.TopAbs_SOLID:
+        solids.append(shape)
+    else:
+        it = TopoDS_Iterator(shape)
+        while it.More():
+            solids.extend(_collect_solids(it.Value()))
+            it.Next()
+    return solids
+
+
 def _flatten(compound: Compound) -> Compound:
     """Deep-copy a Compound to bake internal placement transforms into geometry.
 
@@ -42,7 +57,28 @@ def _flatten(compound: Compound) -> Compound:
     return flat
 
 
-def load_step(subassembly_dir: Path, filename: str, vendor: bool = False) -> Compound | None:
+def _flatten_solids(compound: Compound) -> Compound:
+    """Flatten by extracting all solids and rebuilding a simple compound.
+
+    Some vendor STEP files (e.g. GNSS receivers) have deeply nested compound
+    hierarchies that crash the OCP CAD Viewer tessellator. This function
+    extracts every solid from the shape, deep-copies each to bake transforms,
+    and rebuilds a flat compound the viewer can handle.
+    """
+    copier = BRepBuilderAPI_Copy(compound.wrapped, True, True)
+    copier.Perform(compound.wrapped)
+    solids = [Solid(s) for s in _collect_solids(copier.Shape())]
+    flat = Compound(children=solids) if solids else Compound(copier.Shape())
+    flat.label = compound.label
+    return flat
+
+
+def load_step(
+    subassembly_dir: Path,
+    filename: str,
+    vendor: bool = False,
+    extract_solids: bool = False,
+) -> Compound | None:
     """Import a STEP file from a subassembly's steps/ directory.
 
     The imported geometry is flattened (internal placement transforms are
@@ -53,6 +89,9 @@ def load_step(subassembly_dir: Path, filename: str, vendor: bool = False) -> Com
         subassembly_dir: Path to the subassembly module directory.
         filename: Name of the STEP file (with or without .step extension).
         vendor: If True, load from steps/vendor/ instead of steps/.
+        extract_solids: If True, extract individual solids and rebuild
+            the compound. Use for STEP files with deeply nested compound
+            hierarchies that crash the viewer tessellator.
 
     Returns:
         The imported Compound, or None if the file doesn't exist yet.
@@ -65,7 +104,8 @@ def load_step(subassembly_dir: Path, filename: str, vendor: bool = False) -> Com
     step_path = steps_path / filename
     if not step_path.exists():
         return None
-    return _flatten(import_step(str(step_path)))
+    raw = import_step(str(step_path))
+    return _flatten_solids(raw) if extract_solids else _flatten(raw)
 
 
 def load_all_steps(subassembly_dir: Path) -> dict[str, Compound]:
