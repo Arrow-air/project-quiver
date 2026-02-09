@@ -52,7 +52,7 @@ from pathlib import Path
 
 from build123d import Axis, Compound, Cylinder, Location, Part
 
-from quiver.common import FOAM, load_step
+from quiver.common import ALUMINUM, CARBON_FIBER, FOAM, PETG, load_step
 
 _DIR = Path(__file__).parent
 
@@ -125,6 +125,7 @@ def make_assembly() -> Compound | None:
         # compute the actual CoM after rotation and correct the offset.
         adapter = load_step(_DIR, "1330_main_adapter", vendor=True)
         if adapter:
+            adapter.color = ALUMINUM
             adapter = adapter.rotate(Axis.Z, 90 * sx)
             adapter = adapter.rotate(Axis.Y, -_TILT_ANGLE * sx)
             com = adapter.center()
@@ -139,6 +140,7 @@ def make_assembly() -> Compound | None:
         # Generated tubes are symmetric and centered at the origin,
         # so no CoM correction is needed — just tilt and translate.
         v_tube = _make_tube(_VERT_TUBE_LENGTH, "1310-VerticalTube")
+        v_tube.color = CARBON_FIBER
         v_tube = v_tube.rotate(Axis.Y, -_TILT_ANGLE * sx)
         v_tube.move(Location((
             sx * _VERT_TUBE_X,
@@ -151,6 +153,7 @@ def make_assembly() -> Compound | None:
         # Same rotation + CoM correction pattern as the adapter.
         joint = load_step(_DIR, "1340_tube_joint")
         if joint:
+            joint.color = PETG
             joint = joint.rotate(Axis.Z, 90 * sx)
             joint = joint.rotate(Axis.Y, -_TILT_ANGLE * sx)
             com = joint.center()
@@ -164,6 +167,7 @@ def make_assembly() -> Compound | None:
     # --- Horizontal cross-tubes (generated, running front-to-back) ---
     for sx in [1, -1]:
         h_tube = _make_tube(_HORIZ_TUBE_LENGTH, "1320-HorizontalTube")
+        h_tube.color = CARBON_FIBER
         h_tube = h_tube.rotate(Axis.X, 90)  # orient along Y
         h_tube.move(Location((
             sx * _HORIZ_TUBE_X,

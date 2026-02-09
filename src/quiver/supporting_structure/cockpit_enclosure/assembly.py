@@ -13,7 +13,7 @@ from pathlib import Path
 
 from build123d import Compound
 
-from quiver.common import load_all_steps, load_vendor_steps
+from quiver.common import PETG, load_all_steps, load_vendor_steps
 
 _DIR = Path(__file__).parent
 
@@ -24,4 +24,6 @@ def make_assembly() -> Compound | None:
     parts += list(load_vendor_steps(_DIR).values())
     if not parts:
         return None
+    for part in parts:
+        part.color = PETG
     return Compound(children=parts, label="Cockpit Enclosure")

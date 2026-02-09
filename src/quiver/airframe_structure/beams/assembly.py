@@ -37,7 +37,7 @@ from pathlib import Path
 
 from build123d import Axis, Compound, Location
 
-from quiver.common import load_step
+from quiver.common import ALUMINUM, load_step
 
 _DIR = Path(__file__).parent
 
@@ -67,18 +67,21 @@ def make_assembly() -> Compound | None:
 
     cw_long = load_step(_DIR, "1211_cw_long")
     if cw_long:
+        cw_long.color = ALUMINUM
         cw_long.move(Location((0, -_CW_LONG_CENTER_Y, 0)))
         cw_long = cw_long.rotate(Axis.Z, -BEAM_ANGLE)
         children.append(cw_long)
 
     ccw_back = load_step(_DIR, "1212_ccw_back")
     if ccw_back:
+        ccw_back.color = ALUMINUM
         ccw_back = ccw_back.rotate(Axis.Z, BEAM_ANGLE)
         ccw_back.move(Location((-_CCW_PERP_OFFSET, _CCW_PERP_OFFSET, 0)))
         children.append(ccw_back)
 
     ccw_front = load_step(_DIR, "1212_ccw_back")
     if ccw_front:
+        ccw_front.color = ALUMINUM
         ccw_front = ccw_front.rotate(Axis.Z, -(180 - BEAM_ANGLE))
         ccw_front.move(Location((_CCW_PERP_OFFSET, -_CCW_PERP_OFFSET, 0)))
         children.append(ccw_front)
@@ -92,12 +95,14 @@ def make_assembly() -> Compound | None:
 
     wall_left = load_step(_DIR, "1221_battery_wall")
     if wall_left:
+        wall_left.color = ALUMINUM
         wall_left = wall_left.rotate(Axis.Y, 180)
         wall_left.move(Location((-_WALL_X, -_WALL_Y, _WALL_Z)))
         children.append(wall_left)
 
     wall_right = load_step(_DIR, "1221_battery_wall")
     if wall_right:
+        wall_right.color = ALUMINUM
         wall_right = wall_right.rotate(Axis.X, 180)
         wall_right.move(Location((_WALL_X, _WALL_Y, _WALL_Z)))
         children.append(wall_right)

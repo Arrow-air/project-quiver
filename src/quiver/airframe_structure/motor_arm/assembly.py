@@ -29,7 +29,7 @@ from pathlib import Path
 
 from build123d import Axis, Compound, Cylinder, Location, Part
 
-from quiver.common import load_step
+from quiver.common import ALUMINUM, CARBON_FIBER, load_step
 
 _DIR = Path(__file__).parent
 
@@ -68,11 +68,13 @@ def make_assembly() -> Compound | None:
     for angle, sx, sy in _ARM_POSITIONS:
         connector = load_step(_DIR, "1411_arm_connector", vendor=True)
         if connector:
+            connector.color = ALUMINUM
             connector = connector.rotate(Axis.Z, angle)
             connector.move(Location((sx * _CONNECTOR_OFFSET, sy * _CONNECTOR_OFFSET, 0)))
             children.append(connector)
 
         tube = _make_arm_tube()
+        tube.color = CARBON_FIBER
         tube = tube.rotate(Axis.Z, angle)
         tube.move(Location((sx * _TUBE_OFFSET, sy * _TUBE_OFFSET, 0)))
         children.append(tube)

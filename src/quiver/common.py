@@ -7,9 +7,9 @@ from OCP.BRepBuilderAPI import BRepBuilderAPI_Copy
 
 # Material colors for visualization
 ALUMINUM = Color(0.75, 0.75, 0.76)
-CARBON_FIBER = Color(0.15, 0.15, 0.15)
+CARBON_FIBER = Color(0.10, 0.10, 0.12)
 PCB_GREEN = Color(0.0, 0.5, 0.2)
-PETG = Color(0.2, 0.2, 0.2)
+PETG = Color(0.30, 0.32, 0.38)
 FOAM = Color(0.85, 0.55, 0.2)  # orange EPP foam
 
 STEPS_DIR = "steps"

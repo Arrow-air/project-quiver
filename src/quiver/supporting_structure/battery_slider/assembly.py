@@ -28,7 +28,7 @@ from pathlib import Path
 
 from build123d import Axis, Compound, Location
 
-from quiver.common import load_step
+from quiver.common import PETG, load_step
 
 _DIR = Path(__file__).parent
 
@@ -44,6 +44,7 @@ def make_assembly() -> Compound | None:
     # Left slider — the STEP file is already in the correct orientation.
     left = load_step(_DIR, "2211_battery_slider")
     if left:
+        left.color = PETG
         com = left.center()
         left.move(Location((
             _LEFT_POS[0] - com.X,
@@ -55,6 +56,7 @@ def make_assembly() -> Compound | None:
     # Right slider — mirror across YZ plane to face the opposite wall.
     right = load_step(_DIR, "2211_battery_slider")
     if right:
+        right.color = PETG
         right = right.rotate(Axis.Y, 180)
         com = right.center()
         right.move(Location((
