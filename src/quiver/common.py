@@ -3,6 +3,7 @@
 from pathlib import Path
 
 from build123d import Color, Compound, import_step
+from OCP.BRepBuilderAPI import BRepBuilderAPI_Copy
 
 # Material colors for visualization
 ALUMINUM = Color(0.75, 0.75, 0.76)
@@ -21,12 +22,32 @@ def _load_from(directory: Path) -> dict[str, Compound]:
         return {}
     parts = {}
     for step_file in sorted(directory.glob("*.step")):
-        parts[step_file.stem] = import_step(str(step_file))
+        parts[step_file.stem] = _flatten(import_step(str(step_file)))
     return parts
+
+
+def _flatten(compound: Compound) -> Compound:
+    """Deep-copy a Compound to bake internal placement transforms into geometry.
+
+    STEP files can carry nested placement transforms on sub-parts. These
+    interact badly with subsequent rotate/move calls in the OCP CAD Viewer
+    (the viewer may not correctly compose parent and child transforms).
+    Deep-copying with BRepBuilderAPI_Copy collapses all transforms into the
+    vertex data so the geometry is self-contained.
+    """
+    copier = BRepBuilderAPI_Copy(compound.wrapped, True, True)
+    copier.Perform(compound.wrapped)
+    flat = Compound(copier.Shape())
+    flat.label = compound.label
+    return flat
 
 
 def load_step(subassembly_dir: Path, filename: str, vendor: bool = False) -> Compound | None:
     """Import a STEP file from a subassembly's steps/ directory.
+
+    The imported geometry is flattened (internal placement transforms are
+    baked into vertices) so that subsequent rotate/move calls render
+    correctly in the OCP CAD Viewer.
 
     Args:
         subassembly_dir: Path to the subassembly module directory.
@@ -44,7 +65,7 @@ def load_step(subassembly_dir: Path, filename: str, vendor: bool = False) -> Com
     step_path = steps_path / filename
     if not step_path.exists():
         return None
-    return import_step(str(step_path))
+    return _flatten(import_step(str(step_path)))
 
 
 def load_all_steps(subassembly_dir: Path) -> dict[str, Compound]:
