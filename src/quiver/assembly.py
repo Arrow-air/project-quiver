@@ -31,7 +31,7 @@ def make_assembly() -> Compound | None:
     children = [s for s in subassemblies if s is not None]
     if not children:
         return None
-    return Compound(children=children)
+    return Compound(children=children, label="Quiver Drone")
 
 
 def export(output: Path | None = None) -> Path:
