@@ -31,7 +31,7 @@ from pathlib import Path
 
 from build123d import Axis, Compound, Location
 
-from quiver.common import load_step
+from quiver.common import ALUMINUM, PETG, load_step
 
 _DIR = Path(__file__).parent
 
@@ -56,11 +56,13 @@ def make_assembly() -> Compound | None:
     # Rotate 180 deg around Z to mirror it to the right side (X = +165).
     right_spacer = load_step(_DIR, "2111_attach_spacer")
     if right_spacer:
+        right_spacer.color = PETG
         right_spacer = right_spacer.rotate(Axis.Z, 180)
         children.append(right_spacer)
 
     right_plate = load_step(_DIR, "2112_attach_plate")
     if right_plate:
+        right_plate.color = ALUMINUM
         right_plate = right_plate.rotate(Axis.Z, 90)    # mechanism faces +X (outward)
         right_plate = right_plate.rotate(Axis.X, 180)    # flip to match reference
         com = right_plate.center()
@@ -76,10 +78,12 @@ def make_assembly() -> Compound | None:
     # The spacer STEP is already at the correct left-side position.
     left_spacer = load_step(_DIR, "2111_attach_spacer")
     if left_spacer:
+        left_spacer.color = PETG
         children.append(left_spacer)
 
     left_plate = load_step(_DIR, "2112_attach_plate")
     if left_plate:
+        left_plate.color = ALUMINUM
         left_plate = left_plate.rotate(Axis.Z, -90)     # mechanism faces -X (outward)
         left_plate = left_plate.rotate(Axis.X, 180)      # flip to match reference
         com = left_plate.center()
@@ -96,10 +100,12 @@ def make_assembly() -> Compound | None:
     # It has a wiring notch that the left/right spacer does not.
     bottom_spacer = load_step(_DIR, "2131_attach_spacer_bottom")
     if bottom_spacer:
+        bottom_spacer.color = PETG
         children.append(bottom_spacer)
 
     bottom_plate = load_step(_DIR, "2112_attach_plate")
     if bottom_plate:
+        bottom_plate.color = ALUMINUM
         bottom_plate = bottom_plate.rotate(Axis.X, 90)   # mechanism faces -Z (downward)
         bottom_plate = bottom_plate.rotate(Axis.Z, 180)   # flip to match reference
         com = bottom_plate.center()

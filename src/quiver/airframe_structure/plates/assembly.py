@@ -27,7 +27,7 @@ from pathlib import Path
 
 from build123d import Compound, Location
 
-from quiver.common import load_step
+from quiver.common import ALUMINUM, load_step
 
 _DIR = Path(__file__).parent
 
@@ -53,12 +53,15 @@ def make_assembly() -> Compound | None:
     children = []
 
     if upper:
+        upper.color = ALUMINUM
         dz = UPPER_PLATE_Z - _UPPER_STEP_OFFSET
         children.append(upper.move(Location((0, 0, dz))))
     if middle:
+        middle.color = ALUMINUM
         dz = MIDDLE_PLATE_Z - _MIDDLE_STEP_OFFSET
         children.append(middle.move(Location((0, 0, dz))))
     if lower:
+        lower.color = ALUMINUM
         dz = LOWER_PLATE_Z - _LOWER_STEP_OFFSET
         children.append(lower.move(Location((0, 0, dz))))
 
