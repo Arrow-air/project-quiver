@@ -31,7 +31,7 @@ from quiver.common import load_step
 
 _DIR = Path(__file__).parent
 
-# Z positions for each plate (top surface, measured from drone center)
+# Z positions for each plate (bottom surface, measured from drone center)
 UPPER_PLATE_Z = 20      # top of beam sandwich
 MIDDLE_PLATE_Z = -21     # bottom of beam sandwich
 LOWER_PLATE_Z = -125     # below battery compartment
