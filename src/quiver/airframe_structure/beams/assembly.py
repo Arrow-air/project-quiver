@@ -5,19 +5,19 @@ Cockpit support beams and battery compartment walls.
 The cockpit beams form an X shape sandwiched between the upper and middle
 plates. Looking down from above (top view):
 
-         (-X)
-          |
-    CCW   |   CW long
-    back  |  /
-      \\   | /
-       \\  |/
-    ----+----  (+Y)
-       /|\\
-      / | \\
-     /  |  CCW
-    CW  |  front
-    long|
-         (+X)
+              (+Y)
+               |
+    CCW        |       /
+    back  \\    |      / CW long
+           \\   |    /
+            \\  |  /
+    (-X) ----+---- (+X)
+            /  |  \\
+           /   |    \\
+    CW   /     |      \\ CCW
+    long       |   front
+               |
+              (-Y)
 
 The CW long beam spans the full diagonal. The two CCW back beams span
 the other diagonal, with a gap at the center where they meet the CW beam.
@@ -53,10 +53,9 @@ _CW_LONG_CENTER_Y = 144.89
 # at the center. 20mm * cos(45) = 14.14, rounded to match Fusion geometry.
 _CCW_PERP_OFFSET = 14.23
 
-# Battery wall positions (wall center X, Y shift to center, Z shift to sit
-# between mid plate Z=-21 and lower plate Z=-125)
+# Battery wall positions
 _WALL_X = 135       # center of 30mm wall at edge of 300mm plate
-_WALL_Y = -150      # center 300mm wall on the 300mm plate
+_WALL_Y = 150       # half the 300mm plate width (wall STEP starts at Y=0)
 _WALL_Z = -71       # center 100mm wall between Z=-121 and Z=-21
 
 
@@ -86,16 +85,21 @@ def make_assembly() -> Compound | None:
 
     # --- Battery compartment walls ---
 
+    # Each wall is flipped to face inward (toward the battery compartment).
+    # Left wall flips around Y (mirrors X and Z); right wall flips around X
+    # (mirrors Y and Z). The different axes keep the mounting features on the
+    # correct side for each wall.
+
     wall_left = load_step(_DIR, "1221_battery_wall")
     if wall_left:
         wall_left = wall_left.rotate(Axis.Y, 180)
-        wall_left.move(Location((-_WALL_X, _WALL_Y, _WALL_Z)))
+        wall_left.move(Location((-_WALL_X, -_WALL_Y, _WALL_Z)))
         children.append(wall_left)
 
     wall_right = load_step(_DIR, "1221_battery_wall")
     if wall_right:
         wall_right = wall_right.rotate(Axis.X, 180)
-        wall_right.move(Location((_WALL_X, -_WALL_Y, _WALL_Z)))
+        wall_right.move(Location((_WALL_X, _WALL_Y, _WALL_Z)))
         children.append(wall_right)
 
     if not children:
