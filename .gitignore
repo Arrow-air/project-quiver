@@ -9,3 +9,4 @@ build/
 
 # CAD exports
 src/export/
+/*.step

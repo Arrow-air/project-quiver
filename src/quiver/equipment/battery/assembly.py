@@ -21,4 +21,4 @@ def make_assembly() -> Compound | None:
     parts += list(load_vendor_steps(_DIR).values())
     if not parts:
         return None
-    return Compound(children=parts)
+    return Compound(children=parts, label="Battery")
