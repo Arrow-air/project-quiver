@@ -17,6 +17,7 @@ from build123d import Compound, export_step
 from quiver.airframe_structure.assembly import make_assembly as airframe_structure
 from quiver.supporting_structure.assembly import make_assembly as supporting_structure
 from quiver.equipment.assembly import make_assembly as equipment
+from quiver.harness.assembly import make_assembly as harness
 
 EXPORT_DIR = Path(__file__).parent.parent / "export"
 
@@ -27,6 +28,7 @@ def make_assembly() -> Compound | None:
         airframe_structure(),
         supporting_structure(),
         equipment(),
+        harness(),
     ]
     children = [s for s in subassemblies if s is not None]
     if not children:
