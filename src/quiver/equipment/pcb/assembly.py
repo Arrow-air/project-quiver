@@ -6,18 +6,18 @@ Custom PCBs for the distributed board architecture.
     BC PCB (3320)    — front PCB, dZ offset to match reference
     Attach PCBs (3331) — one per attachment interface (right, left, rear)
 
-         Top view:
+        Top view:
                     (+Y)
-                     |
-              Main PCB (3310)
+                    |
+                Main PCB (3310)
             ┌────────────────┐
-     Left   │                │  Right
-     Attach │    center      │  Attach
-     PCB    │                │  PCB
+    Left    │                │  Right
+    Attach  │    center      │  Attach
+    PCB     │                │  PCB
             └────────────────┘
-              BC PCB (3320)
-                     |
-                  Rear Attach PCB
+                BC PCB (3320)
+                    |
+                Rear Attach PCB
 
 Vendor parts in steps/vendor/:
     3310_main_pcb.step      Main PCB assembly (no transform, extract_solids >=50mm³)

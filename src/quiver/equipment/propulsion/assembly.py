@@ -5,16 +5,16 @@ corners spin opposite directions (CW/CCW) for yaw control.
 
     Top view (looking down):
 
-              (+Y)
-               |
-        FL(CCW)|     FR(CW)
-          \\    |    /
-           \\   |   /
+            (+Y)
+            |
+        FL(CCW)     FR(CW)
+        \\   |      /
+            \\  |  /
     (-X) ---+--- (+X)
-           /   |   \\
-          /    |    \\
-        BL(CCW)|     BR(CW)
-               |
+            /  |  \\
+        /   |      \\
+        BL(CCW)     BR(CW)
+            |
 
 Each motor is aligned along the arm diagonal via rotX(90) to point
 the shaft upward, then rotZ(arm_angle) to face the correct corner.

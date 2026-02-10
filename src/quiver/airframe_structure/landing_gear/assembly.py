@@ -6,17 +6,17 @@ horizontal cross-tubes. Foam sleeves cushion the landing points.
     Front view (not to scale):
 
             [A]======[A]            Lower plate (Z = -125)
-             /        \             [A] = adapter bolted to plate
-            /          \
-           /  vertical  \           ~21 deg outward tilt
-          /    tubes     \
+            /          \\           [A] = adapter bolted to plate
+            /          \\
+            / vertical  \\          ~21 deg outward tilt
+        /      tubes      \\
     =[F][J]====      ====[J][F]=    Horizontal tubes (Z ~ -528)
                                     [J] = tube joint, [F] = foam sleeve
 
 Each leg has three parts stacked along its axis:
-  1. A vendor aluminum adapter (1330) bolted to the lower plate
-  2. A carbon-fiber vertical tube (1310) angled ~21 deg outward
-  3. A 3D-printed tube joint (1340) connecting to the horizontal tube
+    1. A vendor aluminum adapter (1330) bolted to the lower plate
+    2. A carbon-fiber vertical tube (1310) angled ~21 deg outward
+    3. A 3D-printed tube joint (1340) connecting to the horizontal tube
 
 The two horizontal cross-tubes (1320) run front-to-back (along Y),
 one on each side, connecting the left and right pairs of legs.
@@ -27,13 +27,13 @@ Looking from above, the four legs are at the same Y positions
 (+/-123mm) but spread outward in X as they descend:
 
                 (+Y)
-                 |
-          FL --- | --- FR        Y = +123
-                 |
-         (-X) --+-- (+X)
-                 |
-          BL --- | --- BR        Y = -123
-                 |
+                |
+        FL ---  |  --- FR        Y = +123
+                |
+        (-X) --+-- (+X)
+                |
+        BL ---  |  --- BR        Y = -123
+                |
 
 Vendor parts in steps/vendor/:
     1330_main_adapter.step      Aluminum adapter (used 4x)

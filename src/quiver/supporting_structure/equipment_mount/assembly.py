@@ -8,25 +8,25 @@ reference assembly and need explicit correction.
 
     Side view (not to scale):
 
-                  [GNSS]          Z ~ 28..79  (on upper plate)
-         [PCB mount]              Z ~ 15..27  (on upper plate, tabs through)
+                [GNSS]            Z ~ 28..79  (on upper plate)
+        [PCB mount]               Z ~ 15..27  (on upper plate, tabs through)
         ==========================
         |  Upper plate            |
         ==========================
-              |        |
-              |        |
+            |          |
+            |          |
         ==========================
         |  Middle plate           |
         ==========================
-              |        |
-           [BC mount]  |          Z ~ -20..19 (battery PCB mount)
-           [BC cover]  |          Z ~ -22..22 (battery PCB cover)
-              |        |
+            |          |
+            [BC mount] |          Z ~ -20..19 (battery PCB mount)
+            [BC cover] |          Z ~ -22..22 (battery PCB cover)
+            |          |
         ==========================
         |  Lower plate            |        Z = -125
         ===+==================+===
-           |                  |
-         [Sensor]                 Z ~ -132..-70 (altitude sensor)
+            |                 |
+        [Sensor]                  Z ~ -132..-70 (altitude sensor)
 
 STEP files in steps/:
     2311_main_pcb_mount.step        Main PCB mount (Z offset needed)
