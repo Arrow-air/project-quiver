@@ -6,17 +6,17 @@ of the upper plate. Hinged at the back (+Y) and latched at the front
 
     Top view (looking down, cap removed):
 
-              (+Y)
-               |
-          [HL]====[HR]          Hinge anchors (back edge)
-         /              \\
+            (+Y)
+            |
+        [HL]====[HR]            Hinge anchors (back edge)
+        /                \\
         |                |
         |   Enclosure    |      Main enclosure shell
         |                |
-         \\              /
-          [LL]    [LR]          Latch clips (front corners)
-               |
-              (-Y)
+        \\                /
+        [LL]    [LR]            Latch clips (front corners)
+            |
+            (-Y)
 
     Side view:
 

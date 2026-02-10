@@ -7,14 +7,14 @@ The lower plate sits below the battery compartment walls.
     Side view (not to scale):
 
         ======== Upper plate (1mm)    Z = 20
-          \  /
-           \/   Cockpit beams (40mm)  Z = -20 to 20
-          /\
-         /  \
+        \\  /
+            \\/   Cockpit beams (40mm)  Z = -20 to 20
+        /\\
+        /  \\
         ======== Middle plate (1mm)   Z = -21
-           ||
-           ||    Battery walls (100mm) Z = -121 to -21
-           ||
+            ||
+            ||    Battery walls (100mm) Z = -121 to -21
+            ||
         ======== Lower plate (4mm)    Z = -125
 
 Expected STEP files in steps/:

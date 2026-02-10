@@ -4,16 +4,16 @@ Four foldable motor arms, one at each corner of the plate stack. Each arm
 has a connector clamped between the upper and middle plates and a carbon-
 fiber tube extending diagonally outward. Looking from above:
 
-              (+Y)
-               |
-        FL     |     FR
-          \\    |    /
-           \\   |   /
+            (+Y)
+            |
+        FL  |    FR
+        \\   |   /
+            \\  |  /
     --------+--------  (+X)
-           /   |   \\
-          /    |    \\
-        BL     |     BR
-               |
+            /  |  \\
+        /   |   \\
+        BL  |    BR
+            |
 
 Each connector and tube is the same part, rotated 90 deg per corner.
 The arms radiate outward at 45 deg diagonals from the plate center.

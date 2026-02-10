@@ -6,14 +6,14 @@ quick-release interface plate that the payload clips into.
 
     Front view (cross-section through battery compartment):
 
-                 ========    Upper plate
-                  |    |
-        [P][S]====|    |====[S][P]    Right/Left interfaces
-                  |    |              on battery walls
-                 ========    Lower plate
-                  [S]
-                  [P]        Bottom interface
-                             under lower plate
+                ========    Upper plate
+                |    |
+        [P][S]==|    |==[S][P]    Right/Left interfaces
+                |    |            on battery walls
+                ========    Lower plate
+                [S]
+                [P]          Bottom interface
+                            under lower plate
 
     [S] = spacer, [P] = interface plate (quick-release)
 

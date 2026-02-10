@@ -5,19 +5,19 @@ Cockpit support beams and battery compartment walls.
 The cockpit beams form an X shape sandwiched between the upper and middle
 plates. Looking down from above (top view):
 
-              (+Y)
-               |
-    CCW        |       /
-    back  \\    |      / CW long
-           \\   |    /
-            \\  |  /
+            (+Y)
+            |
+    CCW     |       /
+    back  \\ |      / CW long
+            \\|   /
+            \\| /
     (-X) ----+---- (+X)
-            /  |  \\
-           /   |    \\
-    CW   /     |      \\ CCW
-    long       |   front
-               |
-              (-Y)
+            /|\\
+            / |  \\
+    CW   /  |     \\ CCW
+    long    |   front
+            |
+            (-Y)
 
 The CW long beam spans the full diagonal. The two CCW back beams span
 the other diagonal, with a gap at the center where they meet the CW beam.

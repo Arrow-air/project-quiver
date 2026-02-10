@@ -6,13 +6,13 @@ quick insertion/removal along the Y axis.
 
     Top view (looking down):
 
-              (+Y)
-               |
+            (+Y)
+            |
         ===============     Battery compartment
         |  [L]   [R]  |    (between battery walls)
         ===============
-               |
-              (-Y)
+            |
+            (-Y)
 
     [L] = left slider (X = -115.5)
     [R] = right slider (X = +115.5)
