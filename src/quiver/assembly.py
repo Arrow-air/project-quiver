@@ -62,7 +62,7 @@ if __name__ == "__main__":
         if assembly is None:
             print("No parts loaded. Add STEP files to subassembly steps/ directories.")
         else:
-            show(assembly)
+            show(assembly, deviation=0.5, angular_tolerance=0.5)
     else:
         out = export(args.output)
         print(f"Exported assembly to {out}")

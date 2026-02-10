@@ -57,17 +57,26 @@ def _flatten(compound: Compound) -> Compound:
     return flat
 
 
-def _flatten_solids(compound: Compound) -> Compound:
+def _flatten_solids(compound: Compound, min_volume: float = 0.0) -> Compound:
     """Flatten by extracting all solids and rebuilding a simple compound.
 
     Some vendor STEP files (e.g. GNSS receivers) have deeply nested compound
     hierarchies that crash the OCP CAD Viewer tessellator. This function
     extracts every solid from the shape, deep-copies each to bake transforms,
     and rebuilds a flat compound the viewer can handle.
+
+    When min_volume > 0, solids with bounding-box volume below the threshold
+    (in mm³) are dropped. This is useful for large PCB assemblies where
+    hundreds of tiny SMD component solids overwhelm the viewer.
     """
     copier = BRepBuilderAPI_Copy(compound.wrapped, True, True)
     copier.Perform(compound.wrapped)
     solids = [Solid(s) for s in _collect_solids(copier.Shape())]
+    if min_volume > 0:
+        def _bb_volume(s):
+            bb = s.bounding_box()
+            return (bb.max.X - bb.min.X) * (bb.max.Y - bb.min.Y) * (bb.max.Z - bb.min.Z)
+        solids = [s for s in solids if _bb_volume(s) >= min_volume]
     flat = Compound(children=solids) if solids else Compound(copier.Shape())
     flat.label = compound.label
     return flat
@@ -78,6 +87,7 @@ def load_step(
     filename: str,
     vendor: bool = False,
     extract_solids: bool = False,
+    min_solid_volume: float = 0.0,
 ) -> Compound | None:
     """Import a STEP file from a subassembly's steps/ directory.
 
@@ -92,6 +102,9 @@ def load_step(
         extract_solids: If True, extract individual solids and rebuild
             the compound. Use for STEP files with deeply nested compound
             hierarchies that crash the viewer tessellator.
+        min_solid_volume: When extract_solids is True, drop solids with
+            bounding-box volume below this threshold (mm³). Useful for
+            large PCB assemblies with many tiny SMD components.
 
     Returns:
         The imported Compound, or None if the file doesn't exist yet.
@@ -105,7 +118,9 @@ def load_step(
     if not step_path.exists():
         return None
     raw = import_step(str(step_path))
-    return _flatten_solids(raw) if extract_solids else _flatten(raw)
+    if extract_solids:
+        return _flatten_solids(raw, min_volume=min_solid_volume)
+    return _flatten(raw)
 
 
 def load_all_steps(subassembly_dir: Path) -> dict[str, Compound]:
