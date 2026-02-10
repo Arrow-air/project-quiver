@@ -70,11 +70,12 @@
 - Rack plates.
 - All three are aluminum 6 series sheets, laser cut, sanded. 
 - Bounding box dimension is 300x300 mm for each.
+- One piece of each is required.
 
 | | 1111 (Upper Plate) | 1112 (Mid Plate) | 1113 (Lower Plate)|
 |--|--|--|--|
-|Thickness|1 mm|1 mm|4 mm|
-| Image| ![](assets/images/1111.png) | ![](assets/images/1112.png) | ![](assets/images/1113.png) |  
+|Thickness| 1 mm| 1 mm| 4 mm|
+| Image| <img src="assets/images/1111.png" alt="Alt Text" width="800"> | <img src="assets/images/1112.png" alt="Alt Text" width="800"> | <img src="assets/images/1113.png" alt="Alt Text" width="800"> |  
 | CAD File|[Part 1](assets/models/1111.step)| [Part 2](assets/models/1112.step)| [Part 3](assets/models/1113.step)|
 
 ### 1211, 1212 & 1213
@@ -85,7 +86,7 @@
 | | 1211 (Cockpit Support Beam CW Long) | 1212 & 1213 (Cockpit Support Beam CCW Back & Front) |
 |--|--|--|
 |Length|289.2 mm|124.2 mm|
-| Image| ![](assets/images/1211.png) | ![](assets/images/1212_1213.png) |
+| Image| <img src="assets/images/1211.png" alt="Alt Text" width="300"> | <img src="assets/images/1212_1213.png" alt="Alt Text" width="300"> |
 | CAD File|[Part 4](assets/models/1211.step)| [Part 5 & 6](assets/models/1212_1213.step)|
 
 ### 1221 & 1222
@@ -119,9 +120,10 @@
 - Parts are identical, order 4 parts of the same geometry.
 - **Note:** If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
 
-| | 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
-|--|--|
-| Image| ![](assets/images/133X.jpeg) |
+| 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
+|--|
+| ![](assets/images/133X.jpeg) |
+
 
 ### 1341, 1342, 1343 & 1344
 - Landing gear tube joints.
@@ -130,7 +132,7 @@
 - Use 6 wall loops.
 - Parts are identical, order or print 4 parts of the same geometry.
 
-| | 1341 & 1342 (Landing Gear Tube Joint) |
+| | 1341, 1342, 1343 & 1344  (Landing Gear Tube Joint) |
 |--|--|
 | Image| ![](assets/images/134X.png) |
 | CAD File|[1221 & 1222](assets/models/134X.step)|
@@ -142,9 +144,9 @@
 - Parts are identical, cut 4 pieces to length.
 - Product Link: [Link](https://a.co/d/06ePWuUq)
 
-| | 1351, 1352, 1353 & 1354 (Landing Gear Foam Wrap) |
-|--|--|
-| Image| ![](assets/images/135X.png) |
+| 1351, 1352, 1353 & 1354 (Landing Gear Foam Wrap) |
+|--|
+| ![](assets/images/135X.jpg) |
 
 ### 1411, 1421, 1431 & 1441
 - Motor arm foldable connectors.
@@ -152,15 +154,86 @@
 - Parts are identical, order 4 parts.
 - Product Link: [Link](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html?spm=a2756.order-detail-ta-bn-b.0.0.78e1f19cegXkOZ)
 
-| | 1411, 1421, 1431 & 1441 (Motor Arm Foldable Connectors) |
-|--|--|
-| Image| ![](assets/images/14X1.png) |
+| 1411, 1421, 1431 & 1441 (Motor Arm Foldable Connectors) |
+|--|
+| ![](assets/images/14X1.jpg) |
 
 ### 1412, 1422, 1432 & 1442
 - Motor arms.
 - Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
 - Length is 360 mm for each.
 - Parts are identical, order 4 parts of the same geometry or cut to length.
+
+### 2111, 2121 & 2131
+- Attachment interface spacers.
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- 2111 & 2121 are identical, order or print 2 pieces.
+- One piece of 2131 is required.
+
+| | 2111 & 2121 (Attachment Interface Spacers, Left and Right) | 2131 (Attachment Interface Spacer, Bottom) |
+|--|--|--|
+| Image| ![](assets/images/2111_2121.png) | ![](assets/images/2131.png) |
+| CAD File|[2111 & 2121](assets/models/2111_2121.step)| [2131](assets/models/2131.step)|
+
+### 2112, 2122 & 2132
+- Attachment interfaces.
+- Parts are identical, order 3 parts.
+- Select "Without PCB Board" option.
+- Product Link: [Link](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
+
+| 2112, 2122 & 2132 (Attachment Interface) |
+|--|
+| ![](assets/images/2112_2122_2132.png) |
+
+### 2211 & 2212
+- Battery sliders.
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- Parts are identical, order or print 2 parts of the same geometry.
+
+| | 2211 & 2212  (Battery Slider) |
+|--|--|
+| Image| ![](assets/images/2211_2212.png) |
+| CAD File|[2211 & 2212](assets/models/2211_2212.step)|
+
+### 2311 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! To be Updated
+- Main PCB Mount.
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- Parts are identical, order or print 2 parts of the same geometry.
+
+| | 2211 & 2212  (Battery Slider) |
+|--|--|
+| Image| ![](assets/images/2211_2212.png) |
+| CAD File|[2211 & 2212](assets/models/2211_2212.step)|
+
+### 2312
+- Battery Connector PCB Mount.
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- One piece is required.
+
+| | 2312  (BC PCB Mount) |
+|--|--|
+| Image| ![](assets/images/2312.png) |
+| CAD File|[2312](assets/models/2312.step)|
+
+### 2313
+- Battery Connector PCB Cover.
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- One piece is required.
+
+| | 2313  (BC PCB Cover) |
+|--|--|
+| Image| ![](assets/images/2313.png) |
+| CAD File|[2313](assets/models/2313.step)|
 
 ### Part 9
 - Off-the-shelf component.
