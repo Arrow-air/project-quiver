@@ -27,6 +27,7 @@ The `docs/` folder is hosted on the [Arrow website](https://arrowair.com/docs/qu
 |----------|-------------|
 | [Assembly Guides](https://arrowair.com/docs/quiver/pt3-assembly-guides) | Step-by-step build instructions |
 | [Engineering Reports](https://arrowair.com/docs/quiver/Engineering-Reports) | Technical details for each prototype |
+| [Meeting Notes](https://github.com/Arrow-air/project-quiver/wiki) | Weekly engineering call notes |
 
 ## Repository Structure
 
