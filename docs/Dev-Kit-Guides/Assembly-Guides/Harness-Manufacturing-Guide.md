@@ -7,16 +7,16 @@ sidebar_position: 3
 
 ## Purpose
 
-This guide explains how to manufacture and assemble the wiring harnesses for all of the components present on the dev kit build. Modifications include custom cut spool cables, pre made cables, pre crimped cables, and reducing lenght of default connectors. 
+This guide explains how to manufacture and assemble the wiring harnesses for all of the components present on the dev kit build. Modifications include custom cut spool cables, pre made cables, pre crimped cables, and reducing length of default connectors. 
 
 Use the following wiring table for all of the connections TO/FROM for all of the dev kit’s systems: [Dev Kit Wire Data](https://docs.google.com/spreadsheets/d/1U9Jd1zW-IGLvGdLw63Ius3nsfnPE6wN_-VjMNnLCjd8/edit?gid=2139598833#gid=2139598833) 
-The spreadsheet is gives the full view of all connectos, mating connectors, wire gauge, estimated length, and suggested/default wire colors. 
+The spreadsheet gives the full view of all connectors, mating connectors, wire gauge, estimated length, and suggested/default wire colors. 
 
 
 
 ## How To Use This Guide
 
-This guide will detail the manufacturing process for all harnesses in no particular order. It is intended to be broken up and placed in the manufacturing guide acoording to the Quiver assembly steps. This is to allow harness routing that may be blocked by the installation of certain structural components. The user is encourage to treat this document as a knowledge base and prep guide for the harnessing. Installation steps will be covered in the broader assembly guide. 
+This guide will detail the manufacturing process for all harnesses in no particular order. It is intended to be broken up and placed in the manufacturing guide according to the Quiver assembly steps. This is to allow harness routing that may be blocked by the installation of certain structural components. The user is encouraged to treat this document as a knowledge base and prep guide for the harnessing. Installation steps will be covered in the broader assembly guide. 
 
 ## Tools Required
 * Soldering iron with hot air rework station
