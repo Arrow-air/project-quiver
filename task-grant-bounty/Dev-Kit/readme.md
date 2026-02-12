@@ -3,7 +3,7 @@ This folder contains the various information notes prepared for the Dev-Kit buil
 - Main PCB Update
 - Front PCB Update
 - Obstacle Avoidance
-- Software in the Loop Results
+- Software in the Loop (SITL) Evaluation
 - PCB Vibration Mount
 - Comprehensive Main Enclosure Modification
 - Sensor Mount Re-modeling
