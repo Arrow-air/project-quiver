@@ -1,14 +1,3 @@
----
-title: Pilot Handbook
-tags: [dev-kit]
-
----
-
----
-title: Pilot Handbook
-tags: dev-kit
----
-
 # Pilot Handbook
 Quiver Dev-Kit
 Heavy-Lift Multipurpose UAV (<25 kg MTOW)
@@ -19,28 +8,27 @@ Table of content
 ## 1. Safety & Compliance
 
 ### 1.1 General Safety Principles
-The Quiver Dev-Kit is a mid-voltage electrical battery powered heavy-lift quadcopter drone (MTOW ~25kg). It is designed for industrial enterprises aerial applications instead of general entertainment, adult and teenager fun purpose, incendiary and explosive handling or critical medical life-supporting.
+The Quiver Dev-Kit is a battery powered heavy-lift quadcopter (MTOW ~25kg). It is engineered for industrial aerial applications. It is **not** designed for the deployment of munitions/explosives, or critical life-support transport.
 
 :::danger
-**DANGEROUS:**
-Any improper or reckless action can result in :
+**DANGER:**
+
+Any improper or reckless action can result in:
  
- - Immediate fatality
- - Severe permanent injury or disability
- - Chemical fire hazard
- - Property damage
- - False public alert, panic or unnecessary crowds
- - Noise pollution or disturbing
- - Reputational damage to business
- - Possible legal issues
+ - Immediate fatality or severe permanent injury.
+ - Electrical or metal fire hazards (Class C & D).
+ - Property damage.
+ - False public alert, panic or unnecessary crowds.
+ - Noise pollution or disruptions.
+ - Legal liability and reputational damage.
 :::
 
-All operators must be trained and familiar with their devices and local aviation regulations, meanwhile remain clear awareness and not affected by drugs, alcohol or emotional fluctuations during all operation.
+All operators must be trained and familiar with the aircraft and local aviation regulations. The Pilot in Command (PIC) must remain alert and strictly adhere to the **IMSAFE** protocol (Illness, Medication, Stress, Alcohol, Fatigue, Emotion) before operations.
 
 ### 1.2 Operational Limits
 #### 1.2.1 Weather Conditions
 **Wind Speed**:
-Maximum sustained wind speed is XX.X knots (approx. XX km/h). Gusts exceeding this limit may compromise stability.
+Maximum sustained wind speed is 15 knots (approx. 22 km/h) and wind gusts up to 18 kts (approx. 33 km/h). Gusts exceeding this limit may compromise stability.
 
 **Solar Activity**:
 Monitor Kp Index and UV Intensity via pre-flight forecast. High UV indices can degrade composite materials over time, and high Kp (>4) can interfere with GNSS reliability.
@@ -79,6 +67,8 @@ You must hold a Remote Pilot Certificate (Part 107).
 
 The aircraft must be registered with the FAA.
 
+The aircraft must broadcast a RemoteID signal while in flight. 
+
 Operations over human beings are prohibited unless complying with remote ID and kinetic energy limitations, which this aircraft (25 kg) generally exceeds without a specific waiver.
 
 **Geo-Fencing**:
@@ -89,7 +79,8 @@ Setup: Configure the FENCE_RADIUS and FENCE_ALT_MAX in the ground station softwa
 
 :::warning
 **WARNING:**
-Due to software limitation, geo-fencing may not function during a navigation system or location source failure.
+
+Geo-fencing relies on GNSS. It may not function during a navigation system error or location source failure.
 :::
 
 **Experimental Systems Disclaimer**:
@@ -111,6 +102,7 @@ The electrical system is designed to be spark-free during connection via a pre-c
 :::warning
 
 **WARNING:** 
+
 If you observe any visible spark or audible "crack" when connecting the battery :
 - STOP immediately.
 - Disconnect and contact support.
@@ -125,7 +117,7 @@ This indicates a failure in the pre-charge circuit or a short in the power syste
 The general principles are applied to both battery and charger side.
 :::
 - Use only Tattu 3.5 or 4.0 14S Smart LiHV batteries.
-- Use only the official Tattu-supported charger compatible with 14S LiHV chemistry.
+- Use the official Tattu-supported charger compatible with 14S LiHV chemistry or SkyRC equivalent.
 - Never short or ground the battery main connector even in non-operating condition.
 - Minimize the unnecessary plug-and-unplug cycles to extend power connector life.
 - Always check power connector cleanliness and dryness.
@@ -138,42 +130,42 @@ The general principles are applied to both battery and charger side.
 
 **Transport & Storage:**
 
-- If the battery will not be used for next 3 Days, discharge it to the storage voltage or ≥ 55 % capacity or 3.80V per cell.
+- If the battery will not be used for next 14 Days, discharge it to storage voltage (3.80V per cell / approx. 50-60% capacity).
 - Any battery dropped from any height > 50 cm is unsafe for flight. Internal damage is invisible and can cause unpredictable power outage or fires.
-- Water vapor may condense on battery surface while transferring from cold to hot environment. Do clean up or let it dry before any connecting operation.
+- Water vapor may condense on the battery surface when transferring from cold to hot environments. Allow it to acclimate and dry completely before connecting.
 
-**In-Flight:**
+**In-Flight Emergency:**
 
 :::warning
 **WARNING:**
-To prevent the failure from escalating, always handle with gentle maneuver during in-flight battery system emergency.
+To prevent failure escalation, minimize aggressive maneuvers during any battery system emergency.
 :::
 
-- If battery temperature reports > 56 °C during flight, land immediately.
-- If voltage meter decrease or oscillate with abnormal speed, or stop changing, land immediately.
+- If battery temperature exceeds **56°C**, land immediately.
+- If voltage sags rapidly, oscillates abnormally, or stops updating, land immediately.
 
 **Battery Fire Emergency**:
 :::warning
-**In case of pungent gas, irregular popping sounds or smoke, immediately :**
+**In case of pungent gas, irregular popping sounds or smoke, immediately:**
 
-- Disconnect the battery without confirm.
-- Bring battery and run to an open area with no flammable materials (not to the indoor corridor).
-- Bring Class D fire extinguisher and observe from at least 15 meters away.
+- **Disconnect** the battery immediately (if safe to do so).
+- **Evacuate** the battery to an open outdoor area away from flammable materials (do not leave it in a corridor).
+- **Observe** from at least 15 meters away with a Class D fire extinguisher ready.
 :::
 
 :::danger
-**In case of a flaming battery pack indoor :**
+**In case of an active battery fire indoors:**
 
-- Ask other personnel to evacuate and let them call for fire department.
-- Cover the battery with fire blanket as possible.
-- Cut-off indoor power supply.
-- Remove proximity object from the battery as possible.
-- Evacuate to open area.
+- **Evacuate** all personnel and call the fire department.
+- **Isolate:** Cover the battery with a fire blanket if possible/safe.
+- **Cut Power:** Cut off the indoor main power supply.
+- **Clear:** Remove proximate objects if safe.
+- **Exit:** Evacuate to an open area.
 :::
 
-### 1.4 Establishing safety zone due to heavy kinetic energy
+### 1.4 Establishing Safety Zones (Kinetic Energy)
 
-The drone enerates significant kinetic energy during flight. A free-fall impact from operational altitude carries lethal force, capable of penetrating vehicle roofs or causing fatal injury. Therefore, establishing a correct safety zone is the single most critical pre-flight step.
+The drone generates significant kinetic energy during flight. A free-fall impact from operational altitude carries lethal force, capable of penetrating vehicle roofs or causing fatal injury. Therefore, establishing a correct safety zone is the single most critical pre-flight step.
 
 **Official Guidelines as Primary Source**
 The Pilot in Command (PIC) must strictly adhere to the safety distances mandated by the local aviation authority. These regulations take precedence over any manufacturer recommendations:
@@ -208,17 +200,18 @@ Minimum Safety Buffer = Flight Altitude (AGL)
 ## 2. System Setup
 ### 2.1 Unbox and assemble
 :::success
-Ask for a help or handyman for assembling is recommended due to the large size of the aircraft.
+Due to the large size of the aircraft, a two-person lift or assistance is recommended for assembly.
 :::
 :::warning
 **WARNING: Be aware of pinch and cut**
-The unlocked folding motor arms will rotate while being applied with horizontal force or bad handling technics.
+
+Unlocked folding motor arms will rotate while being applied with horizontal force or unwise handling techniques.
 :::
 **1. Preparation:**
-- Reserve enough space for the transport case, devices and the aircraft assembly.
+- Reserve enough working space for transport case, devices and the aircraft assembly.
 
 **2. Extraction:** 
-- Lift the aircraft by the central aluminum chassis with symmetrical handling. 
+- Lift the aircraft by the central aluminum airframe with symmetrical handling. 
 - Never lift by the avionics lid, plastic or 3D-printed parts.
 
 **3. Landing gear assembly:**
@@ -279,41 +272,253 @@ The drone push button is used to initiate the pre-charge of the power system and
 The drone is not ready to fly yet. The main power MOSFET needs to be activated via a relay button in the ground control station.
 
 ### 2.5 1st time setup
-- Mandatory steps before first flight
-- Firmware/parameter version verification
-- Sensor calibration checks and requirements
+Each Quiver Dev-Kit aircraft is shipped with a validated firmware image, pre-loaded baseline parameters, and completed sensor calibrations performed by the manufacturer prior to shipment.
+
+The purpose of the first-time setup is verification, not configuration.
+
+The pilot shall not modify firmware, parameters, or calibrations during initial setup unless explicitly instructed by the Quiver team. The pilot’s responsibility is to confirm that the aircraft state matches the documented baseline before first flight.
+
+#### 2.5.1 Firmware and Configuration Baseline (Verification Only)
+
+Before the first flight, the pilot must verify that:
+
+- The flight controller firmware version matches the version declared in the delivery documentation.
+- The official Quiver baseline parameter set is present and unchanged.
+- Frame configuration, motor order, and motor rotation direction match the documented airframe layout.
+- Battery monitor type, voltage scaling, and current sensing values match the baseline.
+- All failsafe behaviors are enabled and match the baseline configuration.
+
+No parameters shall be altered at this stage.  
+Any discrepancy between the expected baseline and the aircraft state must be reported to the Quiver team before flight.
+
+#### 2.5.2 Mandatory Calibrations (Verification)
+
+The following calibrations are completed by the manufacturer prior to shipment and shall only be verified by the pilot:
+
+- Accelerometer calibration
+- Compass calibration (including interference check)
+- RC input calibration
+- Level / horizon verification
+
+If RTK positioning is used, verify correct GPS role assignment and correction data flow.
+
+Re-calibration shall only be performed if:
+- Hardware has been replaced or repositioned, or
+- Explicitly requested by the Quiver team.
+
+#### 2.5.3 Safety, Arming, and Logging Verification
+
+Before flight, verify that:
+
+- All arming checks are enabled.
+- Geo-fencing is enabled and configured for the current test site.
+- RTL altitude is appropriate for the operating environment.
+- Battery failsafe thresholds are correct.
+- The kill switch is mapped and verified with motors disabled or propellers removed.
+- Onboard logging is enabled and an SD card is installed.
+
+Flight without logging is not permitted.
+
+#### 2.5.4 First-Flight Authorization
+
+The aircraft is considered authorized for first flight only when:
+
+- All verification steps above are completed,
+- No unexplained warnings or errors are present,
+- Logging is confirmed active,
+- No unauthorized configuration changes exist.
 
 ### 2.6 Parameter walk through
-- Point to the official arrow parameter list in the wiki or Gitub
-- Explain only the most important parameters like failsafes, geo-fence
-- The official arrow parameter list could include links to Ardupilot wiki for explanation
-- No parameters should be changed. Only if the pilot is experienced and wants to change the flight characteristics (A minimum hours of flight time could be enforced for a parameter change request. These changes should be stored in a changelog if any)
+This section introduces flight-critical parameters that the pilot must understand, not modify.
+
+#### 2.6.1 Parameter Modification Policy
+
+The Quiver Dev-Kit is delivered with a locked, flight-validated configuration.
+
+- Flight-critical parameters shall not be modified by default.
+- Parameter changes may be permitted only after:
+  - Accumulating sufficient flight hours on the platform,
+  - Demonstrated pilot experience,
+  - Explicit approval from the Quiver team.
+
+Any request to modify flight-critical parameters must be submitted and approved before changes are applied.
+
+Unauthorized parameter changes may invalidate:
+- Manufacturer support,
+- Flight test data,
+- Continued participation in the Dev-Kit program.
+
+#### 2.6.2 Parameters the Pilot Must Understand
+
+**Geo-Fence**
+- `FENCE_ENABLE`
+- `FENCE_RADIUS`
+- `FENCE_ALT_MAX`
+
+Pilots must understand the configured response when the fence is breached (Brake / RTL / Land).
+
+**Battery Failsafes**
+- Battery monitor configuration (`BATT_*`)
+- Low and critical battery thresholds and actions (`FS_BATT_*`)
+
+**RC and GCS Failsafes**
+- RC signal loss behavior
+- Telemetry/GCS loss behavior
+
+**Return-to-Launch**
+- RTL altitude
+- RTL speed (if configured)
+- Home position requirements
+
+**Logging**
+- Log bitmask
+- Storage availability
+
+#### 2.6.3 Approved Parameter Changes
+
+When parameter modification is explicitly authorized:
+
+- Only the approved parameters may be changed.
+- All changes must be recorded in the flight tracking platform maintenance log, including:
+  - Date
+  - Parameter name(s)
+  - Old and new values
+  - Reason for change
+  - Affected flight(s)
+
 
 ### 2.7 RC setup
-- Determine which remote we will make official 
-- Connection from remote to drone (with or without additional PC)
-- Overall joystick function and channel mappings
-- Button Assignment
+The RC system is the pilot’s primary safety interface. All Dev-Kit aircraft shall conform to the following requirements.
+
+#### 2.7.1 Required RC Functions
+
+The following pilot-accessible controls are mandatory:
+
+- Arm / Disarm
+- Flight Mode selector (3-position)  
+  *(Typical: LOITER / AUTO / STABILIZE)*
+- Return-to-Launch (RTL)
+- Kill Switch (guarded or deliberately positioned)
+
+Optional but recommended:
+- Mission pause / skip
+- Payload or camera controls
+
+#### 2.7.2 RC Calibration and Verification
+
+- Perform RC calibration in the ground control station.
+- No trims or sub-trims shall be applied.
+- Verify correct channel directions.
+- Verify each switch produces the intended function and mode.
+
+#### 2.7.3 RC Failsafe Behavior
+
+The pilot must understand:
+- The aircraft response to RC signal loss,
+- The recovery behavior when RC signal is restored.
+
+#### 2.7.4 Pre-Flight RC Verification
+
+Before arming, confirm:
+- Flight mode switch positions,
+- Arm/disarm switch orientation,
+- Kill switch location and protection against accidental activation.
 
 ### 2.8 GCS setup
-- installing QGC or Mission Planner
-- Setting up SIYI unit
-- Camera setup guide 
-- Telemetry link expectations
-- Map/airspace configuration
+
+Mission Planner is the primary supported ground control station for Quiver Dev-Kit operations.
+
+#### 2.8.1 Pilot Station Setup
+
+- Laptop connected to stable power,
+- Telemetry radio securely connected,
+- Optional external monitor for camera or payload feed (recommended).
+
+If telemetry connection fails, power-cycle the radio and retry.
+
+#### 2.8.2 Mission Planner Connection
+
+1. Launch Mission Planner.
+2. Select the correct COM port (or Auto).
+3. Set the configured baud rate.
+4. Connect and verify:
+   - Live telemetry updates,
+   - No critical system messages,
+   - Stable estimator (EKF) status.
+
+#### 2.8.3 RTK / Correction Data (If Used)
+
+If RTK positioning is employed:
+- Verify base station configuration,
+- Confirm RTCM correction messages are received,
+- Inject corrections via Mission Planner as configured.
+
+#### 2.8.4 Camera / SIYI Setup 
+
+- Verify camera power and data connections,
+- Confirm video feed before arming,
+- Verify camera control response.
+
+
 ## 3. Power Up Procedure
-### 3.1 Walk through from battery installation to arming drone
-- Exact sequence (numbered)
-- What to wait for between steps
-- Expected LEDs / tones
-- What indicates a fault
-- Reasons arming will be blocked
-- When to abort power-up
-## 4. Flight Emergency Procedures
+
+This sequence defines the only approved process from battery installation to takeoff.
+
+### 3.1 Aircraft Preparation (No Power)
+
+1. Place aircraft on level ground within the established safety zone.
+2. Verify motor arms are fully locked.
+3. Inspect avionics bay:
+   - No loose wiring,
+   - SD card installed for logging.
+4. Confirm the flight area is clear of uninvolved persons.
+
+### 3.2 Battery Installation
+
+5. **Install Battery:** Insert and latch mechanically.
+6.  **Battery Wake:** Press the Battery Button (if Tattu 4.0) to enable output.
+
+### 3.3 Avionics Power-Up
+
+7.  **Drone Init:** Press the **Drone Push Button**.
+    * *Expectation:* Air unit fan spisn up, LEDs illuminate.
+    * *Wait:* Allow 30-60 seconds for Flight Controller boot and GPS lock.
+8. **GCS Link:** Verify connection on GCS. Check for "Ready to Fly" status (GPS: 3D Fix).
+9. Verify:
+   - No critical pre-arm errors,
+   - Stable EKF status,
+   - Adequate GPS fix.
+10. **Engage HV:** In GCS, toggle the "Main Power" relay to close the high-voltage SSR.
+
+### 3.4 Motor Power and Arming
+
+11. Keep main motor power disabled during configuration.
+12. Load mission or RTK data if applicable.
+13. Enable main motor power.
+14. Select LOITER mode.
+15. Arm via RC.
+    * *Expectation:* Motors spin at idle.
+    * *Fault:* If a motor fails to spin, disarm immediately.
+16. Observe motors for abnormal behavior.
+17. Take off slowly and climb to a safe hover altitude.
+18. Verify stability before proceeding with mission modes.
+
+### 3.5 Abort Criteria
+
+Abort immediately if:
+- Electrical arcing occurs,
+- Critical errors persist,
+- Estimator instability is observed,
+- Motor power enables unexpectedly,
+- Any unsafe or unexplained behavior is detected.
+
+
+## 4. Emergency Procedures
 ### 4.1 Kill switch
 :::danger
-**DANGROUS:**
-The kill swtich was design to deliberately crash the aircraft, it should only be used when the aircraft is about to collide or cause serious damage. 
+**DANGEROUS:**
+
+The kill switch was design to deliberately crash the aircraft, it should only be used when the aircraft is about to collide or cause serious damage. 
 
 Use this feature only after assessing the expected loss.
 :::
@@ -326,34 +531,47 @@ Use this feature only after assessing the expected loss.
 Only use if the aircraft poses an immediate threat to life and all other control methods have failed.
 :::
 
-### 4.2 Flight mode change due to failures (low battery, sensor failure, etc.)
-#### 4.2.1 Low Battery (≤ 20 %)
-- The aircraft system will trigger RTL mode.
-    - The aircraft will return to the home point in a direct flight. 
-- Do not override unless: 
-    - The landing path is obstructed.
-    - Any other unsafe factor in the direct flight route back home.
+### 4.2 Flight Mode Changes (Failures)
+#### 4.2.1 Low Battery (≤ 20%)
+* **System Action:** Triggers **RTL (Return to Land)**.
+* **Pilot Action:** Monitor the return path. Do not override unless the landing path is obstructed or unsafe.
+    * *Warning:* RTL relies on GPS. Be ready to take manual control if navigation fails.
 
-:::warning
-**WARNING:**
-RTL mode may not working during navigation or location source failure.
-:::
 #### 4.2.2 Sensor Failure (GPS Glitch/Compass Variance):
 - Indication: Drone "toilets" (swirls) or drifts uncontrollably.
 - Action: Switch to AltHold (Altitude Hold) immediately. This disables GPS positioning. You must manually counter wind drift to land safely.
 - High Vibration/Motor Loss: Land immediately.
 
 ### 4.3 Aircraft search and rescue in wilderness 
-> [color=lightgreen][name=KBM]
 
-(capture or record last telemetry frame)
-(report aircraft lost to the business team and assemble a search team)
-(confirm weather forecast of search area)
-(prepare for the located aircraft may not be able to evacuate immediately)
-(always bring water and supplies)
+:::info
+If the aircraft lost connection mid-air and exact location may variant, consider bring the ground station to the search area and try connect the aircraft.
+:::
 
-## 5. Check List
-### 5.1 Before flight check list
+1. Record last telemetry frame from the ground station (Shall include attitude and coordinate).
+2. Report aircraft lost to the business team and assemble search team and supply team.
+3. Confirm offline available weather and entry path information of the search area.
+4. Be prepare for the possibility that the aircraft may unable to evacuate immediately.
+5. Consider bring any necessary items below for the search operation :
+
+|Items|Purpose|
+|-|-|
+|Water|First and general wildness requirement|
+|Food supply|For long time or heavy duty search operation|
+|Communication device|For navigation and status feedback|
+|Flash light|Visibility for extreme and night condition|
+|Protection clothing|Isolate the environmental hazard|
+|Large knife / Machete|Cutting plants and bushes for path|
+|Bear spray or noise makers|Wild animals|
+
+:::warning
+**WARNING :** 
+
+Do not enter hazardous terrain alone. Maintain communication with a base station.
+:::
+
+## 5. Checklist
+### 5.1 Pre-Flight Checklist
 Before each new flight mission you should go through the pre-flight checklist:
 **1. Airframe Inspection**
 
@@ -412,10 +630,63 @@ Note anything that is missing on the aircraft or anything that doesn't feel righ
 
 ## 6. Flight tracking platform
 
-- Sign up and enter aircraft and pilot information
+### 6.1 Platform Overview
 
-- How to upload and tag flights. 
-- Naming convention 
-- How to anonymize the location data via the platform
-- What to include in pilot's notes
-- How to report a problem
+Quiver operates an in-house flight tracking and analysis platform:
+
+https://project-flight-tracking.vercel.app/
+
+The platform is used to:
+- Track accumulated flight hours,
+- Correlate flights with firmware and configuration state,
+- Support anomaly and incident investigation,
+- Maintain maintenance traceability.
+
+Use of the platform is encouraged for all Dev-Kit operations.
+
+### 6.2 Aircraft Registration
+
+Each Dev-Kit aircraft is pre-registered on the platform by the manufacturer prior to shipment.
+
+When uploading logs, the pilot shall select the existing registered aircraft corresponding to the physical airframe. Duplicate aircraft entries are not permitted.
+
+### 6.3 Flight Log Upload
+
+After each flight:
+
+1. Retrieve the onboard flight log.
+2. Upload the log to the platform.
+3. Select the correct registered aircraft.
+4. Enter the required flight metadata.
+
+Flights conducted without logs or metadata may be excluded from test analysis.
+
+### 6.4 Required Flight Metadata
+
+Each flight entry shall include:
+- Date
+- Location or anonymized region
+- Weather conditions
+- Mission type
+- Pilot notes describing abnormal behavior, system warnings, and pilot interventions.
+
+### 6.5 Maintenance and Modification Log
+
+Any modification made after delivery shall be recorded in the platform maintenance log, including:
+- Hardware changes
+- Wiring or structural modifications
+- Sensor replacement or repositioning
+- Firmware updates
+- Approved parameter changes
+
+Each entry shall include date, description, reason, and affected flights.
+
+### 6.6 Problem Reporting
+
+For anomalies, near-misses, or incidents, upload:
+- Relevant flight log(s)
+- Firmware version
+- Parameter set identifier
+- Weather conditions
+- Description of expected vs observed behavior
+- Severity assessment
