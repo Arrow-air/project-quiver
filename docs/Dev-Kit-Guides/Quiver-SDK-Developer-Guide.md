@@ -1,3 +1,4 @@
+
 # Quiver SDK Developer Guide
 
 ## 1\. Introduction
@@ -28,15 +29,15 @@ The Quiver system architecture centers around a companion computer (Raspberry Pi
 
 **Component Roles:**
 
-**Companion Computer** (Raspberry Pi 4/5): Executes Python SDK applications, polls Quiver Hub for jobs, forwards telemetry from flight controller and payloads, manages payload lifecycle (discovery, configuration, data routing). Connects to flight controller via CAN bus for MAVLink telemetry and to Quiver Hub via WiFi or cellular for cloud communication.
+**Companion Computer** (Raspberry Pi 4/5): Executes Python SDK applications, polls Quiver Hub for jobs, forwards telemetry from flight controller and payloads, manages payload lifecycle (discovery, configuration, data routing). Connects to flight controller via Ethernet and CAN bus for MAVLink telemetry and to Quiver Hub via WiFi or cellular for cloud communication.
 
-**Integrated Network Switch**: Built into the Quiver drone hardware, this component provides Ethernet switching for three payload ports (C1, C2, C3) and CAN bus interface to the flight controller. Automatically assigns static IPs to payloads (192.168.144.11 for C1, .12 for C2, .13 for C3). Developers do not need to configure or manage this component directly.
+**Integrated Network Switch**: Built into the Quiver drone hardware, this component provides Ethernet switching for three payload ports (C1, C2, C3) and CAN bus interface to the flight controller and Companion. Automatically assigns static IPs to payloads (192.168.144.11 for C1, .12 for C2, .13 for C3). Developers do not need to configure or manage this component directly.
 
 **Payloads (C1/C2/C3)**: Modular sensor or actuator devices connected via Ethernet (for data-heavy sensors like cameras, LiDAR) or CAN bus (for lightweight sensors and actuators). Each payload runs its own firmware and communicates with the companion computer using standard protocols (HTTP REST, WebSocket, DroneCAN).
 
-**Flight Controller** (Pixhawk 6X/32v6, Cube Pilot+): Runs ArduPilot or PX4 autopilot firmware. Provides MAVLink telemetry (attitude, position, GPS, battery) to the companion computer via CAN bus. Receives commands from Mission Planner via wireless RF telemetry link. Shares CAN bus with payloads for DroneCAN communication.
+**Flight Controller** (Pixhawk 6X/32v6, Cube Pilot+): Runs ArduPilot or PX4 autopilot firmware. Provides MAVLink telemetry (attitude, position, GPS, battery) to the companion computer via Ethernet. Receives commands from Mission Planner via wireless RF telemetry link. Shares CAN bus with payloads and Companion for DroneCAN communication.
 
-**Quiver Hub**: Cloud-hosted web application providing operator interface, job queue management, telemetry visualization, file storage, and REST API for companion computer communication. Accessible from any web browser with internet connectivity.
+**Quiver Hub**: Cloud or otherwise hosted web application providing operator interface, job queue management, telemetry visualization, file storage, and REST API for companion computer communication. Accessible from any web browser with internet connectivity.
 
 **Mission Planner**: Ground control software for flight planning and real-time monitoring. Connects to the flight controller via wireless RF telemetry link (typically 915 MHz or 433 MHz radio). Communicates using MAVLink protocol for mission upload, parameter configuration, and live telemetry display.
 
@@ -48,11 +49,11 @@ Before developing with the Quiver SDK, ensure you have the required hardware and
 
 **Companion Computer**: Raspberry Pi 4 (4GB+ RAM) or Raspberry Pi 5 recommended. Earlier models lack sufficient processing power for multi-threaded telemetry forwarding and payload management. The Pi must have cellular connectivity for internet access to Quiver Hub.
 
-**Flight Controller**: Pixhawk 6X, Pixhawk 32v6, or Cube Pilot+ running ArduPilot or PX4 firmware. These controllers provide MAVLink telemetry over Ethernet and support DroneCAN for payload integration. The flight controller must be configured with appropriate parameters for Ethernet and CAN bus communication.
+**Flight Controller**: Pixhawk 6X, Pixhawk 32v6, or Cube Pilot+ running ArduPilot or PX4 firmware. These controllers provide MAVLink telemetry over Ethernet(Adaptor Added for the 32v6) and support DroneCAN for payload integration. The flight controller must be configured with appropriate parameters for Ethernet and CAN bus communication.
 
 **Integrated Network Switch**: Built into Quiver drone hardware, this component is pre-configured and requires no user setup. It provides Ethernet ports for payloads (C1, C2, C3) and CAN bus connectivity.
 
-**Payloads** (optional): Sensors or actuators with Ethernet (cameras, LiDAR, compute modules) or CAN bus connectivity (battery monitors, servos, environmental sensors). Payloads must implement standard communication protocols (HTTP REST for Ethernet devices, DroneCAN for CAN devices).
+**Payloads**: Sensors or actuators with Ethernet (cameras, LiDAR, compute modules) or CAN bus connectivity (battery monitors, servos, environmental sensors). Payloads must implement standard communication protocols (HTTP REST for Ethernet devices, DroneCAN for CAN devices).
 
 **Software Requirements:**
 
@@ -151,11 +152,11 @@ The forwarder runs as a systemd service and automatically reconnects if the flig
 
 ### 2.3 Payload Forwarders (Point Clouds, Cameras, etc.)
 
-Beyond the core telemetry forwarder, developers can create specialized forwarders for high-bandwidth sensor data such as LiDAR point clouds, camera streams, or environmental sensor arrays. These forwarders follow a similar pattern but use WebSocket or chunked HTTP POST for real-time streaming.
+Beyond the core telemetry forwarder, developers can create specialized forwarders for high-bandwidth sensor data such as LiDAR point clouds, camera streams, or environmental sensor arrays and other Payload types. These forwarders follow a similar pattern but use WebSocket or chunked HTTP POST for real-time streaming.
 
 **Common Pattern**:
 
-1. Read sensor data from hardware interface (Ethernet, CAN)  
+1. Read Device data from hardware interface (Ethernet, CAN)  
 2. Transform to standard format (point clouds as x/y/z coordinates, images as JPEG/H.264)  
 3. Stream to Hub via WebSocket (for real-time visualization) or HTTP POST (for logging)  
 4. Handle backpressure by dropping frames or compressing data if network is saturated
