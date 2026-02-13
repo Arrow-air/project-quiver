@@ -55,12 +55,15 @@
 |	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/92125A130/)	|
 |	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91292A108)	|
 |	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/92125A138/)	|
-|	Insert 1	|	M3 Threaded Inserts	|	42	|	[97163A161](https://www.mcmaster.com/97163A161)	|
+| Screw 11  | Flanged Button Head Hex-Drive Screw M3x6   | 5 | [97654A674](https://www.mcmaster.com/products/97654a674/) |
+|	Insert 1	|	M3 Threaded Inserts - 6.4 mm	|	42	|	[97163A161](https://www.mcmaster.com/97163A161)	|
 |	Insert 2	|	M4 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
 |	Insert 3	|	M2.5 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
+| Insert 4  | M3 Threaded Inserts - 3.8 mm | 16 | [94180A331](https://www.mcmaster.com/94180A331)
 |	Washer 1	|	General Purpose Washer 3.2 mm ID, 6 mm OD	|	158	|	[98689A112](https://www.mcmaster.com/98689A112)	|
 |	 Washer 2	|	General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
 |	 Nut 1	|	Nylon-Insert Locknut M3	|	39	|	[90576A811](https://www.mcmaster.com/90576A811)	|
+| Vibration Mount | Stretchy Soft M3 Rubber Anti-Vibration Spacer | 5 | [Amazon](https://www.amazon.com/iRCMATRC-Stretchy-Anti-Vibration-Controllers-Accessories/dp/B09KCGKX1F?th=1) | 
 
 -------
 
@@ -116,7 +119,7 @@
 ### 1331, 1332, 1333 & 1334 - Landing Gear Main Adapters
 - Custom detachable version for 30 mm tube diameter.
 - Contact RJXHobby for the customization.
-  - Request 30 mm diameter variant of [this one](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone)'s bolt pattern.
+  - Request 30 mm diameter variant of [this product](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with bolt pattern of 30 mm version of [this one](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
 - Parts are identical; Qty: 4.
 - **Note:** If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
 
@@ -380,7 +383,15 @@
   - 14X1 x4 (Foldable Motor Arm Connectors)
   - Screw 5 x16 (Socket Head Screw M3x8)
   - Screw 1 x8 (Socket Head Screw M3x10)
-  - Washer 1 x24 (General Purpose Washer, Small)
+  - Washer 1 x24 (M3 General Purpose Washer, OD: 6 mm)
+- Remove the fasteners marked in the picture.
+  - Apply Loctite Threadlocker on the fasteners.
+  - Secure the fasteners back.
+
+| Motor Arm Connector - Loctite Threadlocker Application|
+|---|
+| ![](assets/images/step3_3.png)|
+ 
 - Place the motor arm connectors on the chassis as shown in the picture.
 - Secure the motor arm connectors on the chassis.
   - Use **Screw 5** for **red holes** and **Screw 1** for **green holes**.
@@ -409,9 +420,13 @@
 ### Step 5. Install the Upper Plate
 - Parts needed:
   - Step 4 chassis
+  - 
   - Rivet 1 x13
   - Screw 1 x24
   - Washer 1 x24
+  - Screw 11 x5
+  - Vibration Mount x5
+  - Insert 4 x16
 
 - Place the upper plate over the chassis as shown to the picture.
 - Apply adhesive on the cockpit support beams around the holes on the contact side.
