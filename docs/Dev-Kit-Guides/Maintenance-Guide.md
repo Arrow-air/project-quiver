@@ -44,7 +44,7 @@ Maintenance personnel should pay attention to the specific components listed bel
 
 | Component | Inspection Check | Potential Risk |
 | :--- | :--- | :--- |
-|**PCB Connectors**|Inspect for loosen and contaminated connectors.|Short circuit or unstable connection lead to system failure.|
+|**PCB Connectors**|Inspect for loose and contaminated connectors.|Short circuit or unstable connection lead to system failure.|
 | **External Sensors** | Check mounts for cracks or loose screws. | Sensor tilting causing Flight Control errors or camera malfunction. |
 | **Sensor Cabling** | Ensure cables are tight and not blocking sensors. | Obstruction of critical sensors. |
 | **Battery Power Connector** | Inspect for dust, debris, or pitting on pins. | Reduced lifespan, short circuits, or total power loss. |
@@ -121,7 +121,7 @@ Carbon fiber splinters can cause penetrating injuries. If you suspect a crack in
     - Check friction and security of telemetry antennas.
 2. **Cockpit Structure Visual Inspection:**
     - Check for deformation, cracks or deep scratches.
-    - Tap on different surfaces to discover any loosen fasteners.
+    - Tap on different surfaces to discover any loose fasteners.
     - Check the connections of hinges and latches.
 3. **Propulsion System:**
     - Extend propellers to the straightened position.

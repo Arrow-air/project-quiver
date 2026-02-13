@@ -481,7 +481,7 @@ This sequence defines the only approved process from battery installation to tak
 ### 3.3 Avionics Power-Up
 
 7.  **Drone Init:** Press the **Drone Push Button**.
-    * *Expectation:* Air unit fan spisn up, LEDs illuminate.
+    * *Expectation:* Air unit fan spins up, LEDs illuminate.
     * *Wait:* Allow 30-60 seconds for Flight Controller boot and GPS lock.
 8. **GCS Link:** Verify connection on GCS. Check for "Ready to Fly" status (GPS: 3D Fix).
 9. Verify:
