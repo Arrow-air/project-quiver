@@ -66,119 +66,114 @@
 
 ## Preparation
 
-### 1111, 1112 & 1113
-- Rack plates.
+### 1111, 1112 & 1113 - Rack Plates
 - All three are aluminum 6 series sheets, laser cut, sanded. 
 - Bounding box dimension is 300x300 mm for each.
-- One piece of each is required.
+- Qty: 1 each.
+- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
 
 | | 1111 (Upper Plate) | 1112 (Mid Plate) | 1113 (Lower Plate)|
 |--|--|--|--|
 |Thickness| 1 mm| 1 mm| 4 mm|
 | Image| <img src="assets/images/1111.png" alt="Alt Text" width="800"> | <img src="assets/images/1112.png" alt="Alt Text" width="800"> | <img src="assets/images/1113.png" alt="Alt Text" width="800"> |  
-| CAD File|[Part 1](assets/models/1111.step)| [Part 2](assets/models/1112.step)| [Part 3](assets/models/1113.step)|
-
-### 1211, 1212 & 1213
-- Cockpit support beams.
-- All three are aluminum 6 series, 40x40x2 mm square tubes, laser cut, sanded. 
-- 1212 and 1213 are identical, order 2 parts for the same geometry.
+| CAD File|[1111](assets/models/1111.step)| [1112](assets/models/1112.step)| [1113](assets/models/1113.step)|
+---
+### 1211, 1212 & 1213 - Cockpit Support Beams
+- All three are aluminum 6 series, 40x40x1 mm square tubes, laser cut, sanded.
+- Part 1211; Qty: 1.
+- Parts 1212 and 1213 are identical; Qty: 2.
+- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
 
 | | 1211 (Cockpit Support Beam CW Long) | 1212 & 1213 (Cockpit Support Beam CCW Back & Front) |
 |--|--|--|
 |Length|289.2 mm|124.2 mm|
 | Image| <img src="assets/images/1211.png" alt="Alt Text" width="300"> | <img src="assets/images/1212_1213.png" alt="Alt Text" width="300"> |
-| CAD File|[Part 4](assets/models/1211.step)| [Part 5 & 6](assets/models/1212_1213.step)|
-
-### 1221 & 1222
-- Battery walls.
+| CAD File|[1211](assets/models/1211.step)| [1212 & 1213](assets/models/1212_1213.step)|
+---
+### 1221 & 1222 - Battery Walls
 - Both are aluminum 6 series, 1000x30x2 mm rectangular tubes, laser cut, sanded.
 - Length is 300 mm for each.
-- Parts are identical, order 2 parts of the same geometry.
+- Parts are identical; Qty: 2.
+- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
 
 | | 1221 & 1222 (Battery Wall Left & Right) |
 |--|--|
 | Image| ![](assets/images/1221_1222.png) |
 | CAD File|[1221 & 1222](assets/models/1221_1222.step)|
-
-### 1311, 1312, 1313 & 1314
-- Landing gear vertical tubes.
+---
+### 1311, 1312, 1313 & 1314 - Landing Gear Vertical Tubes
 - Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
 - Length is 400 mm for each.
-- Parts are identical, order 4 parts of the same geometry or cut to length.
-
-### 1321 & 1322
-- Landing gear horizontal tubes.
+- Parts are identical; Qty: 4.
+  - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
+---
+### 1321 & 1322 - Landing Gear Horizontal Tubes
 - Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
 - Length is 500 mm for each.
-- Parts are identical, order 2 parts of the same geometry or cut to length.
-
-### 1331, 1332, 1333 & 1334
-- Landing gear main adapters.
+- Parts are identical; Qty: 4.
+  - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
+---
+### 1331, 1332, 1333 & 1334 - Landing Gear Main Adapters
 - Custom detachable version for 30 mm tube diameter.
 - Contact RJXHobby for the customization.
   - Request 30 mm diameter variant of [this one](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone)'s bolt pattern.
-- Parts are identical, order 4 parts of the same geometry.
+- Parts are identical; Qty: 4.
 - **Note:** If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
 
 | 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
 |--|
 | ![](assets/images/133X.jpeg) |
-
-
-### 1341, 1342, 1343 & 1344
-- Landing gear tube joints.
+---
+### 1341, 1342, 1343 & 1344 - Landing Gear Tube Joints
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
-- Parts are identical, order or print 4 parts of the same geometry.
+- Parts are identical; Qty: 4.
 
 | | 1341, 1342, 1343 & 1344  (Landing Gear Tube Joint) |
 |--|--|
 | Image| ![](assets/images/134X.png) |
 | CAD File|[1221 & 1222](assets/models/134X.step)|
-
-### 1351, 1352, 1353 & 1354
-- Landing gear foam wraps.
+---
+### 1351, 1352, 1353 & 1354 - Landing Gear Foam Wraps.
 - Pipe insulation foam, 28 mm inner diameter, 46 mm outer diameter.
-- Length is 67 mm for each.
-- Parts are identical, cut 4 pieces to length.
+- Length is 67 mm each.
+- Parts are identical; Qty: 4.
+- Cut from stock material to length.
 - Product Link: [Link](https://a.co/d/06ePWuUq)
 
 | 1351, 1352, 1353 & 1354 (Landing Gear Foam Wrap) |
 |--|
 | ![](assets/images/135X.jpg) |
-
-### 1411, 1421, 1431 & 1441
-- Motor arm foldable connectors.
+---
+### 1411, 1421, 1431 & 1441 - Motor Arm Foldable Connectors
 - 30 mm tube diameter version.
-- Parts are identical, order 4 parts.
+- Parts are identical; Qty: 4.
 - Product Link: [Link](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html?spm=a2756.order-detail-ta-bn-b.0.0.78e1f19cegXkOZ)
 
 | 1411, 1421, 1431 & 1441 (Motor Arm Foldable Connectors) |
 |--|
 | ![](assets/images/14X1.jpg) |
-
-### 1412, 1422, 1432 & 1442
-- Motor arms.
+---
+### 1412, 1422, 1432 & 1442 - Motor Arms
 - Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
 - Length is 360 mm for each.
-- Parts are identical, order 4 parts of the same geometry or cut to length.
-
-### 2111, 2121 & 2131
-- Attachment interface spacers.
+- Parts are identical; Qty: 4.
+  - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
+---
+### 2111, 2121 & 2131 - Attachment Interface Spacers
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
-- 2111 & 2121 are identical, order or print 2 pieces.
-- One piece of 2131 is required.
+- Parts 2111 and 2121 are identical; Qty: 2.
+- Part 2131; Qty: 1.
 
 | | 2111 & 2121 (Attachment Interface Spacers, Left and Right) | 2131 (Attachment Interface Spacer, Bottom) |
 |--|--|--|
 | Image| ![](assets/images/2111_2121.png) | ![](assets/images/2131.png) |
 | CAD File|[2111 & 2121](assets/models/2111_2121.step)| [2131](assets/models/2131.step)|
-
-### 2112, 2122 & 2132
-- Attachment interfaces.
+---
+### 2112, 2122 & 2132 - Attachment Interfaces
 - Parts are identical, order 3 parts.
 - Select "Without PCB Board" option.
 - Product Link: [Link](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
@@ -186,122 +181,151 @@
 | 2112, 2122 & 2132 (Attachment Interface) |
 |--|
 | ![](assets/images/2112_2122_2132.png) |
-
-### 2211 & 2212
-- Battery sliders.
+---
+### 2211 & 2212 - Battery Sliders
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
-- Parts are identical, order or print 2 parts of the same geometry.
+- Parts are identical; Qty: 2.
 
 | | 2211 & 2212  (Battery Slider) |
 |--|--|
 | Image| ![](assets/images/2211_2212.png) |
 | CAD File|[2211 & 2212](assets/models/2211_2212.step)|
-
-### 2311 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! To be Updated
-- Main PCB Mount.
+---
+### 2311 - Main PCB Mount
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
-- Parts are identical, order or print 2 parts of the same geometry.
+- Qty: 1.
 
-| | 2211 & 2212  (Battery Slider) |
+| | 2311  (Main PCB Mount) |
 |--|--|
-| Image| ![](assets/images/2211_2212.png) |
-| CAD File|[2211 & 2212](assets/models/2211_2212.step)|
-
-### 2312
-- Battery Connector PCB Mount.
+| Image| ![](assets/images/2311.png) |
+| CAD File|[2211 & 2212](assets/models/2311.step)|
+---
+### 2312 - Battery Connector PCB Mount
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
-- One piece is required.
+- Qty: 1.
 
 | | 2312  (BC PCB Mount) |
 |--|--|
 | Image| ![](assets/images/2312.png) |
 | CAD File|[2312](assets/models/2312.step)|
-
-### 2313
-- Battery Connector PCB Cover.
+---
+### 2313 - Battery Connector PCB Cover
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
-- One piece is required.
+- Qty: 1.
 
 | | 2313  (BC PCB Cover) |
 |--|--|
 | Image| ![](assets/images/2313.png) |
 | CAD File|[2313](assets/models/2313.step)|
+---
+### 2321 - Sensor Mount
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- Qty: 1.
 
-### Part 9
-- Off-the-shelf component.
-- 30 mm option.
-- 4 parts in total.
-- Product Link: [Link](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html?spm=a2756.order-detail-ta-bn-b.0.0.78e1f19cegXkOZ)
+| | 2321  (Sensor Mount) |
+|--|--|
+| Image| ![](assets/images/2321.png) |
+| CAD File|[2321](assets/models/2321.step)|
+---
+### 2331 - GNSS Mount
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- Qty: 1.
 
-### Parts 10-12
-- 30x2 mm circular carbon-fiber tubes with different lengths.
-- Reference link: [Link](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm)
-  - Order 5 x 1000 mm or 10 x 500 mm
+| | 2331  (GNSS Mount) |
+|--|--|
+| Image| ![](assets/images/2331.png) |
+| CAD File|[2331](assets/models/2331.step)|
+---
+### 2341 - PPP & Beacon Mount
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- Qty: 1.
 
-| | Part 10 (Motor Arms) | Part 11 (Landing Leg Vertical Tubes) | Part 12 (Landing Leg Horizontal Tubes) |
-|--|--|--|--|
-|Length|360 mm| 400 mm| 500 mm|
-|Quantity|4|4|2|
+| | 2341  (PPP & Beacon Mount) |
+|--|--|
+| Image| ![](assets/images/2341.png) |
+| CAD File|[2341](assets/models/2341.step)|
+---
+### 2411 - Main Enclosure
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- Qty: 1.
 
-### Part 13
-- Off-the-shelf component.
-- 30 mm option.
-- 4 parts in total.
-- Product Link: [Link](https://www.alibaba.com/product-detail/20mm-25mm-30mm-pipe-diameter-fixed_1601140918673.html?spm=a2756.trade-carp.valid-supplier.7.13873192MoJgE3)
-
-### Part 14
+| | 2411  (Main Enclosure) |
+|--|--|
+| Image| ![](assets/images/2411.png) |
+| CAD File|[2411](assets/models/2411.step)|
+---
+### 2412 - Top Cap
+- 3D printed.
+- PETG-CF.
+- Use 6 wall loops.
+- Mind the print orientation as shown.
+- Qty: 1.
+---
+| | 2412  (Top Cap) |
+|--|--|
+| Image| ![](assets/images/2412.png) |
+| Print Orientation| ![](assets/images/2412_2.png) |
+| CAD File|[2412](assets/models/2412.step)|
+---
+### 2421 & 2422 - Enclosure Hinges
 - Off-the-shelf component.
 - Part Number: GN 237-ZD-30-30-A-SW
-- 2 parts in total.
 - Product Link: [Link](https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type)
+- Qty: 2.
 
-### Parts 15-23
-- All 3D printed parts.
-- They have structural roles on the airframe. Use **PETG-CF** filament.
-- STL link: [Parts 15-23](assets/models/parts15_23.zip)
-
-|Part|Quantity|
-|--|--|
-|Part 15| 4 |
-|Part 16| 2 |
-|Part 17| 1 |
-|Part 18| 1 |
-|Part 19| 4 |
-|Part 20| 1 |
-|Part 21| 1 |
-|Part 22| 1 |
-|Part 23| 1 |
-
-
-### Parts 24-30
-- All 3D printed parts.
-- The parts should not interfere with GNSS signals. Use **PETG** filament.
-- **DO NOT** use any filament containing carbon fiber.
-- STL link: [Parts 24-30](assets/models/parts24_30.zip)
-
-|Part|Quantity|
-|--|--|
-|Part 24| 1 |
-|Part 25| 1 |
-|Part 26| 1 |
-|Part 27| 1 |
-|Part 28| 1 |
-|Part 29| 4 |
-|Part 30| 1 |
-
-### Part 31
+| 2421 & 2422  (Enclosure Hinges) |
+|--|
+| ![](assets/images/2421_2422.png) |
+---
+### 2431 & 2432 - Enclosure Latches
 - Off-the-shelf component.
-- Order without PCB.
-- 3 parts in total.
-- Product Link: [Link](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
+- Screw on draw latch.
+- Parts are identical; Qty: 2.
+- Product Link:
+  - US: [Link](https://www.mcmaster.com/6082A11/)
+  - UK: Latch and catch plate are sold separately.
+    - [Latch](https://protex.com/21-1785SS-non-adjustable-toggle-latch-light-duty-stainless-steel-natural)
+    - [Catch Plate](https://protex.com/01-1785SS-catch-plate-for-toggle-latch-stainless-steel-natural)
+---
+### 3322 & 3323 - Busbars
+- Both are Copper C110 | CU ETP, laser cut, bent. 
+- Bounding box dimension is 300x300 mm for each.
+- Qty: 1 each.
+- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
+
+| | 3322 (Busbar Positive) | 3323 (Busbar Negative) |
+|--|--|--|
+| Image| ![](assets/images/3322.png) | ![](assets/images/3323.png) |
+| CAD File|[3322](assets/models/3322.step)| [2131](assets/models/3323.step)|
+--
+### 3324 - BC PCB Heatsink
+- Aluminum 6 series, laser cut, sanded.
+- Experimental part:
+  - Order both 4 mm and 5 mm thickness variants for evaluation.
+- Qty: 1 each.
+- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
+
+| | 3324 (BC PCB Heatsink) |
+|--|--|
+| Image| ![](assets/images/3324.png) |
+| CAD File|[3324 - 4 mm](assets/models/3324.step) , [3324 - 5 mm](assets/models/3324_2.step)|
+---
 
 ### Tool List
 
@@ -320,9 +344,9 @@
 
 ### Step 1. Assemble the Cockpit Support Beams on Mid Plate
 - Parts needed:
-  - Part 2 (Mid Plate)
-  - Parts 4, 5, 6 (Cockpit Support Beams)
-  - Rivet 1 x13
+  - 1112 (Mid Plate)
+  - 1211, 1212 & 1213 (Cockpit Support Beams)
+  - Rivet 1 x13 (4mm Diameter for 2mm Thickness)
 
 - Apply adhesive on the cockpit support beams around the holes on the contact side.
 - Place the cockpit support beams on the mid plate as shown to the picture.
@@ -332,12 +356,13 @@
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
 |![](assets/images/step1_1.png)| ![](assets/images/step1_3.png) | ![](assets/images/step1_2.png) |
+---
 
 ### Step 2. Install the Battery Walls
 - Parts needed:
   - Step 1 chassis
-  - Parts 7, 8 (Battery Walls)
-  - Rivet 1 x10
+  - 1221 & 1222 (Battery Walls)
+  - Rivet 2 x10 (4mm Diameter for 3mm Thickness)
 - Apply adhesive on the battery walls around the holes on the contact side.
 - Place the battery walls on the sides of the chassis as shown in the picture.
   - Make sure the dented side stays on the chassis side.
@@ -347,17 +372,18 @@
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
 |![](assets/images/step2_1.png)| ![](assets/images/step2_3.png) | ![](assets/images/step2_2.png) |
+---
 
 ### Step 3. Install the Motor Arm Connectors
 - Parts needed:
   - Step 2 chassis
-  - Part 9 x4 (Foldable Motor Arm Connectors)
-  - Screw 1 x16
-  - Screw 4 x8
-  - Washer 1 x24
+  - 14X1 x4 (Foldable Motor Arm Connectors)
+  - Screw 5 x16 (Socket Head Screw M3x8)
+  - Screw 1 x8 (Socket Head Screw M3x10)
+  - Washer 1 x24 (General Purpose Washer, Small)
 - Place the motor arm connectors on the chassis as shown in the picture.
 - Secure the motor arm connectors on the chassis.
-  - Use **Screw 1** for **red holes** and **Screw 4** for **green holes**.
+  - Use **Screw 5** for **red holes** and **Screw 1** for **green holes**.
   - Use Loctite Threadlocker.
   - Use Washer 1.
   - Use cordless screwdriver where possible, or else an allen key.
@@ -365,12 +391,12 @@
 |Orientation|Screw Holes|
 |--|--|
 |![](assets/images/step3_1.png)| ![](assets/images/step3_2.png) |
-
+--
 ### Step 4. Install the Lower Plate
 - Parts needed:
   - Step 3 chassis
-  - Part 3 (Lower Plate)
-  - Rivet 2 x10
+  - 1113 (Lower Plate)
+  - Rivet 3 x10 (4mm Diameter for 6mm Thickness)
 - Place the lower plate on the chassis as shown to the picture.
 - Apply adhesive on the battery walls around the holes on the contact side.
 - Rivet the lower plate to the chassis on the holes shown in the picture.
