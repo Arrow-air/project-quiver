@@ -47,293 +47,125 @@ sidebar_position: 1
 ### Table 2. Fasteners
 |	Fastener ID	|	Fastener Description	|	Quantity	|	McMaster-Carr Reference	|
 |	--	|	--	|	--	|	--	|
-|	 Rivet 1	|	4mm Diameter for 1 mm - 2.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A224/)	|
-|	 Rivet 2	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A251)	|
-|	 Rivet 3	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
-|	Screw 1	|	Socket Head Screw M3x10	|	48	|	[91290A115](https://www.mcmaster.com/91292A113)	|
-|	 Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[97654A373](https://www.mcmaster.com/92095A190)	|
+|	 Rivet 1	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	36	|	[97525A251](https://www.mcmaster.com/97525A251)	|
+|	 Rivet 2	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
+|	Screw 1	|	Socket Head Screw M3x10	|	48	|	[91290A115](https://www1.mcmaster.com/91290A115)	|
+|	 Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[97654A373](https://www.mcmaster.com/97654A373)	|
 |	 Screw 3	|	Socket Head Screw M3x16               	|	24	|	[91292A115](https://www.mcmaster.com/91292A115)	|
-|	Screw 4	|	Socket Head Screw M3x12	|	12	|	[91290A117](https://www.mcmaster.com/91292A114)	|
-|	Screw 5	|	Socket Head Screw M3x8	|	23	|	[91290A113](https://www.mcmaster.com/91292A112)	|
-|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91290A136](https://www.mcmaster.com/91292A024)	|
-|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	8	|	[92125A128](https://www.mcmaster.com/92125A128/)	|
-|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/92125A130/)	|
-|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91292A108)	|
-|	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/92125A138/)	|
-| Screw 11  | Flanged Button Head Hex-Drive Screw M3x6   | 5 | [97654A674](https://www.mcmaster.com/products/97654a674/) |
-|	Insert 1	|	M3 Threaded Inserts - 6.4 mm	|	42	|	[97163A161](https://www.mcmaster.com/97163A161)	|
+|	Screw 4	|	Socket Head Screw M3x12	|	12	|	[91290A117](https://www1.mcmaster.com/91290A117)	|
+|	Screw 5	|	Socket Head Screw M3x8	|	23	|	[91290A113](https://www1.mcmaster.com/91290A113)	|
+|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91290A136](https://www1.mcmaster.com/91290A136)	|
+|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	8	|	[92125A128](https://www.mcmaster.com/92125A128)	|
+|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/91294A130)	|
+|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91290A140)	|
+|	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/91294A138)	|
+|	Insert 1	|	M3 Threaded Inserts	|	50	|	[97163A161](https://www.mcmaster.com/97163A161)	|
 |	Insert 2	|	M4 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
-|	Insert 3	|	M2.5 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
-| Insert 4  | M3 Threaded Inserts - 3.8 mm | 16 | [94180A331](https://www.mcmaster.com/94180A331)
 |	Washer 1	|	General Purpose Washer 3.2 mm ID, 6 mm OD	|	158	|	[98689A112](https://www.mcmaster.com/98689A112)	|
 |	 Washer 2	|	General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
 |	 Nut 1	|	Nylon-Insert Locknut M3	|	39	|	[90576A811](https://www.mcmaster.com/90576A811)	|
-| Vibration Mount | Stretchy Soft M3 Rubber Anti-Vibration Spacer | 5 | [Amazon](https://www.amazon.com/iRCMATRC-Stretchy-Anti-Vibration-Controllers-Accessories/dp/B09KCGKX1F?th=1) | 
 
 -------
 
 ## Preparation
 
-### 1111, 1112 & 1113 - Rack Plates
+### Parts 1-3
 - All three are aluminum 6 series sheets, laser cut, sanded. 
-- Bounding box dimension is 300x300 mm for each.
-- Qty: 1 each.
-- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
+- Bounding box dimension is 300x300x2 mm for each.
 
-| | 1111 (Upper Plate) | 1112 (Mid Plate) | 1113 (Lower Plate)|
+| | Part 1 (Upper Plate) | Part 2 (Mid Plate) | Part 3 (Lower Plate)|
 |--|--|--|--|
-|Thickness| 1 mm| 1 mm| 4 mm|
-| Image| <img src="assets/images/1111.png" alt="Alt Text" width="800"> | <img src="assets/images/1112.png" alt="Alt Text" width="800"> | <img src="assets/images/1113.png" alt="Alt Text" width="800"> |  
-| CAD File|[1111](assets/models/1111.step)| [1112](assets/models/1112.step)| [1113](assets/models/1113.step)|
----
-### 1211, 1212 & 1213 - Cockpit Support Beams
-- All three are aluminum 6 series, 40x40x1 mm square tubes, laser cut, sanded.
-- Part 1211; Qty: 1.
-- Parts 1212 and 1213 are identical; Qty: 2.
-- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
+|Thickness|2 mm|2 mm|4 mm|
+| Image| ![](assets/images/part1.png) | ![](assets/images/part2.png) | ![](assets/images/part3.png) |  
+| CAD File|[Part 1](assets/models/part1.step)| [Part 2](assets/models/part2.step)| [Part 3](assets/models/part3.step)|
 
-| | 1211 (Cockpit Support Beam CW Long) | 1212 & 1213 (Cockpit Support Beam CCW Back & Front) |
+### Parts 4-6
+- All three are aluminum 6 series, 40x40x2 mm square tubes, laser cut, sanded. 
+- Part 5 and Part 6 are identical, order 2 parts for the same geometry.
+
+| | Part 4 (Cockpit Support Beam CW Long) | Part 5 & 6 (Cockpit Support Beam CCW Back & Front) |
 |--|--|--|
 |Length|289.2 mm|124.2 mm|
-| Image| <img src="assets/images/1211.png" alt="Alt Text" width="300"> | <img src="assets/images/1212_1213.png" alt="Alt Text" width="300"> |
-| CAD File|[1211](assets/models/1211.step)| [1212 & 1213](assets/models/1212_1213.step)|
----
-### 1221 & 1222 - Battery Walls
+| Image| ![](assets/images/part4.png) | ![](assets/images/part5_6.png) |
+| CAD File|[Part 4](assets/models/part4.step)| [Part 5 & 6](assets/models/part5_6.step)|
+
+### Parts 7-8
 - Both are aluminum 6 series, 1000x30x2 mm rectangular tubes, laser cut, sanded.
 - Length is 300 mm for each.
-- Parts are identical; Qty: 2.
-- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
+- Parts are identical, order 2 parts of the same geometry.
 
-| | 1221 & 1222 (Battery Wall Left & Right) |
+| | Part 7 & 8 (Battery Wall Left & Right) |
 |--|--|
-| Image| ![](assets/images/1221_1222.png) |
-| CAD File|[1221 & 1222](assets/models/1221_1222.step)|
----
-### 1311, 1312, 1313 & 1314 - Landing Gear Vertical Tubes
-- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
-- Length is 400 mm for each.
-- Parts are identical; Qty: 4.
-  - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
----
-### 1321 & 1322 - Landing Gear Horizontal Tubes
-- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
-- Length is 500 mm for each.
-- Parts are identical; Qty: 4.
-  - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
----
-### 1331, 1332, 1333 & 1334 - Landing Gear Main Adapters
-- Custom detachable version for 30 mm tube diameter.
-- Contact RJXHobby for the customization.
-  - Request 30 mm diameter variant of [this product](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with bolt pattern of 30 mm version of [this one](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
-- Parts are identical; Qty: 4.
-- **Note:** If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
+| Image| ![](assets/images/part7_8.png) |
+| CAD File|[Part 7 & 8](assets/models/part7_8.step)|
 
-| 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
-|--|
-| ![](assets/images/133X.jpeg) |
----
-### 1341, 1342, 1343 & 1344 - Landing Gear Tube Joints
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Parts are identical; Qty: 4.
-
-| | 1341, 1342, 1343 & 1344  (Landing Gear Tube Joint) |
-|--|--|
-| Image| ![](assets/images/134X.png) |
-| CAD File|[1221 & 1222](assets/models/134X.step)|
----
-### 1351, 1352, 1353 & 1354 - Landing Gear Foam Wraps.
-- Pipe insulation foam, 28 mm inner diameter, 46 mm outer diameter.
-- Length is 67 mm each.
-- Parts are identical; Qty: 4.
-- Cut from stock material to length.
-- Product Link: [Link](https://a.co/d/06ePWuUq)
-
-| 1351, 1352, 1353 & 1354 (Landing Gear Foam Wrap) |
-|--|
-| ![](assets/images/135X.jpg) |
----
-### 1411, 1421, 1431 & 1441 - Motor Arm Foldable Connectors
-- 30 mm tube diameter version.
-- Parts are identical; Qty: 4.
+### Part 9
+- Off-the-shelf component.
+- 30 mm option.
+- 4 parts in total.
 - Product Link: [Link](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html?spm=a2756.order-detail-ta-bn-b.0.0.78e1f19cegXkOZ)
 
-| 1411, 1421, 1431 & 1441 (Motor Arm Foldable Connectors) |
-|--|
-| ![](assets/images/14X1.jpg) |
----
-### 1412, 1422, 1432 & 1442 - Motor Arms
-- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
-- Length is 360 mm for each.
-- Parts are identical; Qty: 4.
-  - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
----
-### 2111, 2121 & 2131 - Attachment Interface Spacers
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Parts 2111 and 2121 are identical; Qty: 2.
-- Part 2131; Qty: 1.
+### Parts 10-12
+- 30x2 mm circular carbon-fiber tubes with different lengths.
+- Reference link: [Link](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm)
+  - Order 5 x 1000 mm or 10 x 500 mm
 
-| | 2111 & 2121 (Attachment Interface Spacers, Left and Right) | 2131 (Attachment Interface Spacer, Bottom) |
-|--|--|--|
-| Image| ![](assets/images/2111_2121.png) | ![](assets/images/2131.png) |
-| CAD File|[2111 & 2121](assets/models/2111_2121.step)| [2131](assets/models/2131.step)|
----
-### 2112, 2122 & 2132 - Attachment Interfaces
-- Parts are identical, order 3 parts.
-- Select "Without PCB Board" option.
-- Product Link: [Link](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
+| | Part 10 (Motor Arms) | Part 11 (Landing Leg Vertical Tubes) | Part 12 (Landing Leg Horizontal Tubes) |
+|--|--|--|--|
+|Length|360 mm| 400 mm| 500 mm|
+|Quantity|4|4|2|
 
-| 2112, 2122 & 2132 (Attachment Interface) |
-|--|
-| ![](assets/images/2112_2122_2132.png) |
----
-### 2211 & 2212 - Battery Sliders
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Parts are identical; Qty: 2.
+### Part 13
+- Off-the-shelf component.
+- 30 mm option.
+- 4 parts in total.
+- Product Link: [Link](https://www.alibaba.com/product-detail/20mm-25mm-30mm-pipe-diameter-fixed_1601140918673.html?spm=a2756.trade-carp.valid-supplier.7.13873192MoJgE3)
 
-| | 2211 & 2212  (Battery Slider) |
-|--|--|
-| Image| ![](assets/images/2211_2212.png) |
-| CAD File|[2211 & 2212](assets/models/2211_2212.step)|
----
-### 2311 - Main PCB Mount
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Qty: 1.
-
-| | 2311  (Main PCB Mount) |
-|--|--|
-| Image| ![](assets/images/2311.png) |
-| CAD File|[2211 & 2212](assets/models/2311.step)|
----
-### 2312 - Battery Connector PCB Mount
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Qty: 1.
-
-| | 2312  (BC PCB Mount) |
-|--|--|
-| Image| ![](assets/images/2312.png) |
-| CAD File|[2312](assets/models/2312.step)|
----
-### 2313 - Battery Connector PCB Cover
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Qty: 1.
-
-| | 2313  (BC PCB Cover) |
-|--|--|
-| Image| ![](assets/images/2313.png) |
-| CAD File|[2313](assets/models/2313.step)|
----
-### 2321 - Sensor Mount
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Qty: 1.
-
-| | 2321  (Sensor Mount) |
-|--|--|
-| Image| ![](assets/images/2321.png) |
-| CAD File|[2321](assets/models/2321.step)|
----
-### 2331 - GNSS Mount
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Qty: 1.
-
-| | 2331  (GNSS Mount) |
-|--|--|
-| Image| ![](assets/images/2331.png) |
-| CAD File|[2331](assets/models/2331.step)|
----
-### 2341 - PPP & Beacon Mount
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Qty: 1.
-
-| | 2341  (PPP & Beacon Mount) |
-|--|--|
-| Image| ![](assets/images/2341.png) |
-| CAD File|[2341](assets/models/2341.step)|
----
-### 2411 - Main Enclosure
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Qty: 1.
-
-| | 2411  (Main Enclosure) |
-|--|--|
-| Image| ![](assets/images/2411.png) |
-| CAD File|[2411](assets/models/2411.step)|
----
-### 2412 - Top Cap
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Mind the print orientation as shown.
-- Qty: 1.
----
-| | 2412  (Top Cap) |
-|--|--|
-| Image| ![](assets/images/2412.png) |
-| Print Orientation| ![](assets/images/2412_2.png) |
-| CAD File|[2412](assets/models/2412.step)|
----
-### 2421 & 2422 - Enclosure Hinges
+### Part 14
 - Off-the-shelf component.
 - Part Number: GN 237-ZD-30-30-A-SW
+- 2 parts in total.
 - Product Link: [Link](https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type)
-- Qty: 2.
 
-| 2421 & 2422  (Enclosure Hinges) |
-|--|
-| ![](assets/images/2421_2422.png) |
----
-### 2431 & 2432 - Enclosure Latches
-- Off-the-shelf component.
-- Screw on draw latch.
-- Parts are identical; Qty: 2.
-- Product Link:
-  - US: [Link](https://www.mcmaster.com/6082A11/)
-  - UK: Latch and catch plate are sold separately.
-    - [Latch](https://protex.com/21-1785SS-non-adjustable-toggle-latch-light-duty-stainless-steel-natural)
-    - [Catch Plate](https://protex.com/01-1785SS-catch-plate-for-toggle-latch-stainless-steel-natural)
----
-### 3322 & 3323 - Busbars
-- Both are Copper C110 | CU ETP, laser cut, bent. 
-- Bounding box dimension is 300x300 mm for each.
-- Qty: 1 each.
-- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
+### Parts 15-23
+- All 3D printed parts.
+- They have structural roles on the airframe. Use **PETG-CF** filament.
+- STL link: [Parts 15-23](assets/models/parts15_23.zip)
 
-| | 3322 (Busbar Positive) | 3323 (Busbar Negative) |
-|--|--|--|
-| Image| ![](assets/images/3322.png) | ![](assets/images/3323.png) |
-| CAD File|[3322](assets/models/3322.step)| [2131](assets/models/3323.step)|
---
-### 3324 - BC PCB Heatsink
-- Aluminum 6 series, laser cut, sanded.
-- Experimental part:
-  - Order both 4 mm and 5 mm thickness variants for evaluation.
-- Qty: 1 each.
-- Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
-
-| | 3324 (BC PCB Heatsink) |
+|Part|Quantity|
 |--|--|
-| Image| ![](assets/images/3324.png) |
-| CAD File|[3324 - 4 mm](assets/models/3324.step) , [3324 - 5 mm](assets/models/3324_2.step)|
----
+|Part 15| 4 |
+|Part 16| 2 |
+|Part 17| 1 |
+|Part 18| 1 |
+|Part 19| 4 |
+|Part 20| 1 |
+|Part 21| 1 |
+|Part 22| 1 |
+|Part 23| 1 |
+
+
+### Parts 24-30
+- All 3D printed parts.
+- The parts should not interfere with GNSS signals. Use **PETG** filament.
+- **DO NOT** use any filament containing carbon fiber.
+- STL link: [Parts 24-30](assets/models/parts24_30.zip)
+
+|Part|Quantity|
+|--|--|
+|Part 24| 1 |
+|Part 25| 1 |
+|Part 26| 1 |
+|Part 27| 1 |
+|Part 28| 1 |
+|Part 29| 4 |
+|Part 30| 1 |
+
+### Part 31
+- Off-the-shelf component.
+- Order without PCB.
+- 3 parts in total.
+- Product Link: [Link](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
 
 ### Tool List
 
@@ -352,9 +184,9 @@ sidebar_position: 1
 
 ### Step 1. Assemble the Cockpit Support Beams on Mid Plate
 - Parts needed:
-  - 1112 (Mid Plate)
-  - 1211, 1212 & 1213 (Cockpit Support Beams)
-  - Rivet 1 x13 (4mm Diameter for 2mm Thickness)
+  - Part 2 (Mid Plate)
+  - Parts 4, 5, 6 (Cockpit Support Beams)
+  - Rivet 1 x13
 
 - Apply adhesive on the cockpit support beams around the holes on the contact side.
 - Place the cockpit support beams on the mid plate as shown to the picture.
@@ -364,13 +196,12 @@ sidebar_position: 1
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
 |![](assets/images/step1_1.png)| ![](assets/images/step1_3.png) | ![](assets/images/step1_2.png) |
----
 
 ### Step 2. Install the Battery Walls
 - Parts needed:
   - Step 1 chassis
-  - 1221 & 1222 (Battery Walls)
-  - Rivet 2 x10 (4mm Diameter for 3mm Thickness)
+  - Parts 7, 8 (Battery Walls)
+  - Rivet 1 x10
 - Apply adhesive on the battery walls around the holes on the contact side.
 - Place the battery walls on the sides of the chassis as shown in the picture.
   - Make sure the dented side stays on the chassis side.
@@ -380,26 +211,17 @@ sidebar_position: 1
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
 |![](assets/images/step2_1.png)| ![](assets/images/step2_3.png) | ![](assets/images/step2_2.png) |
----
 
 ### Step 3. Install the Motor Arm Connectors
 - Parts needed:
   - Step 2 chassis
-  - 14X1 x4 (Foldable Motor Arm Connectors)
-  - Screw 5 x16 (Socket Head Screw M3x8)
-  - Screw 1 x8 (Socket Head Screw M3x10)
-  - Washer 1 x24 (M3 General Purpose Washer, OD: 6 mm)
-- Remove the fasteners marked in the picture.
-  - Apply Loctite Threadlocker on the fasteners.
-  - Secure the fasteners back.
-
-| Motor Arm Connector - Loctite Threadlocker Application|
-|---|
-| ![](assets/images/step3_3.png)|
- 
+  - Part 9 x4 (Foldable Motor Arm Connectors)
+  - Screw 1 x16
+  - Screw 4 x8
+  - Washer 1 x24
 - Place the motor arm connectors on the chassis as shown in the picture.
 - Secure the motor arm connectors on the chassis.
-  - Use **Screw 5** for **red holes** and **Screw 1** for **green holes**.
+  - Use **Screw 1** for **red holes** and **Screw 4** for **green holes**.
   - Use Loctite Threadlocker.
   - Use Washer 1.
   - Use cordless screwdriver where possible, or else an allen key.
@@ -407,12 +229,12 @@ sidebar_position: 1
 |Orientation|Screw Holes|
 |--|--|
 |![](assets/images/step3_1.png)| ![](assets/images/step3_2.png) |
----
+
 ### Step 4. Install the Lower Plate
 - Parts needed:
   - Step 3 chassis
-  - 1113 (Lower Plate)
-  - Rivet 3 x10 (4mm Diameter for 6mm Thickness)
+  - Part 3 (Lower Plate)
+  - Rivet 2 x10
 - Place the lower plate on the chassis as shown to the picture.
 - Apply adhesive on the battery walls around the holes on the contact side.
 - Rivet the lower plate to the chassis on the holes shown in the picture.
@@ -421,70 +243,54 @@ sidebar_position: 1
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
 |![](assets/images/step4_1.png)| ![](assets/images/step4_3.png) | ![](assets/images/step4_2.png) |
----
+
 ### Step 5. Install the Upper Plate
 - Parts needed:
   - Step 4 chassis
-  - 1111 (Upper Plate)
-  - Rivet 1 x13 (4mm Diameter for 2mm Thickness)
-  - Screw 5 x24 (Socket Head Screw M3x8)
-  - Washer 1 x24 (M3 General Purpose Washer, OD: 6 mm)
+  - Rivet 1 x13
+  - Screw 1 x24
+  - Washer 1 x24
 
 - Place the upper plate over the chassis as shown to the picture.
 - Apply adhesive on the cockpit support beams around the holes on the contact side.
 - Rivet the cockpit support beams from the upper plate on the holes shown in the picture.
   - Make sure you rivet before the adhesive dries.
-- Screw the motor arm connecters from the upper plate with Screw 5.
+- Screw the motor arm connecters from the upper plate with Screw 1.
   - Use Washer 1.
   - Use Loctite Threadlocker.
 
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
 |![](assets/images/step5_1.png)| ![](assets/images/step5_3.png) | ![](assets/images/step5_2.png) |
----
-### Step 6. Install the Main PCB Mount
+
+### Step 6. Install the Battery Connector PCB Mount
 - Parts needed:
   - Step 5 chassis
-  - 2311 (Main PCB Mount)
-  - Screw 11 x5 (Flanged Button Head Hex-Drive Screw M3x6)
-  - Vibration Mount x5 (M3 Rubber Anti-Vibration Spacer)
-  - Insert 4 x16 (M3 Threaded Inserts, 3.8 mm)
+  - Part 26 (Main PCB Mount)
+  - Insert 1 x20
+  - Screw 5 x20
+  - Washer 1 x20
 
-- Install 11x Insert 4 into the top face of the Main PCB Mount as shown in the picture.
+- Place Insert 1 to the holes shown in the picture, on the top and bottom sides of the main PCB mount.
+  - Use a soldering iron to place them inside the plastic.
 
-| Top Insert Locations|
-|---|
-| ![](assets/images/step6_1.png)|
+|Top|Bottom|
+|--|--|
+|![](assets/images/step6_2.png)| ![](assets/images/step6_1.png) |
 
-- Install 5x Insert 4 into the bottom face of the Main PCB Mount (2311) as shown in the picture.
+- Place the main PCB mount over the upper plate.
+  - Secure it with 5x Screw 5 in total from below the upper plate on the holes below.
+  - Use Washer 1 for the holes.
 
-| Bottom Insert Locations|
-|---|
-| ![](assets/images/step6_2.png)|
+![](assets/images/step6_3.png)
 
-- Install 5x Vibration Mount into the designated holes on the Upper Plate (1111).
-- Orientation: Ensure the longer side of the rubber dampener (3 mm section) is facing upwards, towards where the 3D-printed holder will sit.
-
-| Vibration Mount Locations| Vibration Mount Insertion |
-|---|---|
-| ![](assets/images/step6_5.png)| ![](assets/images/step6_3.png)|
-
-- Apply a small amount of Loctite Threadlocker to the threads of the 5x Screw 11 (M3x6) flat head screws.
-- Align the 3D-printed mount over the rubber dampeners.
-- Insert the Screw 11 (M3x6) screws through the center of the rubber dampeners and thread them into the bottom-side inserts of the PCB holder.
-- **Compression:** Tighten the screws until the rubber dampener is compressed to a height of approximately **2.0 mm**. Refer to the visual guide below.
-
-| Vibration Mount Compression|
-|---|
-| ![](assets/images/step6_4.png)|
----
-### Step 7. Install the Battery Connector PCB Mount
+### Step 7. Install the Main PCB Mount
 - Parts needed:
   - Step 6 chassis
-  - 2312 (BC PCB Mount)
-  - Insert 1 x10 (M3 Threaded Inserts, 6.4 mm)
-  - Screw 5 x3 (Socket Head Screw M3x8)
-  - Washer 1 x3 (M3 General Purpose Washer, OD: 6 mm)
+  - Part 30 (BC PCB Mount)
+  - Insert 1 x10
+  - Screw 5 x3
+  - Washer 1 x3
 
 - Place Insert 1 to the holes shown in the picture, on the top and bottom sides of the BC PCB mount.
   - Use a soldering iron to place them inside the plastic.
@@ -498,14 +304,14 @@ sidebar_position: 1
   - Use Washer 1 for the holes.
 
 ![](assets/images/step7_3.png)
----
+
 ### Step 8. Install the Battery Sliders
 - Parts needed:
   - Step 7 chassis
-  - 2211, 2212 (Battery Sliders)
-  - Insert 2 x8 (M4 Threaded Inserts)
-  - Screw 9 x8 (Socket Head Screw M4x8)
-  - Washer 2 x8 (M4 General Purpose Washer, OD: 9 mm)
+  - Part 16 (Battery Sliders)
+  - Insert 2 x8
+  - Screw 9 x8
+  - Washer 2 x8
 
 - Place Insert 2 to the holes shown in the picture on both of the battery slides.
   - Use a soldering iron to place them inside the plastic.
@@ -520,21 +326,20 @@ sidebar_position: 1
 |Orientation|Installation Holes|
 |--|--|
 |![](assets/images/step8_2.png)| ![](assets/images/step8_3.png) |
----
+
 ### Step 9. Install the Landing Gear
 - Parts needed:
   - Step 8 chassis
-  - 131X, 132X (Landing Gear Horizontal & Vertical Tubes)
-  - 133X (Landing Gear Main Adapters)
-  - 134X (Landing Gear Tube Joints)
-  - Screw 2 x16 (Flanged Button Head Screw M4x10)
-  - Screw 3 x24 (Socket Head Screw M3x16)
-  - Washer 1 x56 (M3 General Purpose Washer, OD: 6 mm)
-  - Nut 1 x28 (Nylon-Insert Locknut M3)
-  - Screw 6 x4 (Socket Head Screw M3x40)
-
+  - Part 11, 12 (Landing Gear Horizontal & Vertical Tubes)
+  - Part 13 (Landing Gear Main Adapters)
+  - Part 15 (Landing Gear Tube Joints)
+  - Screw 2 x16
+  - Screw 3 x24
+  - Washer 1 x56
+  - Nut 1 x28
+  - Screw 6 x4
 - Place the landing gear main adapters below the chassis, as shown in the picture.
-  -  The adapters are facing outward, to the left and right of the structure.
+  -  The adapters are facing outside to the left and right of the structure.
   -  Screw the adapters with 16x Screw 2 to the chassis.
   -  Use Loctite Threadlocker to secure the screws.
 
@@ -569,7 +374,7 @@ sidebar_position: 1
 |--|--|
 |![](assets/images/step9_5.png)| ![](assets/images/step9_4.png) |
 
----
+
 ### Step 10. Install Side Attachment Interfaces
 - Parts needed:
   - Step 9 chassis
@@ -589,8 +394,7 @@ sidebar_position: 1
 |Positioning|Installation Holes|
 |--|--|
 |![](assets/images/step10_1.png)| ![](assets/images/step10_2.png) |
-
----
+  
 ### Step 11. Install Cockpit Enclosure
 - Parts needed:
   - Step 10 chassis
