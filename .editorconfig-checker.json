@@ -1,0 +1,23 @@
+{
+    "Exclude": [
+        "flight-test",
+        "\\.BIN$",
+        "\\.bin$",
+        "\\.step$",
+        "\\.STEP$",
+        "\\.csv$",
+        "\\.kicad_sch$",
+        "\\.kicad_pcb$",
+        "\\.kicad_prl$",
+        "\\.kicad_pro$",
+        "\\.net$",
+        "\\.ipc$",
+        "\\.param$",
+        "\\.gbrjob$",
+        "\\.lck$",
+        "fp-info-cache$",
+        "KiCAD-Files/.*\\.tmp$",
+        "KiCAD-Files/.*\\.html$",
+        "KiCAD-Files/.*\\.ini$"
+    ]
+}

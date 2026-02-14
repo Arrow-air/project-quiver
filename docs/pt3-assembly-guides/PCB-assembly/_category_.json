@@ -1,0 +1,9 @@
+{
+  "label": "PCB Assembly",
+  "position": 2,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Assembly guides for Project Quiver PT3 PCBs."
+  }
+}
