@@ -402,7 +402,7 @@
 |Orientation|Screw Holes|
 |--|--|
 |![](assets/images/step3_1.png)| ![](assets/images/step3_2.png) |
---
+---
 ### Step 4. Install the Lower Plate
 - Parts needed:
   - Step 3 chassis
@@ -416,7 +416,7 @@
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
 |![](assets/images/step4_1.png)| ![](assets/images/step4_3.png) | ![](assets/images/step4_2.png) |
-
+---
 ### Step 5. Install the Upper Plate
 - Parts needed:
   - Step 4 chassis
@@ -436,7 +436,7 @@
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
 |![](assets/images/step5_1.png)| ![](assets/images/step5_3.png) | ![](assets/images/step5_2.png) |
-
+---
 ### Step 6. Install the Main PCB Mount
 - Parts needed:
   - Step 5 chassis
@@ -464,15 +464,15 @@
 |---|---|
 | ![](assets/images/step6_5.png)| ![](assets/images/step6_3.png)|
 
-- Apply a small amount of Loctite Threadlocker to the threads of the 5x M3x6 flat head screws.
+- Apply a small amount of Loctite Threadlocker to the threads of the 5x Screw 11 (M3x6) flat head screws.
 - Align the 3D-printed mount over the rubber dampeners.
-- Insert the M3x6 screws through the center of the rubber dampeners and thread them into the bottom-side inserts of the PCB holder.
+- Insert the Screw 11 (M3x6) screws through the center of the rubber dampeners and thread them into the bottom-side inserts of the PCB holder.
 - **Compression:** Tighten the screws until the rubber dampener is compressed to a height of approximately **2.0 mm**. Refer to the visual guide below.
 
 | Vibration Mount Compression|
 |---|
 | ![](assets/images/step6_4.png)|
-
+---
 ### Step 7. Install the Battery Connector PCB Mount
 - Parts needed:
   - Step 6 chassis
@@ -493,7 +493,7 @@
   - Use Washer 1 for the holes.
 
 ![](assets/images/step7_3.png)
-
+---
 ### Step 8. Install the Battery Sliders
 - Parts needed:
   - Step 7 chassis
@@ -515,7 +515,7 @@
 |Orientation|Installation Holes|
 |--|--|
 |![](assets/images/step8_2.png)| ![](assets/images/step8_3.png) |
-
+---
 ### Step 9. Install the Landing Gear
 - Parts needed:
   - Step 8 chassis
@@ -527,8 +527,9 @@
   - Washer 1 x56 (M3 General Purpose Washer, OD: 6 mm)
   - Nut 1 x28 (Nylon-Insert Locknut M3)
   - Screw 6 x4 (Socket Head Screw M3x40)
+
 - Place the landing gear main adapters below the chassis, as shown in the picture.
-  -  The adapters are facing outside to the left and right of the structure.
+  -  The adapters are facing outward, to the left and right of the structure.
   -  Screw the adapters with 16x Screw 2 to the chassis.
   -  Use Loctite Threadlocker to secure the screws.
 
@@ -563,7 +564,7 @@
 |--|--|
 |![](assets/images/step9_5.png)| ![](assets/images/step9_4.png) |
 
-
+---
 ### Step 10. Install Side Attachment Interfaces
 - Parts needed:
   - Step 9 chassis
@@ -583,7 +584,8 @@
 |Positioning|Installation Holes|
 |--|--|
 |![](assets/images/step10_1.png)| ![](assets/images/step10_2.png) |
-  
+
+---
 ### Step 11. Install Cockpit Enclosure
 - Parts needed:
   - Step 10 chassis
