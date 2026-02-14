@@ -420,19 +420,16 @@
 ### Step 5. Install the Upper Plate
 - Parts needed:
   - Step 4 chassis
-  - 
-  - Rivet 1 x13
-  - Screw 1 x24
-  - Washer 1 x24
-  - Screw 11 x5
-  - Vibration Mount x5
-  - Insert 4 x16
+  - 1111 (Upper Plate)
+  - Rivet 1 x13 (4mm Diameter for 2mm Thickness)
+  - Screw 5 x24 (Socket Head Screw M3x8)
+  - Washer 1 x24 (M3 General Purpose Washer, OD: 6 mm)
 
 - Place the upper plate over the chassis as shown to the picture.
 - Apply adhesive on the cockpit support beams around the holes on the contact side.
 - Rivet the cockpit support beams from the upper plate on the holes shown in the picture.
   - Make sure you rivet before the adhesive dries.
-- Screw the motor arm connecters from the upper plate with Screw 1.
+- Screw the motor arm connecters from the upper plate with Screw 5.
   - Use Washer 1.
   - Use Loctite Threadlocker.
 
@@ -443,39 +440,46 @@
 ### Step 6. Install the Main PCB Mount
 - Parts needed:
   - Step 5 chassis
-  - Part 26 (Main PCB Mount)
-  - Insert 1 x12
-  - Insert 3 x8
-  - Screw 5 x20
-  - Washer 1 x20
+  - 2311 (Main PCB Mount)
+  - Screw 11 x5 (Flanged Button Head Hex-Drive Screw M3x6)
+  - Vibration Mount x5 (M3 Rubber Anti-Vibration Spacer)
+  - Insert 4 x16 (M3 Threaded Inserts, 3.8 mm)
 
-- Place Insert 1 to the holes shown in the picture, on the top and bottom sides of the main PCB mount.
-  - Use a soldering iron to place them inside the plastic.
+- Install 11x Insert 4 into the top face of the Main PCB Mount as shown in the picture.
 
-|Top|Bottom|
-|--|--|
-|![](assets/images/step6_1.png)| ![](assets/images/step6_2.png) |
+| Top Insert Locations|
+|---|
+| ![](assets/images/step6_1.png)|
 
-- Place Insert 3 to the holes shown in the picture, on the top side of the main PCB mount.
-  - Use a soldering iron to place them inside the plastic.
+- Install 5x Insert 4 into the bottom face of the Main PCB Mount (2311) as shown in the picture.
 
-|Top|
-|--|
-|![](assets/images/step6_4.png)|
+| Bottom Insert Locations|
+|---|
+| ![](assets/images/step6_2.png)|
 
-- Place the main PCB mount over the upper plate.
-  - Secure it with 5x Screw 5 in total from below the upper plate on the holes below.
-  - Use Washer 1 for the holes.
+- Install 5x Vibration Mount into the designated holes on the Upper Plate (1111).
+- Orientation: Ensure the longer side of the rubber dampener (3 mm section) is facing upwards, towards where the 3D-printed holder will sit.
 
-![](assets/images/step6_3.png)
+| Vibration Mount Locations| Vibration Mount Insertion |
+|---|---|
+| ![](assets/images/step6_5.png)| ![](assets/images/step6_3.png)|
+
+- Apply a small amount of Loctite Threadlocker to the threads of the 5x M3x6 flat head screws.
+- Align the 3D-printed mount over the rubber dampeners.
+- Insert the M3x6 screws through the center of the rubber dampeners and thread them into the bottom-side inserts of the PCB holder.
+- **Compression:** Tighten the screws until the rubber dampener is compressed to a height of approximately **2.0 mm**. Refer to the visual guide below.
+
+| Vibration Mount Compression|
+|---|
+| ![](assets/images/step6_4.png)|
 
 ### Step 7. Install the Battery Connector PCB Mount
 - Parts needed:
   - Step 6 chassis
-  - Part 30 (BC PCB Mount)
-  - Insert 1 x10
-  - Screw 5 x3
-  - Washer 1 x3
+  - 2312 (BC PCB Mount)
+  - Insert 1 x10 (M3 Threaded Inserts, 6.4 mm)
+  - Screw 5 x3 (Socket Head Screw M3x8)
+  - Washer 1 x3 (M3 General Purpose Washer, OD: 6 mm)
 
 - Place Insert 1 to the holes shown in the picture, on the top and bottom sides of the BC PCB mount.
   - Use a soldering iron to place them inside the plastic.
@@ -493,10 +497,10 @@
 ### Step 8. Install the Battery Sliders
 - Parts needed:
   - Step 7 chassis
-  - Part 16 (Battery Sliders)
-  - Insert 2 x8
-  - Screw 9 x8
-  - Washer 2 x8
+  - 2211, 2212 (Battery Sliders)
+  - Insert 2 x8 (M4 Threaded Inserts)
+  - Screw 9 x8 (Socket Head Screw M4x8)
+  - Washer 2 x8 (M4 General Purpose Washer, OD: 9 mm)
 
 - Place Insert 2 to the holes shown in the picture on both of the battery slides.
   - Use a soldering iron to place them inside the plastic.
@@ -515,14 +519,14 @@
 ### Step 9. Install the Landing Gear
 - Parts needed:
   - Step 8 chassis
-  - Part 11, 12 (Landing Gear Horizontal & Vertical Tubes)
-  - Part 13 (Landing Gear Main Adapters)
-  - Part 15 (Landing Gear Tube Joints)
-  - Screw 2 x16
-  - Screw 3 x24
-  - Washer 1 x56
-  - Nut 1 x28
-  - Screw 6 x4
+  - 131X, 132X (Landing Gear Horizontal & Vertical Tubes)
+  - 133X (Landing Gear Main Adapters)
+  - 134X (Landing Gear Tube Joints)
+  - Screw 2 x16 (Flanged Button Head Screw M4x10)
+  - Screw 3 x24 (Socket Head Screw M3x16)
+  - Washer 1 x56 (M3 General Purpose Washer, OD: 6 mm)
+  - Nut 1 x28 (Nylon-Insert Locknut M3)
+  - Screw 6 x4 (Socket Head Screw M3x40)
 - Place the landing gear main adapters below the chassis, as shown in the picture.
   -  The adapters are facing outside to the left and right of the structure.
   -  Screw the adapters with 16x Screw 2 to the chassis.
