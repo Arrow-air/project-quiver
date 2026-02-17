@@ -40,7 +40,7 @@
 
 
 ### Table 2. Fasteners
-|	Fastener ID	|	Fastener Description	|	Quantity	|	McMaster-Carr Reference	|
+|	Fastener ID	|	Fastener Description	|	Quantity	|	Reference Part	|
 |	--	|	--	|	--	|	--	|
 |	 Rivet 1	|	4mm Diameter for 1 mm - 2.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A224/)	|
 |	 Rivet 2	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A251)	|
@@ -56,14 +56,27 @@
 |	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91292A108)	|
 |	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/92125A138/)	|
 | Screw 11  | Flanged Button Head Hex-Drive Screw M3x6   | 5 | [97654A674](https://www.mcmaster.com/products/97654a674/) |
+| Screw 12  | Socket Head Hex-Drive Screw M2x5   | 8 | [92855A837](https://www.mcmaster.com/92855A837/) |
+| Screw 13  | Socket Head Hex-Drive Screw M2.5x8   | 4 | [91292A012](https://www.mcmaster.com/91292A012/) |
+| Screw 14  | Socket Head Hex-Drive Screw M2x10   | 4 | [91292A833](https://www.mcmaster.com/91292A833/) |
+| Screw 15  | Socket Head Hex-Drive Screw M5x8   | 4 | [91292A191](https://www.mcmaster.com/91292A191) |
 |	Insert 1	|	M3 Threaded Inserts - 6.4 mm	|	42	|	[97163A161](https://www.mcmaster.com/97163A161)	|
 |	Insert 2	|	M4 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
 |	Insert 3	|	M2.5 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
 | Insert 4  | M3 Threaded Inserts - 3.8 mm | 16 | [94180A331](https://www.mcmaster.com/94180A331)
-|	Washer 1	|	General Purpose Washer 3.2 mm ID, 6 mm OD	|	158	|	[98689A112](https://www.mcmaster.com/98689A112)	|
-|	 Washer 2	|	General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
+|	Washer 1	|	M3 General Purpose Washer 3.2 mm ID, 6 mm OD	|	158	|	[98689A112](https://www.mcmaster.com/98689A112)	|
+|	 Washer 2	|	M4 General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
+|	 Washer 3	|	M2 MNylon Washer 2.2 mm ID, 5 mm OD	|	8	|	[95610A110](https://www.mcmaster.com/95610A110)	|
+|	 Washer 4	|	M2.5 Nylon Washer 2.7 mm ID, 5.6 mm OD	|	4	|	[95610A011](https://www.mcmaster.com/95610A011/)	|
+|	 Washer 5	|	M3 Nylon Washer 3.2 mm ID, 6 mm OD	|	4	|	[95610A704](https://www.mcmaster.com/95610A704/)	|
+|	 Washer 6	|	M5 General Purpose Washer 5.3 mm ID, 10 mm OD	|	4	|	[93475A240](https://www.mcmaster.com/93475A240/)	|
+
+https://www.mcmaster.com/93475A240/
 |	 Nut 1	|	Nylon-Insert Locknut M3	|	39	|	[90576A811](https://www.mcmaster.com/90576A811)	|
-| Vibration Mount | Stretchy Soft M3 Rubber Anti-Vibration Spacer | 5 | [Amazon](https://www.amazon.com/iRCMATRC-Stretchy-Anti-Vibration-Controllers-Accessories/dp/B09KCGKX1F?th=1) | 
+| Vibration Mount | M3 Rubber Anti-Vibration Spacer | 5 | [Amazon](https://www.amazon.com/iRCMATRC-Stretchy-Anti-Vibration-Controllers-Accessories/dp/B09KCGKX1F?th=1) | 
+| Grommet 1| Circular Grommet OD: 30 mm | 12 | [Amazon](https://amzn.eu/d/06VwAZfb)
+| Grommet 2| Oval Grommet 27x13 mm | 4 | [Amazon](https://amzn.eu/d/06VwAZfb)
+
 
 -------
 
@@ -337,6 +350,7 @@
   - Wrench set
   - Cordless screwdriver or drill press
   - Riveting tool
+  - Loctite Threadlocker Red 222
   - Loctite Threadlocker Blue 242
   - Adhesive: Loctite Superflex Silicon Sealant Model 593, 6.4 fl. oz.
   - A cleaning agent to prepare the surfaces before adhesive
@@ -363,7 +377,6 @@
 
 ### Step 2. Install the Battery Walls
 - Parts needed:
-  - Step 1 chassis
   - 1221 & 1222 (Battery Walls)
   - Rivet 2 x10 (4mm Diameter for 3mm Thickness)
 - Apply adhesive on the battery walls around the holes on the contact side.
@@ -379,13 +392,12 @@
 
 ### Step 3. Install the Motor Arm Connectors
 - Parts needed:
-  - Step 2 chassis
   - 14X1 x4 (Foldable Motor Arm Connectors)
   - Screw 5 x16 (Socket Head Screw M3x8)
   - Screw 1 x8 (Socket Head Screw M3x10)
   - Washer 1 x24 (M3 General Purpose Washer, OD: 6 mm)
 - Remove the fasteners marked in the picture.
-  - Apply Loctite Threadlocker on the fasteners.
+  - Apply Loctite Threadlocker Blue on the fasteners.
   - Secure the fasteners back.
 
 | Motor Arm Connector - Loctite Threadlocker Application|
@@ -395,7 +407,7 @@
 - Place the motor arm connectors on the chassis as shown in the picture.
 - Secure the motor arm connectors on the chassis.
   - Use **Screw 5** for **red holes** and **Screw 1** for **green holes**.
-  - Use Loctite Threadlocker.
+  - Use Loctite Threadlocker Blue.
   - Use Washer 1.
   - Use cordless screwdriver where possible, or else an allen key.
  
@@ -405,7 +417,6 @@
 ---
 ### Step 4. Install the Lower Plate
 - Parts needed:
-  - Step 3 chassis
   - 1113 (Lower Plate)
   - Rivet 3 x10 (4mm Diameter for 6mm Thickness)
 - Place the lower plate on the chassis as shown to the picture.
@@ -419,7 +430,6 @@
 ---
 ### Step 5. Install the Upper Plate
 - Parts needed:
-  - Step 4 chassis
   - 1111 (Upper Plate)
   - Rivet 1 x13 (4mm Diameter for 2mm Thickness)
   - Screw 5 x24 (Socket Head Screw M3x8)
@@ -431,7 +441,7 @@
   - Make sure you rivet before the adhesive dries.
 - Screw the motor arm connecters from the upper plate with Screw 5.
   - Use Washer 1.
-  - Use Loctite Threadlocker.
+  - Use Loctite Threadlocker Blue.
 
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
@@ -439,7 +449,6 @@
 ---
 ### Step 6. Install the Main PCB Mount
 - Parts needed:
-  - Step 5 chassis
   - 2311 (Main PCB Mount)
   - Screw 11 x5 (Flanged Button Head Hex-Drive Screw M3x6)
   - Vibration Mount x5 (M3 Rubber Anti-Vibration Spacer)
@@ -464,7 +473,7 @@
 |---|---|
 | ![](assets/images/step6_5.png)| ![](assets/images/step6_3.png)|
 
-- Apply a small amount of Loctite Threadlocker to the threads of the 5x Screw 11 (M3x6) flat head screws.
+- Apply a small amount of Loctite Threadlocker Blue to the threads of the 5x Screw 11 (M3x6) flat head screws.
 - Align the 3D-printed mount over the rubber dampeners.
 - Insert the Screw 11 (M3x6) screws through the center of the rubber dampeners and thread them into the bottom-side inserts of the PCB holder.
 - **Compression:** Tighten the screws until the rubber dampener is compressed to a height of approximately **2.0 mm**. Refer to the visual guide below.
@@ -475,7 +484,6 @@
 ---
 ### Step 7. Install the Battery Connector PCB Mount
 - Parts needed:
-  - Step 6 chassis
   - 2312 (BC PCB Mount)
   - Insert 1 x10 (M3 Threaded Inserts, 6.4 mm)
   - Screw 5 x3 (Socket Head Screw M3x8)
@@ -496,7 +504,6 @@
 ---
 ### Step 8. Install the Battery Sliders
 - Parts needed:
-  - Step 7 chassis
   - 2211, 2212 (Battery Sliders)
   - Insert 2 x8 (M4 Threaded Inserts)
   - Screw 9 x8 (Socket Head Screw M4x8)
@@ -518,10 +525,10 @@
 ---
 ### Step 9. Install the Landing Gear
 - Parts needed:
-  - Step 8 chassis
   - 131X, 132X (Landing Gear Horizontal & Vertical Tubes)
   - 133X (Landing Gear Main Adapters)
   - 134X (Landing Gear Tube Joints)
+  - 135x (Landing Gear Foam) 
   - Screw 2 x16 (Flanged Button Head Screw M4x10)
   - Screw 3 x24 (Socket Head Screw M3x16)
   - Washer 1 x56 (M3 General Purpose Washer, OD: 6 mm)
@@ -531,7 +538,7 @@
 - Place the landing gear main adapters below the chassis, as shown in the picture.
   -  The adapters are facing outward, to the left and right of the structure.
   -  Screw the adapters with 16x Screw 2 to the chassis.
-  -  Use Loctite Threadlocker to secure the screws.
+  -  Use Loctite Threadlocker Blue to secure the screws.
 
 |Orientation|Installation Holes|
 |--|--|
@@ -540,50 +547,227 @@
 - Insert the vertical landing gear tubes inside landing gear main adapters.
   - Make sure the tubes are inserted all the way.
   - Tighten the clamps with the screws provided in the landing gear main adapter package.
-  - Use Loctite Threadlocker to secure the screws.
+  - Use Loctite Threadlocker Blue to secure the screws.
 
-![](assets/images/step9_3.png)
+|Landing Gear Adapter|
+|---|
+|![](assets/images/step9_3.png)|
 
 - Make sure the chassis stands level on the ground.
   -  If not, measure and equalize the tube lengths.
   
-- Drill the tubes with 3 mm drill bit on the marked holes.
-  - Use Screw 6.
-  - Use Washer 1 on each side.
-  - Use Nut 1.
-
- ![](assets/images/step9_7.png)
-
 - Assemble landing gear tube joints and the horizontal tubes as shown in the picture.
   - Insert the vertical tubes inside the holes before tightening the screws.
   - Use Screw 3.
   - Use Washer 1 on each side.
   - Use Nut 1.
 
-|Positioning|Installation Holes|
+|Positioning|Installation Holes|Correct Final Appearance |
+|--|--|--|
+|![](assets/images/step9_5.png)| ![](assets/images/step9_4.png) | ![](assets/images/step9_6.png) |
+
+
+### Step 10. Install Sensor Mount
+- Parts needed:
+  - 2321 (Sensor Mount)
+  - Insert 1 x2 (M3 Threaded Inserts, 6.4 mm)
+  - Insert 4 x8 (M3 Threaded Inserts, 3.8 mm)
+  - Screw 4 x4 (Socket Head Screw M3x12)
+  - Screw 5 x2 (Socket Head Screw M3x8)
+  - Washer 1 x6 (M3 General Purpose Washer, OD: 6 mm)
+  - Nut 1 x4 (Nylon-Insert Locknut M3)
+
+- Place Insert 1 to the holes shown in the picture.
+  - Use a soldering iron to place them inside the plastic.
+  - 2 in total.
+
+|Insert 1 (6.4 mm) Locations|
+|---|
+|![](assets/images/step10_1.png)|
+
+- Place Insert 4 to the holes shown in the picture.
+  - Use a soldering iron to place them inside the plastic.
+  - 8 in total.
+
+|Insert 4 (3.8 mm) Locations|
+|---|
+|![](assets/images/step10_2.png)|
+
+- Secure the sensor mount on the lower plate.
+  - Screw head stays inside the mount.
+  - Use Screw 4.
+  - Use Washer 1 on the nut side.
+  - Use Nut 1.
+  - DO NOT use Loctite Threadlocker.
+
+|Lower Plate Fasteners|
+|---|
+|![](assets/images/step10_3.png)|
+
+- Secure the sensor mount on the battery walls.
+  - Use Screw 5.
+  - Use Washer 1.
+  - DO NOT use Loctite Threadlocker.
+
+|Battery Wall Fasteners|
+|---|
+|![](assets/images/step10_4.png)|
+---
+
+### Step 11. Insert Grommets
+- Parts needed:
+  - Grommet 1 x4 (Circular OD: 30 mm)
+  - Grommet 2 x12 (Oval 27x13 mm)
+
+- Insert 4x Grommet 1 into the holes over the motor arm connectors at each corner.
+
+|Grommet 1 Location|
+|---|
+|![](assets/images/step11_1.png)|
+
+- Insert 12x Grommet 2 into the holes on the sides of upper, mid and lower plates on each side.
+
+|Grommet 2 Location|
+|---|
+|![](assets/images/step11_2.png)|
+
+### Step 12. Install PCBs & Onboard Components
+- Parts needed:
+  - 2331 (GNSS Mount)
+  - 3311 (Main PCB)
+  - 3321 (BC PCB)
+  - 3331 (FC PCB)
+  - 3332 (Flight Controller)
+  - 3312 (RPI 5)
+  - 3313 x2 (GigaBlox Nano Ethernet Switch)
+  - 3315 (Mateksys GNSS M9N-G4-3100)
+  - 3251 (RTK GNSS)
+  - Screw 4 x4 (Socket Head Hex-Drive Screw M3x12)
+  - Screw 11 x14 (Flanged Button Head Hex-Drive Screw M3x6)
+  - Screw 12 x4 (Socket Head Hex-Drive Screw M2x5)
+  - Screw 13 x4 (Socket Head Hex-Drive Screw M2.5x8)
+  - Screw 14 x4 (Socket Head Hex-Drive Screw M2x10)
+  - Washer 3 x12 (M2 Nylon)
+  - Washer 4 x4 (M2.5 Nylon)
+  - Washer 5 x4 (M3 Nylon)
+
+- Place the Battery Connector PCB as shown in the picture.
+  - Apply Thermal Paste to the Heatsink.
+  - Secure it with 3x Screw 11.
+
+|BC PCB & Bolt Locations|
+|---|
+|![](assets/images/step12_1.png)|
+
+- Place the Main PCB as shown in the picture.
+  - Secure it with 7x Screw 11.
+
+|Main PCB & Bolt Locations|
+|---|
+|![](assets/images/step12_2.png)|
+
+- Place Ethernet Switches on the Main PCB slots, as shown in the picture.
+  - Securely plug the connectors.
+  - Use 4x Screw 12 and 4x Washer 3 on the bolt holes.
+    - Use Loctite Threadlocker Red.
+ 
+|Ethernet Switch Locations|
+|--|
+|![](assets/images/step12_8.png)|
+
+- Place the Flight Controller on the FC PCB.
+  - Pay extreme attention to the orientation shown in the images.
+  - Make sure the connectors are securely connected.
+  - Use 4x Screw 12 and 4x Washer 3 from under the PCB to secure the Flight Controller.
+    - Use Loctite Threadlocker Red.
+ 
+|FC & FC PCB Orientation ||
 |--|--|
-|![](assets/images/step9_5.png)| ![](assets/images/step9_4.png) |
+|![](assets/images/step12_4.png)|![](assets/images/step12_3.png)|
+
+- Place F9P NEO RTK GNSS on the GNSS Mount.
+  - The direction of the arrow on the RTK GNSS should match the one provided in the picture.
+  - Secure it with Screw 14 and Washer 3 under the mount.
+    - Use Loctite Threadlocker Red.
+
+|GNSS Orientation|
+|--|
+|![](assets/images/step12_10.png)|
+
+- Place the FC PCB into the GNSS Mount.
+- Place the FC PCB and GNSS Mount on the Main PCB.
+  - The arrow on the Flight Controller must point toward the front of the drone, i.e., opposite to the side where the BC PCB is located.
+  - The arrow on the RTK GNSS must point toward the front of the drone, i.e., opposite to the side where the BC PCB is located.
+- Secure the FC PCB on the Main PCB using the holes shown in the image.
+  - Use 4x Screw 4 and 4x Washer 5.
+    - DO NOT USE Loctite Threadlocker.
+
+|Flight Controller Orientation | GNSS Mount Orientation | Installation Holes |
+|--|--|--|
+|![](assets/images/step12_5.png)| ![](assets/images/step12_6.png) | ![](assets/images/step12_7.png) 
+
+- Place RPI 5 on the Main PCB slot, as shown in the picture.
+  - Securely plug the connectors.
+  - Use 4x Screw 13 and 4x Washer 4 on the bolt holes.
+ 
+|RPI 5 Installation|
+|--|
+|![](assets/images/step12_9.png)|
+
+- Place Mateksys GNSS on the Main PCB slot, as shown in the picture.
+  - Securely plug the connectors.
+  - Use 4x Screw 11.
+    - Use Loctite Threadlocker Blue.
+ 
+|Mateksys GNSS Installation|
+|--|
+|![](assets/images/step12_11.png)|
+
+
+---
+### Step 13. Install Busbars
+- Parts needed:
+  - 3322 (Busbar Positive)
+  - 3323 (Busbar Negative)
+  - Screw 15 x4 (Socket Head Hex-Drive Screw M5x8)
+  - Washer 6 x4 (M5 General Purpose Washer, OD: 10 mm)
+
+- Place the Busbar Positive (Right) and Busbar Negative (Left) on the Main and BC PCBs as shown in the picture.
+  - Use Loctite Threadlocker on the threads of 4x Screw 15.
+  - Secure the busbars on the terminals with Screw 15 and Washer 6.
+
+|Busbar Installation|
+|--|
+|![](assets/images/step13_1.png)|
+  
+---
+### Step 14. Install BC PCB Cover
+- Parts needed:
+  - 2313 (BC PCB Cover)
+  - 
+
+
 
 ---
 ### Step 10. Install Side Attachment Interfaces
 - Parts needed:
   - Step 9 chassis
-  - Part 21, 22 (Side Attachment Interface Spacers)
-  - Part 31 (Attachment Interfaces)
-  - Screw 6 x8
-  - Washer 1 x8
+  - 2111, 2121 (Side Attachment Interface Spacers)
+  - 2112, 2122 (Attachment Interfaces)
+  - Screw 6 x8 (Socket Head Screw M3x40)
+  - Washer 1 x8 (M3 General Purpose Washer, OD: 6 mm)
 
 - Place and secure side attachment interfaces and the spacers as shown in the pictures.
   - Make sure the rectangular holes are aligned with the holes on the battery walls.
   - Use the screwdriver holes inside the battery compartment to place the screws and the screwdriver.
   - Use Screw 6.
   - Use Washer 1.
-  - Use Loctite Threadlocker.
-
+  - Use Loctite Threadlocker Blue.
 
 |Positioning|Installation Holes|
 |--|--|
 |![](assets/images/step10_1.png)| ![](assets/images/step10_2.png) |
+
 
 ---
 ### Step 11. Install Cockpit Enclosure
@@ -632,7 +816,7 @@
 
 ![](assets/images/step11_5.png)
 
-### Step 12. Install Altitude Sensor Mount
+### Step 12. Install Sensor Mount
 - Parts needed:
   - Step 11 chassis
   - Part 18 (Altitude Sensor Mount)
@@ -682,7 +866,7 @@
 - Insert the motor arm tubes inside the motor arm connectors.
   - Make sure the tubes are inserted all the way.
   - Tighten the clamps with the screws provided in the motor arm connector package.
-  - Use Loctite Threadlocker to secure the screws.
+  - Use Loctite Threadlocker Blue to secure the screws.
 
 ![](assets/images/step14_1.png)
 
