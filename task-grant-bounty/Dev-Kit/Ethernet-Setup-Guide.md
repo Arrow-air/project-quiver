@@ -239,7 +239,7 @@ Turn off DHCP on Drone-Net:
 
     sudo nmcli con modify "Drone-Net" ipv4.method manual
     
-We do not set a gateway for this connection. That will result in only traffic for 192.168.144.X will go over this connection. Evertything else will go over WIFI or 4G/5G.
+We do not set a gateway for this connection. That will result in only traffic for 192.168.144.X will go over this connection. Everything else will go over WIFI or 4G/5G.
 
 Start the connection:
 
@@ -262,7 +262,7 @@ Do a ping test to the FC:
     ping 192.168.144.11
     
 :::info
-We will stop here with the ethernet configuration. If you want to connect to the FC over WIFI, there are severall options. I choose to use tailscale to include my computer into the "Drone-Net" network. Then you can just use the TCP connect option in missionplanner with 192.168.144.11 and port 5760.
+We will stop here with the ethernet configuration. If you want to connect to the FC over WIFI, there are several options. I choose to use tailscale to include my computer into the "Drone-Net" network. Then you can just use the TCP connect option in mission planner with 192.168.144.11 and port 5760.
 :::
 
 ## 6. Tattu battery protocol bridge setup
@@ -275,7 +275,7 @@ Create the project folder:
 
     mkdir -p ~/tattu_can_bridge
     
-Create the virtual enviroment (venv) in your home directory:
+Create the virtual environment (venv) in your home directory:
 
     python3 -m venv ~/venv
     

@@ -450,3 +450,11 @@ Imager
 autoremove
 Ruthex
 autotest
+nmcli
+ifname
+inet 
+tailscale 
+venv
+oneshot 
+txqueuelen
+PYTHONBUFFERED 
