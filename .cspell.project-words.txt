@@ -442,3 +442,11 @@ subfolders
 tessellator
 Topo
 HORIZ
+kbit
+Mbit
+GWADDR
+IPADDR
+Imager
+autoremove
+Ruthex
+autotest

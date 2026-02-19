@@ -15,7 +15,7 @@ This document outlines the setup for the DroneCAN Ethernet Adapter (CubeNode ETH
 
 ### 1.1 Network Topology
 :::info
-This configuration is for testing. Some IP addressses might change in the final configuration.
+This configuration is for testing. Some IP addresses might change in the final configuration.
 :::
 
 Drone Subnet: 192.168.144.x
@@ -121,7 +121,7 @@ With these parameters the CubeNode ETH adapter should appear on the CAN bus. Its
 
 #### CubeNode ETH parameters
 
-We will now set the CubeNode ETH parameters. In the DroneCAN/UAVCAN screen connect to MAVLinkCAN1 or MAVLinkCAN2, depending on the CAN connection of the CubeNode ETH adpater.
+We will now set the CubeNode ETH parameters. In the DroneCAN/UAVCAN screen connect to MAVLinkCAN1 or MAVLinkCAN2, depending on the CAN connection of the CubeNode ETH adapter.
 
 Press the “Menu” button on the right side and select “Parameters”
 
@@ -147,7 +147,7 @@ Set the following parameters and press the “Write” button
     
     NET_P1_TYPE = 0
     
-With this configuration the CubeNode ETH adapter will have the static IP: 192.168.144.10. The FC will automaticly receive the IP 192.168.144.11 from the adapter.
+With this configuration the CubeNode ETH adapter will have the static IP: 192.168.144.10. The FC will automatically receive the IP 192.168.144.11 from the adapter.
 
 :::info
 Here you can also change the CAN bitrate of the CubeNode ETH adapter. Adjust "CAN_BAUDRATE" to 500000 if you want to also use the Nanoradar devices on CAN2. Do not forget to change "CAN_P2_BITRATE" also to 500000 again after you saved CubeNode ETH parameters.
@@ -180,9 +180,9 @@ It offers some features that will make a headless setup really easy.
 5. Choose your SD card
 6. Choose your hostname (for example "quiver")
 7. Choose your timezone and keyboard layout
-8. Choose your user with passwort
+8. Choose your user with password
 9. Insert your WIFI credentials (its important you do this so you don't have to connect a monitor to the PI)
-10. Activate SSH, select use passwort
+10. Activate SSH, select use password
 11. In the next screen you can choose if you want to use RPI connect. I disabled it.
 12. Double check your selected properties
 13. Write the Image to the SD card
@@ -289,7 +289,7 @@ Over SFTP place the tattu_bridge.py script into the project folder (home/USER/ta
 
 Discord link to file: https://discord.com/channels/853833144037277726/914195759216336947/1443547529374597121
 
-Create service to automaticly start can interface on startup:
+Create service to automatically start can interface on startup:
 
     sudo nano /etc/systemd/system/can-setup.service
     
@@ -316,7 +316,7 @@ Activate the service:
     sudo systemctl daemon-reload
     sudo systemctl enable can-setup
     
-Create service to automaticly start the tattu bridge on startup:
+Create service to automatically start the tattu bridge on startup:
 
     sudo nano /etc/systemd/system/tattu-bridge.service
     
