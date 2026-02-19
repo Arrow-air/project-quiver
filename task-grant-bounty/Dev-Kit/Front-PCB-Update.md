@@ -15,7 +15,7 @@
 ## PCB Overview
 ![Front_PCB](https://hackmd.io/_uploads/rkSriftP-e.png)
 
-The Battery PCB was updated to include various changes that were noticed during the build and testing process. Most notablely, the power rating on various MOSFETs was increased and more protection diodes. 
+The Battery PCB was updated to include various changes that were noticed during the build and testing process. Most notably, the power rating on various MOSFETs was increased and more protection diodes. 
 
 # Methodology
 

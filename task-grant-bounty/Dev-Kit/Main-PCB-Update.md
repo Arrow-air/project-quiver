@@ -49,7 +49,7 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
     - HM30 Air Unit (J15 & J17)
     - Aux CAN connections (J18, J20, J22)
     - GNSS (J5 & J7)
-- Dedicatd 360° Lidar connector (U5) 
+- Dedicated 360° Lidar connector (U5) 
 - "Power Supply" sheet added to schematic for 5V and 12V supply
     - Capacitors C2, C9, C13, & C16 added to PS1
     - Capacitors C8, C10, C14, & C17 added to PS2
