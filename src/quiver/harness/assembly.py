@@ -17,34 +17,29 @@ from quiver.common import load_step
 _DIR = Path(__file__).parent
 
 # Z offset to place busbar bottoms on the BC PCB terminal lugs.
+# Raw busbar bottom Z=-16.48, lug top Z=17.53 (with BC PCB dZ=-4.30).
 _BUSBAR_DZ = 34.01
 
 def make_assembly() -> Compound | None:
     """Build the harness subassembly from imported STEP files."""
     children = []
 
-    # List of components to load
-    # Note: 4020_dev_kit often requires extract_solids=True if it contains 
-    # complex nested hierarchies from electrical CAD.
-    components = [
-        {"name": "4010_busbar_negative", "extract": False},
-        {"name": "4010_busbar_positive", "extract": False},
-        {"name": "4020_dev_kit", "extract": True}, 
-    ]
-
-    for comp in components:
-        name = comp["name"]
-        # Attempt to load the step file
-        part = load_step(_DIR, name, extract_solids=comp["extract"], min_solid_volume=0)
-        
+    # 1. Load Busbars (Standard loading)
+    for name in ["4010_busbar_negative", "4010_busbar_positive"]:
+        part = load_step(_DIR, name)
         if part:
-            print(f"✅ [Harness] Successfully loaded: {name}")
-            # Apply the vertical offset to align with PCB lugs
             part.move(Location((0, 0, _BUSBAR_DZ)))
             children.append(part)
-        else:
-            # This will print to your terminal if the file is missing or named incorrectly
-            print(f"❌ [Harness] ERROR: Could not find '{name}.step' in {_DIR}/steps/")
+
+    # 2. Load Dev Kit (Enhanced loading for complex electrical geometry)
+    # We use extract_solids=True to prevent 'face ignored' errors and 
+    # min_solid_volume=0 to ensure tiny connectors/pins are not deleted.
+    dev_kit = load_step(_DIR, "4020_dev_kit", extract_solids=True, min_solid_volume=0)
+    if dev_kit:
+        # Note: If the dev kit appears too high or buried, adjust this offset.
+        # It currently uses the same offset as the busbars.
+        dev_kit.move(Location((0, 0, _BUSBAR_DZ)))
+        children.append(dev_kit)
 
     if not children:
         return None
