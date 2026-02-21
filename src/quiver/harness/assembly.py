@@ -26,12 +26,19 @@ def make_assembly() -> Compound | None:
     """Build the harness subassembly from imported STEP files."""
     children = []
 
-    for name in ["4010_busbar_negative", "4010_busbar_positive", "4020_dev_kit"]:
-        part = load_step(_DIR, name)
-        if part:
-            part.move(Location((0, 0, _BUSBAR_DZ)))
-            children.append(part)
+for name in ["4010_busbar_negative", "4010_busbar_positive", "4020_dev_kit"]:
+    part = load_step(_DIR, name)
+    
+    # ADD THESE LINES HERE:
+    if part is None:
+        print(f"❌ FAILED TO LOAD: {name} - check the filename or path!")
+    else:
+        print(f"✅ SUCCESSFULLY LOADED: {name}")
 
+    if part:
+        part.move(Location((0, 0, _BUSBAR_DZ)))
+        children.append(part)
+        
     if not children:
         return None
     return Compound(children=children, label="Harness")
