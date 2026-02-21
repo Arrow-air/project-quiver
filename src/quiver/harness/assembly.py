@@ -26,7 +26,7 @@ def make_assembly() -> Compound | None:
     """Build the harness subassembly from imported STEP files."""
     children = []
 
-    for name in ["4010_busbar_negative", "4010_busbar_positive"]:
+    for name in ["4010_busbar_negative", "4010_busbar_positive", "Dev Kit with Mating Connectors_final"]:
         part = load_step(_DIR, name)
         if part:
             part.move(Location((0, 0, _BUSBAR_DZ)))
