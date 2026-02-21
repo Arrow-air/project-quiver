@@ -17,8 +17,8 @@ from quiver.common import load_step
 _DIR = Path(__file__).parent
 
 # Z offset to place busbar bottoms on the BC PCB terminal lugs.
-# Raw busbar bottom Z=-16.48, lug top Z=17.53 (with BC PCB dZ=-4.30).
-_BUSBAR_DZ = 34.01
+# Set to 0 for position debugging.
+_BUSBAR_DZ = 0
 
 def make_assembly() -> Compound | None:
     """Build the harness subassembly from imported STEP files."""
@@ -32,12 +32,10 @@ def make_assembly() -> Compound | None:
             children.append(part)
 
     # 2. Load Dev Kit (Enhanced loading for complex electrical geometry)
-    # We use extract_solids=True to prevent 'face ignored' errors and 
-    # min_solid_volume=0 to ensure tiny connectors/pins are not deleted.
+    # extract_solids=True prevents the 'face ignored' errors by flattening the hierarchy.
+    # min_solid_volume=0 ensures the viewer doesn't delete tiny pins or connectors.
     dev_kit = load_step(_DIR, "4020_dev_kit", extract_solids=True, min_solid_volume=0)
     if dev_kit:
-        # Note: If the dev kit appears too high or buried, adjust this offset.
-        # It currently uses the same offset as the busbars.
         dev_kit.move(Location((0, 0, _BUSBAR_DZ)))
         children.append(dev_kit)
 
