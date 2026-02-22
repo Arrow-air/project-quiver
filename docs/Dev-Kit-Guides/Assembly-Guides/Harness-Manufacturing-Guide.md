@@ -43,9 +43,10 @@ This guide will detail the manufacturing process for all harnesses in no particu
 | BC_PCB J25|Pushbutton |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-001 Wire Harness](./assets/HAR-001.png)
+
+*Bounding box: 156.4 × 47.5 × 32.0 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -56,18 +57,18 @@ This guide will detail the manufacturing process for all harnesses in no particu
 | **Terminals A** | Wire | Bare wire, twisted end | 4 |
 | **Connector B** | Spade | Spade terminal | 4 |
 | **Terminals B** | Wire | Bare wire | 4 |
-| **Wire** | 18 AWG | Silicon | xx mm |
-| **Sleeving** | Optional| Mesh | xx mm|
+| **Wire** | 18 AWG | Silicon | 200 mm |
+| **Sleeving** | Optional| Mesh | 180 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
 | Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | 18 AWG | xx mm | 6mm  | 6mm |
-| **W2** | Red | 18 AWG | xx mm | 6mm | 6mm |
-| **W3** | Red | 18 AWG | xx mm | 6mm | 6mm |
-| **W4** | Black | 18 AWG | xx mm | 6mm | 6mm |
+| **W1** | Red | 18 AWG | 200 mm | 6mm  | 6mm |
+| **W2** | Red | 18 AWG | 200 mm | 6mm | 6mm |
+| **W3** | Red | 18 AWG | 200 mm | 6mm | 6mm |
+| **W4** | Black | 18 AWG | 200 mm | 6mm | 6mm |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
