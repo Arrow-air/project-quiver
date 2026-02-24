@@ -1,70 +1,74 @@
-"""BOM 4000 - Harness subassembly.
+"""BOM 4100 - Harness subassembly.
 
-Busbars connecting the main PCB and battery PCB. The positive and
-negative busbars are mirror images of each other across the YZ plane.
-Both need a Z offset to sit on the BC PCB terminal lugs.
-
-Custom parts in steps/:
-    4010_busbar_negative.step   Negative busbar (dZ +34.01)
-    4010_busbar_positive.step   Positive busbar (dZ +34.01)
-    4020_dev_kit.step           Wire routing and dev kit model
+Contains individual wire routing, cables, and harness components.
+Files are loaded dynamically from the steps/ directory to handle
+multi-part CAD exports efficiently.
 """
 
-import sys
 from pathlib import Path
-from build123d import Compound, Location, import_step, Shape, Kind
-from quiver.common import load_step
+from build123d import Compound, Location, import_step
 
-# Resolve absolute path
+# Resolve absolute path to ensure STEP files are found reliably
 _DIR = Path(__file__).resolve().parent
 
-# Z offsets for component placement
-_BUSBAR_DZ = 0    # Set to 0 for debugging; standard is 34.01
-_DEV_KIT_DZ = 0   # Dedicated offset for the Dev Kit and cables
+# Global Z offset for the harness assembly.
+# Set to 0 for debugging/origin alignment. 
+# You can change this back to 34.01 if they need to sit on the BC PCB lugs.
+_HARNESS_DZ = 0
 
-def load_all_geometry(path_dir: Path, name: str) -> Compound | None:
+def load_wire_geometry(filepath: Path) -> Compound | None:
     """
-    Alternative loader that captures non-solid geometry (like surfaces/wires).
-    Useful for heavy files where cables might be exported as shells.
+    Alternative loader that forcefully flattens non-solid geometry (like surfaces/wires).
+    Ensures cables exported as surface shells are rendered by OCP.
     """
-    filepath = path_dir / "steps" / f"{name}.step"
     if not filepath.exists():
         return None
-    
+        
     try:
-        # Import the raw geometry without filtering for solids only
+        # Import the raw geometry
         raw_shape = import_step(str(filepath))
         
-        # If it's already a compound, return it; otherwise wrap it
-        if isinstance(raw_shape, Compound):
-            return raw_shape
-        return Compound(children=[raw_shape])
+        # FLAT-PACK DECOMPOSITION:
+        # Extract all faces to ensure wires/surfaces are drawn even if they aren't solids.
+        return Compound(children=raw_shape.faces())
     except Exception as e:
-        print(f"Error loading {name} with raw importer: {e}")
+        print(f"Error loading {filepath.name}: {e}")
         return None
 
 def make_assembly() -> Compound | None:
     """Build the harness subassembly from imported STEP files."""
     children = []
+    steps_dir = _DIR / "steps"
 
-    # 1. Load Busbars (Standard loading works fine for these)
-    for name in ["4010_busbar_negative", "4010_busbar_positive"]:
-        part = load_step(_DIR, name)
-        if part:
-            part.move(Location((0, 0, _BUSBAR_DZ)))
-            children.append(part)
+    print("\n" + "="*40)
+    print("LOADING MULTI-PART HARNESS ASSEMBLY")
+    print("="*40)
 
-    # 2. Load Dev Kit and Cables
-    # We bypass load_step and use our raw loader to catch Surfaces/Shells (cables)
-    print(f"Attempting RAW import of 4020_dev_kit to capture all surface geometry...")
-    dev_kit = load_all_geometry(_DIR, "4020_dev_kit")
+    # 1. Dynamically find all STEP files (handles uppercase .STEP from Fusion)
+    all_step_files = list(steps_dir.glob("*.STEP")) + list(steps_dir.glob("*.step"))
     
-    if dev_kit:
-        print("✅ Dev Kit and raw geometry (including surfaces) loaded.")
-        dev_kit.move(Location((0, 0, _DEV_KIT_DZ)))
-        children.append(dev_kit)
-    else:
-        print("❌ Failed to load Dev Kit.")
+    # Filter for files containing "HAR0" to match your exact new naming convention 
+    # (e.g., 4101_HAR001.STEP) and sort them sequentially.
+    harness_files = sorted(set(f for f in all_step_files if "HAR0" in f.name.upper()))
+
+    if not harness_files:
+        print(f"❌ ERROR: No harness files found in {steps_dir}")
+        print("="*40 + "\n")
+        return None
+
+    # 2. Loop through and load each file
+    for filepath in harness_files:
+        part = load_wire_geometry(filepath)
+        
+        if part:
+            print(f"✅ Loaded: {filepath.name}")
+            part.move(Location((0, 0, _HARNESS_DZ)))
+            children.append(part)
+        else:
+            print(f"❌ Failed: {filepath.name}")
+
+    print(f"\n✅ Successfully processed {len(children)}/{len(harness_files)} harness components.")
+    print("="*40 + "\n")
 
     if not children:
         return None
