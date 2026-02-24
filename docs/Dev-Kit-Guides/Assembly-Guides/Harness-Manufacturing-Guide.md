@@ -113,9 +113,10 @@ This guide will detail the manufacturing process for all harnesses in no particu
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-002 Wire Harness](./assets/HAR-002.png)
+
+*Bounding box: 28.0 × 33.3 × 41.6 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -127,7 +128,7 @@ This guide will detail the manufacturing process for all harnesses in no particu
 | **Connector B** | 1704858 | 5-Pos Phoenix | 1 |
 | **Terminals B** | Wire | Bare wire, twisted end | 4 |
 | **Wire** | 20 AWG | Silicon | 56mm |
-| **Sleeving** | Optional| Mesh | xx mm|
+| **Sleeving** | Optional| Mesh | 72 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -180,9 +181,10 @@ Instructions for the technician installing this harness into the chassis.*
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-003 Wire Harness](./assets/HAR-003.png)
+
+*Bounding box: 30.1 × 32.6 × 41.2 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -194,7 +196,7 @@ Instructions for the technician installing this harness into the chassis.*
 | **Connector B** | 1704859| 6-Pos Phoenix | 1 |
 | **Terminals B** | Wire | Bare wire, twisted end | 6|
 | **Wire** | 20 AWG | Silicon | 50mm |
-| **Sleeving** | Optional| Mesh | xx mm|
+| **Sleeving** | Optional| Mesh | 71 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -244,7 +246,7 @@ Instructions for the technician installing this harness into the chassis.*
     * Constraint - 
     * Fixing - 
 
-## HAR-0004 -> HAR-007 ESC Power 
+## HAR-0004 -> HAR-007 ESC Power
 | **FROM**    | **TO**  |
 | ------------| ------- |
 | Main_PCB J25|ESC1 PWR |
@@ -253,9 +255,10 @@ Instructions for the technician installing this harness into the chassis.*
 | Main_PCB J42|ESC4 PWR |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-004 Wire Harness](./assets/HAR-004.png)
+
+*Bounding box: 350.8 × 349.9 × 57.6 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -265,7 +268,7 @@ Instructions for the technician installing this harness into the chassis.*
 | **Connector A** | XT60-M| 2-Pos XT-60| 1 |
 | **Terminals A** | Wire | Solder | 2|
 | **Wire** | 6 AWG | Silicon | 490mm |
-| **Sleeving** | Required| Tubing | @ xx mm, motor bend|
+| **Sleeving** | Required| Tubing | @ 381 mm, motor bend|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -316,23 +319,24 @@ Instructions for the technician installing this harness into the chassis.*
 | Main_PCB J40|ESC4 Signal |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-008 Wire Harness](./assets/HAR-008.png)
+
+*Bounding box: 337.0 × 365.2 × 52.8 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
 
-| Item Type | Part Number | Description / Spec | Qty Needed |  
-| :--- | :--- | :--- | :--- |  
-|  **Connector A**  | 1704859| 6-Pos Phoenix | 1 |  
-|  **Terminals A**  | Wire | Pre-crimped | 8|  
-|  **Connector B**  | 1704857| 4-Pos Phoenix | 1 |  
-|  **Terminals B**  | Wire | Pre-crimped | 4|  
-|  **Connector C**  | 204523-1201| 12-Pos Molex | 1 |  
-|  **Terminals C**  | Wire | Pre-crimped | 12|  
-|  **Wire**  | 26 AWG | Pre-Crimped Lead | 235mm |  
-|  **Sleeving**  | Required| Mesh | xx mm|  
+| Item Type | Part Number | Description / Spec | Qty Needed |
+| :--- | :--- | :--- | :--- |
+|  **Connector A**  | 1704859| 6-Pos Phoenix | 1 |
+|  **Terminals A**  | Wire | Pre-crimped | 8|
+|  **Connector B**  | 1704857| 4-Pos Phoenix | 1 |
+|  **Terminals B**  | Wire | Pre-crimped | 4|
+|  **Connector C**  | 204523-1201| 12-Pos Molex | 1 |
+|  **Terminals C**  | Wire | Pre-crimped | 12|
+|  **Wire**  | 26 AWG | Pre-Crimped Lead | 235mm |
+|  **Sleeving**  | Required| Mesh | 395 mm|  
 
 ### 3. Wire Prep (Cut & Strip)
 *All wires connecting the payload to the PCBs will use pre-crimped jumper wires.* 
@@ -411,9 +415,10 @@ Instructions for the technician installing this harness into the chassis.*
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-012 Wire Harness](./assets/HAR-012.png)
+
+*Bounding box: 110.7 × 54.4 × 101.0 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -424,18 +429,18 @@ Instructions for the technician installing this harness into the chassis.*
 | **Terminals A** | Wire | Bare wire, twisted end | 4 |
 | **Connector B** | Spade | Spade terminal | 4 |
 | **Terminals B** | Wire | Bare wire | 4 |
-| **Wire** | 18 AWG | Silicon | xx mm |
-| **Sleeving** | Optional| Mesh | xx mm|
+| **Wire** | 18 AWG | Silicon | 141 mm |
+| **Sleeving** | Optional| Mesh | 141 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
 | Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | 18 AWG | xx mm | 6mm  | 6mm |
-| **W2** | Red | 18 AWG | xx mm | 6mm | 6mm |
-| **W3** | Red | 18 AWG | xx mm | 6mm | 6mm |
-| **W4** | Black | 18 AWG | xx mm | 6mm | 6mm |
+| **W1** | Red | 18 AWG | 141 mm | 6mm  | 6mm |
+| **W2** | Red | 18 AWG | 141 mm | 6mm | 6mm |
+| **W3** | Red | 18 AWG | 141 mm | 6mm | 6mm |
+| **W4** | Black | 18 AWG | 141 mm | 6mm | 6mm |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -472,30 +477,31 @@ Instructions for the technician installing this harness into the chassis.*
     * Fixing - 
 
 
-## HAR-0014 Bottom Payload 
+## HAR-0014 Bottom Payload
 | **FROM**    | **TO**  |
 | -----------------| ------- |
 | Main_PCB J31, J39|ATT_INT (bottom) |
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-014 Wire Harness](./assets/HAR-014.png)
+
+*Bounding box: 156.5 × 155.9 × 190.9 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
 
-| Item Type | Part Number | Description / Spec | Qty Needed |  
-| :--- | :--- | :--- | :--- |  
-|  **Connector A**  | 1704859| 6-Pos Phoenix | 1 |  
-|  **Terminals A**  | Wire | Pre-crimped | 8|  
-|  **Connector B**  | 1704857| 4-Pos Phoenix | 1 |  
-|  **Terminals B**  | Wire | Pre-crimped | 4| 
-|  **Connector C**  | 204523-1201| 12-Pos Molex | 1 | 
-|  **Terminals C**  | Wire | Pre-crimped | 12| 
-|  **Wire**  | 26 AWG | Pre-Crimped Lead | 205mm | 
-|  **Sleeving**  | Required| Mesh | xx mm| 
+| Item Type | Part Number | Description / Spec | Qty Needed |
+| :--- | :--- | :--- | :--- |
+|  **Connector A**  | 1704859| 6-Pos Phoenix | 1 |
+|  **Terminals A**  | Wire | Pre-crimped | 8|
+|  **Connector B**  | 1704857| 4-Pos Phoenix | 1 |
+|  **Terminals B**  | Wire | Pre-crimped | 4|
+|  **Connector C**  | 204523-1201| 12-Pos Molex | 1 |
+|  **Terminals C**  | Wire | Pre-crimped | 12|
+|  **Wire**  | 26 AWG | Pre-Crimped Lead | 205mm |
+|  **Sleeving**  | Required| Mesh | 221 mm| 
 
 
 ### 3. Wire Prep (Cut & Strip)
@@ -641,9 +647,10 @@ Technician will have to combine two cables to create a 400mm cable.
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-015 Wire Harness](./assets/HAR-015.png)
+
+*Bounding box: 125.7 × 145.0 × 178.3 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -653,7 +660,7 @@ Technician will have to combine two cables to create a 400mm cable.
 | **Connector A** | 1704857     | 4-Pos Phoenix          | 1          |
 | **Terminals A** | Wire        | Bare wire, twisted end | 4          |
 | **Wire**        | Default     | Silicon                | 190mm      |
-| **Sleeving**    | Optional    | Mesh                   | xx mm      |
+| **Sleeving**    | Optional    | Mesh                   | 208 mm     |
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -708,9 +715,10 @@ Technician will have to combine two cables to create a 400mm cable.
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-016 Wire Harness](./assets/HAR-016.png)
+
+*Bounding box: 113.7 × 52.7 × 57.5 mm*
 
 ### 2. Bill of Materials (Kitting)
 Default cable that comes with 360° Lidar. No modification required
@@ -752,9 +760,10 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-017 Wire Harness](./assets/HAR-017.png)
+
+*Bounding box: 76.7 × 152.9 × 155.3 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -764,17 +773,17 @@ N/A
 | **Connector A** | 1704857 | 4-Pos Phoenix | 1 |
 | **Terminals A** | Wire | Bare wire, twisted end | 4 |
 | **Wire** | Default | Silicon | 190mm |
-| **Sleeving** | Optional| Mesh | xx mm|
+| **Sleeving** | Optional| Mesh | 185 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
 | Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| Default | xxmm | 6mm  | N/A|
-| **W2** | Default| Default | xxmm | 6mm | N/A|
-| **W3** | Default| Default | xxmm | 6mm | N/A|
-| **W4** | Default| Default | xxmm | 6mm | N/A|
+| **W1** | Default| Default | 185mm | 6mm  | N/A|
+| **W2** | Default| Default | 185mm | 6mm | N/A|
+| **W3** | Default| Default | 185mm | 6mm | N/A|
+| **W4** | Default| Default | 185mm | 6mm | N/A|
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -816,9 +825,10 @@ N/A
 | Main_PCB J14|HM30 PWR |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-018 Wire Harness](./assets/HAR-018.png)
+
+*Bounding box: 69.4 × 45.6 × 52.5 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -828,7 +838,7 @@ N/A
 | **Connector A** | XT30-M| 2-Pos XT-30| 1 |
 | **Terminals A** | Wire | Solder | 2|
 | **Wire** | 16 AWG | Silicon | 170mm |
-| **Sleeving** | Optional| Mesh|  xx mm|
+| **Sleeving** | Optional| Mesh|  99 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -879,9 +889,10 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-019 Wire Harness](./assets/HAR-019.png)
+
+*Bounding box: 42.0 × 66.2 × 53.7 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -890,7 +901,7 @@ N/A
 | :--- | :--- | :--- | :--- |
 |**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 1 |
 |**3 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 3 Way| 1 |
-| **Sleeving** | Optional| Mesh|  xx mm|
+| **Sleeving** | Optional| Mesh|  96 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -943,9 +954,10 @@ N/A
 | Main_PCB J9|Mateksys |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-021 Wire Harness](./assets/HAR-021.png)
+
+*Bounding box: 130.5 × 43.0 × 53.7 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -953,7 +965,7 @@ N/A
 | Item Type | Part Number | Description / Spec | Qty Needed |
 | :--- | :--- | :--- | :--- |
 |**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 2 |
-| **Sleeving** | Optional| Mesh|  xx mm|
+| **Sleeving** | Optional| Mesh|  161 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -1007,9 +1019,10 @@ N/A
 | Main_PCB J41 | PPP2ETH |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-023 Wire Harness](./assets/HAR-023.png)
+
+*Bounding box: 85.9 × 62.0 × 28.6 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1019,7 +1032,7 @@ N/A
 |**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 1 |
 |**5 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 5 Way| 1 |
 |**6 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 6 Way| 1 |
-| **Sleeving** | Optional| Mesh|  xx mm|
+| **Sleeving** | Optional| Mesh|  116 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -1082,9 +1095,10 @@ N/A
 | Main_PCB J20|Remote ID CAN |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-026 Wire Harness](./assets/HAR-026.png)
+
+*Bounding box: 52.9 × 19.8 × 24.4 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1092,7 +1106,7 @@ N/A
 | Item Type | Part Number | Description / Spec | Qty Needed |
 | :--- | :--- | :--- | :--- |
 |**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 1 |
-| **Sleeving** | Optional| Mesh|  xx mm|
+| **Sleeving** | Optional| Mesh|  83 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -1140,9 +1154,10 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-027 Wire Harness](./assets/HAR-027.png)
+
+*Bounding box: 79.1 × 145.1 × 145.1 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1151,7 +1166,7 @@ N/A
 | :--- | :--- | :--- | :--- |
 |**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 1 |
 |**8 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 6 Way| 1 |
-| **Sleeving** | Optional| Mesh|  xx mm|
+| **Sleeving** | Optional| Mesh|  175 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -1198,9 +1213,10 @@ N/A
 | Antenna 2|HM30 |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-028 Wire Harness](./assets/HAR-028.png)
+
+*Bounding box: 60.1 × 188.3 × 71.0 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
