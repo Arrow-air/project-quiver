@@ -1,7 +1,7 @@
 # Status
 Valid: True  
 Revision History: V1.4  
-Replacement Log:   
+Replacement Log: Overwrites previous PCB design   
 Reference: https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/information-note.md
 
 # Project Description
