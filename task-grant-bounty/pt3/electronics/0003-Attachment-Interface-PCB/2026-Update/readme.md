@@ -7,6 +7,9 @@ Notable updates:
 - updated routing with rounded edges
 - notch image added to indicate proper orientation relative to the quick release interface 
 
-![alt text](QuiverAttachPCB_V1_4/images/QuiverAttachPCB_new1.jpg)
-![alt text](QuiverAttachPCB_V1_4/images/QuiverAttachPCB_new3.jpg)
-![alt text](QuiverAttachPCB_V1_4/images/QuiverAttachPCB_new2.jpg)
+![alt text](images/QuiverAttachPCB_new1.jpg)
+![alt text](images/QuiverAttachPCB_new3.jpg)
+![alt text](images/QuiverAttachPCB_new2.jpg)
+
+
+Design updates by Julius
