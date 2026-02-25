@@ -14,19 +14,19 @@ The updated design introduces structural refinements to solder pads, connector r
 The revision was developed by modifying the existing PCB layout while preserving original functional features. The following engineering adjustments were implemented:
 
 1. **Manufacturing Optimization**
-   - Front and rear solder pads were extended to improve solderability and assembly robustness.
+   - Front and rear solder pads were extended to improve manufacturing and assembly robustness.
 
 2. **Connector Reconfiguration**
    - J2 and J3 connectors were removed from the design.
-   - J2 was replaced with U1–U10, implemented as individual spring-loaded pin headers.
-   - J3 was replaced with U11–U20, featuring enlarged solder pads designed to interface directly with the spring-loaded pins.
+   - J2 was replaced with U1–U10, implemented as individual spring loaded pin headers.
+   - J3 was replaced with U11–U20, featuring enlarged solder pads designed to interface directly with the spring loaded pins.
 
 3. **Layout Improvements**
    - PCB routing was updated to incorporate rounded trace edges.
    - Rounded routing improves signal integrity characteristics and reduces stress concentration points in copper traces.
 
 4. **Mechanical Orientation Indicator**
-   - A notch image was added to the PCB silkscreen to clearly indicate proper orientation relative to the quick-release interface.
+   - A notch image was added to the PCB silkscreen to clearly indicate proper orientation relative to the quick release interface.
 
 Visual documentation of the revised PCB layout is included in the attachments section.
 
@@ -34,7 +34,7 @@ Visual documentation of the revised PCB layout is included in the attachments se
 The updated PCB design achieves the following outcomes:
 
 - Improved soldering reliability due to extended solder pads.
-- Enhanced mechanical and electrical interfacing through spring-loaded pin integration.
+- Enhanced mechanical and electrical interfacing through spring loaded pin integration.
 - Removal of legacy connectors simplifies the interface architecture.
 - Increased durability and improved trace geometry through rounded routing.
 - Reduced assembly ambiguity due to the added orientation marking.
