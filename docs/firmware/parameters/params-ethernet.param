@@ -1,0 +1,14 @@
+# Quiver Ethernet / PPP Networking Parameters
+# Apply on top of standard-params.param to enable PPP networking.
+#
+# Requires: ArduCopter Pixhawk6C-arrow custom firmware build
+# Serial2 must be connected to the Ethernet bridge module.
+
+# PPP networking via Serial2
+SERIAL2_PROTOCOL,48
+SERIAL2_BAUD,12500000
+
+# Network enable + MAVLink over IP
+NET_ENABLE,1
+NET_P1_PORT,5760
+NET_P1_PROTOCOL,1
