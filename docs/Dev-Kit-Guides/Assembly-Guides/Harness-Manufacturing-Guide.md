@@ -676,7 +676,11 @@ Technician will have to combine two cables to create a 400mm cable.
 Default cable that comes with 360° Lidar. No modification required
 
 ### 3. Wire Prep (Cut & Strip)
-N/A
+*Use the default cable supplied with the 360° LiDAR module.*
+
+| Cable | Required Length (mm) |
+| :--- | :--- |
+| Default LiDAR cable | 195 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -733,10 +737,10 @@ N/A
 
 | Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| Default | xxmm | 6mm  | N/A|
-| **W2** | Default| Default | xxmm | 6mm | N/A|
-| **W3** | Default| Default | xxmm | 6mm | N/A|
-| **W4** | Default| Default | xxmm | 6mm | N/A|
+| **W1** | Default| Default | 485 mm | 6mm  | N/A|
+| **W2** | Default| Default | 485 mm | 6mm | N/A|
+| **W3** | Default| Default | 485 mm | 6mm | N/A|
+| **W4** | Default| Default | 485 mm | 6mm | N/A|
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -844,7 +848,12 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A, default cables
+Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-019 (HM30 UART) | JST-GH 4P | 170 |
+| HAR-020 (HM30 SBUS) | JST-GH 3P | 160 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -902,7 +911,12 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-021 (F9P / Here4) | JST-GH 4P | 205 |
+| HAR-022 (Mateksys)    | JST-GH 4P | 70  |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -965,7 +979,13 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-023 (PPP2ETH CAN)      | JST-GH 4P | 120 |
+| HAR-024 (PPP2ETH Ethernet) | JST-GH 5P | 205 |
+| HAR-025 (PPP2ETH UART)     | JST-GH 6P | 155 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -1033,7 +1053,11 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+Pre-made JST-GH cable. No crimping required — source cable at the required length below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-026 (Remote ID) | JST-GH 4P | 65 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -1086,7 +1110,12 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-027 power (4P) | JST-GH 4P | 325 |
+| HAR-027 video (8P) | JST-GH 8P | 325 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
