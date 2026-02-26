@@ -108,9 +108,8 @@ This guide will detail the manufacturing process for all harnesses in no particu
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-002 Nail Board](./assets/HAR-002.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -169,9 +168,8 @@ Instructions for the technician installing this harness into the chassis.*
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-003 Nail Board](./assets/HAR-003.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -238,9 +236,14 @@ Instructions for the technician installing this harness into the chassis.*
 | Main_PCB J42|ESC4 PWR |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-004 Nail Board](./assets/HAR-004.png)
+
+![HAR-005 Nail Board](./assets/HAR-005.png)
+
+![HAR-006 Nail Board](./assets/HAR-006.png)
+
+![HAR-007 Nail Board](./assets/HAR-007.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -295,9 +298,14 @@ Instructions for the technician installing this harness into the chassis.*
 | Main_PCB J40|ESC4 Signal |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-008 Nail Board](./assets/HAR-008.png)
+
+![HAR-009 Nail Board](./assets/HAR-009.png)
+
+![HAR-010 Nail Board](./assets/HAR-010.png)
+
+![HAR-011 Nail Board](./assets/HAR-011.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -358,9 +366,10 @@ Instructions for the technician installing this harness into the chassis.*
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-012 Nail Board](./assets/HAR-012.png)
+
+![HAR-013 Nail Board](./assets/HAR-013.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -444,9 +453,8 @@ Instructions for the technician installing this harness into the chassis.*
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-014 Nail Board](./assets/HAR-014.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -600,9 +608,8 @@ Technician will have to combine two cables to create a 400mm cable.
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-015 Nail Board](./assets/HAR-015.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -662,9 +669,8 @@ Technician will have to combine two cables to create a 400mm cable.
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-016 Nail Board](./assets/HAR-016.png)
 
 ### 2. Bill of Materials (Kitting)
 Default cable that comes with 360° Lidar. No modification required
@@ -709,9 +715,8 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-017 Nail Board](./assets/HAR-017.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -767,9 +772,8 @@ N/A
 | Main_PCB J14|HM30 PWR |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-018 Nail Board](./assets/HAR-018.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -823,9 +827,10 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-019 Nail Board](./assets/HAR-019.png)
+
+![HAR-020 Nail Board](./assets/HAR-020.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -881,9 +886,10 @@ N/A
 | Main_PCB J9|Mateksys |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-021 Nail Board](./assets/HAR-021.png)
+
+![HAR-022 Nail Board](./assets/HAR-022.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -939,9 +945,12 @@ N/A
 | Main_PCB J41 | PPP2ETH |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-023 Nail Board](./assets/HAR-023.png)
+
+![HAR-024 Nail Board](./assets/HAR-024.png)
+
+![HAR-025 Nail Board](./assets/HAR-025.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1010,9 +1019,8 @@ N/A
 | Main_PCB J20|Remote ID CAN |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-026 Nail Board](./assets/HAR-026.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1063,9 +1071,8 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-027 Nail Board](./assets/HAR-027.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1125,9 +1132,8 @@ N/A
 | Antenna 2|HM30 |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-028 Nail Board](./assets/HAR-028.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
