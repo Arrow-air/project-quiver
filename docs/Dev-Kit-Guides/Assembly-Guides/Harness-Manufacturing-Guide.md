@@ -108,9 +108,8 @@ This guide will detail the manufacturing process for all harnesses in no particu
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-002 Nail Board](./assets/HAR-002.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -169,9 +168,8 @@ Instructions for the technician installing this harness into the chassis.*
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-003 Nail Board](./assets/HAR-003.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -238,9 +236,14 @@ Instructions for the technician installing this harness into the chassis.*
 | Main_PCB J42|ESC4 PWR |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-004 Nail Board](./assets/HAR-004.png)
+
+![HAR-005 Nail Board](./assets/HAR-005.png)
+
+![HAR-006 Nail Board](./assets/HAR-006.png)
+
+![HAR-007 Nail Board](./assets/HAR-007.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -295,9 +298,14 @@ Instructions for the technician installing this harness into the chassis.*
 | Main_PCB J40|ESC4 Signal |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-008 Nail Board](./assets/HAR-008.png)
+
+![HAR-009 Nail Board](./assets/HAR-009.png)
+
+![HAR-010 Nail Board](./assets/HAR-010.png)
+
+![HAR-011 Nail Board](./assets/HAR-011.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -358,9 +366,10 @@ Instructions for the technician installing this harness into the chassis.*
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-012 Nail Board](./assets/HAR-012.png)
+
+![HAR-013 Nail Board](./assets/HAR-013.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -444,9 +453,8 @@ Instructions for the technician installing this harness into the chassis.*
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-014 Nail Board](./assets/HAR-014.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -600,9 +608,8 @@ Technician will have to combine two cables to create a 400mm cable.
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-015 Nail Board](./assets/HAR-015.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -662,15 +669,18 @@ Technician will have to combine two cables to create a 400mm cable.
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-016 Nail Board](./assets/HAR-016.png)
 
 ### 2. Bill of Materials (Kitting)
 Default cable that comes with 360° Lidar. No modification required
 
 ### 3. Wire Prep (Cut & Strip)
-N/A
+*Use the default cable supplied with the 360° LiDAR module.*
+
+| Cable | Required Length (mm) |
+| :--- | :--- |
+| Default LiDAR cable | 195 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -709,9 +719,8 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-017 Nail Board](./assets/HAR-017.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -728,10 +737,10 @@ N/A
 
 | Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| Default | xxmm | 6mm  | N/A|
-| **W2** | Default| Default | xxmm | 6mm | N/A|
-| **W3** | Default| Default | xxmm | 6mm | N/A|
-| **W4** | Default| Default | xxmm | 6mm | N/A|
+| **W1** | Default| Default | 485 mm | 6mm  | N/A|
+| **W2** | Default| Default | 485 mm | 6mm | N/A|
+| **W3** | Default| Default | 485 mm | 6mm | N/A|
+| **W4** | Default| Default | 485 mm | 6mm | N/A|
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -767,9 +776,8 @@ N/A
 | Main_PCB J14|HM30 PWR |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-018 Nail Board](./assets/HAR-018.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -823,9 +831,10 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-019 Nail Board](./assets/HAR-019.png)
+
+![HAR-020 Nail Board](./assets/HAR-020.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -839,7 +848,12 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A, default cables
+Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-019 (HM30 UART) | JST-GH 4P | 170 |
+| HAR-020 (HM30 SBUS) | JST-GH 3P | 160 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -881,9 +895,10 @@ N/A
 | Main_PCB J9|Mateksys |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-021 Nail Board](./assets/HAR-021.png)
+
+![HAR-022 Nail Board](./assets/HAR-022.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -896,7 +911,12 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-021 (F9P / Here4) | JST-GH 4P | 205 |
+| HAR-022 (Mateksys)    | JST-GH 4P | 70  |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -939,9 +959,12 @@ N/A
 | Main_PCB J41 | PPP2ETH |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-023 Nail Board](./assets/HAR-023.png)
+
+![HAR-024 Nail Board](./assets/HAR-024.png)
+
+![HAR-025 Nail Board](./assets/HAR-025.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -956,7 +979,13 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-023 (PPP2ETH CAN)      | JST-GH 4P | 120 |
+| HAR-024 (PPP2ETH Ethernet) | JST-GH 5P | 205 |
+| HAR-025 (PPP2ETH UART)     | JST-GH 6P | 155 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -1010,9 +1039,8 @@ N/A
 | Main_PCB J20|Remote ID CAN |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-026 Nail Board](./assets/HAR-026.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1025,7 +1053,11 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+Pre-made JST-GH cable. No crimping required — source cable at the required length below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-026 (Remote ID) | JST-GH 4P | 65 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -1063,9 +1095,8 @@ N/A
 
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-027 Nail Board](./assets/HAR-027.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1079,7 +1110,12 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
+
+| Harness | Connector | Required Length (mm) |
+| :--- | :--- | :--- |
+| HAR-027 power (4P) | JST-GH 4P | 325 |
+| HAR-027 video (8P) | JST-GH 8P | 325 |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -1125,9 +1161,8 @@ N/A
 | Antenna 2|HM30 |
 
 ### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
 
-> **[Image Placeholder]**
+![HAR-028 Nail Board](./assets/HAR-028.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
