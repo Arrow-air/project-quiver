@@ -57,7 +57,7 @@ This guide will detail the manufacturing process for all harnesses in no particu
 | **Terminals A** | Wire | Bare wire, twisted end | 4 |
 | **Connector B** | Spade | Spade terminal | 4 |
 | **Terminals B** | Wire | Bare wire | 4 |
-| **Wire** | 18 AWG | Silicon | 200 mm |
+| **Wire** | 18 AWG | Silicon | 800 mm |
 | **Sleeving** | Optional| Mesh | 180 mm|
 
 ### 3. Wire Prep (Cut & Strip)
@@ -83,14 +83,9 @@ This guide will detail the manufacturing process for all harnesses in no particu
 ### 5. Assembly Instructions
 1.  **Prep:** Cut wires to length and strip insulation per Section 3.
 2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
 4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+5.  **Crimp Side B:** Terminate Side B using crimping tool.
+6.  **Populate B:** Insert contacts into Connector B housing.
 
 ---
 
@@ -100,11 +95,11 @@ This guide will detail the manufacturing process for all harnesses in no particu
 * **Source Connection:** Bat_PCB, J1
 * **Destination Connection:** Pushbutton
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Over Battery PCB
+    * Constraint - N/A
+    * Fixing - Zip Tie Provision Circled in red
 
-
+![alt text](assets/HAR001.jpg)
 
 ## HAR-0002 BC_PCB Signal
 | **FROM**    | **TO**  |
@@ -126,18 +121,18 @@ This guide will detail the manufacturing process for all harnesses in no particu
 | **Terminals A** | Wire | Bare wire, twisted end | 4 |
 | **Connector B** | 1704858 | 5-Pos Phoenix | 1 |
 | **Terminals B** | Wire | Bare wire, twisted end | 4 |
-| **Wire** | 20 AWG | Silicon | 56mm |
-| **Sleeving** | Optional| Mesh | xx mm|
+| **Wire** | 20 AWG | Silicon | 240mm |
+| **Sleeving** | Optional| Mesh | N/A|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
 | Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | 20 AWG | 56mm | 6mm  | 6mm |
-| **W2** | Red | 20 AWG | 56mm | 6mm | 6mm |
-| **W3** | Red | 20 AWG | 56mm | 6mm | 6mm |
-| **W4** | Black | 20 AWG | 56mm | 6mm | 6mm |
+| **W1** | White | 20 AWG | 56mm | 6mm  | 6mm |
+| **W2** | Blue | 20 AWG | 56mm | 6mm | 6mm |
+| **W3** | Gray | 20 AWG | 56mm | 6mm | 6mm |
+| **W4** | Green | 20 AWG | 56mm | 6mm | 6mm |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -150,16 +145,9 @@ This guide will detail the manufacturing process for all harnesses in no particu
 | **W4** | Green | **Pin 4** | 1 | CAN_L |
 
 ### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
+1.  **Prep:** Cut wires to length and strip insulation per Section 
 4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+6.  **Populate B:** Insert contacts into Connector B housing.*Verify "Click" and perform pull-back test.*
 
 ---
 
@@ -169,10 +157,11 @@ Instructions for the technician installing this harness into the chassis.*
 * **Source Connection:** Bat_PCB, J2
 * **Destination Connection:** Main_PCB, J43
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
-    * 
+    * Path - N/A
+    * Constraint - N/A
+    * Fixing - N/A
+![alt text](assets/HAR002.jpg)    
+
 ## HAR-0003 BC_PCB SSR
 | **FROM**    | **TO**  |
 | ------------| ------- |
@@ -221,16 +210,11 @@ Instructions for the technician installing this harness into the chassis.*
 | **W6** | Black | **Pin 6** | 1 | GND|
 
 ### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
+1.  **Prep:** Cut wires to length and strip insulation per Section 
 4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+6.  **Populate B:** Insert contacts into Connector B housing.*Verify "Click" and perform pull-back test.*
+
+
 
 ---
 
@@ -243,6 +227,7 @@ Instructions for the technician installing this harness into the chassis.*
     * Path - 
     * Constraint - 
     * Fixing - 
+![alt text](assets/HAR003.jpg)
 
 ## HAR-0004 -> HAR-007 ESC Power 
 | **FROM**    | **TO**  |
@@ -265,7 +250,7 @@ Instructions for the technician installing this harness into the chassis.*
 | **Connector A** | XT60-M| 2-Pos XT-60| 1 |
 | **Terminals A** | Wire | Solder | 2|
 | **Wire** | 6 AWG | Silicon | 490mm |
-| **Sleeving** | Required| Tubing | @ xx mm, motor bend|
+| **Sleeving** | Required| 9.5mm ID Heatshrink at motor arm bend | 7cm |
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -285,15 +270,8 @@ Instructions for the technician installing this harness into the chassis.*
 
 ### 6. Assembly Instructions (Not finished)
 1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+4.  **Populate A:** Solder cables into Connector A housing.
+6.  **Heatshrink:** Apply a 7cm 9.5mm ID Heathrink at the motor arm bend location. This heatshrink will protect the ESC Power and signal cables*
 
 ---
 
@@ -303,9 +281,10 @@ Instructions for the technician installing this harness into the chassis.*
 * **Source Connection:** Main_PCB, J27
 * **Destination Connection:** ESC 1 PWR
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Through circular hole on upper plate to middle plate
+    * Constraint - N/A
+    * Fixing - N/A
+![alt text](assets/HAR004.jpg)
 
 ## HAR-0008 -> HAR-0011
 | **FROM**    | **TO**  |
@@ -314,6 +293,69 @@ Instructions for the technician installing this harness into the chassis.*
 | Main_PCB J27|ESC2 Signal |
 | Main_PCB J32|ESC3 Signal |
 | Main_PCB J40|ESC4 Signal |
+
+### 1. Nailboard
+*[will be left blank until I figure out how to correctly display connectors on nailboard]*
+
+> **[Image Placeholder]**
+
+### 2. Bill of Materials (Kitting)
+*Gather these parts before starting the build.*
+
+| Item Type | Part Number | Description / Spec | Qty Needed |
+| :--- | :--- | :--- | :--- |
+| **Connector A** | 1704858 | 5-Pos Phoenix | 1 |
+| **Terminals A** | Wire | Bare wire, twisted end | 5 |
+| **Wire** | 20 AWG | Silicon | 240mm |
+| **Sleeving** | Required| 9.5mm ID Heatshrink at motor arm bend | 7cm |
+
+### 3. Wire Prep (Cut & Strip)
+*Prepare all wires before assembly.*
+
+| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **W1** | Yellow | 20 AWG | 56mm | 6mm  | 6mm |
+| **W2** | Green | 20 AWG | 56mm | 6mm | 6mm |
+| **W3** | Gray | 20 AWG | 56mm | 6mm | 6mm |
+| **W4** | Black | 20 AWG | 56mm | 6mm | 6mm |
+| **W5** | White | 20 AWG | 56mm | 6mm | 6mm |
+
+### 4. Termination & Pinout Map
+*Connect End A to End B following this chart.*
+
+| Wire ID | Color | From: 1704857  | To: 1704858 | Function / Signal |
+| :--- | :--- | :--- | :--- | :--- |
+| **W1** | Yellow | **Pin 1** | 4 | GND |
+| **W2** | Green | **Pin 2** | 3 | CAN1_L |
+| **W3** | Gray | **Pin 3** | 2| CAN1_H |
+| **W4** | Black | **Pin 4** | 1 | GND |
+| **W5** | White | **Pin 5** | 1 | PWM  |
+
+### 5. Assembly Instructions
+1.  **Prep:** Cut wires to length and strip insulation per Section 
+4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
+6.  **Heatshrink:** Apply a 7cm 9.5mm ID Heathrink at the motor arm bend location. This heatshrink will protect the ESC Power and signal cables*
+
+---
+
+### 6. Installation & Routing (Vehicle Integration)
+Instructions for the technician installing this harness into the chassis.*
+
+* **Source Connection:** Bat_PCB, J2
+* **Destination Connection:** Main_PCB, J43
+* **Routing Path:**
+    * Path - N/A
+    * Constraint - N/A
+    * Fixing - N/A
+
+![alt text](assets/HAR008.jpg)
+
+## HAR-0012 -> HAR-0013 Side Payloads
+| **FROM**    | **TO**  |
+| ------------| ------- |
+| Main_PCB J29, J37|ATT_INT (right) |
+| Main_PCB J30, J38|ATT_INT (left) |
+
 
 ### 1. Nailboard
 *[will be left blank until I figure out how to correctly display connectors on nailboard]*
@@ -332,7 +374,7 @@ Instructions for the technician installing this harness into the chassis.*
 |  **Connector C**  | 204523-1201| 12-Pos Molex | 1 |  
 |  **Terminals C**  | Wire | Pre-crimped | 12|  
 |  **Wire**  | 26 AWG | Pre-Crimped Lead | 235mm |  
-|  **Sleeving**  | Required| Mesh | xx mm|  
+|  **Sleeving**  | Optional| Mesh | xx mm|  
 
 ### 3. Wire Prep (Cut & Strip)
 *All wires connecting the payload to the PCBs will use pre-crimped jumper wires.* 
@@ -355,7 +397,7 @@ Instructions for the technician installing this harness into the chassis.*
 |  **W12**  | Black| 26  | 235mm  | N/A| N/A| 
 
 ### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
+*Connect End A or B to End C following this chart.*
 
 | Wire ID | Color | From: 1704859| To: 204523-1201| Function / Signal |  
 | :--- | :--- | :--- | :--- | :--- |  
@@ -377,16 +419,8 @@ Instructions for the technician installing this harness into the chassis.*
 |  **W12**  | Black|  **Pin 4**  | 7 | ETH_TX-|  
 
 ### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+1.  **Populate A & B:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
+2.  **Populate C:** Insert contacts into Connector B housing. Verify correct crimp orientation into [housing.](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf)
 
 ---
 
@@ -398,79 +432,10 @@ Instructions for the technician installing this harness into the chassis.*
 * **Source Connection:** Main_PCB J29 & J37  
 * **Destination Connection:** ATT_INT (right)  
 * **Routing Path:**  
- * Path -   
- * Constraint -   
- * Fixing -   
-
-
-## HAR-0012 -> HAR-0013 Side Payloads
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Main_PCB J29, J37|ATT_INT (right) |
-| Main_PCB J30, J38|ATT_INT (left) |
-
-
-### 1. Nailboard
-*[will be left blank until I figure out how to correctly display connectors on nailboard]*
-
-> **[Image Placeholder]**
-
-### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-| **Connector A** | 1704857 | 4-Pos Phoenix | 1 |
-| **Terminals A** | Wire | Bare wire, twisted end | 4 |
-| **Connector B** | Spade | Spade terminal | 4 |
-| **Terminals B** | Wire | Bare wire | 4 |
-| **Wire** | 18 AWG | Silicon | xx mm |
-| **Sleeving** | Optional| Mesh | xx mm|
-
-### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | 18 AWG | xx mm | 6mm  | 6mm |
-| **W2** | Red | 18 AWG | xx mm | 6mm | 6mm |
-| **W3** | Red | 18 AWG | xx mm | 6mm | 6mm |
-| **W4** | Black | 18 AWG | xx mm | 6mm | 6mm |
-
-### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: 1704857  | To: Spade | Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | **Pin 1** | 1 | HV- |
-| **W2** | Red | **Pin 2** | 2 | HV- SW |
-| **W3** | Red | **Pin 3** | LED+| 12V |
-| **W4** | Black | **Pin 4** | LED- | GND |
-
-### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
-
----
-
-### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Bat_PCB, J1
-* **Destination Connection:** Pushbutton
-* **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
-
+ * Path -   Underneath MainPCB to middle plate side circular openings 
+ * Constraint -   Telemetry air unit location
+ * Fixing -   N/A
+![alt text](assets/HAR012.jpg)
 
 ## HAR-0014 Bottom Payload 
 | **FROM**    | **TO**  |
@@ -495,7 +460,7 @@ Instructions for the technician installing this harness into the chassis.*
 |  **Connector C**  | 204523-1201| 12-Pos Molex | 1 | 
 |  **Terminals C**  | Wire | Pre-crimped | 12| 
 |  **Wire**  | 26 AWG | Pre-Crimped Lead | 205mm | 
-|  **Sleeving**  | Required| Mesh | xx mm| 
+|  **Sleeving**  | Optional| Mesh | xx mm| 
 
 
 ### 3. Wire Prep (Cut & Strip)
@@ -586,7 +551,7 @@ Technician will have to combine two cables to create a 400mm cable.
 ---  
 
 ### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
+*Connect End A or B to End C following this chart.*
 
 
 | Wire ID | Color | From: 1704859| To: 204523-1201| Function / Signal |  
@@ -611,15 +576,9 @@ Technician will have to combine two cables to create a 400mm cable.
 
 ### 5. Assembly Instructions
 1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+2.  **Label:** Install identification markers to the cables. This will help correctly adding cables to Phoenix connector
+4.  **Populate A & B:** Insert contacts into Connector A & B housing. *Verify "Click" and perform pull-back test.*
+6.  **Populate C:** Insert contacts into Connector C housing. Verify correct crimp orientation into [housing.](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf)
 
 
 ### 6. Installation & Routing (Vehicle Integration)
@@ -629,10 +588,10 @@ Technician will have to combine two cables to create a 400mm cable.
 * **Source Connection:** Main_PCB J31 & J39  
 * **Destination Connection:** ATT INT (bottom)  
 * **Routing Path:**  
- * Path -   
- * Constraint -   
- * Fixing -   
-
+ * Path -   Top Plate, right side opening, through mid plate openings, attached to the underside of the bottom plate
+ * Constraint -   Number of cables passing through opentings
+ * Fixing -   Various zip ties show in red
+![alt text](assets/HAR014-1.jpg)![alt text](assets/HAR014-2.jpg)
 
 ## HAR-0015 Altimeter
 | **FROM**     | **TO**   |
@@ -678,29 +637,24 @@ Technician will have to combine two cables to create a 400mm cable.
 
 ### 5. Assembly Instructions
 1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
 3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
 4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
 
 ---
 
 ### 6. Installation & Routing (Vehicle Integration)
 *Instructions for the technician installing this harness into the chassis.*
 
-*Instructions for the technician installing this harness into the chassis.*
-
 * **Source Connection:** Main PCB, J8
 * **Destination Connection:** NRA 15
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Right side top plate entry to bottom plate
+    * Constraint - other cables
+    * Fixing - Zip tie in red
+ 
+ ![alt text](assets/HAR015-1.jpg)![alt text](assets/HAR015-2.jpg)   
+
+
 ## HAR-0016 360 LIDAR
 | **FROM**     | **TO**   |
 | ------------ | -------- |
@@ -741,9 +695,12 @@ N/A
 * **Source Connection:** Main PCB, U5
 * **Destination Connection:** S2L Lidar
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Downward towards connector
+    * Constraint - N/A
+    * Fixing - Zip tie in red
+
+![alt text](assets/HAR016.jpg)
+
 
 ## HAR-0017 Front Radar
 | **FROM**     | **TO**      |
@@ -789,16 +746,7 @@ N/A
 
 ### 5. Assembly Instructions
 1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
 4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
-
 ---
 
 ### 6. Installation & Routing (Vehicle Integration)
@@ -807,9 +755,12 @@ N/A
 * **Source Connection:** Main PCB, J49
 * **Destination Connection:** Front Radar
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Right side top plate entry to bottom plate
+    * Constraint - other cables
+    * Fixing - Zip tie in red
+
+![alt text](assets/HAR017-1.jpg)![alt text](assets/HAR017-2.jpg)
+
 ## HAR-0018 HM30 Power
 | **FROM**    | **TO**  |
 | ------------| ------- |
@@ -833,33 +784,23 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red| **Pin 1** | Red| 12V|
-| **W2** | Black| **Pin 2** | Black| GND|
+| Wire ID | Color | Gauge     | Cut Length (mm) | Strip A (mm) |
+|:------- |:----- |:--------- |:--------------- |:------------ |
+| **W1**  | Red   | **Pin 1** | 185             | 10           |
+| **W2**  | Black | **Pin 2** | 185             | 10           |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
 
 | Wire ID | Color | From: 1704857  | To: Spade | Function / Signal |
 | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | **Pin 1** | 1 | HV- |
-| **W2** | Red | **Pin 2** | 2 | HV- SW |
-| **W3** | Red | **Pin 3** | LED+| 12V |
-| **W4** | Black | **Pin 4** | LED- | GND |
+| **W1** | Red | **Pin 1** | 1 | 12V |
+| **W2** | Red | **Pin 2** | 2 | GND |
+
 
 ### 5. Assembly Instructions
 1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
-
+3.  **Solder Side A:** Solder cables into housing.
 ---
 
 ### 6. Installation & Routing (Vehicle Integration)
@@ -868,9 +809,12 @@ N/A
 * **Source Connection:** Main_PCB, J27
 * **Destination Connection:** ESC 1 PWR
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Right side top plate opening
+    * Constraint - N/A
+    * Fixing - N/A
+    
+ ![alt text](assets/HAR018.jpg)   
+
 ## HAR-0019 -> HAR-0020 HM30 Signal
 | **FROM**    | **TO**  |
 | ------------| ------- |
@@ -895,7 +839,7 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-N/A
+N/A, default cables
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -914,16 +858,7 @@ N/A
 | **W1** | Default| **Pin 1** | 3| x|
 
 ### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+N/A
 
 ---
 
@@ -933,9 +868,12 @@ N/A
 * **Source Connection:** Bat_PCB J15, J17
 * **Destination Connection:** HM30
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Right side top plate opening
+    * Constraint - other cables
+    * Fixing - Zip ties
+
+![alt text](assets/HAR019.jpg)  ![alt text](assets/HAR019-2.jpg)  ![alt text](assets/HAR020.jpg)
+
 ## HAR-0021 -> HAR-0022 Navigation
 | **FROM**    | **TO**  |
 | ------------| ------- |
@@ -978,16 +916,7 @@ N/A
 | **W4** | Default| **Pin 2** | 4| 5V|
 
 ### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+N/A
 
 ---
 
@@ -996,9 +925,12 @@ N/A
 * **Source Connection:** Main_PCB J7, J9
 * **Destination Connection:**  F9P/Here 4, Mateksys
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Immediately to the right
+    * Constraint - N/A
+    * Fixing - N/A
+
+  ![alt text](assets/HAR022.jpg)  
+
 ## HAR-0023 -> HAR-0025 PPP2ETH
 | **FROM**     | **TO**  |
 | ------------ | ------- |
@@ -1054,16 +986,7 @@ N/A
 | **W6** | Default| **Pin 6** | 6| GND|
 
 ### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+N/A
 
 ---
 
@@ -1073,10 +996,15 @@ N/A
 * **Source Connection:** Main_PCB J35, J36, J41
 * **Destination Connection:**  PPP2ETH
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Direct connections. HAR024 will be routed under PPP, Beacon mounting board
+    * Constraint - PPP,Beacon mounting board
+    * Fixing - zip tie in red (HAR024)
+
+![alt text](assets/HAR023.jpg) ![alt text](assets/HAR024.jpg)![alt text](assets/HAR025.jpg)   
+
 ## HAR-0026 Remote ID
+
+
 | **FROM**    | **TO**  |
 | ------------| ------- |
 | Main_PCB J20|Remote ID CAN |
@@ -1110,16 +1038,7 @@ N/A
 | **W4** | Default| **Pin 4** | 4| GND|
 
 ### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using [Tool Name/Die].
-6.  **Populate B:** Insert contacts into Connector B housing (if applicable).
-7.  **Finishing:**
-    * Shrink all labels.
-    * Apply sleeving or twist wires (approx. 1 twist per inch).
-    * Secure with zip-ties if required.
+N/A
 
 ---
 
@@ -1129,9 +1048,13 @@ N/A
 * **Source Connection:** Main_PCB J20
 * **Destination Connection:**  RID
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Direct connection
+    * Constraint - N/A
+    * Fixing - N/A
+
+ ![alt text](assets/HAR026.jpg)   
+
+
 ## HAR-0027 SIYI Camera
 | **FROM**    | **TO**  |
 | ------------| ------- |
@@ -1185,12 +1108,16 @@ N/A
 ### 6. Installation & Routing (Vehicle Integration)
 *Instructions for the technician installing this harness into the chassis.*
 
-* **Source Connection:** Main_PCB J35, J36, J41
-* **Destination Connection:**  PPP2ETH
+* **Source Connection:** HM30 LAN & PWR
+* **Destination Connection:**  SIYI A8
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Right side middle plate opening to underside of bottom plate
+    * Constraint - Other cables
+    * Fixing - Undecided zip ties
+
+![alt text](assets/HAR027-1.jpg)  ![alt text](assets/HAR027-2.jpg)  
+
+
 ## HAR-0028 Antenna
 | **FROM**    | **TO**  |
 | ------------| ------- |
@@ -1205,7 +1132,7 @@ N/A
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
 
-Pre made cables with SMA connector
+Pre made cables with SMA connector. Length adjustment not required. 
 
 ### 3. Wire Prep (Cut & Strip)
 N/A
@@ -1224,6 +1151,8 @@ N/A
 * **Source Connection:** Antenna
 * **Destination Connection:** HM30 
 * **Routing Path:**
-    * Path - 
-    * Constraint - 
-    * Fixing - 
+    * Path - Through enclosure provisions to middle plate
+    * Constraint - N/A
+    * Fixing - N/A
+
+![alt text](assets/HAR028.jpg)    
