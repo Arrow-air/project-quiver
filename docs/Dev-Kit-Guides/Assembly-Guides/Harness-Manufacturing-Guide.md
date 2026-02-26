@@ -46,7 +46,6 @@ This guide will detail the manufacturing process for all harnesses in no particu
 
 ![HAR-001 Wire Harness](./assets/HAR-001.png)
 
-*Bounding box: 156.4 × 47.5 × 32.0 mm*
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -57,18 +56,18 @@ This guide will detail the manufacturing process for all harnesses in no particu
 | **Terminals A** | Wire | Bare wire, twisted end | 4 |
 | **Connector B** | Spade | Spade terminal | 4 |
 | **Terminals B** | Wire | Bare wire | 4 |
-| **Wire** | 18 AWG | Silicon | 800 mm |
+| **Wire** | 18 AWG | Silicon |940mm |
 | **Sleeving** | Optional| Mesh | 180 mm|
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | 18 AWG | 200 mm | 6mm  | 6mm |
-| **W2** | Red | 18 AWG | 200 mm | 6mm | 6mm |
-| **W3** | Red | 18 AWG | 200 mm | 6mm | 6mm |
-| **W4** | Black | 18 AWG | 200 mm | 6mm | 6mm |
+| **W1** | Red | 18 AWG | 235mm | 6mm  | 6mm |
+| **W2** | Red | 18 AWG | 235mm | 6mm | 6mm |
+| **W3** | Red | 18 AWG | 235mm | 6mm | 6mm |
+| **W4** | Black | 18 AWG | 235mm | 6mm | 6mm |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -126,7 +125,7 @@ This guide will detail the manufacturing process for all harnesses in no particu
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **W1** | White | 20 AWG | 56mm | 6mm  | 6mm |
 | **W2** | Blue | 20 AWG | 56mm | 6mm | 6mm |
@@ -186,7 +185,7 @@ Instructions for the technician installing this harness into the chassis.*
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **W1** | Yellow| 20 AWG | 56mm | 6mm  | 6mm |
 | **W2** | White| 20 AWG | 56mm | 6mm | 6mm |
@@ -258,7 +257,7 @@ Instructions for the technician installing this harness into the chassis.*
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **W1** | Red| 6 AWG | 490mm | 4mm  | N/A |
 | **W2** | Black| 6 AWG | 490mm | 4mm | N/A|
@@ -320,7 +319,7 @@ Instructions for the technician installing this harness into the chassis.*
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **W1** | Yellow | 20 AWG | 56mm | 6mm  | 6mm |
 | **W2** | Green | 20 AWG | 56mm | 6mm | 6mm |
@@ -390,7 +389,7 @@ Instructions for the technician installing this harness into the chassis.*
 **Mouser #: 538-79758-1149**  
   
 
-| Wire ID | Color | AWG| Cut Length (mm) | Strip A (mm) | Strip B (mm) |  
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |  
 |  **W1**  | Black| 26 | 235mm | N/A| N/A|  
 |  **W2**  | Black| 26  | 235mm | N/A| N/A|  
@@ -540,7 +539,7 @@ Technician will have to combine two cables to create a 400mm cable.
 -   **Insulation:** Ensure there is no exposed copper outside the sleeve.
   
 
-| Wire ID | Color | AWG| Cut Length (mm) | Strip A (mm) | Strip B (mm) |  
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |  
 |  **W1**  | Black| 26 | 400mm | N/A| N/A|  
 |  **W2**  | Black| 26  | 400mm | N/A| N/A|  
@@ -624,7 +623,7 @@ Technician will have to combine two cables to create a 400mm cable.
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **W1** | Default| Default | 190mm | 6mm  | N/A|
 | **W2** | Default| Default | 190mm | 6mm | N/A|
@@ -735,7 +734,7 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge | Cut Length (mm) | Strip A (mm) | Strip B (mm) |
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **W1** | Default| Default | 485 mm | 6mm  | N/A|
 | **W2** | Default| Default | 485 mm | 6mm | N/A|
@@ -792,7 +791,7 @@ N/A
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
 
-| Wire ID | Color | Gauge     | Cut Length (mm) | Strip A (mm) |
+| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 |:------- |:----- |:--------- |:--------------- |:------------ |
 | **W1**  | Red   | **Pin 1** | 185             | 10           |
 | **W2**  | Black | **Pin 2** | 185             | 10           |
@@ -913,10 +912,10 @@ N/A
 
 Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
 
-| Harness | Connector | Required Length (mm) |
+| Harness | Connector | Required Length  |
 | :--- | :--- | :--- |
-| HAR-021 (F9P / Here4) | JST-GH 4P | 205 |
-| HAR-022 (Mateksys)    | JST-GH 4P | 70  |
+| HAR-021 (F9P / Here4) | JST-GH 4P | 205mm |
+| HAR-022 (Mateksys)    | JST-GH 4P | 70mm  |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -981,11 +980,11 @@ N/A
 
 Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
 
-| Harness | Connector | Required Length (mm) |
+| Harness | Connector | Required Length  |
 | :--- | :--- | :--- |
-| HAR-023 (PPP2ETH CAN)      | JST-GH 4P | 120 |
-| HAR-024 (PPP2ETH Ethernet) | JST-GH 5P | 205 |
-| HAR-025 (PPP2ETH UART)     | JST-GH 6P | 155 |
+| HAR-023 (PPP2ETH CAN)      | JST-GH 4P | 120mm |
+| HAR-024 (PPP2ETH Ethernet) | JST-GH 5P | 205mm |
+| HAR-025 (PPP2ETH UART)     | JST-GH 6P | 155mm |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -1055,9 +1054,9 @@ N/A
 
 Pre-made JST-GH cable. No crimping required — source cable at the required length below.
 
-| Harness | Connector | Required Length (mm) |
+| Harness | Connector | Required Length  |
 | :--- | :--- | :--- |
-| HAR-026 (Remote ID) | JST-GH 4P | 65 |
+| HAR-026 (Remote ID) | JST-GH 4P | 65mm |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
@@ -1112,10 +1111,10 @@ N/A
 
 Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
 
-| Harness | Connector | Required Length (mm) |
+| Harness | Connector | Required Length  |
 | :--- | :--- | :--- |
-| HAR-027 power (4P) | JST-GH 4P | 325 |
-| HAR-027 video (8P) | JST-GH 8P | 325 |
+| HAR-027 power (4P) | JST-GH 4P | 325mm |
+| HAR-027 video (8P) | JST-GH 8P | 325mm |
 
 ### 4. Termination & Pinout Map
 *Connect End A to End B following this chart.*
