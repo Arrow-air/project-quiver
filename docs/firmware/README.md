@@ -20,6 +20,12 @@ Cherry-picks [PR #31663](https://github.com/ArduPilot/ardupilot/pull/31663) from
 ### Temperature Sensors
 Enables support for: MCP9600, MLX90614, TSYS01, TSYS03 (I2C).
 
+### OpenDroneID (Remote ID)
+Enables ArduPilot's OpenDroneID support (`AP_OPENDRONEID_ENABLED`) for use with the DroneBeacon db201 or any external Remote ID transponder.
+- Connects via **DroneCAN** (CAN1, already configured)
+- The standard Pixhawk 6C bootloader is unchanged — firmware can still be updated freely
+- Enable via `parameters/params-remoteid.param` (disabled by default)
+
 ## Firmware File
 
 | File | Description |
@@ -42,6 +48,7 @@ Load in order:
 | `parameters/standard-params.param` | Base configuration — load this first on every drone |
 | `parameters/params-ethernet.param` | *(optional)* Enable PPP networking via Raspberry Pi |
 | `parameters/params-object-avoidance.param` | *(optional)* Enable RPLidar S2 obstacle avoidance |
+| `parameters/params-remoteid.param` | *(optional)* Enable DroneBeacon db201 Remote ID via DroneCAN |
 
 See [`parameters/PARAMETER_NOTES.md`](./parameters/PARAMETER_NOTES.md) for full documentation.
 
