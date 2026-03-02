@@ -1,0 +1,21 @@
+# Quiver Object Avoidance Parameters
+# Apply on top of standard-params.param to enable RPLidar S2 + object avoidance.
+#
+# Requires: ArduCopter Pixhawk6C-arrow custom firmware build (includes PR #31663)
+# RPLidar S2 must be connected to the appropriate serial port.
+#
+# Serial port for RPLidar S2:
+#   SERIALx_PROTOCOL = 11  (Lidar360)
+#   SERIALx_BAUD = 1000    (1 Mbaud)
+# Set x to whichever serial port the S2 is connected to.
+
+# Enable proximity sensor — RPLidar S2 (uses type 5, same as A2 driver)
+PRX1_TYPE,5
+PRX1_YAW_CORR,180
+PRX1_MIN,1
+PRX1_ORIENT,0
+PRX1_MAX,0
+PRX_FILT,0.25
+
+# Enable object avoidance (3 = proximity + fence)
+AVOID_ENABLE,3
