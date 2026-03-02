@@ -1,0 +1,26 @@
+# Remote ID Configuration
+# Edit these values for your operator and drone registration
+
+# Your drone's unique ID (serial number, registration, or UTM UUID)
+uas_id: "QUIVER-001"
+
+# ID type: 1=Serial Number, 2=CAA Registration, 3=UTM (UUID), 4=Specific Session
+uas_id_type: 1
+
+# Aircraft type: 2=Multirotor
+ua_type: 2
+
+# Your pilot/operator registration ID (EU: your EASA operator number, US: FAA registration)
+operator_id: "GBR-OPERATOR-12345"
+
+# Operator ID type: 0=None, 1=EU/EASA (most common)
+operator_id_type: 1
+
+# Connection to ArduPilot
+# Via PPP network (recommended): tcp:192.168.13.14:5760
+# Via serial direct:              /dev/serial0:921600
+# Via UDP broadcast:              udpin:0.0.0.0:14550
+connection: "tcp:192.168.13.14:5760"
+
+# How often to send Remote ID messages (Hz) — spec requires at least 1 Hz
+rate_hz: 1

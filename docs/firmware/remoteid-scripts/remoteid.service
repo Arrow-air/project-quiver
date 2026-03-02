@@ -1,0 +1,18 @@
+[Unit]
+Description=Quiver Remote ID Broadcaster (DroneBeacon db201)
+After=network.target
+# If using PPP, wait for the ppp interface to come up:
+# After=ppp@ppp0.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/remoteid
+ExecStart=/usr/bin/python3 /home/pi/remoteid/remoteid.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
