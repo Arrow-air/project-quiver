@@ -7,7 +7,12 @@
 # After loading these params, configure operator/drone IDs in:
 #   Mission Planner → DATA → DroneID tab
 #   (UAS_ID, operator ID, operator location — per-operator, not stored here)
+#
+# DID_OPTIONS=1: disables "Transmitter lost" pre-arm block. Remote ID still
+# broadcasts normally — this only prevents it from blocking arming if the
+# operator/UAS IDs aren't fully configured yet.
 
 DID_ENABLE,1
 DID_CANDRIVER,1
 DID_MAVPORT,-1
+DID_OPTIONS,1
