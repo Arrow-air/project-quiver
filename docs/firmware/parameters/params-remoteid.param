@@ -2,17 +2,20 @@
 # Load AFTER standard-params.param to enable OpenDroneID
 #
 # Requires: firmware with AP_OPENDRONEID_ENABLED=1 (included in Quiver custom build)
-# Hardware: DroneBeacon db201 connected to CAN1 (already configured in standard-params)
+# Hardware: DroneBeacon db201 connected to CAN2
+#
+# Note: db201 must be on CAN2, not CAN1. CAN1 is saturated with ESC traffic
+# and the db201 fails to enumerate on it. CAN2 at 1Mbps works reliably.
 #
 # After loading these params, configure operator/drone IDs in:
 #   Mission Planner → DATA → DroneID tab
-#   (UAS_ID, operator ID, operator location — per-operator, not stored here)
 #
-# DID_OPTIONS=1: disables "Transmitter lost" pre-arm block. Remote ID still
-# broadcasts normally — this only prevents it from blocking arming if the
-# operator/UAS IDs aren't fully configured yet.
+# DID_OPTIONS=1: disables pre-arm block if operator/UAS IDs not yet configured.
 
 DID_ENABLE,1
-DID_CANDRIVER,1
+DID_CANDRIVER,2
 DID_MAVPORT,-1
 DID_OPTIONS,1
+
+# Raise CAN2 to 1Mbps to match db201 (standard-params sets it to 500kbps)
+CAN_P2_BITRATE,1000000
