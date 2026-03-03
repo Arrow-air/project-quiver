@@ -2,12 +2,16 @@
 # Load AFTER standard-params.param to enable OpenDroneID
 #
 # Requires: firmware with AP_OPENDRONEID_ENABLED=1 (included in Quiver custom build)
-# Hardware: DroneBeacon db201 connected to CAN2
+# Hardware: DroneBeacon db201 connected to CAN2 (shared with nanoradar, 500kbps)
 #
-# Note: db201 must be on CAN2, not CAN1. CAN1 is saturated with ESC traffic
-# and the db201 fails to enumerate on it. CAN2 at 1Mbps works reliably.
+# IMPORTANT: Before loading these params, configure the db201 CAN bitrate to
+# 500kbps using the DroneBeacon Bluetooth config app. Default db201 bitrate is
+# 1Mbps — it will not enumerate on CAN2 until this is changed.
 #
-# After loading these params, configure operator/drone IDs in:
+# CAN1 (1Mbps) = ESCs only — too saturated for db201 node allocation
+# CAN2 (500kbps) = nanoradar + db201 — low traffic, works fine
+#
+# After loading, configure operator/drone IDs in:
 #   Mission Planner → DATA → DroneID tab
 #
 # DID_OPTIONS=1: disables pre-arm block if operator/UAS IDs not yet configured.
@@ -16,6 +20,3 @@ DID_ENABLE,1
 DID_CANDRIVER,2
 DID_MAVPORT,-1
 DID_OPTIONS,1
-
-# Raise CAN2 to 1Mbps to match db201 (standard-params sets it to 500kbps)
-CAN_P2_BITRATE,1000000
