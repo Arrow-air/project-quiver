@@ -67,16 +67,16 @@ class TattuBridge:
         full_data = bytearray()
 
         # --- Frame length validation ---
-        for i, frame in enumerate(self.frames):
-            min_len = 7 if i == 0 else 7
-            if len(frame) < min_len:
-                log.warning(f"Frame {i} too short ({len(frame)} bytes), discarding sequence")
-                return
+        # Frame 0 needs at least 7 bytes (we read [2:7]).
+        # Subsequent frames can be shorter (the final Tattu frame is legitimately 6 bytes).
+        if len(self.frames[0]) < 7:
+            log.warning(f"Frame 0 too short ({len(self.frames[0])} bytes), discarding sequence")
+            return
 
         # --- Reassembly ---
         full_data.extend(self.frames[0][2:7])        # Frame 0: skip 2-byte CRC, take 5 bytes
         for i in range(1, 8):
-            full_data.extend(self.frames[i][0:7])    # Frames 1-7: take first 7 bytes each
+            full_data.extend(self.frames[i][0:min(len(self.frames[i]), 7)])  # take up to 7 bytes
 
         if len(full_data) < 12:
             log.warning(f"Reassembled data too short ({len(full_data)} bytes), discarding")
