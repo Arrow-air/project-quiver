@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "EasyEDA_Lib")(type "EasyEDA (JLCEDA) Pro")(uri "${KIPRJMOD}/EasyEDA_Lib/EasyEDA_Lib.elibz")(options "")(descr ""))
+)
