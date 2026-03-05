@@ -1,0 +1,11 @@
+# KiCad auto-save backups
+*-backups/
+
+# KiCad lock files (created while files are open)
+~*.lck
+
+# KiCad cache files
+fp-info-cache
+
+# Fabrication toolkit Gerber export backups
+production/backups/
