@@ -252,7 +252,7 @@ Instructions for the technician installing this harness into the chassis.*
 | **Connector A** | XT60-M| 2-Pos XT-60| 1 |
 | **Terminals A** | Wire | Solder | 2|
 | **Wire** | 6 AWG | Silicon | 490mm |
-| **Sleeving** | Required| 9.5mm ID Heatshrink at motor arm bend | 7cm |
+| **Sleeving** | Required| 9.5mm ID heatshrink at motor arm bend | 7cm |
 
 ### 3. Wire Prep (Cut & Strip)
 *Prepare all wires before assembly.*
@@ -273,7 +273,7 @@ Instructions for the technician installing this harness into the chassis.*
 ### 6. Assembly Instructions (Not finished)
 1.  **Prep:** Cut wires to length and strip insulation per Section 3.
 4.  **Populate A:** Solder cables into Connector A housing.
-6.  **Heatshrink:** Apply a 7cm 9.5mm ID Heathrink at the motor arm bend location. This heatshrink will protect the ESC Power and signal cables*
+6.  **Heatshrink:** Apply a 7cm 9.5mm ID heatshrink at the motor arm bend location. This heatshrink will protect the ESC Power and signal cables*
 
 ---
 
@@ -341,7 +341,7 @@ Instructions for the technician installing this harness into the chassis.*
 ### 5. Assembly Instructions
 1.  **Prep:** Cut wires to length and strip insulation per Section 
 4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-6.  **Heatshrink:** Apply a 7cm 9.5mm ID Heathrink at the motor arm bend location. This heatshrink will protect the ESC Power and signal cables*
+6.  **Heatshrink:** Apply a 7cm 9.5mm ID Heatshrink at the motor arm bend location. This heatshrink will protect the ESC Power and signal cables*
 
 ---
 
@@ -596,7 +596,7 @@ Technician will have to combine two cables to create a 400mm cable.
 * **Destination Connection:** ATT INT (bottom)  
 * **Routing Path:**  
  * Path -   Top Plate, right side opening, through mid plate openings, attached to the underside of the bottom plate
- * Constraint -   Number of cables passing through opentings
+ * Constraint -   Number of cables passing through openings
  * Fixing -   Various zip ties show in red
 ![alt text](assets/HAR014-1.jpg)![alt text](assets/HAR014-2.jpg)
 
