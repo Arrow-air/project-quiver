@@ -34,6 +34,7 @@ Further modification version (By Julius):
 |-|-|
 |![](assets/image/version_kbm_overview.jpg)|![](assets/image/version_julius_overview.jpg)|
 |![](assets/image/version_kbm_overview_back.jpg)|![](assets/image/version_julius_overview_back.jpg)|
+
 _Two directions of overview of both versions_
 
 # 2. Methodologies
@@ -51,6 +52,7 @@ The total amount of anchors are designed for more than current need, this decisi
 |KBM's Version|Julius's Version|
 |-|-|
 |![](assets/image/cable_anchor_array_kbm.jpg)|![](assets/image/cable_anchor_array_julius.jpg)|
+
 _A highlighted single anchor feature in images above._
 
 ## 2.2. Embedded LiDAR mount
@@ -118,6 +120,7 @@ The mounting plate's corresponding screw insert bases has been added to the encl
 Additionally, the plates are **Not Interchangeable** between two versions due to the main enclosure geometry difference. The plate's screw insert lips between two versions are having different location:
 
 ![](assets\image\mounting_plate_difference.png)
+
 _Grey: Julius's version._
 
 _Blue: KBM's version._
@@ -137,6 +140,7 @@ The original design of main enclosure is oversized for most of regular 3D printe
 This modification is also effective to the battery PCB cover part with shortened rain shield:
 
 ![](assets/image/total_enclosure_length_detail_julius.jpg)
+
 _Highlighted display of battery PCB cover._
 
 ### 2.6.2 Antenna Mount Optimize
