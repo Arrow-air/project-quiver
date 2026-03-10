@@ -19,7 +19,7 @@ The Quiver SDK is a Python-based development toolkit that enables developers to 
 The Quiver system architecture centers around a companion computer (Raspberry Pi) that acts as the intelligent bridge between the flight controller, payload devices, and the cloud-based Quiver Hub. The companion computer connects to Quiver Hub over wireless/cellular internet for command and control, while locally managing three payload ports (C1, C2, C3) through an integrated network switch that provides both Ethernet and CAN bus connectivity.
 
 **Network Topology:**  
-![][image1]  
+![image1](https://github.com/Arrow-air/project-quiver/blob/errrks-DeVKit-Guides/task-grant-bounty/Dev-Kit/images/payload/Quiver%20Payload%20Network.png)
 **Connection Details:**
 
 - **Wireless/Internet**: Companion ↔ Quiver Hub (HTTPS REST API, WebSocket telemetry)  
