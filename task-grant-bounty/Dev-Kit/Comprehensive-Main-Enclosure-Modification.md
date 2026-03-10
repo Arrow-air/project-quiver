@@ -1,87 +1,160 @@
 ---
-title: Information Note - Comprehensive Main Enclosure Modification
+title: Comprehensive Main Enclosure Modification
 author: Dow Fisher KBM
-status: draft
-tags: quiver, information-note
+status: valid
+tags: quiver, PT3, dev-kit, structural, enclosure
+revision history: V1.0
 ---
+# 1. Project Description
 
-# Information Note - Comprehensive Main Enclosure Modification
+Since the initial design release of enclosure assembly, the main enclosure and the cockpit lid were became frequently accessed components, offering important protection for PCB and avionic wiring against various flight environment such as desert dust. 
 
-Quiver PT3
-Heavy-Lift Multipurpose UAV (<25 kg MTOW)
+As the demand of protection level was upgraded, certain modifications were performed in this design evolution. With two versions of modifications were provided for final decision.
 
-Table of content
-[toc]
+Main modification version (by KBM):
 
-## 1. Project Description
+1. Electrical engineering personnel asked for cable anchors with zip-tie-friendly.
+2. An embedded mounting slot on the lid for "SLAMTEC RPLIDAR S2L" 360 LiDAR module.
+3. A liquid silicone groove design for cockpit lid water proof performance upgrade.
+4. Introducing a new cockpit latches for better reliability.
+5. A mounting plate for settling the Ethernet adapter and Remote-ID beacon module.
 
-Since the initial design release, the main enclosure and the cockpit lid are becoming highly used components, offering important protection for PCB and flight controller wiring against desert flight environment.
+Further modification version (By Julius):
 
-For the latest evolution, certain modifications were performed to comply with following requirements :
+1. New alternative water proof mechanism for the cockpit lid by using silicone strip. 
+2. Improved LiDAR mounting slot with drainage design and cable inlet sealant reservation.
+3. Improved outer shape of antenna mount bases with slope for better rain drainage.
+4. Minimized battery rain shield and front cable outlet geometries for better 3D printer build size compatibility.
 
-1. Electrical engineering personnel asked for cable anchor with zip-tie-friendly.
-2. An embedded 360 LiDAR mounting slot for the SLAMTEC RPLIDAR S2L.
-3. Water proof performance upgrade for the contact between the enclosure and the lid. 
-4. A mounting plate for Ethernet adapter and Remote-ID beacon module.
-
-## 2. Methodologies
-
-All modifications are performed based on original enclosure design for evolution. The LiDAR mounting slot was designed based on the 3D model S2L LiDAR module, also the new module mounting plate was designed based on the corresponding Ethernet adapter and Remote-ID beacon module.
-
-### 2.1. Cable anchors
-
-The design of cable anchors including better 3D printing slicing and curved shape for accommodate with zip-tie and large cable, and anchors spread by array and mirror feature for a even distribution. Total amounts of these anchors are designed for more than current need, this decision is to reserve amount for future use.
-
-![cable_anchor_array.jpg](https://hackmd.io/_uploads/SJgsPYFlwZg.jpg)
-_A single anchor feature highlighted in the image._
-
-### 2.2. Embedded LiDAR mount
-The installation slot of SL2 LiDAR were designed for minimize the profile of LiDAR module, meanwhile avoiding blocking the optical path of laser beam. Those large space and gaps are intended to reserve better cleaning and drying space around the LiDAR module.
-
-![lidar_installation_slot_total.jpg](https://hackmd.io/_uploads/HkcblqeDWe.jpg)
-
-Cable entry was design to pass though the electrical connectors of LiDAR module, also for adhesive or sealing material application. 
-
-|Wall Gaps|Mount Base|
+|KBM's Version|Julius's Version|
 |-|-|
-|![lidar_installation_slot_gap.jpg](https://hackmd.io/_uploads/HJEQlcxD-e.jpg)|![lidar_mounting_slot_gap_base.jpg](https://hackmd.io/_uploads/r1EQlqgw-g.jpg)|
+|![](images/Enclosure-Modification/version_kbm_overview.jpg)|![](images/Enclosure-Modification/version_julius_overview.jpg)|
+|![](images/Enclosure-Modification/version_kbm_overview_back.jpg)|![](images/Enclosure-Modification/version_julius_overview_back.jpg)|
 
-For the inside features of the installation slot, multiple support beams and fillets are designed for better lid structural integrity.
+_Two directions of overview of both versions_
 
-![lidar_installation_slot_inside.jpg](https://hackmd.io/_uploads/HySKgqlP-g.jpg)
-_With the 3D model of LiDAR module connector and cable harnessing._
+# 2. Methodologies
 
-### 2.3. Water proof sealing
+Current evolution of KBM's version was modified based on the original enclosure design, with 3D models from corresponding peripheral and modules. Then Julius's version was preformed based on KBM's latest modification.
 
-(Add water proof sealing groove for lid, and the lip for enclosure)
-(groove design for applying 30A hardness liquid silicone)
+Most of inner corners of the main enclosure are been refined and smoothed for further modeling, while minimized support structures requirement of 3D printing.
 
-After the water splashing and spraying test in Germany, the original splash proof eaves design on the lid has been found insufficient in performance. A combination of groove and lip has been introduced in this version.
+## 2.1. Cable anchors
+
+A new style of cable anchors are introduced, as curved shape for accommodate with zip-ties and large cables, also for better non-support 3D printing slicing process. Anchors are spread using array and mirror features for a even distribution. 
+
+The total amount of anchors are designed for more than current need, this decision is to reserve free anchors for any additional or temporal wiring for future use.
+
+|KBM's Version|Julius's Version|
+|-|-|
+|![](images/Enclosure-Modification/cable_anchor_array_kbm.jpg)|![](images/Enclosure-Modification/cable_anchor_array_julius.jpg)|
+
+_A highlighted single anchor feature in images above._
+
+## 2.2. Embedded LiDAR mount
+
+The installation slot of LiDAR module was designed to minimize the height profile of the module, while not blocking the optical path of its laser beam. 
+
+Those large space and gaps around the module are intended to reserve a better cleaning and draining space, the drainage in Julius's version uses a special designed slope for better draining effect. While cable outlet opening in both versions were designed to pass through the whole electrical connector of the LiDAR module, and their geometries are compatible with sealant application. 
+
+|KBM's Version|Julius's Version|
+|-|-|
+|![](images/Enclosure-Modification/lidar_mounting_slot_kbm.jpg)|![](images/Enclosure-Modification/lidar_mounting_slot_julius.jpg)|
+|![](images/Enclosure-Modification/lidar_mounting_slot_gap_base_kbm.jpg)|![](images/Enclosure-Modification/lidar_mounting_slot_gap_base_julius.jpg)|
+|![](images/Enclosure-Modification/lidar_mounting_slot_gap_kbm.jpg)|![](images/Enclosure-Modification/lidar_mounting_slot_gap_julius.jpg)|
+
+For reinforcing the the slot and the mount, multiple support beams and fillets are designed as inside features of the lid in KBM's version:
+
+|KBM's Version|Julius's Version|
+|-|-|
+|![](images/Enclosure-Modification/lidar_mounting_slot_inside_kbm.jpg)|![](images/Enclosure-Modification/lidar_mounting_slot_inside_julius.jpg)|
+
+_Display of inside of the lid, with LiDAR module cable harnessing and connector._
+
+## 2.3. Water proof sealing
+
+After the water splashing and spraying test in Germany, the original splash proof slope design on the lid has been found insufficient in mid-to-heavy rain scenario. 
+
+To resolve the issue, a waterproof ring of groove and lip combination between lid and main enclosure has been introduced into both version, but with two different solutions for the sealant design:
+
+|-|KBM's Version|Julius's Version|
+|-|-|-|
+|Design Purpose|A layer of 30A hardness liquid silicone is required to be filled into the groove which on the lid. After curing, the silicone will become a waterproof ring.|Attach a round silicone foam strip into the groove which on the main enclosure, to be the waterproof ring.|
+|Groove View|![](images/Enclosure-Modification/waterproof_groove_kbm.png)|![](images/Enclosure-Modification/waterproof_groove_julius.png)|
+|Groove Detail View|![](images/Enclosure-Modification/waterproof_groove_detail_kbm.png)|![](images/Enclosure-Modification/waterproof_groove_detail_julius.png)|
+|Lip View|![](images/Enclosure-Modification/waterproof_lip_kbm.png)|![](images/Enclosure-Modification/waterproof_lip_julius.png)|
+|Cut Section|![](images/Enclosure-Modification/waterproof_section_kbm.png)|![](images/Enclosure-Modification/waterproof_section_julius.png)|
+|Installation Example|![](images/Enclosure-Modification/waterproof_silicone_install_kbm.jpg)|![](images/Enclosure-Modification/waterproof_silicone_install_julius.png)|
+|Installation Detail|![](images/Enclosure-Modification/waterproof_silicone_amount_kbm.png) <br>For the liquid silicone amount to applicate, half-depth of filling level is recommended for the desired pressure.|Measure and cut a certain length of 8 mm diamter "Uxcell Silicone Foam" seal strip into the groove.|
  
-(refined inner corner shapes for better 3d printing)
+## 2.4. Cockpit latch replacement
 
-Requires ...
+The original 3D printed latches on both side of lid were been replaced by two stainless draw latches, with the model number of McMaster-Carr reference: 6082A11
 
-### 2.4. Module mounting plate
+The screw insert layout on both lid and enclosure has been modified to fit with the new latches.
 
-(designed for better maintainability with double screw-install and 45 degree angle tilted insert)
+![](images/Enclosure-Modification/new_latch.png)
+\* Using KBM's version for the display of the new latch.
 
-## Results and Deliverables 
+## 2.5. Module mounting plate
 
-(new 3d model with new and refined things)
+For settling the Ethernet adapter and Remote-ID beacon module, without applying fragile mating to high-stressed structural parts (e.g. motor beam connectors). A simple, floating and triangular shaped module mounting plate has been introduced to the main enclosure's inner corner. This mounting plate is interchangeable between left and right side of the aircraft.
 
-All improvements are integrated in the same piece of enclosure parts, including the inserts of module mounting plate. The module mounting plate is interchangeable between inserts of left and right corner.
+The geometry of mounting plate is simple. End users may customize the plate to fit with their purpose by removing or adding any features.
 
-The newly designed enclosure parts can replace the original enclosure.
+![](images/Enclosure-Modification/mounting_plate_individual.png)
+\* Using KBM's version for the display of mounting plate design.
 
-(enclosure 3d printing slicing procedure might get complicated)
-(The 3D printing and slicing orientation are limited for the ideal quality)
+The mounting plate's corresponding screw insert bases has been added to the enclosure wall, letting the plate maintain a moderated clearance between cable anchors, avoiding conflict with any cables between them. The screw insert bases are designed to be 45 degrees upward facing, for better maintenance access and non-support 3D printing. 
 
-(exploded screenshot)
+|Assembly View|Isolated View|
+|-|-|
+|![mounting_plate_overview.png](images/Enclosure-Modification/mounting_plate_overview.png)|![mounting_plate_isolated.png](images/Enclosure-Modification/mounting_plate_isolated.png)|
+
+\* Using KBM's version for the display of mounting plate design.
+
+Additionally, the plates are **Not Interchangeable** between two versions due to the main enclosure geometry difference. The plate's screw insert lips between two versions are having different location:
+
+![](assets\image\mounting_plate_difference.png)
+
+_Grey: Julius's version._
+
+_Blue: KBM's version._
+
+## 2.6 3D Printing Compatibility Improvement
+
+\* This modification is effective for Julius's version only.
+
+### 2.6.1 Over-all Size Optimize
+
+The original design of main enclosure is oversized for most of regular 3D printers, making it hard to be widely manufacture. Current best solution is reduce its total dimension, by shorten the battery rain shield and the front cable outlet.
+
+|Original / KBM's Version|Julius's Version|
+|-|-|
+|![](images/Enclosure-Modification/total_enclosure_length_old.jpg)<br>34.739 cm|![](images/Enclosure-Modification/total_enclosure_length_julius.jpg)<br>31.416 cm|
+
+This modification is also effective to the battery PCB cover part with shortened rain shield:
+
+![](images/Enclosure-Modification/total_enclosure_length_detail_julius.jpg)
+
+_Highlighted display of battery PCB cover._
+
+### 2.6.2 Antenna Mount Optimize
+
+The outer shape of antenna mount has been improved to prevent junky 3D printing overhang, also preventing any rain drops to concentrate around the antenna base.
+
+|Original / KBM's Version|Julius's Version|
+|-|-|
+|![](images/Enclosure-Modification/antenna_mount_old.jpg)|![](images/Enclosure-Modification/antenna_mount_julius.jpg)|
+
+# Results and Deliverables 
+
+Two versions of new models sets, including: Lid, Main enclosure, Front PCB cover and Module mounting plate. All models are ready to be 3D printed.
+
+For the ideal 3D printing quality, the slicing orientation shall set to upward facing. Enabling raft or support structures for the main enclosure during the printing are strongly recommended, or the printing may output various bad results.
+
+For the waterproof liquid silicone applications, please refer to the silicone supplier's instructions for the operation, and perform the operation on a leveled surface.
+
+# Remarks
 
 **(End of content)**
-
-## Remarks
-
-Feb-04-2026 0400UTC: 
-- Delaying this documentation due to the ongoing 3D printing manufacturing issue.
