@@ -1,4 +1,3 @@
-**Uploaded to Github on February 12th, 2026**
 # Quiver SDK Developer Guide
 
 ## 1\. Introduction
