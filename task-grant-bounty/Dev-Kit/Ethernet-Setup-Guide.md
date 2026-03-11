@@ -65,7 +65,7 @@ PPP is not included by default in the ArduPilot firmware. I have not build a fir
 
 Use the custom firmware build server to build a firmware that includes PPP support: https://custom.ardupilot.org/
 
-![image](https://hackmd.io/_uploads/rkI5tA4SZx.png)
+![image](images/Ethernet-Setup/2.png)
 
 #### Physical connection of the CubeNode ETH adapter
     For dev-kit PCB:
@@ -125,7 +125,7 @@ We will now set the CubeNode ETH parameters. In the DroneCAN/UAVCAN screen conne
 
 Press the “Menu” button on the right side and select “Parameters”
 
-![image](https://hackmd.io/_uploads/HJpoGNLSWx.png)
+![image](images/Ethernet-Setup/3.png)
 
 Set the following parameters and press the “Write” button
     
@@ -162,14 +162,14 @@ NET: Gateway 192.168.144.10
 NET: Mask 255.255.255.255
 NET: IP 192.168.144.11
 
-![Startup_FC_with_ETH](https://hackmd.io/_uploads/SJX0JSUrZx.png)
+![Startup_FC_with_ETH](images/Ethernet-Setup/4.png)
 
 ## 5. RPI Setup
 
 ### 5.1 Image preparation
 
 Please use the Raspberry PI Imager to create the OS for the RPI: https://www.raspberrypi.com/software/
-![image](https://hackmd.io/_uploads/rJdZfSLBbx.png)
+![image](images/Ethernet-Setup/5.png)
 
 It offers some features that will make a headless setup really easy.
 
@@ -201,11 +201,11 @@ The SIYI camera/HM30 comes with a RJ45 cable that only has 4 wires inside. I use
     - Transmit + and - (often white-green and green wire)
     - Receive + and - (often white-orange and orange wire)
 
-![image](https://hackmd.io/_uploads/ryRV_BIS-e.png)
+![image](images/Ethernet-Setup/6.png)
 
 - After you prepared the cable store it and **do not connect it at this time**
 
-![RPI_cable](https://hackmd.io/_uploads/B1JIxI8H-g.jpg)
+![RPI_cable](images/Ethernet-Setup/7.jfif)
 
 :::warning
 DO NOT CONNECT THE CABLE YET
