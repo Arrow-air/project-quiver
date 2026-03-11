@@ -1,8 +1,9 @@
 ---
-title: Information Note - Sensor Mount Re-modeling
+title: Sensor Mount Re-modeling
 author: Dow Fisher KBM
 status: valid
-tags: quiver, information-note
+tags: quiver, PT3, dev-kit, sensor, mount
+revision history: V1.0
 ---
 # Information Note - Sensor Mount Re-modeling
 
@@ -18,7 +19,7 @@ The upper part of the new sensor mount has been design into an X-patterned struc
 
 The screw insert bases of forward facing radar are also using large chamfer for non-support 3D printing.
 
-![altitude_sensor_mount.jpg](https://hackmd.io/_uploads/SyrXBIxv-x.png)
+![](images/Mounts/altitude_sensor_mount.png)
 
 ## Results and Deliverables 
 
@@ -26,6 +27,6 @@ The result is the single piece of new 3D printable altitude sensor mount. Screw 
 
 |3D Work space|Reality|
 |-|-|
-|![altitude_sensor_mount_system](https://hackmd.io/_uploads/HJ0fIUlvZx.png)|![altitude_sensor_mount_system_real](https://hackmd.io/_uploads/rkRI88lwZx.png)|
+|![](images/Mounts/altitude_sensor_mount_system.png)|![](images/Mounts/altitude_sensor_mount_system_real.png)|
 
 **(End of content)**
