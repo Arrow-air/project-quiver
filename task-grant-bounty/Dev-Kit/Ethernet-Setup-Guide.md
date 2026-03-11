@@ -38,7 +38,7 @@ Installation of two GigaBlox Nano Ethernet switches. This is the basic requireme
 ### 2.2 Installation
 
 1. Plug each Ethernet switch into the designated connector on the main PCB. 
-![ethernet](https://hackmd.io/_uploads/SkH0eREH-l.jpg)
+![ethernet](images/Ethernet-Setup/1.jfif)
 
 2. Screw the Ethernet switches in place using 2 M2x6 screws each.  
 
@@ -287,7 +287,7 @@ Activate venv and install can libraries
 
 Over SFTP place the tattu_bridge.py script into the project folder (home/USER/tattu_can_bridge/tattu_bridge.py)
 
-Discord link to file: https://discord.com/channels/853833144037277726/914195759216336947/1443547529374597121
+Download Tattu Bridge: https://github.com/Arrow-air/project-quiver/blob/feature/firmware-docs-v2/docs/firmware/remoteid-scripts/tattu_bridge.py
 
 Create service to automatically start can interface on startup:
 
