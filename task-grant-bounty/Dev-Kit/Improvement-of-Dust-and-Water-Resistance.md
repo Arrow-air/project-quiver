@@ -35,7 +35,7 @@ Goal: Improved dust and water protection.
 
 ### 1. Area between the lid and the middle housing
 An improved sealing solution was implemented. The gap is now sealed with a silicone sealing strip.
-![image](images/Weatherproofing/1.jpg)
+![image](images/Weatherproofing/1.JPG)
 ![image](images/Weatherproofing/2.png)
 
 ### 2. Round holes for the ESC cables
