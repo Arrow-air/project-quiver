@@ -13,7 +13,7 @@
 # Project Description
 
 ## PCB Overview
-![Front_PCB](https://hackmd.io/_uploads/rkSriftP-e.png)
+![alt text](images/PCB/Front/Front_PCB.png)
 
 The Battery PCB was updated to include various changes that were noticed during the build and testing process. Most notably, the power rating on various MOSFETs was increased and more protection diodes. 
 
@@ -24,20 +24,20 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
 # Results and Deliverables
 
 ## Updated Schematics and CAD files
-![Pt3_old](https://hackmd.io/_uploads/S1ZRzGFDbx.png)
+![alt text](images/PCB/Front/Front_Pt3_old.png)
 
 <sub>***Previous schematic with highlighted changes***</sub>
 
-![Dev_new](https://hackmd.io/_uploads/BysAMzFvZl.png)
+![alt text](images/PCB/Front/Front_Dev_new.png)
 
 <sub>***Updated schematic with new components highlighted***</sub>
 
-![total](https://hackmd.io/_uploads/HJ9yXMYvZl.png)
+![alt text](images/PCB/Front/total.png)
 
 
 | F.CU | In1.CU | In2.CU | B.CU |
 |:----:|:------:|:------:|:----:|
-|      |        |        |      |
+|  ![alt text](images/PCB/Front/F.CU.png)    | ![alt text](images/PCB/Front/In1.CU.png)       | ![alt text](images/PCB/Front/In2.CU.png)       |  ![alt text](images/PCB/Front/In3.CU.png)    |
 
 ## PCB Updates
 
