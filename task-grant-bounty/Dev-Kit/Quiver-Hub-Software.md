@@ -1,10 +1,11 @@
-# information-note — Quiver Hub Software
+# Quiver Hub Software
 
 ## 1. Status
 
-Valid: True  
-Revision History: 2026-02-21
-Replacement Log: TBD  
+`Valid: True  `
+`Revision History: 2026-02-21`
+`Replacement Log: TBD  `
+`Reference: Quiver-SDK`
 
 ---
 

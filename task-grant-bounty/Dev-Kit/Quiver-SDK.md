@@ -2,10 +2,10 @@
 
 # Status
 
-Valid: True
-Revision History: 2026-01-25 — compiled from Arrow DAO forum discussion and the Quiver SDK developer guide outline.  
-Replacement Log: TBD  
-Reference: Quiver SDK Development — Unified Payload + Companion Computer SDK
+`Valid: True`
+`Revision History: 2026-01-25 — compiled from Arrow DAO forum discussion and the Quiver SDK developer guide outline.  `
+`Replacement Log: TBD  `
+`Reference: Quiver SDK Development — Unified Payload + Companion Computer SDK`
 
 # Project Description
 
