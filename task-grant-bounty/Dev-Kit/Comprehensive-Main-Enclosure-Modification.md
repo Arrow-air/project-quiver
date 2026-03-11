@@ -6,7 +6,6 @@
 
 `status: valid`
 
-
 `revision history: V1.0`
 
 # 1. Project Description
