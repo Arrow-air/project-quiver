@@ -5,7 +5,7 @@ tags: quiver, information-note
 
 # Information Note - Improvement of dust and water resistance
 
-Quiver PT3
+Quiver Dev-Kit
 Heavy-Lift Multipurpose UAV (<25 kg MTOW)
 
 Table of content
@@ -13,7 +13,7 @@ Table of content
 
 # Project Description
 
-To better protect the Quiver PT3 housing against dust and water, several options are listed and tested here. The ultimate goal is complete water protection so that the drone can fly during rain.
+To better protect the Quiver housing against dust and water, several options are listed and tested here. The ultimate goal is complete water protection so that the drone can fly during rain.
 
 # Methodology 
 
@@ -31,38 +31,37 @@ Goal: Improved dust and water protection.
 4. Plate and enclosure gap
 5. Front side cable entrance
 6. Battery connector PCB compartment gap
+7. Lidar cable entrance hole
 
-## 3 Options tested for the 20mm ESC cable holes (#2)
-All three together:
-![image](https://hackmd.io/_uploads/BkO9vGLI-e.png)
+### 1. Area between the lid and the middle housing
+An improved sealing solution was implemented. The gap is now sealed with a silicone sealing strip.
+![image](images/Weatherproofing/1.jpg)
+![image](images/Weatherproofing/2.png)
 
- 1:
-![image](https://hackmd.io/_uploads/Byznwf8I-x.png)
+### 2. Round holes for the ESC cables
+A rubber grommet is inserted into the holes of the ESC cables. It is not completely waterproof, but it will repel drips and most dust.
+![image](images/Weatherproofing/3.png)
 
- 2:
-![image](https://hackmd.io/_uploads/SkB2PMUIWx.png)
+### 3. Rectangle holes that go into the battery wall
+An oval rubber seal is used. This must be cut to allow cables to pass through. As with the ESC holes, this only repels drips and most dust.
+![image](images/Weatherproofing/4.jpg)
+![image](images/Weatherproofing/5.jpg)
 
- 3.
-![image](https://hackmd.io/_uploads/SyE6DzIIWe.png)
+### 4. Plate and enclosure gap
+No further action is required. If necessary, the edge will be sealed with silicone.
 
- 
-Comment: All 3 will work, I prefer the one that has the lowest hardness (#1)
-## 2 Options tested for the rectangular holes (#3)
-Both versions together (#1 left, #2 right):
-![image](https://hackmd.io/_uploads/HJVpwf8UWg.png)
+### 5. Front side cable entrance
+Cable entrance got removed from the enclosure.
 
+### 6. Battery connector PCB compartment gap
+Seal with removable silicone sealant. For example Würth 08933311.
+![image](images/Weatherproofing/6.jpg)
 
-![image](https://hackmd.io/_uploads/SklxCvfI8Zg.png)
-
-
-![image](https://hackmd.io/_uploads/ByNAvzIUZe.png)
-
-
-Comment: Both not a perfect fit. I recommend using #1 and making minor adjustments to the rectangular holes in the next version. 
-Comment 2: The part with the silicone was just a test. It is a bit messy.
+### 7. Lidar cable entrance hole
+Sealing with adhesive silicone sealant. The gap must be properly filled. For example Würth 08901003.
 
 # Remarks 
 
-- Work in progress
+- A short flight in light rain is feasible with these changes.
 
 (End of document)
