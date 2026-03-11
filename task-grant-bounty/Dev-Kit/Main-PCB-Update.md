@@ -14,7 +14,7 @@
 
 ## PCB Overview
 
-![Main_PCB](https://hackmd.io/_uploads/SynGK55PWg.png) ![Main_PCB_back](https://hackmd.io/_uploads/BkmQF55DWg.png)
+![alt text](images/PCB/Main/Main_PCB.png) ![alt text](images/PCB/Main/Main_PCB_back.png)
 
 
 
@@ -27,18 +27,19 @@ Updates were collected via the manufacturing, assembly, and testing process of Q
 # Results and Deliverables
 
 ## Updated Schematics and CAD files
-![](assets/OLD.png)
+
+![Old](images/PCB/Main/Main_old.png)
+
 <sub>***Previous schematic with highlighted changes***</sub>
 
-![](assets/NEW1.png)
-![](assets/NEW2.png)
+![alt text](images/PCB/Main/Main_New1.png)![alt text](images/PCB/Main/Main_New2.png)![alt text](images/PCB/Main/Main_New3.png)
 <sub>***Updated schematics with new components highlighted***</sub>
 
-![](assets/PCB1.png)
+![alt text](images/PCB/Main/Main_Total.png)
 
 |           F.CU                            |                 In1.CU                      |                      In2.CU                 |                    In3.CU                   |           In4.CU                            |                 B.CU                      |
 |:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|:-------------------------------------:|
-| ![](assets/PCB2.png)| ![](assets/PCB3.png) | ![](assets/PCB4.png) |![](assets/PCB5.png)| ![](assets/PCB6.png)| ![](assets/PCB7.png) |
+|![alt text](images/PCB/Main/F.CU.png) | ![alt text](images/PCB/Main/In1.Cu.png)| ![alt text](images/PCB/Main/In2.Cu.png)|![alt text](images/PCB/Main/In3.Cu.png)|![alt text](images/PCB/Main/In4.Cu.png) | ![alt text](images/PCB/Main/B.CU.png) |
 
 ## PCB Updates
 
