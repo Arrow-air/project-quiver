@@ -27,6 +27,7 @@ Flight Controller: 192.168.144.11
 
 ### 1.2 Helpful Links
 CubePilot CubeNode ETH configuration: https://ardupilot.org/copter/docs/common-cubepilot-cubenodeeth.html
+
 Ardupilot Network: https://ardupilot.org/copter/docs/common-network.html#common-network
 
 ## 2. Ethernet switch installation
