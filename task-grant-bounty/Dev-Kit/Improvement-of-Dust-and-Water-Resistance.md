@@ -1,15 +1,17 @@
----
-title: Information Note - Improvement of dust and water resistance
-tags: quiver, information-note
----
-
 # Information Note - Improvement of dust and water resistance
 
-Quiver Dev-Kit
-Heavy-Lift Multipurpose UAV (<25 kg MTOW)
+# Status  
 
-Table of content
-[toc]
+`Valid`
+
+`Revision History: None`
+
+`Replacement Log: None`
+
+`Reference: None`
+
+
+
 
 # Project Description
 

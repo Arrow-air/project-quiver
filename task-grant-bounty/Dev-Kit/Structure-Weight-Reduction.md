@@ -1,14 +1,15 @@
----
-title: Information Note - Quiver Structure Weight Reduction 1
-tags: quiver, information-note
----
+# Quiver Structure Weight Reduction 
 
-# Information Note - Quiver Structure Weight Reduction 1
-Quiver PT3
-Heavy-Lift Multipurpose UAV (<25 kg MTOW)
+# Status  
 
-Table of content
-[toc]
+`Valid`
+
+`Revision History: None`
+
+`Replacement Log: None`
+
+`Reference: None`
+
 
 ## 1. Structure weight reduction design
 
