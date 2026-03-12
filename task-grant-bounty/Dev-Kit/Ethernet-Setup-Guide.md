@@ -369,6 +369,6 @@ Check can bus status (Bitrate & Errors):
     ip -details link show can0
     
 > [!TIP]
->**Success**
+>**Success:**
 >The can bridge should be working now. Please select DroneCAN-BatteryInfo (Value 8) for the BATT_MONITOR parameter in ardupilot to test it. For testing please also deactivate all other BATT_MONITOR parameters like BATT_MONITOR1, BATT_MONITOR2 etc...
 :::
