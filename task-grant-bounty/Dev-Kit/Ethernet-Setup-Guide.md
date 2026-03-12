@@ -1,22 +1,24 @@
----
-title: Setup Note Quiver Ethernet
-tags: dev-kit, PT3
----
-
 # Setup Note Quiver Ethernet
-Quiver Dev-Kit
-Heavy-Lift Multipurpose UAV (<25 kg MTOW)
 
-Table of content
-[toc]
+# Status  
+
+`Valid`
+
+`Revision History: None`
+
+`Replacement Log: None`
+
+`Reference: None`
+
 
 ## 1. System Configuration
 This document outlines the setup for the DroneCAN Ethernet Adapter (CubeNode ETH), the Flight Controller, and the Raspberry Pi.
 
 ### 1.1 Network Topology
-:::info
-This configuration is for testing. Some IP addresses might change in the final configuration.
-:::
+> [!NOTE]  
+> This configuration is for testing. Some IP addresses might change in the final configuration.
+
+
 
 Drone Subnet: 192.168.144.x
 Gateway (RPI): 192.168.144.20
@@ -42,9 +44,9 @@ Installation of two GigaBlox Nano Ethernet switches. This is the basic requireme
 
 2. Screw the Ethernet switches in place using 2 M2x6 screws each.  
 
-:::warning
-Note: Only the dev-kit PCBs already have the spacers soldered on. Older PCBs must be screwed on with a separate spacer and extra nut. To test the setup, the screw connection can also be omitted, as the Ethernet switches sit very securely on the connector.
-:::
+>[!Warning]
+>Note: Only the dev-kit PCBs already have the spacers soldered on. Older PCBs must be screwed on with a separate spacer and extra nut. To test the setup, the screw connection can also be omitted, as the Ethernet switches sit very securely on the connector.
+
 
 ## 3. CubeNode ETH installation
 This will assign an IP address to the flight controller using the cube node eth adapter. The parameter settings of ardupilot can then be used to make a lot more data available in the network.
@@ -59,9 +61,10 @@ This will assign an IP address to the flight controller using the cube node eth 
 
 #### Ardupilot with PPP Support
 The CubeNode ETH adapter requires an ardupilot version with enabled PPP support. PPP allows an autopilot to communicate over Ethernet using a serial port.
-:::warning
-PPP is not included by default in the ArduPilot firmware. I have not build a firmware yet that includes PPP and the custom S2L integration.
-:::
+
+>[!Warning]
+>PPP is not included by default in the ArduPilot firmware. I have not build a firmware yet that includes PPP and the custom S2L integration.
+
 
 Use the custom firmware build server to build a firmware that includes PPP support: https://custom.ardupilot.org/
 
@@ -84,9 +87,9 @@ For older versions of the main PCB it's just a little bit different:
     - Connect the 5 Pin Ethernet cable to J36 on the main PCB
     - Connect the 4 Pin CAN cable to J35 on the main PCB
     
-:::warning
-The physical mounting of the CubeNode ETH adapter does not yet exist. Please secure it in a safe manner and ensure that it cannot cause any short circuits. The PCB of the CubeNode ETH adapter has exposed pins and pads.
-:::
+>[!Warning]
+>The physical mounting of the CubeNode ETH adapter does not yet exist. Please secure it in a safe manner and ensure that it cannot cause any short circuits. The PCB of the CubeNode ETH adapter has exposed pins and pads.
+
 
 #### Ardupilot parameters
 The CubeNode ETH adapter is connected to CAN1 (***CAN2 on the older PCB!***) and Serial 2 (UART5).
@@ -113,9 +116,9 @@ Ardupilot parameters for old Main_PCB:
     SERIAL2_PROTOCOL = 48 (PPP)
     SERIAL2_BAUD = 12500000 (12.5MBaud)
 
-:::info
-Regarding the older PCB: Our default bitrate for CAN2 is 500 kbit. For the first setup the CubeNode ETH adapter is expecting 1 Mbit. You can later change the default bitrate of the CubeNode ETH adapter to 500 kbit via the DroneCAN/UAVCAN screen.
-:::
+>[!Note]
+>Regarding the older PCB: Our default bitrate for CAN2 is 500 kbit. For the first setup the CubeNode ETH adapter is expecting 1 Mbit. You can later change the default bitrate of the CubeNode ETH adapter to 500 kbit via the DroneCAN/UAVCAN screen.
+
 
 With these parameters the CubeNode ETH adapter should appear on the CAN bus. Its accessible over the DroneCAN/UAVCAN screen.
 
@@ -149,9 +152,9 @@ Set the following parameters and press the “Write” button
     
 With this configuration the CubeNode ETH adapter will have the static IP: 192.168.144.10. The FC will automatically receive the IP 192.168.144.11 from the adapter.
 
-:::info
-Here you can also change the CAN bitrate of the CubeNode ETH adapter. Adjust "CAN_BAUDRATE" to 500000 if you want to also use the Nanoradar devices on CAN2. Do not forget to change "CAN_P2_BITRATE" also to 500000 again after you saved CubeNode ETH parameters.
-:::
+>[!Note]
+>Here you can also change the CAN bitrate of the CubeNode ETH adapter. Adjust "CAN_BAUDRATE" to 500000 if you want to also use the Nanoradar devices on CAN2. Do not forget to change "CAN_P2_BITRATE" also to 500000 again after you saved CubeNode ETH parameters.
+
 
 ## 4. Check connection
 
@@ -193,9 +196,9 @@ It offers some features that will make a headless setup really easy.
 - Place the RPI onto the 40 pin connector on the Main_PCB.
 - You need a ethernet cable that you can cut off at one end. One side should be RJ-45 connector, the other side will be a 4-pin phoenix contact connector (fitting into J2).
 
-:::info
-The SIYI camera/HM30 comes with a RJ45 cable that only has 4 wires inside. I used that one.
-:::
+>[!Note]
+>The SIYI camera/HM30 comes with a RJ45 cable that only has 4 wires inside. I used that one.
+
 
 - We only need two wire pairs of the ethernet cable.
     - Transmit + and - (often white-green and green wire)
@@ -207,9 +210,9 @@ The SIYI camera/HM30 comes with a RJ45 cable that only has 4 wires inside. I use
 
 ![RPI_cable](images/Ethernet-Setup/7.jfif)
 
-:::warning
-DO NOT CONNECT THE CABLE YET
-:::
+> [!WARNING]  
+>DO NOT CONNECT THE CABLE YET
+
 
 ### 5.3 RPI configuration
 
@@ -261,9 +264,9 @@ Do a ping test to the FC:
 
     ping 192.168.144.11
     
-:::info
-We will stop here with the ethernet configuration. If you want to connect to the FC over WIFI, there are several options. I choose to use tailscale to include my computer into the "Drone-Net" network. Then you can just use the TCP connect option in mission planner with 192.168.144.11 and port 5760.
-:::
+> [!NOTE]  
+>We will stop here with the ethernet configuration. If you want to connect to the FC over WIFI, there are several options. I choose to use tailscale to include my computer into the "Drone-Net" network. Then you can just use the TCP connect option in mission planner with 192.168.144.11 and port 5760.
+
 
 ## 6. Tattu battery protocol bridge setup
 
@@ -365,6 +368,7 @@ Check can bus status (Bitrate & Errors):
     
     ip -details link show can0
     
-:::success
-The can bridge should be working now. Please select DroneCAN-BatteryInfo (Value 8) for the BATT_MONITOR parameter in ardupilot to test it. For testing please also deactivate all other BATT_MONITOR parameters like BATT_MONITOR1, BATT_MONITOR2 etc...
+> [!TIP]
+>**Success**
+>The can bridge should be working now. Please select DroneCAN-BatteryInfo (Value 8) for the BATT_MONITOR parameter in ardupilot to test it. For testing please also deactivate all other BATT_MONITOR parameters like BATT_MONITOR1, BATT_MONITOR2 etc...
 :::

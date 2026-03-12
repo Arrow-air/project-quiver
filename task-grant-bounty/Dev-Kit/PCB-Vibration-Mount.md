@@ -1,9 +1,14 @@
-# Information Note - PCB Vibration Mount
-**Quiver PT3**
-**Heavy-Lift Multipurpose UAV (<25 kg MTOW)**
+# PCB Vibration Mount
+# Status  
 
-**Table of Contents**
-[toc]
+`Valid`
+
+`Revision History: None`
+
+`Replacement Log: None`
+
+`Reference: None`
+
 
 ## 1. Overview
 The Main PCB is secured to a custom 3D-printed interface, which is subsequently mounted to the airframe using rubber vibration dampeners. This isolation system is designed to minimize high-frequency vibrations transmitted from the frame to the PCB assembly and flight controller sensors.
@@ -41,9 +46,8 @@ Install **5x M3S** inserts into the bottom face of the 3D-printed part (as shown
 
 Install the **5x rubber vibration dampeners** into the designated holes on the aluminum upper plate of the airframe.
 
-:::warning
-**Orientation:** Ensure the longer side of the rubber dampener (3 mm section) is facing **upwards**, towards where the 3D-printed holder will sit.
-:::
+> [!WARNING]  
+> **Orientation:** Ensure the longer side of the rubber dampener (3 mm section) is facing **upwards**, towards where the 3D-printed holder will sit.
 
 ![image](images/PCB-Vibration-Mount/5.png)
 
@@ -60,17 +64,16 @@ Install the **5x rubber vibration dampeners** into the designated holes on the a
 
 The installation of the vibration mount is now complete. You may proceed with installing the Main PCB using M3x6 stainless steel screws.
 
-:::warning
-**Isolation Check:**
-Ensure the 3D-printed mount does **not** make direct contact with the aluminum frame at any point. It must float entirely on the rubber dampeners to ensure effective vibration isolation.
-:::
+> [!WARNING]  
+> **Isolation Check:**
+>Ensure the 3D-printed mount does **not** make direct contact with the aluminum frame at any point. It must float entirely on the rubber dampeners to ensure effective vibration isolation.
 
-:::danger
-**CRITICAL: Trim DC-DC Converter Pins**
-Before mounting the Main PCB, you **must** trim the through-hole pins of the DC-DC converters on the underside of the board. They extend too far and may puncture the mount or short against the frame.
 
-See the reference images below for the required clearance.
-:::
+> [!CAUTION]
+> **CRITICAL: Trim DC-DC Converter Pins**
+>Before mounting the Main PCB, you **must** trim the through-hole pins of the DC-DC converters on the underside of the board. They extend too far and may puncture the mount or short against the frame.
+>See the reference images below for the required clearance.
+
 
 ![image](images/PCB-Vibration-Mount/7.png)
 
