@@ -44,7 +44,7 @@ This guide will detail the manufacturing process for all harnesses in no particu
 
 ### 1. Nailboard
 
-![HAR-001 Wire Harness](./assets/Images/Harnessing/HAR-001.png)
+![HAR-001 Wire Harness](./assets/images/Harnessing/HAR-001.png)
 
 
 ### 2. Bill of Materials (Kitting)
@@ -98,7 +98,7 @@ This guide will detail the manufacturing process for all harnesses in no particu
     * Constraint - N/A
     * Fixing - Zip Tie Provision Circled in red
 
-![alt text](assets/Images/Harnessing/HAR001.jpg)
+![alt text](assets/images/Harnessing/HAR001.jpg)
 
 ## HAR-0002 BC_PCB Signal
 | **FROM**    | **TO**  |
@@ -108,7 +108,7 @@ This guide will detail the manufacturing process for all harnesses in no particu
 
 ### 1. Nailboard
 
-![HAR-002 Nail Board](./assets/Images/Harnessing/HAR-002.png)
+![HAR-002 Nail Board](./assets/images/Harnessing/HAR-002.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -158,7 +158,7 @@ Instructions for the technician installing this harness into the chassis.*
     * Path - N/A
     * Constraint - N/A
     * Fixing - N/A
-![alt text](assets/Images/Harnessing/HAR002.jpg)    
+![alt text](assets/images/Harnessing/HAR002.jpg)    
 
 ## HAR-0003 BC_PCB SSR
 | **FROM**    | **TO**  |
@@ -168,7 +168,7 @@ Instructions for the technician installing this harness into the chassis.*
 
 ### 1. Nailboard
 
-![HAR-003 Nail Board](./assets/Images/Harnessing/HAR-003.png)
+![HAR-003 Nail Board](./assets/images/Harnessing/HAR-003.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -224,7 +224,7 @@ Instructions for the technician installing this harness into the chassis.*
     * Path - 
     * Constraint - 
     * Fixing - 
-![alt text](assets/Images/Harnessing/HAR003.jpg)
+![alt text](assets/images/Harnessing/HAR003.jpg)
 
 ## HAR-0004 -> HAR-007 ESC Power 
 | **FROM**    | **TO**  |
@@ -236,13 +236,13 @@ Instructions for the technician installing this harness into the chassis.*
 
 ### 1. Nailboard
 
-![HAR-004 Nail Board](./assets/Images/Harnessing/HAR-004.png)
+![HAR-004 Nail Board](./assets/images/Harnessing/HAR-004.png)
 
-![HAR-005 Nail Board](./assets/Images/Harnessing/HAR-005.png)
+![HAR-005 Nail Board](./assets/images/Harnessing/HAR-005.png)
 
-![HAR-006 Nail Board](./assets/Images/Harnessing/HAR-006.png)
+![HAR-006 Nail Board](./assets/images/Harnessing/HAR-006.png)
 
-![HAR-007 Nail Board](./assets/Images/Harnessing/HAR-007.png)
+![HAR-007 Nail Board](./assets/images/Harnessing/HAR-007.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -286,7 +286,7 @@ Instructions for the technician installing this harness into the chassis.*
     * Path - Through circular hole on upper plate to middle plate
     * Constraint - N/A
     * Fixing - N/A
-![alt text](assets/Images/Harnessing/HAR004.jpg)
+![alt text](assets/images/Harnessing/HAR004.jpg)
 
 ## HAR-0008 -> HAR-0011
 | **FROM**    | **TO**  |
@@ -298,13 +298,13 @@ Instructions for the technician installing this harness into the chassis.*
 
 ### 1. Nailboard
 
-![HAR-008 Nail Board](./assets/Images/Harnessing/HAR-008.png)
+![HAR-008 Nail Board](./assets/images/Harnessing/HAR-008.png)
 
-![HAR-009 Nail Board](./assets/Images/Harnessing/HAR-009.png)
+![HAR-009 Nail Board](./assets/images/Harnessing/HAR-009.png)
 
-![HAR-010 Nail Board](./assets/Images/Harnessing/HAR-010.png)
+![HAR-010 Nail Board](./assets/images/Harnessing/HAR-010.png)
 
-![HAR-011 Nail Board](./assets/Images/Harnessing/HAR-011.png)
+![HAR-011 Nail Board](./assets/images/Harnessing/HAR-011.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -355,7 +355,7 @@ Instructions for the technician installing this harness into the chassis.*
     * Constraint - N/A
     * Fixing - N/A
 
-![alt text](assets/Images/Harnessing/HAR008.jpg)
+![alt text](assets/images/Harnessing/HAR008.jpg)
 
 ## HAR-0012 -> HAR-0013 Side Payloads
 | **FROM**    | **TO**  |
@@ -366,9 +366,9 @@ Instructions for the technician installing this harness into the chassis.*
 
 ### 1. Nailboard
 
-![HAR-012 Nail Board](./assets/Images/Harnessing/HAR-012.png)
+![HAR-012 Nail Board](./assets/images/Harnessing/HAR-012.png)
 
-![HAR-013 Nail Board](./assets/Images/Harnessing/HAR-013.png)
+![HAR-013 Nail Board](./assets/images/Harnessing/HAR-013.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -443,7 +443,7 @@ Instructions for the technician installing this harness into the chassis.*
  * Path -   Underneath MainPCB to middle plate side circular openings 
  * Constraint -   Telemetry air unit location
  * Fixing -   N/A
-![alt text](assets/Images/Harnessing/HAR012.jpg)
+![alt text](assets/images/Harnessing/HAR012.jpg)
 
 ## HAR-0014 Bottom Payload 
 | **FROM**    | **TO**  |
@@ -453,7 +453,7 @@ Instructions for the technician installing this harness into the chassis.*
 
 ### 1. Nailboard
 
-![HAR-014 Nail Board](./assets/Images/Harnessing/HAR-014.png)
+![HAR-014 Nail Board](./assets/images/Harnessing/HAR-014.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -598,7 +598,7 @@ Technician will have to combine two cables to create a 400mm cable.
  * Path -   Top Plate, right side opening, through mid plate openings, attached to the underside of the bottom plate
  * Constraint -   Number of cables passing through openings
  * Fixing -   Various zip ties show in red
-![alt text](assets/Images/Harnessing/HAR014-1.jpg)![alt text](assets/Images/Harnessing/HAR014-2.jpg)
+![alt text](assets/images/Harnessing/HAR014-1.jpg)![alt text](assets/images/Harnessing/HAR014-2.jpg)
 
 ## HAR-0015 Altimeter
 | **FROM**     | **TO**   |
@@ -608,7 +608,7 @@ Technician will have to combine two cables to create a 400mm cable.
 
 ### 1. Nailboard
 
-![HAR-015 Nail Board](./assets/Images/Harnessing/HAR-015.png)
+![HAR-015 Nail Board](./assets/images/Harnessing/HAR-015.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -658,7 +658,7 @@ Technician will have to combine two cables to create a 400mm cable.
     * Constraint - other cables
     * Fixing - Zip tie in red
  
- ![alt text](assets/Images/Harnessing/HAR015-1.jpg)![alt text](assets/Images/Harnessing/HAR015-2.jpg)   
+ ![alt text](assets/images/Harnessing/HAR015-1.jpg)![alt text](assets/images/Harnessing/HAR015-2.jpg)   
 
 
 ## HAR-0016 360 LIDAR
@@ -669,7 +669,7 @@ Technician will have to combine two cables to create a 400mm cable.
 
 ### 1. Nailboard
 
-![HAR-016 Nail Board](./assets/Images/Harnessing/HAR-016.png)
+![HAR-016 Nail Board](./assets/images/Harnessing/HAR-016.png)
 
 ### 2. Bill of Materials (Kitting)
 Default cable that comes with 360° Lidar. No modification required
@@ -708,7 +708,7 @@ N/A
     * Constraint - N/A
     * Fixing - Zip tie in red
 
-![alt text](assets/Images/Harnessing/HAR016.jpg)
+![alt text](assets/images/Harnessing/HAR016.jpg)
 
 
 ## HAR-0017 Front Radar
@@ -719,7 +719,7 @@ N/A
 
 ### 1. Nailboard
 
-![HAR-017 Nail Board](./assets/Images/Harnessing/HAR-017.png)
+![HAR-017 Nail Board](./assets/images/Harnessing/HAR-017.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -767,7 +767,7 @@ N/A
     * Constraint - other cables
     * Fixing - Zip tie in red
 
-![alt text](assets/Images/Harnessing/HAR017-1.jpg)![alt text](assets/Images/Harnessing/HAR017-2.jpg)
+![alt text](assets/images/Harnessing/HAR017-1.jpg)![alt text](assets/images/Harnessing/HAR017-2.jpg)
 
 ## HAR-0018 HM30 Power
 | **FROM**    | **TO**  |
@@ -776,7 +776,7 @@ N/A
 
 ### 1. Nailboard
 
-![HAR-018 Nail Board](./assets/Images/Harnessing/HAR-018.png)
+![HAR-018 Nail Board](./assets/images/Harnessing/HAR-018.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -820,7 +820,7 @@ N/A
     * Constraint - N/A
     * Fixing - N/A
     
- ![alt text](assets/Images/Harnessing/HAR018.jpg)   
+ ![alt text](assets/images/Harnessing/HAR018.jpg)   
 
 ## HAR-0019 -> HAR-0020 HM30 Signal
 | **FROM**    | **TO**  |
@@ -831,9 +831,9 @@ N/A
 
 ### 1. Nailboard
 
-![HAR-019 Nail Board](./assets/Images/Harnessing/HAR-019.png)
+![HAR-019 Nail Board](./assets/images/Harnessing/HAR-019.png)
 
-![HAR-020 Nail Board](./assets/Images/Harnessing/HAR-020.png)
+![HAR-020 Nail Board](./assets/images/Harnessing/HAR-020.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -885,7 +885,7 @@ N/A
     * Constraint - other cables
     * Fixing - Zip ties
 
-![alt text](assets/Images/Harnessing/HAR019.jpg)  ![alt text](assets/Images/Harnessing/HAR019-2.jpg)  ![alt text](assets/Images/Harnessing/HAR020.jpg)
+![alt text](assets/images/Harnessing/HAR019.jpg)  ![alt text](assets/images/Harnessing/HAR019-2.jpg)  ![alt text](assets/images/Harnessing/HAR020.jpg)
 
 ## HAR-0021 -> HAR-0022 Navigation
 | **FROM**    | **TO**  |
@@ -895,9 +895,9 @@ N/A
 
 ### 1. Nailboard
 
-![HAR-021 Nail Board](./assets/Images/Harnessing/HAR-021.png)
+![HAR-021 Nail Board](./assets/images/Harnessing/HAR-021.png)
 
-![HAR-022 Nail Board](./assets/Images/Harnessing/HAR-022.png)
+![HAR-022 Nail Board](./assets/images/Harnessing/HAR-022.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -948,7 +948,7 @@ N/A
     * Constraint - N/A
     * Fixing - N/A
 
-  ![alt text](assets/Images/Harnessing/HAR022.jpg)  
+  ![alt text](assets/images/Harnessing/HAR022.jpg)  
 
 ## HAR-0023 -> HAR-0025 PPP2ETH
 | **FROM**     | **TO**  |
@@ -959,11 +959,11 @@ N/A
 
 ### 1. Nailboard
 
-![HAR-023 Nail Board](./assets/Images/Harnessing/HAR-023.png)
+![HAR-023 Nail Board](./assets/images/Harnessing/HAR-023.png)
 
-![HAR-024 Nail Board](./assets/Images/Harnessing/HAR-024.png)
+![HAR-024 Nail Board](./assets/images/Harnessing/HAR-024.png)
 
-![HAR-025 Nail Board](./assets/Images/Harnessing/HAR-025.png)
+![HAR-025 Nail Board](./assets/images/Harnessing/HAR-025.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1028,7 +1028,7 @@ N/A
     * Constraint - PPP,Beacon mounting board
     * Fixing - zip tie in red (HAR024)
 
-![alt text](assets/Images/Harnessing/HAR023.jpg) ![alt text](assets/Images/Harnessing/HAR024.jpg)![alt text](assets/Images/Harnessing/HAR025.jpg)   
+![alt text](assets/images/Harnessing/HAR023.jpg) ![alt text](assets/images/Harnessing/HAR024.jpg)![alt text](assets/images/Harnessing/HAR025.jpg)   
 
 ## HAR-0026 Remote ID
 
@@ -1039,7 +1039,7 @@ N/A
 
 ### 1. Nailboard
 
-![HAR-026 Nail Board](./assets/Images/Harnessing/HAR-026.png)
+![HAR-026 Nail Board](./assets/images/Harnessing/HAR-026.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1083,7 +1083,7 @@ N/A
     * Constraint - N/A
     * Fixing - N/A
 
- ![alt text](assets/Images/Harnessing/HAR026.jpg)   
+ ![alt text](assets/images/Harnessing/HAR026.jpg)   
 
 
 ## HAR-0027 SIYI Camera
@@ -1095,7 +1095,7 @@ N/A
 
 ### 1. Nailboard
 
-![HAR-027 Nail Board](./assets/Images/Harnessing/HAR-027.png)
+![HAR-027 Nail Board](./assets/images/Harnessing/HAR-027.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1150,7 +1150,7 @@ N/A
     * Constraint - Other cables
     * Fixing - Undecided zip ties
 
-![alt text](assets/Images/Harnessing/HAR027-1.jpg)  ![alt text](assets/Images/Harnessing/HAR027-2.jpg)  
+![alt text](assets/images/Harnessing/HAR027-1.jpg)  ![alt text](assets/images/Harnessing/HAR027-2.jpg)  
 
 
 ## HAR-0028 Antenna
@@ -1161,7 +1161,7 @@ N/A
 
 ### 1. Nailboard
 
-![HAR-028 Nail Board](./assets/Images/Harnessing/HAR-028.png)
+![HAR-028 Nail Board](./assets/images/Harnessing/HAR-028.png)
 
 ### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
@@ -1189,4 +1189,4 @@ N/A
     * Constraint - N/A
     * Fixing - N/A
 
-![alt text](assets/Images/Harnessing/HAR028.jpg)    
+![alt text](assets/images/Harnessing/HAR028.jpg)    
