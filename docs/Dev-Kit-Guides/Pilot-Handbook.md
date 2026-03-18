@@ -10,18 +10,16 @@ Table of content
 ### 1.1 General Safety Principles
 The Quiver Dev-Kit is a battery powered heavy-lift quadcopter (MTOW ~25kg). It is engineered for industrial aerial applications. It is **not** designed for the deployment of munitions/explosives, or critical life-support transport.
 
-:::danger
-**DANGER:**
-
-Any improper or reckless action can result in:
- 
- - Immediate fatality or severe permanent injury.
- - Electrical or metal fire hazards (Class C & D).
- - Property damage.
- - False public alert, panic or unnecessary crowds.
- - Noise pollution or disruptions.
- - Legal liability and reputational damage.
-:::
+> **DANGER :**
+>
+> Any improper or reckless action can result in:
+> 
+> - Immediate fatality or severe permanent injury.
+> - Electrical or metal fire hazards (Class C & D).
+> - Property damage.
+> - False public alert, panic or unnecessary crowds.
+> - Noise pollution or disruptions.
+> - Legal liability and reputational damage.
 
 All operators must be trained and familiar with the aircraft and local aviation regulations. The Pilot in Command (PIC) must remain alert and strictly adhere to the **IMSAFE** protocol (Illness, Medication, Stress, Alcohol, Fatigue, Emotion) before operations.
 
@@ -77,11 +75,9 @@ The pilot must establish a local geo-fence for every flight.
 
 Setup: Configure the FENCE_RADIUS and FENCE_ALT_MAX in the ground station software to contain the drone within the authorized flight volume.
 
-:::warning
-**WARNING:**
-
-Geo-fencing relies on GNSS. It may not function during a navigation system error or location source failure.
-:::
+> **WARNING :**
+> 
+> Geo-fencing relies on minimum GNSS. It may not function during a navigation system error or location source failure.
 
 **Experimental Systems Disclaimer**:
 
@@ -99,23 +95,22 @@ These systems may be activated for controlled testing only when there is zero ri
 #### 1.3.1 Arcing & Spark Risk
 The electrical system is designed to be spark-free during connection via a pre-charge circuit.
 
-:::warning
-
-**WARNING:** 
-
-If you observe any visible spark or audible "crack" when connecting the battery :
-- STOP immediately.
-- Disconnect and contact support.
-- Do not fly.
-
-This indicates a failure in the pre-charge circuit or a short in the power system.
-:::
+> **WARNING :** 
+> 
+> If you observe any visible spark or audible "crack" when connecting the battery :
+> - STOP immediately.
+> - Disconnect and contact support.
+> - Do not fly.
+> 
+> This indicates a failure in the pre-charge circuit or a short in the power system.
 
 #### 1.3.2 Flight Battery Handling
 **General Principles：**
-:::info
-The general principles are applied to both battery and charger side.
-:::
+
+> **Info :** 
+> 
+> The general principles are effective for both battery and charger side.
+
 - Use only Tattu 3.5 or 4.0 14S Smart LiHV batteries.
 - Use the official Tattu-supported charger compatible with 14S LiHV chemistry or SkyRC equivalent.
 - Never short or ground the battery main connector even in non-operating condition.
@@ -136,32 +131,32 @@ The general principles are applied to both battery and charger side.
 
 **In-Flight Emergency:**
 
-:::warning
-**WARNING:**
-To prevent failure escalation, minimize aggressive maneuvers during any battery system emergency.
-:::
+> **WARNING :**
+> 
+> To prevent escalating a failure, minimize aggressive maneuvers during any battery system emergency.
 
 - If battery temperature exceeds **56°C**, land immediately.
 - If voltage sags rapidly, oscillates abnormally, or stops updating, land immediately.
 
 **Battery Fire Emergency**:
-:::warning
-**In case of pungent gas, irregular popping sounds or smoke, immediately:**
+
+> **WARNING :**
+> 
+> In case of pungent gas, irregular popping sounds or smoke, **IMMEDIATELY:**
 
 - **Disconnect** the battery immediately (if safe to do so).
 - **Evacuate** the battery to an open outdoor area away from flammable materials (do not leave it in a corridor).
 - **Observe** from at least 15 meters away with a Class D fire extinguisher ready.
-:::
 
-:::danger
-**In case of an active battery fire indoors:**
+> **DANGER :**
+> 
+> In case of an **ACTIVE BATTERY FIRE** indoors:
 
-- **Evacuate** all personnel and call the fire department.
-- **Isolate:** Cover the battery with a fire blanket if possible/safe.
-- **Cut Power:** Cut off the indoor main power supply.
-- **Clear:** Remove proximate objects if safe.
-- **Exit:** Evacuate to an open area.
-:::
+- **Evacuate** all personnel, order them to call emergency department as "Battery Fire".
+- **Cover** the battery with a fire blanket if the condition is still safe.
+- **Remove** proximate flammable objects as possible.
+- **Cut off** the main power supply.
+- **Exit** to an open area.
 
 ### 1.4 Establishing Safety Zones (Kinetic Energy)
 
@@ -179,9 +174,9 @@ To ensure no harm can come to any person or animal in the event of a complete po
 
 A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 
-:::info
-Minimum Safety Buffer = Flight Altitude (AGL)
-:::
+> **Info :**
+> 
+> Minimum Safety Buffer = Flight Altitude (AGL)
 
 - **Example**: If flying at 50 meters (164 ft) altitude, you must ensure a clear zone of at least 50 meters horizontally from your flight path where no uninvolved persons are present.
 
@@ -199,14 +194,16 @@ Minimum Safety Buffer = Flight Altitude (AGL)
 
 ## 2. System Setup
 ### 2.1 Unbox and assemble
-:::success
-Due to the large size of the aircraft, a two-person lift or assistance is recommended for assembly.
-:::
-:::warning
-**WARNING: Be aware of pinch and cut**
+> **Tips :**
+> 
+> Due to the large size of the aircraft, a two-person lift or assistance is recommended for assembly.
 
-Unlocked folding motor arms will rotate while being applied with horizontal force or unwise handling techniques.
-:::
+> **WARNING :**
+> 
+> Be aware of pinch and cut.
+> 
+> Unlocked folding motor arms will rotate while horizontal force or unwise handling technique being applied.
+
 **1. Preparation:**
 - Reserve enough working space for transport case, devices and the aircraft assembly.
 
@@ -235,24 +232,25 @@ Unlocked folding motor arms will rotate while being applied with horizontal forc
 
 **6. Gimbal camera assembly:**
 
-> [color=lightgreen][name=KBM] need further progress for this chapter
+> [color=lightgreen][name=KBM] need somebody's progress for this chapter
 
 ### 2.2 Installing battery
-:::info
-Acknowledge the "Flight Battery Handling" chapter before handling the battery.
-:::
-:::warning
-**WARNING: During the following steps**
-- Do not power on the battery.
-- Do not press the battery power button right after the installation.
-:::
+> **Info :**
+> 
+> Acknowledge the "Flight Battery Handling" chapter before handling the battery.
+
+> **WARNING :**
+> 
+> During the following steps:
+> - Do not power on the battery.
+> - Do not press the battery power button right after the installation.
+
 1. Align the battery to the 3D-printed guide rails with the connector side up. 
 2. Insert the battery by sliding it into the aluminum chassis.
 3. Secure the mechanical latch and check the lock position.
 4. Confirm the battery is locked in place by applying a light pull on the lift handle.
 
 ### 2.3 Battery power button 
-> [color=lightgreen][name=KBM] need more confirm
 
 **For Tattu 3.5 series:**
 - There is always voltage present at the battery terminals. The 3.5 Tattu smart batteries do not offer the function to control the battery power output.
@@ -515,21 +513,18 @@ Abort immediately if:
 
 ## 4. Emergency Procedures
 ### 4.1 Kill switch
-:::danger
-**DANGEROUS:**
 
-The kill switch was design to deliberately crash the aircraft, it should only be used when the aircraft is about to collide or cause serious damage. 
-
-Use this feature only after assessing the expected loss.
-:::
+> **DANGEROUS :**
+> 
+> The kill switch was design to deliberately freeze and crash the aircraft. It should only be used when the aircraft is about to collide or cause serious damage. 
+> 
+> Use "Kill Switch" feature only after assessing the expected loss.
 
 - When toggle the dedicated "Kill" switch on the RC.
     - The SSR will open immediately and cutting all power to the motors. 
     - The aircraft will enter a ballistic free fall.
 
-:::danger
-Only use if the aircraft poses an immediate threat to life and all other control methods have failed.
-:::
+> Only use while the aircraft poses an immediate threat to life, or lost of every available control.
 
 ### 4.2 Flight Mode Changes (Failures)
 #### 4.2.1 Low Battery (≤ 20%)
@@ -544,9 +539,13 @@ Only use if the aircraft poses an immediate threat to life and all other control
 
 ### 4.3 Aircraft search and rescue in wilderness 
 
-:::info
-If the aircraft lost connection mid-air and exact location may variant, consider bring the ground station to the search area and try connect the aircraft.
-:::
+> **Info :**
+> 
+> If the aircraft lost connection mid-air and its exact location may variant, consider bring the ground station to the search area, to help regain the connection to the aircraft.
+
+> **WARNING :** 
+> 
+> Do not enter hazardous terrain alone or without proper preparation. Maintain communication with a base station.
 
 1. Record last telemetry frame from the ground station (Shall include attitude and coordinate).
 2. Report aircraft lost to the business team and assemble search team and supply team.
@@ -562,17 +561,12 @@ If the aircraft lost connection mid-air and exact location may variant, consider
 |Flash light|Visibility for extreme and night condition|
 |Protection clothing|Isolate the environmental hazard|
 |Large knife / Machete|Cutting plants and bushes for path|
-|Bear spray or noise makers|Wild animals|
-
-:::warning
-**WARNING :** 
-
-Do not enter hazardous terrain alone. Maintain communication with a base station.
-:::
+|Bear spray or noise makers|Wild animals avoidance|
 
 ## 5. Checklist
 ### 5.1 Pre-Flight Checklist
 Before each new flight mission you should go through the pre-flight checklist:
+
 **1. Airframe Inspection**
 
 - [ ] Visual check (no deformation, cracks, loose fasteners, damage) 
