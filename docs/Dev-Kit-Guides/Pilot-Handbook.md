@@ -109,7 +109,7 @@ The electrical system is designed to be spark-free during connection via a pre-c
 
 > [!NOTE] 
 > 
-> The general principles are effective for both battery and charger side.
+> The following principles apply to both battery and charger.
 
 - Use only Tattu 3.5 or 4.0 14S Smart LiHV batteries.
 - Use the official Tattu-supported charger compatible with 14S LiHV chemistry or SkyRC equivalent.
