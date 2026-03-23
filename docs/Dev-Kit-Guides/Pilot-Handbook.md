@@ -2,8 +2,8 @@
 Quiver Dev-Kit
 Heavy-Lift Multipurpose UAV (<25 kg MTOW)
 
-Table of content
-[toc]
+<!-- Table of content -->
+<!-- [toc] -->
 
 ## 1. Safety & Compliance
 
@@ -26,7 +26,7 @@ All operators must be trained and familiar with the aircraft and local aviation 
 ### 1.2 Operational Limits
 #### 1.2.1 Weather Conditions
 **Wind Speed**:
-Maximum sustained wind speed is 15 knots (approx. 22 km/h) and wind gusts up to 18 kts (approx. 33 km/h). Gusts exceeding this limit may compromise stability.
+Maximum sustained wind speed is 15 knots (approx. 28 km/h) and wind gusts up to 18 kts (approx. 33 km/h). Gusts exceeding this limit may compromise stability.
 
 **Solar Activity**:
 Monitor Kp Index and UV Intensity via pre-flight forecast. High UV indices can degrade composite materials over time, and high Kp (>4) can interfere with GNSS reliability.
@@ -53,7 +53,7 @@ Regulatory References:
 #### 1.2.4 EASA & FAA Specifics (Weight Class <25 kg):
 **EU (EASA)**:
 
-Open Category C3 and A3:
+Open Category A3, C3 class drone:
 You may fly without a SORA if you maintain a minimum horizontal distance of 150 m from residential, commercial, industrial, or recreational areas and ensure no uninvolved people are endangered.
 
 Specific Category:
@@ -134,29 +134,26 @@ The electrical system is designed to be spark-free during connection via a pre-c
 > [!WARNING] 
 > 
 > To prevent escalating a failure, minimize aggressive maneuvers during any battery system emergency.
-
-- If battery temperature exceeds **56°C**, land immediately.
-- If voltage sags rapidly, oscillates abnormally, or stops updating, land immediately.
+> - If battery temperature exceeds **56°C**, land immediately.
+> - If voltage sags rapidly, oscillates abnormally, or stops updating, land immediately.
 
 **Battery Fire Emergency**:
 
 > [!WARNING] 
 > 
 > In case of pungent gas, irregular popping sounds or smoke, **IMMEDIATELY:**
-
-- **Disconnect** the battery immediately (if safe to do so).
-- **Evacuate** the battery to an open outdoor area away from flammable materials (do not leave it in a corridor).
-- **Observe** from at least 15 meters away with a Class D fire extinguisher ready.
+> - **Disconnect** the battery immediately (if safe to do so).
+> - **Evacuate** the battery to an open outdoor area away from flammable materials (do not leave it in a corridor).
+> - **Observe** from at least 15 meters away with a Class D fire extinguisher ready.
 
 > [!WARNING] 
 > 
 > In case of an **ACTIVE BATTERY FIRE** indoors:
-
-- **Evacuate** all personnel, order them to call emergency department as "Battery Fire".
-- **Cover** the battery with a fire blanket if the condition is still safe.
-- **Remove** proximate flammable objects as possible.
-- **Cut off** the main power supply.
-- **Exit** to an open area.
+> - **Evacuate** all personnel, order them to call emergency department as "Battery Fire".
+> - **Cover** the battery with a fire blanket if the condition is still safe.
+> - **Remove** proximate flammable objects as possible.
+> - **Cut off** the main power supply.
+> - **Exit** to an open area.
 
 ### 1.4 Establishing Safety Zones (Kinetic Energy)
 
@@ -519,12 +516,13 @@ Abort immediately if:
 > The kill switch was design to deliberately freeze and crash the aircraft. It should only be used when the aircraft is about to collide or cause serious damage. 
 > 
 > Use "Kill Switch" feature only after assessing the expected loss.
+> Only use while the aircraft poses an immediate threat to life, or lost of every available control.
 
-- When toggle the dedicated "Kill" switch on the RC.
+- When users toggle the dedicated "Kill" switch on the RC.
     - The SSR will open immediately and cutting all power to the motors. 
     - The aircraft will enter a ballistic free fall.
 
-> Only use while the aircraft poses an immediate threat to life, or lost of every available control.
+
 
 ### 4.2 Flight Mode Changes (Failures)
 #### 4.2.1 Low Battery (≤ 20%)
