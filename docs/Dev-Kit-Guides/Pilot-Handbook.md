@@ -10,7 +10,7 @@ Table of content
 ### 1.1 General Safety Principles
 The Quiver Dev-Kit is a battery powered heavy-lift quadcopter (MTOW ~25kg). It is engineered for industrial aerial applications. It is **not** designed for the deployment of munitions/explosives, or critical life-support transport.
 
-> **DANGER :**
+> [!WARNING]  
 >
 > Any improper or reckless action can result in:
 > 
@@ -75,7 +75,7 @@ The pilot must establish a local geo-fence for every flight.
 
 Setup: Configure the FENCE_RADIUS and FENCE_ALT_MAX in the ground station software to contain the drone within the authorized flight volume.
 
-> **WARNING :**
+> [!WARNING]  
 > 
 > Geo-fencing relies on minimum GNSS. It may not function during a navigation system error or location source failure.
 
@@ -95,7 +95,7 @@ These systems may be activated for controlled testing only when there is zero ri
 #### 1.3.1 Arcing & Spark Risk
 The electrical system is designed to be spark-free during connection via a pre-charge circuit.
 
-> **WARNING :** 
+> [!WARNING]  
 > 
 > If you observe any visible spark or audible "crack" when connecting the battery :
 > - STOP immediately.
@@ -107,7 +107,7 @@ The electrical system is designed to be spark-free during connection via a pre-c
 #### 1.3.2 Flight Battery Handling
 **General Principles：**
 
-> **Info :** 
+> [!NOTE] 
 > 
 > The general principles are effective for both battery and charger side.
 
@@ -131,7 +131,7 @@ The electrical system is designed to be spark-free during connection via a pre-c
 
 **In-Flight Emergency:**
 
-> **WARNING :**
+> [!WARNING] 
 > 
 > To prevent escalating a failure, minimize aggressive maneuvers during any battery system emergency.
 
@@ -140,7 +140,7 @@ The electrical system is designed to be spark-free during connection via a pre-c
 
 **Battery Fire Emergency**:
 
-> **WARNING :**
+> [!WARNING] 
 > 
 > In case of pungent gas, irregular popping sounds or smoke, **IMMEDIATELY:**
 
@@ -148,7 +148,7 @@ The electrical system is designed to be spark-free during connection via a pre-c
 - **Evacuate** the battery to an open outdoor area away from flammable materials (do not leave it in a corridor).
 - **Observe** from at least 15 meters away with a Class D fire extinguisher ready.
 
-> **DANGER :**
+> [!WARNING] 
 > 
 > In case of an **ACTIVE BATTERY FIRE** indoors:
 
@@ -174,7 +174,7 @@ To ensure no harm can come to any person or animal in the event of a complete po
 
 A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 
-> **Info :**
+> [!NOTE] 
 > 
 > Minimum Safety Buffer = Flight Altitude (AGL)
 
@@ -194,11 +194,11 @@ A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 
 ## 2. System Setup
 ### 2.1 Unbox and assemble
-> **Tips :**
+> [!TIP] 
 > 
 > Due to the large size of the aircraft, a two-person lift or assistance is recommended for assembly.
 
-> **WARNING :**
+> [!WARNING] 
 > 
 > Be aware of pinch and cut.
 > 
@@ -235,11 +235,11 @@ A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 > [color=lightgreen][name=KBM] need somebody's progress for this chapter
 
 ### 2.2 Installing battery
-> **Info :**
+> [!NOTE] 
 > 
 > Acknowledge the "Flight Battery Handling" chapter before handling the battery.
 
-> **WARNING :**
+> [!WARNING] 
 > 
 > During the following steps:
 > - Do not power on the battery.
@@ -514,7 +514,7 @@ Abort immediately if:
 ## 4. Emergency Procedures
 ### 4.1 Kill switch
 
-> **DANGEROUS :**
+> [!WARNING] 
 > 
 > The kill switch was design to deliberately freeze and crash the aircraft. It should only be used when the aircraft is about to collide or cause serious damage. 
 > 
@@ -539,11 +539,11 @@ Abort immediately if:
 
 ### 4.3 Aircraft search and rescue in wilderness 
 
-> **Info :**
+> [!NOTE] 
 > 
 > If the aircraft lost connection mid-air and its exact location may variant, consider bring the ground station to the search area, to help regain the connection to the aircraft.
 
-> **WARNING :** 
+> [!WARNING] 
 > 
 > Do not enter hazardous terrain alone or without proper preparation. Maintain communication with a base station.
 
