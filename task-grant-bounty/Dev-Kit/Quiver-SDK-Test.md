@@ -2,10 +2,13 @@
 
 ## Status
 
-`Valid: True  `
-`Revision History: 2025-12-03 – Initial consolidation of Arrow DAO unified payload/companion SDK discussion and RPLidar C1 terrain mapping documentation into a single technical note.  `
+`Valid: True`
+
+`Revision History: 2025-12-03 – Consolidated Arrow's unified payload/companion SDK discussion and RPLidar C1 terrain mapping documentation.  `
+
 `Replacement Log: None – first canonical information-note for this effort.  `
-`Reference: Arrow DAO topic “Exploring a Unified Payload and Companion Computer SDK for Quiver” (2025-10-31 onward) and the RPLidar C1 Terrain Mapping System documentation set (README, SETUP_GUIDE, QUICK_REFERENCE, DEPLOYMENT_CONFIG, SYSTEM_SUMMARY).`
+
+`Reference: Forum topic “Exploring a Unified Payload and Companion Computer SDK for Quiver” (2025-10-31 onward) and the RPLidar C1 Terrain Mapping System documentation set (README, SETUP_GUIDE, QUICK_REFERENCE, DEPLOYMENT_CONFIG, SYSTEM_SUMMARY).`
 
 ---
 
