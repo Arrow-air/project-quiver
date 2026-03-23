@@ -15,7 +15,8 @@ The manual soldering of the circuit board can be done with the help of this inte
 
 ## Quiver_Dev-Kit_Main_PCB_ibom.html
 
-![image](https://hackmd.io/_uploads/SyogqIASWe.png)
+![alt text](assets/images/PCBs/Main1.png)
+
 
 This is an HTML file that opens in the browser. On the left side is the parts list and on the right side are the views for the front and back of the circuit board. It will help to put the components in the right place.
 
@@ -23,11 +24,13 @@ It is essential to use a pcb stencil to place the solder paste in the right plac
 
 ### View on the top side of this PCB:
 
-![Quiver_PT3_Main_PCB-rounded_Front](https://hackmd.io/_uploads/Bk3ej80Hbe.jpg)
+![alt text](assets/images/PCBs/Main2.jpg)
+
 
 ### View on the bottom side of this PCB:
 
-![Quiver_PT3_Main_PCB-rounded_Back](https://hackmd.io/_uploads/BJ6WiLRHbl.jpg)
+![alt text](assets/images/PCBs/Main3.jpg)
+
 
 ## Additional Steps
 
