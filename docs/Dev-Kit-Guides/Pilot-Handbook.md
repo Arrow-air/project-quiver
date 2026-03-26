@@ -10,7 +10,7 @@ Heavy-Lift Multipurpose UAV (<25 kg MTOW)
 ### 1.1 General Safety Principles
 The Quiver Dev-Kit is a battery powered heavy-lift quadcopter (MTOW ~25kg). It is engineered for industrial aerial applications. It is **not** designed for the deployment of munitions/explosives, or critical life-support transport.
 
-> [!WARNING]  
+> [!CAUTION]  
 >
 > Any improper or reckless action can result in:
 > 
@@ -139,14 +139,14 @@ The electrical system is designed to be spark-free during connection via a pre-c
 
 **Battery Fire Emergency**:
 
-> [!WARNING] 
+> [!CAUTION] 
 > 
 > In case of pungent gas, irregular popping sounds or smoke, **IMMEDIATELY:**
 > - **Disconnect** the battery immediately (if safe to do so).
 > - **Evacuate** the battery to an open outdoor area away from flammable materials (do not leave it in a corridor).
 > - **Observe** from at least 15 meters away with a Class D fire extinguisher ready.
 
-> [!WARNING] 
+> [!CAUTION] 
 > 
 > In case of an **ACTIVE BATTERY FIRE** indoors:
 > - **Evacuate** all personnel, order them to call emergency department as "Battery Fire".
@@ -228,8 +228,9 @@ A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 - Rotate and adjust the antennas to a heading where they do not face each other.
 
 **6. Gimbal camera assembly:**
-
-> [color=lightgreen][name=KBM] need somebody's progress for this chapter
+- Check the integrity of cables, connectors and rubber damper balls.
+- Remove any camera protection or locking mechanism before power up.
+- Check for dust and debris at lens and gimbal motor gaps and apply proper cleaning.
 
 ### 2.2 Installing battery
 > [!NOTE] 
@@ -522,18 +523,52 @@ Abort immediately if:
     - The SSR will open immediately and cutting all power to the motors. 
     - The aircraft will enter a ballistic free fall.
 
-
-
 ### 4.2 Flight Mode Changes (Failures)
+
 #### 4.2.1 Low Battery (≤ 20%)
 * **System Action:** Triggers **RTL (Return to Land)**.
 * **Pilot Action:** Monitor the return path. Do not override unless the landing path is obstructed or unsafe.
     * *Warning:* RTL relies on GPS. Be ready to take manual control if navigation fails.
 
-#### 4.2.2 Sensor Failure (GPS Glitch/Compass Variance):
+#### 4.2.2 Sensor Failure (GPS Glitch/Compass Variance)
 - Indication: Drone "toilets" (swirls) or drifts uncontrollably.
 - Action: Switch to AltHold (Altitude Hold) immediately. This disables GPS positioning. You must manually counter wind drift to land safely.
 - High Vibration/Motor Loss: Land immediately.
+
+#### 4.2.3 Single Motor Failure (Signs of incoming failure)
+
+>[!CAUTION]
+>
+>For motor failure cases on a quadcopter aircraft, there is **NO** known method for in-flight recovery.
+
+- In case of thrust, motor or yaw warning message, 
+- Or the aircraft experiences unexpected roll, yaw, U-turn or insufficient yaw force during the flight:
+    - Abort auto mission and switch to ground-controlled flight mode.
+    - Land immediately with minimum maneuver and flight distance.
+    - Avoid any property and creatures under the flight path.
+- Retrieve the aircraft and disconnect main power.
+- The aircraft shall not takeoff before detailed inspection and testing.
+
+#### 4.2.4 Fly-Away or Lost Control
+
+Try regain the control at first by reset the control :
+
+- If there is no activity or refreshing in ground control and telemetry, 
+    - Try disconnect and reconnect the telemetry to regain control.
+- Check the status or any flight mode misoperation on handheld RC transmitter.
+    - Fix the operation by switch to any hover or unguided flight modes.
+    - Shutdown and restart the RC transmitter and try switch the flight mode again.
+
+If there is no sign of recovery, then prepare for the mission interruption.
+
+- If the aircraft remain uncontrolled while stays in visual line of sight and geofence,
+    - Maintain observation and remove any property below the aircraft.
+    - The aircraft will automatically land itself when reaching low battery level.
+- If the uncontrolled aircraft flies heading :
+    - **To you** : **RUN AWAY** from the flight path.
+    - To persons, creatures or properties : Activate the kill switch.
+    - To hard target, ground, hill or vegetation : Let the aircraft to crash or hard landing.
+    - To mid and high altitude airspace : Activate the kill switch.
 
 ### 4.3 Aircraft search and rescue in wilderness 
 
@@ -560,6 +595,20 @@ Abort immediately if:
 |Protection clothing|Isolate the environmental hazard|
 |Large knife / Machete|Cutting plants and bushes for path|
 |Bear spray or noise makers|Wild animals avoidance|
+
+### 4.4 Contact the development team for help
+
+>[!TIP]
+>
+> Prepare flight log, screenshot, photo or any material in advance could help resolve issues quicker.
+
+If any Quiver aircraft unit encounters difficult problem or requires urgent / emergency assistance, please contact the Quiver development team for help.
+
+- Join the Discord server: [Arrow](https://discord.com/invite/arrow)
+- Visit the DAO forum: [Arrow DAO](https://dao.arrowair.com)
+
+**... (NEED MORE CONTACT - KBM)**
+
 
 ## 5. Checklist
 ### 5.1 Pre-Flight Checklist
