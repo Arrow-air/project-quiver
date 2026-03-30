@@ -346,6 +346,11 @@ Unauthorized parameter changes may invalidate:
 
 #### 2.6.2 Parameters the Pilot Must Understand
 
+> [!TIP]
+>
+> The official baseline parameter file can be downloaded from:  
+> https://github.com/Arrow-air/project-quiver/tree/vector/firmware-docs-clean/docs/firmware/parameters
+
 **Geo-Fence**
 - `FENCE_ENABLE`
 - `FENCE_RADIUS`
@@ -436,7 +441,7 @@ If telemetry connection fails, power-cycle the radio and retry.
 
 1. Launch Mission Planner.
 2. Select the correct COM port (or Auto).
-3. Set the configured baud rate.
+3. Set the baud rate to 57600 (default for SiK telemetry radios).
 4. Connect and verify:
    - Live telemetry updates,
    - No critical system messages,
@@ -483,13 +488,19 @@ This sequence defines the only approved process from battery installation to tak
 9. Verify:
    - No critical pre-arm errors,
    - Stable EKF status,
-   - Adequate GPS fix.
+   - GPS fix with HDOP ≤ 1.6 and ≥ 14 satellites (check GCS Status tab).
 10. **Engage HV:** In GCS, toggle the "Main Power" relay to close the high-voltage SSR.
 
 ### 3.4 Motor Power and Arming
 
 11. Keep main motor power disabled during configuration.
 12. Load mission or RTK data if applicable.
+> [!NOTE]
+>
+> Steps 11–13 require the mission to be loaded before enabling motor power. This ensures:
+> - Waypoints and geo-fence are verified while the aircraft is safe on the ground,
+> - Any upload errors or configuration issues are caught before the motors are live,
+> - The pilot can abort without risk if the mission is incorrect.
 13. Enable main motor power.
 14. Select LOITER mode.
 15. Arm via RC.
@@ -537,38 +548,62 @@ Abort immediately if:
 
 #### 4.2.3 Single Motor Failure (Signs of incoming failure)
 
+#### 4.2.3 Single Motor Failure
+
 >[!CAUTION]
 >
->For motor failure cases on a quadcopter aircraft, there is **NO** known method for in-flight recovery.
+>For motor failure cases on a quadcopter aircraft, there is **NO** known method for in-flight recovery. The aircraft will crash.
 
+**Indications of Motor Failure:**
+- GCS warning messages: "Motor X output saturated", "Thrust loss", "Motor X RPM low"
+- Sudden uncommanded roll, pitch, or yaw
+- Audible change in motor sound (grinding, stuttering, silence from one motor)
+- Visible smoke, sparks, or stopped propeller
+- Aircraft rapidly losing altitude despite full throttle input
+- "Toilet bowl" effect (uncontrolled spiraling)
+
+**Pilot Actions:**
 - In case of thrust, motor or yaw warning message, 
 - Or the aircraft experiences unexpected roll, yaw, U-turn or insufficient yaw force during the flight:
     - Abort auto mission and switch to ground-controlled flight mode.
     - Land immediately with minimum maneuver and flight distance.
     - Avoid any property and creatures under the flight path.
+    - If the aircraft is uncontrollable and heading toward people or property, activate the kill switch.
 - Retrieve the aircraft and disconnect main power.
 - The aircraft shall not takeoff before detailed inspection and testing.
 
 #### 4.2.4 Fly-Away or Lost Control
+#### 4.2.4 Fly-Away or Lost Control
 
-Try regain the control at first by reset the control :
+> [!WARNING]
+>
+> A fly-away occurs when the aircraft stops responding to pilot commands and drifts or flies away from the operational zone. Time is critical — act quickly.
 
-- If there is no activity or refreshing in ground control and telemetry, 
+**Step 1: Attempt to Regain Control**
+
+- If there is no activity or refreshing in ground control and telemetry: 
     - Try disconnect and reconnect the telemetry to regain control.
 - Check the status or any flight mode misoperation on handheld RC transmitter.
     - Fix the operation by switch to any hover or unguided flight modes.
     - Shutdown and restart the RC transmitter and try switch the flight mode again.
 
-If there is no sign of recovery, then prepare for the mission interruption.
+**Step 2: If Control Cannot Be Regained**
 
 - If the aircraft remain uncontrolled while stays in visual line of sight and geofence,
     - Maintain observation and remove any property below the aircraft.
     - The aircraft will automatically land itself when reaching low battery level.
-- If the uncontrolled aircraft flies heading :
-    - **To you** : **RUN AWAY** from the flight path.
-    - To persons, creatures or properties : Activate the kill switch.
-    - To hard target, ground, hill or vegetation : Let the aircraft to crash or hard landing.
-    - To mid and high altitude airspace : Activate the kill switch.
+- If the uncontrolled aircraft flies heading:
+    - **To you**: **RUN AWAY** from the flight path.
+    - To persons, creatures or properties: Activate the kill switch.
+    - To hard target, ground, hill or vegetation: Let the aircraft to crash or hard landing.
+    - To mid and high altitude airspace: Activate the kill switch.
+
+**Step 3: If Aircraft Leaves Operational Zone**
+
+- Note the last known position, altitude, heading, and battery level from GCS.
+- Contact the Quiver team immediately (see §4.4).
+- Do NOT chase the aircraft by vehicle — maintain situational awareness at the launch site.
+- Prepare for search and rescue operations (see §4.3).
 
 ### 4.3 Aircraft search and rescue in wilderness 
 
@@ -625,8 +660,8 @@ Take photos of the airframe, details where necessary.
 **2. Propulsion / Power System**
 
 - [ ] Propeller(s) securely fastened, free of damage
-
-- [ ] Battery charge adequate. Battery Voltage:
+      
+- [ ] Battery charge adequate. Minimum voltage: 56.0V (4.0V/cell for 14S LiHV)
 
 **3. Avionics / Electronics**
 
@@ -639,6 +674,11 @@ Take photos of the airframe, details where necessary.
 - [ ] RC remote & telemetry connections stable
 
 - [ ] Joystick input working normally
+
+- [ ] Geo-fence enabled and configured for current site:
+  - [ ] `FENCE_ENABLE` = 1
+  - [ ] `FENCE_RADIUS` set appropriately for operational area
+  - [ ] `FENCE_ALT_MAX` set appropriately for site altitude limits
 
 **4. Pilot Notes**
 
