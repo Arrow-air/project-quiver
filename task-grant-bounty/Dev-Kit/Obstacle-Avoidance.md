@@ -1,14 +1,28 @@
-Author: Zeynep
+# Obstacle Avoidance System Overview
 
-## Obstacle Avoidance System Overview
+# Status
 
-This section describes the current obstacle avoidance (OA) architecture implemented on Project Quiver, including sensor configuration, software integration, algorithm selection, and baseline parameterization. The system is under active development and tuning; values and behaviors described here represent the current validated state at the time of writing.
+`Author: ZeynepB`
 
----
+`Status: Valid`
+
+`Revision History: None`
+
+`Replacement Log: None`
+
+`Reference: None` 
+
+# Project Description
+
+This information note describes the current obstacle avoidance (OA) architecture implemented on Project Quiver, including sensor configuration, software integration, algorithm selection, and baseline parameterization. The system is under active development and tuning; values and behaviors described here represent the current validated state at the time of writing.
+
+# Methodology
+
+Project Quiver employs a multi-sensor proximity architecture to support obstacle detection and avoidance across varying environmental conditions. Sensor data is fused through ArduPilot's proximity database and fed into the BendyRuler obstacle avoidance framework. The current parameter set was derived from field tuning in Germany and is validated primarily for low-speed operations in cluttered environments.
+
+ArduPilot integration for the RPLidar S2L required a custom firmware build, as the sensor is not natively supported upstream. All avoidance behavior described here assumes operation on the Quiver-custom ArduPilot firmware.
 
 ## Sensors Used for Obstacle Avoidance
-
-Project Quiver employs a multi-sensor proximity architecture to support obstacle detection and avoidance across varying environmental conditions. The current sensor suite consists of the following components (subject to change as integration and validation continue):
 
 ### RPLidar S2L — 360° Top-Mounted LiDAR
 - **Coverage:** 360° horizontal field of view
@@ -18,8 +32,6 @@ Project Quiver employs a multi-sensor proximity architecture to support obstacle
 
 The top-mounted RPLidar S2L provides high-resolution, near-field spatial awareness and serves as the primary proximity sensor for obstacle avoidance in tree-dense or cluttered environments. Its omnidirectional coverage enables continuous monitoring of lateral and rear sectors during both manual and autonomous flight.
 
----
-
 ### NanoRadar MR82 — Forward-Facing Radar
 - **Coverage:** Forward sector
 - **Effective range:** up to ~30 m
@@ -28,19 +40,13 @@ The top-mounted RPLidar S2L provides high-resolution, near-field spatial awarene
 
 The forward-facing radar extends obstacle detection capability beyond LiDAR limits, particularly in conditions where optical or laser-based sensing may degrade (e.g., rain, dust, partial occlusion). Radar data contributes primarily to early forward detection during higher-speed flight.
 
----
-
 ### Altitude Sensing (Barometer + Rangefinder)
 - **Primary role:** Vertical position estimation
 - **Usage:** Low-altitude navigation, terrain clearance, and landing support
 
 Altitude information is derived from a combination of barometric pressure sensing and range-based measurements. While not directly part of horizontal obstacle avoidance, accurate altitude estimation is critical when avoidance commands introduce vertical motion or when operating close to terrain.
 
----
-
 ## Software Integration and ArduPilot Modifications
-
-### Custom ArduPilot Integration for RPLidar S2L
 
 At the time of integration, the RPLidar S2L is not natively supported by upstream ArduPilot. To enable full functionality, Project Quiver operates on a custom ArduPilot firmware build incorporating an in-house developed extension.
 
@@ -52,28 +58,23 @@ Key characteristics of the integration include:
 - No modification to core navigation, control, or obstacle avoidance algorithms
 - Full compatibility with existing ArduPilot proximity handling and BendyRuler logic
 
-The implementation is tracked through a publicly accessible pull request in the ArduPilot repository to ensure transparency, traceability, and future upstream compatibility:
-
-**ArduPilot Pull Request:**  
+**ArduPilot Pull Request:**
 https://github.com/ArduPilot/ardupilot/pull/31663
 
 All obstacle avoidance behavior described in this document assumes operation on the Quiver-custom ArduPilot firmware incorporating this patch. Behavior observed on unmodified upstream ArduPilot builds is not representative of the Dev-Kit configuration and is not supported for operational use.
 
 The patch is maintained as a minimal overlay to simplify rebasing as ArduPilot evolves and to facilitate eventual upstream inclusion if accepted.
 
----
+# Results and Deliverables
 
 ## Obstacle Avoidance Algorithm Configuration
 
 Project Quiver currently utilizes the ArduPilot BendyRuler obstacle avoidance framework. BendyRuler evaluates candidate motion vectors and constrains vehicle movement based on obstacle data stored in a proximity database populated by onboard sensors.
 
 ### Obstacle Avoidance Mode
-- `OA_TYPE = 1`  
-  Enables proximity-based obstacle avoidance using supported sensors.
+- `OA_TYPE = 1` — Enables proximity-based obstacle avoidance using supported sensors.
 
----
-
-## Proximity Database Configuration
+### Proximity Database Configuration
 
 The proximity database aggregates obstacle detections over time and space, forming the basis for avoidance decisions.
 
@@ -90,11 +91,7 @@ The proximity database aggregates obstacle detections over time and space, formi
 
 This configuration emphasizes near-field obstacle awareness, consistent with low-altitude operations in cluttered environments. Restricting the maximum database distance reduces the influence of distant detections that are unlikely to affect immediate trajectory planning.
 
----
-
-## BendyRuler Motion Constraints
-
-The following parameters define how the BendyRuler algorithm constrains vehicle motion in response to detected obstacles:
+### BendyRuler Motion Constraints
 
 | Parameter | Value | Description |
 |--------|------|------------|
@@ -106,27 +103,18 @@ The following parameters define how the BendyRuler algorithm constrains vehicle 
 
 The selected lookahead distance represents a balance between reaction time and environmental density. Testing has shown that excessive lookahead values in cluttered environments may lead to delayed or overly aggressive avoidance behavior.
 
----
-
-## Obstacle Margin Configuration
+### Obstacle Margin Configuration
 
 - `OA_MARGIN_MAX = 4 m`
 
-The obstacle margin defines the minimum clearance maintained between the aircraft and detected obstacles. In the current configuration, this value is intentionally set relatively low to allow escape and maneuverability within tree-dense environments where larger margins may prevent feasible path planning.
+The obstacle margin defines the minimum clearance maintained between the aircraft and detected obstacles. This value is intentionally set relatively low to allow escape and maneuverability within tree-dense environments where larger margins may prevent feasible path planning.
 
 This margin setting is appropriate for:
 - Low to moderate ground speeds
 - Close-proximity navigation
 - Controlled test environments with trained operators
 
-For higher-speed autonomous missions, an increased margin may be required to account for:
-- Vehicle inertia and braking distance
-- Sensor latency and update rates
-- Accumulated navigation uncertainty
-
-Dynamic margin scaling as a function of ground speed is under investigation as a future enhancement to expand the safe operational envelope.
-
----
+For higher-speed autonomous missions, an increased margin may be required to account for vehicle inertia and braking distance, sensor latency and update rates, and accumulated navigation uncertainty. Dynamic margin scaling as a function of ground speed is under investigation as a future enhancement to expand the safe operational envelope.
 
 ## Current Limitations and Development Status
 
@@ -136,13 +124,8 @@ Dynamic margin scaling as a function of ground speed is under investigation as a
 - Sensor fusion behavior between LiDAR and radar remains under evaluation.
 - Vertical avoidance relies on altitude estimation and does not include independent vertical obstacle sensing.
 
-Further work will include structured flight testing and SITL-based validation to:
-- Characterize avoidance limits
-- Evaluate dynamic margin strategies
-- Improve robustness across mixed-sensor and higher-speed scenarios
+Further work will include structured flight testing and SITL-based validation to characterize avoidance limits, evaluate dynamic margin strategies, and improve robustness across mixed-sensor and higher-speed scenarios.
 
----
+# Remarks
 
-## Summary
 
-The current obstacle avoidance implementation on Project Quiver combines a custom-integrated 360° LiDAR, forward-facing radar, and ArduPilot’s BendyRuler framework to provide reliable near-field obstacle detection and avoidance. The system is optimized for low-speed, cluttered environments and serves as a foundation for future enhancements through continued testing, SITL validation, and dynamic parameter adaptation.
