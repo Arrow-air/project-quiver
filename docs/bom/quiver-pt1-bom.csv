@@ -1,0 +1,76 @@
+ID,System,Name,Supplier,Link,Unit Cost,Quantity,Cost,Order Details,Notes
+0023,Structural,Rivet 1,Hardware Store,https://www.mcmaster.com/97525A251,,36,,4mm Dia. for 2.5mm-4.5mm thickness,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0024,Structural,Rivet 2,Hardware Store,https://www.mcmaster.com/97525A226,,10,,4mm Dia- for 4.5mm-6.4mm thickness,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0025,Structural,Screw 1,Hardware Store,https://www1.mcmaster.com/91290A115,,48,,Socket Head Screw M3x10,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0026,Structural,Screw 2,Hardware Store,https://www.mcmaster.com/97654A373,,16,,Flanged Button Head Screw M4x10,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0027,Structural,Screw 3,Hardware Store,https://www.mcmaster.com/95263A158/,,24,,Socket Head Screw M3x16,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0028,Structural,Screw 4,Hardware Store,https://www1.mcmaster.com/91290A117,,12,,Socket Head Screw M3x12,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0029,Structural,Screw 5,Hardware Store,https://www1.mcmaster.com/91290A113,,23,,Socket Head Screw M3x8,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0030,Structural,Screw 6,Hardware Store,https://www1.mcmaster.com/91290A136,,16,,Socket Head Screw M3x40,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0031,Structural,Screw 7,Hardware Store,https://www.mcmaster.com/92125A128,,8,,Hex Drive Flat Head Screw M3x8,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0032,Structural,Screw 8,Hardware Store,https://www.mcmaster.com/91294A130,,4,,Hex Drive Flat Head Screw M3x10,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0033,Structural,Screw 9,Hardware Store,https://www.mcmaster.com/91290A140,,8,,Socket Head Screw M4x8,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0034,Structural,Screw 10,Hardware Store,https://www.mcmaster.com/91294A138,,3,,Hex Drive Flat Head Screw M3x25,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0035,Structural,Insert 1,Hardware Store,https://www.mcmaster.com/97163A161,,50,,M3 Threaded Inserts,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0036,Structural,Insert 2,Hardware Store,https://www.mcmaster.com/97163A153,,8,,M4 Threaded Inserts,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0037,Structural,Washer 1,Hardware Store,https://www.mcmaster.com/98689A112,,158,,"General Purpose Washer 3.2 mm ID, 6 mm OD","Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0038,Structural,Washer 2,Hardware Store,https://www.mcmaster.com/93475A230,,8,,"General Purpose Washer 4.3 mm ID, 9 mm OD","Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0039,Structural,Nut 1,Hardware Store,https://www.mcmaster.com/90576A811,,39,,Nylon-Insert Locknut M3,"Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0040,Structural,Washer 3,Hardware Store,https://www.mcmaster.com/95610A704,,30,,"Nylon Washer 3.2mm ID, 6mm OD","Quantity is the number of pieces, not packages. Buy with spares. Link here is a reference for the part."
+0042,Structural,Loctite Threadlocker Blue 242,Loctite,https://www.mcmaster.com/91458A113/,$25.00,1,$25.00,"Loctite Threadlocker Blue 242, 1.69 FL. oz Bottle",
+0043,Structural,Loctite Superflex Silicon Sealant Model 593,Loctite,https://www.mcmaster.com/74945A81,$21.00,1,$21.00,"Loctite Superflex Silicon Sealant Model 593, 6.4 fl. oz.",
+0044,Harness,XT30U-M - XT30 Male,TME,https://www.tme.com/us/en-us/details/xt30u-m/dc-power-connectors/amass/,$0.83,1,$0.83,,
+0045,Harness,XT60U-M - XT60 Male,TME,https://www.tme.com/us/en-us/details/xt60u-m/dc-power-connectors/amass/,$0.70,4,$2.81,,
+0050,Harness,"1704853 - Pluggable Terminal Blocks PTSM 0,5/ 2-P-2,5 WH",Mouser,https://mou.sr/3TUNxPr,,1,,,
+0052,Harness,"1704857 - Pluggable Terminal Blocks PTSM 0,5/ 4-P-2,5 WH",Mouser,https://mou.sr/4bSpp8f,,18,,,
+0053,Harness,"1704858 - Pluggable Terminal Blocks PTSM 0,5/5-P-2,5 WH Plug",Mouser,https://mou.sr/4nxik2l,,5,,,
+0054,Harness,"1704859 - Pluggable Terminal Blocks PTSM 0,5/ 6-P-2,5 WH",Mouser,https://mou.sr/44ach9V,,5,,,
+0066,Harness,"Custom Hook Up Wire, 26 AWG, PTFE - 10 colors",Remington Industries,https://www.remingtonindustries.com/hook-up-wire/custom-hook-up-wire-26-awg-ptfe-stranded-kit-2-spool-sizes-available-choose-10-colors/,,1,,,"15 feet - 1 of each color option"
+0068,Harness,2077601281 Molex 12-pin connector,Molex,https://www.mouser.com/ProductDetail/Molex/207760-1281,$1.51,6,$9.06,,
+0069,Harness,204523-1201 1.25mm MLP Rcpt Crmp Hsg DR 12Ckts Blk,Molex,https://www.mouser.com/ProductDetail/Molex/204523-1201,$0.42,6,$2.54,,"Connector for cable, does not go on PCB"
+0070,Harness,813-22-010-30-000101 STD SPRING-LOADED CONNECTOR,Mill-Max,https://www.mouser.com/ProductDetail/Mill-Max/813-22-010-30-000101,$8.60,6,$51.60,,Can populate with just 1
+0071,Harness,419-10-210-30-054000 Pin & Socket Connectors Low Profile SLC Target Connector,Mill-Max,https://www.mouser.com/ProductDetail/Mill-Max/419-10-210-30-054000,$3.63,6,$21.78,,Can populate with just 1
+0073,Harness,Arctic MX-4 Thermal Paste 20g,Amazon,https://a.co/d/bZ7soGb,$12.00,1,$12.00,For battery connector PCB to the main chassis,
+0074,Structural,Landing Gear Shock Absorber,Amazon,https://a.co/d/ggzWXc4,$14.00,1,$14.00,For wrapping the bottom landing gear tubes,
+0075,Avionics,DB201 Remote ID Module,,https://dronescout.co/product/dronebeacon-mavlink-db201-transponder/,$54.00,1,$54.00,,
+0076,Harness,Attachment Interface cable,Mouser,https://www.mouser.com/ProductDetail/Molex/79758-1149,$1.29,50,$64.50,,
+0076,Propulsion,Spare Propellers,,,,$25.00,4,$100.00,,
+1111,Airframe Structure,Upper Plate,rapiddirect.com,,,1,,At least 6061,
+1112,Airframe Structure,Mid Plate,rapiddirect.com,,,1,,At least 6061,
+1113,Airframe Structure,Lower Plate,rapiddirect.com,,,1,,At least 6061,
+1211,Airframe Structure,CW Long,rapiddirect.com,,,1,,"Its a laser cutted aluminum square tube 40x40x2mm. 6061 aluminum.",
+121X,Airframe Structure,CCW Short,rapiddirect.com,,,2,,"Its a laser cutted aluminum square tube 40x40x2mm. 6061 aluminum.",
+122X,Airframe Structure,Battery Wall,rapiddirect.com,,,2,,"Its a laser cutted aluminum rectangular tube 30x100x2mm. 6061 aluminum.",
+131X,Airframe Structure,Landing Gear Vertical Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x26x1000 mm, any color",
+132X,Airframe Structure,Landing Gear Horizontal Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x26x1000 mm, any color",
+133X,Airframe Structure,Landing Gear Top Connectors,Aliexpress,https://www.alibaba.com/product-detail/20mm-25mm-30mm-pipe-diameter-fixed_1601140918673.html,$30.00,4,$120.00,30 mm,
+14X1,Airframe Structure,Motor Arm Connectors,AliExpress,https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html,$25.00,4,$100.00,30 mm option,
+14X2,Airframe Structure,Motor Arm Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x26x1000 mm, any color",
+21X2,Secondary Structure,Quick Release Adapter,AliExpress,https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html,$34.00,3,$102.00,Without PCB board,
+242X,Secondary Structure,Enclosure Hinge,JW Winco,https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type,$10.00,2,$20.00,"Enclosure Hinge. Part Number: GN 237-ZD-30-30-A-SW",
+243X,Secondary Structure,Enclosure Latch,Mcmaster-Carr,,,,,,
+31X1,Equipment,XRotor X6 PLUS,HobbyWing,"https://www.hobbywing.com/en/products/xrotor-x6-plus269",$86.00,4,$344.00,,"ESC, Motor, Props"
+3211,Equipment,Obstacle Avoidance Lidar S2L,DFrobot,https://www.dfrobot.com/product-2617.html,$380.00,1,$380.00,,
+3212,Equipment,Obstacle Avoidance Radar MR82,Nanoradar,https://www.nanoradar.com/Products_1/7.html,$285.00,1,$285.00,,
+3213,Equipment,Altimeter Radar NRA15,Nanoradar,https://www.nanoradar.com/Products_1/4.html,$240.00,1,$240.00,,
+3220,Equipment,SIYI HM30 Long Range FPV System,Siyi Reebot Robotics,https://shop.reebot.com/products/siyi-hm30,$282.04,1,$282.04,,
+3241,Equipment,SIYI A8 mini Gimbal Camera,Siyi Reebot Robotics,https://shop.reebot.com/products/siyi-a8-mini,$309.58,1,$309.58,,
+3251,Equipment,Here4 Multiband GNSS/Neo F9P,HolyBro,https://irlock.com/products/here4-multiband-rtk-gnss,$288.00,1,$288.00,,
+3311,Equipment,MAIN_PCB (PT3 Main PCB),ARROW,,,1,,,"During prototyping for PT3 source part from Julius"
+3312,Equipment,RPI 5,,,,,,,
+3313,Equipment,GigaBlox Nano ethernet switch,botblox.io,https://botblox.io/products/micro-gigabit-ethernet-switch,$95.67,2,$191.33,,
+3314,Equipment,CubeNode ETH,CubePilot,https://irlock.com/products/cube-node-eth,$121.98,1,$121.98,,
+3315,Equipment,Mateksys GNSS M9N-G4-3100,www.mateksys.com,https://www.mateksys.com/?portfolio=m9n-g4-3100,$125.00,1,$125.00,DroneCAN,
+3321,Equipment,BC_PCB (Battery Connector PCB),ARROW,,,1,,,"During prototyping for PT3 source part from Julius"
+3324,Equipment,BC_PCB_4mm_Heatsink,Local laser cutting,,,1,,,
+3331,Equipment,FC_PCB (Flight Controller PCB),ARROW,,,1,,,"During prototyping for PT3 source part from Julius"
+3332,Equipment,Holybro Pix32 v6,https://holybro.com/,https://holybro.com/products/pix32-v6,$296.00,1,$296.00,,
+334X,Equipment,Attachment Interface PCB,ARROW,https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB,,36,,"Easiest ordered from JLCPCB by submitting the gerber files linked in GitHub",
+,PCB,Generic Total for PCBs,Arrow,,$500.00,1,$500.00,,
+,Structural,Laser Cut Aluminum,,,$350.00,1,$350.00,,
+,Structural,Fasteners,,,$110.00,1,$110.00,,
+,Structural,3D Printed Parts,,,$150.00,1,$150.00,,
+,Propulsion,Battery and charger,,,$848.00,1,$848.00,,
+,Avionics,Remote Control,,,$150.00,1,$150.00,,
+,Structural,Transport Case,,,$600.00,1,$600.00,,
+,Harness,"Variety of JST GH pre made cables (pos: 3,4,5,6,9)",,,,,,,
