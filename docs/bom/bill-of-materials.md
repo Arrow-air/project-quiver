@@ -1,17 +1,17 @@
 ---
 title: Bill of Materials
-description: Complete bill of materials for the Quiver PT1 dev-kit build
+description: Complete bill of materials for the Quiver dev-kit build
 sidebar_position: 2
 ---
 
 # Bill of Materials
 
-Complete bill of materials for building a Quiver dev-kit (PT1). This list covers all structural, harness, avionics, propulsion, and equipment components.
+Complete bill of materials for building a Quiver dev-kit. This list covers all structural, harness, avionics, propulsion, and equipment components.
 
 **Estimated total cost: ~$6,970**
 
-:::tip Source spreadsheet
-The living version of this BOM is maintained in [Google Sheets](https://docs.google.com/spreadsheets/d/1QJBaE_1iMNckU-1B3wAJMqJlpWVV4R0CgzfKqYckRh0/edit?gid=0#gid=0). This page is a snapshot — check the sheet for the latest updates. A [CSV version](https://github.com/Arrow-air/project-quiver/blob/main/docs/bom/quiver-pt1-bom.csv) is also available in the repo.
+:::tip Data formats
+This BOM is also available as a [CSV file](https://github.com/Arrow-air/project-quiver/blob/main/docs/bom/quiver-pt1-bom.csv) for spreadsheet import or programmatic use. The original version was maintained in [Google Sheets](https://docs.google.com/spreadsheets/d/1QJBaE_1iMNckU-1B3wAJMqJlpWVV4R0CgzfKqYckRh0/edit?gid=0#gid=0).
 :::
 
 :::note Fastener quantities
