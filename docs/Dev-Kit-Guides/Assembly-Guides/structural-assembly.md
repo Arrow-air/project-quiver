@@ -186,7 +186,7 @@
 | | 2111 & 2121 (Attachment Interface Spacers, Left and Right) | 2131 (Attachment Interface Spacer, Bottom) |
 |--|--|--|
 | Image| ![](assets/images/structural/2111_2121.png) | ![](assets/images/structural/2131.png) |
-| CAD File|[2111 & 2121](assets/models/structural/2111_2121.step)| [2131](assets/models/structural/2131.step)|
+| CAD File|[2111 & 2121](assets/models/structural/2111_2121.stl)| [2131](assets/models/structural/2131.stl)|
 ---
 ### 2112, 2122 & 2132 - Attachment Interfaces
 - Parts are identical, order 3 parts.
@@ -206,7 +206,7 @@
 | | 2211 & 2212  (Battery Slider) |
 |--|--|
 | Image| ![](assets/images/structural/2211_2212.png) |
-| CAD File|[2211 & 2212](assets/models/structural/2211_2212.step)|
+| CAD File|[2211 & 2212](assets/models/structural/2211_2212.stl)|
 ---
 ### 2311 - Main PCB Mount
 - 3D printed.
@@ -217,7 +217,7 @@
 | | 2311  (Main PCB Mount) |
 |--|--|
 | Image| ![](assets/images/structural/2311.png) |
-| CAD File|[2211 & 2212](assets/models/structural/2311.step)|
+| CAD File|[2211 & 2212](assets/models/structural/2311.stl)|
 ---
 ### 2312 - Battery Connector PCB Mount
 - 3D printed.
@@ -228,7 +228,7 @@
 | | 2312  (BC PCB Mount) |
 |--|--|
 | Image| ![](assets/images/structural/2312.png) |
-| CAD File|[2312](assets/models/structural/2312.step)|
+| CAD File|[2312](assets/models/structural/2312.stl)|
 ---
 ### 2313 - Battery Connector PCB Cover
 - 3D printed.
@@ -239,7 +239,7 @@
 | | 2313  (BC PCB Cover) |
 |--|--|
 | Image| ![](assets/images/structural/2313.png) |
-| CAD File|[2313](assets/models/structural/2313.step)|
+| CAD File|[2313](assets/models/structural/2313.stl)|
 ---
 ### 2321 - Sensor Mount
 - 3D printed.
@@ -250,7 +250,7 @@
 | | 2321  (Sensor Mount) |
 |--|--|
 | Image| ![](assets/images/structural/2321.png) |
-| CAD File|[2321](assets/models/structural/2321.step)|
+| CAD File|[2321](assets/models/structural/2321.stl)|
 ---
 ### 2331 - GNSS Mount
 - 3D printed.
@@ -261,7 +261,7 @@
 | | 2331  (GNSS Mount) |
 |--|--|
 | Image| ![](assets/images/structural/2331.png) |
-| CAD File|[2331](assets/models/structural/2331.step)|
+| CAD File|[2331](assets/models/structural/2331.stl)|
 ---
 ### 2341 - PPP & Beacon Mount
 - 3D printed.
@@ -272,7 +272,7 @@
 | | 2341  (PPP & Beacon Mount) |
 |--|--|
 | Image| ![](assets/images/structural/2341.png) |
-| CAD File|[2341](assets/models/structural/2341.step)|
+| CAD File|[2341](assets/models/structural/2341.stl)|
 ---
 ### 2411 - Main Enclosure
 - 3D printed.
@@ -283,7 +283,7 @@
 | | 2411  (Main Enclosure) |
 |--|--|
 | Image| ![](assets/images/structural/2411.png) |
-| CAD File|[2411](assets/models/structural/2411.step)|
+| CAD File|[2411](assets/models/structural/2411.stl)|
 ---
 ### 2412 - Top Cap
 - 3D printed.
@@ -296,7 +296,7 @@
 |--|--|
 | Image| ![](assets/images/structural/2412.png) |
 | Print Orientation| ![](assets/images/structural/2412_2.png) |
-| CAD File|[2412](assets/models/structural/2412.step)|
+| CAD File|[2412](assets/models/structural/2412.stl)|
 ---
 ### 2421 & 2422 - Enclosure Hinges
 - Off-the-shelf component.
@@ -339,7 +339,7 @@
 | | 3324 (BC PCB Heatsink) |
 |--|--|
 | Image| ![](assets/images/structural/3324.png) |
-| CAD File|[3324 - 4 mm](assets/models/structural/3324.step) , [3324 - 5 mm](assets/models/structural/3324_2.step)|
+| CAD File|[3324 - 4 mm](assets/models/structural/3324_1.step) , [3324 - 5 mm](assets/models/structural/3324_2.step)|
 ---
 
 ### Tool List
@@ -876,7 +876,7 @@
 
 |Motor Installation|
 |--|
-|![](assets/images/structural/step18_2.jpeg)|
+|![](assets/images/structural/step18_2.png)|
 
 - Install the motor arms on the motor arm connectors.
   - Mind the motor spin directions. Use **Ardupilot Quad X** motor layout. See the image for reference. The front of the drone is where the radar sensors are.
@@ -892,7 +892,7 @@
 
 |Motor Arm Installation| Motor Cable Routing|
 |--|--|
-|![](assets/images/structural/step18_3.jpeg)|![](assets/images/structural/step18_4.jpeg)|
+|![](assets/images/structural/step18_3.png)|![](assets/images/structural/step18_4.png)|
  
 - Set the LED colors at each end of the motors.
   - LEDs on the left side motors (Motors 2 & 3, C & D) should be **RED**.
@@ -901,7 +901,7 @@
 
 |Adjusting LED Color Instructions|
 |--|
-|![](assets/images/structural/step18_5.jpeg)|
+|![](assets/images/structural/step18_5.png)|
 
 
 
