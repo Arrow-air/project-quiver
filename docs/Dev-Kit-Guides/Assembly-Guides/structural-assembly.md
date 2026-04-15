@@ -90,8 +90,8 @@
 | | 1111 (Upper Plate) | 1112 (Mid Plate) | 1113 (Lower Plate)|
 |--|--|--|--|
 |Thickness| 1 mm| 1 mm| 4 mm|
-| Image| <img src="assets/images/1111.png" alt="Alt Text" width="800"> | <img src="assets/images/1112.png" alt="Alt Text" width="800"> | <img src="assets/images/1113.png" alt="Alt Text" width="800"> |  
-| CAD File|[1111](assets/models/1111.step)| [1112](assets/models/1112.step)| [1113](assets/models/1113.step)|
+| Image| <img src="assets/images/structural/1111.png" alt="Alt Text" width="800"> | <img src="assets/images/structural/1112.png" alt="Alt Text" width="800"> | <img src="assets/images/structural/1113.png" alt="Alt Text" width="800"> |  
+| CAD File|[1111](assets/models/structural/1111.step)| [1112](assets/models/structural/1112.step)| [1113](assets/models/structural/1113.step)|
 ---
 ### 1211, 1212 & 1213 - Cockpit Support Beams
 - All three are aluminum 6 series, 40x40x1 mm square tubes, laser cut, sanded.
@@ -102,8 +102,8 @@
 | | 1211 (Cockpit Support Beam CW Long) | 1212 & 1213 (Cockpit Support Beam CCW Back & Front) |
 |--|--|--|
 |Length|289.2 mm|124.2 mm|
-| Image| <img src="assets/images/1211.png" alt="Alt Text" width="300"> | <img src="assets/images/1212_1213.png" alt="Alt Text" width="300"> |
-| CAD File|[1211](assets/models/1211.step)| [1212 & 1213](assets/models/1212_1213.step)|
+| Image| <img src="assets/images/structural/1211.png" alt="Alt Text" width="300"> | <img src="assets/images/structural/1212_1213.png" alt="Alt Text" width="300"> |
+| CAD File|[1211](assets/models/structural/1211.step)| [1212 & 1213](assets/models/structural/1212_1213.step)|
 ---
 ### 1221 & 1222 - Battery Walls
 - Both are aluminum 6 series, 1000x30x2 mm rectangular tubes, laser cut, sanded.
@@ -113,8 +113,8 @@
 
 | | 1221 & 1222 (Battery Wall Left & Right) |
 |--|--|
-| Image| ![](assets/images/1221_1222.png) |
-| CAD File|[1221 & 1222](assets/models/1221_1222.step)|
+| Image| ![](assets/images/structural/1221_1222.png) |
+| CAD File|[1221 & 1222](assets/models/structural/1221_1222.step)|
 ---
 ### 1311, 1312, 1313 & 1314 - Landing Gear Vertical Tubes
 - Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
@@ -137,7 +137,7 @@
 
 | 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
 |--|
-| ![](assets/images/133X.jpeg) |
+| ![](assets/images/structural/133X.jpeg) |
 ---
 ### 1341, 1342, 1343 & 1344 - Landing Gear Tube Joints
 - 3D printed.
@@ -147,8 +147,8 @@
 
 | | 1341, 1342, 1343 & 1344  (Landing Gear Tube Joint) |
 |--|--|
-| Image| ![](assets/images/134X.png) |
-| CAD File|[1221 & 1222](assets/models/134X.step)|
+| Image| ![](assets/images/structural/134X.png) |
+| CAD File|[1221 & 1222](assets/models/structural/134X.step)|
 ---
 ### 1351, 1352, 1353 & 1354 - Landing Gear Foam Wraps.
 - Pipe insulation foam, 28 mm inner diameter, 46 mm outer diameter.
@@ -159,7 +159,7 @@
 
 | 1351, 1352, 1353 & 1354 (Landing Gear Foam Wrap) |
 |--|
-| ![](assets/images/135X.jpg) |
+| ![](assets/images/structural/135X.jpg) |
 ---
 ### 1411, 1421, 1431 & 1441 - Motor Arm Foldable Connectors
 - 30 mm tube diameter version.
@@ -168,7 +168,7 @@
 
 | 1411, 1421, 1431 & 1441 (Motor Arm Foldable Connectors) |
 |--|
-| ![](assets/images/14X1.jpg) |
+| ![](assets/images/structural/14X1.jpg) |
 ---
 ### 1412, 1422, 1432 & 1442 - Motor Arms
 - Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
@@ -185,8 +185,8 @@
 
 | | 2111 & 2121 (Attachment Interface Spacers, Left and Right) | 2131 (Attachment Interface Spacer, Bottom) |
 |--|--|--|
-| Image| ![](assets/images/2111_2121.png) | ![](assets/images/2131.png) |
-| CAD File|[2111 & 2121](assets/models/2111_2121.step)| [2131](assets/models/2131.step)|
+| Image| ![](assets/images/structural/2111_2121.png) | ![](assets/images/structural/2131.png) |
+| CAD File|[2111 & 2121](assets/models/structural/2111_2121.step)| [2131](assets/models/structural/2131.step)|
 ---
 ### 2112, 2122 & 2132 - Attachment Interfaces
 - Parts are identical, order 3 parts.
@@ -195,7 +195,7 @@
 
 | 2112, 2122 & 2132 (Attachment Interface) |
 |--|
-| ![](assets/images/2112_2122_2132.png) |
+| ![](assets/images/structural/2112_2122_2132.png) |
 ---
 ### 2211 & 2212 - Battery Sliders
 - 3D printed.
@@ -205,8 +205,8 @@
 
 | | 2211 & 2212  (Battery Slider) |
 |--|--|
-| Image| ![](assets/images/2211_2212.png) |
-| CAD File|[2211 & 2212](assets/models/2211_2212.step)|
+| Image| ![](assets/images/structural/2211_2212.png) |
+| CAD File|[2211 & 2212](assets/models/structural/2211_2212.step)|
 ---
 ### 2311 - Main PCB Mount
 - 3D printed.
@@ -216,8 +216,8 @@
 
 | | 2311  (Main PCB Mount) |
 |--|--|
-| Image| ![](assets/images/2311.png) |
-| CAD File|[2211 & 2212](assets/models/2311.step)|
+| Image| ![](assets/images/structural/2311.png) |
+| CAD File|[2211 & 2212](assets/models/structural/2311.step)|
 ---
 ### 2312 - Battery Connector PCB Mount
 - 3D printed.
@@ -227,8 +227,8 @@
 
 | | 2312  (BC PCB Mount) |
 |--|--|
-| Image| ![](assets/images/2312.png) |
-| CAD File|[2312](assets/models/2312.step)|
+| Image| ![](assets/images/structural/2312.png) |
+| CAD File|[2312](assets/models/structural/2312.step)|
 ---
 ### 2313 - Battery Connector PCB Cover
 - 3D printed.
@@ -238,8 +238,8 @@
 
 | | 2313  (BC PCB Cover) |
 |--|--|
-| Image| ![](assets/images/2313.png) |
-| CAD File|[2313](assets/models/2313.step)|
+| Image| ![](assets/images/structural/2313.png) |
+| CAD File|[2313](assets/models/structural/2313.step)|
 ---
 ### 2321 - Sensor Mount
 - 3D printed.
@@ -249,8 +249,8 @@
 
 | | 2321  (Sensor Mount) |
 |--|--|
-| Image| ![](assets/images/2321.png) |
-| CAD File|[2321](assets/models/2321.step)|
+| Image| ![](assets/images/structural/2321.png) |
+| CAD File|[2321](assets/models/structural/2321.step)|
 ---
 ### 2331 - GNSS Mount
 - 3D printed.
@@ -260,8 +260,8 @@
 
 | | 2331  (GNSS Mount) |
 |--|--|
-| Image| ![](assets/images/2331.png) |
-| CAD File|[2331](assets/models/2331.step)|
+| Image| ![](assets/images/structural/2331.png) |
+| CAD File|[2331](assets/models/structural/2331.step)|
 ---
 ### 2341 - PPP & Beacon Mount
 - 3D printed.
@@ -271,8 +271,8 @@
 
 | | 2341  (PPP & Beacon Mount) |
 |--|--|
-| Image| ![](assets/images/2341.png) |
-| CAD File|[2341](assets/models/2341.step)|
+| Image| ![](assets/images/structural/2341.png) |
+| CAD File|[2341](assets/models/structural/2341.step)|
 ---
 ### 2411 - Main Enclosure
 - 3D printed.
@@ -282,8 +282,8 @@
 
 | | 2411  (Main Enclosure) |
 |--|--|
-| Image| ![](assets/images/2411.png) |
-| CAD File|[2411](assets/models/2411.step)|
+| Image| ![](assets/images/structural/2411.png) |
+| CAD File|[2411](assets/models/structural/2411.step)|
 ---
 ### 2412 - Top Cap
 - 3D printed.
@@ -294,9 +294,9 @@
 ---
 | | 2412  (Top Cap) |
 |--|--|
-| Image| ![](assets/images/2412.png) |
-| Print Orientation| ![](assets/images/2412_2.png) |
-| CAD File|[2412](assets/models/2412.step)|
+| Image| ![](assets/images/structural/2412.png) |
+| Print Orientation| ![](assets/images/structural/2412_2.png) |
+| CAD File|[2412](assets/models/structural/2412.step)|
 ---
 ### 2421 & 2422 - Enclosure Hinges
 - Off-the-shelf component.
@@ -306,7 +306,7 @@
 
 | 2421 & 2422  (Enclosure Hinges) |
 |--|
-| ![](assets/images/2421_2422.png) |
+| ![](assets/images/structural/2421_2422.png) |
 ---
 ### 2431 & 2432 - Enclosure Latches
 - Off-the-shelf component.
@@ -326,8 +326,8 @@
 
 | | 3322 (Busbar Positive) | 3323 (Busbar Negative) |
 |--|--|--|
-| Image| ![](assets/images/3322.png) | ![](assets/images/3323.png) |
-| CAD File|[3322](assets/models/3322.step)| [2131](assets/models/3323.step)|
+| Image| ![](assets/images/structural/3322.png) | ![](assets/images/structural/3323.png) |
+| CAD File|[3322](assets/models/structural/3322.step)| [2131](assets/models/structural/3323.step)|
 --
 ### 3324 - BC PCB Heatsink
 - Aluminum 6 series, laser cut, sanded.
@@ -338,8 +338,8 @@
 
 | | 3324 (BC PCB Heatsink) |
 |--|--|
-| Image| ![](assets/images/3324.png) |
-| CAD File|[3324 - 4 mm](assets/models/3324.step) , [3324 - 5 mm](assets/models/3324_2.step)|
+| Image| ![](assets/images/structural/3324.png) |
+| CAD File|[3324 - 4 mm](assets/models/structural/3324.step) , [3324 - 5 mm](assets/models/structural/3324_2.step)|
 ---
 
 ### Tool List
@@ -371,7 +371,7 @@
 
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
-|![](assets/images/step1_1.png)| ![](assets/images/step1_3.png) | ![](assets/images/step1_2.png) |
+|![](assets/images/structural/step1_1.png)| ![](assets/images/structural/step1_3.png) | ![](assets/images/structural/step1_2.png) |
 ---
 
 ### Step 2. Install the Battery Walls
@@ -386,7 +386,7 @@
 
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
-|![](assets/images/step2_1.png)| ![](assets/images/step2_3.png) | ![](assets/images/step2_2.png) |
+|![](assets/images/structural/step2_1.png)| ![](assets/images/structural/step2_3.png) | ![](assets/images/structural/step2_2.png) |
 ---
 
 ### Step 3. Install the Motor Arm Connectors
@@ -401,7 +401,7 @@
 
 | Motor Arm Connector - Loctite Threadlocker Application|
 |---|
-| ![](assets/images/step3_3.png)|
+| ![](assets/images/structural/step3_3.png)|
  
 - Place the motor arm connectors on the chassis as shown in the picture.
 - Secure the motor arm connectors on the chassis.
@@ -412,7 +412,7 @@
  
 |Orientation|Screw Holes|
 |--|--|
-|![](assets/images/step3_1.png)| ![](assets/images/step3_2.png) |
+|![](assets/images/structural/step3_1.png)| ![](assets/images/structural/step3_2.png) |
 ---
 ### Step 4. Install the Lower Plate
 - Parts needed:
@@ -425,7 +425,7 @@
 
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
-|![](assets/images/step4_1.png)| ![](assets/images/step4_3.png) | ![](assets/images/step4_2.png) |
+|![](assets/images/structural/step4_1.png)| ![](assets/images/structural/step4_3.png) | ![](assets/images/structural/step4_2.png) |
 ---
 ### Step 5. Install the Upper Plate
 - Parts needed:
@@ -444,7 +444,7 @@
 
 |Orientation|Adhesive Area|Rivet Holes|
 |--|--|--|
-|![](assets/images/step5_1.png)| ![](assets/images/step5_3.png) | ![](assets/images/step5_2.png) |
+|![](assets/images/structural/step5_1.png)| ![](assets/images/structural/step5_3.png) | ![](assets/images/structural/step5_2.png) |
 ---
 ### Step 6. Install the Main PCB Mount
 - Parts needed:
@@ -457,20 +457,20 @@
 
 | Top Insert Locations|
 |---|
-| ![](assets/images/step6_1.png)|
+| ![](assets/images/structural/step6_1.png)|
 
 - Install 5x Insert 4 into the bottom face of the Main PCB Mount (2311) as shown in the picture.
 
 | Bottom Insert Locations|
 |---|
-| ![](assets/images/step6_2.png)|
+| ![](assets/images/structural/step6_2.png)|
 
 - Install 5x Vibration Mount into the designated holes on the Upper Plate (1111).
 - Orientation: Ensure the longer side of the rubber dampener (3 mm section) is facing upwards, towards where the 3D-printed holder will sit.
 
 | Vibration Mount Locations| Vibration Mount Insertion |
 |---|---|
-| ![](assets/images/step6_5.png)| ![](assets/images/step6_3.png)|
+| ![](assets/images/structural/step6_5.png)| ![](assets/images/structural/step6_3.png)|
 
 - Apply a small amount of Loctite Threadlocker Blue to the threads of the 5x Screw 11 (M3x6) flat head screws.
 - Align the 3D-printed mount over the rubber dampeners.
@@ -479,7 +479,7 @@
 
 | Vibration Mount Compression|
 |---|
-| ![](assets/images/step6_4.png)|
+| ![](assets/images/structural/step6_4.png)|
 ---
 ### Step 7. Install the Battery Connector PCB Mount
 - Parts needed:
@@ -493,13 +493,13 @@
 
 |Top|Bottom|
 |--|--|
-|![](assets/images/step7_1.png)| ![](assets/images/step7_2.png) |
+|![](assets/images/structural/step7_1.png)| ![](assets/images/structural/step7_2.png) |
 
 - Place the Battery Connector PCB mount over the mid plate.
   - Secure it with 3x Screw 5 in total from below the mid plate on the holes below.
   - Use Washer 1 for the holes.
 
-![](assets/images/step7_3.png)
+![](assets/images/structural/step7_3.png)
 ---
 ### Step 8. Install the Battery Sliders
 - Parts needed:
@@ -511,7 +511,7 @@
 - Place Insert 2 to the holes shown in the picture on both of the battery slides.
   - Use a soldering iron to place them inside the plastic.
 
-![](assets/images/step8_1.png)
+![](assets/images/structural/step8_1.png)
 
 - Place the battery sliders inside the battery compartment.
   - Be careful about the orientation of the angled end, they should point where the cutouts on the plates are.
@@ -520,7 +520,7 @@
 
 |Orientation|Installation Holes|
 |--|--|
-|![](assets/images/step8_2.png)| ![](assets/images/step8_3.png) |
+|![](assets/images/structural/step8_2.png)| ![](assets/images/structural/step8_3.png) |
 ---
 ### Step 9. Install the Landing Gear
 - Parts needed:
@@ -541,7 +541,7 @@
 
 |Orientation|Installation Holes|
 |--|--|
-|![](assets/images/step9_1.png)| ![](assets/images/step9_2.png) |
+|![](assets/images/structural/step9_1.png)| ![](assets/images/structural/step9_2.png) |
 
 - Insert the vertical landing gear tubes inside landing gear main adapters.
   - Make sure the tubes are inserted all the way.
@@ -550,7 +550,7 @@
 
 |Landing Gear Adapter|
 |---|
-|![](assets/images/step9_3.png)|
+|![](assets/images/structural/step9_3.png)|
 
 - Make sure the chassis stands level on the ground.
   -  If not, measure and equalize the tube lengths.
@@ -563,7 +563,7 @@
 
 |Positioning|Installation Holes|Correct Final Appearance |
 |--|--|--|
-|![](assets/images/step9_5.png)| ![](assets/images/step9_4.png) | ![](assets/images/step9_6.png) |
+|![](assets/images/structural/step9_5.png)| ![](assets/images/structural/step9_4.png) | ![](assets/images/structural/step9_6.png) |
 
 
 ### Step 10. Install Sensor Mount
@@ -582,7 +582,7 @@
 
 |Insert 1 (6.4 mm) Locations|
 |---|
-|![](assets/images/step10_1.png)|
+|![](assets/images/structural/step10_1.png)|
 
 - Place Insert 4 to the holes shown in the picture.
   - Use a soldering iron to place them inside the plastic.
@@ -590,7 +590,7 @@
 
 |Insert 4 (3.8 mm) Locations|
 |---|
-|![](assets/images/step10_2.png)|
+|![](assets/images/structural/step10_2.png)|
 
 - Secure the sensor mount on the lower plate.
   - Screw head stays inside the mount.
@@ -601,7 +601,7 @@
 
 |Lower Plate Fasteners|
 |---|
-|![](assets/images/step10_3.png)|
+|![](assets/images/structural/step10_3.png)|
 
 - Secure the sensor mount on the battery walls.
   - Use Screw 5.
@@ -610,7 +610,7 @@
 
 |Battery Wall Fasteners|
 |---|
-|![](assets/images/step10_4.png)|
+|![](assets/images/structural/step10_4.png)|
 ---
 
 ### Step 11. Insert Grommets
@@ -622,13 +622,13 @@
 
 |Grommet 1 Location|
 |---|
-|![](assets/images/step11_1.png)|
+|![](assets/images/structural/step11_1.png)|
 
 - Insert 12x Grommet 2 into the holes on the sides of upper, mid and lower plates on each side.
 
 |Grommet 2 Location|
 |---|
-|![](assets/images/step11_2.png)|
+|![](assets/images/structural/step11_2.png)|
 
 ### Step 12. Install PCBs & Onboard Components
 - Parts needed:
@@ -656,7 +656,7 @@
 
 |BC PCB & Bolt Locations|
 |---|
-|![](assets/images/step12_1.png)|
+|![](assets/images/structural/step12_1.png)|
 
 - Place the Main PCB as shown in the picture.
   - See the warning before installation.
@@ -671,7 +671,7 @@
 
 |Main PCB & Bolt Locations| Through-hole Pin Trim|
 |---|---|
-|![](assets/images/step12_2.png)|![](assets/images/step12_12.png)|
+|![](assets/images/structural/step12_2.png)|![](assets/images/structural/step12_12.png)|
 
 - Place Ethernet Switches on the Main PCB slots, as shown in the picture.
   - Securely plug the connectors.
@@ -680,7 +680,7 @@
  
 |Ethernet Switch Locations|
 |--|
-|![](assets/images/step12_8.png)|
+|![](assets/images/structural/step12_8.png)|
 
 - Place the Flight Controller on the FC PCB.
   - Pay extreme attention to the orientation shown in the images.
@@ -690,7 +690,7 @@
  
 |FC & FC PCB Orientation ||
 |--|--|
-|![](assets/images/step12_4.png)|![](assets/images/step12_3.png)|
+|![](assets/images/structural/step12_4.png)|![](assets/images/structural/step12_3.png)|
 
 - Place F9P NEO RTK GNSS on the GNSS Mount.
   - The direction of the arrow on the RTK GNSS should match the one provided in the picture.
@@ -699,7 +699,7 @@
 
 |GNSS Orientation|
 |--|
-|![](assets/images/step12_10.png)|
+|![](assets/images/structural/step12_10.png)|
 
 - Place the FC PCB into the GNSS Mount.
 - Place the FC PCB and GNSS Mount on the Main PCB.
@@ -711,7 +711,7 @@
 
 |Flight Controller Orientation | GNSS Mount Orientation | Installation Holes |
 |--|--|--|
-|![](assets/images/step12_5.png)| ![](assets/images/step12_6.png) | ![](assets/images/step12_7.png) 
+|![](assets/images/structural/step12_5.png)| ![](assets/images/structural/step12_6.png) | ![](assets/images/structural/step12_7.png) 
 
 - Place RPI 5 on the Main PCB slot, as shown in the picture.
   - Securely plug the connectors.
@@ -719,7 +719,7 @@
  
 |RPI 5 Installation|
 |--|
-|![](assets/images/step12_9.png)|
+|![](assets/images/structural/step12_9.png)|
 
 - Place Mateksys GNSS on the Main PCB slot, as shown in the picture.
   - Securely plug the connectors.
@@ -728,7 +728,7 @@
  
 |Mateksys GNSS Installation|
 |--|
-|![](assets/images/step12_11.png)|
+|![](assets/images/structural/step12_11.png)|
 
 
 ---
@@ -745,7 +745,7 @@
 
 |Busbar Installation|
 |--|
-|![](assets/images/step13_1.png)|
+|![](assets/images/structural/step13_1.png)|
   
 ---
 ### Step 14. Install BC PCB Cover
@@ -764,7 +764,7 @@
 
 | Insert 4 Locations | Screw Locations |
 |--|--|
-|![](assets/images/step14_1.png)|![](assets/images/step14_2.png)|
+|![](assets/images/structural/step14_1.png)|![](assets/images/structural/step14_2.png)|
 
 ---
 ### Step 15. Install Attachment Interfaces
@@ -785,7 +785,7 @@
 
 |Positioning|Installation Holes| Notch Orientation|
 |--|--|--|
-|![](assets/images/step15_1.png)| ![](assets/images/step15_2.png) | ![](assets/images/step15_3.png) |
+|![](assets/images/structural/step15_1.png)| ![](assets/images/structural/step15_2.png) | ![](assets/images/structural/step15_3.png) |
 
 - Place and secure the bottom attachment interface and the spacer as shown in the pictures.
   - Make sure the rectangular holes are aligned with the holes on the battery walls.
@@ -796,7 +796,7 @@
 
 |Positioning, Cable & Notch Orientation|Installation Holes|
 |--|--|
-|![](assets/images/step15_4.png)| ![](assets/images/step15_5.png) |
+|![](assets/images/structural/step15_4.png)| ![](assets/images/structural/step15_5.png) |
 
 ---
 ### Step 16. Install Radar Sensors
@@ -812,7 +812,7 @@
 
 |Obstacle Avoidance Installation|
 |--|
-|![](assets/images/step16_1.png)|
+|![](assets/images/structural/step16_1.png)|
  
 - Secure Nanoradar NRA15 in front-bottom corner of the drone, as shown in the image.
   - Use 4x Screw 11.
@@ -821,7 +821,7 @@
 
 |Radar Altimeter Installation|
 |--|
-|![](assets/images/step16_2.png)|
+|![](assets/images/structural/step16_2.png)|
 
 ---
 ### Step 17. Install Camera
@@ -840,7 +840,7 @@
 
 | Camera Installation Holes | Camera Orientation |
 |--|--|
-|![](assets/images/step17_1.png)|![](assets/images/step17_2.png)|
+|![](assets/images/structural/step17_1.png)|![](assets/images/structural/step17_2.png)|
 
 ---
 ### Step 18. Install Motor Arm Tubes & Motors
@@ -860,7 +860,7 @@
 
 |Motor Arm Tube Hole Drilling Layout|
 |--|
-|![](assets/images/step18_1.jpeg)|
+|![](assets/images/structural/step18_1.jpeg)|
 
 - Slide a tube inside each motor tube clamp.
   - Orient the tube so that the motor is installed on the end with the shorter hole-to-end distance.
@@ -876,7 +876,7 @@
 
 |Motor Installation|
 |--|
-|![](assets/images/step18_2.jpeg)|
+|![](assets/images/structural/step18_2.jpeg)|
 
 - Install the motor arms on the motor arm connectors.
   - Mind the motor spin directions. Use **Ardupilot Quad X** motor layout. See the image for reference. The front of the drone is where the radar sensors are.
@@ -892,7 +892,7 @@
 
 |Motor Arm Installation| Motor Cable Routing|
 |--|--|
-|![](assets/images/step18_3.jpeg)|![](assets/images/step18_4.jpeg)|
+|![](assets/images/structural/step18_3.jpeg)|![](assets/images/structural/step18_4.jpeg)|
  
 - Set the LED colors at each end of the motors.
   - LEDs on the left side motors (Motors 2 & 3, C & D) should be **RED**.
@@ -901,7 +901,7 @@
 
 |Adjusting LED Color Instructions|
 |--|
-|![](assets/images/step18_5.jpeg)|
+|![](assets/images/structural/step18_5.jpeg)|
 
 
 
@@ -933,7 +933,7 @@
 - Place Insert 1 to the holes shown in the picture from outside on the main enclosure.
   - Use a soldering iron to place them inside the plastic.
 
-![](assets/images/step11_1.png) 
+![](assets/images/structural/step11_1.png) 
 
 - Place the enclosure anchors and the main enclosure over the chassis.
   - The anchors will fit on the circular cutouts on the battery walls.
@@ -942,25 +942,25 @@
     - Use Washer 1.
     - DO NOT use Loctite Threadlocker.
 
-![](assets/images/step11_2.png) 
+![](assets/images/structural/step11_2.png) 
 
 - Place Insert 1 to the holes shown in the picture from outside on the top cap.
   - Use a soldering iron to place them inside the plastic.
 
-![](assets/images/step11_3.png)
+![](assets/images/structural/step11_3.png)
 
 - Place the enclosure clips on the top cap as shown in the picture.
   - Screw the anchors to the main enclosure with Screw 8.
     - DO NOT use Loctite Threadlocker.
    
-![](assets/images/step11_4.png)
+![](assets/images/structural/step11_4.png)
 
 - Place the top cap over the chassis.
 - Secure the enclosure hinges on the top cap and the main enclosure.
   - Use Screw 7.
   - DO NOT use Loctite Threadlocker.
 
-![](assets/images/step11_5.png)
+![](assets/images/structural/step11_5.png)
 
 ### Step 12. Install Sensor Mount
 - Parts needed:
@@ -973,7 +973,7 @@
 - Place Insert 1 to the holes shown in the picture.
   - Use a soldering iron to place them inside the plastic.
 
-![](assets/images/step12_1.png)
+![](assets/images/structural/step12_1.png)
 
 - Secure the altitude sensor mount on the lower plate.
   - Screw head stays inside the mount.
@@ -982,7 +982,7 @@
   - Use Nut 1.
   - DO NOT use Loctite Threadlocker.
 
-![](assets/images/step12_2.png)  
+![](assets/images/structural/step12_2.png)  
 
 ### Step 13. Install Camera Mount
 - Parts needed:
@@ -999,7 +999,7 @@
   - Use Nut 1.
   - DO NOT use Loctite Threadlocker.
 
-![](assets/images/step13_1.png)  
+![](assets/images/structural/step13_1.png)  
 
 ### Step 14. Install Motor Arm Tubes
 - Parts needed:
@@ -1014,14 +1014,14 @@
   - Tighten the clamps with the screws provided in the motor arm connector package.
   - Use Loctite Threadlocker Blue to secure the screws.
 
-![](assets/images/step14_1.png)
+![](assets/images/structural/step14_1.png)
 
 - Drill the tubes with 3 mm drill bit on the marked holes.
   - Use Screw 6.
   - Use Washer 1 on each side.
   - Use Nut 1.
  
-![](assets/images/step14_2.png)
+![](assets/images/structural/step14_2.png)
 
 -----
 
