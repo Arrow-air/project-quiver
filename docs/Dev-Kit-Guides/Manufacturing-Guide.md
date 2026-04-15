@@ -1445,8 +1445,8 @@ N/A
 
 | | 1221 & 1222 (Battery Wall Left & Right) |
 |--|--|
-| Image| ![](assets/images/1221_1222.png) |
-| CAD File|[1221 & 1222](assets/models/1221_1222.step)|
+| Image| TODO: image needed (devkit 1221 & 1222 photo) |
+| CAD File| TODO: CAD file needed (devkit 1221 & 1222) |
 ---
 ### 1311, 1312, 1313 & 1314 - Landing Gear Vertical Tubes
 - Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
