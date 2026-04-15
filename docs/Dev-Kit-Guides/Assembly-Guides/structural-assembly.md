@@ -745,7 +745,7 @@
 
 |Busbar Installation|
 |--|
-|![](assets/images/structural/step13_1.png)|
+|TODO: image needed (devkit busbar photo)|
   
 ---
 ### Step 14. Install BC PCB Cover
@@ -999,7 +999,7 @@
   - Use Nut 1.
   - DO NOT use Loctite Threadlocker.
 
-![](assets/images/structural/step13_1.png)  
+<!-- TODO: image needed (devkit busbar photo) -->  
 
 ### Step 14. Install Motor Arm Tubes
 - Parts needed:
