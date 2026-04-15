@@ -947,20 +947,20 @@
 - Place Insert 1 to the holes shown in the picture from outside on the top cap.
   - Use a soldering iron to place them inside the plastic.
 
-![](assets/images/structural/step11_3.png)
+<!-- TODO: image needed -->
 
 - Place the enclosure clips on the top cap as shown in the picture.
   - Screw the anchors to the main enclosure with Screw 8.
     - DO NOT use Loctite Threadlocker.
    
-![](assets/images/structural/step11_4.png)
+<!-- TODO: image needed -->
 
 - Place the top cap over the chassis.
 - Secure the enclosure hinges on the top cap and the main enclosure.
   - Use Screw 7.
   - DO NOT use Loctite Threadlocker.
 
-![](assets/images/structural/step11_5.png)
+<!-- TODO: image needed -->
 
 ### Step 12. Install Sensor Mount
 - Parts needed:
