@@ -1,6 +1,6 @@
 ---
 title: BC_PCB_Dev-Kit_Assembly_Manual
-tags: pcb
+tags: [pcb]
 ---
 
 # Project Quiver Dev-Kit BC PCB Assembly Manual
