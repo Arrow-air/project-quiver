@@ -2,84 +2,76 @@
 
 ## BOM for the Assembly
 
-### Table 1. Structure parts
+### Table 1. Structure Parts
 
-|	Part ID 	|	Part Name	|	 CAD ID  	|	 Material 	|	 Sourcing 	|	 Quantity 
-|	 -------- 	|	 ------------------------------------------------------------------------------------------------------------------- 	|	 -------- 	|	 -------- 	|	 -------- 	|	 -------- 
-|	1	|	 Upper plate                                                                                        	|	1101	|	Aluminum	|	Laser Cut	|	1
-|	2	|	 Middle plate                                                                                     	|	1102	|	Aluminum	|	Laser Cut	|	1
-|	3	|	 Lower plate                                                                                	|	1103	|	Aluminum	|	Laser Cut	|	1
-|	4	|	 Cockpit Support Beam CW Long                                           	|	1211	|	Aluminum	|	Laser Cut	|	1
-|	5	|	 Cockpit Support Beam CCW Back	|	1212	|	Aluminum	|	Laser Cut	|	1
-|	6	|	 Cockpit Support Beam CCW Front	|	1213	|	Aluminum	|	Laser Cut	|	1
-|	7	|	Battery Wall Left                                               	|	1221	|	Aluminum	|	Laser Cut	|	1
-|	8	|	Battery Wall Right                                               	|	1222	|	Aluminum	|	Laser Cut	|	1
-|	9	|	 Foldable Motor Arm Connectors	|	14X1	|	Aluminum	|	Off-the-Shelf	|	4
-|	10	|	Motor Arm Tubes	|	14X2	|	Carbon-Fiber	|	Cut-to-Length	|	4
-|	11	|	Landing Gear Vertical Tubes	|	1310	|	Carbon-Fiber	|	Cut-to-Length	|	4
-|	12	|	Landing Gear Horizontal Tubes	|	1320	|	Carbon-Fiber	|	Cut-to-Length	|	2
-|	13	|	Landing Gear Main Adapters	|	1330	|	Aluminum	|	Off-the-Shelf	|	4
-|	14	|	Enclosure Hinge	|	2430	|	Zinc	|	Off-the-Shelf	|	2
-|	15	|	 Landing Gear Tube Joints                                    	|	1340	|	PETG-CF	|	3D Print	|	4
-|	16	|	 Battery sliders                                                                                                     	|	2200	|	PETG-CF	|	3D Print	|	2
-|	17	|	BC PCB Cover	|	2313	|	PETG-CF	|	3D Print	|	1
-|	18	|	Altitude Sensor Mount	|	2330	|	PETG-CF	|	3D Print	|	1
-|	19	|	Enclosure Anchors	|	2420	|	PETG-CF	|	3D Print	|	4
-|	20	|	Camera Mount	|	2320	|	PETG-CF	|	3D Print	|	1
-|	21	|	Attachment Interface Spacer Left	|	2121	|	PETG-CF	|	3D Print	|	1
-|	22	|	Attachment Interface Spacer Right	|	2111	|	PETG-CF	|	3D Print	|	1
-|	23	|	Attachment Interface Spacer Bottom	|	2131	|	PETG-CF	|	3D Print	|	1
-|	24	|	GNSS Mount Base	|	2341	|	PETG	|	3D Print	|	1
-|	25	|	GNSS Mount Clamp	|	2342	|	PETG	|	3D Print	|	1
-|	26	|	Main PCB Mount	|	2311	|	PETG	|	3D Print	|	1
-|	27	|	Main Enclosure	|	2411	|	PETG	|	3D Print	|	1
-|	28	|	Enclosure Top Cap	|	2412	|	PETG	|	3D Print	|	1
-|	29	|	Enclosure Cap Clips	|	2440	|	PETG	|	3D Print	|	4
-|	30	|	BC PCB Mount	|	2312	|	PETG	|	3D Print	|	1
-|	31	|	Attachment Interfaces	|	2122	|	Aluminum	|	Off-the-Shelf	|	3
+|	 ID	|	Part Name	|	Material	|	Sourcing	|	Quantity	|
+|	--------	|	--------	|	--------	|	--------	|	--------	|
+|	1111	|	 Upper plate	|	Aluminum	|	Laser Cut	|	1	|
+|	1112	|	 Middle plate   	|	Aluminum	|	Laser Cut	|	1	|
+|	1113	|	 Lower plate    	|	Aluminum	|	Laser Cut	|	1	|
+|	1211	|	 Cockpit Support Beam CW Long	|	Aluminum	|	Laser Cut	|	1	|
+|	121X	|	 Cockpit Support Beam CCW Back	|	Aluminum	|	Laser Cut	|	2	|
+|	122X	|	Battery Wall	|	Aluminum	|	Laser Cut	|	2	|
+|	131X	|	Landing Gear Vertical Tubes	|	Carbon-Fiber	|	Cut-to-Length	|	4	|
+|	132X	|	Landing Gear Horizontal Tubes	|	Carbon-Fiber	|	Cut-to-Length	|	2	|
+|	133X	|	Landing Gear Main Adapters	|	Aluminum	|	Off-the-Shelf	|	4	|
+|	134X	|	Landing Gear Tube Joints	|	Aluminum	|	Off-the-Shelf	|	4	|
+|	14X1	|	 Foldable Motor Arm Connectors	|	Aluminum	|	Off-the-Shelf	|	4	|
+|	14X2	|	Motor Arm Tubes	|	Carbon-Fiber	|	Cut-to-Length	|	4	|
+|	21X2	|	Attachment Interface	|	Aluminum	|	Off-the-Shelf	|	3	|
+|	21X1	|	Attachment Interface Spacer Left & Right	|	PETG-CF	|	3D Print	|	2	|
+|	2131	|	Attachment Interface Spacer Bottom	|	PETG-CF	|	3D Print	|	1	|
+|	221X	|	Battery sliders	|	PETG-CF	|	3D Print	|	2	|
+|	2311	|	Main PCB Mount	|	PETG	|	3D Print	|	1	|
+|	2312	|	BC PCB Mount	|	PETG	|	3D Print	|	1	|
+|	2313	|	BC PCB Cover	|	PETG-CF	|	3D Print	|	1	|
+|	2321	|	Sensor Mount	|	PETG-CF	|	3D Print	|	1	|
+|	2331	|	GNSS Mount	|	PETG	|	3D Print	|	1	|
+|	2341	|	PPP Adapter & Beacon Mount	|	PETG	|	3D Print	|	1	|
+|	2411	|	Main Enclosure	|	PETG	|	3D Print	|	1	|
+|	2412	|	Enclosure Top Cap	|	PETG	|	3D Print	|	1	|
+|	242X	|	Enclosure Hinge	|	Zinc	|	Off-the-Shelf	|	2	|
+|	243X	|	Enclosure Latch	|	Steel	|	Off-the-Shelf	|	2	|
 
 
 ### Table 2. Fasteners
 |	Fastener ID	|	Fastener Description	|	Quantity	|	Reference Part	|
 |	--	|	--	|	--	|	--	|
-|	Rivet 1	|	4mm Diameter for 1 mm - 2.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A224/)	|
-|	Rivet 2	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	18	|	[97525A251](https://www.mcmaster.com/97525A251)	|
+|	Rivet 1	|	4mm Diameter for 1 mm - 2.5 mm thickness	|	26	|	[97525A224](https://www.mcmaster.com/97525A224/)	|
+|	Rivet 2	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	10	|	[97525A251](https://www.mcmaster.com/97525A251)	|
 |	Rivet 3	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
-|	Screw 1	|	Socket Head Screw M3x10	|	48	|	[91290A115](https://www.mcmaster.com/91292A113)	|
-|	Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[97654A373](https://www.mcmaster.com/92095A190)	|
-|	Screw 3	|	Socket Head Screw M3x16               	|	24	|	[91292A115](https://www.mcmaster.com/91292A115)	|
-|	Screw 4	|	Socket Head Screw M3x12	|	12	|	[91290A117](https://www.mcmaster.com/91292A114)	|
-|	Screw 5	|	Socket Head Screw M3x8	|	23	|	[91290A113](https://www.mcmaster.com/91292A112)	|
-|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91290A136](https://www.mcmaster.com/91292A024)	|
-|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	8	|	[92125A128](https://www.mcmaster.com/92125A128/)	|
-|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	4	|	[91294A130](https://www.mcmaster.com/92125A130/)	|
-|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91290A140](https://www.mcmaster.com/91292A108)	|
-|	Screw 10	|	Hex Drive Flat Head Screw M3x25	|	3	|	[91294A138](https://www.mcmaster.com/92125A138/)	|
-| Screw 11  | Flanged Button Head Hex-Drive Screw M3x6   | 5 | [97654A674](https://www.mcmaster.com/products/97654a674/) |
-| Screw 12  | Socket Head Hex-Drive Screw M2x5   | 8 | [92855A837](https://www.mcmaster.com/92855A837/) |
+|	Screw 1	|	Socket Head Screw M3x10	|	8	|	[91292A113](https://www.mcmaster.com/91292A113)	|
+|	Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[92095A190](https://www.mcmaster.com/92095A190)	|
+|	Screw 4	|	Socket Head Screw M3x12	|	8	|	[91292A114](https://www.mcmaster.com/91292A114)	|
+|	Screw 5	|	Socket Head Screw M3x8	|	75	|	[91292A112](https://www.mcmaster.com/91292A112)	|
+|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91292A024](https://www.mcmaster.com/91292A024)	|
+|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	4	|	[92125A128](https://www.mcmaster.com/92125A128/)	|
+|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	8	|	[92125A130](https://www.mcmaster.com/92125A130/)	|
+|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91292A108](https://www.mcmaster.com/91292A108)	|
+| Screw 10  | Socket Head Screw M2x6   | 4 | [91292A832](https://www.mcmaster.com/91292A832/) |
+| Screw 11  | Flanged Button Head Hex-Drive Screw M3x6   | 27 | [97654A674](https://www.mcmaster.com/products/97654a674/) |
+| Screw 12  | Socket Head Hex-Drive Screw M2x5   | 4 | [92855A837](https://www.mcmaster.com/92855A837/) |
 | Screw 13  | Socket Head Hex-Drive Screw M2.5x8   | 4 | [91292A012](https://www.mcmaster.com/91292A012/) |
 | Screw 14  | Socket Head Hex-Drive Screw M2x10   | 4 | [91292A833](https://www.mcmaster.com/91292A833/) |
 | Screw 15  | Socket Head Hex-Drive Screw M5x8   | 4 | [91292A191](https://www.mcmaster.com/91292A191) |
 | Screw 16  | Button Head Hex Drive Screw M3x40   | 4 | [92095A203](https://www.mcmaster.com/92095A203/) |
 | Screw 17  | Socket Head Screw M3x6   | 8 | [90751A110](https://www.mcmaster.com/90751A110/) |
-| Screw 18  | Button Head Hex-Drive Screw M2x4   | 8 | [92095A451](https://www.mcmaster.com/92095A451/) |
-| Screw 19  | Socket Head Screw M2x6   | 8 | [91292A832](https://www.mcmaster.com/91292A832/) |
-|	Insert 1 |	M3 Threaded Inserts - 5.7 mm	|	42	|	[94459A140](https://www.mcmaster.com/94459A140/)	|
-|	Insert 2 |	M4 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
-|	Insert 3 |	M2.5 Threaded Inserts	|	8	|	[97163A153](https://www.mcmaster.com/97163A153)	|
-| Insert 4 | M3 Threaded Inserts - 3.8 mm | 16 | [94180A331](https://www.mcmaster.com/94180A331)
-| Insert 5 | M2 Threaded Inserts | 16 | [94180A312](https://www.mcmaster.com/94180A312/)
-|	Washer 1 |	M3 General Purpose Washer 3.2 mm ID, 6 mm OD	|	158	|	[98689A112](https://www.mcmaster.com/98689A112)	|
+| Screw 3  | Button Head Hex-Drive Screw M2x4   | 12 | [92095A451](https://www.mcmaster.com/92095A451/) |
+|	Insert 1 |	M3 Threaded Inserts - 5.7 mm	|	50	|	[94459A140](https://www.mcmaster.com/94459A140/)	|
+|	Insert 2 |	M4 Threaded Inserts	|	8	|	[94180A351](https://www.mcmaster.com/94180A351/)	|
+| Insert 3 | M2 Threaded Inserts | 4 | [94180A312](https://www.mcmaster.com/94180A312/) |
+| Insert 4 | M3 Threaded Inserts - 3.8 mm | 16 | [94180A331](https://www.mcmaster.com/94180A331) |
+|	Washer 1 |	M3 General Purpose Washer 3.2 mm ID, 6 mm OD	|	123	|	[98689A112](https://www.mcmaster.com/98689A112)	|
 |	Washer 2 |	M4 General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
-|	Washer 3 |	M2 Nylon Washer 2.2 mm ID, 5 mm OD	|	8	|	[95610A110](https://www.mcmaster.com/95610A110)	|
+|	Washer 3 |	M2 Nylon Washer 2.2 mm ID, 5 mm OD	|	12	|	[95610A110](https://www.mcmaster.com/95610A110)	|
 | Washer 4 |	M2.5 Nylon Washer 2.7 mm ID, 5.6 mm OD	|	4	|	[95610A011](https://www.mcmaster.com/95610A011/)	|
 | Washer 5 |	M3 Nylon Washer 3.2 mm ID, 6 mm OD	|	4	|	[95610A704](https://www.mcmaster.com/95610A704/)	|
 | Washer 6 |	M5 General Purpose Washer 5.3 mm ID, 10 mm OD	|	4	|	[93475A240](https://www.mcmaster.com/93475A240/)	|
-|	 Nut 1	|	Nylon-Insert Locknut M3	|	39	|	[90576A811](https://www.mcmaster.com/90576A811)	|
+|	 Nut 1	|	Nylon-Insert Locknut M3	|	16	|	[90576A811](https://www.mcmaster.com/90576A811)	|
 | Vibration Mount | M3 Rubber Anti-Vibration Spacer | 5 | [Amazon](https://www.amazon.com/iRCMATRC-Stretchy-Anti-Vibration-Controllers-Accessories/dp/B09KCGKX1F?th=1) | 
-| Grommet 1| Circular Grommet OD: 20 mm | 12 | [Amazon](https://amzn.eu/d/0acx4eWp)
-| Grommet 2| Oval Grommet 27x13 mm | 4 | [Amazon](https://amzn.eu/d/06VwAZfb)
-| Silicone Foam Seal Strip| Circular, OD: 8 mm | 1 | [Amazon](https://www.amazon.com/uxcell-Silicone-Meters-Weather-Warehouse/dp/B0CB6H3BJ4/ref=sr_1_2?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&nsdOptOutParam=true&refresh=1&sr=8-2)
+| Grommet 1| Circular Grommet OD: 20 mm | 4 | [Amazon](https://amzn.eu/d/0acx4eWp) |
+| Grommet 2| Oval Grommet 27x13 mm | 12 | [Amazon](https://amzn.eu/d/06VwAZfb) |
+| Silicone Foam Seal Strip| Circular, OD: 8 mm | 1 | [Amazon](https://www.amazon.com/uxcell-Silicone-Meters-Weather-Warehouse/dp/B0CB6H3BJ4/ref=sr_1_2?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&nsdOptOutParam=true&refresh=1&sr=8-2) |
 
 
 
@@ -93,8 +85,8 @@
 | Cordless screwdriver or drill press | | |
 | Riveting tool | For 4 mm rivets | |
 | Double-Sided Tape | Heavy Duty | |
-| Loctite Threadlocker Purple 222 | Low-strength threadlocker | [Mcmaster-Carr 1810A28](https://www.mcmaster.com/1810A28/) |
-| Loctite Threadlocker Blue 242 | Medium-strength threadlocker | [Mcmaster-Carr 91458A113](https://www.mcmaster.com/91458A113/) |
+| Loctite Threadlocker Purple 222 | Low-strength threadlocker | [McMaster-Carr 1810A28](https://www.mcmaster.com/1810A28/) |
+| Loctite Threadlocker Blue 242 | Medium-strength threadlocker | [McMaster-Carr 91458A113](https://www.mcmaster.com/91458A113/) |
 | Würth Super RTV Silicone Black | 200 ml, black RTV silicone | [Model Number: 08933311](https://www.wurthusa.com/Lucid-Motors/Super-RTV-Silicone-Black-200ml/p/08933311) |
 
 
@@ -138,42 +130,48 @@
 | CAD File|[1221 & 1222](assets/models/structural/1221_1222.step)|
 ---
 ### 1311, 1312, 1313 & 1314 - Landing Gear Vertical Tubes
-- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
+- Carbon-fiber tubes, 30 mm diameter, 1 mm thickness.
 - Length is 400 mm for each.
 - Parts are identical; Qty: 4.
   - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
 ---
 ### 1321 & 1322 - Landing Gear Horizontal Tubes
-- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
+- Carbon-fiber tubes, 30 mm diameter, 1 mm thickness.
 - Length is 500 mm for each.
-- Parts are identical; Qty: 4.
+- Parts are identical; Qty: 2.
   - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
 ---
 ### 1331, 1332, 1333 & 1334 - Landing Gear Main Adapters
-- Custom detachable version for 30 mm tube diameter.
-- Contact RJXHobby for the customization.
-  - Request 30 mm diameter variant of [this product](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with bolt pattern of 30 mm version of [this one](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
-- Parts are identical; Qty: 4.
-- **Note:** If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
+- Off-the-shelf component.
+- 30 mm option.
+- Product Link: [Link](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1)
+- Qty: 4.
+
+> [!NOTE]
+> - This product became available in RJXHobby catalog after a customized order for 30 mm tube diameter.
+> - If not available in the catalog, contact RJXHobby for the customization.
+> - Request 30 mm diameter variant of [this product](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with bolt pattern of 30 mm version of [this one](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
+
+> [!Note]
+> If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
 
 | 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
 |--|
 | <img src="assets/images/structural/133X.jpeg" alt="Alt Text" width="600"> |
 ---
 ### 1341, 1342, 1343 & 1344 - Landing Gear Tube Joints
-- 3D printed.
-- PETG-CF.
-- Use 6 wall loops.
-- Parts are identical; Qty: 4.
+
+- Off-the-shelf component.
+- Product Link: [Link](https://www.innloi.com/productinfo/448455.html)
+- Qty: 4.
 
 | | 1341, 1342, 1343 & 1344  (Landing Gear Tube Joint) |
 |--|--|
 | Image| <img src="assets/images/structural/134X.png" alt="Alt Text" width="600"> |
-| CAD File|[1221 & 1222](assets/models/structural/134X.step)|
 ---
 ### 1351, 1352, 1353 & 1354 - Landing Gear Foam Wraps.
 - Pipe insulation foam, 28 mm inner diameter, 46 mm outer diameter.
-- Length is 67 mm each.
+- Length is 103 mm each.
 - Parts are identical; Qty: 4.
 - Cut from stock material to length.
 - Product Link: [Link](https://a.co/d/06ePWuUq)
@@ -192,7 +190,7 @@
 | <img src="assets/images/structural/14X1.jpg" alt="Alt Text" width="600"> |
 ---
 ### 1412, 1422, 1432 & 1442 - Motor Arms
-- Carbon-fiber tubes, 30 mm diameter, 2 mm thickness.
+- Carbon-fiber tubes, 30 mm diameter, 1 mm thickness.
 - Length is 360 mm for each.
 - Parts are identical; Qty: 4.
   - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
@@ -238,7 +236,7 @@
 | | 2311  (Main PCB Mount) |
 |--|--|
 | Image| <img src="assets/images/structural/2311.png" alt="Alt Text" width="600"> |
-| CAD File|[2211 & 2212](assets/models/structural/2311.stl)|
+| CAD File|[2311](assets/models/structural/2311.stl)|
 ---
 ### 2312 - Battery Connector PCB Mount
 - 3D printed.
@@ -348,7 +346,7 @@
 | | 3322 (Busbar Positive) | 3323 (Busbar Negative) |
 |--|--|--|
 | Image| <img src="assets/images/structural/3322.png" alt="Alt Text" width="600"> | <img src="assets/images/structural/3323.png" alt="Alt Text" width="600"> |
-| CAD File|[3322](assets/models/structural/3322.step)| [2131](assets/models/structural/3323.step)|
+| CAD File|[3322](assets/models/structural/3322.step)| [3323](assets/models/structural/3323.step)|
 --
 ### 3324 - BC PCB Heatsink
 - Aluminum 6 series, laser cut, sanded.
@@ -369,9 +367,9 @@
 - Parts needed:
   - 1112 (Mid Plate)
   - 1211, 1212 & 1213 (Cockpit Support Beams)
-  - Rivet 1 x13 (4mm Diameter for 2mm Thickness)
+  - Rivet 1 x13 (4mm Diameter for 1 mm - 2.5 mm thickness)
 
-- Place the cockpit support beams on the mid plate as shown to the picture.
+- Place the cockpit support beams on the mid plate as shown in the picture.
 - Rivet the cockpit support beams from the mid plate on the holes shown in the picture.
 
 |Orientation|Rivet Holes|
@@ -382,7 +380,7 @@
 ### Step 2. Install the Battery Walls
 - Parts needed:
   - 1221 & 1222 (Battery Walls)
-  - Rivet 2 x10 (4mm Diameter for 3mm Thickness)
+  - Rivet 2 x10 (4mm Diameter for 2.5 mm - 4.5 mm thickness)
 - Place the battery walls on the sides of the chassis as shown in the picture.
   - Make sure the dented side stays on the chassis side.
 - Rivet the battery walls from the mid plate on the holes shown in the picture.
@@ -397,7 +395,8 @@
   - 14X1 x4 (Foldable Motor Arm Connectors)
   - Screw 5 x16 (Socket Head Screw M3x8)
   - Screw 1 x8 (Socket Head Screw M3x10)
-  - Washer 1 x24 (M3 General Purpose Washer, OD: 6 mm)
+  - Washer 1 x24 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
+  - Loctite Threadlocker Blue 242
 - Remove the fasteners marked in the picture.
   - Apply Loctite Threadlocker Blue on the fasteners.
   - Secure the fasteners back.
@@ -420,8 +419,8 @@
 ### Step 4. Install the Lower Plate
 - Parts needed:
   - 1113 (Lower Plate)
-  - Rivet 3 x10 (4mm Diameter for 6mm Thickness)
-- Place the lower plate on the chassis as shown to the picture.
+  - Rivet 3 x10 (4mm Diameter for 4.5 mm - 6.4 mm thickness)
+- Place the lower plate on the chassis as shown in the picture.
 - Rivet the lower plate to the chassis on the holes shown in the picture.
 
 |Orientation|Rivet Holes|
@@ -431,13 +430,14 @@
 ### Step 5. Install the Upper Plate
 - Parts needed:
   - 1111 (Upper Plate)
-  - Rivet 1 x13 (4mm Diameter for 2mm Thickness)
+  - Rivet 1 x13 (4mm Diameter for 1 mm - 2.5 mm thickness)
   - Screw 5 x24 (Socket Head Screw M3x8)
-  - Washer 1 x24 (M3 General Purpose Washer, OD: 6 mm)
+  - Washer 1 x24 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
+  - Loctite Threadlocker Blue 242
 
-- Place the upper plate over the chassis as shown to the picture.
+- Place the upper plate over the chassis as shown in the picture.
 - Rivet the cockpit support beams from the upper plate on the holes shown in the picture.
-- Screw the motor arm connecters from the upper plate with Screw 5.
+- Screw the motor arm connectors from the upper plate with Screw 5.
   - Use Washer 1.
   - Use Loctite Threadlocker Blue.
 
@@ -450,7 +450,8 @@
   - 2311 (Main PCB Mount)
   - Screw 11 x5 (Flanged Button Head Hex-Drive Screw M3x6)
   - Vibration Mount x5 (M3 Rubber Anti-Vibration Spacer)
-  - Insert 4 x16 (M3 Threaded Inserts, 3.8 mm)
+  - Insert 4 x16 (M3 Threaded Inserts - 3.8 mm)
+  - Loctite Threadlocker Blue 242
 
 - Install 11x Insert 4 into the top face of the Main PCB Mount as shown in the picture.
 
@@ -483,9 +484,9 @@
 ### Step 7. Install the Battery Connector PCB Mount
 - Parts needed:
   - 2312 (BC PCB Mount)
-  - Insert 1 x10 (M3 Threaded Inserts, 5.7 mm)
+  - Insert 1 x10 (M3 Threaded Inserts - 5.7 mm)
   - Screw 5 x3 (Socket Head Screw M3x8)
-  - Washer 1 x3 (M3 General Purpose Washer, OD: 6 mm)
+  - Washer 1 x3 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
 
 - Place Insert 1 to the holes shown in the picture, on the top and bottom sides of the BC PCB mount.
   - Use a soldering iron to place them inside the plastic.
@@ -505,7 +506,7 @@
   - 2211, 2212 (Battery Sliders)
   - Insert 2 x8 (M4 Threaded Inserts)
   - Screw 9 x8 (Socket Head Screw M4x8)
-  - Washer 2 x8 (M4 General Purpose Washer, OD: 9 mm)
+  - Washer 2 x8 (M4 General Purpose Washer 4.3 mm ID, 9 mm OD)
 
 - Place Insert 2 to the holes shown in the picture on both of the battery slides.
   - Use a soldering iron to place them inside the plastic.
@@ -526,12 +527,12 @@
   - 131X, 132X (Landing Gear Horizontal & Vertical Tubes)
   - 133X (Landing Gear Main Adapters)
   - 134X (Landing Gear Tube Joints)
-  - 135x (Landing Gear Foam) 
+  - 135X (Landing Gear Foam) 
   - Screw 2 x16 (Flanged Button Head Screw M4x10)
-  - Screw 3 x24 (Socket Head Screw M3x16)
-  - Washer 1 x56 (M3 General Purpose Washer, OD: 6 mm)
-  - Nut 1 x28 (Nylon-Insert Locknut M3)
-  - Screw 6 x4 (Socket Head Screw M3x40)
+  - Screw 5 x16 (Socket Head Screw M3x8)
+  - Washer 1 x16 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
+  - Loctite Threadlocker Blue 242
+  - Loctite Threadlocker Purple 222
 
 - Place the landing gear main adapters below the chassis, as shown in the picture.
   -  The adapters are facing outward, to the left and right of the structure.
@@ -544,8 +545,11 @@
 
 - Insert the vertical landing gear tubes inside landing gear main adapters.
   - Make sure the tubes are inserted all the way.
-  - Tighten the clamps with the screws provided in the landing gear main adapter package.
-  - Use Loctite Threadlocker Blue to secure the screws.
+  - Tighten the clamps to secure the tubes in place.
+
+> [!NOTE]
+>
+> Due to the lack of the detachable landing gear adapter geometry, this image depicts the old adapter. It should be updated with a real life image.
 
 |Landing Gear Adapter|
 |---|
@@ -556,23 +560,29 @@
   
 - Assemble landing gear tube joints and the horizontal tubes as shown in the picture.
   - Insert the vertical tubes inside the holes before tightening the screws.
-  - Use Screw 3.
-  - Use Washer 1 on each side.
-  - Use Nut 1.
+  - Use Screw 5.
+  - Use Washer 1.
+  - Use Loctite Threadlocker Purple.
 
-|Positioning|Installation Holes|Correct Final Appearance |
-|--|--|--|
-|<img src="assets/images/structural/step9_5.png" alt="Alt Text" width="600">| <img src="assets/images/structural/step9_4.png" alt="Alt Text" width="600"> | <img src="assets/images/structural/step9_6.png" alt="Alt Text" width="600"> |
+|Positioning|Correct Final Appearance |
+|--|--|
+|<img src="assets/images/structural/step9_5.png" alt="Alt Text" width="600">| <img src="assets/images/structural/step9_4.png" alt="Alt Text" width="600"> |
 
+> [!NOTE]
+>
+> Due to the lack of the landing gear tee joint geometry, this image depicts the old joint. It should be updated with a real life image.
+
+- Slide the landing gear foams to the end of the horizontal tubes.
 
 ### Step 10. Install Sensor Mount
 - Parts needed:
   - 2321 (Sensor Mount)
-  - Insert 1 x10 (M3 Threaded Inserts, 5.7 mm)
+  - Insert 1 x10 (M3 Threaded Inserts - 5.7 mm)
   - Screw 4 x4 (Socket Head Screw M3x12)
   - Screw 5 x2 (Socket Head Screw M3x8)
-  - Washer 1 x6 (M3 General Purpose Washer, OD: 6 mm)
+  - Washer 1 x6 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
   - Nut 1 x4 (Nylon-Insert Locknut M3)
+  - Loctite Threadlocker Purple 222
 
 - Place Insert 1 to the holes shown in the picture.
   - Use a soldering iron to place them inside the plastic.
@@ -607,8 +617,8 @@
 
 ### Step 11. Insert Grommets
 - Parts needed:
-  - Grommet 1 x4 (Circular OD: 20 mm)
-  - Grommet 2 x12 (Oval 27x13 mm)
+  - Grommet 1 x4 (Circular Grommet OD: 20 mm)
+  - Grommet 2 x12 (Oval Grommet 27x13 mm)
 
 - Insert 4x Grommet 1 into the holes over the motor arm connectors at each corner.
 
@@ -633,14 +643,16 @@
   - 3313 x2 (GigaBlox Nano Ethernet Switch)
   - 3315 (Mateksys GNSS M9N-G4-3100)
   - 3251 (RTK GNSS)
-  - Screw 4 x4 (Socket Head Hex-Drive Screw M3x12)
+  - Screw 4 x4 (Socket Head Screw M3x12)
   - Screw 11 x14 (Flanged Button Head Hex-Drive Screw M3x6)
   - Screw 12 x4 (Socket Head Hex-Drive Screw M2x5)
   - Screw 13 x4 (Socket Head Hex-Drive Screw M2.5x8)
   - Screw 14 x4 (Socket Head Hex-Drive Screw M2x10)
-  - Washer 3 x12 (M2 Nylon)
-  - Washer 4 x4 (M2.5 Nylon)
-  - Washer 5 x4 (M3 Nylon)
+  - Washer 3 x12 (M2 Nylon Washer 2.2 mm ID, 5 mm OD)
+  - Washer 4 x4 (M2.5 Nylon Washer 2.7 mm ID, 5.6 mm OD)
+  - Washer 5 x4 (M3 Nylon Washer 3.2 mm ID, 6 mm OD)
+  - Loctite Threadlocker Purple 222
+  - Loctite Threadlocker Blue 242
 
 - Place the Battery Connector PCB as shown in the picture.
   - Apply Thermal Paste to the Heatsink.
@@ -729,10 +741,11 @@
   - 3322 (Busbar Positive)
   - 3323 (Busbar Negative)
   - Screw 15 x4 (Socket Head Hex-Drive Screw M5x8)
-  - Washer 6 x4 (M5 General Purpose Washer, OD: 10 mm)
+  - Washer 6 x4 (M5 General Purpose Washer 5.3 mm ID, 10 mm OD)
+  - Loctite Threadlocker Blue 242
 
 - Place the Busbar Positive (Right) and Busbar Negative (Left) on the Main and BC PCBs as shown in the picture.
-  - Use Loctite Threadlocker on the threads of 4x Screw 15.
+  - Use Loctite Threadlocker Blue on the threads of 4x Screw 15.
   - Secure the busbars on the terminals with Screw 15 and Washer 6.
 
 |Busbar Installation|
@@ -743,15 +756,16 @@
 ### Step 14. Install BC PCB Cover
 - Parts needed:
   - 2313 (BC PCB Cover)
-  - Insert 1 x2 (M3 Threaded Inserts, 5.7 mm)
-  - Screw 7 x4 (Socket Head Screw M3x8)
-  - Washer 1 x4 (M3 General Purpose Washer, OD: 6 mm)
+  - Insert 1 x2 (M3 Threaded Inserts - 5.7 mm)
+  - Screw 5 x4 (Socket Head Screw M3x8)
+  - Washer 1 x4 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
+  - Loctite Threadlocker Purple 222
 
 - Place Insert 1 to the holes shown in the picture.
   - Use a soldering iron to place them inside the plastic.
   - 2 in total.
 
-- Use Screw 7 and Washer 1 to secure the BC PCB Cover in place.
+- Use Screw 5 and Washer 1 to secure the BC PCB Cover in place.
   - Use Loctite Threadlocker Purple.
 
 | Insert 1 Locations | Screw Locations |
@@ -765,14 +779,15 @@
   - 2112, 2122 & 2132 (Attachment Interfaces)
   - Screw 6 x8 (Socket Head Screw M3x40)
   - Screw 16 x4 (Button Head Hex Drive Screw M3x40)
-  - Washer 1 x8 (M3 General Purpose Washer, OD: 6 mm)
+  - Washer 1 x12 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
+  - Loctite Threadlocker Blue 242
 
 - Place and secure the side attachment interfaces and the spacers as shown in the pictures.
   - Make sure the rectangular holes are aligned with the holes on the battery walls.
   - Make sure the notch on the attachment interface is on top, as shown in the image.
   - Use the screwdriver holes inside the battery compartment to place the screws and the screwdriver.
   - Use 8x Screw 6.
-  - Use 5x Washer 1.
+  - Use 8x Washer 1.
   - Use Loctite Threadlocker Blue.
 
 |Positioning|Installation Holes| Notch Orientation|
@@ -784,6 +799,7 @@
   - Make sure the cable tray on the spacer points towards the front, i.e. the sensor mount.
   - Make sure the notch on the attachment interface points towards the front, i.e. the sensor mount.
   - Use 4x Screw 16.
+  - Use 4x Washer 1.
   - Use Loctite Threadlocker Blue.
 
 |Positioning, Cable & Notch Orientation|Installation Holes|
@@ -796,6 +812,7 @@
   - 3212 (Obstacle Avoidance Radar, Nanoradar MR82)
   - 3213 (Radar Altimeter, Nanoradar NRA15)
   - Screw 11 x8 (Flanged Button Head Hex-Drive Screw M3x6)
+  - Loctite Threadlocker Purple 222
 
 - Secure Nanoradar MR82 in front of the drone, as shown in the image.
   - Use 4x Screw 11.
@@ -820,14 +837,14 @@
 - Parts needed:
   - 3241 (SIYI A8 Mini Gimbal Camera)
   - Screw 7 x4 (Hex Drive Flat Head Screw M3x8)
-  - Washer 1 x8 (M3 General Purpose Washer, OD: 6 mm)
+  - Washer 1 x8 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
   - Nut 1 x4 (Nylon-Insert Locknut M3)
 
 - Secure SIYI A8 Mini Gimbal Camera in front-bottom corner of the drone, as shown in the image.
   - Use 4x Screw 7.
   - Use 4x Washer 1.
   - Use 4x Nut 1.
-  - DO NOT USE Loctite Threadlocker.
+  - DO NOT use Loctite Threadlocker.
   - Mind the orientation of the camera, make sure the gimbal center points forward, i.e. away from the drone.
 
 | Camera Installation Holes | Camera Orientation |
@@ -842,6 +859,7 @@
   - Screw 6 x8
   - Washer 1 x16
   - Nut 1 x8
+  - Loctite Threadlocker Blue 242
 
 - Drill holes on the motor arm tubes for assembly.
   - Pay close attention to hole alignment. Both longitudinal (axial) and radial (rotational) alignment must be maintained.
@@ -901,8 +919,9 @@
 - Parts needed:
   - 3223 (HM30 Telemetry Air Unit)
   - 3341, 3342, 3343 (Attachment Interface PCBs)
-  - Screw 18 x12 (Button Head Hex Drive Screw M2x4)
+  - Screw 3 x12 (Button Head Hex-Drive Screw M2x4)
   - Loctite Threadlocker Purple 222
+  - Double-Sided Tape
 
 - Install the HM30 air unit on the right side of the drone.
   - Secure tightly with double-sided tape.
@@ -915,7 +934,8 @@
 - Install the attachment interface PCBs on all three attachment interfaces.
   - The pin side will face outward, while the connector side will stay inside.
   - Make sure the side with the notch mark will be on the notch side of the attachment interface. (See Step 15 for notch reference)
-  - Secure them with 
+  - Secure them with Screw 3.
+    - Use Loctite Threadlocker Purple.
 
 |Attachment Interface PCB Orientation| PCB Location |
 |--|--|
@@ -929,12 +949,12 @@
   - 2412 (Top Cap)
   - 2421 & 2422 (Enclosure Hinges)
   - 2431 & 2432 (Enclosure Latches)  
-  - Insert 1 x28 (M3 Threaded Inserts, 5.7 mm)
+  - Insert 1 x28 (M3 Threaded Inserts - 5.7 mm)
   - Silicone Foam Seal Strip (OD: 8 mm)
   - Screw 5 x4 (Socket Head Screw M3x8)
   - Screw 8 x8 (Hex Drive Flat Head Screw M3x10)
   - Screw 17 x8 (Socket Head Screw M3x6)
-  - Washer 1 x4 (M3 General Purpose Washer, OD: 6 mm)
+  - Washer 1 x4 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
   - Loctite Threadlocker Purple 222
   - Würth Super RTV Silicone Black
 
@@ -996,8 +1016,9 @@
   - 3221, 3222 (Front & Rear Telemetry Antennas)
   - 3231 (Power Switch)
   - Screw 5 x4 (Socket Head Screw M3x8)
-  - Washer 1 x4 (M3 General Purpose Washer, OD: 6 mm)
+  - Washer 1 x4 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
   - Würth Super RTV Silicone Black
+  - Loctite Threadlocker Purple 222
 
 - Remove the marked nuts from the antenna cables.
 - Insert the antenna cables through the holes shown in the picture.
@@ -1034,16 +1055,17 @@
   - 3261 (Remote ID Beacon)
   - 3271 (PPP Adapter)
   - Screw 5 x2 (Socket Head Screw M3x8)
-  - Screw 19 x4 (Socket Head Screw M2x6)
-  - Washer 1 x2 (Claude please fill this)
-  - Insert 5 x4 (M2 Threaded Inserts)
-  - Loctite Threadlocker 222 Purple
+  - Screw 10 x4 (Socket Head Screw M2x6)
+  - Washer 1 x2 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
+  - Insert 3 x4 (M2 Threaded Inserts)
+  - Loctite Threadlocker Purple 222
+  - Double-Sided Tape
 
-- Place Insert 5 to the holes shown in the picture on the PPP Adapter & Beacon Mount.
+- Place Insert 3 to the holes shown in the picture on the PPP Adapter & Beacon Mount.
   - Use a soldering iron to place them inside the plastic.
   - 4 in total.
 
-|Insert 5 Locations|
+|Insert 3 Locations|
 |---|
 |<img src="assets/images/structural/step22_1.png" alt="Alt Text" width="600">|
 
@@ -1056,7 +1078,7 @@
 |<img src="assets/images/structural/step22_2.png" alt="Alt Text" width="600">|
 
 - Place the PPP Adapter & Beacon on the mount, as shown in the picture.
-  - Secure the Beacon with Screw 19, use Loctite Threadlocker Purple.
+  - Secure the Beacon with Screw 10, use Loctite Threadlocker Purple.
   - Secure the PPP Adapter on the mount with double-sided tape.
 
 |PPP Adapter & Beacon Mount Installation|
