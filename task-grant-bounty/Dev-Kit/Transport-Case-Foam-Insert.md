@@ -14,6 +14,18 @@ A transport case solution for the Quiver drone was needed to safely store and tr
 
 A Pelican 1640 case (purchased without foam insert) was selected as the transport case. Custom foam inserts were designed in CAD and cut from black PE foam sheets using a diode laser cutter. The foam layout accommodates the drone body, detached landing legs, motor arms, and propellers. A 3D-printed camera cover was also designed to protect the camera and gimbal during insertion and transport.
 
+# Bounty or Grant Proposal Document
+
+**QGB-06: Transport Case**
+
+| | |
+|---|---|
+| **Type** | Bounty |
+| **Status** | Open |
+| **Reward** | $1,000 |
+| **Description** | Design foam cutouts for the selected Nanuk case to safely transport the Quiver devkit. May include additional protective elements such as a camera cover. |
+| **Deliverables** | Foam cutout design files; completed case with drone fitting securely; any additional protective accessories (e.g. camera cover). |
+
 # Methodology
 
 ## Foam Insert Design
