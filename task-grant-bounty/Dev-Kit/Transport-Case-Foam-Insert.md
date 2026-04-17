@@ -10,13 +10,9 @@
 
 # Project Description
 
-A transport case solution for the Quiver drone was needed to safely store and transport the fully assembled aircraft (minus detached landing legs) along with motor arms, propellers, and accessories. The project covers the selection of an appropriate case, custom foam insert design and fabrication, and a protective camera cover for the gimbal system.
+A transport case solution for the Quiver drone was needed to safely store and transport the fully assembled aircraft (with detached landing legs) along with motor arms, propellers, and accessories. The project covers the selection of an appropriate case, custom foam insert design and fabrication, and a protective camera cover for the gimbal system.
 
 A Pelican 1640 case (purchased without foam insert) was selected as the transport case. Custom foam inserts were designed in CAD and cut from black PE foam sheets using a diode laser cutter. The foam layout accommodates the drone body, detached landing legs, motor arms, and propellers. A 3D-printed camera cover was also designed to protect the camera and gimbal during insertion and transport.
-
-# Bounty or Grant Proposal Document
-
-See [Issue #192](https://github.com/Arrow-air/project-quiver/issues/192) for the original bounty proposal.
 
 # Methodology
 
