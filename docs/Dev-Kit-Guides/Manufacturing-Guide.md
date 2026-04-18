@@ -1701,9 +1701,9 @@ N/A
 - Rivet the cockpit support beams from the mid plate on the holes shown in the picture.
   - Make sure you rivet before the adhesive dries.
 
-|Orientation|Adhesive Area|Rivet Holes|
-|--|--|--|
-|![](./Assembly-Guides/assets/images/structural/step1_1.png)| ![](./Assembly-Guides/assets/images/structural/step1_3.png) | ![](./Assembly-Guides/assets/images/structural/step1_2.png) |
+|Orientation|Rivet Holes|
+|--|--|
+|![](./Assembly-Guides/assets/images/structural/step1_1.png)| ![](./Assembly-Guides/assets/images/structural/step1_2.png) |
 ---
 
 ### Step 2. Install the Battery Walls
@@ -1716,9 +1716,9 @@ N/A
 - Rivet the battery walls from the mid plate on the holes shown in the picture.
   - Make sure you rivet before the adhesive dries.
 
-|Orientation|Adhesive Area|Rivet Holes|
-|--|--|--|
-|![](./Assembly-Guides/assets/images/structural/step2_1.png)| ![](./Assembly-Guides/assets/images/structural/step2_3.png) | ![](./Assembly-Guides/assets/images/structural/step2_2.png) |
+|Orientation|Rivet Holes|
+|--|--|
+|![](./Assembly-Guides/assets/images/structural/step2_1.png)| ![](./Assembly-Guides/assets/images/structural/step2_2.png) |
 ---
 
 ### Step 3. Install the Motor Arm Connectors
@@ -1755,9 +1755,9 @@ N/A
 - Rivet the lower plate to the chassis on the holes shown in the picture.
   - Make sure you rivet before the adhesive dries.
 
-|Orientation|Adhesive Area|Rivet Holes|
-|--|--|--|
-|![](./Assembly-Guides/assets/images/structural/step4_1.png)| ![](./Assembly-Guides/assets/images/structural/step4_3.png) | ![](./Assembly-Guides/assets/images/structural/step4_2.png) |
+|Orientation|Rivet Holes|
+|--|--|
+|![](./Assembly-Guides/assets/images/structural/step4_1.png)| ![](./Assembly-Guides/assets/images/structural/step4_2.png) |
 ---
 ### Step 5. Install the Upper Plate
 - Parts needed:
@@ -1774,9 +1774,9 @@ N/A
   - Use Washer 1.
   - Use Loctite Threadlocker Blue.
 
-|Orientation|Adhesive Area|Rivet Holes|
-|--|--|--|
-|![](./Assembly-Guides/assets/images/structural/step5_1.png)| ![](./Assembly-Guides/assets/images/structural/step5_3.png) | ![](./Assembly-Guides/assets/images/structural/step5_2.png) |
+|Orientation|Rivet Holes|
+|--|--|
+|![](./Assembly-Guides/assets/images/structural/step5_1.png)| ![](./Assembly-Guides/assets/images/structural/step5_2.png) |
 ---
 ### Step 6. Install the Main PCB Mount
 - Parts needed:
@@ -1893,9 +1893,9 @@ N/A
   - Use Washer 1 on each side.
   - Use Nut 1.
 
-|Positioning|Installation Holes|Correct Final Appearance |
-|--|--|--|
-|![](./Assembly-Guides/assets/images/structural/step9_5.png)| ![](./Assembly-Guides/assets/images/structural/step9_4.png) | ![](./Assembly-Guides/assets/images/structural/step9_6.png) |
+|Positioning|Installation Holes|
+|--|--|
+|![](./Assembly-Guides/assets/images/structural/step9_5.png)| ![](./Assembly-Guides/assets/images/structural/step9_4.png) |
 
 
 ### Step 10. Install Sensor Mount
