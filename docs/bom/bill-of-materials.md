@@ -8,7 +8,7 @@ sidebar_position: 2
 
 Complete bill of materials for building a Quiver dev-kit. This list covers all structural, harness, avionics, propulsion, and equipment components.
 
-**Estimated total cost: ~$6,970**
+**Estimated total cost: ~$7,023**
 
 :::tip Data formats
 This BOM is also available as a [CSV file](https://github.com/Arrow-air/project-quiver/blob/main/docs/bom/quiver-pt1-bom.csv) for spreadsheet import or programmatic use. The original version was maintained in [Google Sheets](https://docs.google.com/spreadsheets/d/1QJBaE_1iMNckU-1B3wAJMqJlpWVV4R0CgzfKqYckRh0/edit?gid=0#gid=0).
@@ -83,11 +83,12 @@ Aluminum plates, tubes, and carbon fiber components that make up the airframe.
 | 1211 | CW Long | 1 | 40×40×2mm Al square tube | rapiddirect.com | Laser cut, 6061 |
 | 121X | CCW Short | 2 | 40×40×2mm Al square tube | rapiddirect.com | Laser cut, 6061 |
 | 122X | Battery Wall | 2 | 30×100×2mm Al rectangular tube | rapiddirect.com | Laser cut, 6061 |
-| 131X | Landing Gear Vertical Tubes | 5 | 30×26×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
-| 132X | Landing Gear Horizontal Tubes | 5 | 30×26×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
+| 131X | Landing Gear Vertical Tubes | 5 | 30×28×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
+| 132X | Landing Gear Horizontal Tubes | 5 | 30×28×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
 | 133X | Landing Gear Top Connectors | 4 | — | [AliExpress](https://www.alibaba.com/product-detail/20mm-25mm-30mm-pipe-diameter-fixed_1601140918673.html) | 30mm, $30 ea |
+| 134X | Landing Gear Tube Joints | 4 | Aluminum | [INNLOI](https://www.innloi.com/productinfo/448455.html) | 30mm, $13.99 ea — replaces 3D-printed T-adapters |
 | 14X1 | Motor Arm Connectors | 4 | — | [AliExpress](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html) | 30mm option, $25 ea |
-| 14X2 | Motor Arm Tubes | 5 | 30×26×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
+| 14X2 | Motor Arm Tubes | 5 | 30×28×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
 
 ### Secondary Structure
 
@@ -143,6 +144,7 @@ Connectors, wiring, and cabling for the electrical harness.
 | 3213 | Nanoradar NRA15 (Altimeter Radar) | $240.00 | 1 | $240.00 | [Nanoradar](https://www.nanoradar.com/Products_1/4.html) | |
 | 3220 | SIYI HM30 Long Range FPV System | $282.04 | 1 | $282.04 | [Reebot](https://shop.reebot.com/products/siyi-hm30) | |
 | 3241 | SIYI A8 mini Gimbal Camera | $309.58 | 1 | $309.58 | [Reebot](https://shop.reebot.com/products/siyi-a8-mini) | |
+| 3231 | Power Switch | — | 1 | — | [Digikey](https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861) | |
 | 3251 | Here4 Multiband GNSS / F9P | $288.00 | 1 | $288.00 | [HolyBro](https://irlock.com/products/here4-multiband-rtk-gnss) | |
 | 3315 | Mateksys GNSS M9N-G4-3100 | $125.00 | 1 | $125.00 | [Mateksys](https://www.mateksys.com/?portfolio=m9n-g4-3100) | DroneCAN backup |
 | 0075 | DB201 Remote ID Module | $54.00 | 1 | $54.00 | [DroneScout](https://dronescout.co/product/dronebeacon-mavlink-db201-transponder/) | |
@@ -177,14 +179,14 @@ Connectors, wiring, and cabling for the electrical harness.
 | Propulsion (motors, props, battery) | $1,292.00 |
 | Avionics & Sensors | $2,432.93 |
 | Custom PCBs | $500.00 |
-| Airframe (aluminum, CF tubes, connectors) | $1,462.00 |
+| Airframe (aluminum, CF tubes, connectors) | $1,518.00 |
 | Fasteners & Hardware | $110.00 |
 | 3D Printed Parts | $150.00 |
 | Harness & Connectors | $165.12 |
 | Adhesives & Misc | $60.00 |
 | Transport Case | $600.00 |
 | Remote Control | $150.00 |
-| **Total** | **~$6,970** |
+| **Total** | **~$7,023** |
 
 :::info PCB assembly guides
 For detailed PCB assembly instructions, interactive BOMs, and soldering guides, see the [PT3 Assembly Guides](https://github.com/Arrow-air/project-quiver/tree/main/docs/pt3-assembly-guides/PCB-assembly).
