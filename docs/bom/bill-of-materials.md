@@ -166,61 +166,61 @@ Detailed fastener inventory aligned with the manufacturing guide. All sourced fr
 
 | ID | Name | Qty | McMaster P/N | Spec |
 |----|------|-----|-------------|------|
-| 5101 | Rivet 1 | 26 | 97525A224 | 4mm Dia. for 1–2.5mm thickness |
-| 5102 | Rivet 2 | 10 | 97525A251 | 4mm Dia. for 2.5–4.5mm thickness |
-| 5103 | Rivet 3 | 10 | 97525A226 | 4mm Dia. for 4.5–6.4mm thickness |
+| 5101 | Rivet 1 | 26 | [97525A224](https://www.mcmaster.com/97525A224) | 4mm Dia. for 1–2.5mm thickness |
+| 5102 | Rivet 2 | 10 | [97525A251](https://www.mcmaster.com/97525A251) | 4mm Dia. for 2.5–4.5mm thickness |
+| 5103 | Rivet 3 | 10 | [97525A226](https://www.mcmaster.com/97525A226) | 4mm Dia. for 4.5–6.4mm thickness |
 
 ### Screws
 
 | ID | Name | Qty | McMaster P/N | Spec |
 |----|------|-----|-------------|------|
-| 5104 | Screw 1 | 8 | 91292A113 | Socket Head M3×10 |
-| 5105 | Screw 2 | 16 | 92095A190 | Flanged Button Head M4×10 |
-| 5106 | Screw 4 | 8 | 91292A114 | Socket Head M3×12 |
-| 5107 | Screw 5 | 75 | 91292A112 | Socket Head M3×8 |
-| 5108 | Screw 6 | 16 | 91292A024 | Socket Head M3×40 |
-| 5109 | Screw 7 | 4 | 92125A128 | Hex Drive Flat Head M3×8 |
-| 5110 | Screw 8 | 8 | 92125A130 | Hex Drive Flat Head M3×10 |
-| 5111 | Screw 9 | 8 | 91292A108 | Socket Head M4×8 |
-| 5112 | Screw 10 | 4 | 91292A832 | Socket Head M2×6 |
-| 5113 | Screw 11 | 27 | 97654A674 | Flanged Button Head M3×6 |
-| 5114 | Screw 12 | 4 | 92855A837 | Socket Head M2×5 |
-| 5115 | Screw 13 | 4 | 91292A012 | Socket Head M2.5×8 |
-| 5116 | Screw 14 | 4 | 91292A833 | Socket Head M2×10 |
-| 5117 | Screw 15 | 4 | 91292A191 | Socket Head M5×8 |
-| 5118 | Screw 16 | 4 | 92095A203 | Button Head M3×40 |
-| 5119 | Screw 17 | 8 | 90751A110 | Socket Head M3×6 |
-| 5120 | Screw 3 | 12 | 92095A451 | Button Head M2×4 |
+| 5104 | Screw 1 | 8 | [91292A113](https://www.mcmaster.com/91292A113) | Socket Head M3×10 |
+| 5105 | Screw 2 | 16 | [92095A190](https://www.mcmaster.com/92095A190) | Flanged Button Head M4×10 |
+| 5106 | Screw 4 | 8 | [91292A114](https://www.mcmaster.com/91292A114) | Socket Head M3×12 |
+| 5107 | Screw 5 | 75 | [91292A112](https://www.mcmaster.com/91292A112) | Socket Head M3×8 |
+| 5108 | Screw 6 | 16 | [91292A024](https://www.mcmaster.com/91292A024) | Socket Head M3×40 |
+| 5109 | Screw 7 | 4 | [92125A128](https://www.mcmaster.com/92125A128) | Hex Drive Flat Head M3×8 |
+| 5110 | Screw 8 | 8 | [92125A130](https://www.mcmaster.com/92125A130) | Hex Drive Flat Head M3×10 |
+| 5111 | Screw 9 | 8 | [91292A108](https://www.mcmaster.com/91292A108) | Socket Head M4×8 |
+| 5112 | Screw 10 | 4 | [91292A832](https://www.mcmaster.com/91292A832) | Socket Head M2×6 |
+| 5113 | Screw 11 | 27 | [97654A674](https://www.mcmaster.com/97654A674) | Flanged Button Head M3×6 |
+| 5114 | Screw 12 | 4 | [92855A837](https://www.mcmaster.com/92855A837) | Socket Head M2×5 |
+| 5115 | Screw 13 | 4 | [91292A012](https://www.mcmaster.com/91292A012) | Socket Head M2.5×8 |
+| 5116 | Screw 14 | 4 | [91292A833](https://www.mcmaster.com/91292A833) | Socket Head M2×10 |
+| 5117 | Screw 15 | 4 | [91292A191](https://www.mcmaster.com/91292A191) | Socket Head M5×8 |
+| 5118 | Screw 16 | 4 | [92095A203](https://www.mcmaster.com/92095A203) | Button Head M3×40 |
+| 5119 | Screw 17 | 8 | [90751A110](https://www.mcmaster.com/90751A110) | Socket Head M3×6 |
+| 5120 | Screw 3 | 12 | [92095A451](https://www.mcmaster.com/92095A451) | Button Head M2×4 |
 
 ### Inserts
 
 | ID | Name | Qty | McMaster P/N | Spec |
 |----|------|-----|-------------|------|
-| 5121 | Insert 1 | 50 | 94459A140 | M3 Threaded Inserts — 5.7mm |
-| 5122 | Insert 2 | 8 | 94180A351 | M4 Threaded Inserts |
-| 5123 | Insert 3 | 4 | 94180A312 | M2 Threaded Inserts |
-| 5124 | Insert 4 | 16 | 94180A331 | M3 Threaded Inserts — 3.8mm |
+| 5121 | Insert 1 | 50 | [94459A140](https://www.mcmaster.com/94459A140) | M3 Threaded Inserts — 5.7mm |
+| 5122 | Insert 2 | 8 | [94180A351](https://www.mcmaster.com/94180A351) | M4 Threaded Inserts |
+| 5123 | Insert 3 | 4 | [94180A312](https://www.mcmaster.com/94180A312) | M2 Threaded Inserts |
+| 5124 | Insert 4 | 16 | [94180A331](https://www.mcmaster.com/94180A331) | M3 Threaded Inserts — 3.8mm |
 
 ### Washers & Nuts
 
 | ID | Name | Qty | McMaster P/N | Spec |
 |----|------|-----|-------------|------|
-| 5125 | Washer 1 | 123 | 98689A112 | M3 General Purpose 3.2mm ID, 6mm OD |
-| 5126 | Washer 2 | 8 | 93475A230 | M4 General Purpose 4.3mm ID, 9mm OD |
-| 5127 | Washer 3 | 12 | 95610A110 | M2 Nylon 2.2mm ID, 5mm OD |
-| 5128 | Washer 4 | 4 | 95610A011 | M2.5 Nylon 2.7mm ID, 5.6mm OD |
-| 5129 | Washer 5 | 4 | 95610A704 | M3 Nylon 3.2mm ID, 6mm OD |
-| 5130 | Washer 6 | 4 | 93475A240 | M5 General Purpose 5.3mm ID, 10mm OD |
-| 5131 | Nut 1 | 16 | 90576A811 | Nylon-Insert Locknut M3 |
+| 5125 | Washer 1 | 123 | [98689A112](https://www.mcmaster.com/98689A112) | M3 General Purpose 3.2mm ID, 6mm OD |
+| 5126 | Washer 2 | 8 | [93475A230](https://www.mcmaster.com/93475A230) | M4 General Purpose 4.3mm ID, 9mm OD |
+| 5127 | Washer 3 | 12 | [95610A110](https://www.mcmaster.com/95610A110) | M2 Nylon 2.2mm ID, 5mm OD |
+| 5128 | Washer 4 | 4 | [95610A011](https://www.mcmaster.com/95610A011) | M2.5 Nylon 2.7mm ID, 5.6mm OD |
+| 5129 | Washer 5 | 4 | [95610A704](https://www.mcmaster.com/95610A704) | M3 Nylon 3.2mm ID, 6mm OD |
+| 5130 | Washer 6 | 4 | [93475A240](https://www.mcmaster.com/93475A240) | M5 General Purpose 5.3mm ID, 10mm OD |
+| 5131 | Nut 1 | 16 | [90576A811](https://www.mcmaster.com/90576A811) | Nylon-Insert Locknut M3 |
 
 ### Seals, Mounts & Misc Hardware
 
 | ID | Name | Qty | Source | Spec |
 |----|------|-----|--------|------|
-| 5132 | Vibration Mount | 5 | Amazon | M3 Rubber Anti-Vibration Spacer |
-| 5133 | Grommet 1 | 4 | Amazon | Circular Grommet OD: 20mm |
-| 5134 | Grommet 2 | 12 | Amazon | Oval Grommet 27×13mm |
-| 5135 | Silicone Foam Seal Strip | 1 | Amazon | Circular, OD: 8mm |
+| 5132 | Vibration Mount | 5 | [Amazon](https://www.amazon.com/s?k=M3+rubber+anti+vibration+spacer) | M3 Rubber Anti-Vibration Spacer |
+| 5133 | Grommet 1 | 4 | [Amazon](https://www.amazon.com/s?k=circular+grommet+20mm) | Circular Grommet OD: 20mm |
+| 5134 | Grommet 2 | 12 | [Amazon](https://www.amazon.com/s?k=oval+grommet+27x13mm) | Oval Grommet 27×13mm |
+| 5135 | Silicone Foam Seal Strip | 1 | [Amazon](https://www.amazon.com/s?k=silicone+foam+seal+strip+8mm+round) | Circular, OD: 8mm |
 
 ### Tools & Adhesives
 
@@ -231,8 +231,8 @@ Detailed fastener inventory aligned with the manufacturing guide. All sourced fr
 | 5203 | Cordless screwdriver or drill press | |
 | 5204 | Riveting tool | For 4mm rivets |
 | 5205 | Double-Sided Tape | Heavy Duty |
-| 5206 | Loctite Threadlocker Purple 222 | Low-strength (McMaster 1810A28) |
-| 5207 | Loctite Threadlocker Blue 242 | Medium-strength (McMaster 91458A113) |
+| 5206 | Loctite Threadlocker Purple 222 | Low-strength ([McMaster 1810A28](https://www.mcmaster.com/1810A28)) |
+| 5207 | Loctite Threadlocker Blue 242 | Medium-strength ([McMaster 91458A113](https://www.mcmaster.com/91458A113)) |
 | 5208 | Würth Super RTV Silicone Black | 200ml, black (Model: 08933311) |
 
 ---
