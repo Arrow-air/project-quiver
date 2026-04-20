@@ -131,7 +131,6 @@ Aluminum plates, tubes, and carbon fiber components.
 | 3241 | SIYI A8 mini Gimbal Camera | $309.58 | 1 | $309.58 | [Reebot](https://shop.reebot.com/products/siyi-a8-mini) | |
 | 3251 | Here4 Multiband GNSS / F9P | $288.00 | 1 | $288.00 | [HolyBro](https://irlock.com/products/here4-multiband-rtk-gnss) | |
 | 3261 | DB201 Remote ID Module | $54.00 | 1 | $54.00 | [DroneScout](https://dronescout.co/product/dronebeacon-mavlink-db201-transponder/) | |
-| 3271 | PPP Adapter | — | — | — | — | |
 | 3315 | Mateksys GNSS M9N-G4-3100 | $125.00 | 1 | $125.00 | [Mateksys](https://www.mateksys.com/?portfolio=m9n-g4-3100) | DroneCAN backup |
 | — | Remote Control | $150.00 | 1 | $150.00 | — | |
 
@@ -142,7 +141,7 @@ Aluminum plates, tubes, and carbon fiber components.
 | 3332 | Holybro Pix32 v6 | $296.00 | 1 | $296.00 | [HolyBro](https://holybro.com/products/pix32-v6) | Flight controller |
 | 3312 | Raspberry Pi 5 | — | 1 | — | — | Companion computer |
 | 3313 | GigaBlox Nano Ethernet Switch | $95.67 | 2 | $191.33 | [BotBlox](https://botblox.io/products/micro-gigabit-ethernet-switch) | |
-| 3314 | CubeNode ETH | $121.98 | 1 | $121.98 | [CubePilot](https://irlock.com/products/cube-node-eth) | |
+| 3314 | PPP Adapter, CubeNode ETH | $121.98 | 1 | $121.98 | [CubePilot](https://irlock.com/products/cube-node-eth) | |
 
 ### Custom PCBs
 
