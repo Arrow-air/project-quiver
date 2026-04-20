@@ -16,20 +16,21 @@
 |	132X	|	Landing Gear Horizontal Tubes	|	Carbon-Fiber	|	Cut-to-Length	|	2	|
 |	133X	|	Landing Gear Main Adapters	|	Aluminum	|	Off-the-Shelf	|	4	|
 |	134X	|	Landing Gear Tube Joints	|	Aluminum	|	Off-the-Shelf	|	4	|
+|	135X	|	Landing Gear Foam Wrap	|	Foam	|	Off-the-Shelf	|	4	|
 |	14X1	|	 Foldable Motor Arm Connectors	|	Aluminum	|	Off-the-Shelf	|	4	|
 |	14X2	|	Motor Arm Tubes	|	Carbon-Fiber	|	Cut-to-Length	|	4	|
 |	21X2	|	Attachment Interface	|	Aluminum	|	Off-the-Shelf	|	3	|
 |	21X1	|	Attachment Interface Spacer Left & Right	|	PETG-CF	|	3D Print	|	2	|
 |	2131	|	Attachment Interface Spacer Bottom	|	PETG-CF	|	3D Print	|	1	|
 |	221X	|	Battery sliders	|	PETG-CF	|	3D Print	|	2	|
-|	2311	|	Main PCB Mount	|	PETG	|	3D Print	|	1	|
-|	2312	|	BC PCB Mount	|	PETG	|	3D Print	|	1	|
+|	2311	|	Main PCB Mount	|	PETG-CF	|	3D Print	|	1	|
+|	2312	|	BC PCB Mount	|	PETG-CF	|	3D Print	|	1	|
 |	2313	|	BC PCB Cover	|	PETG-CF	|	3D Print	|	1	|
 |	2321	|	Sensor Mount	|	PETG-CF	|	3D Print	|	1	|
-|	2331	|	GNSS Mount	|	PETG	|	3D Print	|	1	|
-|	2341	|	PPP Adapter & Beacon Mount	|	PETG	|	3D Print	|	1	|
-|	2411	|	Main Enclosure	|	PETG	|	3D Print	|	1	|
-|	2412	|	Enclosure Top Cap	|	PETG	|	3D Print	|	1	|
+|	2331	|	GNSS Mount	|	PETG-CF	|	3D Print	|	1	|
+|	2341	|	PPP Adapter & Beacon Mount	|	PETG-CF	|	3D Print	|	1	|
+|	2411	|	Main Enclosure	|	PETG-CF	|	3D Print	|	1	|
+|	2412	|	Enclosure Top Cap	|	PETG-CF	|	3D Print	|	1	|
 |	242X	|	Enclosure Hinge	|	Zinc	|	Off-the-Shelf	|	2	|
 |	243X	|	Enclosure Latch	|	Steel	|	Off-the-Shelf	|	2	|
 
