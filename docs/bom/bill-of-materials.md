@@ -217,10 +217,10 @@ Detailed fastener inventory aligned with the manufacturing guide. All sourced fr
 
 | ID | Name | Qty | Source | Spec |
 |----|------|-----|--------|------|
-| 5132 | Vibration Mount | 5 | [Amazon](https://www.amazon.com/s?k=M3+rubber+anti+vibration+spacer) | M3 Rubber Anti-Vibration Spacer |
-| 5133 | Grommet 1 | 4 | [Amazon](https://www.amazon.com/s?k=circular+grommet+20mm) | Circular Grommet OD: 20mm |
-| 5134 | Grommet 2 | 12 | [Amazon](https://www.amazon.com/s?k=oval+grommet+27x13mm) | Oval Grommet 27×13mm |
-| 5135 | Silicone Foam Seal Strip | 1 | [Amazon](https://www.amazon.com/s?k=silicone+foam+seal+strip+8mm+round) | Circular, OD: 8mm |
+| 5132 | Vibration Mount | 5 | [Amazon](https://www.amazon.com/iRCMATRC-Stretchy-Anti-Vibration-Controllers-Accessories/dp/B09KCGKX1F?th=1) | M3 Rubber Anti-Vibration Spacer |
+| 5133 | Grommet 1 | 4 | [Amazon](https://amzn.eu/d/0acx4eWp) | Circular Grommet OD: 20mm |
+| 5134 | Grommet 2 | 12 | [Amazon](https://amzn.eu/d/06VwAZfb) | Oval Grommet 27×13mm |
+| 5135 | Silicone Foam Seal Strip | 1 | [Amazon](https://www.amazon.com/uxcell-Silicone-Meters-Weather-Warehouse/dp/B0CB6H3BJ4) | Circular, OD: 8mm |
 
 ### Tools & Adhesives
 
