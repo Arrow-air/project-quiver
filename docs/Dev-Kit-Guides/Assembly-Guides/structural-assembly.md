@@ -1054,7 +1054,7 @@
 - Parts needed:
   - 2341 (PPP Adapter & Beacon Mount)
   - 3261 (Remote ID Beacon)
-  - 3271 (PPP Adapter)
+  - 3314 (PPP Adapter, CubeNode ETH)
   - Screw 5 x2 (Socket Head Screw M3x8)
   - Screw 10 x4 (Socket Head Screw M2x6)
   - Washer 1 x2 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
