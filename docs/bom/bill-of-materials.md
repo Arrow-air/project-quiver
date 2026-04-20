@@ -8,95 +8,15 @@ sidebar_position: 2
 
 Complete bill of materials for building a Quiver dev-kit. This list covers all structural, harness, avionics, propulsion, and equipment components.
 
-**Estimated total cost: ~$7,023**
+**Estimated total cost: ~$6,977**
 
 :::tip Data formats
 This BOM is also available as a [CSV file](https://github.com/Arrow-air/project-quiver/blob/main/docs/bom/quiver-pt1-bom.csv) for spreadsheet import or programmatic use. The original version was maintained in [Google Sheets](https://docs.google.com/spreadsheets/d/1QJBaE_1iMNckU-1B3wAJMqJlpWVV4R0CgzfKqYckRh0/edit?gid=0#gid=0).
 :::
 
-:::note Fastener quantities
-For all fasteners (screws, rivets, inserts, washers, nuts), quantities listed are the minimum needed. **Buy with spares.** Supplier links are references — source from any hardware store.
+:::note 3D-printed parts & aluminum structure
+Items marked "See Manufacturing Guide, Assembly Section" reference the Quiver manufacturing guide for detailed specs, tolerances, and assembly instructions.
 :::
-
----
-
-## Structural
-
-Hardware, fasteners, adhesives, and structural materials.
-
-### Fasteners
-
-| ID | Name | Spec | Qty | Supplier | Link |
-|----|------|------|-----|----------|------|
-| 0023 | Rivet 1 | 4mm Dia. for 2.5mm–4.5mm thickness | 36 | Hardware Store | [McMaster](https://www.mcmaster.com/97525A251) |
-| 0024 | Rivet 2 | 4mm Dia. for 4.5mm–6.4mm thickness | 10 | Hardware Store | [McMaster](https://www.mcmaster.com/97525A226) |
-| 0025 | Screw 1 | Socket Head M3×10 | 48 | Hardware Store | [McMaster](https://www1.mcmaster.com/91290A115) |
-| 0026 | Screw 2 | Flanged Button Head M4×10 | 16 | Hardware Store | [McMaster](https://www.mcmaster.com/97654A373) |
-| 0027 | Screw 3 | Socket Head M3×16 | 24 | Hardware Store | [McMaster](https://www.mcmaster.com/95263A158/) |
-| 0028 | Screw 4 | Socket Head M3×12 | 12 | Hardware Store | [McMaster](https://www1.mcmaster.com/91290A117) |
-| 0029 | Screw 5 | Socket Head M3×8 | 23 | Hardware Store | [McMaster](https://www1.mcmaster.com/91290A113) |
-| 0030 | Screw 6 | Socket Head M3×40 | 16 | Hardware Store | [McMaster](https://www1.mcmaster.com/91290A136) |
-| 0031 | Screw 7 | Hex Drive Flat Head M3×8 | 8 | Hardware Store | [McMaster](https://www.mcmaster.com/92125A128) |
-| 0032 | Screw 8 | Hex Drive Flat Head M3×10 | 4 | Hardware Store | [McMaster](https://www.mcmaster.com/91294A130) |
-| 0033 | Screw 9 | Socket Head M4×8 | 8 | Hardware Store | [McMaster](https://www.mcmaster.com/91290A140) |
-| 0034 | Screw 10 | Hex Drive Flat Head M3×25 | 3 | Hardware Store | [McMaster](https://www.mcmaster.com/91294A138) |
-| 0035 | Insert 1 | M3 Threaded Inserts | 50 | Hardware Store | [McMaster](https://www.mcmaster.com/97163A161) |
-| 0036 | Insert 2 | M4 Threaded Inserts | 8 | Hardware Store | [McMaster](https://www.mcmaster.com/97163A153) |
-| 0037 | Washer 1 | General Purpose 3.2mm ID, 6mm OD | 158 | Hardware Store | [McMaster](https://www.mcmaster.com/98689A112) |
-| 0038 | Washer 2 | General Purpose 4.3mm ID, 9mm OD | 8 | Hardware Store | [McMaster](https://www.mcmaster.com/93475A230) |
-| 0039 | Nut 1 | Nylon-Insert Locknut M3 | 39 | Hardware Store | [McMaster](https://www.mcmaster.com/90576A811) |
-| 0040 | Washer 3 | Nylon Washer 3.2mm ID, 6mm OD | 30 | Hardware Store | [McMaster](https://www.mcmaster.com/95610A704) |
-
-### Adhesives & Sealants
-
-| ID | Name | Cost | Qty | Link |
-|----|------|------|-----|------|
-| 0042 | Loctite Threadlocker Blue 242 (1.69 fl. oz) | $25.00 | 1 | [McMaster](https://www.mcmaster.com/91458A113/) |
-| 0043 | Loctite Superflex Silicone Sealant 593 (6.4 fl. oz) | $21.00 | 1 | [McMaster](https://www.mcmaster.com/74945A81) |
-
-### Other Structural
-
-| ID | Name | Cost | Qty | Notes |
-|----|------|------|-----|-------|
-| 0074 | Landing Gear Shock Absorber | $14.00 | 1 | For wrapping bottom landing gear tubes — [Amazon](https://a.co/d/ggzWXc4) |
-
-### Bulk Structural Estimates
-
-| Category | Estimated Cost |
-|----------|---------------|
-| Laser Cut Aluminum | $350.00 |
-| Fasteners (bulk) | $110.00 |
-| 3D Printed Parts | $150.00 |
-| Transport Case | $600.00 |
-
----
-
-## Airframe Structure
-
-Aluminum plates, tubes, and carbon fiber components that make up the airframe.
-
-| ID | Name | Qty | Material | Supplier | Notes |
-|----|------|-----|----------|----------|-------|
-| 1111 | Upper Plate | 1 | 6061 Aluminum (min) | rapiddirect.com | |
-| 1112 | Mid Plate | 1 | 6061 Aluminum (min) | rapiddirect.com | |
-| 1113 | Lower Plate | 1 | 6061 Aluminum (min) | rapiddirect.com | |
-| 1211 | CW Long | 1 | 40×40×2mm Al square tube | rapiddirect.com | Laser cut, 6061 |
-| 121X | CCW Short | 2 | 40×40×2mm Al square tube | rapiddirect.com | Laser cut, 6061 |
-| 122X | Battery Wall | 2 | 30×100×2mm Al rectangular tube | rapiddirect.com | Laser cut, 6061 |
-| 131X | Landing Gear Vertical Tubes | 5 | 30×28×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
-| 132X | Landing Gear Horizontal Tubes | 5 | 30×28×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
-| 133X | Landing Gear Top Connectors | 4 | — | [AliExpress](https://www.alibaba.com/product-detail/20mm-25mm-30mm-pipe-diameter-fixed_1601140918673.html) | 30mm, $30 ea |
-| 134X | Landing Gear Tube Joints | 4 | Aluminum | [INNLOI](https://www.innloi.com/productinfo/448455.html) | 30mm, $13.99 ea — replaces 3D-printed T-adapters |
-| 14X1 | Motor Arm Connectors | 4 | — | [AliExpress](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html) | 30mm option, $25 ea |
-| 14X2 | Motor Arm Tubes | 5 | 30×28×1000mm CF tube | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45 ea — any color |
-
-### Secondary Structure
-
-| ID | Name | Cost | Qty | Supplier | Notes |
-|----|------|------|-----|----------|-------|
-| 21X2 | Quick Release Adapter | $34.00 | 3 | [AliExpress](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html) | Without PCB board |
-| 242X | Enclosure Hinge | $10.00 | 2 | [JW Winco](https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type) | GN 237-ZD-30-30-A-SW |
-| 243X | Enclosure Latch | — | — | McMaster-Carr | |
 
 ---
 
@@ -133,6 +53,70 @@ Connectors, wiring, and cabling for the electrical harness.
 
 ---
 
+## Airframe Structure
+
+Aluminum plates, tubes, and carbon fiber components.
+
+### Primary Structure
+
+| ID | Name | Qty | Material / Spec | Supplier | Notes |
+|----|------|-----|-----------------|----------|-------|
+| 1111 | Upper Plate | 1 | Aluminum | rapiddirect.com | See Manufacturing Guide |
+| 1112 | Mid Plate | 1 | Aluminum | rapiddirect.com | See Manufacturing Guide |
+| 1113 | Lower Plate | 1 | Aluminum | rapiddirect.com | See Manufacturing Guide |
+| 1211 | CW Long | 1 | Aluminum tube | rapiddirect.com | See Manufacturing Guide |
+| 121X | CCW Short | 2 | Aluminum tube | rapiddirect.com | See Manufacturing Guide |
+| 122X | Battery Wall | 2 | Aluminum tube | rapiddirect.com | See Manufacturing Guide |
+
+### Landing Gear
+
+| ID | Name | Cost | Qty | Total | Supplier | Notes |
+|----|------|------|-----|-------|----------|-------|
+| 131X | Vertical Tubes | $45.00 | 5 | $225.00 | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | 30×28×1000mm CF, any color |
+| 132X | Horizontal Tubes | $45.00 | 5 | $225.00 | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | 30×28×1000mm CF, any color |
+| 133X | Top Connectors | $30.00 | 4 | $120.00 | [RJXHobby](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) | 30mm |
+| 134X | Tube Joints (Aluminum T-Adapter) | $13.99 | 4 | $55.96 | [INNLOI](https://www.innloi.com/productinfo/448455.html) | 30mm — replaces 3D-printed version |
+| 135X | Shock Absorber | $14.00 | 1 | $14.00 | [Amazon](https://a.co/d/ggzWXc4) | For wrapping bottom tubes |
+
+### Motor Arms
+
+| ID | Name | Cost | Qty | Total | Supplier | Notes |
+|----|------|------|-----|-------|----------|-------|
+| 14X1 | Motor Arm Connectors | $25.00 | 4 | $100.00 | [AliExpress](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html) | 30mm option |
+| 14X2 | Motor Arm Tubes | $45.00 | 5 | $225.00 | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | 30×28×1000mm CF, any color |
+
+---
+
+## Secondary Structure
+
+3D-printed parts and purchased components for mounts, enclosures, and adapters.
+
+### 3D-Printed Parts
+
+| ID | Name | Qty | Notes |
+|----|------|-----|-------|
+| 21X1 | Attachment Interface Spacer Left & Right | 2 | See Manufacturing Guide |
+| 2131 | Attachment Interface Spacer Bottom | 1 | See Manufacturing Guide |
+| 221X | Battery Sliders | 2 | See Manufacturing Guide |
+| 2311 | Main PCB Mount | 1 | See Manufacturing Guide |
+| 2312 | BC PCB Mount | 1 | See Manufacturing Guide |
+| 2313 | BC PCB Cover | 1 | See Manufacturing Guide |
+| 2321 | Sensor Mount | 1 | See Manufacturing Guide |
+| 2331 | GNSS Mount | 1 | See Manufacturing Guide |
+| 2341 | PPP Adapter & Beacon Mount | 1 | See Manufacturing Guide |
+| 2411 | Main Enclosure | 1 | See Manufacturing Guide |
+| 2412 | Enclosure Top Cap | 1 | See Manufacturing Guide |
+
+### Purchased Secondary
+
+| ID | Name | Cost | Qty | Total | Supplier | Notes |
+|----|------|------|-----|-------|----------|-------|
+| 21X2 | Quick Release Adapter | $34.00 | 3 | $102.00 | [AliExpress](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html) | Without PCB board |
+| 242X | Enclosure Hinge | $10.00 | 2 | $20.00 | [JW Winco](https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type) | GN 237-ZD-30-30-A-SW |
+| 243X | Enclosure Latch | — | 2 | — | [McMaster-Carr](https://www.mcmaster.com/6082A11/) | |
+
+---
+
 ## Avionics & Equipment
 
 ### Sensors & Communications
@@ -143,11 +127,12 @@ Connectors, wiring, and cabling for the electrical harness.
 | 3212 | Nanoradar MR82 (OA Radar) | $285.00 | 1 | $285.00 | [Nanoradar](https://www.nanoradar.com/Products_1/7.html) | Obstacle avoidance |
 | 3213 | Nanoradar NRA15 (Altimeter Radar) | $240.00 | 1 | $240.00 | [Nanoradar](https://www.nanoradar.com/Products_1/4.html) | |
 | 3220 | SIYI HM30 Long Range FPV System | $282.04 | 1 | $282.04 | [Reebot](https://shop.reebot.com/products/siyi-hm30) | |
+| 3231 | Power Switch | — | — | — | [Digikey](https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861) | |
 | 3241 | SIYI A8 mini Gimbal Camera | $309.58 | 1 | $309.58 | [Reebot](https://shop.reebot.com/products/siyi-a8-mini) | |
-| 3231 | Power Switch | — | 1 | — | [Digikey](https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861) | |
 | 3251 | Here4 Multiband GNSS / F9P | $288.00 | 1 | $288.00 | [HolyBro](https://irlock.com/products/here4-multiband-rtk-gnss) | |
+| 3261 | DB201 Remote ID Module | $54.00 | 1 | $54.00 | [DroneScout](https://dronescout.co/product/dronebeacon-mavlink-db201-transponder/) | |
+| 3271 | PPP Adapter | — | — | — | — | |
 | 3315 | Mateksys GNSS M9N-G4-3100 | $125.00 | 1 | $125.00 | [Mateksys](https://www.mateksys.com/?portfolio=m9n-g4-3100) | DroneCAN backup |
-| 0075 | DB201 Remote ID Module | $54.00 | 1 | $54.00 | [DroneScout](https://dronescout.co/product/dronebeacon-mavlink-db201-transponder/) | |
 | — | Remote Control | $150.00 | 1 | $150.00 | — | |
 
 ### Electronics & Computing
@@ -165,10 +150,91 @@ Connectors, wiring, and cabling for the electrical harness.
 |----|------|-----|-------|
 | 3311 | Main PCB (PT3) | 1 | Source from Arrow — [GitHub](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics) |
 | 3321 | Battery Connector PCB | 1 | Source from Arrow |
+| 3322 | Busbar Positive | 1 | See Manufacturing Guide |
+| 3323 | Busbar Negative | 1 | See Manufacturing Guide |
 | 3324 | BC_PCB 4mm Heatsink | 1 | Local laser cutting |
 | 3331 | Flight Controller PCB | 1 | Source from Arrow |
 | 334X | Attachment Interface PCB | 36 | Order from JLCPCB with [gerber files](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB) |
 | — | PCBs (generic total) | — | ~$500 estimated |
+
+---
+
+## Misc — Fasteners, Hardware & Tools
+
+Detailed fastener inventory aligned with the manufacturing guide. All sourced from McMaster-Carr unless noted.
+
+### Rivets
+
+| ID | Name | Qty | McMaster P/N | Spec |
+|----|------|-----|-------------|------|
+| 5101 | Rivet 1 | 26 | 97525A224 | 4mm Dia. for 1–2.5mm thickness |
+| 5102 | Rivet 2 | 10 | 97525A251 | 4mm Dia. for 2.5–4.5mm thickness |
+| 5103 | Rivet 3 | 10 | 97525A226 | 4mm Dia. for 4.5–6.4mm thickness |
+
+### Screws
+
+| ID | Name | Qty | McMaster P/N | Spec |
+|----|------|-----|-------------|------|
+| 5104 | Screw 1 | 8 | 91292A113 | Socket Head M3×10 |
+| 5105 | Screw 2 | 16 | 92095A190 | Flanged Button Head M4×10 |
+| 5106 | Screw 4 | 8 | 91292A114 | Socket Head M3×12 |
+| 5107 | Screw 5 | 75 | 91292A112 | Socket Head M3×8 |
+| 5108 | Screw 6 | 16 | 91292A024 | Socket Head M3×40 |
+| 5109 | Screw 7 | 4 | 92125A128 | Hex Drive Flat Head M3×8 |
+| 5110 | Screw 8 | 8 | 92125A130 | Hex Drive Flat Head M3×10 |
+| 5111 | Screw 9 | 8 | 91292A108 | Socket Head M4×8 |
+| 5112 | Screw 10 | 4 | 91292A832 | Socket Head M2×6 |
+| 5113 | Screw 11 | 27 | 97654A674 | Flanged Button Head M3×6 |
+| 5114 | Screw 12 | 4 | 92855A837 | Socket Head M2×5 |
+| 5115 | Screw 13 | 4 | 91292A012 | Socket Head M2.5×8 |
+| 5116 | Screw 14 | 4 | 91292A833 | Socket Head M2×10 |
+| 5117 | Screw 15 | 4 | 91292A191 | Socket Head M5×8 |
+| 5118 | Screw 16 | 4 | 92095A203 | Button Head M3×40 |
+| 5119 | Screw 17 | 8 | 90751A110 | Socket Head M3×6 |
+| 5120 | Screw 3 | 12 | 92095A451 | Button Head M2×4 |
+
+### Inserts
+
+| ID | Name | Qty | McMaster P/N | Spec |
+|----|------|-----|-------------|------|
+| 5121 | Insert 1 | 50 | 94459A140 | M3 Threaded Inserts — 5.7mm |
+| 5122 | Insert 2 | 8 | 94180A351 | M4 Threaded Inserts |
+| 5123 | Insert 3 | 4 | 94180A312 | M2 Threaded Inserts |
+| 5124 | Insert 4 | 16 | 94180A331 | M3 Threaded Inserts — 3.8mm |
+
+### Washers & Nuts
+
+| ID | Name | Qty | McMaster P/N | Spec |
+|----|------|-----|-------------|------|
+| 5125 | Washer 1 | 123 | 98689A112 | M3 General Purpose 3.2mm ID, 6mm OD |
+| 5126 | Washer 2 | 8 | 93475A230 | M4 General Purpose 4.3mm ID, 9mm OD |
+| 5127 | Washer 3 | 12 | 95610A110 | M2 Nylon 2.2mm ID, 5mm OD |
+| 5128 | Washer 4 | 4 | 95610A011 | M2.5 Nylon 2.7mm ID, 5.6mm OD |
+| 5129 | Washer 5 | 4 | 95610A704 | M3 Nylon 3.2mm ID, 6mm OD |
+| 5130 | Washer 6 | 4 | 93475A240 | M5 General Purpose 5.3mm ID, 10mm OD |
+| 5131 | Nut 1 | 16 | 90576A811 | Nylon-Insert Locknut M3 |
+
+### Seals, Mounts & Misc Hardware
+
+| ID | Name | Qty | Source | Spec |
+|----|------|-----|--------|------|
+| 5132 | Vibration Mount | 5 | Amazon | M3 Rubber Anti-Vibration Spacer |
+| 5133 | Grommet 1 | 4 | Amazon | Circular Grommet OD: 20mm |
+| 5134 | Grommet 2 | 12 | Amazon | Oval Grommet 27×13mm |
+| 5135 | Silicone Foam Seal Strip | 1 | Amazon | Circular, OD: 8mm |
+
+### Tools & Adhesives
+
+| ID | Name | Notes |
+|----|------|-------|
+| 5201 | Allen key set | Metric, M2–M5 |
+| 5202 | Wrench set | Metric |
+| 5203 | Cordless screwdriver or drill press | |
+| 5204 | Riveting tool | For 4mm rivets |
+| 5205 | Double-Sided Tape | Heavy Duty |
+| 5206 | Loctite Threadlocker Purple 222 | Low-strength (McMaster 1810A28) |
+| 5207 | Loctite Threadlocker Blue 242 | Medium-strength (McMaster 91458A113) |
+| 5208 | Würth Super RTV Silicone Black | 200ml, black (Model: 08933311) |
 
 ---
 
@@ -179,14 +245,13 @@ Connectors, wiring, and cabling for the electrical harness.
 | Propulsion (motors, props, battery) | $1,292.00 |
 | Avionics & Sensors | $2,432.93 |
 | Custom PCBs | $500.00 |
-| Airframe (aluminum, CF tubes, connectors) | $1,518.00 |
+| Airframe (aluminum, CF tubes, connectors) | $1,465.00 |
 | Fasteners & Hardware | $110.00 |
 | 3D Printed Parts | $150.00 |
 | Harness & Connectors | $165.12 |
-| Adhesives & Misc | $60.00 |
 | Transport Case | $600.00 |
 | Remote Control | $150.00 |
-| **Total** | **~$7,023** |
+| **Total** | **~$6,977** |
 
 :::info PCB assembly guides
 For detailed PCB assembly instructions, interactive BOMs, and soldering guides, see the [PT3 Assembly Guides](https://github.com/Arrow-air/project-quiver/tree/main/docs/pt3-assembly-guides/PCB-assembly).
