@@ -41,11 +41,12 @@ ID,System,Name,Supplier,Link,Unit Cost,Quantity,Cost,Order Details,Notes
 1211,Airframe Structure,CW Long,rapiddirect.com,,,1,,"Its a laser cutted aluminum square tube 40x40x2mm. 6061 aluminum.",
 121X,Airframe Structure,CCW Short,rapiddirect.com,,,2,,"Its a laser cutted aluminum square tube 40x40x2mm. 6061 aluminum.",
 122X,Airframe Structure,Battery Wall,rapiddirect.com,,,2,,"Its a laser cutted aluminum rectangular tube 30x100x2mm. 6061 aluminum.",
-131X,Airframe Structure,Landing Gear Vertical Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x26x1000 mm, any color",
-132X,Airframe Structure,Landing Gear Horizontal Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x26x1000 mm, any color",
+131X,Airframe Structure,Landing Gear Vertical Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x28x1000 mm, any color",
+132X,Airframe Structure,Landing Gear Horizontal Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x28x1000 mm, any color",
 133X,Airframe Structure,Landing Gear Top Connectors,Aliexpress,https://www.alibaba.com/product-detail/20mm-25mm-30mm-pipe-diameter-fixed_1601140918673.html,$30.00,4,$120.00,30 mm,
+134X,Airframe Structure,Landing Gear Tube Joints,INNLOI,https://www.innloi.com/productinfo/448455.html,$13.99,4,$55.96,30mm,Aluminum T-adapter - replaces 3D printed version
 14X1,Airframe Structure,Motor Arm Connectors,AliExpress,https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html,$25.00,4,$100.00,30 mm option,
-14X2,Airframe Structure,Motor Arm Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x26x1000 mm, any color",
+14X2,Airframe Structure,Motor Arm Tubes,RJXHobby,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,$45.00,5,$225.00,"30x28x1000 mm, any color",
 21X2,Secondary Structure,Quick Release Adapter,AliExpress,https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html,$34.00,3,$102.00,Without PCB board,
 242X,Secondary Structure,Enclosure Hinge,JW Winco,https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type,$10.00,2,$20.00,"Enclosure Hinge. Part Number: GN 237-ZD-30-30-A-SW",
 243X,Secondary Structure,Enclosure Latch,Mcmaster-Carr,,,,,,
@@ -54,6 +55,7 @@ ID,System,Name,Supplier,Link,Unit Cost,Quantity,Cost,Order Details,Notes
 3212,Equipment,Obstacle Avoidance Radar MR82,Nanoradar,https://www.nanoradar.com/Products_1/7.html,$285.00,1,$285.00,,
 3213,Equipment,Altimeter Radar NRA15,Nanoradar,https://www.nanoradar.com/Products_1/4.html,$240.00,1,$240.00,,
 3220,Equipment,SIYI HM30 Long Range FPV System,Siyi Reebot Robotics,https://shop.reebot.com/products/siyi-hm30,$282.04,1,$282.04,,
+3231,Equipment,Power Switch,Digikey,https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861,,,,,
 3241,Equipment,SIYI A8 mini Gimbal Camera,Siyi Reebot Robotics,https://shop.reebot.com/products/siyi-a8-mini,$309.58,1,$309.58,,
 3251,Equipment,Here4 Multiband GNSS/Neo F9P,HolyBro,https://irlock.com/products/here4-multiband-rtk-gnss,$288.00,1,$288.00,,
 3311,Equipment,MAIN_PCB (PT3 Main PCB),ARROW,,,1,,,"During prototyping for PT3 source part from Julius"
