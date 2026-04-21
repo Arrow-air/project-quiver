@@ -90,6 +90,7 @@
 | Loctite Threadlocker Blue 242 | Medium-strength threadlocker | [McMaster-Carr 91458A113](https://www.mcmaster.com/91458A113/) |
 | Loctite Threadlocker Red 262 | High-strength threadlocker | [McMaster-Carr 91458A170](https://www.mcmaster.com/91458A170/) |
 | Würth Super RTV Silicone Black | 200 ml, black RTV silicone | [Model Number: 08933311](https://www.wurthusa.com/Lucid-Motors/Super-RTV-Silicone-Black-200ml/p/08933311) |
+| Bambulab PETG-CF Filament | PETG-CF Filament | [Bambulab US Store](https://us.store.bambulab.com/products/petg-cf?srsltid=AfmBOopdlzFPMQbKaH_SlJhs1Kp4MEZ4SKowusCq7by1Bgfgniv4fXBB&skr=yes&p=W3sicHJvcGVydHlLZXkiOiJDb2xvciIsInByb3BlcnR5VmFsdWUiOiJCbGFjayAoMzExMDApIn0seyJwcm9wZXJ0eUtleSI6IlR5cGUiLCJwcm9wZXJ0eVZhbHVlIjoiIn0seyJwcm9wZXJ0eUtleSI6IlNpemUiLCJwcm9wZXJ0eVZhbHVlIjoiMSBrZyJ9XQ%3D%3D) |
 
 
 -------
@@ -400,7 +401,7 @@
   - Washer 1 x24 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
   - Loctite Threadlocker Blue 242
   - Loctite Threadlocker Red 262
-  
+
 - Remove the fasteners marked in the picture.
   - Apply Loctite Threadlocker Red on the fasteners.
   - Secure the fasteners back.
