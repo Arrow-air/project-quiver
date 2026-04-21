@@ -88,7 +88,9 @@
 | Double-Sided Tape | Heavy Duty | |
 | Loctite Threadlocker Purple 222 | Low-strength threadlocker | [McMaster-Carr 1810A28](https://www.mcmaster.com/1810A28/) |
 | Loctite Threadlocker Blue 242 | Medium-strength threadlocker | [McMaster-Carr 91458A113](https://www.mcmaster.com/91458A113/) |
+| Loctite Threadlocker Red 262 | High-strength threadlocker | [McMaster-Carr 91458A170](https://www.mcmaster.com/91458A170/) |
 | Würth Super RTV Silicone Black | 200 ml, black RTV silicone | [Model Number: 08933311](https://www.wurthusa.com/Lucid-Motors/Super-RTV-Silicone-Black-200ml/p/08933311) |
+| Bambulab PETG-CF Filament | PETG-CF Filament | [Bambulab US Store](https://us.store.bambulab.com/products/petg-cf?srsltid=AfmBOopdlzFPMQbKaH_SlJhs1Kp4MEZ4SKowusCq7by1Bgfgniv4fXBB&skr=yes&p=W3sicHJvcGVydHlLZXkiOiJDb2xvciIsInByb3BlcnR5VmFsdWUiOiJCbGFjayAoMzExMDApIn0seyJwcm9wZXJ0eUtleSI6IlR5cGUiLCJwcm9wZXJ0eVZhbHVlIjoiIn0seyJwcm9wZXJ0eUtleSI6IlNpemUiLCJwcm9wZXJ0eVZhbHVlIjoiMSBrZyJ9XQ%3D%3D) |
 
 
 -------
@@ -398,8 +400,10 @@
   - Screw 1 x8 (Socket Head Screw M3x10)
   - Washer 1 x24 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
   - Loctite Threadlocker Blue 242
+  - Loctite Threadlocker Red 262
+
 - Remove the fasteners marked in the picture.
-  - Apply Loctite Threadlocker Blue on the fasteners.
+  - Apply Loctite Threadlocker Red on the fasteners.
   - Secure the fasteners back.
 
 | Motor Arm Connector - Loctite Threadlocker Application|
@@ -1025,6 +1029,7 @@
 - Insert the antenna cables through the holes shown in the picture.
 - Secure the antenna cables from outside with the nuts that were removed.
 - Install the antennas on the outside.
+  - Use a very small amount of Loctite Threadlocker Purple. Apply only to the threads near the base.
 
 |Antenna Cable Nut| Antenna Cable Locations| Antenna Placement|
 |--|--|--|
@@ -1033,6 +1038,7 @@
 - Remove the marked nut from the push button.
 - Insert the push button in its location on the main enclosure.
 - Secure it with the nut from inside.
+  - Use Loctite Threadlocker Purple.
 
 |Push Button Nut| Push Button Location|
 |--|--|
