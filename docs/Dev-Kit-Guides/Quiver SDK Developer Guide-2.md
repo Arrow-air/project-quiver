@@ -1,6 +1,6 @@
 # Quiver SDK Developer Guide
 
-**Version:** April 2026 | **Author:** Pan Robotics
+**Version:** April 2026
 
 ---
 
@@ -315,14 +315,14 @@ From Drone Configuration → Job History → create a job:
 
 - **Scan FC Logs:** Triggers the companion to discover all FC log files and report them to Hub
 - **Download FC Log:** Downloads a specific log from FC → uploads to Hub S3 → available for browser download
-- **Flash Firmware:** Uploads firmware binary to FC via MAVFTP
+- **Flash Firmware:** Serves firmware via HTTP for FC pull (Approach C), verifies via `AUTOPILOT_VERSION` git hash comparison
 - **Deliver File:** Downloads a file from Hub S3 to a target path on the Pi
 
 ---
 
 ## 8. FC Web Server Setup (ArduPilot)
 
-The flight controller runs `net_webserver.lua` (ArduPilot Lua scripting applet) to serve FC log files over HTTP. This is the primary log access path; MAVFTP is the fallback.
+The flight controller runs several Lua scripting applets that provide HTTP access to the SD card, accept file uploads, and enable OTA firmware pulling. These are the primary access paths for log sync and firmware flash; MAVFTP is the fallback for log operations only.
 
 ### Enable on the Flight Controller
 
@@ -339,15 +339,26 @@ Set these parameters via Mission Planner or MAVProxy:
 | `NET_IPADDR0–3` | 192.168.144.51 | FC static IP |
 | `NET_NETMASK` | 24 | Subnet mask |
 | `NET_GWADDR0–3` | 192.168.144.50 | Gateway (Pi) |
+| `FWPULL_ENABLE` | 1 | Enable firmware pull from companion (required for OTA flash) |
 
-Copy the applet to the FC SD card: `APM/scripts/net_webserver.lua`. Reboot the FC. Verify from the Pi:
+### Lua Scripts on the FC SD Card
+
+Copy these applets to `APM/scripts/` on the FC SD card:
+
+| Script | Purpose |
+|---|---|
+| `net_webserver.lua` | Serves the SD card over HTTP on port 8080 (directory listings, file downloads). Primary log access path. |
+| `net_webserver_put.lua` | Extends the web server with HTTP PUT support for file uploads to the SD card. Includes 30-second stall timeout and partial file cleanup. |
+| `firmware_puller.lua` | Polls the companion's HTTP server at `http://192.168.144.50:8080/firmware.abin` when `FWPULL_ENABLE=1`. Downloads firmware to SD card as `ardupilot.abin`, triggering ArduPilot's built-in flash-on-boot mechanism. Includes 30-second stall timeout. |
+
+Reboot the FC after copying scripts. Verify from the Pi:
 
 ```bash
 curl http://192.168.144.51:8080/
 # Should return HTML directory listing
 ```
 
-The companion's `FCLogSyncer` automatically uses this endpoint for background log sync and on-demand downloads.
+The companion's `FCLogSyncer` automatically uses the `net_webserver.lua` endpoint for background log sync and on-demand downloads. The `firmware_puller.lua` script is used by the OTA flash flow (Approach C) to pull firmware from the companion's temporary HTTP server.
 
 ---
 
@@ -587,7 +598,7 @@ sudo journalctl -u quiver-hub-client -f
 | `update_config` | `handle_update_config_job` | `raspberry_pi_client.py` | Write JSON config to a file on Pi |
 | `scan_fc_logs` | `handle_scan_fc_logs` | `logs_ota_service.py` | List cached FC logs from manifest → report to Hub |
 | `download_fc_log` | `handle_download_fc_log` | `logs_ota_service.py` | Serve cached log → upload to Hub S3 (multipart preferred) |
-| `flash_firmware` | `handle_flash_firmware` | `logs_ota_service.py` | Download firmware from S3 → upload to FC via MAVFTP → monitor flash |
+| `flash_firmware` | `handle_flash_firmware` | `logs_ota_service.py` | Download firmware from S3 → serve via HTTP for FC pull (Approach C) → MAVLink reboot → verify via `AUTOPILOT_VERSION` |
 
 ---
 
@@ -673,11 +684,13 @@ This walks through discovering, downloading, and saving FC logs to your local PC
 
 ### 10.4 OTA Firmware Flash Workflow
 
-This walks through uploading new firmware to the flight controller over the air.
+This walks through uploading new firmware to the flight controller over the air. The flash uses **Approach C (FC HTTP Pull)** exclusively — the companion serves the firmware via a temporary HTTP server and the FC pulls it using `firmware_puller.lua`.
+
+**Prerequisites:** Ensure `firmware_puller.lua` is installed on the FC SD card at `APM/scripts/firmware_puller.lua` and the `FWPULL_ENABLE` parameter is set to `1`. Also ensure `aiohttp` is installed on the companion Pi (`pip install --break-system-packages aiohttp`).
 
 **Step 1 — Open the Logs & OTA app** → OTA Updates tab.
 
-**Step 2 — Upload firmware.** Click "Upload Firmware". Select an `.abin` file (ArduPilot binary). Optionally provide a SHA-256 hash for integrity verification. The file uploads to Hub S3.
+**Step 2 — Upload firmware.** Click "Upload Firmware". Select an `.abin` file (ArduPilot binary). The file uploads to Hub S3 with a SHA-256 hash computed automatically for integrity verification.
 
 **Step 3 — Flash firmware.** Click "Flash" on the uploaded firmware entry. This dispatches a `flash_firmware` job to the companion.
 
@@ -685,15 +698,18 @@ This walks through uploading new firmware to the flight controller over the air.
 
 | Stage | What Happens |
 |---|---|
-| **Download** | Companion downloads `.abin` from Hub S3 to local temp file |
-| **Verify** | SHA-256 hash check (if hash was provided during upload) |
-| **Upload to FC** | MAVFTP upload of `ardupilot.abin` to `/APM/` on the FC SD card |
-| **Flash** | FC detects the file and begins internal flash process |
-| **Reboot** | FC reboots with new firmware |
+| **Step 1: Download** | Companion downloads `.abin` from Hub S3, verifies SHA-256 hash, extracts git hash from file header |
+| **Step 2: Cleanup** | HTTP check for existing `ardupilot*.abin` on FC (via `net_webserver.lua`) |
+| **Step 3: Serve** | Companion starts `aiohttp` server on port 8080, FC pulls firmware via `firmware_puller.lua` |
+| **Step 4: Reboot** | Companion sends MAVLink reboot command to FC |
+| **Step 5: Wait** | Poll FC web server for up to 120s until it comes back online |
+| **Step 6: Verify** | Reconnect MAVSDK, query `AUTOPILOT_VERSION`, compare git hash against `.abin` header |
 
 Progress is reported in real-time via `POST /api/rest/firmware/progress` and broadcast to the UI via the `firmware_progress` WebSocket event. The progress bar and stage label update live.
 
-**Step 5 — Verify.** After flash completes, the FC reboots. Check the Telemetry app to confirm the FC reconnects and reports the new firmware version.
+**Step 5 — Verify.** After flash completes, the dashboard card displays the confirmed firmware version with a verification badge: green **ShieldCheck** if the git hash matches the `.abin` header, or amber **ShieldAlert** if there is a mismatch. For older flash records (before this feature), a "Version info not available" note is shown.
+
+**Managing stuck updates.** If a flash gets stuck (status shows `transferring`, `flashing`, or `verifying` indefinitely), use the red **Cancel** button on the card to remove it. The **Clear Failed & Stuck** button removes all failed and stuck records in bulk.
 
 ---
 
@@ -757,6 +773,9 @@ pip3 install requests aiohttp mavsdk dronecan python-socketio python-dotenv
 | `/var/lib/quiver/fc_logs/` | Local FC log cache (FCLogSyncer) |
 | `/var/log/quiver/*.log` | Application logs |
 | `/etc/systemd/system/quiver-*.service` | Systemd service files |
+| `APM/scripts/net_webserver.lua` | FC: HTTP server for SD card access (port 8080) |
+| `APM/scripts/net_webserver_put.lua` | FC: HTTP PUT support for file uploads |
+| `APM/scripts/firmware_puller.lua` | FC: Firmware pull from companion HTTP server (OTA flash) |
 
 ### Useful Commands
 
