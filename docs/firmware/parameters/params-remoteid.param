@@ -1,0 +1,17 @@
+# Remote ID Parameters (DroneBeacon db201 via DroneCAN)
+# Load AFTER standard-params.param to enable OpenDroneID
+#
+# Requires: firmware with AP_OPENDRONEID_ENABLED=1 (included in Quiver custom build)
+# Hardware: DroneBeacon db201 connected to CAN1 (1Mbps, shared with ESCs)
+#
+# After loading, configure operator/drone IDs in:
+#   Mission Planner → DATA → DroneID tab
+#   (UAS ID, operator ID, operator location — per-operator, not stored here)
+#
+# DID_OPTIONS=1: disables pre-arm block if operator/UAS IDs not yet configured.
+
+DID_ENABLE,1
+DID_CANDRIVER,1
+DID_MAVPORT,-1
+DID_OPTIONS,1
+DID_BARO_ACC,-1
