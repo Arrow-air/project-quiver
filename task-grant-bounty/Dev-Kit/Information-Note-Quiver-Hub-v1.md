@@ -106,6 +106,10 @@ What was completed in M1–M3 was the most immediately valuable and practical sl
 
 Where parts of the security pipeline remain marked as **planned**  that should be understood as a deliberate sequencing decision. I identified those items at this stage, but they are more appropriately completed in the next layer of platform maturation alongside the wider **Quiver SDK / quiver-hub** development path.
 
+Further Development of Quiver Hub could implement Comprehensive Mission Planning, including Autonomous Path Planning and Control (M4), as well as then leading into multiple deployment strategies; A Local
+individual system deployment, and hosted scalable Saas platform (M5). Beyond these are continued developer SDK formalisation, encapsulation, and functional expansion, to make payload deployment easier:
+[Quiver SDK Repo](https://github.com/Arrow-air/quiver-sdk)
+
 # References
 
 [Quiver Hub Information note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Dev-Kit/Quiver-Hub-Software.md)
