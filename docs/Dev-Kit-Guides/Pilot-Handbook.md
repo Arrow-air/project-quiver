@@ -519,8 +519,8 @@ This sequence defines the only approved process from battery installation to tak
    - Stable EKF status,
    - GPS fix with HDOP ≤ 1.6 and ≥ 14 satellites (check GCS Status tab).
 10. **Verify SSR auto-engage:** Confirm the high-voltage SSR has closed after boot.
-    * *Primary check, if the aircraft has a Raspberry Pi with the Tattu bridge installed:* Compare the GCS battery voltages for Bat 1 (`ESC`) and Bat 2 (`Tattu`). If the voltages are nearly equal, the SSR is closed. If Bat 1 is lower than Bat 2 by several volts, the SSR is likely not closed.
-    * *Secondary check:* The Mission Planner Servo/Relay page may show Relay 1 (`SSR`) state, but do not rely on the relay button color alone unless this behavior has been verified for the installed Lua script and firmware version.
+    * *If the aircraft has a Raspberry Pi with the Tattu bridge installed:* Compare the GCS battery voltages for Bat 1 (`ESC`) and Bat 2 (`Tattu`). If the voltages are nearly equal, the SSR is closed. If Bat 1 is lower than Bat 2 by several volts, the SSR is likely not closed.
+    * *If Tattu battery voltage is not available:* Verify Relay 1 (`SSR`) state using the Mission Planner Servo/Relay page or any configured relay/state indication in the GCS. Do not rely on the relay button color alone unless this behavior has been verified for the installed Lua script and firmware version.
     * *Fault:* If the SSR is not confirmed closed, do not arm. Verify the Quiver SSR auto-engage Lua script is installed and running, then troubleshoot the relay state.
 
 ### 3.4 Motor Power and Arming
@@ -701,7 +701,7 @@ Take photos of the airframe, details where necessary.
 
 - [ ] Battery power control working normally
 
-- [ ] Relay 1 / `SSR` automatically activates after boot via the Quiver SSR auto-engage Lua script; if available, verify by comparing Bat 1 (`ESC`) and Bat 2 (`Tattu`) voltage
+- [ ] Relay 1 / `SSR` automatically activates after boot via the Quiver SSR auto-engage Lua script; verify by comparing Bat 1 (`ESC`) and Bat 2 (`Tattu`) voltage when available, or by checking the configured relay/state indication in the GCS
 
 - [ ] Mission Planner Servo/Relay labels are set for relays 1–6 (`SSR`, `Bypass`, `Add HV`, `P1 Sig`, `P1 12V`, `12V Pay`)
 
