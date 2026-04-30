@@ -468,3 +468,16 @@ psutil
 Syncer
 WHEP
 whep
+Bambulab
+Bluemark
+desireable
+DSRMROT
+OPENDRONEID
+pymavlink
+quiktune
+Rapiddirect
+sliceability
+succesful
+uncommanded
+Uxcell
+Würth
