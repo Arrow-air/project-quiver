@@ -38,6 +38,8 @@ ignorePaths:
   - "**/*-lib-table"
   - "**/*.bin"
   - "**/*.BIN"
+  - "**/*.abin"
+  - "**/*.ABIN"
   - "**/*.step"
   - "**/*.STEP"
   - "**/*.stl"

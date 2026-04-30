@@ -1,0 +1,15 @@
+# Ethernet / PPP Networking Parameters
+# Load AFTER standard-params.param to enable Raspberry Pi network bridging
+#
+# Requires: custom firmware with PPP networking enabled
+# Effect: MAVLink accessible via Raspberry Pi network at port 5760
+#
+# How it works: SERIAL2 connects Pixhawk to RPi via UART at 12.5 Mbaud.
+# ArduPilot runs PPP, RPi appears as a network gateway.
+# Connect Mission Planner or MAVProxy to RPi_IP:5760 over TCP.
+
+NET_ENABLE,1
+NET_P1_PORT,5760
+NET_P1_PROTOCOL,1
+SERIAL2_PROTOCOL,48
+SERIAL2_BAUD,12500000
