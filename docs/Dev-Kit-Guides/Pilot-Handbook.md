@@ -520,8 +520,8 @@ This sequence defines the only approved process from battery installation to tak
    - GPS fix with HDOP ≤ 1.6 and ≥ 14 satellites (check GCS Status tab).
 10. **Verify SSR auto-engage:** Confirm the high-voltage SSR has closed after boot.
     * *If the aircraft has a Raspberry Pi with the Tattu bridge installed:* Compare the GCS battery voltages for Bat 1 (`ESC`) and Bat 2 (`Tattu`). If the voltages are nearly equal, the SSR is closed. If Bat 1 is lower than Bat 2 by several volts, the SSR is likely not closed.
-    * *If Tattu battery voltage is not available:* Verify Relay 1 (`SSR`) state using the Mission Planner Servo/Relay page or any configured relay/state indication in the GCS. Do not rely on the relay button color alone unless this behavior has been verified for the installed Lua script and firmware version.
-    * *Fault:* If the SSR is not confirmed closed, do not arm. Verify the Quiver SSR auto-engage Lua script is installed and running, then troubleshoot the relay state.
+    * *If the aircraft does not have a Raspberry Pi / Tattu bridge installed:* Mission Planner may not provide an obvious live indication that the Lua script has changed the relay state. If unsure, reboot the aircraft and allow the auto-engage script to run again, or press the physical button again. You can also manually activate/deactivate the SSR with the Mission Planner relay button and watch for the expected voltage change.
+    * *Fault / uncertainty:* The SSR normally activates reliably. These checks are mainly for troubleshooting if something seems wrong. If the SSR is deactivated and the aircraft is armed, the motors may spin only briefly before the system drops into undervoltage. If the SSR is not confirmed closed, do not fly; troubleshoot the script, relay state, or power system before continuing.
 
 ### 3.4 Motor Power and Arming
 
@@ -701,7 +701,7 @@ Take photos of the airframe, details where necessary.
 
 - [ ] Battery power control working normally
 
-- [ ] Relay 1 / `SSR` automatically activates after boot via the Quiver SSR auto-engage Lua script; verify by comparing Bat 1 (`ESC`) and Bat 2 (`Tattu`) voltage when available, or by checking the configured relay/state indication in the GCS
+- [ ] Relay 1 / `SSR` automatically activates after boot via the Quiver SSR auto-engage Lua script; verify by comparing Bat 1 (`ESC`) and Bat 2 (`Tattu`) voltage when available. Without a Raspberry Pi / Tattu bridge, Mission Planner relay indication may be unclear; if unsure, reboot or press the physical button again, and verify by observing the expected voltage change when toggling the SSR.
 
 - [ ] Mission Planner Servo/Relay labels are set for relays 1–6 (`SSR`, `Bypass`, `Add HV`, `P1 Sig`, `P1 12V`, `12V Pay`)
 
