@@ -1,0 +1,32 @@
+# Object Avoidance Parameters
+# Load AFTER standard-params.param to enable RPLidar S2 obstacle avoidance
+#
+# Requires: RPLidar S2 connected to SERIAL3 (configured in standard-params.param)
+#           PRX1_TYPE=5 is already set in standard-params.param
+#
+# Avoidance behavior: BendyRuler path planning, stop+slide mode
+# Safe margins: slow-down at 5m, hard stop at 4m
+
+AVOID_ENABLE,3
+AVOID_ACCEL_MAX,3
+AVOID_ALT_MIN,2
+AVOID_ANGLE_MAX,1000
+AVOID_BACKUP_DZ,0.1
+AVOID_BACKUP_SPD,0.75
+AVOID_BACKZ_SPD,0.75
+AVOID_BEHAVE,1
+AVOID_DIST_MAX,5
+AVOID_MARGIN,4
+OA_TYPE,1
+OA_BR_CONT_ANGLE,60
+OA_BR_CONT_RATIO,1.2
+OA_BR_LOOKAHEAD,12
+OA_BR_TYPE,1
+OA_DB_DIST_MAX,10
+OA_DB_EXPIRE,3
+OA_DB_OUTPUT,3
+OA_DB_QUEUE_SIZE,80
+OA_DB_RADIUS_MIN,0.2
+OA_DB_SIZE,100
+OA_MARGIN_MAX,4
+OA_OPTIONS,1
