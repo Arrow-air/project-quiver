@@ -3,6 +3,8 @@
         "flight-test",
         "\\.BIN$",
         "\\.bin$",
+        "\\.ABIN$",
+        "\\.abin$",
         "\\.step$",
         "\\.STEP$",
         "\\.csv$",
