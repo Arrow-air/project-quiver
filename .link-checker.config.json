@@ -1,0 +1,19 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https?://"
+    },
+    {
+      "pattern": "\\.(bin|dxf|step|stl|zip)$"
+    },
+    {
+      "pattern": "^\\./assets/readme$"
+    },
+    {
+      "pattern": "^\\./PT1-Engineering-Report$"
+    },
+    {
+      "pattern": "^/task-grant-bounty/Dev-Kit/images/SITL/"
+    }
+  ]
+}

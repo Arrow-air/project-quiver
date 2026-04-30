@@ -265,7 +265,15 @@ The drone push button is used to initiate the pre-charge of the power system and
 - Payload power supply
 - ...
 
-The drone is not ready to fly yet. The main power MOSFET needs to be activated via a relay button in the ground control station.
+After the flight controller boots, the Quiver SSR auto-engage Lua script shall automatically activate Relay 1 and close the high-voltage SSR / main power MOSFETs. This removes the normal need for the pilot to manually toggle Relay 1 before flight.
+
+> [!WARNING]
+>
+> The auto-engage Lua script must be installed and enabled on the aircraft before operation. If Relay 1 / SSR does not activate automatically after boot, do not assume the aircraft is ready for flight. Troubleshoot the script or relay state before arming.
+
+> [!CAUTION]
+>
+> If Relay 1 / SSR is intentionally or accidentally deactivated while the aircraft is powered, keep the avionics PCB temperature under observation. The pre-charge resistor is not intended to carry sustained aircraft load, and overheating risk increases with higher power consumption from equipment such as companion computers or powered attachments.
 
 ### 2.5 1st time setup
 Each Quiver Dev-Kit aircraft is shipped with a validated firmware image, pre-loaded baseline parameters, and completed sensor calibrations performed by the manufacturer prior to shipment.
@@ -460,6 +468,27 @@ If RTK positioning is employed:
 - Confirm video feed before arming,
 - Verify camera control response.
 
+#### 2.8.5 Mission Planner Servo/Relay Page
+
+The Mission Planner **Servo/Relay** page is used to verify and manually control relay outputs during setup, troubleshooting, and payload operations.
+
+Before flight, set the relay labels in Mission Planner so the operator can identify each function quickly:
+
+| Relay | Label | Function | Normal use |
+| - | - | - | - |
+| 1 | `SSR` | Controls the high-voltage SSR / main power MOSFETs. | Automatically activates after boot via the Quiver SSR auto-engage Lua script. If deactivated for any reason while powered, monitor PCB temperature. |
+| 2 | `Bypass` | Legacy bypass output for a separate fused low-current MOSFET path (typically 2–5 A). | Not used on current Dev-Kit operation. Leave off unless specifically instructed by the Quiver team. |
+| 3 | `Add HV` | Enables the additional high-voltage connector output. | Enable only when an attachment requires the additional HV connector. |
+| 4 | `P1 Sig` | GPIO signal from the flight controller to the bottom payload adapter. | Used for payload logic or switching when configured for the attachment. |
+| 5 | `P1 12V` | Enables the separate 12 V supply for the bottom payload port. | Enable only when the bottom payload requires this supply, such as a motorized attachment. |
+| 6 | `12V Pay` | Enables the general 12 V payload supply to the attachment interfaces. | Enable only when an attachment requires general 12 V payload power. This is separate from `P1 12V`. |
+
+Relays 7 and above are not part of the standard Quiver Dev-Kit pilot workflow unless a specific aircraft or attachment configuration documents them.
+
+> [!NOTE]
+>
+> Relay labels are an operator-facing safety aid. The labels do not change wiring or firmware behavior; they only make the Mission Planner relay controls easier to identify.
+
 
 ## 3. Power Up Procedure
 
@@ -489,7 +518,10 @@ This sequence defines the only approved process from battery installation to tak
    - No critical pre-arm errors,
    - Stable EKF status,
    - GPS fix with HDOP ≤ 1.6 and ≥ 14 satellites (check GCS Status tab).
-10. **Engage HV:** In GCS, toggle the "Main Power" relay to close the high-voltage SSR.
+10. **Verify SSR auto-engage:** Confirm the high-voltage SSR has closed after boot.
+    * *If the aircraft has a Raspberry Pi with the Tattu bridge installed:* Compare the GCS battery voltages for Bat 1 (`ESC`) and Bat 2 (`Tattu`). If the voltages are nearly equal, the SSR is closed. If Bat 1 is lower than Bat 2 by several volts, the SSR is likely not closed.
+    * *If the aircraft does not have a Raspberry Pi / Tattu bridge installed:* Mission Planner may not provide an obvious live indication that the Lua script has changed the relay state. If unsure, reboot the aircraft and allow the auto-engage script to run again, or press the physical button again. You can also manually activate/deactivate the SSR with the Mission Planner relay button and watch for the expected voltage change.
+    * *Fault / uncertainty:* The SSR normally activates reliably. These checks are mainly for troubleshooting if something seems wrong. If the SSR is deactivated and the aircraft is armed, the motors may spin only briefly before the system drops into undervoltage. If the SSR is not confirmed closed, do not fly; troubleshoot the script, relay state, or power system before continuing.
 
 ### 3.4 Motor Power and Arming
 
@@ -668,6 +700,10 @@ Take photos of the airframe, details where necessary.
 - [ ] Check all accessible physical connections
 
 - [ ] Battery power control working normally
+
+- [ ] Relay 1 / `SSR` automatically activates after boot via the Quiver SSR auto-engage Lua script; verify by comparing Bat 1 (`ESC`) and Bat 2 (`Tattu`) voltage when available. Without a Raspberry Pi / Tattu bridge, Mission Planner relay indication may be unclear; if unsure, reboot or press the physical button again, and verify by observing the expected voltage change when toggling the SSR.
+
+- [ ] Mission Planner Servo/Relay labels are set for relays 1–6 (`SSR`, `Bypass`, `Add HV`, `P1 Sig`, `P1 12V`, `12V Pay`)
 
 - [ ] All pre-flight checks OK on the ground station
 
