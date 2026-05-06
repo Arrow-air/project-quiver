@@ -44,7 +44,7 @@ With Remote ID integration validated in April 2026 via DroneCAN, endurance fligh
 | **Raspberry Pi Integration** | None                            | Optional              | Optional                                       | Integrated on Main PCB (SMD standoffs)               |
 | **Obstacle Avoidance**       | None                            | None                  | Sensors selected                               | RPLidar S2L + NanoRadar MR82, BendyRuler             |
 | **Software Platform**        | None                            | None                  | None                                           | Quiver SDK + Quiver Hub                              |
-| **Remote ID**                | None                            | None                  | None                                           | Module mounted (configuration pending)               |
+| **Remote ID**                | None                            | None                  | None                                           | DroneCAN integration validated; per-operator configuration required |
 | **Transport Case**           | None                            | None                  | None                                           | Pelican 1640 w/ custom laser cut foam                |
 | **Testing Sites**            | US                              | Germany               | US & Germany                                   | US & Germany                                         |
 
@@ -434,7 +434,7 @@ Pass criteria:
 
 The Dev-Kit performance evaluation follows a standardized methodology for comparing prototypes across control behavior, stability, efficiency, and navigation accuracy. Metrics are extracted from ArduPilot flight logs using Mission Planner, MAVExplorer, and custom scripts. Tests cover rate tracking error, vibration analysis, power efficiency, climb performance, yaw authority, waypoint tracking, and glide capability. Results are collected under consistent environmental and configuration conditions to ensure fair comparisons.
 
-**PENDING TEST RESULTS** — Endurance and performance metrics flight testing is planned for April 2026.
+**PENDING TEST RESULTS** — Endurance and performance metrics flight testing is planned for May 2026 / ongoing.
 
 ---
 
