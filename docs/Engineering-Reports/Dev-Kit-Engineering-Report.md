@@ -44,7 +44,7 @@ With Remote ID integration validated in April 2026 via DroneCAN, endurance fligh
 | **Raspberry Pi Integration** | None                            | Optional              | Optional                                       | Integrated on Main PCB (SMD standoffs)               |
 | **Obstacle Avoidance**       | None                            | None                  | Sensors selected                               | RPLidar S2L + NanoRadar MR82, BendyRuler             |
 | **Software Platform**        | None                            | None                  | None                                           | Quiver SDK + Quiver Hub                              |
-| **Remote ID**                | None                            | None                  | None                                           | Module mounted (configuration pending)               |
+| **Remote ID**                | None                            | None                  | None                                           | DroneCAN integration validated; per-operator configuration required |
 | **Transport Case**           | None                            | None                  | None                                           | Pelican 1640 w/ custom laser cut foam                |
 | **Testing Sites**            | US                              | Germany               | US & Germany                                   | US & Germany                                         |
 
@@ -74,37 +74,64 @@ The Dev-Kit was designed and validated to IP53, covering protection from dust su
 
 For the lid seal specifically, two validated solutions were developed in parallel:
 
-- **Liquid silicone gasket (KBM's version):** A groove on the lid is filled to half depth with 30A hardness liquid silicone. Once cured, it forms a custom fitted waterproof gasket.
-- **Foam strip seal (Julius' version):** An 8 mm diameter silicone foam strip (Uxcell) is inserted into a groove on the main enclosure body to act as a compression seal.
+- **Liquid silicone gasket (Version 1):** A groove on the lid is filled to half depth with 30A hardness liquid silicone. Once cured, it forms a custom fitted waterproof gasket.
+- **Foam strip seal (Version 2):** An 8 mm diameter silicone foam strip (Uxcell) is inserted into a groove on the main enclosure body to act as a compression seal.
 
 Julius's foam strip seal was adopted as the primary design following water testing in February 2026.
 
 > [!NOTE]
 > A short flight in light rain is feasible with these sealing changes applied. The battery connector remains a known ingress risk at the IP53 boundary.
 
+| Lid seal — foam strip | ESC cable grommets | Battery wall seal | Battery PCB gap |
+| :---: | :---: | :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/Weatherproofing/1.JPG) | ![](../../task-grant-bounty/Dev-Kit/images/Weatherproofing/3.png) | ![](../../task-grant-bounty/Dev-Kit/images/Weatherproofing/4.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Weatherproofing/6.jpg) |
+
 #### Main Enclosure Modifications
 
-The main enclosure and cockpit lid were comprehensively redesigned to support the Dev-Kit's expanded sensor suite, improved serviceability, and weatherproofing requirements. Two design versions were developed (KBM and Julius) and are available for 3D printing.
+The main enclosure and cockpit lid were comprehensively redesigned to support the Dev-Kit's expanded sensor suite, improved serviceability, and weatherproofing requirements. Two design versions were developed (Version 1 and Version 2) and are available for 3D printing.
+
+| Version 1 | Version 2 |
+| :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/version_kbm_overview.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/version_julius_overview.jpg) |
+| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/version_kbm_overview_back.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/version_julius_overview_back.jpg) |
 
 **Cable Anchors**
 
 New curved cable anchors compatible with zip ties and large cables were integrated throughout the enclosure interior. The anchor geometry is optimized for supportless 3D printing. The total number of anchors exceeds current requirements, providing spare capacity for future wiring additions.
 
+| Version 1 | Version 2 |
+| :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/cable_anchor_array_kbm.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/cable_anchor_array_julius.jpg) |
+
 **Embedded LiDAR Mount**
 
 The cockpit lid incorporates a dedicated mounting slot for the SLAMTEC RPLidar S2L 360° LiDAR module. The slot minimizes the module's height profile above the lid while preserving the full optical path of the laser beam. Drainage gaps and cable outlets are sized to pass the full LiDAR electrical connector and are compatible with sealant application.
+
+| Version 1 | Version 2 |
+| :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/lidar_mounting_slot_kbm.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/lidar_mounting_slot_julius.jpg) |
 
 **Cockpit Latch Replacement**
 
 The original 3D printed latches were replaced by stainless steel draw latches (McMaster-Carr 6082A11) on both sides of the lid for improved long term reliability.
 
+![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/new_latch.png)
+
 **Module Mounting Plate**
 
-A triangular floating mounting plate was added to the main enclosure's inner corner to secure the Ethernet adapter and Remote ID beacon module. The plate is interchangeable between left and right sides of the aircraft (note: not interchangeable between the KBM and Julius enclosure versions due to geometry differences). Screw insert bases are angled at 45° for maintenance access and supportless 3D printing.
+A triangular floating mounting plate was added to the main enclosure's inner corner to secure the Ethernet adapter and Remote ID beacon module. The plate is interchangeable between left and right sides of the aircraft (note: not interchangeable between Version 1 and Version 2 due to geometry differences). Screw insert bases are angled at 45° for maintenance access and supportless 3D printing.
 
-**3D Printing Size Optimization (Julius version)**
+| Assembly view | Isolated view |
+| :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/mounting_plate_overview.png) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/mounting_plate_isolated.png) |
+
+**3D Printing Size Optimization (Version 2)**
 
 The enclosure total length was reduced from 34.7 cm to 31.4 cm by shortening the battery rain shield and front cable outlet, enabling the enclosure to fit on a wider range of consumer 3D printers.
+
+| Version 1 (34.7 cm) | Version 2 (31.4 cm) |
+| :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/total_enclosure_length_old.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/total_enclosure_length_julius.jpg) |
 
 #### Weight Reduction Study
 
@@ -123,8 +150,19 @@ A weight reduction study was conducted by reducing the material thickness of alu
 
 **FEA results:** The lower airframe parts (1221/1222-Wall and 1103-LowerPlate) exhibited significant deformation under a 300 N lateral static force when thinned. The upper airframe parts remained rigid.
 
+![](../../task-grant-bounty/Dev-Kit/images/Structure-Weight/3.jfif)
+
+_FEA displacement under a 300 N lateral static force at the lower frame (unit: mm)._
+
 **Flight testing results:**
 - *Without payload:* Flight behavior appeared normal on visual inspection, but log analysis showed increased lateral vibrations from wall movement.
+
+  | | |
+  | :---: | :---: |
+  | ![](../../task-grant-bounty/Dev-Kit/images/Structure-Weight/4.jfif) | ![](../../task-grant-bounty/Dev-Kit/images/Structure-Weight/5.jfif) |
+
+  _Lateral deformation of the lower frame walls visible during physical inspection._
+
 - *With maximum payload (~7 kg):* The flight had to be aborted due to strong oscillations. The thinned lower frame was no longer rigid enough under payload weight, causing the flight controller to continuously counteract frame induced instability.
 
 **Final decision:** Thickness reduced for the upper airframe parts. Lower airframe and battery bay parts remain at original thickness.
@@ -138,9 +176,17 @@ A weight reduction study was conducted by reducing the material thickness of alu
 | 1103-LowerPlate | 4 mm (unchanged) |
 | 1221/1222-Wall | 2 mm (unchanged) |
 
+![](../../task-grant-bounty/Dev-Kit/images/Structure-Weight/8.jfif)
+
+_Final configuration: upper airframe thinned, lower frame and battery bay at original thickness._
+
 #### Transport Case
 
 The transport solution for the Dev-Kit is a used Pelican 1640 rolling case with custom laser cut foam inserts, selected after a custom hard case was found to be incompatible with the airframe form factor. A 3D printed camera cap protects the gimbal camera during transport.
+
+![](../../task-grant-bounty/Dev-Kit/picture/transport-case/case_3.JPG)
+
+_Quiver loaded in the Pelican 1640 transport case._
 
 #### Detachable Landing Gear
 
@@ -154,6 +200,10 @@ The new mount uses an X-pattern upper structure for weight reduction and improve
 
 The SIYI gimbal camera was repositioned to the right side of the aircraft. The installation method is unchanged from the PT3 design.
 
+| Design | Installed |
+| :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/Mounts/altitude_sensor_mount_system.png) | ![](../../task-grant-bounty/Dev-Kit/images/Mounts/altitude_sensor_mount_system_real.png) |
+
 ---
 
 ### <ins>Electronics Integration</ins>
@@ -162,11 +212,15 @@ The SIYI gimbal camera was repositioned to the right side of the aircraft. The i
 
 The Main PCB is secured to a custom 3D printed PETG-CF adapter plate, which mounts to the aluminum upper plate through five rubber vibration dampeners. The mount floats entirely on the dampeners and must not make contact with the aluminum frame at any point — any direct contact defeats the isolation. This decouples high frequency motor and propulsion vibrations from the PCB assembly and flight controller sensors.
 
+![](../../task-grant-bounty/Dev-Kit/images/PCB-Vibration-Mount/1.png)
+
 One design constraint to note: the through-hole pins of the DC-DC converters on the underside of the Main PCB extend far enough to puncture the adapter plate or short against the frame if not trimmed before installation.
 
 #### Battery PCB Updates
 
 The Battery PCB was updated with the following changes:
+
+![](../../task-grant-bounty/Dev-Kit/images/PCB/Front/Front_PCB.png)
 
 **MOSFET upgrades** (higher power ratings):
 - Q1: Pre-charge MOSFET
@@ -183,6 +237,10 @@ The Battery PCB was updated with the following changes:
 #### Main PCB Updates
 
 The Main PCB is the central hub routing power and signals between the flight controller and all major subsystems, including payload ports, sensors, the Raspberry Pi, telemetry units, and Ethernet infrastructure. The Dev-Kit revision built on the PT3 first revision with the following improvements:
+
+| Front | Back |
+| :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/PCB/Main/Main_PCB.png) | ![](../../task-grant-bounty/Dev-Kit/images/PCB/Main/Main_PCB_back.png) |
 
 **Connector updates:**
 - Switched to JST-GH connectors for HM30 Air Unit (J15, J17), auxiliary CAN connections (J18, J20, J22), and GNSS (J5, J7)
@@ -212,6 +270,10 @@ The Attachment Interface PCB provides the electrical interface between the Main 
 The Dev-Kit introduced a revised version of the Attachment Interface PCB (V1.4) focused on manufacturability and mechanical interfacing improvements. All original functional characteristics are retained.
 
 The primary change replaces the J2 and J3 connectors with individual spring loaded pin headers (U1–U20), with enlarged solder pads on the corresponding contact side to improve the interface with the pogo pins at the quick-release attachment point. Solder pads across the board were extended to improve assembly robustness, PCB routing was updated to use rounded trace edges, and an orientation notch was added to the silkscreen to reduce assembly ambiguity.
+
+| | | |
+| :---: | :---: | :---: |
+| ![](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new1.jpg) | ![](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new2.jpg) | ![](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new3.jpg) |
 
 For detailed design documentation, refer to the [Attachment Interface PCB V1.4 Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/information-note.md).
 
@@ -298,30 +360,28 @@ Remote ID integration is validated. Per unit configuration is required before sh
 
 #### Quiver Hub
 
-Quiver Hub is a web application that handles the data operations side of the Quiver ecosystem. The platform is under active development. Core data pipeline features are implemented and operational; security hardening, flight log management, and OTA updates are in progress.
-
-**Architecture:**
-
-Hub is built across three layers. The browser interface gives operators a sidebar for switching between tools and displays live data as it arrives. The server receives data posted by the drones, stores it in a database and file storage system, and distributes live updates to connected browsers. On each drone, two Python services run on the Raspberry Pi: one collects sensor and telemetry data and sends it to the Hub server continuously, and the other checks the Hub server at regular intervals for pending commands and executes them locally on the drone. Sensor data flows up to Hub for display and storage, and commands flow down from Hub to the drone for execution.
+Quiver Hub is a web application that serves as the ground control and data operations center for the Quiver ecosystem. It is built around a three tier architecture: a browser based frontend, a Node.js server handling API, real time streaming, persistence, and job orchestration, and an onboard companion computer fleet running relay and job execution services. Sensor data from drones flows up to Hub for display and storage through REST ingestion endpoints. Commands from operators flow down through a job queue to the companion computer for local execution. Real time data distribution to the browser uses WebSocket streaming. Browser to server operations use typed RPC.
 
 **Implemented:**
 
 - **LiDAR Visualization**: Real time 2D and 3D display of RPLidar point cloud data as it arrives from the drone. Includes a demo mode for offline testing without a live sensor.
 - **Flight Telemetry**: Live dashboard showing attitude, position, GPS state, and battery status from both the flight controller and the smart battery.
-- **Camera and Gimbal Control**: Live video stream from the SIYI A8 camera to the Hub interface, validated in March 2026, with controls that send gimbal commands to the companion computer for relay to the gimbal hardware.
-- **Flight Analytics**: Post-flight log analysis using ArduPilot DataFlash logs, with charts covering attitude, navigation, power, vibration, radio link, and EKF state. Includes a flight mode timeline, side-by-side log comparison, and summary export.
-- **Drone Configuration**: Fleet management covering drone registration, API key management, connection testing, file upload to the companion computer, and basic job dispatch.
-- **Developer extensibility**: App Store and App Builder framework for publishing custom data pipeline applications. Supports custom ingestion endpoints, server-side payload parsing, and UI widgets bound to live data streams. App versioning and rollback are included.
+- **Camera and Gimbal Control**: Live video stream from the SIYI A8 camera to the Hub interface, validated in March 2026, with controls that relay gimbal commands through the companion computer.
+- **Flight Analytics**: Post-flight log analysis using ArduPilot DataFlash logs parsed client-side in the browser, with charts covering attitude, navigation, power, vibration, radio link, and EKF state. Includes a flight mode timeline, side by side log comparison, and summary export.
+- **Drone Configuration**: Fleet management covering drone registration, API key management, connection testing, file upload to the companion computer, and job dispatch.
+- **Developer extensibility**: App Store and App Builder framework for publishing custom data pipeline applications. Supports custom ingestion endpoints, server side Python payload parsing, and UI widgets bound to live data streams. App versioning and rollback are included.
+- **Flight Log Module (Logs v1)**: Full FC to companion to Hub log pipeline. Operators can trigger a scan job, browse discovered logs, request downloads from the flight controller, store retrieved logs in Hub, download them through the browser, and forward completed logs into analytics workflows.
+- **OTA Update Module (OTA v1)**: Firmware upload with SHA-256 hashing, staged delivery through the companion computer, companion-side integrity verification before flashing, and flash execution on the flight controller. Includes Hub side listing, upload, job request, and failed record cleanup.
+- **Security baseline**: Artefact integrity verification enforced at flash time via SHA-256 hash comparison. Job reliability layer implemented covering retry handling, expiry, timeout reaping, locking, and cleanup for stuck or failed work. Job allow listing and permissions hardening are sequenced as follow-on work alongside the broader SDK integration layer.
+- **Diagnostics and Remote Logs**: Dedicated views for flight controller logs, OTA update status, diagnostics, and remote log access.
 
-**In development (April 2026):**
+**Remaining development:**
 
-Three milestones are in progress targeting the v1 release:
-
-- **Security baseline**: Job allow listing with typed job definitions and constrained parameters, artefact integrity verification, and job reliability and permissions controls.
-- **Flight log module**: A log bridge from the flight controller to the companion computer for upload to Hub, with a browsing and upload interface and rotation and retention policies.
-- **OTA update module**: A full update workflow covering artefact upload, validation, staging, dispatch to the drone, verification, and rollback. Supports single-drone and batch rollout.
-
-Following these milestones, the scope for subsequent development phases will be evaluated against the broader SDK effort and deployment readiness before further work is committed.
+- Job allow-listing and typed job permissions hardening
+- Mission Planner UI
+- Standalone local deployment and hosted SaaS deployment strategies
+- Multi-user and fleet scaling validation
+- Database migration tooling and operational backup strategy
 
 
 #### Quiver Payload SDK
@@ -412,6 +472,12 @@ A Software in the Loop simulation environment was established using the same Ard
 
 SITL results are used to identify safe parameter ranges and inform flight test planning. They are not a substitute for real hardware validation.
 
+| | |
+| :---: | :---: |
+| ![](../../task-grant-bounty/Dev-Kit/images/SITL/sitl1.jpeg) | ![](../../task-grant-bounty/Dev-Kit/images/SITL/sitl2.jpeg) |
+
+_QGroundControl views of the SITL obstacle avoidance simulation._
+
 **Flight testing roadmap:**
 
 | Phase | Environment | Focus |
@@ -430,11 +496,41 @@ Pass criteria:
 
 ---
 
+## Weight & Payload Summary
+
+### Configuration Summary
+
+| Configuration | Battery | Battery mass | Empty weight | AUW | Payload capacity |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Standard | 20Ah LiPo (14S) | 7.90 kg | 9.65 kg | 17.55 kg | **7.45 kg** |
+| Long endurance | 30Ah LiPo (14S) | 11.40 kg | 9.65 kg | 21.40 kg | **3.95 kg** |
+| MTOW limit | — | — | — | **25.00 kg** | — |
+
+Payload capacity = MTOW − empty weight − battery mass. MTOW is 25 kg per the intended regulatory category.
+
+### Subsystem Breakdown
+
+Empty weight covers the full Dev-Kit build as shipped, including the NanoRadar MR82 forward-facing radar (92 g) and attachment interface cables (~100 g). Battery is excluded.
+
+| Subsystem | Items | Mass |
+| :--- | :--- | :--- |
+| Airframe Structure | Upper/mid plates, lower plate, motor arms, CF tubes, landing gear | TBD |
+| Propulsion | 4× XRotor X6 PLUS (motor + ESC + props, 790 g each) | **3.16 kg** |
+| Avionics & Sensors | Pix32 v6 (36 g), RPLidar S2L (190 g), NanoRadar MR82 (92 g), Ainstein US-D1 (110 g), Benewake TF03-180 (89 g), Holybro F9P (60 g), Mateksys M9N (16 g), SIYI A8 mini (95 g), SIYI HM30 air unit (74 g), DroneBeacon db201 (4 g), sensor mount (TBD) | TBD (≥ 766 g) |
+| Custom PCBs | Main PCB, Battery PCB, FC PCB, 3× Attachment Interface PCB | TBD |
+| Companion Computer | Raspberry Pi 5 (47 g), 2× GigaBlox Nano (18 g each), CubeNode ETH (7 g) | **90 g** |
+| Enclosure & Mounts | Enclosure body, cockpit lid, PCB vibration mount, module plate | TBD |
+| Harness | Wiring, connectors, attachment interface cables | TBD |
+| Hardware & Fasteners | Screws, standoffs, grommets, misc | TBD |
+| **Total empty weight** | | **9.65 kg** |
+
+---
+
 ## Performance Metrics & Endurance Testing
 
 The Dev-Kit performance evaluation follows a standardized methodology for comparing prototypes across control behavior, stability, efficiency, and navigation accuracy. Metrics are extracted from ArduPilot flight logs using Mission Planner, MAVExplorer, and custom scripts. Tests cover rate tracking error, vibration analysis, power efficiency, climb performance, yaw authority, waypoint tracking, and glide capability. Results are collected under consistent environmental and configuration conditions to ensure fair comparisons.
 
-**PENDING TEST RESULTS** — Endurance and performance metrics flight testing is planned for April 2026.
+**PENDING TEST RESULTS** — Endurance and performance metrics flight testing is planned for May 2026 / ongoing.
 
 ---
 
@@ -454,17 +550,17 @@ The most important lesson from this phase concerns structural weight reduction u
 
 On the software side, the terrain mapping pipeline served as a proof of concept that informed the SDK architecture. Quiver Hub's App Store and App Builder framework provides an extensibility path for payload developers, though the developer documentation required to make that accessible is still in progress.
 
-The obstacle avoidance system is the most analytically complete subsystem in the Dev-Kit: SITL-validated parameters, a structured four-phase test roadmap, clear pass criteria, and a documented known issue. The approach of running SITL analysis before field testing proved useful and should be applied to future subsystem work.
+The obstacle avoidance system is the most analytically complete subsystem in the Dev-Kit: SITL validated parameters, a structured four phase test roadmap, clear pass criteria, and a documented known issue. The approach of running SITL analysis before field testing proved useful and should be applied to future subsystem work.
 
-Remote ID integration was validated in April 2026 via DroneCAN, clearing the last hardware blocker ahead of external shipments. Per-operator configuration of the UAS ID and operator credentials is required before each unit ships, which is an operational step rather than an open engineering item.
+Remote ID integration was validated in April 2026 via DroneCAN, clearing the last hardware blocker ahead of external shipments. Per operator configuration of the UAS ID and operator credentials is required before each unit ships, which is an operational step rather than an open engineering item.
 
 **Open items heading into field deployment:**
-- Endurance and performance metrics flight validation (planned April 2026)
+- Endurance and performance metrics flight validation (planned May 2026)
 - Obstacle avoidance field testing across four phases
 - LiDAR dropout root cause analysis (suspected vibration or electrical load interaction)
 - GPS/4G RF interference investigation and resolution
-- Payload SDK developer documentation (quick start guide)
 - Actuated payload latch mechanism (bounty in progress)
+- Multispectral camera payload (bounty in progress)
 - EASA C3 certification pathway (deferred, estimated €17k–20k)
 
 ---
@@ -483,7 +579,7 @@ Remote ID integration was validated in April 2026 via DroneCAN, clearing the las
 - [Obstacle Avoidance](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Dev-Kit/Obstacle-Avoidance.md)
 - [SITL Evaluation](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Dev-Kit/SITL-Evaluation.md)
 - [Ethernet Setup Guide](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Dev-Kit/Ethernet-Setup-Guide.md)
-- [Quiver Hub Software](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Dev-Kit/Quiver-Hub-Software.md)
+- [Quiver Hub V1 (M1–M3)](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Dev-Kit/Quiver-Hub-v1.md)
 - [Quiver SDK](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Dev-Kit/Quiver-SDK.md)
 - [Quiver SDK Test](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/Dev-Kit/Quiver-SDK-Test.md)
 
