@@ -1375,6 +1375,7 @@ N/A
 |	Rivet 3	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
 |	Screw 1	|	Socket Head Screw M3x10	|	8	|	[91292A113](https://www.mcmaster.com/91292A113)	|
 |	Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[92095A190](https://www.mcmaster.com/92095A190)	|
+| Screw 3  | Button Head Hex-Drive Screw M2x4   | 12 | [92095A451](https://www.mcmaster.com/92095A451/) |
 |	Screw 4	|	Socket Head Screw M3x12	|	8	|	[91292A114](https://www.mcmaster.com/91292A114)	|
 |	Screw 5	|	Socket Head Screw M3x8	|	75	|	[91292A112](https://www.mcmaster.com/91292A112)	|
 |	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91292A024](https://www.mcmaster.com/91292A024)	|
@@ -1389,7 +1390,6 @@ N/A
 | Screw 15  | Socket Head Hex-Drive Screw M5x8   | 4 | [91292A191](https://www.mcmaster.com/91292A191) |
 | Screw 16  | Button Head Hex Drive Screw M3x40   | 4 | [92095A203](https://www.mcmaster.com/92095A203/) |
 | Screw 17  | Socket Head Screw M3x6   | 8 | [90751A110](https://www.mcmaster.com/90751A110/) |
-| Screw 3  | Button Head Hex-Drive Screw M2x4   | 12 | [92095A451](https://www.mcmaster.com/92095A451/) |
 |	Insert 1 |	M3 Threaded Inserts - 5.7 mm	|	50	|	[94459A140](https://www.mcmaster.com/94459A140/)	|
 |	Insert 2 |	M4 Threaded Inserts	|	8	|	[94180A351](https://www.mcmaster.com/94180A351/)	|
 | Insert 3 | M2 Threaded Inserts | 4 | [94180A312](https://www.mcmaster.com/94180A312/) |
