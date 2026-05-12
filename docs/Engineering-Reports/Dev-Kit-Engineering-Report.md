@@ -92,8 +92,8 @@ The main enclosure and cockpit lid were comprehensively redesigned to support th
 
 | Version 1 | Version 2 |
 | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/version_kbm_overview.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/version_julius_overview.jpg) |
-| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/version_kbm_overview_back.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/version_julius_overview_back.jpg) |
+| ![](assets/dev-kit-report/images/Enclosure-Modification/version_kbm_overview.jpg) | ![](assets/dev-kit-report/images/Enclosure-Modification/version_julius_overview.jpg) |
+| ![](assets/dev-kit-report/images/Enclosure-Modification/version_kbm_overview_back.jpg) | ![](assets/dev-kit-report/images/Enclosure-Modification/version_julius_overview_back.jpg) |
 
 **Cable Anchors**
 
@@ -101,7 +101,7 @@ New curved cable anchors compatible with zip ties and large cables were integrat
 
 | Version 1 | Version 2 |
 | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/cable_anchor_array_kbm.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/cable_anchor_array_julius.jpg) |
+| ![](assets/dev-kit-report/images/Enclosure-Modification/cable_anchor_array_kbm.jpg) | ![](assets/dev-kit-report/images/Enclosure-Modification/cable_anchor_array_julius.jpg) |
 
 **Embedded LiDAR Mount**
 
@@ -109,13 +109,13 @@ The cockpit lid incorporates a dedicated mounting slot for the SLAMTEC RPLidar S
 
 | Version 1 | Version 2 |
 | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/lidar_mounting_slot_kbm.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/lidar_mounting_slot_julius.jpg) |
+| ![](assets/dev-kit-report/images/Enclosure-Modification/lidar_mounting_slot_kbm.jpg) | ![](assets/dev-kit-report/images/Enclosure-Modification/lidar_mounting_slot_julius.jpg) |
 
 **Cockpit Latch Replacement**
 
 The original 3D printed latches were replaced by stainless steel draw latches (McMaster-Carr 6082A11) on both sides of the lid for improved long term reliability.
 
-![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/new_latch.png)
+![](assets/dev-kit-report/images/Enclosure-Modification/new_latch.png)
 
 **Module Mounting Plate**
 
@@ -123,7 +123,7 @@ A triangular floating mounting plate was added to the main enclosure's inner cor
 
 | Assembly view | Isolated view |
 | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/mounting_plate_overview.png) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/mounting_plate_isolated.png) |
+| ![](assets/dev-kit-report/images/Enclosure-Modification/mounting_plate_overview.png) | ![](assets/dev-kit-report/images/Enclosure-Modification/mounting_plate_isolated.png) |
 
 **3D Printing Size Optimization (Version 2)**
 
@@ -131,7 +131,7 @@ The enclosure total length was reduced from 34.7 cm to 31.4 cm by shortening the
 
 | Version 1 (34.7 cm) | Version 2 (31.4 cm) |
 | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/total_enclosure_length_old.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Enclosure-Modification/total_enclosure_length_julius.jpg) |
+| ![](assets/dev-kit-report/images/Enclosure-Modification/total_enclosure_length_old.jpg) | ![](assets/dev-kit-report/images/Enclosure-Modification/total_enclosure_length_julius.jpg) |
 
 #### Weight Reduction Study
 
@@ -150,7 +150,7 @@ A weight reduction study was conducted by reducing the material thickness of alu
 
 **FEA results:** The lower airframe parts (1221/1222-Wall and 1103-LowerPlate) exhibited significant deformation under a 300 N lateral static force when thinned. The upper airframe parts remained rigid.
 
-![](../../task-grant-bounty/Dev-Kit/images/Structure-Weight/3.jfif)
+![](assets/dev-kit-report/images/Structure-Weight/3.jfif)
 
 _FEA displacement under a 300 N lateral static force at the lower frame (unit: mm)._
 
@@ -159,7 +159,7 @@ _FEA displacement under a 300 N lateral static force at the lower frame (unit: m
 
   | | |
   | :---: | :---: |
-  | ![](../../task-grant-bounty/Dev-Kit/images/Structure-Weight/4.jfif) | ![](../../task-grant-bounty/Dev-Kit/images/Structure-Weight/5.jfif) |
+  | ![](assets/dev-kit-report/images/Structure-Weight/4.jfif) | ![](assets/dev-kit-report/images/Structure-Weight/5.jfif) |
 
   _Lateral deformation of the lower frame walls visible during physical inspection._
 
@@ -176,7 +176,7 @@ _FEA displacement under a 300 N lateral static force at the lower frame (unit: m
 | 1103-LowerPlate | 4 mm (unchanged) |
 | 1221/1222-Wall | 2 mm (unchanged) |
 
-![](../../task-grant-bounty/Dev-Kit/images/Structure-Weight/8.jfif)
+![](assets/dev-kit-report/images/Structure-Weight/8.jfif)
 
 _Final configuration: upper airframe thinned, lower frame and battery bay at original thickness._
 
@@ -184,7 +184,7 @@ _Final configuration: upper airframe thinned, lower frame and battery bay at ori
 
 The transport solution for the Dev-Kit is a used Pelican 1640 rolling case with custom laser cut foam inserts, selected after a custom hard case was found to be incompatible with the airframe form factor. A 3D printed camera cap protects the gimbal camera during transport.
 
-![](../../task-grant-bounty/Dev-Kit/picture/transport-case/case_3.JPG)
+![](assets/dev-kit-report/picture/transport-case/case_3.JPG)
 
 _Quiver loaded in the Pelican 1640 transport case._
 
@@ -202,7 +202,7 @@ The SIYI gimbal camera was repositioned to the right side of the aircraft. The i
 
 | Design | Installed |
 | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/Mounts/altitude_sensor_mount_system.png) | ![](../../task-grant-bounty/Dev-Kit/images/Mounts/altitude_sensor_mount_system_real.png) |
+| ![](assets/dev-kit-report/images/Mounts/altitude_sensor_mount_system.png) | ![](assets/dev-kit-report/images/Mounts/altitude_sensor_mount_system_real.png) |
 
 ---
 
@@ -212,7 +212,7 @@ The SIYI gimbal camera was repositioned to the right side of the aircraft. The i
 
 The Main PCB is secured to a custom 3D printed PETG-CF adapter plate, which mounts to the aluminum upper plate through five rubber vibration dampeners. The mount floats entirely on the dampeners and must not make contact with the aluminum frame at any point — any direct contact defeats the isolation. This decouples high frequency motor and propulsion vibrations from the PCB assembly and flight controller sensors.
 
-![](../../task-grant-bounty/Dev-Kit/images/PCB-Vibration-Mount/1.png)
+![](assets/dev-kit-report/images/PCB-Vibration-Mount/1.png)
 
 One design constraint to note: the through-hole pins of the DC-DC converters on the underside of the Main PCB extend far enough to puncture the adapter plate or short against the frame if not trimmed before installation.
 
@@ -220,7 +220,7 @@ One design constraint to note: the through-hole pins of the DC-DC converters on 
 
 The Battery PCB was updated with the following changes:
 
-![](../../task-grant-bounty/Dev-Kit/images/PCB/Front/Front_PCB.png)
+![](assets/dev-kit-report/images/PCB/Front/Front_PCB.png)
 
 **MOSFET upgrades** (higher power ratings):
 - Q1: Pre-charge MOSFET
@@ -240,7 +240,7 @@ The Main PCB is the central hub routing power and signals between the flight con
 
 | Front | Back |
 | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/PCB/Main/Main_PCB.png) | ![](../../task-grant-bounty/Dev-Kit/images/PCB/Main/Main_PCB_back.png) |
+| ![](assets/dev-kit-report/images/PCB/Main/Main_PCB.png) | ![](assets/dev-kit-report/images/PCB/Main/Main_PCB_back.png) |
 
 **Connector updates:**
 - Switched to JST-GH connectors for HM30 Air Unit (J15, J17), auxiliary CAN connections (J18, J20, J22), and GNSS (J5, J7)
@@ -273,7 +273,7 @@ The primary change replaces the J2 and J3 connectors with individual spring load
 
 | | | |
 | :---: | :---: | :---: |
-| ![](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new1.jpg) | ![](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new2.jpg) | ![](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new3.jpg) |
+| ![](assets/dev-kit-report/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new1.jpg) | ![](assets/dev-kit-report/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new2.jpg) | ![](assets/dev-kit-report/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new3.jpg) |
 
 For detailed design documentation, refer to the [Attachment Interface PCB V1.4 Information Note](https://github.com/Arrow-air/project-quiver/blob/main/task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/information-note.md).
 
@@ -474,7 +474,7 @@ SITL results are used to identify safe parameter ranges and inform flight test p
 
 | | |
 | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/SITL/sitl1.jpeg) | ![](../../task-grant-bounty/Dev-Kit/images/SITL/sitl2.jpeg) |
+| ![](assets/dev-kit-report/images/SITL/sitl1.jpeg) | ![](assets/dev-kit-report/images/SITL/sitl2.jpeg) |
 
 _QGroundControl views of the SITL obstacle avoidance simulation._
 
