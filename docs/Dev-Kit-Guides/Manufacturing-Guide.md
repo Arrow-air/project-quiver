@@ -1375,32 +1375,33 @@ N/A
 |	Rivet 3	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
 |	Screw 1	|	Socket Head Screw M3x10	|	8	|	[91292A113](https://www.mcmaster.com/91292A113)	|
 |	Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[92095A190](https://www.mcmaster.com/92095A190)	|
+| Screw 3  | Button Head Hex-Drive Screw M2x4   | 12 | [92095A451](https://www.mcmaster.com/92095A451/) |
 |	Screw 4	|	Socket Head Screw M3x12	|	8	|	[91292A114](https://www.mcmaster.com/91292A114)	|
-|	Screw 5	|	Socket Head Screw M3x8	|	75	|	[91292A112](https://www.mcmaster.com/91292A112)	|
+|	Screw 5	|	Socket Head Screw M3x8	|	79	|	[91292A112](https://www.mcmaster.com/91292A112)	|
 |	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91292A024](https://www.mcmaster.com/91292A024)	|
-|	Screw 7	|	Hex Drive Flat Head Screw M3x8	|	4	|	[92125A128](https://www.mcmaster.com/92125A128/)	|
+|	Screw 7	|	Socket Head Screw M2.5x6	|	4	|	[91292A010](https://www.mcmaster.com/91292A010/)	|
 |	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	8	|	[92125A130](https://www.mcmaster.com/92125A130/)	|
 |	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91292A108](https://www.mcmaster.com/91292A108)	|
 | Screw 10  | Socket Head Screw M2x6   | 4 | [91292A832](https://www.mcmaster.com/91292A832/) |
-| Screw 11  | Flanged Button Head Hex-Drive Screw M3x6   | 27 | [97654A674](https://www.mcmaster.com/products/97654a674/) |
+| Screw 11  | Flanged Button Head Hex-Drive Screw M3x6   | 23 | [97654A674](https://www.mcmaster.com/products/97654a674/) |
 | Screw 12  | Socket Head Hex-Drive Screw M2x5   | 4 | [92855A837](https://www.mcmaster.com/92855A837/) |
 | Screw 13  | Socket Head Hex-Drive Screw M2.5x8   | 4 | [91292A012](https://www.mcmaster.com/91292A012/) |
 | Screw 14  | Socket Head Hex-Drive Screw M2x10   | 4 | [91292A833](https://www.mcmaster.com/91292A833/) |
 | Screw 15  | Socket Head Hex-Drive Screw M5x8   | 4 | [91292A191](https://www.mcmaster.com/91292A191) |
 | Screw 16  | Button Head Hex Drive Screw M3x40   | 4 | [92095A203](https://www.mcmaster.com/92095A203/) |
 | Screw 17  | Socket Head Screw M3x6   | 8 | [90751A110](https://www.mcmaster.com/90751A110/) |
-| Screw 3  | Button Head Hex-Drive Screw M2x4   | 12 | [92095A451](https://www.mcmaster.com/92095A451/) |
 |	Insert 1 |	M3 Threaded Inserts - 5.7 mm	|	50	|	[94459A140](https://www.mcmaster.com/94459A140/)	|
 |	Insert 2 |	M4 Threaded Inserts	|	8	|	[94180A351](https://www.mcmaster.com/94180A351/)	|
 | Insert 3 | M2 Threaded Inserts | 4 | [94180A312](https://www.mcmaster.com/94180A312/) |
 | Insert 4 | M3 Threaded Inserts - 3.8 mm | 16 | [94180A331](https://www.mcmaster.com/94180A331) |
-|	Washer 1 |	M3 General Purpose Washer 3.2 mm ID, 6 mm OD	|	123	|	[98689A112](https://www.mcmaster.com/98689A112)	|
+| Insert 5 | M2.5 Threaded Inserts | 4 | [94459A439](https://www.mcmaster.com/94459A439/) | 
+|	Washer 1 |	M3 General Purpose Washer 3.2 mm ID, 6 mm OD	|	115	|	[98689A112](https://www.mcmaster.com/98689A112)	|
 |	Washer 2 |	M4 General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
 |	Washer 3 |	M2 Nylon Washer 2.2 mm ID, 5 mm OD	|	12	|	[95610A110](https://www.mcmaster.com/95610A110)	|
-| Washer 4 |	M2.5 Nylon Washer 2.7 mm ID, 5.6 mm OD	|	4	|	[95610A011](https://www.mcmaster.com/95610A011/)	|
+| Washer 4 |	M2.5 Nylon Washer 2.7 mm ID, 5.6 mm OD	|	8	|	[95610A011](https://www.mcmaster.com/95610A011/)	|
 | Washer 5 |	M3 Nylon Washer 3.2 mm ID, 6 mm OD	|	4	|	[95610A704](https://www.mcmaster.com/95610A704/)	|
 | Washer 6 |	M5 General Purpose Washer 5.3 mm ID, 10 mm OD	|	4	|	[93475A240](https://www.mcmaster.com/93475A240/)	|
-|	 Nut 1	|	Nylon-Insert Locknut M3	|	16	|	[90576A811](https://www.mcmaster.com/90576A811)	|
+|	 Nut 1	|	Nylon-Insert Locknut M3	|	12	|	[90576A811](https://www.mcmaster.com/90576A811)	|
 | Vibration Mount | M3 Rubber Anti-Vibration Spacer | 5 | [Amazon](https://www.amazon.com/iRCMATRC-Stretchy-Anti-Vibration-Controllers-Accessories/dp/B09KCGKX1F?th=1) | 
 | Grommet 1| Circular Grommet OD: 20 mm | 4 | [Amazon](https://amzn.eu/d/0acx4eWp) |
 | Grommet 2| Oval Grommet 27x13 mm | 12 | [Amazon](https://amzn.eu/d/06VwAZfb) |
@@ -2148,7 +2149,8 @@ N/A
 - Parts needed:
   - 3212 (Obstacle Avoidance Radar, Nanoradar MR82)
   - 3213 (Radar Altimeter, Nanoradar NRA15)
-  - Screw 11 x8 (Flanged Button Head Hex-Drive Screw M3x6)
+  - Screw 5 x4 (Socket Head Screw M3x8)
+  - Screw 11 x4 (Flanged Button Head Hex-Drive Screw M3x6)
   - Loctite Threadlocker Purple 222
 
 - Secure Nanoradar MR82 in front of the drone, as shown in the image.
@@ -2161,7 +2163,7 @@ N/A
 |<img src="Assembly-Guides/assets/images/structural/step16_1.png" alt="Alt Text" width="600">|
  
 - Secure Nanoradar NRA15 in front-bottom corner of the drone, as shown in the image.
-  - Use 4x Screw 11.
+  - Use 4x Screw 5.
   - Use Loctite Threadlocker Purple.
   - Mind the direction of the cable.
 
@@ -2173,15 +2175,16 @@ N/A
 ### Step 17. Install Camera
 - Parts needed:
   - 3241 (SIYI A8 Mini Gimbal Camera)
-  - Screw 7 x4 (Hex Drive Flat Head Screw M3x8)
-  - Washer 1 x8 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
-  - Nut 1 x4 (Nylon-Insert Locknut M3)
+  - Screw 7 x4 (Socket Head Screw M2.5x6)
+  - Washer 4 x4 (M2.5 Nylon Washer 2.7 mm ID, 5.6 mm OD)
+  - Insert 5 x4 (M2.5 Threaded Inserts)
+  - Loctite Threadlocker Purple 222
 
+- Install 4x Insert 5 into the camera mounting holes on the drone.
 - Secure SIYI A8 Mini Gimbal Camera in front-bottom corner of the drone, as shown in the image.
   - Use 4x Screw 7.
-  - Use 4x Washer 1.
-  - Use 4x Nut 1.
-  - DO NOT use Loctite Threadlocker.
+  - Use 4x Washer 4.
+  - Use Loctite Threadlocker Purple.
   - Mind the orientation of the camera, make sure the gimbal center points forward, i.e. away from the drone.
 
 | Camera Installation Holes | Camera Orientation |
