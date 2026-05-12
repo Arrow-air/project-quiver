@@ -84,7 +84,7 @@ Julius's foam strip seal was adopted as the primary design following water testi
 
 | Lid seal — foam strip | ESC cable grommets | Battery wall seal | Battery PCB gap |
 | :---: | :---: | :---: | :---: |
-| ![](../../task-grant-bounty/Dev-Kit/images/Weatherproofing/1.JPG) | ![](../../task-grant-bounty/Dev-Kit/images/Weatherproofing/3.png) | ![](../../task-grant-bounty/Dev-Kit/images/Weatherproofing/4.jpg) | ![](../../task-grant-bounty/Dev-Kit/images/Weatherproofing/6.jpg) |
+| ![](./Dev-Kit-images/Weatherproofing/1.JPG) | ![](./Dev-Kit-images/Weatherproofing/3.png) | ![](./Dev-Kit-images/Weatherproofing/4.jpg) | ![](./Dev-Kit-images/Weatherproofing/6.jpg) |
 
 #### Main Enclosure Modifications
 
