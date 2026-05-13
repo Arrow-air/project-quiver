@@ -1,3 +1,8 @@
+---
+title: Pilot Handbook
+sidebar_position: 1
+---
+
 # Pilot Handbook
 Quiver Dev-Kit
 Heavy-Lift Multipurpose UAV (<25 kg MTOW)

@@ -1,0 +1,9 @@
+{
+  "label": "Superseded Dev-Kit Guides",
+  "position": 2,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Archived versions of Quiver Dev-Kit documentation retained for historical reference."
+  }
+}

@@ -7,7 +7,7 @@
 # Ethernet/PPP: DISABLED by default — load params-ethernet.param to enable
 # Obstacle avoidance: DISABLED by default — load params-object-avoidance.param to enable
 #
-# See PARAMETER_NOTES.md for full documentation
+# See the Firmware & Parameters docs page for full documentation
 #
 # ⚠️  After loading, calibrate per-drone:
 #   - Compass (COMPASS_OFS_*, COMPASS_DIA_*, etc.)

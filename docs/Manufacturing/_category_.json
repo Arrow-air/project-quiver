@@ -1,0 +1,9 @@
+{
+  "label": "Manufacturing",
+  "position": 2,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Current Quiver Dev-Kit manufacturing and assembly documentation."
+  }
+}

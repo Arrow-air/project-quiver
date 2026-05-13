@@ -1,5 +1,7 @@
 ---
-title: Project Quiver
+title: Intro
+sidebar_label: Intro
+sidebar_position: 1
 description: Introduction to Project Quiver
 ---
 
