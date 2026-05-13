@@ -1,0 +1,9 @@
+{
+  "label": "PT3 Assembly Guides",
+  "position": 1,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Archived assembly guides for the Project Quiver PT3 prototype. These are retained for historical reference; use the Dev-Kit guides for current builds."
+  }
+}

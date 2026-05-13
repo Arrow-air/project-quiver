@@ -1,0 +1,9 @@
+{
+  "label": "PCB Assembly Guides",
+  "position": 3,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "PCB assembly guides for the Quiver Dev-Kit electronics stack."
+  }
+}
