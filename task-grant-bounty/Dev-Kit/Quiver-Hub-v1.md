@@ -16,14 +16,14 @@ Work completed in fulfilment of the Quiver Hub Software development stream and t
 
 Quiver Hub is a modular, cloud-hosted web application that functions as a ground-control and data operations centre for the Project Quiver UAV ecosystem. Its purpose is to unify real-time flight and payload telemetry, post-flight analytics, drone configuration management, companion-computer job execution, file/log handling, OTA update handling, and developer-extensible apps into a single operator interface that can support multiple drones and multiple concurrent data streams.
 
-The platform is designed around a hub-and-spoke concept. A persistent application sidebar enables rapid switching between operational tools, including telemetry dashboards, mapping/visualisation, camera control, analytics, logs, OTA workflows, diagnostics, remote logs, and installed custom applications. Alongside this, the App Store and App Builder framework allow third-party or project-specific developers to publish custom data-pipeline applications without modifying the core Hub code.
+The platform is designed around a hub-and-spoke concept. A persistent application sidebar enables rapid switching between operational tools, including telemetry dashboards, mapping/visualization, camera control, analytics, logs, OTA workflows, diagnostics, remote logs, and installed custom applications. Alongside this, the App Store and App Builder framework allow third-party or project-specific developers to publish custom data-pipeline applications without modifying the core Hub code.
 
 Quiver Hub is intended to be paired with an onboard companion computer, typically a Raspberry Pi-class system. The companion computer relays telemetry and payload data to the Hub, receives commands or jobs from the Hub, and acts as the bridge between the aircraft, the operator interface, and any payload or onboard services. This creates a bidirectional control and data plane between the aircraft and operators.
 
 For the M1–M3 grant phase, I focused on delivering the first practical operational core of Quiver Hub V1 by closing the most immediate gaps needed to make the Hub usable for real operational workflows. The milestone scope covered:
 
 - **M1: Hub Security Baseline**  
-  I established the initial job-security and artefact-integrity foundations for the Hub.
+  I established the initial job-security and artifact-integrity foundations for the Hub.
 
 - **M2: Logs v1 Module**  
   I built the first working log retrieval and handling flow between the flight controller, the companion computer, and the Hub UI.
@@ -66,7 +66,7 @@ I implemented companion-computer relay services to:
 - execute jobs locally;
 - and report completion or failure status back to the Hub.
 
-I standardised deployment for companion services using system-level service management, including autostart, restart-on-failure behaviour, and structured logging practices.
+I standardized deployment for companion services using system-level service management, including autostart, restart-on-failure behaviour, and structured logging practices.
 
 ### 4.4 Job-based execution model
 
@@ -86,17 +86,17 @@ I designed the platform so that apps are first-class entities. Each app can defi
 
 I implemented app versioning and rollback so that developers can publish updates while retaining the ability to revert to a known-good configuration.
 
-### 4.6 Persistence and artefact storage
+### 4.6 Persistence and artifact storage
 
 I persisted operational metadata in a relational database. This includes users, drones, API keys, installs, app definitions, app versions, app installation state, job state, log metadata, telemetry snapshots, scan metadata, and file metadata.
 
-I stored binary artefacts in S3-compatible object storage. This includes flight logs, drone-delivered files, scripts, configuration files, notes, media, and other large binary artefacts. The database retains metadata and URLs rather than storing large file bytes directly.
+I stored binary artifacts in S3-compatible object storage. This includes flight logs, drone-delivered files, scripts, configuration files, notes, media, and other large binary artifacts. The database retains metadata and URLs rather than storing large file bytes directly.
 
 ### 4.7 Quality and verification approach
 
 I validated end-to-end workflows using representative pipelines, including:
 
-- LiDAR stream → Hub ingest → real-time visualisation;
+- LiDAR stream → Hub ingest → real-time visualization;
 - telemetry stream → Hub ingest → dashboard rendering;
 - camera status/control → Hub relay → operator control loop;
 - job queue → companion polling → local execution → status reporting;
@@ -107,12 +107,12 @@ I used iterative integration with field operations to ensure that the Hub user e
 
 ## 5. System Scope and Primary Capabilities
 
-### 5.1 Operational dashboarding
+### 5.1 Operational dashboards
 
-I implemented real-time operational dashboarding for:
+I implemented real-time operational dashboards for:
 
-- flight telemetry visualisation, including attitude, GPS, battery, and status;
-- payload visualisation, notably LiDAR point clouds;
+- flight telemetry visualization, including attitude, GPS, battery, and status;
+- payload visualization, notably LiDAR point clouds;
 - camera status monitoring;
 - and gimbal command relay.
 
@@ -181,7 +181,7 @@ The Node.js server acts as the API, real-time, parsing, storage, and orchestrati
 - REST endpoints for companion-computer ingestion, authenticated with API keys;
 - Socket.IO server for real-time broadcast and command relay;
 - database persistence for drones, users, API keys, app installs, logs, telemetry snapshots, scan metadata, custom app definitions, app data records, job state, and file metadata;
-- S3-compatible object storage integration for large binary artefacts, including logs, media, notes, and drone-delivered files;
+- S3-compatible object storage integration for large binary artifacts, including logs, media, notes, and drone-delivered files;
 - and a Python 3.11 subprocess sandbox for custom payload parsing in App Builder workflows.
 
 ### 6.3 Companion-computer fleet
@@ -215,7 +215,7 @@ I implemented a persistent app launcher with core apps, installed apps, and a st
 
 I implemented the LiDAR Terrain Mapping core app with:
 
-- real-time RPLidar visualisation;
+- real-time RPLidar visualization;
 - 2D and 3D views;
 - demo/synthetic mode for offline UI testing;
 - scan statistics;
@@ -278,7 +278,7 @@ I implemented:
 
 ### 8.8 Logs and OTA Updates
 
-The earlier Quiver Hub Software status described Logs and OTA as indicated or placeholder areas with backend job/file mechanisms already present as foundations. In the M1–M3 phase, I then built out the Logs v1 and OTA v1 functionality into operational workflows, including UI, backend routes, companion-side handling, artefact storage, and job execution.
+The earlier Quiver Hub Software status described Logs and OTA as indicated or placeholder areas with backend job/file mechanisms already present as foundations. In the M1–M3 phase, I then built out the Logs v1 and OTA v1 functionality into operational workflows, including UI, backend routes, companion-side handling, artifact storage, and job execution.
 
 ### 8.9 Diagnostics and Remote Logs
 
@@ -364,7 +364,7 @@ I used S3-compatible object storage for:
 - flight logs;
 - binary media;
 - notes;
-- and other large artefacts.
+- and other large artifacts.
 
 The database stores metadata and URLs rather than file bytes.
 
@@ -382,14 +382,14 @@ For the drone plane, I used per-drone API keys to authenticate companion-compute
 
 I carried out and documented a formal job-security analysis covering:
 
-- artefact integrity;
+- artifact integrity;
 - job allow-listing;
 - job reliability;
 - and job permissions.
 
 From that work, I implemented the most immediately critical security foundations needed for the M1–M3 phase.
 
-A key result was the introduction of firmware artefact integrity verification. I made the Hub compute and store a SHA-256 hash when firmware is uploaded, pass that hash through the `flash_firmware` job payload, and verify it on the companion before any flashing takes place. If the hash does not match, the flash is aborted and the temporary file is cleaned up.
+A key result was the introduction of firmware artifact integrity verification. I made the Hub compute and store a SHA-256 hash when firmware is uploaded, pass that hash through the `flash_firmware` job payload, and verify it on the companion before any flashing takes place. If the hash does not match, the flash is aborted and the temporary file is cleaned up.
 
 I also implemented the job reliability layer, including:
 
@@ -437,7 +437,7 @@ This included:
 - staged delivery through the companion;
 - and the flash request flow to the flight controller.
 
-The OTA flow was designed around a staged and validated process rather than ad hoc manual update handling. The companion downloads the firmware artefact, verifies its integrity, extracts metadata, temporarily serves the artefact where needed for the flight-controller-side pull flow, and then completes the flash-and-reboot sequence.
+The OTA flow was designed around a staged and validated process rather than ad hoc manual update handling. The companion downloads the firmware artifact, verifies its integrity, extracts metadata, temporarily serves the artifact where needed for the flight-controller-side pull flow, and then completes the flash-and-reboot sequence.
 
 I also built the Hub-side management functions needed to support this flow, including:
 
@@ -474,7 +474,7 @@ The following platform capabilities have been implemented:
 - OTA v1 operational workflow;
 - Diagnostics view;
 - Remote Logs view;
-- artefact integrity verification;
+- artifact integrity verification;
 - job reliability hardening;
 - and Hub-side job/API scaffolding for log-handling and firmware-handling workflows.
 
@@ -488,7 +488,7 @@ The following areas remain indicated, planned, or suitable for further developme
 - wider job allow-listing hardening;
 - wider job permissions hardening;
 - select analytics enhancements;
-- further SDK formalisation;
+- further SDK formalization;
 - further SDK encapsulation;
 - functional expansion for easier payload deployment;
 - migration from Manus to standalone deployment;
@@ -520,10 +520,10 @@ Specifically, I delivered:
 - Runtime App Renderer;
 - app versioning and rollback;
 - relational persistence for operational metadata;
-- S3-compatible storage for large binary artefacts;
+- S3-compatible storage for large binary artifacts;
 - companion-computer relay and job execution services;
 - documented and partially implemented security baseline;
-- artefact integrity verification;
+- artifact integrity verification;
 - job reliability protections;
 - working Logs v1 pipeline for scan, discovery, retrieval, storage, browser download, and analytics forwarding;
 - working OTA v1 foundation for firmware upload, hashing, staged delivery, dispatch, and flash execution;
@@ -540,7 +540,7 @@ Where parts of the security pipeline remain marked as planned, that should be un
 
 Further development of Quiver Hub could implement comprehensive mission planning, including autonomous path planning and control as M4. This could then lead into multiple deployment strategies, including a local individual-system deployment and a hosted scalable SaaS platform as M5.
 
-Beyond these stages, further development should continue SDK formalisation, SDK encapsulation, and functional expansion to make payload deployment easier.
+Beyond these stages, further development should continue SDK formalization, SDK encapsulation, and functional expansion to make payload deployment easier.
 
 ## 15. Next Steps / Recommendations
 
@@ -556,7 +556,7 @@ I recommend continuing the Mission Planner application buildout, including compr
 
 The Logs and OTA application area has now moved beyond placeholder status through the M1–M3 work, but it should continue to be refined as part of broader operational hardening.
 
-### 15.3 Generalise implementation away from Manus
+### 15.3 Generalize implementation away from Manus
 
 I recommend migrating the system from Manus-bound implementation assumptions toward standalone deployment, so that the Hub can be deployed, maintained, and scaled independently.
 
@@ -579,7 +579,7 @@ These two paths would allow Quiver Hub to serve both tightly controlled local de
 
 I recommend continuing the Quiver SDK development path, including:
 
-- SDK formalisation;
+- SDK formalization;
 - SDK encapsulation;
 - clearer developer interfaces;
 - payload deployment support;

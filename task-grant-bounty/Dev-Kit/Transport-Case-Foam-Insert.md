@@ -23,7 +23,7 @@ A Pelican 1640 case (purchased without foam insert) was selected as the transpor
 | **Type** | Bounty |
 | **Status** | Open |
 | **Reward** | $1,000 |
-| **Description** | Design foam cutouts for the selected Nanuk case to safely transport the Quiver devkit. May include additional protective elements such as a camera cover. |
+| **Description** | Design foam cutouts for the selected Nanuk case to safely transport the Quiver dev kit. May include additional protective elements such as a camera cover. |
 | **Deliverables** | Foam cutout design files; completed case with drone fitting securely; any additional protective accessories (e.g. camera cover). |
 
 # Methodology
