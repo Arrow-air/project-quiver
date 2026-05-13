@@ -1,8 +1,87 @@
-# Quiver Parameter Notes
+---
+title: Firmware & Parameters
+slug: /Operations/Firmware-Parameters
+sidebar_position: 2
+description: Firmware files and parameter sets for configuring a Quiver Dev-Kit.
+---
+
+# Firmware & Parameters
+
+This page collects the firmware file and parameter sets used to configure a Quiver Dev-Kit flight controller.
+
+Use this when you are setting up or re-flashing a Quiver Dev-Kit. The supporting firmware and parameter files live alongside this page so they can be downloaded directly from the docs.
+
+## Firmware File
+
+| File | Description |
+|------|-------------|
+| [`arducopter-pixhawk6c.apj`](./arducopter-pixhawk6c.apj) | Compiled firmware — flash via Mission Planner or QGroundControl |
+| [`arducopter-pixhawk6c.abin`](./arducopter-pixhawk6c.abin) | Alternate firmware artifact for compatible tooling |
+
+## Flashing
+
+1. Open **Mission Planner** → `Setup` → `Install Firmware` → `Load custom firmware`
+   **or** open **QGroundControl** → `Vehicle Setup` → `Firmware` → `Advanced settings` → `Custom firmware`
+2. Select [`arducopter-pixhawk6c.apj`](./arducopter-pixhawk6c.apj)
+3. After flashing: **full parameter reset**, then load parameter files below
+
+## Parameters
+
+Load in order:
+
+| File | Purpose |
+|------|---------|
+| [`standard-params.param`](./parameters/standard-params.param) | Base configuration — load this first on every drone |
+| [`params-ethernet.param`](./parameters/params-ethernet.param) | *(optional)* Enable PPP networking via Raspberry Pi |
+| [`params-object-avoidance.param`](./parameters/params-object-avoidance.param) | *(optional)* Enable RPLidar S2 obstacle avoidance |
+| [`params-remoteid.param`](./parameters/params-remoteid.param) | *(optional)* Enable DroneBeacon db201 Remote ID via DroneCAN |
+
+See [Parameter Notes](#parameter-notes) below for full parameter documentation.
+
+> ⚠️ After loading parameters, perform compass calibration, accelerometer calibration, and RC calibration — these are drone-specific and not included in the standard file.
+
+## Custom Build Features
+
+This firmware adds the following on top of the standard ArduCopter release.
+
+### RPLidar S2 Support
+
+Cherry-picks [PR #31663](https://github.com/ArduPilot/ardupilot/pull/31663) from ArduPilot upstream.
+
+- Adds RPLidar S2 as a proximity sensor (`PRX1_TYPE = 5`)
+- Reuses the RPLidar A2 serial protocol with an additional dense-express scan mode
+- Connect to SERIAL3: `SERIAL3_PROTOCOL = 11`, `SERIAL3_BAUD = 1000` (1 Mbaud)
+- Enable via [`params-object-avoidance.param`](./parameters/params-object-avoidance.param) when needed
+
+### PPP Networking (Raspberry Pi Ethernet over UART)
+
+- Enables PPP protocol on SERIAL2 to bridge Ethernet from the Raspberry Pi
+- Allows Mission Planner / MAVProxy to connect to the Pixhawk over the RPi network
+- Enable via [`params-ethernet.param`](./parameters/params-ethernet.param) (disabled by default)
+
+### Temperature Sensors
+
+Enables support for MCP9600, MLX90614, TSYS01, and TSYS03 I2C temperature sensors.
+
+### OpenDroneID (Remote ID)
+
+Enables ArduPilot's OpenDroneID support (`AP_OPENDRONEID_ENABLED`) for use with the DroneBeacon db201 or any external Remote ID transponder.
+
+- Connects via **DroneCAN** (CAN1, already configured)
+- The standard Pixhawk 6C bootloader is unchanged — firmware can still be updated freely
+- Enable via [`params-remoteid.param`](./parameters/params-remoteid.param) (disabled by default)
+
+## Supporting Scripts
+
+| File | Purpose |
+|------|---------|
+| [`tattu_bridge.py`](./tattu-bridge/tattu_bridge.py) | Tattu smart battery bridge helper script |
+
+## Parameter Notes
 
 Documentation for the Quiver standard parameter configuration and key differences from the stock Pixhawk 6C defaults.
 
-## Parameter File Structure
+### Parameter File Structure
 
 | File | Purpose |
 |------|---------|
@@ -10,9 +89,8 @@ Documentation for the Quiver standard parameter configuration and key difference
 | `params-ethernet.param` | Layer on to enable PPP networking via Raspberry Pi |
 | `params-object-avoidance.param` | Layer on to enable RPLidar S2 obstacle avoidance |
 
----
 
-## CAN Bus
+### CAN Bus
 
 | Parameter | Value | Notes |
 |-----------|-------|-------|
@@ -22,9 +100,8 @@ Documentation for the Quiver standard parameter configuration and key difference
 | `CAN_D2_PROTOCOL` | `14` | Reserved for secondary CAN bus |
 | `CAN_D1_UC_ESC_BM` | `15` | ESC bitmask: motors 1–4 on DroneCAN (binary 1111) |
 
----
 
-## Ethernet / PPP Networking (params-ethernet.param)
+### Ethernet / PPP Networking (params-ethernet.param)
 
 Disabled in `standard-params.param`. Load `params-ethernet.param` to enable.
 
@@ -38,9 +115,8 @@ Disabled in `standard-params.param`. Load `params-ethernet.param` to enable.
 
 Connect Mission Planner or MAVProxy to `RPi_IP:5760` over TCP.
 
----
 
-## RPLidar S2 (Proximity Sensor)
+### RPLidar S2 (Proximity Sensor)
 
 The proximity sensor is always configured in `standard-params.param`, but obstacle avoidance is disabled by default. Load `params-object-avoidance.param` to enable.
 
@@ -51,9 +127,8 @@ The proximity sensor is always configured in `standard-params.param`, but obstac
 | `SERIAL3_PROTOCOL` | `11` | Lidar serial protocol |
 | `SERIAL3_BAUD` | `1000` | 1 Mbaud (required for S2) |
 
----
 
-## Motors & ESCs
+### Motors & ESCs
 
 Quiver uses DroneCAN ESCs. Motor outputs 1–4 are mapped via `CAN_D1_UC_ESC_BM = 15`; PWM/DShot output settings are not the primary ESC control path for the standard dev-kit configuration.
 
@@ -67,9 +142,8 @@ Quiver uses DroneCAN ESCs. Motor outputs 1–4 are mapped via `CAN_D1_UC_ESC_BM 
 
 > ⚠️ `MOT_THST_HOVER` is auto-learned and drone-specific. Not included in standard file.
 
----
 
-## Battery
+### Battery
 
 | Parameter | Value | Notes |
 |-----------|-------|-------|
@@ -81,9 +155,8 @@ Quiver uses DroneCAN ESCs. Motor outputs 1–4 are mapped via `CAN_D1_UC_ESC_BM 
 | `BATT_FS_LOW_ACT` | `2` | Low battery → RTL |
 | `BATT_FS_CRT_ACT` | `1` | Critical battery → Land |
 
----
 
-## GPS
+### GPS
 
 | Parameter | Value | Notes |
 |-----------|-------|-------|
@@ -91,9 +164,8 @@ Quiver uses DroneCAN ESCs. Motor outputs 1–4 are mapped via `CAN_D1_UC_ESC_BM 
 | `GPS1_GNSS_MODE` | `77` | GPS + GLONASS + Galileo + BeiDou |
 | `GPS2_GNSS_MODE` | `69` | GPS + GLONASS + BeiDou |
 
----
 
-## IMU Orientation
+### IMU Orientation
 
 | Parameter | Value | Notes |
 |-----------|-------|-------|
@@ -101,9 +173,8 @@ Quiver uses DroneCAN ESCs. Motor outputs 1–4 are mapped via `CAN_D1_UC_ESC_BM 
 
 > Note: Earlier param files used `AHRS_ORIENTATION = 4` (Yaw 180°) specific to one airframe's mounting. Standard config uses `0` (default). Set per-drone if your flight controller is mounted at a different rotation.
 
----
 
-## EKF
+### EKF
 
 | Parameter | Value | Notes |
 |-----------|-------|-------|
@@ -113,9 +184,8 @@ Quiver uses DroneCAN ESCs. Motor outputs 1–4 are mapped via `CAN_D1_UC_ESC_BM 
 | `EK3_SRC1_VELZ` | `3` | Primary Z velocity: GPS |
 | `EK3_SRC_OPTIONS` | `1` | Fuse all sources when available |
 
----
 
-## Parameters NOT Included (Calibrate Per-Drone)
+### Parameters NOT Included (Calibrate Per-Drone)
 
 | Parameter Group | Reason |
 |-----------------|--------|

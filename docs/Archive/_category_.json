@@ -1,0 +1,9 @@
+{
+  "label": "Archive",
+  "position": 99,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Archived Project Quiver documentation for older prototype builds and superseded guides."
+  }
+}

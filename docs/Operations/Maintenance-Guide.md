@@ -1,4 +1,10 @@
-# Quiver Maintenance Guide
+---
+title: Maintenance Guide
+sidebar_label: Maintenance Guide
+sidebar_position: 3
+---
+
+# Maintenance Guide
 
 Quiver Dev-Kit
 Heavy-Lift Multipurpose UAV (<25 kg MTOW)
