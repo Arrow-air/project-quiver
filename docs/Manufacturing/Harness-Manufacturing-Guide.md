@@ -388,6 +388,7 @@ Instructions for the technician installing this harness into the chassis.*
 *All wires connecting the payload to the PCBs will use pre-crimped jumper wires.*
 **Mouser #: 538-79758-1149**
 
+> **Build note:** Save the Molex-terminated cut ends/remnants from HAR-0012 and HAR-0013. These remnants are reused as the Molex tails for HAR-0014.
 
 | Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -455,137 +456,82 @@ Instructions for the technician installing this harness into the chassis.*
 
 ![HAR-014 Nail Board](Assembly-Guides/assets/images/Harnessing/HAR-014.png)
 
+#### Complete Harness Reference Photo
+
+This photo shows a complete HAR-0014 harness. Use the nailboard and pinout tables as the source of truth; this photo is included as a visual reference for the finished physical harness layout.
+
+![Complete HAR-014 harness reference](Assembly-Guides/assets/images/Harnessing/HAR-014-reference.jpg)
+
 #### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
 
 | Item Type | Part Number | Description / Spec | Qty Needed |
 | :--- | :--- | :--- | :--- |
 |  **Connector A**  | 1704859| 6-Pos Phoenix | 1 |
-|  **Terminals A**  | Wire | Pre-crimped | 8|
+|  **Terminals A**  | 10-Conductor Cable | Twisted ends | 1 |
 |  **Connector B**  | 1704857| 4-Pos Phoenix | 1 |
-|  **Terminals B**  | Wire | Pre-crimped | 4|
+|  **Terminals B**  | 10-Conductor Cable | Twisted ends | 1 |
 |  **Connector C**  | 204523-1201| 12-Pos Molex | 1 |
-|  **Terminals C**  | Wire | Pre-crimped | 12|
-|  **Wire**  | 26 AWG | Pre-Crimped Lead | 205mm |
-|  **Sleeving**  | Optional| Mesh | xx mm|
+|  **Cable**  | [Amazon listing](https://www.amazon.com/dp/B0CSD52DL2) | 10-conductor, 26 AWG jacketed cable | 550mm |
+|  **Molex tails**  | 538-79758-1149 | Molex-terminated cut ends/remnants saved from HAR-0012/HAR-0013 | 12 |
 
 
 #### 3. Wire Prep (Cut & Strip)
-*All wires connecting the payload to the PCBs will use pre-crimped jumper wires.*
-**Mouser #: 538-79758-1149**
 
-Technician will have to combine two cables to create a 400mm cable.
+Build HAR-0014 from the 10-conductor jacketed cable and short Molex-terminated lead remnants. The jacketed cable end lands directly in the Phoenix connectors on the Main PCB side. The opposite end is spliced to the pre-crimped Molex tails for the bottom attachment interface.
 
-#### **Step 1: Cut to Length**
+1. Cut the 10-conductor cable to **550mm**.
+2. Strip only enough outer jacket at each end to reach the connectors without stressing the conductors.
+3. On the Phoenix end, strip each conductor to the Phoenix terminal requirement. No bare copper should be visible after insertion.
+4. On the Molex end, prepare short pre-crimped Molex tails from the remnants created when cutting the side attachment harness leads.
+5. Strip **5mm** from each cable conductor and each Molex tail to be spliced.
+6. Slide one self-solder heat shrink sleeve onto each splice before joining conductors. For the red and black conductors, place both matching Molex tails into the same sleeve on the Molex side of the splice.
 
-1.  Take two separate cable assemblies.
+#### Splice procedure
 
-2.  Measure **205mm** from the back of the connector on the first cable.
+1. Fan out the exposed strands slightly.
+2. Push the two stripped ends together inline so the strands interlace. **Do not make a side-by-side pigtail splice.**
+3. Twist the joined section lightly so it stays straight and compact.
+4. Center the solder ring over the bare copper and position the adhesive rings over insulated wire.
+5. Heat the solder ring first until it fully flows, then heat the sleeve ends to seal.
+6. Let the splice cool before handling or pull-testing.
 
-3.  Cut the wire at the 205mm mark. Discard the excess.
+#### Final Check
 
-4.  Repeat for the second cable.
-
-    -   _Note: We cut to 205mm (not 200mm) to allow 5mm of overlap for the splice, resulting in a final length of 400mm._
-
-
-#### **Step 2: Strip Insulation**
-
-1.  Strip **5mm** of insulation from the _cut end_ of the first cable.
-
-2.  Strip **5mm** of insulation from the _cut end_ of the second cable.
-
-
-#### **Step 3: Insert Sleeve (Critical Step)**
-
-1.  **Before connecting the wires**, slide the **Self-Solder Heat Shrink Sleeve** onto one of the cables.
-
-2.  Slide it at least 50mm down the wire so the heat from soldering doesn't shrink it prematurely.
-
-
-#### **Step 4: Mesh the Wires**
-
-1.  Fan out the exposed strands of both cables slightly.
-
-2.  Push the two ends together so the strands interlace (mesh) with each other inline. **Do not twist them side-by-side (pigtail).**
-
-3.  Once meshed, twist the joined section to lock the strands together. The splice should be smooth and straight.
-
-
-#### **Step 5: Position the Sleeve**
-
-1.  Slide the solder sleeve over the twisted joint.
-
-2.  Center the low-temperature **solder ring** directly over the bare copper twist.
-
-3.  Ensure the colored **adhesive rings** (at the ends of the sleeve) are covering the wire insulation, not the bare copper.
-
-
-#### **Step 6: Apply Heat**
-
-1.  Using a heat gun, heat the **center solder ring** first. Watch for the solder to melt and flow into the wire strands (it will turn shiny and liquid).
-
-2.  Move the heat to the ends of the sleeve to shrink the tubing and activate the waterproof adhesive seals.
-
-3.  **Allow to cool** for 30 seconds before moving. Do not pull on the cable while the solder is hot.
-
-
-#### **Final Check**
-
--   **Total Length:** Confirm the total length is **400mm**.
-
--   **Solder Joint:** Ensure the solder ring has fully melted and is not visible as a solid ring anymore.
-
--   **Insulation:** Ensure there is no exposed copper outside the sleeve.
-
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-|  **W1**  | Black| 26 | 400mm | N/A| N/A|
-|  **W2**  | Black| 26  | 400mm | N/A| N/A|
-|  **W3**  | Black| 26  | 400mm | N/A| N/A|
-|  **W4**  | Black| 26  | 400mm | N/A| N/A|
-|  **W5**  | Black| 26  | 400mm | N/A| N/A|
-|  **W6**  | Black| 26  | 400mm | N/A| N/A|
-|  **W7**  | Black| 26  | 400mm | N/A| N/A|
-|  **W8**  | Black| 26  | 400mm | N/A| N/A|
-|  **W9**  | Black| 26  | 400mm | N/A| N/A|
-|  **W10**  | Black| 26  | 400mm | N/A| N/A|
-|  **W11**  | Black| 26  | 400mm | N/A| N/A|
-|  **W12**  | Black| 26  | 400mm | N/A| N/A|
-
+- **Cable Length:** Confirm the jacketed cable was cut to **550mm**.
+- **Splices:** Confirm each solder ring fully melted and no bare copper is visible outside the sleeve.
+- **Phoenix End:** Confirm all conductors are fully seated and clamped in the Phoenix connectors.
+- **Molex End:** Confirm all pre-crimped tails are fully seated in Connector C and pass a light pull test.
 
 ---
 
 #### 4. Termination & Pinout Map
-*Connect End A or B to End C following this chart.*
+*Connect the 10-conductor cable to the Phoenix connectors and splice it to the Molex tails following this chart.*
 
+| Cable Color | From: 1704859 | To: 204523-1201 | Function / Signal |
+| :--- | :--- | :--- | :--- |
+| Black | **Pin 1** | 6 and 8 | GND |
+| Orange | **Pin 2** | 10 | 12V_PL |
+| White | **Pin 3** | 9 | CAN2_L |
+| Gray | **Pin 4** | 11 | CAN2_H |
+| Blue | **Pin 5** | 12 | FMU_CH7 |
+| Red | **Pin 6** | 2 and 4 | 12VSW |
 
-| Wire ID | Color | From: 1704859| To: 204523-1201| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-|  **W1**  | Black|  **Pin 1**  | 6 | GND|
-|  **W2**  | Black|  **Pin 1**  | 8 | GND|
-|  **W3**  | Black|  **Pin 2**  | 10 | 12V_PL|
-|  **W4**  | Black|  **Pin 3**  | 9| CAN2_L|
-|  **W5**  | Black|  **Pin 4**  | 11 | CAN2_H|
-|  **W6**  | Black|  **Pin 5**  | 12 | FMU_CH7|
-|  **W7**  | Black |  **Pin 6**  | 2 | 12VSW|
-|  **W8**  | Black |  **Pin 6**  | 4 | 12VSW|
+| Cable Color | From: 1704857 | To: 204523-1201 | Function / Signal |
+| :--- | :--- | :--- | :--- |
+| Yellow | **Pin 1** | 1 | ETH_RX+ |
+| Purple | **Pin 2** | 3 | ETH_RX- |
+| Brown | **Pin 3** | 5 | ETH_TX+ |
+| Green | **Pin 4** | 7 | ETH_TX- |
 
-
-| Wire ID | Color | From: 1704857| To: 204523-1201| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-|  **W9**  | Black|  **Pin 1**  | 1 | ETH_RX+|
-|  **W10**  | Black|  **Pin 2**  | 3 | ETH_RX-|
-|  **W11**  | Black|  **Pin 3**  | 5| ETH_TX+|
-|  **W12**  | Black|  **Pin 4**  | 7 | ETH_TX-|
-
+> For the duplicated Molex positions, splice the single jacketed-cable conductor to both matching pre-crimped Molex tails in the same solder sleeve: Black to Molex pins 6 and 8, and Red to Molex pins 2 and 4.
 
 #### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers to the cables. This will help correctly adding cables to Phoenix connector
-4.  **Populate A & B:** Insert contacts into Connector A & B housing. *Verify "Click" and perform pull-back test.*
-6.  **Populate C:** Insert contacts into Connector C housing. Verify correct crimp orientation into [housing.](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf)
+1.  **Prep cable:** Cut the 10-conductor cable to 550mm, strip jacket/conductors, and prepare the Molex tails.
+2.  **Splice Molex end:** Use self-solder heat shrink sleeves to connect the cable conductors to the Molex tails per the pinout map.
+3.  **Populate Connector C:** Insert the Molex terminals into Connector C. Verify correct crimp orientation into the [housing.](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf)
+4.  **Populate Phoenix connectors:** Insert the bare conductor ends into Connector A and B. Verify the clamp captures the conductor and perform a light pull-back test.
+5.  **Label:** Add identification markers as needed so the Phoenix conductors are easy to verify during vehicle integration.
 
 
 #### 6. Installation & Routing (Vehicle Integration)
