@@ -599,6 +599,12 @@ Instructions for the technician installing this harness into the chassis.*
 
 ![HAR-014 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-014.png)
 
+#### Complete Harness Reference Photo
+
+This photo shows a complete HAR-0014 harness. Use the nailboard and pinout tables as the source of truth; this photo is included as a visual reference for the finished physical harness layout.
+
+<img src="./Assembly-Guides/assets/images/Harnessing/HAR-014-reference.jpg" alt="Complete HAR-014 harness reference" width="640" />
+
 #### 2. Bill of Materials (Kitting)
 *Gather these parts before starting the build.*
 
