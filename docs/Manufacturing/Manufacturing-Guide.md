@@ -611,11 +611,12 @@ This photo shows a complete HAR-0014 harness. Use the nailboard and pinout table
 | Item Type | Part Number | Description / Spec | Qty Needed |
 | :--- | :--- | :--- | :--- |
 |  **Connector A**  | 1704859| 6-Pos Phoenix | 1 |
+|  **Terminals A**  | 10-Conductor Cable | Twisted ends | 1 |
 |  **Connector B**  | 1704857| 4-Pos Phoenix | 1 |
+|  **Terminals B**  | 10-Conductor Cable | Twisted ends | 1 |
 |  **Connector C**  | 204523-1201| 12-Pos Molex | 1 |
 |  **Cable**  | [Amazon listing](https://www.amazon.com/dp/B0CSD52DL2) | 10-conductor, 26 AWG jacketed cable | 550mm |
 |  **Molex tails**  | 538-79758-1149 | Molex-terminated cut ends/remnants saved from HAR-0012/HAR-0013 | 12 |
-|  **Splice sleeves**  | Self-solder heat shrink sleeve | Sized for 26 AWG conductors | 10 |
 
 
 #### 3. Wire Prep (Cut & Strip)
