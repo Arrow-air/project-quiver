@@ -496,20 +496,6 @@ Build HAR-0014 from the 10-conductor jacketed cable and short Molex-terminated l
 - **Phoenix End:** Confirm all conductors are fully seated and clamped in the Phoenix connectors.
 - **Molex End:** Confirm all pre-crimped tails are fully seated in Connector C and pass a light pull test.
 
-| Wire ID | Cable Color | Gauge | Cut Length | Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | 26 | 550mm | 12VSW |
-| **W2** | Black | 26 | 550mm | GND |
-| **W3** | Orange | 26 | 550mm | 12V_PL |
-| **W4** | White | 26 | 550mm | CAN2_L |
-| **W5** | Gray | 26 | 550mm | CAN2_H |
-| **W6** | Blue | 26 | 550mm | FMU_CH7 |
-| **W7** | Yellow | 26 | 550mm | ETH_RX+ |
-| **W8** | Purple | 26 | 550mm | ETH_RX- |
-| **W9** | Brown | 26 | 550mm | ETH_TX+ |
-| **W10** | Green | 26 | 550mm | ETH_TX- |
-
-
 ---
 
 #### 4. Termination & Pinout Map
