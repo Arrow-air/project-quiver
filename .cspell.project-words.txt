@@ -502,3 +502,10 @@ THST
 TSYS
 VELXY
 VELZ
+affordances
+buildout
+dialout
+Fmini
+Nanuk
+Peaq
+pyserial
