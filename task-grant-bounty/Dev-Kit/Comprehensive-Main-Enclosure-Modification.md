@@ -10,7 +10,7 @@
 
 # 1. Project Description
 
-Since the initial design release of the enclosure assembly, the main enclosure and cockpit lid have become frequently accessed components. This acesibility required additional protection for the PCB and avionic wiring against various flight environments, such as desert dust. 
+Since the initial design release of the enclosure assembly, the main enclosure and cockpit lid have become frequently accessed components. This accessibility required additional protection for the PCB and avionic wiring against various flight environments, such as desert dust. 
 
 As protection requirements have increased, several modifications were implemented in this design evolution. Two versions of these modifications are provided here for a final decision.
 
@@ -56,7 +56,7 @@ _A highlighted single anchor feature._
 
 ## 2.2. Embedded LiDAR mount
 
-The installation slot of the LiDAR module was designed to minimize the module's hegiht profile, while not blocking the optical path of the laser beam. 
+The installation slot of the LiDAR module was designed to minimize the module's height profile, while not blocking the optical path of the laser beam. 
 
 The large gaps around the module are intended to facilitate cleaning and drainage. In Julius's version, the drainage was improved with a specialized slope. The cable outlets in both versions are sized to allow the passage of the full LiDAR electrical connector, and the geometries are compatible with sealant application.
 
@@ -88,7 +88,7 @@ To resolve this, a waterproof "groove and lip" ring combination has been introdu
 |Lip View|![](images/Enclosure-Modification/waterproof_lip_kbm.png)|![](images/Enclosure-Modification/waterproof_lip_julius.png)|
 |Cut Section|![](images/Enclosure-Modification/waterproof_section_kbm.png)|![](images/Enclosure-Modification/waterproof_section_julius.png)|
 |Installation Example|![](images/Enclosure-Modification/waterproof_silicone_install_kbm.jpg)|![](images/Enclosure-Modification/waterproof_silicone_install_julius.png)|
-|Installation Detail|![](images/Enclosure-Modification/waterproof_silicone_amount_kbm.png) <br>Fill the groove to half-depth with liquid silicone to achieve desired compression.|Measure and cut a certain length of 8 mm diamter "Uxcell Silicone Foam" seal strip into the groove.|
+|Installation Detail|![](images/Enclosure-Modification/waterproof_silicone_amount_kbm.png) <br>Fill the groove to half-depth with liquid silicone to achieve desired compression.|Measure and cut a certain length of 8 mm diameter "Uxcell Silicone Foam" seal strip into the groove.|
  
 ## 2.4. Cockpit latch replacement
 
@@ -154,7 +154,7 @@ The outer shape of antenna mount has been improved to prevent junky 3D printing 
 
 Two versions of new models sets, including: Lid, Main enclosure, Front PCB cover and Module mounting plate. All models are ready to be 3D printed.
 
-For ideal 3D printing quality, the slicing orientation should be set to upward facing. Enabling raft or support structures for the main enclosure during the printing is strongly recommended to prevent print failure or dimmensional inaccuracies.
+For ideal 3D printing quality, the slicing orientation should be set to upward facing. Enabling raft or support structures for the main enclosure during the printing is strongly recommended to prevent print failure or dimensional inaccuracies.
 
 For the waterproof liquid silicone application, please refer to the silicone supplier's instructions and perform the operation on a leveled surface.
 

@@ -135,7 +135,7 @@ CLI: python3 logs_ota_service.py \
 
 ### 4.4 Camera Stream Service (`camera_stream_service.py`)
 
-Manages go2rtc process lifecycle, Tailscale funnel for public WHEP access, and stream registration with Hub. Monitors Siyi camera availability and auto-registers/unregisters streams.
+Manages go2rtc process lifecycle, Tailscale funnel for public WHEP access, and stream registration with Hub. Monitors Siyi camera availability and automatically adds or removes stream registrations.
 
 ### 4.5 SIYI Camera Controller (`siyi_camera_controller.py`)
 
