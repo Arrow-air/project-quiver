@@ -5,1283 +5,21 @@ sidebar_label: Dev-Kit Manufacturing Guide
 
 # Dev-Kit Manufacturing Guide
 
-# PCB Assembly Guides
-## Main PCB
+## PCB Fabrication and Assembly
 
-This chapter will help with the project Quiver Main PCB assembly process.
+Build the vehicle PCBs using the standalone PCB assembly guides. These guides are the canonical source for ordering notes, interactive BOMs, stencil/reflow guidance, inspection images, and PCB-specific manual assembly steps.
 
-> [!Note]
->This is not a final version of this document. The given instructions will give a general guide on the assembly process. Assembly should only be carried out by an experienced worker with experience in SMD soldering and the appropriate equipment. If you need this PCB fully assembled please contact the project Quiver team.
+- [Main PCB Assembly Guide](./PCB-Assembly-Guides/Main-PCB.md)
+- [Battery Control PCB Assembly Guide](./PCB-Assembly-Guides/BC-PCB.md)
+- [Flight Controller PCB Assembly Guide](./PCB-Assembly-Guides/FC-PCB.md)
 
-This PCB can be ordered fully assembled from the respective PCB manufacturer (e.g. JLCPCB). There are several parts that are normally not in stock at the PCB manufacturer and need to be sourced from one of the large electronic component distributors by the PCB manufacturer. This means that the production time for a finished PCB is around 3 weeks.
+This Dev-Kit Manufacturing Guide covers how the completed PCBs are installed into the vehicle during general assembly.
 
-The manual soldering of the circuit board can be done with the help of this interactive BOM which is stored in the respective github folder of this PCB (it is not recommended):
+## Harness Fabrication
 
-## Quiver_Dev-Kit_Main_PCB_ibom.html
+Build harnesses using the standalone [Harness Manufacturing Guide](./Harness-Manufacturing-Guide.mdx). It is the canonical source for nailboard diagrams, BOMs, wire prep, termination, and pinout maps.
 
-![alt text](./Assembly-Guides/assets/images/PCBs/Main1.png)
-
-
-This is an HTML file that opens in the browser. On the left side is the parts list and on the right side are the views for the front and back of the circuit board. It will help to put the components in the right place.
-
-It is essential to use a pcb stencil to place the solder paste in the right places. A reflow oven or a hot air blower (temperature and airflow controllable) should be used for the soldering process.
-
-### View on the top side of this PCB:
-
-![alt text](./Assembly-Guides/assets/images/PCBs/Main2.jpg)
-
-
-### View on the bottom side of this PCB:
-
-![alt text](./Assembly-Guides/assets/images/PCBs/Main3.jpg)
-
-
-## Additional Steps
-
-The main pcb has designated mounting positions for additional devices apart from the flight controller:
-
-- Raspberry Pi
-- GNSS
-- 2X 4 port ethernet switch
-
-These additional devices are not necessary to ensure the basic function of the board.
-
-
-## Battery Control PCB
-
-This chapter will help with the project Quiver BC PCB (Battery connector PCB) assembly process.
-
-> [!Note]
->This is not a final version of this document. The given instructions will give a general guide on the assembly process. Assembly should only be carried out by an experienced worker with experience in SMD soldering and the appropriate equipment. If you need this PCB fully assembled please contact the project Quiver team.
-
-This PCB can be ordered (almost) fully assembled from the respective PCB manufacturer (e.g. JLCPCB). There are several parts that are normally not in stock at the PCB manufacturer and need to be sourced from one of the large electronic component distributors by the PCB manufacturer. This means that the production time for a finished PCB is around 3 weeks.
-
-The large molex battery connectors (J9, J10) still need manual assembly at the moment. A quick explanation is written under the chapter: **Additional Steps**
-
-The manual soldering of the circuit board can be done with the help of this interactive BOM which is stored in the respective github folder of this PCB(it is not recommended):
-
-## Quiver_PT3_BC_PCB_ibom.html
-
-![alt text](./Assembly-Guides/assets/images/PCBs/BC1.jpg)
-
-
-This is an HTML file that opens in the browser. On the left side is the parts list and on the right side are the views for the front and back of the circuit board. It will help to put the components in the right place.
-
-It is essential to use a pcb stencil to place the solder paste in the right places. A reflow oven or a hot air blower (temperature and airflow controllable) should be used for the soldering process.
-
-### View on the top side of this PCB:
-
-![alt text](./Assembly-Guides/assets/images/PCBs/BC2.jpg)
-
-
-### View on the bottom side of this PCB:
-
-![alt text](./Assembly-Guides/assets/images/PCBs/BC3.jpg)
-
-
-## Additional Steps
-
-**1. Adding the Molex battery connector (J9, J10):**
-
-The molex battery connector can not be bought in one piece at the moment (12/25). It's assembled from four individual parts (1x guiding pin left, 1x guiding pin right, 2x Molex 46437-9206). The guiding pins are sourced from a pre assembled Molex connector 464379-301. The individual parts can be clipped together and then inserted into the PCB. The connector pins should be manually soldered to the PCB.
-
-Picture:PCB with Molex connector
-
-**2. Installation of the heatsink:**
-
-The heatsink must be attached to the PCB for the PCB to function properly. The heat sink is in direct contact with the frame of the drone and ensures that the power mosfets are well cooled.
-
-   - Gap filler: Arctic TP-3 thermal pad: [https://www.arctic.de/TP-3/ACTPD00057A](https://www.arctic.de/TP-3/ACTPD00057A)
-   - Nylon spacers: McMaster 99072A104
-   - Screws: McMaster 92125A090
-   - Washers: McMaster 95610A011
-   - Nuts: McMaster 90591A270
-
-   Please secure the screws of the heatsink with loctite.
-
-Picture: Thermal pad area and nylon spacer location
-
-Picture: Screwed down heatsink
-
-
-**3. Installation of the fuse:**
-
-A AMX-200 fuse needs to be mounted between J7 and J8. Please use loctite to secure the screws.
-
-Example screws: McMaster 98093A213
-
-
-## Flight Controller PCB
-
-This chapter will help with the project Quiver FC PCB (Flight controller PCB) assembly process.
-
-> [!Note]
->This is not a final version of this document. The given instructions will give a general guide on the assembly process. Assembly should only be carried out by an experienced worker with experience in SMD soldering and the appropriate equipment. If you need this PCB fully assembled please contact the project Quiver team.
-
-This PCB can be ordered fully assembled from the respective PCB manufacturer (e.g. JLCPCB). The 100 pin connectors (J1, J2, J3) are normally not in stock and must be ordered from the manufacturer. This means that the production time for a finished PCB is around 3 weeks.
-
-The manual soldering of the circuit board can be done with the help of this interactive BOM which is stored in the respective github folder of this PCB(it is not recommended):
-
-## Quiver_PT3_FC_PCB_ibom.html
-
-![alt text](./Assembly-Guides/assets/images/PCBs/FC1.jpg)
-
-
-This is an HTML file that opens in the browser. On the left side is the parts list and on the right side are the views for the front and back of the circuit board. It will help to put the components in the right place.
-
-It is essential to use a pcb stencil to place the solder paste in the right places. A reflow oven or a hot air blower (temperature and airflow controllable) should be used for the soldering process.
-
-### View on the top side of this PCB (this side will connect to the pix32 v6 flight controller):
-
-![alt text](./Assembly-Guides/assets/images/PCBs/FC2.jpg)
-
-
-### View on the bottom side of this PCB (this side will connect to the PT3 Main PCB):
-
-![alt text](./Assembly-Guides/assets/images/PCBs/FC3.jpg)
-
-
-## Additional Steps
-
-- no additional steps are needed.
-
-
-# Harness Manufacturing Guide
-
-## Purpose
-
-This chapter explains how to manufacture and assemble the wiring harnesses for all of the components present on the dev kit build. Modifications include custom cut spool cables, pre made cables, pre crimped cables, and reducing length of default connectors.
-
-Use the following wiring table for all of the connections TO/FROM for all of the dev kit’s systems: [Dev Kit Wire Data](https://docs.google.com/spreadsheets/d/1U9Jd1zW-IGLvGdLw63Ius3nsfnPE6wN_-VjMNnLCjd8/edit?gid=2139598833#gid=2139598833)
-The spreadsheet gives the full view of all connectors, mating connectors, wire gauge, estimated length, and suggested/default wire colors.
-
-
-
-## How To Use This Guide
-
-This guide will detail the manufacturing process for all harnesses in no particular order. It is intended to be broken up and placed in the manufacturing guide according to the Quiver assembly steps. This is to allow harness routing that may be blocked by the installation of certain structural components. The user is encouraged to treat this document as a knowledge base and prep guide for the harnessing. Installation steps will be covered in the broader assembly guide.
-
-## Tools Required
-* Soldering iron with hot air rework station
-* Solder
-* Wire stripper
-* Wire cutter
-* Heat shrink
-* Heat shrink solder connectors
-* Flathead screwdriver (1.5mm)
-* Pliers
-* Multimeter
-
-## Quality Assurance (QC) Checklist
-- [ ] **Visual:** Check for exposed strands or damaged insulation.
-- [ ] **Mechanical:** Pull-test all crimps lightly to ensure retention.
-- [ ] **Continuity:** Probe Pin 1 to Pin 1 (Tone check).
-- [ ] **Polarity:** Verify Red is Positive, Black is Ground.
-
-
-
-## HAR-0001 Pushbutton
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| BC_PCB J25|Pushbutton |
-
-#### 1. Nailboard
-
-![HAR-001 Wire Harness](./Assembly-Guides/assets/images/Harnessing/HAR-001.png)
-
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-| **Connector A** | 1704857 | 4-Pos Phoenix | 1 |
-| **Terminals A** | Wire | Bare wire, twisted end | 4 |
-| **Connector B** | Spade | Spade terminal | 4 |
-| **Terminals B** | Wire | Bare wire | 4 |
-| **Wire** | 18 AWG | Silicon |940mm |
-| **Sleeving** | Optional| Mesh | 180 mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | 18 AWG | 235mm | 6mm  | 6mm |
-| **W2** | Red | 18 AWG | 235mm | 6mm | 6mm |
-| **W3** | Red | 18 AWG | 235mm | 6mm | 6mm |
-| **W4** | Black | 18 AWG | 235mm | 6mm | 6mm |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: 1704857  | To: Spade | Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | **Pin 1** | 1 | HV- |
-| **W2** | Red | **Pin 2** | 2 | HV- SW |
-| **W3** | Red | **Pin 3** | LED+| 12V |
-| **W4** | Black | **Pin 4** | LED- | GND |
-
-#### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-2.  **Label:** Install identification markers per Section 5. *Do not shrink yet.*
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-5.  **Crimp Side B:** Terminate Side B using crimping tool.
-6.  **Populate B:** Insert contacts into Connector B housing.
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Bat_PCB, J1
-* **Destination Connection:** Pushbutton
-* **Routing Path:**
-    * Path - Over Battery PCB
-    * Constraint - N/A
-    * Fixing - Zip Tie Provision Circled in red
-
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR001.jpg)
-
-## HAR-0002 BC_PCB Signal
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| BC_PCB J25|Main_PCB J43 |
-
-
-#### 1. Nailboard
-
-![HAR-002 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-002.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-| **Connector A** | 1704857 | 4-Pos Phoenix | 1 |
-| **Terminals A** | Wire | Bare wire, twisted end | 4 |
-| **Connector B** | 1704858 | 5-Pos Phoenix | 1 |
-| **Terminals B** | Wire | Bare wire, twisted end | 4 |
-| **Wire** | 20 AWG | Silicon | 240mm |
-| **Sleeving** | Optional| Mesh | N/A|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | White | 20 AWG | 56mm | 6mm  | 6mm |
-| **W2** | Blue | 20 AWG | 56mm | 6mm | 6mm |
-| **W3** | Gray | 20 AWG | 56mm | 6mm | 6mm |
-| **W4** | Green | 20 AWG | 56mm | 6mm | 6mm |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: 1704857  | To: 1704858 | Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | White | **Pin 1** | 4 | I2C_SDA |
-| **W2** | Blue | **Pin 2** | 3 | I2C_SCL |
-| **W3** | Gray | **Pin 3** | 2| CAN_H |
-| **W4** | Green | **Pin 4** | 1 | CAN_L |
-
-#### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-6.  **Populate B:** Insert contacts into Connector B housing.*Verify "Click" and perform pull-back test.*
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Bat_PCB, J2
-* **Destination Connection:** Main_PCB, J43
-* **Routing Path:**
-    * Path - N/A
-    * Constraint - N/A
-    * Fixing - N/A
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR002.jpg)
-
-## HAR-0003 BC_PCB SSR
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| BC_PCB J25|Main_PCB J46 |
-
-
-#### 1. Nailboard
-
-![HAR-003 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-003.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-| **Connector A** | 1704859| 6-Pos Phoenix | 1 |
-| **Terminals A** | Wire | Bare wire, twisted end | 6|
-| **Connector B** | 1704859| 6-Pos Phoenix | 1 |
-| **Terminals B** | Wire | Bare wire, twisted end | 6|
-| **Wire** | 20 AWG | Silicon | 50mm |
-| **Sleeving** | Optional| Mesh | xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Yellow| 20 AWG | 56mm | 6mm  | 6mm |
-| **W2** | White| 20 AWG | 56mm | 6mm | 6mm |
-| **W3** | White| 20 AWG | 56mm | 6mm | 6mm |
-| **W4** | Red| 20 AWG | 56mm | 6mm | 6mm |
-| **W5** | Red| 20 AWG | 56mm | 6mm | 6mm |
-| **W6** | Black | 20 AWG | 56mm | 6mm | 6mm |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: 1704859| To: 1704859| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Yellow| **Pin 1** | 6 | BYP_S|
-| **W2** | White | **Pin 2** | 5 | SSR_S2|
-| **W3** | White | **Pin 3** | 4| SSR_S|
-| **W4** | Red | **Pin 4** | 3 | 12V|
-| **W5** | Red | **Pin 5** | 2 | 5V|
-| **W6** | Black | **Pin 6** | 1 | GND|
-
-#### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-6.  **Populate B:** Insert contacts into Connector B housing.*Verify "Click" and perform pull-back test.*
-
-
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Bat_PCB, J3
-* **Destination Connection:** Main_PCB, J46
-* **Routing Path:**
-    * Path -
-    * Constraint -
-    * Fixing -
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR003.jpg)
-
-## HAR-0004 -> HAR-007 ESC Power
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Main_PCB J25|ESC1 PWR |
-| Main_PCB J28|ESC2 PWR |
-| Main_PCB J34|ESC3 PWR |
-| Main_PCB J42|ESC4 PWR |
-
-#### 1. Nailboard
-
-![HAR-004 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-004.png)
-
-![HAR-005 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-005.png)
-
-![HAR-006 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-006.png)
-
-![HAR-007 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-007.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-| **Connector A** | XT60-M| 2-Pos XT-60| 1 |
-| **Terminals A** | Wire | Solder | 2|
-| **Wire** | 6 AWG | Silicon | 490mm |
-| **Sleeving** | Required| 9.5mm ID heatshrink at motor arm bend | 7cm |
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red| 6 AWG | 490mm | 4mm  | N/A |
-| **W2** | Black| 6 AWG | 490mm | 4mm | N/A|
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: XT60-M| To: ESC1| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red| **Pin 1** | Red| HV+|
-| **W2** | Black| **Pin 2** | Black| HV-|
-
-#### 6. Assembly Instructions (Not finished)
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-4.  **Populate A:** Solder cables into Connector A housing.
-6.  **Heatshrink:** Apply a 7cm 9.5mm ID heatshrink at the motor arm bend location. This heatshrink will protect the ESC Power and signal cables*
-
----
-
-#### 7. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Main_PCB, J27
-* **Destination Connection:** ESC 1 PWR
-* **Routing Path:**
-    * Path - Through circular hole on upper plate to middle plate
-    * Constraint - N/A
-    * Fixing - N/A
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR004.jpg)
-
-## HAR-0008 -> HAR-0011
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Main_PCB J23|ESC1 Signal |
-| Main_PCB J27|ESC2 Signal |
-| Main_PCB J32|ESC3 Signal |
-| Main_PCB J40|ESC4 Signal |
-
-#### 1. Nailboard
-
-![HAR-008 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-008.png)
-
-![HAR-009 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-009.png)
-
-![HAR-010 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-010.png)
-
-![HAR-011 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-011.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-| **Connector A** | 1704858 | 5-Pos Phoenix | 1 |
-| **Terminals A** | Wire | Bare wire, twisted end | 5 |
-| **Wire** | 20 AWG | Silicon | 240mm |
-| **Sleeving** | Required| 9.5mm ID Heatshrink at motor arm bend | 7cm |
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Yellow | 20 AWG | 56mm | 6mm  | 6mm |
-| **W2** | Green | 20 AWG | 56mm | 6mm | 6mm |
-| **W3** | Gray | 20 AWG | 56mm | 6mm | 6mm |
-| **W4** | Black | 20 AWG | 56mm | 6mm | 6mm |
-| **W5** | White | 20 AWG | 56mm | 6mm | 6mm |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: 1704857  | To: 1704858 | Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Yellow | **Pin 1** | 4 | GND |
-| **W2** | Green | **Pin 2** | 3 | CAN1_L |
-| **W3** | Gray | **Pin 3** | 2| CAN1_H |
-| **W4** | Black | **Pin 4** | 1 | GND |
-| **W5** | White | **Pin 5** | 1 | PWM  |
-
-#### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-6.  **Heatshrink:** Apply a 7cm 9.5mm ID Heatshrink at the motor arm bend location. This heatshrink will protect the ESC Power and signal cables*
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Bat_PCB, J2
-* **Destination Connection:** Main_PCB, J43
-* **Routing Path:**
-    * Path - N/A
-    * Constraint - N/A
-    * Fixing - N/A
-
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR008.jpg)
-
-## HAR-0012 -> HAR-0013 Side Payloads
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Main_PCB J29, J37|ATT_INT (right) |
-| Main_PCB J30, J38|ATT_INT (left) |
-
-
-#### 1. Nailboard
-
-![HAR-012 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-012.png)
-
-![HAR-013 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-013.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-|  **Connector A**  | 1704859| 6-Pos Phoenix | 1 |
-|  **Terminals A**  | Wire | Pre-crimped | 8|
-|  **Connector B**  | 1704857| 4-Pos Phoenix | 1 |
-|  **Terminals B**  | Wire | Pre-crimped | 4|
-|  **Connector C**  | 204523-1201| 12-Pos Molex | 1 |
-|  **Terminals C**  | Wire | Pre-crimped | 12|
-|  **Wire**  | 26 AWG | Pre-Crimped Lead | 235mm |
-|  **Sleeving**  | Optional| Mesh | xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*All wires connecting the payload to the PCBs will use pre-crimped jumper wires.*
-**Mouser #: 538-79758-1149**
-
-> **Build note:** Save the Molex-terminated cut ends/remnants from HAR-0012 and HAR-0013. These remnants are reused as the Molex tails for HAR-0014.
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-|  **W1**  | Black| 26 | 235mm | N/A| N/A|
-|  **W2**  | Black| 26  | 235mm | N/A| N/A|
-|  **W3**  | Black| 26  | 235mm | N/A| N/A|
-|  **W4**  | Black| 26  | 235mm | N/A| N/A|
-|  **W5**  | Black| 26  | 235mm  | N/A| N/A|
-|  **W6**  | Black| 26  | 235mm | N/A| N/A|
-|  **W7**  | Black| 26  | 235mm  | N/A| N/A|
-|  **W8**  | Black| 26  | 235mm  | N/A| N/A|
-|  **W9**  | Black| 26  | 235mm | N/A| N/A|
-|  **W10**  | Black| 26  | 235mm | N/A| N/A|
-|  **W11**  | Black| 26  | 235mm | N/A| N/A|
-|  **W12**  | Black| 26  | 235mm  | N/A| N/A|
-
-#### 4. Termination & Pinout Map
-*Connect End A or B to End C following this chart.*
-
-| Wire ID | Color | From: 1704859| To: 204523-1201| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-|  **W1**  | Black|  **Pin 1**  | 6 | GND|
-|  **W2**  | Black|  **Pin 1**  | 8 | GND|
-|  **W3**  | Black|  **Pin 2**  | 10 | 12V_PL|
-|  **W4**  | Black|  **Pin 3**  | 9| CAN2_L|
-|  **W5**  | Black|  **Pin 4**  | 11 | CAN2_H|
-|  **W6**  | Black|  **Pin 5**  | 12 | FMU_CH7|
-|  **W7**  | Black |  **Pin 6**  | 2 | X|
-|  **W8**  | Black |  **Pin 6**  | 4 | X|
-
-
-| Wire ID | Color | From: 1704857| To: 204523-1201| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-|  **W9**  | Black|  **Pin 1**  | 1 | ETH_RX+|
-|  **W10**  | Black|  **Pin 2**  | 3 | ETH_RX-|
-|  **W11**  | Black|  **Pin 3**  | 5| ETH_TX+|
-|  **W12**  | Black|  **Pin 4**  | 7 | ETH_TX-|
-
-#### 5. Assembly Instructions
-1.  **Populate A & B:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-2.  **Populate C:** Insert contacts into Connector B housing. Verify correct crimp orientation into [housing.](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf)
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis. Mirror the installation path for the payload on the opposite side.*
-
-
-
-* **Source Connection:** Main_PCB J29 & J37
-* **Destination Connection:** ATT_INT (right)
-* **Routing Path:**
- * Path -   Underneath MainPCB to middle plate side circular openings
- * Constraint -   Telemetry air unit location
- * Fixing -   N/A
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR012.jpg)
-
-## HAR-0014 Bottom Payload
-| **FROM**    | **TO**  |
-| -----------------| ------- |
-| Main_PCB J31, J39|ATT_INT (bottom) |
-
-
-#### 1. Nailboard
-
-![HAR-014 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-014.png)
-
-#### Complete Harness Reference Photo
-
-This photo shows a complete HAR-0014 harness. Use the nailboard and pinout tables as the source of truth; this photo is included as a visual reference for the finished physical harness layout.
-
-![Complete HAR-014 harness reference](./Assembly-Guides/assets/images/Harnessing/HAR-014-reference.jpg)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-|  **Connector A**  | 1704859| 6-Pos Phoenix | 1 |
-|  **Terminals A**  | 10-Conductor Cable | Twisted ends | 1 |
-|  **Connector B**  | 1704857| 4-Pos Phoenix | 1 |
-|  **Terminals B**  | 10-Conductor Cable | Twisted ends | 1 |
-|  **Connector C**  | 204523-1201| 12-Pos Molex | 1 |
-|  **Cable**  | [Amazon listing](https://www.amazon.com/dp/B0CSD52DL2) | 10-conductor, 26 AWG jacketed cable | 550mm |
-|  **Molex tails**  | 538-79758-1149 | Molex-terminated cut ends/remnants saved from HAR-0012/HAR-0013 | 12 |
-
-
-#### 3. Wire Prep (Cut & Strip)
-
-Build HAR-0014 from the 10-conductor jacketed cable and short Molex-terminated lead remnants. The jacketed cable end lands directly in the Phoenix connectors on the Main PCB side. The opposite end is spliced to the pre-crimped Molex tails for the bottom attachment interface.
-
-1. Cut the 10-conductor cable to **550mm**.
-2. Strip only enough outer jacket at each end to reach the connectors without stressing the conductors.
-3. On the Phoenix end, strip each conductor to the Phoenix terminal requirement. No bare copper should be visible after insertion.
-4. On the Molex end, prepare short pre-crimped Molex tails from the remnants created when cutting the side attachment harness leads.
-5. Strip **5mm** from each cable conductor and each Molex tail to be spliced.
-6. Slide one self-solder heat shrink sleeve onto each splice before joining conductors. For the red and black conductors, place both matching Molex tails into the same sleeve on the Molex side of the splice.
-
-#### Splice procedure
-
-1. Fan out the exposed strands slightly.
-2. Push the two stripped ends together inline so the strands interlace. **Do not make a side-by-side pigtail splice.**
-3. Twist the joined section lightly so it stays straight and compact.
-4. Center the solder ring over the bare copper and position the adhesive rings over insulated wire.
-5. Heat the solder ring first until it fully flows, then heat the sleeve ends to seal.
-6. Let the splice cool before handling or pull-testing.
-
-#### Final Check
-
-- **Cable Length:** Confirm the jacketed cable was cut to **550mm**.
-- **Splices:** Confirm each solder ring fully melted and no bare copper is visible outside the sleeve.
-- **Phoenix End:** Confirm all conductors are fully seated and clamped in the Phoenix connectors.
-- **Molex End:** Confirm all pre-crimped tails are fully seated in Connector C and pass a light pull test.
-
----
-
-#### 4. Termination & Pinout Map
-*Connect the 10-conductor cable to the Phoenix connectors and splice it to the Molex tails following this chart.*
-
-| Cable Color | From: 1704859 | To: 204523-1201 | Function / Signal |
-| :--- | :--- | :--- | :--- |
-| Black | **Pin 1** | 6 and 8 | GND |
-| Orange | **Pin 2** | 10 | 12V_PL |
-| White | **Pin 3** | 9 | CAN2_L |
-| Gray | **Pin 4** | 11 | CAN2_H |
-| Blue | **Pin 5** | 12 | FMU_CH7 |
-| Red | **Pin 6** | 2 and 4 | 12VSW |
-
-| Cable Color | From: 1704857 | To: 204523-1201 | Function / Signal |
-| :--- | :--- | :--- | :--- |
-| Yellow | **Pin 1** | 1 | ETH_RX+ |
-| Purple | **Pin 2** | 3 | ETH_RX- |
-| Brown | **Pin 3** | 5 | ETH_TX+ |
-| Green | **Pin 4** | 7 | ETH_TX- |
-
-> For the duplicated Molex positions, splice the single jacketed-cable conductor to both matching pre-crimped Molex tails in the same solder sleeve: Black to Molex pins 6 and 8, and Red to Molex pins 2 and 4.
-
-#### 5. Assembly Instructions
-1.  **Prep cable:** Cut the 10-conductor cable to 550mm, strip jacket/conductors, and prepare the Molex tails.
-2.  **Splice Molex end:** Use self-solder heat shrink sleeves to connect the cable conductors to the Molex tails per the pinout map.
-3.  **Populate Connector C:** Insert the Molex terminals into Connector C. Verify correct crimp orientation into the [housing.](https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/505/505432/5054320000-AS-000.pdf)
-4.  **Populate Phoenix connectors:** Insert the bare conductor ends into Connector A and B. Verify the clamp captures the conductor and perform a light pull-back test.
-5.  **Label:** Add identification markers as needed so the Phoenix conductors are easy to verify during vehicle integration.
-
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-
-* **Source Connection:** Main_PCB J31 & J39
-* **Destination Connection:** ATT INT (bottom)
-* **Routing Path:**
- * Path -   Top Plate, right side opening, through mid plate openings, attached to the underside of the bottom plate
- * Constraint -   Number of cables passing through openings
- * Fixing -   Various zip ties show in red
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR014-1.jpg)![alt text](./Assembly-Guides/assets/images/Harnessing/HAR014-2.jpg)
-
-## HAR-0015 Altimeter
-| **FROM**     | **TO**   |
-| ------------ | -------- |
-| Main_PCB J8  | NRA15    |
-
-
-#### 1. Nailboard
-
-![HAR-015 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-015.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type       | Part Number | Description / Spec     | Qty Needed |
-|:--------------- |:----------- |:---------------------- |:---------- |
-| **Connector A** | 1704857     | 4-Pos Phoenix          | 1          |
-| **Terminals A** | Wire        | Bare wire, twisted end | 4          |
-| **Wire**        | Default     | Silicon                | 190mm      |
-| **Sleeving**    | Optional    | Mesh                   | xx mm      |
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| Default | 190mm | 6mm  | N/A|
-| **W2** | Default| Default | 190mm | 6mm | N/A|
-| **W3** | Default| Default | 190mm | 6mm | N/A|
-| **W4** | Default| Default | 190mm | 6mm | N/A|
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: 1704857  | To: NRA 15| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | White | **Pin 1** | 4 | GND|
-| **W2** | Blue | **Pin 2** | 3 | CAN2_L|
-| **W3** | Gray | **Pin 3** | 2| CAN2_H|
-| **W4** | Green | **Pin 4** | 1 | 12V|
-
-
-#### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-3.  **Crimp Side A:** Terminate Side A using [Tool Name/Die].
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Main PCB, J8
-* **Destination Connection:** NRA 15
-* **Routing Path:**
-    * Path - Right side top plate entry to bottom plate
-    * Constraint - other cables
-    * Fixing - Zip tie in red
-
- ![alt text](./Assembly-Guides/assets/images/Harnessing/HAR015-1.jpg)![alt text](./Assembly-Guides/assets/images/Harnessing/HAR015-2.jpg)
-
-
-## HAR-0016 360 LIDAR
-| **FROM**     | **TO**   |
-| ------------ | -------- |
-| Main_PCB U5  | S2l      |
-
-
-#### 1. Nailboard
-
-![HAR-016 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-016.png)
-
-#### 2. Bill of Materials (Kitting)
-Default cable that comes with 360° Lidar. No modification required
-
-#### 3. Wire Prep (Cut & Strip)
-*Use the default cable supplied with the 360° LiDAR module.*
-
-| Cable | Required Length (mm) |
-| :--- | :--- |
-| Default LiDAR cable | 195 |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: J5| To: NRA 15| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| 5V|
-| **W2** | Default| **Pin 2** | 2| RX|
-| **W3** | Default| **Pin 3** | 3| TX|
-| **W4** | Default| **Pin 4** | 4| GND|
-| **W4** | Default| **Pin 5** | 5| X|
-
-
-#### 5. Assembly Instructions
-N/A
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Main PCB, U5
-* **Destination Connection:** S2L Lidar
-* **Routing Path:**
-    * Path - Downward towards connector
-    * Constraint - N/A
-    * Fixing - Zip tie in red
-
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR016.jpg)
-
-
-## HAR-0017 Front Radar
-| **FROM**     | **TO**      |
-| ------------ | ----------- |
-| Main_PCB J49 | Front Radar |
-
-
-#### 1. Nailboard
-
-![HAR-017 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-017.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-| **Connector A** | 1704857 | 4-Pos Phoenix | 1 |
-| **Terminals A** | Wire | Bare wire, twisted end | 4 |
-| **Wire** | Default | Silicon | 190mm |
-| **Sleeving** | Optional| Mesh | xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| Default | 485 mm | 6mm  | N/A|
-| **W2** | Default| Default | 485 mm | 6mm | N/A|
-| **W3** | Default| Default | 485 mm | 6mm | N/A|
-| **W4** | Default| Default | 485 mm | 6mm | N/A|
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: 1704857  | To: NRA 15| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 4 | GND|
-| **W2** | Default| **Pin 2** | 3 | CAN1_L|
-| **W3** | Default| **Pin 3** | 2| CAN1_H|
-| **W4** | Default| **Pin 4** | 1 | 12V|
-
-
-#### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-4.  **Populate A:** Insert contacts into Connector A housing. *Verify "Click" and perform pull-back test.*
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Main PCB, J49
-* **Destination Connection:** Front Radar
-* **Routing Path:**
-    * Path - Right side top plate entry to bottom plate
-    * Constraint - other cables
-    * Fixing - Zip tie in red
-
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR017-1.jpg)![alt text](./Assembly-Guides/assets/images/Harnessing/HAR017-2.jpg)
-
-## HAR-0018 HM30 Power
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Main_PCB J14|HM30 PWR |
-
-#### 1. Nailboard
-
-![HAR-018 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-018.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-| **Connector A** | XT30-M| 2-Pos XT-30| 1 |
-| **Terminals A** | Wire | Solder | 2|
-| **Wire** | 16 AWG | Silicon | 170mm |
-| **Sleeving** | Optional| Mesh|  xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-| Wire ID | Color | Gauge | Cut Length | Strip A  | Strip B  |
-|:------- |:----- |:--------- |:--------------- |:------------ |
-| **W1**  | Red   | **Pin 1** | 185             | 10           |
-| **W2**  | Black | **Pin 2** | 185             | 10           |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: 1704857  | To: Spade | Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Red | **Pin 1** | 1 | 12V |
-| **W2** | Red | **Pin 2** | 2 | GND |
-
-
-#### 5. Assembly Instructions
-1.  **Prep:** Cut wires to length and strip insulation per Section 3.
-3.  **Solder Side A:** Solder cables into housing.
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Main_PCB, J27
-* **Destination Connection:** ESC 1 PWR
-* **Routing Path:**
-    * Path - Right side top plate opening
-    * Constraint - N/A
-    * Fixing - N/A
-
- ![alt text](./Assembly-Guides/assets/images/Harnessing/HAR018.jpg)
-
-## HAR-0019 -> HAR-0020 HM30 Signal
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Main_PCB J15|HM30 UART |
-| Main_PCB J17|HM30 SBUS |
-
-
-#### 1. Nailboard
-
-![HAR-019 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-019.png)
-
-![HAR-020 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-020.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-|**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 1 |
-|**3 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 3 Way| 1 |
-| **Sleeving** | Optional| Mesh|  xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
-
-| Harness | Connector | Required Length (mm) |
-| :--- | :--- | :--- |
-| HAR-019 (HM30 UART) | JST-GH 4P | 170 |
-| HAR-020 (HM30 SBUS) | JST-GH 3P | 160 |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: J15| To: HM30 UART| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| TX|
-| **W2** | Default| **Pin 2** | 2| RX|
-| **W1** | Default| **Pin 1** | 3| GND|
-| **W2** | Default| **Pin 2** | 4| X|
-
-| Wire ID | Color | From: J17| To: HM30 SBUS| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| IO_PPM_INPUT_AND_SBUS_INPUT|
-| **W2** | Default| **Pin 2** | 2| GND|
-| **W1** | Default| **Pin 1** | 3| x|
-
-#### 5. Assembly Instructions
-N/A
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Bat_PCB J15, J17
-* **Destination Connection:** HM30
-* **Routing Path:**
-    * Path - Right side top plate opening
-    * Constraint - other cables
-    * Fixing - Zip ties
-
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR019.jpg)  ![alt text](./Assembly-Guides/assets/images/Harnessing/HAR019-2.jpg)  ![alt text](./Assembly-Guides/assets/images/Harnessing/HAR020.jpg)
-
-## HAR-0021 -> HAR-0022 Navigation
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Main_PCB J7|F9P |
-| Main_PCB J9|Mateksys |
-
-#### 1. Nailboard
-
-![HAR-021 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-021.png)
-
-![HAR-022 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-022.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-|**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 2 |
-| **Sleeving** | Optional| Mesh|  xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
-
-| Harness | Connector | Required Length  |
-| :--- | :--- | :--- |
-| HAR-021 (F9P / Here4) | JST-GH 4P | 205mm |
-| HAR-022 (Mateksys)    | JST-GH 4P | 70mm  |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: J9| To: M9N| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| GND|
-| **W2** | Default| **Pin 2** | 2| CAN1_L|
-| **W3** | Default| **Pin 1** | 3| CAN1_H|
-| **W4** | Default| **Pin 2** | 4| 5V|
-
-| Wire ID | Color | From: J7| To: F9P| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| GND|
-| **W2** | Default| **Pin 2** | 2| CAN1_L|
-| **W3** | Default| **Pin 1** | 3| CAN1_H|
-| **W4** | Default| **Pin 2** | 4| 5V|
-
-#### 5. Assembly Instructions
-N/A
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-* **Source Connection:** Main_PCB J7, J9
-* **Destination Connection:**  F9P/Here 4, Mateksys
-* **Routing Path:**
-    * Path - Immediately to the right
-    * Constraint - N/A
-    * Fixing - N/A
-
-  ![alt text](./Assembly-Guides/assets/images/Harnessing/HAR022.jpg)
-
-## HAR-0023 -> HAR-0025 PPP2ETH
-| **FROM**     | **TO**  |
-| ------------ | ------- |
-| Main_PCB J35 | PPP2ETH |
-| Main_PCB J36 | PPP2ETH |
-| Main_PCB J41 | PPP2ETH |
-
-#### 1. Nailboard
-
-![HAR-023 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-023.png)
-
-![HAR-024 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-024.png)
-
-![HAR-025 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-025.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-|**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 1 |
-|**5 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 5 Way| 1 |
-|**6 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 6 Way| 1 |
-| **Sleeving** | Optional| Mesh|  xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
-
-| Harness | Connector | Required Length  |
-| :--- | :--- | :--- |
-| HAR-023 (PPP2ETH CAN)      | JST-GH 4P | 120mm |
-| HAR-024 (PPP2ETH Ethernet) | JST-GH 5P | 205mm |
-| HAR-025 (PPP2ETH UART)     | JST-GH 6P | 155mm |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: J35| To: PPP2ETH| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| 5V|
-| **W2** | Default| **Pin 2** | 2| CAN2_L|
-| **W3** | Default| **Pin 3** | 3| CAN2_H|
-| **W4** | Default| **Pin 4** | 4| GND|
-
-| Wire ID | Color | From: J7| To: PPP2ETH| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| ETH_RX+|
-| **W2** | Default| **Pin 2** | 2| ETH_RX-|
-| **W3** | Default| **Pin 3** | 3| GND|
-| **W4** | Default| **Pin 4** | 4| ETH_TX+|
-| **W5** | Default| **Pin 5** | 5| ETH_TX-|
-
-| Wire ID | Color | From: J7| To: PPP2ETH| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| 5V|
-| **W2** | Default| **Pin 2** | 2| UART5_RX_TEL2|
-| **W3** | Default| **Pin 3** | 3| UART5_TX_TEL2|
-| **W4** | Default| **Pin 4** | 4| UART5_CTS_TEL2|
-| **W5** | Default| **Pin 5** | 5| UART5_RTS_TEL2|
-| **W6** | Default| **Pin 6** | 6| GND|
-
-#### 5. Assembly Instructions
-N/A
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Main_PCB J35, J36, J41
-* **Destination Connection:**  PPP2ETH
-* **Routing Path:**
-    * Path - Direct connections. HAR024 will be routed under PPP, Beacon mounting board
-    * Constraint - PPP,Beacon mounting board
-    * Fixing - zip tie in red (HAR024)
-
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR023.jpg) ![alt text](./Assembly-Guides/assets/images/Harnessing/HAR024.jpg)![alt text](./Assembly-Guides/assets/images/Harnessing/HAR025.jpg)
-
-## HAR-0026 Remote ID
-
-
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Main_PCB J20|Remote ID CAN |
-
-#### 1. Nailboard
-
-![HAR-026 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-026.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-|**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 1 |
-| **Sleeving** | Optional| Mesh|  xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-Pre-made JST-GH cable. No crimping required — source cable at the required length below.
-
-| Harness | Connector | Required Length  |
-| :--- | :--- | :--- |
-| HAR-026 (Remote ID) | JST-GH 4P | 65mm |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: J20| To: RID| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| 5V|
-| **W2** | Default| **Pin 2** | 2| CAN1_L|
-| **W3** | Default| **Pin 3** | 3| CAN1_H|
-| **W4** | Default| **Pin 4** | 4| GND|
-
-#### 5. Assembly Instructions
-N/A
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Main_PCB J20
-* **Destination Connection:**  RID
-* **Routing Path:**
-    * Path - Direct connection
-    * Constraint - N/A
-    * Fixing - N/A
-
- ![alt text](./Assembly-Guides/assets/images/Harnessing/HAR026.jpg)
-
-
-## HAR-0027 SIYI Camera
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| HM30 LAN & PWR|A8 PWR |
-| HM30 LAN & PWR|A8 Video & Protocol |
-
-
-#### 1. Nailboard
-
-![HAR-027 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-027.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-| Item Type | Part Number | Description / Spec | Qty Needed |
-| :--- | :--- | :--- | :--- |
-|**4 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 4 Way| 1 |
-|**8 Pin JST Cable** | N/A| JST, GH Connector Housing, 1.25mm Pitch, 6 Way| 1 |
-| **Sleeving** | Optional| Mesh|  xx mm|
-
-#### 3. Wire Prep (Cut & Strip)
-*Prepare all wires before assembly.*
-
-Pre-made JST-GH cables. No crimping required — source cables at the required lengths below.
-
-| Harness | Connector | Required Length  |
-| :--- | :--- | :--- |
-| HAR-027 power (4P) | JST-GH 4P | 325mm |
-| HAR-027 video (8P) | JST-GH 8P | 325mm |
-
-#### 4. Termination & Pinout Map
-*Connect End A to End B following this chart.*
-
-| Wire ID | Color | From: HM30 LAN & PWR| To: A8 PWR| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 1** | 1| 12V|
-| **W2** | Default| **Pin 1** | 2| 12V|
-| **W3** | Default| **Pin 2** | 3| GND|
-| **W4** | Default| **Pin 2** | 4| GND|
-
- <br>
-
-| Wire ID | Color | From: HM30 LAN & PWR| To: A8 Vid| Function / Signal |
-| :--- | :--- | :--- | :--- | :--- |
-| **W1** | Default| **Pin 3** | 3| ETH_TX+|
-| **W2** | Default| **Pin 4** | 4| ETH_TX-|
-| **W3** | Default| **Pin 5** | 5| ETH_RX+|
-| **W4** | Default| **Pin 6** | 6| ETH_RX-|
-
-#### 5. Assembly Instructions
-N/A
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** HM30 LAN & PWR
-* **Destination Connection:**  SIYI A8
-* **Routing Path:**
-    * Path - Right side middle plate opening to underside of bottom plate
-    * Constraint - Other cables
-    * Fixing - Undecided zip ties
-
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR027-1.jpg)  ![alt text](./Assembly-Guides/assets/images/Harnessing/HAR027-2.jpg)
-
-
-## HAR-0028 Antenna
-| **FROM**    | **TO**  |
-| ------------| ------- |
-| Antenna 1|HM30 |
-| Antenna 2|HM30 |
-
-#### 1. Nailboard
-
-![HAR-028 Nail Board](./Assembly-Guides/assets/images/Harnessing/HAR-028.png)
-
-#### 2. Bill of Materials (Kitting)
-*Gather these parts before starting the build.*
-
-Pre made cables with SMA connector. Length adjustment not required.
-
-#### 3. Wire Prep (Cut & Strip)
-N/A
-
-#### 4. Termination & Pinout Map
-N/A
-
-#### 5. Assembly Instructions
-N/A
-
----
-
-#### 6. Installation & Routing (Vehicle Integration)
-*Instructions for the technician installing this harness into the chassis.*
-
-* **Source Connection:** Antenna
-* **Destination Connection:** HM30
-* **Routing Path:**
-    * Path - Through enclosure provisions to middle plate
-    * Constraint - N/A
-    * Fixing - N/A
-
-![alt text](./Assembly-Guides/assets/images/Harnessing/HAR028.jpg)
-
-
-# General Assembly
+This Dev-Kit Manufacturing Guide keeps only vehicle-side routing and installation notes, placed in the assembly steps where each harness is installed.
 
 ## BOM for the Assembly
 
@@ -1434,13 +172,15 @@ N/A
 - Product Link: [Link](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1)
 - Qty: 4.
 
-> [!NOTE]
-> - This product became available in RJXHobby catalog after a customized order for 30 mm tube diameter.
-> - If not available in the catalog, contact RJXHobby for the customization.
-> - Request 30 mm diameter variant of [this product](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with bolt pattern of 30 mm version of [this one](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
+:::note
+- This product became available in RJXHobby catalog after a customized order for 30 mm tube diameter.
+- If not available in the catalog, contact RJXHobby for the customization.
+- Request 30 mm diameter variant of [this product](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) with bolt pattern of 30 mm version of [this one](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
+:::
 
-> [!Note]
-> If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
+:::note
+If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
+:::
 
 | 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
 |--|
@@ -1788,8 +528,10 @@ N/A
   - Secure it with 3x Screw 5 in total from below the mid plate on the holes below.
   - Use Washer 1 for the holes.
 
-<img src="Assembly-Guides/assets/images/structural/step7_3.png" alt="Alt Text" width="600">
+<img src="Assembly-Guides/assets/images/structural/step7_3.png" alt="Alt Text" width="600" />
+
 ---
+
 ### Step 8. Install the Battery Sliders
 - Parts needed:
   - 2211, 2212 (Battery Sliders)
@@ -1836,9 +578,10 @@ N/A
   - Make sure the tubes are inserted all the way.
   - Tighten the clamps to secure the tubes in place.
 
-> [!NOTE]
->
-> Due to the lack of the detachable landing gear adapter geometry, this image depicts the old adapter. It should be updated with a real life image.
+:::note
+
+Due to the lack of the detachable landing gear adapter geometry, this image depicts the old adapter. It should be updated with a real life image.
+:::
 
 |Landing Gear Adapter|
 |---|
@@ -1857,9 +600,10 @@ N/A
 |--|--|
 |<img src="Assembly-Guides/assets/images/structural/step9_5.png" alt="Alt Text" width="600">| <img src="Assembly-Guides/assets/images/structural/step9_4.png" alt="Alt Text" width="600"> |
 
-> [!NOTE]
->
-> Due to the lack of the landing gear tee joint geometry, this image depicts the old joint. It should be updated with a real life image.
+:::note
+
+Due to the lack of the landing gear tee joint geometry, this image depicts the old joint. It should be updated with a real life image.
+:::
 
 - Slide the landing gear foams to the end of the horizontal tubes.
 
@@ -1955,11 +699,12 @@ N/A
   - See the warning before installation.
   - Secure it with 7x Screw 11.
 
-> [!CAUTION]
-> **CRITICAL: Trim DC-DC Converter Pins**
->
-> Before mounting the Main PCB, the through-hole pins of the DC-DC converters **must** be trimmed on the underside of the board. They extend too far and may puncture the mount or short against the frame.
-> See the reference image for the required clearance.
+:::caution
+**CRITICAL: Trim DC-DC Converter Pins**
+
+Before mounting the Main PCB, the through-hole pins of the DC-DC converters **must** be trimmed on the underside of the board. They extend too far and may puncture the mount or short against the frame.
+See the reference image for the required clearance.
+:::
 
 
 |Main PCB & Bolt Locations| Through-hole Pin Trim|
@@ -2023,6 +768,19 @@ N/A
 |--|
 |<img src="Assembly-Guides/assets/images/structural/step12_11.png" alt="Alt Text" width="600">|
 
+#### Harness Routing Notes
+
+Route the PCB interconnect and navigation harnesses after the BC PCB, Main PCB, FC PCB, GNSS, and onboard components are mounted.
+
+| Harness | Source | Destination | Routing notes |
+| :--- | :--- | :--- | :--- |
+| HAR-0002 BC_PCB Signal | Bat_PCB J2 | Main_PCB J43 | Direct PCB interconnect. No special constraint or fixing noted. |
+| HAR-0003 BC_PCB SSR | Bat_PCB J3 | Main_PCB J46 | Direct PCB interconnect. No special routing constraints currently noted. |
+| HAR-0021 / HAR-0022 Navigation | Main_PCB J7, J9 | F9P/Here 4, Mateksys | Route immediately to the right. No special constraint or fixing noted. |
+
+| HAR-002 BC PCB Signal | HAR-003 BC PCB SSR | HAR-022 Navigation |
+| :---: | :---: | :---: |
+| ![HAR-002 BC PCB signal routing](Assembly-Guides/assets/images/Harnessing/HAR002.jpg) | ![HAR-003 BC PCB SSR routing](Assembly-Guides/assets/images/Harnessing/HAR003.jpg) | ![HAR-022 navigation routing](Assembly-Guides/assets/images/Harnessing/HAR022.jpg) |
 
 ---
 ### Step 13. Install Busbars
@@ -2094,7 +852,6 @@ N/A
 |Positioning, Cable & Notch Orientation|Installation Holes|
 |--|--|
 |<img src="Assembly-Guides/assets/images/structural/step15_4.png" alt="Alt Text" width="600">| <img src="Assembly-Guides/assets/images/structural/step15_5.png" alt="Alt Text" width="600"> |
-
 ---
 ### Step 16. Install Radar Sensors
 - Parts needed:
@@ -2122,6 +879,21 @@ N/A
 |--|
 |<img src="Assembly-Guides/assets/images/structural/step16_2.png" alt="Alt Text" width="600">|
 
+#### Harness Routing Notes
+
+Route radar and altimeter harnesses while installing the sensors.
+
+| Harness | Source | Destination | Routing notes |
+| :--- | :--- | :--- | :--- |
+| HAR-0015 Altimeter | Main PCB J8 | NRA15 | Route from the right-side top-plate entry to the bottom plate. Watch other cables and fix with the marked zip tie. |
+| HAR-0017 Front Radar | Main PCB J49 | Front radar | Route from the right-side top-plate entry to the bottom plate. Watch other cables and fix with the marked zip tie. |
+
+| HAR-015 Altimeter — View 1 | HAR-015 Altimeter — View 2 |
+| :---: | :---: |
+| ![HAR-015 altimeter routing 1](Assembly-Guides/assets/images/Harnessing/HAR015-1.jpg) | ![HAR-015 altimeter routing 2](Assembly-Guides/assets/images/Harnessing/HAR015-2.jpg) |
+| HAR-017 Front Radar — View 1 | HAR-017 Front Radar — View 2 |
+| ![HAR-017 front radar routing 1](Assembly-Guides/assets/images/Harnessing/HAR017-1.jpg) | ![HAR-017 front radar routing 2](Assembly-Guides/assets/images/Harnessing/HAR017-2.jpg) |
+
 ---
 ### Step 17. Install Camera
 - Parts needed:
@@ -2141,6 +913,18 @@ N/A
 | Camera Installation Holes | Camera Orientation |
 |--|--|
 |<img src="Assembly-Guides/assets/images/structural/step17_1.png" alt="Alt Text" width="600">|<img src="Assembly-Guides/assets/images/structural/step17_2.png" alt="Alt Text" width="600">|
+
+#### Harness Routing Notes
+
+Route the camera harness while installing the SIYI camera.
+
+| Harness | Source | Destination | Routing notes |
+| :--- | :--- | :--- | :--- |
+| HAR-0027 SIYI Camera | HM30 LAN and power | SIYI A8 | Route through the right-side middle-plate opening to the underside of the bottom plate. Watch other cables and use zip ties as needed. |
+
+| HAR-027 SIYI Camera — View 1 | HAR-027 SIYI Camera — View 2 |
+| :---: | :---: |
+| ![HAR-027 SIYI camera routing 1](Assembly-Guides/assets/images/Harnessing/HAR027-1.jpg) | ![HAR-027 SIYI camera routing 2](Assembly-Guides/assets/images/Harnessing/HAR027-2.jpg) |
 
 ---
 ### Step 18. Install Motor Arm Tubes & Motors
@@ -2204,6 +988,19 @@ N/A
 |--|
 |<img src="Assembly-Guides/assets/images/structural/step18_5.png" alt="Alt Text" width="600">|
 
+#### Harness Routing Notes
+
+Route motor/ESC harnesses with the motor arms.
+
+| Harness | Source | Destination | Routing notes |
+| :--- | :--- | :--- | :--- |
+| HAR-0004 / HAR-0005 / HAR-0006 / HAR-0007 ESC Power | Main_PCB J27 | ESC power leads | Route through the circular hole on the upper plate to the middle plate. No special constraint or fixing noted. |
+| HAR-0008 / HAR-0009 / HAR-0010 / HAR-0011 ESC Signal | Bat_PCB J2 | Main_PCB J43 | No special routing constraint or fixing currently noted. |
+
+| HAR-004 ESC Power | HAR-008 ESC Signal |
+| :---: | :---: |
+| ![HAR-004 ESC power routing](Assembly-Guides/assets/images/Harnessing/HAR004.jpg) | ![HAR-008 ESC signal routing](Assembly-Guides/assets/images/Harnessing/HAR008.jpg) |
+
 ---
 
 ### Step 19. Install Telemetry Air Unit & Attachment Interface PCBs
@@ -2231,6 +1028,27 @@ N/A
 |Attachment Interface PCB Orientation| PCB Location |
 |--|--|
 |<img src="Assembly-Guides/assets/images/structural/step19_2.png" alt="Alt Text" width="600">|<img src="Assembly-Guides/assets/images/structural/step19_3.png" alt="Alt Text" width="415">|
+
+#### Harness Routing Notes
+
+Route HM30 and attachment-interface harnesses while installing the telemetry air unit and attachment interface PCBs.
+
+| Harness | Source | Destination | Routing notes |
+| :--- | :--- | :--- | :--- |
+| HAR-0018 HM30 Power | Main_PCB J27 | HM30 power | Route through the right-side top-plate opening. No special constraint or fixing noted. |
+| HAR-0019 / HAR-0020 HM30 Signal | Bat_PCB J15, J17 | HM30 | Route through the right-side top-plate opening. Watch other cables and secure with zip ties. |
+| HAR-0012 / HAR-0013 Side Payloads | Main_PCB J29, J37 | ATT_INT right/left | Route underneath the Main PCB to the middle-plate side circular openings. Mirror the path for the opposite side. Watch the telemetry air unit location. |
+| HAR-0014 Bottom Payload | Main_PCB J31, J39 | ATT_INT bottom | Route from the top plate through the right-side opening and mid-plate openings, then attach to the underside of the bottom plate. Watch the number of cables passing through openings. Fix with zip ties at the marked locations. |
+
+| HAR-018 HM30 Power | HAR-019 HM30 Signal — View 1 |
+| :---: | :---: |
+| ![HAR-018 HM30 power routing](Assembly-Guides/assets/images/Harnessing/HAR018.jpg) | ![HAR-019 HM30 signal routing 1](Assembly-Guides/assets/images/Harnessing/HAR019.jpg) |
+| HAR-019 HM30 Signal — View 2 | HAR-020 HM30 Signal |
+| ![HAR-019 HM30 signal routing 2](Assembly-Guides/assets/images/Harnessing/HAR019-2.jpg) | ![HAR-020 HM30 signal routing](Assembly-Guides/assets/images/Harnessing/HAR020.jpg) |
+
+| HAR-012 Side Payload | HAR-014 Bottom Payload — View 1 | HAR-014 Bottom Payload — View 2 |
+| :---: | :---: | :---: |
+| ![HAR-012 side payload routing](Assembly-Guides/assets/images/Harnessing/HAR012.jpg) | ![HAR-014 bottom payload routing 1](Assembly-Guides/assets/images/Harnessing/HAR014-1.jpg) | ![HAR-014 bottom payload routing 2](Assembly-Guides/assets/images/Harnessing/HAR014-2.jpg) |
 
 ---
 
@@ -2340,6 +1158,20 @@ N/A
 |---|
 |<img src="Assembly-Guides/assets/images/structural/step21_6.png" alt="Alt Text" width="600">|
 
+#### Harness Routing Notes
+
+Route the pushbutton, LIDAR, and antenna harnesses while installing the enclosure-mounted components.
+
+| Harness | Source | Destination | Routing notes |
+| :--- | :--- | :--- | :--- |
+| HAR-0001 Pushbutton | Bat_PCB J1 | Pushbutton | Route over the Battery PCB. Fix using the marked zip-tie provision. |
+| HAR-0016 360 LIDAR | Main PCB U5 | S2L LIDAR | Route downward toward the connector and fix with the marked zip tie. |
+| HAR-0028 Antenna | Antenna | HM30 | Route through the enclosure provisions to the middle plate. No special constraint or fixing noted. |
+
+| HAR-001 Pushbutton | HAR-016 360 LIDAR | HAR-028 Antenna |
+| :---: | :---: | :---: |
+| ![HAR-001 pushbutton routing](Assembly-Guides/assets/images/Harnessing/HAR001.jpg) | ![HAR-016 360 LIDAR routing](Assembly-Guides/assets/images/Harnessing/HAR016.jpg) | ![HAR-028 antenna routing](Assembly-Guides/assets/images/Harnessing/HAR028.jpg) |
+
 ---
 
 ### Step 22. Install the PPP Adapter & Beacon
@@ -2377,6 +1209,21 @@ N/A
 |PPP Adapter & Beacon Mount Installation|
 |---|
 |<img src="Assembly-Guides/assets/images/structural/step22_3.png" alt="Alt Text" width="600">|
+
+#### Harness Routing Notes
+
+Route PPP2ETH and Remote ID harnesses while installing the PPP adapter and beacon mount.
+
+| Harness | Source | Destination | Routing notes |
+| :--- | :--- | :--- | :--- |
+| HAR-0023 / HAR-0024 / HAR-0025 PPP2ETH | Main_PCB J35, J36, J41 | PPP2ETH | Direct connections. HAR-0024 routes under the PPP/beacon mounting board; watch the mount and fix with the marked zip tie. |
+| HAR-0026 Remote ID | Main_PCB J20 | Remote ID beacon | Direct connection. No special constraint or fixing noted. |
+
+| HAR-023 PPP2ETH | HAR-024 PPP2ETH |
+| :---: | :---: |
+| ![HAR-023 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR023.jpg) | ![HAR-024 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR024.jpg) |
+| HAR-025 PPP2ETH | HAR-026 Remote ID |
+| ![HAR-025 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR025.jpg) | ![HAR-026 Remote ID routing](Assembly-Guides/assets/images/Harnessing/HAR026.jpg) |
 
 -----
 
