@@ -4,14 +4,20 @@ description: Complete bill of materials for the Quiver dev-kit build
 sidebar_position: 2
 ---
 
+<!-- GENERATED FILE: edit docs/bom/quiver-pt1-bom.csv, then run tools/bom/generate_bom_docs.py -->
+
 # Bill of Materials
 
 Complete bill of materials for building a Quiver dev-kit. This list covers structural, harness, avionics, propulsion, equipment, and shop-supply components.
 
-**Estimated total cost: $6,762.37**
+**Estimated total cost: $6,762.38**
 
-:::tip Data formats
-This BOM is also available as a [CSV file](https://github.com/Arrow-air/project-quiver/blob/main/docs/bom/quiver-pt1-bom.csv) for spreadsheet import or programmatic use. The source of truth is the [Devkit BOM Google Sheet](https://docs.google.com/spreadsheets/d/1QJBaE_1iMNckU-1B3wAJMqJlpWVV4R0CgzfKqYckRh0/edit?gid=0#gid=0).
+:::tip Canonical source
+The canonical BOM source is [`docs/bom/quiver-pt1-bom.csv`](quiver-pt1-bom.csv). This markdown page is generated from that CSV for easier browsing in the docs site.
+:::
+
+:::note Spreadsheet workflows
+Google Sheets or other spreadsheet tools can still be used as import/export views, but GitHub is the source of truth. Proposed BOM changes should update the CSV in a pull request so review history, releases, and manufacturer packets stay reproducible.
 :::
 
 :::note Manufacturing references
@@ -180,3 +186,18 @@ Items marked "See Manufacturing Guide, Assembly Section" reference the Quiver ma
 | ID | Name | Unit Cost | Qty | Total | Supplier | Order Details | Notes |
 |----|------|-----------|-----|-------|----------|---------------|-------|
 | — | Heatsink Plate | — | — | — | — | — | — |
+
+---
+
+## Cost Summary
+
+| System | Estimated Cost |
+|--------|----------------|
+| Airframe Structure | $808.96 |
+| Secondary Structure | $142.84 |
+| Equipment | $4,671.46 |
+| Misc | $229.12 |
+| Structural | $760.00 |
+| Avionics | $150.00 |
+| Uncategorized | $0.00 |
+| **Total** | **$6,762.38** |
