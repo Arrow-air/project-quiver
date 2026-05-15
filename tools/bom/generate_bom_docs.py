@@ -13,7 +13,7 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_CSV = REPO_ROOT / "docs" / "bom" / "quiver-pt1-bom.csv"
+DEFAULT_CSV = REPO_ROOT / "docs" / "bom" / "quiver-bom.csv"
 DEFAULT_MARKDOWN = REPO_ROOT / "docs" / "bom" / "bill-of-materials.md"
 
 REQUIRED_COLUMNS = [
@@ -138,7 +138,7 @@ def render_markdown(rows: list[BomRow], csv_path: Path) -> str:
         "sidebar_position: 2",
         "---",
         "",
-        "<!-- GENERATED FILE: edit docs/bom/quiver-pt1-bom.csv, then run tools/bom/generate_bom_docs.py -->",
+        "<!-- GENERATED FILE: edit docs/bom/quiver-bom.csv, then run tools/bom/generate_bom_docs.py -->",
         "",
         "# Bill of Materials",
         "",

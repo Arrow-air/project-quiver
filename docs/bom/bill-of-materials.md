@@ -4,7 +4,7 @@ description: Complete bill of materials for the Quiver dev-kit build
 sidebar_position: 2
 ---
 
-<!-- GENERATED FILE: edit docs/bom/quiver-pt1-bom.csv, then run tools/bom/generate_bom_docs.py -->
+<!-- GENERATED FILE: edit docs/bom/quiver-bom.csv, then run tools/bom/generate_bom_docs.py -->
 
 # Bill of Materials
 
@@ -13,7 +13,7 @@ Complete bill of materials for building a Quiver dev-kit. This list covers struc
 **Estimated total cost: $6,762.38**
 
 :::tip Canonical source
-The canonical BOM source is [`docs/bom/quiver-pt1-bom.csv`](quiver-pt1-bom.csv). This markdown page is generated from that CSV for easier browsing in the docs site.
+The canonical BOM source is [`docs/bom/quiver-bom.csv`](quiver-bom.csv). This markdown page is generated from that CSV for easier browsing in the docs site.
 :::
 
 :::note Spreadsheet workflows
