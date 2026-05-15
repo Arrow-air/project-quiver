@@ -778,9 +778,9 @@ Route the PCB interconnect and navigation harnesses after the BC PCB, Main PCB, 
 | HAR-0003 BC_PCB SSR | Bat_PCB J3 | Main_PCB J46 | Direct PCB interconnect. No special routing constraints currently noted. |
 | HAR-0021 / HAR-0022 Navigation | Main_PCB J7, J9 | F9P/Here 4, Mateksys | Route immediately to the right. No special constraint or fixing noted. |
 
-| HAR-002 BC PCB Signal | HAR-003 BC PCB SSR | HAR-022 Navigation |
+| HAR-0002 BC PCB Signal | HAR-0003 BC PCB SSR | HAR-0022 Navigation |
 | :---: | :---: | :---: |
-| ![HAR-002 BC PCB signal routing](Assembly-Guides/assets/images/Harnessing/HAR002.jpg) | ![HAR-003 BC PCB SSR routing](Assembly-Guides/assets/images/Harnessing/HAR003.jpg) | ![HAR-022 navigation routing](Assembly-Guides/assets/images/Harnessing/HAR022.jpg) |
+| ![HAR-0002 BC PCB signal routing](Assembly-Guides/assets/images/Harnessing/HAR002.jpg) | ![HAR-0003 BC PCB SSR routing](Assembly-Guides/assets/images/Harnessing/HAR003.jpg) | ![HAR-0022 navigation routing](Assembly-Guides/assets/images/Harnessing/HAR022.jpg) |
 
 ---
 ### Step 13. Install Busbars
@@ -888,11 +888,11 @@ Route radar and altimeter harnesses while installing the sensors.
 | HAR-0015 Altimeter | Main PCB J8 | NRA15 | Route from the right-side top-plate entry to the bottom plate. Watch other cables and fix with the marked zip tie. |
 | HAR-0017 Front Radar | Main PCB J49 | Front radar | Route from the right-side top-plate entry to the bottom plate. Watch other cables and fix with the marked zip tie. |
 
-| HAR-015 Altimeter — View 1 | HAR-015 Altimeter — View 2 |
+| HAR-0015 Altimeter — View 1 | HAR-0015 Altimeter — View 2 |
 | :---: | :---: |
-| ![HAR-015 altimeter routing 1](Assembly-Guides/assets/images/Harnessing/HAR015-1.jpg) | ![HAR-015 altimeter routing 2](Assembly-Guides/assets/images/Harnessing/HAR015-2.jpg) |
-| HAR-017 Front Radar — View 1 | HAR-017 Front Radar — View 2 |
-| ![HAR-017 front radar routing 1](Assembly-Guides/assets/images/Harnessing/HAR017-1.jpg) | ![HAR-017 front radar routing 2](Assembly-Guides/assets/images/Harnessing/HAR017-2.jpg) |
+| ![HAR-0015 altimeter routing 1](Assembly-Guides/assets/images/Harnessing/HAR015-1.jpg) | ![HAR-0015 altimeter routing 2](Assembly-Guides/assets/images/Harnessing/HAR015-2.jpg) |
+| HAR-0017 Front Radar — View 1 | HAR-0017 Front Radar — View 2 |
+| ![HAR-0017 front radar routing 1](Assembly-Guides/assets/images/Harnessing/HAR017-1.jpg) | ![HAR-0017 front radar routing 2](Assembly-Guides/assets/images/Harnessing/HAR017-2.jpg) |
 
 ---
 ### Step 17. Install Camera
@@ -922,9 +922,9 @@ Route the camera harness while installing the SIYI camera.
 | :--- | :--- | :--- | :--- |
 | HAR-0027 SIYI Camera | HM30 LAN and power | SIYI A8 | Route through the right-side middle-plate opening to the underside of the bottom plate. Watch other cables and use zip ties as needed. |
 
-| HAR-027 SIYI Camera — View 1 | HAR-027 SIYI Camera — View 2 |
+| HAR-0027 SIYI Camera — View 1 | HAR-0027 SIYI Camera — View 2 |
 | :---: | :---: |
-| ![HAR-027 SIYI camera routing 1](Assembly-Guides/assets/images/Harnessing/HAR027-1.jpg) | ![HAR-027 SIYI camera routing 2](Assembly-Guides/assets/images/Harnessing/HAR027-2.jpg) |
+| ![HAR-0027 SIYI camera routing 1](Assembly-Guides/assets/images/Harnessing/HAR027-1.jpg) | ![HAR-0027 SIYI camera routing 2](Assembly-Guides/assets/images/Harnessing/HAR027-2.jpg) |
 
 ---
 ### Step 18. Install Motor Arm Tubes & Motors
@@ -997,9 +997,9 @@ Route motor/ESC harnesses with the motor arms.
 | HAR-0004 / HAR-0005 / HAR-0006 / HAR-0007 ESC Power | Main_PCB J27 | ESC power leads | Route through the circular hole on the upper plate to the middle plate. No special constraint or fixing noted. |
 | HAR-0008 / HAR-0009 / HAR-0010 / HAR-0011 ESC Signal | Bat_PCB J2 | Main_PCB J43 | No special routing constraint or fixing currently noted. |
 
-| HAR-004 ESC Power | HAR-008 ESC Signal |
+| HAR-0004 ESC Power | HAR-0008 ESC Signal |
 | :---: | :---: |
-| ![HAR-004 ESC power routing](Assembly-Guides/assets/images/Harnessing/HAR004.jpg) | ![HAR-008 ESC signal routing](Assembly-Guides/assets/images/Harnessing/HAR008.jpg) |
+| ![HAR-0004 ESC power routing](Assembly-Guides/assets/images/Harnessing/HAR004.jpg) | ![HAR-0008 ESC signal routing](Assembly-Guides/assets/images/Harnessing/HAR008.jpg) |
 
 ---
 
@@ -1040,15 +1040,15 @@ Route HM30 and attachment-interface harnesses while installing the telemetry air
 | HAR-0012 / HAR-0013 Side Payloads | Main_PCB J29, J37 | ATT_INT right/left | Route underneath the Main PCB to the middle-plate side circular openings. Mirror the path for the opposite side. Watch the telemetry air unit location. |
 | HAR-0014 Bottom Payload | Main_PCB J31, J39 | ATT_INT bottom | Route from the top plate through the right-side opening and mid-plate openings, then attach to the underside of the bottom plate. Watch the number of cables passing through openings. Fix with zip ties at the marked locations. |
 
-| HAR-018 HM30 Power | HAR-019 HM30 Signal — View 1 |
+| HAR-0018 HM30 Power | HAR-0019 HM30 Signal — View 1 |
 | :---: | :---: |
-| ![HAR-018 HM30 power routing](Assembly-Guides/assets/images/Harnessing/HAR018.jpg) | ![HAR-019 HM30 signal routing 1](Assembly-Guides/assets/images/Harnessing/HAR019.jpg) |
-| HAR-019 HM30 Signal — View 2 | HAR-020 HM30 Signal |
-| ![HAR-019 HM30 signal routing 2](Assembly-Guides/assets/images/Harnessing/HAR019-2.jpg) | ![HAR-020 HM30 signal routing](Assembly-Guides/assets/images/Harnessing/HAR020.jpg) |
+| ![HAR-0018 HM30 power routing](Assembly-Guides/assets/images/Harnessing/HAR018.jpg) | ![HAR-0019 HM30 signal routing 1](Assembly-Guides/assets/images/Harnessing/HAR019.jpg) |
+| HAR-0019 HM30 Signal — View 2 | HAR-0020 HM30 Signal |
+| ![HAR-0019 HM30 signal routing 2](Assembly-Guides/assets/images/Harnessing/HAR019-2.jpg) | ![HAR-0020 HM30 signal routing](Assembly-Guides/assets/images/Harnessing/HAR020.jpg) |
 
-| HAR-012 Side Payload | HAR-014 Bottom Payload — View 1 | HAR-014 Bottom Payload — View 2 |
+| HAR-0012 Side Payload | HAR-0014 Bottom Payload — View 1 | HAR-0014 Bottom Payload — View 2 |
 | :---: | :---: | :---: |
-| ![HAR-012 side payload routing](Assembly-Guides/assets/images/Harnessing/HAR012.jpg) | ![HAR-014 bottom payload routing 1](Assembly-Guides/assets/images/Harnessing/HAR014-1.jpg) | ![HAR-014 bottom payload routing 2](Assembly-Guides/assets/images/Harnessing/HAR014-2.jpg) |
+| ![HAR-0012 side payload routing](Assembly-Guides/assets/images/Harnessing/HAR012.jpg) | ![HAR-0014 bottom payload routing 1](Assembly-Guides/assets/images/Harnessing/HAR014-1.jpg) | ![HAR-0014 bottom payload routing 2](Assembly-Guides/assets/images/Harnessing/HAR014-2.jpg) |
 
 ---
 
@@ -1168,9 +1168,9 @@ Route the pushbutton, LIDAR, and antenna harnesses while installing the enclosur
 | HAR-0016 360 LIDAR | Main PCB U5 | S2L LIDAR | Route downward toward the connector and fix with the marked zip tie. |
 | HAR-0028 Antenna | Antenna | HM30 | Route through the enclosure provisions to the middle plate. No special constraint or fixing noted. |
 
-| HAR-001 Pushbutton | HAR-016 360 LIDAR | HAR-028 Antenna |
+| HAR-0001 Pushbutton | HAR-0016 360 LIDAR | HAR-0028 Antenna |
 | :---: | :---: | :---: |
-| ![HAR-001 pushbutton routing](Assembly-Guides/assets/images/Harnessing/HAR001.jpg) | ![HAR-016 360 LIDAR routing](Assembly-Guides/assets/images/Harnessing/HAR016.jpg) | ![HAR-028 antenna routing](Assembly-Guides/assets/images/Harnessing/HAR028.jpg) |
+| ![HAR-0001 pushbutton routing](Assembly-Guides/assets/images/Harnessing/HAR001.jpg) | ![HAR-0016 360 LIDAR routing](Assembly-Guides/assets/images/Harnessing/HAR016.jpg) | ![HAR-0028 antenna routing](Assembly-Guides/assets/images/Harnessing/HAR028.jpg) |
 
 ---
 
@@ -1219,11 +1219,11 @@ Route PPP2ETH and Remote ID harnesses while installing the PPP adapter and beaco
 | HAR-0023 / HAR-0024 / HAR-0025 PPP2ETH | Main_PCB J35, J36, J41 | PPP2ETH | Direct connections. HAR-0024 routes under the PPP/beacon mounting board; watch the mount and fix with the marked zip tie. |
 | HAR-0026 Remote ID | Main_PCB J20 | Remote ID beacon | Direct connection. No special constraint or fixing noted. |
 
-| HAR-023 PPP2ETH | HAR-024 PPP2ETH |
+| HAR-0023 PPP2ETH | HAR-0024 PPP2ETH |
 | :---: | :---: |
-| ![HAR-023 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR023.jpg) | ![HAR-024 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR024.jpg) |
-| HAR-025 PPP2ETH | HAR-026 Remote ID |
-| ![HAR-025 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR025.jpg) | ![HAR-026 Remote ID routing](Assembly-Guides/assets/images/Harnessing/HAR026.jpg) |
+| ![HAR-0023 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR023.jpg) | ![HAR-0024 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR024.jpg) |
+| HAR-0025 PPP2ETH | HAR-0026 Remote ID |
+| ![HAR-0025 PPP2ETH routing](Assembly-Guides/assets/images/Harnessing/HAR025.jpg) | ![HAR-0026 Remote ID routing](Assembly-Guides/assets/images/Harnessing/HAR026.jpg) |
 
 -----
 
