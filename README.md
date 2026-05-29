@@ -47,6 +47,9 @@ project-quiver/
 
 The CAD source is a [build123d](https://github.com/gumyr/build123d) Python package that composes STEP files into the full drone assembly. This enables programmatic CAD generation and version-controlled mechanical design. See [`src/quiver/`](src/quiver/) for details.
 
+For online viewing, an interactive Fusion link of the complete Quiver assembly is available [here](https://a360.co/4kQC2ny).
+
+For viewing online, 
 ## Getting Started
 
 **Want to build one?** Start with the [Assembly Guides](https://arrowair.com/docs/quiver/pt3-assembly-guides).
