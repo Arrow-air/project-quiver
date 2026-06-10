@@ -179,6 +179,7 @@ GIGA
 Giga
 giga
 GLONASS
+gltf
 GNDCLEAR
 GNDCLR
 GNSS

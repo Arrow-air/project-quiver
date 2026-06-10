@@ -23,6 +23,8 @@
         "KiCAD-Files/.*\\.ini$",
         "\\.dxf$",
         "\\.DXF$",
+        "\\.glb$",
+        "\\.GLB$",
         "\\.stl$",
         "\\.STL$",
         "\\.gbr$",
