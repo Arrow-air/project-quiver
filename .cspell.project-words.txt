@@ -22,6 +22,7 @@ argparse
 Arrowair
 asctime
 ASMT
+ASSY
 assy
 ASTM
 asyncio
@@ -41,10 +42,12 @@ Balmorhea
 Bambu
 Bambulab
 Baro
+BAUDRATE
 Baudrate
 behaviour
 Benewake
 bitmask
+Blox
 blox
 Bluemark
 bombody
@@ -67,7 +70,9 @@ busbar
 busbars
 Bussmann
 BYGX
+cadquery
 CANB
+Canbus
 canbus
 CANDRIVER
 candump
@@ -109,6 +114,7 @@ datasheets
 dataurl
 datefmt
 dbgdiv
+Decel
 decel
 dedup
 DEFLT
@@ -144,6 +150,7 @@ ENIG
 errrks
 Eurostyle
 extrafields
+ezdxf
 Failsafes
 FCHUB
 FCPCB
@@ -168,6 +175,8 @@ Geofence
 Geoportal
 gerbers
 getenv
+GIGA
+Giga
 giga
 GLONASS
 GNDCLEAR
@@ -229,11 +238,13 @@ layername
 Leddar
 Leica
 levelname
+Licence
 licence
 licences
 linepoint
 Littelfuse
 loadout
+Loctite
 loctite
 MagFit
 makedirs
@@ -241,9 +252,11 @@ manufacturability
 Matek
 Mateksys
 MAVFTP
+MAVLINK
 mavlink
 MAVPORT
 mavproxy
+MAVSDK
 mavsdk
 mavutil
 Maxbotix
@@ -255,8 +268,11 @@ Mbit
 Mbps
 menubtn
 mgmt
+MILLI
+Milli
 milli
 millidegrees
+Millis
 millis
 miny
 misoperation
@@ -264,6 +280,8 @@ MJPEG
 MLCC
 mLRS
 Moldflow
+MOLEX
+Molex
 molex
 Mollysuh
 MOSFET
@@ -275,11 +293,13 @@ multicopter
 Multicopters
 multirotor
 Multispectral
+Nailboard
 nailboard
 Nanoradar
 Nanuk
 Nastran
 Netfabb
+Netlist
 netlist
 netname
 netplan
@@ -290,6 +310,7 @@ Nooploop
 NOPASSWD
 nslookup
 objurl
+ocpsvg
 offsetx
 offsety
 ondouble
@@ -317,9 +338,13 @@ PEKK
 Periph
 PESD
 PETG
+Phugoid
 phugoid
+PICO
+Pico
 pico
 Pieroxy
+Pinout
 pinout
 pinouts
 Pixhawk
@@ -340,6 +365,7 @@ PSCN
 psutil
 Pushback
 PVHC
+pygltflib
 pymavlink
 pyserial
 pytest
@@ -420,7 +446,9 @@ strb
 subfolders
 succesful
 Superflex
+svgelements
 svgpath
+svgpathtools
 swapable
 swappable
 Syncer
@@ -434,6 +462,7 @@ Tera
 tessellator
 thomasg
 Threadlocker
+threejs
 THST
 timedatectl
 topdivider
@@ -442,6 +471,7 @@ Topo
 toptoggle
 TRACO
 Travelled
+trianglesolver
 TSYS
 TXCAN
 txqueuelen
@@ -464,6 +494,7 @@ USART
 utcnow
 Uxcell
 Vavg
+VBAT
 Vbat
 VELXY
 VELZ
@@ -477,6 +508,7 @@ Vreg
 WCAP
 wheeldelta
 WHEP
+whep
 Wurth
 Würth
 XCLASS

@@ -98,8 +98,8 @@ def main() -> int:
     parser.add_argument("--min-volume", type=float, required=True,
                         help="drop solids with bounding-box volume below this (mm³)")
     parser.add_argument("--runtime-min-volume", type=float, default=None,
-                        help="min_solid_volume the assembly code uses for this file "
-                             "(defaults to --min-volume)")
+                        help="min_solid_volume the assembly code uses for this "
+                        "file (defaults to --min-volume)")
     parser.add_argument("--tolerance", type=float, default=0.1,
                         help="max allowed center/bbox shift in mm (default 0.1)")
     args = parser.parse_args()
