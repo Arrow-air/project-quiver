@@ -64,4 +64,4 @@ if __name__ == "__main__":
     else:
         bb = design.bounding_box()
         print(f"{design.label}: {len(design.solids())} solid(s), "
-              f"bbox {bb.min} to {bb.max}")
+            f"bbox {bb.min} to {bb.max}")
