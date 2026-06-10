@@ -45,6 +45,9 @@ Generated parts:
     1310 Vertical tube  -- 30mm OD, 2mm wall CF tube, 400mm long (used 4x)
     1320 Horizontal tube -- 30mm OD, 2mm wall CF tube, 500mm long (used 2x)
     1350 Foam sleeve    -- 40mm OD, 30mm ID foam sleeve, 66mm long (used 4x)
+
+Position constants are center-of-mass coordinates measured from the
+Fusion 360 PT3 master model export.
 """
 
 import math
@@ -52,7 +55,7 @@ from pathlib import Path
 
 from build123d import Axis, Compound, Cylinder, Location, Part
 
-from quiver.common import ALUMINUM, CARBON_FIBER, FOAM, PETG, load_step
+from quiver.common import ALUMINUM, CARBON_FIBER, FOAM, PETG, load_step, place_at
 
 _DIR = Path(__file__).parent
 
@@ -128,12 +131,7 @@ def make_assembly() -> Compound | None:
             adapter.color = ALUMINUM
             adapter = adapter.rotate(Axis.Z, 90 * sx)
             adapter = adapter.rotate(Axis.Y, -_TILT_ANGLE * sx)
-            com = adapter.center()
-            adapter.move(Location((
-                sx * _ADAPTER_X - com.X,
-                sy * _LEG_Y - com.Y,
-                _ADAPTER_Z - com.Z,
-            )))
+            place_at(adapter, sx * _ADAPTER_X, sy * _LEG_Y, _ADAPTER_Z)
             children.append(adapter)
 
         # --- Vertical tube (generated, angled outward) ---
@@ -156,12 +154,7 @@ def make_assembly() -> Compound | None:
             joint.color = PETG
             joint = joint.rotate(Axis.Z, 90 * sx)
             joint = joint.rotate(Axis.Y, -_TILT_ANGLE * sx)
-            com = joint.center()
-            joint.move(Location((
-                sx * _JOINT_X - com.X,
-                sy * _LEG_Y - com.Y,
-                _JOINT_Z - com.Z,
-            )))
+            place_at(joint, sx * _JOINT_X, sy * _LEG_Y, _JOINT_Z)
             children.append(joint)
 
     # --- Horizontal cross-tubes (generated, running front-to-back) ---
