@@ -113,7 +113,7 @@ The PCB design supports both pre-charge and full-power states. Custom high curre
 
 By combining critical protection, switching, and monitoring functions into a dedicated module, the Battery PCB reduces wiring complexity, improves maintainability, and enhances operational reliability in PT3.
 
-[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0002-Battery-PCB/KiCAD-Files)
+[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/src/pcb/battery_pcb)
 
 ### Main PCB
 
@@ -129,7 +129,7 @@ In addition to payload integration improvements, the board maintains robust powe
 
 The Main PCB functions as a central hub, managing power and communication between subsystems, including Ethernet and advanced CAN networks. The Flight Controller PCB accommodates the Pix32 V6 and includes advanced EMI filtering and power protection features, as discussed during the selection phase.
 
-[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0007-Main-PCB/KiCAD-Files)
+[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/src/pcb/main_pcb)
 
 ### FC PCB
 
@@ -137,7 +137,7 @@ The Main PCB functions as a central hub, managing power and communication betwee
 
 The FC PCB is an adapter board for the Pix32 V6 flight controller. It includes breakouts for the various PWM, GPIO, GPS, I²C, CAN, S.BUS, and power pins on the flight controller. Various components were included based on the documentation provided by Holybro for the Pix32 V6 Schematic. Diagnostic LEDs indicate FC power state and sensor activity, while probe points facilitate troubleshooting without interrupting harness connections.
 
-[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/task-grant-bounty/pt3/electronics/0008-FC-PCB/KiCAD-Files)
+[KiCAD Files](https://github.com/Arrow-air/project-quiver/tree/main/src/pcb/fc_pcb)
 
 ### Attachment Interface PCB
 
