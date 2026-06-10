@@ -25,13 +25,16 @@ STEP files in steps/:
     2111_attach_spacer.step         Spacer for left/right walls (used 2x)
     2112_attach_plate.step          Quick-release interface plate (used 3x)
     2131_attach_spacer_bottom.step  Spacer for bottom, with wiring notch (used 1x)
+
+Position constants are center-of-mass coordinates measured from the
+Fusion 360 PT3 master model export.
 """
 
 from pathlib import Path
 
-from build123d import Axis, Compound, Location
+from build123d import Axis, Compound
 
-from quiver.common import ALUMINUM, PETG, load_step
+from quiver.common import ALUMINUM, PETG, load_step, place_at
 
 _DIR = Path(__file__).parent
 
@@ -65,12 +68,7 @@ def make_assembly() -> Compound | None:
         right_plate.color = ALUMINUM
         right_plate = right_plate.rotate(Axis.Z, 90)    # mechanism faces +X (outward)
         right_plate = right_plate.rotate(Axis.X, 180)    # flip to match reference
-        com = right_plate.center()
-        right_plate.move(Location((
-            _RIGHT_PLATE_POS[0] - com.X,
-            _RIGHT_PLATE_POS[1] - com.Y,
-            _RIGHT_PLATE_POS[2] - com.Z,
-        )))
+        place_at(right_plate, *_RIGHT_PLATE_POS)
         children.append(right_plate)
 
     # --- Left side (2120) ---
@@ -86,12 +84,7 @@ def make_assembly() -> Compound | None:
         left_plate.color = ALUMINUM
         left_plate = left_plate.rotate(Axis.Z, -90)     # mechanism faces -X (outward)
         left_plate = left_plate.rotate(Axis.X, 180)      # flip to match reference
-        com = left_plate.center()
-        left_plate.move(Location((
-            _LEFT_PLATE_POS[0] - com.X,
-            _LEFT_PLATE_POS[1] - com.Y,
-            _LEFT_PLATE_POS[2] - com.Z,
-        )))
+        place_at(left_plate, *_LEFT_PLATE_POS)
         children.append(left_plate)
 
     # --- Bottom (2130) ---
@@ -108,12 +101,7 @@ def make_assembly() -> Compound | None:
         bottom_plate.color = ALUMINUM
         bottom_plate = bottom_plate.rotate(Axis.X, 90)   # mechanism faces -Z (downward)
         bottom_plate = bottom_plate.rotate(Axis.Z, 180)   # flip to match reference
-        com = bottom_plate.center()
-        bottom_plate.move(Location((
-            _BOTTOM_PLATE_POS[0] - com.X,
-            _BOTTOM_PLATE_POS[1] - com.Y,
-            _BOTTOM_PLATE_POS[2] - com.Z,
-        )))
+        place_at(bottom_plate, *_BOTTOM_PLATE_POS)
         children.append(bottom_plate)
 
     if not children:

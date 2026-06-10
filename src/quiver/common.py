@@ -1,11 +1,14 @@
 """Shared utilities for Quiver CAD assembly."""
 
+import logging
 from pathlib import Path
 
-from build123d import Color, Compound, Solid, import_step
+from build123d import Color, Compound, Location, Solid, import_step
 from OCP.BRepBuilderAPI import BRepBuilderAPI_Copy
 from OCP.TopAbs import TopAbs_ShapeEnum
-from OCP.TopoDS import TopoDS_Iterator
+from OCP.TopoDS import TopoDS_Iterator, TopoDS_Shape
+
+logger = logging.getLogger(__name__)
 
 # Material colors for visualization
 ALUMINUM = Color(0.75, 0.75, 0.76)
@@ -18,17 +21,7 @@ STEPS_DIR = "steps"
 VENDOR_DIR = "vendor"
 
 
-def _load_from(directory: Path) -> dict[str, Compound]:
-    """Load all STEP files from a directory."""
-    if not directory.exists():
-        return {}
-    parts = {}
-    for step_file in sorted(directory.glob("*.step")):
-        parts[step_file.stem] = _flatten(import_step(str(step_file)))
-    return parts
-
-
-def _collect_solids(shape):
+def _collect_solids(shape: TopoDS_Shape) -> list[TopoDS_Shape]:
     """Recursively collect all Solid shapes from a TopoDS hierarchy."""
     solids = []
     if shape.ShapeType() == TopAbs_ShapeEnum.TopAbs_SOLID:
@@ -73,7 +66,7 @@ def _flatten_solids(compound: Compound, min_volume: float = 0.0) -> Compound:
     copier.Perform(compound.wrapped)
     solids = [Solid(s) for s in _collect_solids(copier.Shape())]
     if min_volume > 0:
-        def _bb_volume(s):
+        def _bb_volume(s: Solid) -> float:
             bb = s.bounding_box()
             return (bb.max.X - bb.min.X) * (bb.max.Y - bb.min.Y) * (bb.max.Z - bb.min.Z)
         solids = [s for s in solids if _bb_volume(s) >= min_volume]
@@ -116,6 +109,7 @@ def load_step(
         steps_path = steps_path / VENDOR_DIR
     step_path = steps_path / filename
     if not step_path.exists():
+        logger.warning("STEP file missing, part skipped: %s", step_path)
         return None
     raw = import_step(str(step_path))
     if extract_solids:
@@ -123,19 +117,13 @@ def load_step(
     return _flatten(raw)
 
 
-def load_all_steps(subassembly_dir: Path) -> dict[str, Compound]:
-    """Load custom STEP files from a subassembly's steps/ directory.
+def place_at(part: Compound, x: float, y: float, z: float) -> Compound:
+    """Translate a part so its center of mass lands at (x, y, z).
 
-    Returns:
-        Dict mapping stem name to imported Compound. Empty if no files found.
+    Assembly modules position imported parts against center-of-mass
+    coordinates measured from the Fusion 360 master model; apply any
+    rotations first, since they change the center.
     """
-    return _load_from(subassembly_dir / STEPS_DIR)
-
-
-def load_vendor_steps(subassembly_dir: Path) -> dict[str, Compound]:
-    """Load vendor/supplier STEP files from steps/vendor/.
-
-    Returns:
-        Dict mapping stem name to imported Compound. Empty if no files found.
-    """
-    return _load_from(subassembly_dir / STEPS_DIR / VENDOR_DIR)
+    com = part.center()
+    part.move(Location((x - com.X, y - com.Y, z - com.Z)))
+    return part
