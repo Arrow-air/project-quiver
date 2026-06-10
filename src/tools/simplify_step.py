@@ -67,14 +67,14 @@ def simplify(path: Path, min_volume: float, runtime_min_volume: float, tolerance
     export_step(filtered, str(tmp_path), write_pcurves=False)
 
     candidate = _flatten_solids(import_step(str(tmp_path)), min_volume=0.0)
-    cand = _stats(candidate)
+    new_stats = _stats(candidate)
 
-    center_delta = _max_delta(ref["center"], cand["center"])
-    bbox_delta = _max_delta(ref["bbox"], cand["bbox"])
+    center_delta = _max_delta(ref["center"], new_stats["center"])
+    bbox_delta = _max_delta(ref["bbox"], new_stats["bbox"])
     new_size = tmp_path.stat().st_size
 
     print(f"{path.name}:")
-    print(f"  solids   {ref['solids']} -> {cand['solids']}")
+    print(f"  solids   {ref['solids']} -> {new_stats['solids']}")
     print(f"  center delta {center_delta:.4f} mm, bbox delta {bbox_delta:.4f} mm")
     print(f"  size     {original_size / 1e6:.1f} MB -> {new_size / 1e6:.1f} MB")
 
