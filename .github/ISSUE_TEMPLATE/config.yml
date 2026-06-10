@@ -3,6 +3,6 @@ contact_links:
   - name: Arrow Discord
     url: https://discord.gg/arrow
     about: Questions, dev-kit loans, and general discussion happen here.
-  - name: Safety or security issue
+  - name: Security vulnerability
     url: https://github.com/Arrow-air/project-quiver/security/advisories/new
-    about: Report safety-critical or security defects privately (see SECURITY.md).
+    about: Report remotely exploitable vulnerabilities privately (see SECURITY.md).

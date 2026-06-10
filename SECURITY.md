@@ -1,30 +1,28 @@
-# Security and Safety Policy
+# Security Policy
 
-Project Quiver is flight hardware. Some defects are not just bugs — a
-firmware parameter, electrical design, or structural issue can endanger
-people on the ground.
+## Reporting a vulnerability
 
-## Reporting a vulnerability or safety-critical defect
-
-Please do **not** open a public issue for anything that could cause harm
-if exploited or flown uncorrected. Instead:
+If you find a vulnerability that could be exploited remotely or through
+crafted input — please do not open a public issue. Instead:
 
 1. Use GitHub's
    [private vulnerability reporting](https://github.com/Arrow-air/project-quiver/security/advisories/new)
    for this repository, or
 2. Contact the maintainers privately on the
-   [Arrow Discord](https://discord.gg/arrow) (message a member of the
-   drone engineering team).
-
-Include the affected prototype generation (PT1–PT3, Dev-Kit), the
-relevant files or parameters, and reproduction or analysis steps.
+   [Arrow Discord](https://discord.gg/arrow).
 
 ## Scope
 
-- Flight firmware configurations and ArduPilot parameter sets in `docs/Operations/firmware/`
-- PCB designs in `src/pcb/` (power protection, battery management)
-- Structural CAD in `src/quiver/` (load-bearing parts)
-- Companion software and tooling in this repository
+In scope (privately, via the channels above):
 
-Non-safety bugs (documentation, tooling, CAD visualization) can go
-straight to the public issue tracker.
+- Companion computer software, the Quiver SDK, and tooling in this
+  repository (e.g. log analyzers parsing untrusted flight logs)
+- Telemetry, RF, and network interfaces (Ethernet, CAN, MAVLink
+  configurations) where a remote party could influence the aircraft
+- Firmware configurations that expose remotely abusable behavior
+
+Not in scope — use the regular
+[issue tracker](https://github.com/Arrow-air/project-quiver/issues):
+
+- Mechanical/CAD design issues, documentation errors, and other defects
+  that require physical access to matter
