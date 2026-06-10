@@ -2,6 +2,10 @@
 
 Slicer profiles and print settings for 3D-printed Quiver parts.
 
+> **Status:** no slicer profiles are checked in yet — print the parts
+> from the STEP files under [`src/quiver/`](../quiver/) using the
+> material noted below. Tested profile contributions are welcome.
+
 ## 3D-printed parts
 
 The following BOM subcategories contain 3D-printed components (PETG-CF
