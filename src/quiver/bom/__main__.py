@@ -19,7 +19,7 @@ def main() -> int:
     sub.add_parser("validate", help="validate bom/*.yaml")
     render_p = sub.add_parser("render", help="generate docs outputs")
     render_p.add_argument("--check", action="store_true",
-                          help="verify committed outputs are current instead of writing")
+        help="verify committed outputs are current instead of writing")
     args = parser.parse_args()
 
     try:
@@ -33,16 +33,16 @@ def main() -> int:
 
     if args.command == "validate":
         print(f"OK: {sum(1 for _ in bom.items())} items, "
-              f"revision {bom.meta['revision']} ({bom.meta.get('status', 'final')})")
+            f"revision {bom.meta['revision']} ({bom.meta.get('status', 'final')})")
         return 0
 
     outputs = render(bom)
     if args.check:
         stale = [str(p) for p, content in outputs.items()
-                 if not p.exists() or p.read_text() != content]
+            if not p.exists() or p.read_text() != content]
         if stale:
             print("stale generated BOM outputs (run `python -m quiver.bom render`):\n  "
-                  + "\n  ".join(stale), file=sys.stderr)
+                + "\n  ".join(stale), file=sys.stderr)
             return 1
         print("generated BOM outputs are current")
         return 0
