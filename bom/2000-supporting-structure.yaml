@@ -1,0 +1,109 @@
+category: "2000"
+name: Supporting Structure
+items:
+  - id: "2111"
+    name: Attachment Interface Spacer, Left/Right
+    qty: 2
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/attachment_interface/steps/2111_attach_spacer.step
+  - id: "2112"
+    name: Quick-Release Interface Plate
+    qty: 3
+    sourcing: cots
+    material: Aluminum
+    design_ref: src/quiver/supporting_structure/attachment_interface/steps/2112_attach_plate.step
+    unit_cost_usd: 34.00
+    suppliers:
+      - name: Alibaba
+        url: https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html
+        note: order the variant without the PCB board
+  - id: "2131"
+    name: Attachment Interface Spacer, Bottom
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/attachment_interface/steps/2131_attach_spacer_bottom.step
+    notes: Has a wiring notch the left/right spacer does not.
+  - id: "2211"
+    name: Battery Slider
+    qty: 2
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/battery_slider/steps/2211_battery_slider.step
+  - id: "2311"
+    name: Main PCB Mount
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2311_main_pcb_mount.step
+  - id: "2312"
+    name: BC PCB Mount
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2312_bc_pcb_mount.step
+  - id: "2313"
+    name: BC PCB Cover
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2313_bc_pcb_cover.step
+  - id: "2321"
+    name: Altitude Sensor Mount
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2321_altitude_sensor_mount.step
+  - id: "2331"
+    name: GNSS Mount Base
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2331_gnss_mount_base.step
+  - id: "2332"
+    name: GNSS Mount Clamp
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2332_gnss_mount_clamp.step
+  - id: "2341"
+    name: PPP Adapter and Beacon Mount
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2341_ppp_beacon_mount.step
+  - id: "2411"
+    name: Main Enclosure
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/cockpit_enclosure/steps/2411_main_enclosure.step
+  - id: "2412"
+    name: Enclosure Top Cap
+    qty: 1
+    sourcing: 3d-print
+    material: PETG-CF
+    design_ref: src/quiver/supporting_structure/cockpit_enclosure/steps/2412_enclosure_top_cap.step
+  - id: "2420"
+    name: Enclosure Hinge
+    qty: 2
+    sourcing: cots
+    material: Zinc die-cast
+    design_ref: src/quiver/supporting_structure/cockpit_enclosure/steps/2420_hinge.step
+    unit_cost_usd: 10.00
+    suppliers:
+      - name: JW Winco
+        part_number: GN 237-ZD-30-30-A-SW
+        url: https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type
+  - id: "2430"
+    name: Enclosure Latch
+    qty: 2
+    sourcing: cots
+    material: Steel
+    design_ref: src/quiver/supporting_structure/cockpit_enclosure/steps/2430_latch.step
+    unit_cost_usd: 10.42
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 6082A11
+        url: https://www.mcmaster.com/6082A11/

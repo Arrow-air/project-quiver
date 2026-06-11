@@ -10,10 +10,16 @@ on:
       - develop
     paths:
       - "src/**"
+      - "bom/**"
+      - "docs/Manufacturing/BOM.md"
+      - "docs/Manufacturing/quiver-bom.csv"
       - ".github/workflows/cad_checks.yml"
   pull_request:
     paths:
       - "src/**"
+      - "bom/**"
+      - "docs/Manufacturing/BOM.md"
+      - "docs/Manufacturing/quiver-bom.csv"
       - ".github/workflows/cad_checks.yml"
 
 jobs:
@@ -34,6 +40,9 @@ jobs:
 
       - name: Run tests
         run: python -m pytest src/tests/ -q
+
+      - name: Check generated BOM outputs are current
+        run: python -m quiver.bom render --check
 
       - name: Export full assembly (smoke test)
         run: python -m quiver.assembly -o /tmp/quiver_assembly.step

@@ -1,0 +1,268 @@
+category: "4000"
+name: Harness
+items:
+  - id: "4010"
+    name: Busbar Pair, Positive + Negative
+    qty: 2
+    sourcing: laser-cut
+    material: Copper
+    design_ref: src/quiver/harness/steps/
+    unit_cost_usd: 30.74
+    purchase:
+      qty: 2
+      note: one positive and one negative busbar per vehicle
+    suppliers:
+      - name: RapidDirect
+        url: https://www.rapiddirect.com/
+  - id: HAR-0001
+    name: Harness, Pushbutton
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0002
+    name: Harness, BC PCB Signal
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0003
+    name: Harness, BC PCB SSR
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0004
+    name: Harness, ESC Power FR
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0005
+    name: Harness, ESC Power FL
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0006
+    name: Harness, ESC Power BR
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0007
+    name: Harness, ESC Power BL
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0008
+    name: Harness, ESC Signal FR
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0009
+    name: Harness, ESC Signal FL
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0010
+    name: Harness, ESC Signal BR
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0011
+    name: Harness, ESC Signal BL
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0012
+    name: Harness, Side Payload Right
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0013
+    name: Harness, Side Payload Left
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0014
+    name: Harness, Bottom Payload
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0015
+    name: Harness, Altimeter
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0016
+    name: Harness, 360 LiDAR
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0017
+    name: Harness, Front Radar
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0018
+    name: Harness, HM30 Power
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0019
+    name: Harness, HM30 Signal A
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0020
+    name: Harness, HM30 Signal B
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0021
+    name: Harness, Navigation Primary GNSS
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0022
+    name: Harness, Navigation Backup GNSS
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0023
+    name: Harness, PPP2ETH A
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0024
+    name: Harness, PPP2ETH B
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0025
+    name: Harness, PPP2ETH C
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0026
+    name: Harness, Remote ID
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0027
+    name: Harness, SIYI Camera
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HAR-0028
+    name: Harness, Antenna
+    qty: 1
+    sourcing: harness
+    design_ref: docs/Manufacturing/Harness-Manufacturing-Guide.mdx
+  - id: HSUP-001
+    name: XT30 Male Connector, Amass XT30U-M
+    qty: 1
+    sourcing: cots
+    unit_cost_usd: 0.83
+    suppliers:
+      - name: TME
+        part_number: XT30U-M
+        url: https://www.tme.com/us/en-us/details/xt30u-m/dc-power-connectors/amass/
+  - id: HSUP-002
+    name: XT60 Male Connector, Amass XT60U-M
+    qty: 4
+    sourcing: cots
+    unit_cost_usd: 0.70
+    suppliers:
+      - name: TME
+        part_number: XT60U-M
+        url: https://www.tme.com/us/en-us/details/xt60u-m/dc-power-connectors/amass/
+  - id: HSUP-003
+    name: Pluggable Terminal Block, Phoenix PTSM 0,5/2-P-2,5 WH
+    qty: 1
+    sourcing: cots
+    suppliers:
+      - name: Mouser
+        part_number: "1704853"
+        url: https://mou.sr/3TUNxPr
+  - id: HSUP-004
+    name: Pluggable Terminal Block, Phoenix PTSM 0,5/4-P-2,5 WH
+    qty: 18
+    sourcing: cots
+    suppliers:
+      - name: Mouser
+        part_number: "1704857"
+        url: https://mou.sr/4bSpp8f
+  - id: HSUP-005
+    name: Pluggable Terminal Block, Phoenix PTSM 0,5/5-P-2,5 WH
+    qty: 5
+    sourcing: cots
+    suppliers:
+      - name: Mouser
+        part_number: "1704858"
+        url: https://mou.sr/4nxik2l
+  - id: HSUP-006
+    name: Pluggable Terminal Block, Phoenix PTSM 0,5/6-P-2,5 WH
+    qty: 5
+    sourcing: cots
+    suppliers:
+      - name: Mouser
+        part_number: "1704859"
+        url: https://mou.sr/44ach9V
+  - id: HSUP-007
+    name: Hook-Up Wire Kit, 26 AWG PTFE, 10 colors
+    qty: 1
+    sourcing: cots
+    spec: 15 feet per color
+    suppliers:
+      - name: Remington Industries
+        url: https://www.remingtonindustries.com/hook-up-wire/custom-hook-up-wire-26-awg-ptfe-stranded-kit-2-spool-sizes-available-choose-10-colors/
+  - id: HSUP-008
+    name: Molex 12-Pin Connector, 207760-1281
+    qty: 6
+    sourcing: cots
+    unit_cost_usd: 1.51
+    suppliers:
+      - name: Mouser
+        part_number: 207760-1281
+        url: https://www.mouser.com/ProductDetail/Molex/207760-1281
+  - id: HSUP-009
+    name: Molex MLP Receptacle Housing, 204523-1201, 12 circuits
+    qty: 6
+    sourcing: cots
+    unit_cost_usd: 0.42
+    suppliers:
+      - name: Mouser
+        part_number: 204523-1201
+        url: https://www.mouser.com/ProductDetail/Molex/204523-1201
+    notes: Cable-side connector; does not go on the PCB.
+  - id: HSUP-010
+    name: Spring-Loaded Connector, Mill-Max 813-22-010-30-000101
+    qty: 6
+    sourcing: cots
+    unit_cost_usd: 8.60
+    suppliers:
+      - name: Mouser
+        part_number: 813-22-010-30-000101
+        url: https://www.mouser.com/ProductDetail/Mill-Max/813-22-010-30-000101
+    notes: Can populate with just one.
+  - id: HSUP-011
+    name: SLC Target Connector, Mill-Max 419-10-210-30-054000
+    qty: 6
+    sourcing: cots
+    unit_cost_usd: 3.63
+    suppliers:
+      - name: Mouser
+        part_number: 419-10-210-30-054000
+        url: https://www.mouser.com/ProductDetail/Mill-Max/419-10-210-30-054000
+    notes: Can populate with just one.
+  - id: HSUP-012
+    name: Attachment Interface Cable, Molex 79758-1149
+    qty: 50
+    sourcing: cots
+    unit_cost_usd: 1.29
+    suppliers:
+      - name: Mouser
+        part_number: 79758-1149
+        url: https://www.mouser.com/ProductDetail/Molex/79758-1149
+  - id: HSUP-013
+    name: JST GH Pre-Made Cable Assortment
+    qty: 1
+    sourcing: cots
+    spec: positions 3, 4, 5, 6, 9
+    notes: TBC — pick a specific assortment and supplier before revision B.

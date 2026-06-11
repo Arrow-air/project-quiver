@@ -1,0 +1,287 @@
+category: FAST
+name: Fasteners
+items:
+  - id: FAST-001
+    name: Rivet, 4 mm, for 1-2.5 mm grip
+    qty: 26
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 97525A224
+        url: https://www.mcmaster.com/97525A224/
+  - id: FAST-002
+    name: Rivet, 4 mm, for 2.5-4.5 mm grip
+    qty: 10
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 97525A251
+        url: https://www.mcmaster.com/97525A251
+  - id: FAST-003
+    name: Rivet, 4 mm, for 4.5-6.4 mm grip
+    qty: 10
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 97525A226
+        url: https://www.mcmaster.com/97525A226
+  - id: FAST-004
+    name: Socket Head Screw M3x10
+    qty: 8
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A113
+        url: https://www.mcmaster.com/91292A113
+  - id: FAST-005
+    name: Flanged Button Head Screw M4x10
+    qty: 16
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 92095A190
+        url: https://www.mcmaster.com/92095A190
+  - id: FAST-006
+    name: Button Head Hex-Drive Screw M2x4
+    qty: 12
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 92095A451
+        url: https://www.mcmaster.com/92095A451/
+  - id: FAST-007
+    name: Socket Head Screw M3x12
+    qty: 8
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A114
+        url: https://www.mcmaster.com/91292A114
+  - id: FAST-008
+    name: Socket Head Screw M3x8
+    qty: 79
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A112
+        url: https://www.mcmaster.com/91292A112
+  - id: FAST-009
+    name: Socket Head Screw M3x40
+    qty: 16
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A024
+        url: https://www.mcmaster.com/91292A024
+  - id: FAST-010
+    name: Socket Head Screw M2.5x6
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A010
+        url: https://www.mcmaster.com/91292A010/
+  - id: FAST-011
+    name: Hex Drive Flat Head Screw M3x10
+    qty: 8
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 92125A130
+        url: https://www.mcmaster.com/92125A130/
+  - id: FAST-012
+    name: Socket Head Screw M4x8
+    qty: 8
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A108
+        url: https://www.mcmaster.com/91292A108
+  - id: FAST-013
+    name: Socket Head Screw M2x6
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A832
+        url: https://www.mcmaster.com/91292A832/
+  - id: FAST-014
+    name: Flanged Button Head Hex-Drive Screw M3x6
+    qty: 23
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 97654A674
+        url: https://www.mcmaster.com/products/97654a674/
+  - id: FAST-015
+    name: Socket Head Hex-Drive Screw M2x5
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 92855A837
+        url: https://www.mcmaster.com/92855A837/
+  - id: FAST-016
+    name: Socket Head Hex-Drive Screw M2.5x8
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A012
+        url: https://www.mcmaster.com/91292A012/
+  - id: FAST-017
+    name: Socket Head Hex-Drive Screw M2x10
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A833
+        url: https://www.mcmaster.com/91292A833/
+  - id: FAST-018
+    name: Socket Head Hex-Drive Screw M5x8
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91292A191
+        url: https://www.mcmaster.com/91292A191
+  - id: FAST-019
+    name: Button Head Hex Drive Screw M3x40
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 92095A203
+        url: https://www.mcmaster.com/92095A203/
+  - id: FAST-020
+    name: Socket Head Screw M3x6
+    qty: 8
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 90751A110
+        url: https://www.mcmaster.com/90751A110/
+  - id: FAST-021
+    name: Threaded Insert M3, 5.7 mm
+    qty: 50
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 94459A140
+        url: https://www.mcmaster.com/94459A140/
+  - id: FAST-022
+    name: Threaded Insert M4
+    qty: 8
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 94180A351
+        url: https://www.mcmaster.com/94180A351/
+  - id: FAST-023
+    name: Threaded Insert M2
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 94180A312
+        url: https://www.mcmaster.com/94180A312/
+  - id: FAST-024
+    name: Threaded Insert M3, 3.8 mm
+    qty: 16
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 94180A331
+        url: https://www.mcmaster.com/94180A331
+  - id: FAST-025
+    name: Threaded Insert M2.5
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 94459A439
+        url: https://www.mcmaster.com/94459A439/
+  - id: FAST-026
+    name: Washer M3, General Purpose, 3.2 mm ID, 6 mm OD
+    qty: 115
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 98689A112
+        url: https://www.mcmaster.com/98689A112
+  - id: FAST-027
+    name: Washer M4, General Purpose, 4.3 mm ID, 9 mm OD
+    qty: 8
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 93475A230
+        url: https://www.mcmaster.com/93475A230
+  - id: FAST-028
+    name: Washer M2, Nylon, 2.2 mm ID, 5 mm OD
+    qty: 12
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 95610A110
+        url: https://www.mcmaster.com/95610A110
+  - id: FAST-029
+    name: Washer M2.5, Nylon, 2.7 mm ID, 5.6 mm OD
+    qty: 8
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 95610A011
+        url: https://www.mcmaster.com/95610A011/
+  - id: FAST-030
+    name: Washer M3, Nylon, 3.2 mm ID, 6 mm OD
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 95610A704
+        url: https://www.mcmaster.com/95610A704
+  - id: FAST-031
+    name: Washer M5, General Purpose, 5.3 mm ID, 10 mm OD
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 93475A240
+        url: https://www.mcmaster.com/93475A240
+  - id: FAST-032
+    name: Nylon-Insert Locknut M3
+    qty: 12
+    sourcing: cots
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 90576A811
+        url: https://www.mcmaster.com/90576A811
+  - id: FAST-033
+    name: Vibration Mount, M3 Rubber Anti-Vibration Spacer
+    qty: 5
+    sourcing: cots
+    suppliers:
+      - name: Amazon
+        note: generic; any M3 rubber anti-vibration spacer
+  - id: FAST-034
+    name: Grommet, Circular, 20 mm OD
+    qty: 4
+    sourcing: cots
+    suppliers:
+      - name: Amazon
+        note: generic
+  - id: FAST-035
+    name: Grommet, Oval, 27x13 mm
+    qty: 12
+    sourcing: cots
+    suppliers:
+      - name: Amazon
+        note: generic
+  - id: FAST-036
+    name: Silicone Foam Seal Strip, Circular, 8 mm OD
+    qty: 1
+    sourcing: cots
+    suppliers:
+      - name: Amazon
+        note: generic

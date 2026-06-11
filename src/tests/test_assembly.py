@@ -27,7 +27,7 @@ EXPECTED_TREE = {
         "Cockpit Enclosure",
     },
     "Equipment": {"Propulsion", "Peripheral", "PCB", "Battery"},
-    "Harness": {"Busbar_Negative_v1", "Busbar_Positive_v1"},
+    "Harness": {"4010_busbar_negative", "4010_busbar_positive"},
 }
 
 # Full-assembly bounding box (mm), dominated by the propeller sweep and
