@@ -113,8 +113,15 @@ def load_step(
         return None
     raw = import_step(str(step_path))
     if extract_solids:
-        return _flatten_solids(raw, min_volume=min_solid_volume)
-    return _flatten(raw)
+        part = _flatten_solids(raw, min_volume=min_solid_volume)
+    else:
+        part = _flatten(raw)
+    # The label embedded in the STEP (Fusion component name) often disagrees
+    # with the canonical BOM-numbered filename (e.g. "1101-UpperPlate" inside
+    # 1111_upper_plate.step). Filenames are the BOM convention, so they win:
+    # the BOM cross-check tests and the docs 3D viewer rely on these labels.
+    part.label = step_path.stem
+    return part
 
 
 def place_at(part: Compound, x: float, y: float, z: float) -> Compound:

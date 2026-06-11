@@ -1,0 +1,81 @@
+category: CONS
+name: Consumables and Tools
+items:
+  - id: CONS-001
+    name: Loctite Threadlocker Purple 222
+    qty: AR
+    sourcing: cots
+    spec: low-strength threadlocker
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 1810A28
+        url: https://www.mcmaster.com/1810A28
+  - id: CONS-002
+    name: Loctite Threadlocker Blue 242
+    qty: AR
+    sourcing: cots
+    spec: medium-strength threadlocker
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91458A113
+        url: https://www.mcmaster.com/91458A113
+  - id: CONS-003
+    name: Loctite Threadlocker Red 262
+    qty: AR
+    sourcing: cots
+    spec: high-strength threadlocker
+    suppliers:
+      - name: McMaster-Carr
+        part_number: 91458A170
+        url: https://www.mcmaster.com/91458A170
+  - id: CONS-004
+    name: Würth Super RTV Silicone, Black
+    qty: AR
+    sourcing: cots
+    spec: 200 ml
+    suppliers:
+      - name: Würth
+        part_number: "08933311"
+  - id: CONS-005
+    name: Double-Sided Tape, Heavy Duty
+    qty: AR
+    sourcing: cots
+    suppliers:
+      - name: Amazon
+        note: generic; any heavy-duty double-sided tape
+  - id: CONS-006
+    name: Bambulab PETG-CF Filament
+    qty: AR
+    sourcing: cots
+    unit_cost_usd: 32.00
+    purchase:
+      qty: 2
+      note: two spools cover all printed parts
+    suppliers:
+      - name: Bambulab
+        url: https://us.store.bambulab.com/
+  - id: CONS-007
+    name: Thermal Paste, Arctic MX-4, 20 g
+    qty: AR
+    sourcing: cots
+    unit_cost_usd: 12.00
+    suppliers:
+      - name: Amazon
+        url: https://a.co/d/bZ7soGb
+    notes: For the BC PCB heatsink interface.
+  - id: TOOL-001
+    name: Allen Key Set, Metric M2-M5
+    qty: AR
+    sourcing: cots
+  - id: TOOL-002
+    name: Wrench Set, Metric
+    qty: AR
+    sourcing: cots
+  - id: TOOL-003
+    name: Cordless Screwdriver or Drill Press
+    qty: AR
+    sourcing: cots
+  - id: TOOL-004
+    name: Riveting Tool, for 4 mm rivets
+    qty: AR
+    sourcing: cots
