@@ -103,14 +103,13 @@ def render_markdown(bom: Bom) -> str:
         "",
         "# Bill of Materials",
         "",
-        f"**Revision {meta['revision']}"
-        + (" (draft)" if meta.get("status") == "draft" else "")
-        + f"** — {meta['config']} configuration — {meta['date']}",
+        f"**{meta['config']} configuration** — updated {meta['date']}",
         "",
         "This page is generated from the version-controlled BOM master data in",
         "[`bom/`](https://github.com/Arrow-air/project-quiver/tree/main/bom).",
-        "Manufacturers building for customer orders must build against a",
-        "declared revision of this document.",
+        "Manufacturers building for customer orders must build against a tagged",
+        "[GitHub release](https://github.com/Arrow-air/project-quiver/releases)",
+        "rather than this live page, which tracks the latest design.",
         "",
         "**Download:** [procurement CSV](./quiver-bom.csv) — one row per line",
         "item with order quantities, supplier links, and indicative costs.",
@@ -145,9 +144,9 @@ def render_markdown(bom: Bom) -> str:
         "- PCB component-level BOMs are KiCad production exports under",
         "  [`src/pcb/`](https://github.com/Arrow-air/project-quiver/tree/main/src/pcb)",
         "  — each board appears here as a single assembled item.",
-        "- Items whose notes say `TBC` are unconfirmed while this revision is",
-        "  a draft; see [`bom/README.md`](https://github.com/Arrow-air/project-quiver/blob/main/bom/README.md)",
-        "  for the revision policy.",
+        "- Items whose notes say `TBC` are unconfirmed; see",
+        "  [`bom/README.md`](https://github.com/Arrow-air/project-quiver/blob/main/bom/README.md)",
+        "  for the versioning policy.",
         "",
     ]
     return "\n".join(lines)

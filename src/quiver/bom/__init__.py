@@ -54,7 +54,6 @@ class Item:
     purchase_qty: int | None = None
     purchase_note: str | None = None
     included_in: str | None = None
-    since: str | None = None
     notes: str | None = None
     suppliers: list[Supplier] = field(default_factory=list)
 
@@ -131,7 +130,6 @@ def _parse_item(raw: dict, category: str, errors: list[str], where: str) -> Item
         purchase_qty=purchase.get("qty"),
         purchase_note=purchase.get("note"),
         included_in=raw.get("included_in"),
-        since=raw.get("since"),
         notes=raw.get("notes"),
         suppliers=suppliers,
     )
@@ -171,7 +169,7 @@ def load_bom(bom_dir: Path = BOM_DIR) -> Bom:
     errors: list[str] = []
 
     meta = yaml.safe_load((bom_dir / "meta.yaml").read_text())
-    for required in ("revision", "config", "date", "title"):
+    for required in ("config", "date", "title"):
         if required not in meta:
             errors.append(f"meta.yaml: missing {required}")
 
