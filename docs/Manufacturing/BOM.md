@@ -83,7 +83,7 @@ Indicative build cost: **$6,590.36** (component prices as of
 | 3312 | Companion Computer, Raspberry Pi 5 | 1 | cots | 8 GB RAM | [Raspberry Pi](https://www.raspberrypi.com/products/raspberry-pi-5/) | $200.00 |  |
 | 3313 | Ethernet Switch, BotBlox GigaBlox Nano | 2 | cots |  | [BotBlox](https://botblox.io/products/micro-gigabit-ethernet-switch) | $95.67 |  |
 | 3320 | Battery Connector PCB, assembled | 1 | pcb-assembly |  |  | $83.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/pcb/battery_pcb/) |
-| 3324 | BC PCB Heatsink, 4 mm | 1 | laser-cut | Aluminum — 4 mm plate | [RapidDirect](https://www.rapiddirect.com/) | $16.00 |  |
+| 3324 | BC PCB Heatsink, 4 mm | 1 | laser-cut | Aluminum — 116 x 16 x 5 mm overall envelope | [RapidDirect](https://www.rapiddirect.com/) | $16.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/manufacturing/3324_bc_pcb_heatsink.step) |
 | 3330 | Flight Controller PCB, assembled | 1 | pcb-assembly |  |  | $25.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/pcb/fc_pcb/) |
 | 3331 | Attachment Interface PCB, assembled | 3 (order 6) | pcb-assembly |  |  | $10.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/pcb/attach_pcb/) |
 | 3332 | Flight Controller, Holybro Pix32 v6 | 1 | cots |  | [Holybro](https://holybro.com/products/pix32-v6?variant=43020083527869) | $296.00 |  |
