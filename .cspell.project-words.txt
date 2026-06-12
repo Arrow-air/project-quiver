@@ -141,11 +141,13 @@ EAHR
 EASA
 ECCN
 edgecolor
+EdgeTX
 Eeschema
 Elektronik
 elembox
 elems
 elif
+ELRS
 ENABL
 endangle
 ENIG
@@ -382,6 +384,7 @@ quadcopter
 Quicktune
 Quik
 quiktune
+RadioMaster
 rangefinding
 Rapiddirect
 RCIN

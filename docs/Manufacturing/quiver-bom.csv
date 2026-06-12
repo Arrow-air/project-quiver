@@ -51,7 +51,7 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 3331,"Attachment Interface PCB, assembled",Equipment,3,6,pcb-assembly,,,,,,10.00,60.00,order extras; JLCPCB minimum batch,"One per attachment interface (right, left, bottom)."
 3332,"Flight Controller, Holybro Pix32 v6",Equipment,1,1,cots,,,Holybro,,https://holybro.com/products/pix32-v6?variant=43020083527869,296.00,296.00,,Mounts on the FC PCB; not a separate CAD part.
 3410,"Battery, Tattu 4.0 14S 30000 mAh",Equipment,1,1,cots,,,Tattu,Tattu 4.0 14S 30000 mAh,,735.00,735.00,,Smart battery with CAN telemetry.
-3501,Remote Control,Equipment,1,1,cots,,,,,,150.00,150.00,,TBC — confirm the recommended transmitter model before revision B.
+3501,Remote Control Transmitter,Equipment,1,1,cots,,,RadioMaster,Boxer,https://www.radiomasterrc.com/products/boxer-radio-controller-m2,150.00,150.00,,Builder's choice — any transmitter compatible with the chosen receiver and ELRS/EdgeTX-class link works. The team flies a RadioMaster Boxer.
 3510,Transport Case,Equipment,1,1,cots,,,,,,600.00,600.00,,TBC — confirm the case model before revision B.
 4010,"Busbar Pair, Positive + Negative",Harness,2,2,laser-cut,Copper,,RapidDirect,,https://www.rapiddirect.com/,30.74,61.48,one positive and one negative busbar per vehicle,
 HAR-0001,"Harness, Pushbutton",Harness,1,1,harness,,,,,,,,,
