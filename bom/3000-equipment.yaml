@@ -234,11 +234,18 @@ items:
         part_number: Tattu 4.0 14S 30000 mAh
     notes: Smart battery with CAN telemetry.
   - id: "3501"
-    name: Remote Control
+    name: Remote Control Transmitter
     qty: 1
     sourcing: cots
     unit_cost_usd: 150.00
-    notes: TBC — confirm the recommended transmitter model before revision B.
+    suppliers:
+      - name: RadioMaster
+        part_number: Boxer
+        url: https://www.radiomasterrc.com/products/boxer-radio-controller-m2
+        note: reference example; no model is formally specified
+    notes: Builder's choice — any transmitter compatible with the chosen
+      receiver and ELRS/EdgeTX-class link works. The team flies a
+      RadioMaster Boxer.
   - id: "3510"
     name: Transport Case
     qty: 1
