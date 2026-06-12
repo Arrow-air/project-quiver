@@ -95,6 +95,7 @@ def render_markdown(bom: Bom) -> str:
         "---",
         "title: Bill of Materials",
         "sidebar_label: Bill of Materials",
+        "sidebar_position: 1",
         "description: Quality reference BOM for the Quiver Dev-Kit",
         "---",
         "",
