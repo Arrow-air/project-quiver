@@ -76,14 +76,14 @@ items:
     sourcing: cots
     design_ref: src/quiver/equipment/peripheral/steps/vendor/3230_front_telemetry.step
     included_in: "3280"
-    notes: TBC — confirm the front/rear telemetry parts are the HM30 antenna set before revision B.
+    notes: Supplied with the SIYI HM30 Standard Combo (3280).
   - id: "3240"
     name: Telemetry Antenna, Rear
     qty: 1
     sourcing: cots
     design_ref: src/quiver/equipment/peripheral/steps/vendor/3240_rear_telemetry.step
     included_in: "3280"
-    notes: TBC — confirm the front/rear telemetry parts are the HM30 antenna set before revision B.
+    notes: Supplied with the SIYI HM30 Standard Combo (3280).
   - id: "3250"
     name: GNSS Module, Primary
     qty: 1
@@ -94,7 +94,12 @@ items:
       - name: IR-LOCK (CubePilot)
         part_number: Here4
         url: https://irlock.com/products/here4-multiband-rtk-gnss
-    notes: TBC — sources disagree (Here4 vs Holybro F9P Rover Mini vs CAD "wren mini"); confirm the shipped module before revision B.
+      - name: Holybro
+        part_number: H-RTK F9P (DroneCAN)
+        url: https://holybro.com/
+        note: equally acceptable alternative to the Here4
+    notes: Either listed module is acceptable. The CAD model still shows the
+      retired Wren Mini; update the STEP on the next CAD export.
   - id: "3251"
     name: GNSS Module, Backup, Mateksys M9N-G4-3100
     qty: 1
@@ -189,7 +194,7 @@ items:
     suppliers:
       - name: RapidDirect
         url: https://www.rapiddirect.com/
-    notes: TBC — design file not yet in the repo; add a drawing before revision B.
+    notes: TBC — awaiting drawing export from the Fusion master model; add to the repo before revision B.
   - id: "3330"
     name: Flight Controller PCB, assembled
     qty: 1
