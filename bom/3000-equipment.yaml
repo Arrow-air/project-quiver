@@ -250,8 +250,13 @@ items:
       receiver and ELRS/EdgeTX-class link works. The team flies a
       RadioMaster Boxer.
   - id: "3510"
-    name: Transport Case
+    name: Transport Case, Nanuk 976
     qty: 1
     sourcing: cots
     unit_cost_usd: 600.00
-    notes: TBC — confirm the case model before revision B.
+    suppliers:
+      - name: Nanuk
+        part_number: "976"
+        url: https://nanuk.com/products/nanuk-976
+    notes: Foam cut profiles for the case insert are in
+      task-grant-bounty/Dev-Kit/data/ (Foam_1.dxf, Foam_2.dxf).
