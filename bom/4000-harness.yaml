@@ -264,5 +264,8 @@ items:
     name: JST GH Pre-Made Cable Assortment
     qty: 1
     sourcing: cots
-    spec: positions 3, 4, 5, 6, 9
-    notes: TBC — pick a specific assortment and supplier before revision B.
+    spec: kit covering positions 3, 4, 5, 6, 9
+    suppliers:
+      - name: Amazon
+        url: https://www.amazon.com/dp/B07PBHN7TM
+        note: reference kit; an equivalent AliExpress assortment is acceptable
