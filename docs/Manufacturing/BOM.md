@@ -9,7 +9,7 @@ description: Quality reference BOM for the Quiver Dev-Kit
 
 # Bill of Materials
 
-**Revision A (draft)** — Dev-Kit configuration — 2026-06-11
+**Revision A** — Dev-Kit configuration — 2026-06-12
 
 This page is generated from the version-controlled BOM master data in
 [`bom/`](https://github.com/Arrow-air/project-quiver/tree/main/bom).
@@ -136,7 +136,7 @@ Indicative build cost: **$6,590.36** (component prices as of
 | HSUP-010 | Spring-Loaded Connector, Mill-Max 813-22-010-30-000101 | 6 | cots |  | [Mouser 813-22-010-30-000101](https://www.mouser.com/ProductDetail/Mill-Max/813-22-010-30-000101) | $8.60 |  |
 | HSUP-011 | SLC Target Connector, Mill-Max 419-10-210-30-054000 | 6 | cots |  | [Mouser 419-10-210-30-054000](https://www.mouser.com/ProductDetail/Mill-Max/419-10-210-30-054000) | $3.63 |  |
 | HSUP-012 | Attachment Interface Cable, Molex 79758-1149 | 50 | cots |  | [Mouser 79758-1149](https://www.mouser.com/ProductDetail/Molex/79758-1149) | $1.29 |  |
-| HSUP-013 | JST GH Pre-Made Cable Assortment | 1 | cots | positions 3, 4, 5, 6, 9 |  |  |  |
+| HSUP-013 | JST GH Pre-Made Cable Assortment | 1 | cots | kit covering positions 3, 4, 5, 6, 9 | [Amazon](https://www.amazon.com/dp/B07PBHN7TM) |  |  |
 
 ## Fasteners
 

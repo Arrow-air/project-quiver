@@ -94,7 +94,7 @@ HSUP-009,"Molex MLP Receptacle Housing, 204523-1201, 12 circuits",Harness,6,6,co
 HSUP-010,"Spring-Loaded Connector, Mill-Max 813-22-010-30-000101",Harness,6,6,cots,,,Mouser,813-22-010-30-000101,https://www.mouser.com/ProductDetail/Mill-Max/813-22-010-30-000101,8.60,51.60,,Can populate with just one.
 HSUP-011,"SLC Target Connector, Mill-Max 419-10-210-30-054000",Harness,6,6,cots,,,Mouser,419-10-210-30-054000,https://www.mouser.com/ProductDetail/Mill-Max/419-10-210-30-054000,3.63,21.78,,Can populate with just one.
 HSUP-012,"Attachment Interface Cable, Molex 79758-1149",Harness,50,50,cots,,,Mouser,79758-1149,https://www.mouser.com/ProductDetail/Molex/79758-1149,1.29,64.50,,
-HSUP-013,JST GH Pre-Made Cable Assortment,Harness,1,1,cots,,"positions 3, 4, 5, 6, 9",,,,,,,TBC — pick a specific assortment and supplier before revision B.
+HSUP-013,JST GH Pre-Made Cable Assortment,Harness,1,1,cots,,"kit covering positions 3, 4, 5, 6, 9",Amazon,,https://www.amazon.com/dp/B07PBHN7TM,,,,
 FAST-001,"Rivet, 4 mm, for 1-2.5 mm grip",Fasteners,26,26,cots,,,McMaster-Carr,97525A224,https://www.mcmaster.com/97525A224/,,,,
 FAST-002,"Rivet, 4 mm, for 2.5-4.5 mm grip",Fasteners,10,10,cots,,,McMaster-Carr,97525A251,https://www.mcmaster.com/97525A251,,,,
 FAST-003,"Rivet, 4 mm, for 4.5-6.4 mm grip",Fasteners,10,10,cots,,,McMaster-Carr,97525A226,https://www.mcmaster.com/97525A226,,,,
