@@ -33,7 +33,7 @@ def main() -> int:
 
     if args.command == "validate":
         print(f"OK: {sum(1 for _ in bom.items())} items, "
-            f"revision {bom.meta['revision']} ({bom.meta.get('status', 'final')})")
+            f"{bom.meta['config']} config, updated {bom.meta['date']}")
         return 0
 
     outputs = render(bom)

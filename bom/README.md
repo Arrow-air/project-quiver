@@ -16,7 +16,7 @@ suite cross-checks part IDs and quantities against the CAD assembly.
 
 | File | Contents |
 |---|---|
-| `meta.yaml` | Document revision, vehicle config, dates |
+| `meta.yaml` | Vehicle config and dates |
 | `1000-airframe-structure.yaml` | Plates, beams, landing gear, motor arms |
 | `2000-supporting-structure.yaml` | Interfaces, sliders, mounts, enclosure |
 | `3000-equipment.yaml` | Propulsion, sensors, PCBs, battery |
@@ -41,7 +41,6 @@ suite cross-checks part IDs and quantities against the CAD assembly.
     qty: 2
     note: 1000 mm stock yields two legs
   included_in: "3280"           # part arrives inside another item's kit
-  since: A                      # revision that introduced the item
   notes: ...
 ```
 
@@ -55,10 +54,12 @@ Rules enforced by `validate`:
 - Make items (`laser-cut`, `3d-print`, `cut-to-length`) should carry a
   `design_ref`; missing ones are warnings until the drawing lands.
 
-## Revision policy
+## Versioning
 
-`meta.yaml: revision` is the revision manufacturers pin against. Bump it
-(A → B → …) whenever a change affects what a manufacturer buys or
-builds, update `date`, and note the change in a PR. While `status:
-draft`, items marked `TBC` in their notes are unconfirmed — resolve all
-TBCs before declaring a revision final.
+Manufacturers building customer orders pin against a
+[tagged GitHub release](https://github.com/Arrow-air/project-quiver/releases),
+not the live BOM. When a change affects what a manufacturer buys or
+builds, update `meta.yaml: date` in the PR and cut a release after
+merging (attach the generated `quiver-bom.csv` to the release). Items
+marked `TBC` in their notes are unconfirmed — resolve any TBCs before
+cutting a release.
