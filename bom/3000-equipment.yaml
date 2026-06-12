@@ -189,12 +189,14 @@ items:
     qty: 1
     sourcing: laser-cut
     material: Aluminum
-    spec: 4 mm plate
+    spec: 116 x 16 x 5 mm overall envelope
+    design_ref: src/manufacturing/3324_bc_pcb_heatsink.step
     unit_cost_usd: 16.00
     suppliers:
       - name: RapidDirect
         url: https://www.rapiddirect.com/
-    notes: TBC — awaiting drawing export from the Fusion master model; add to the repo before revision B.
+    notes: Thermally couples the BC PCB to the chassis; install with thermal
+      paste (CONS-007). Not in the CAD assembly model.
   - id: "3330"
     name: Flight Controller PCB, assembled
     qty: 1
