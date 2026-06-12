@@ -46,7 +46,7 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 3312,"Companion Computer, Raspberry Pi 5",Equipment,1,1,cots,,8 GB RAM,Raspberry Pi,,https://www.raspberrypi.com/products/raspberry-pi-5/,200.00,200.00,,Mounts on the Main PCB; not a separate CAD part.
 3313,"Ethernet Switch, BotBlox GigaBlox Nano",Equipment,2,2,cots,,,BotBlox,,https://botblox.io/products/micro-gigabit-ethernet-switch,95.67,191.34,,Mounts on the Main PCB; not a separate CAD part.
 3320,"Battery Connector PCB, assembled",Equipment,1,1,pcb-assembly,,,,,,83.00,83.00,,Order via JLCPCB or similar using the KiCad production files; see the BC PCB Assembly Guide.
-3324,"BC PCB Heatsink, 4 mm",Equipment,1,1,laser-cut,Aluminum,116 x 16 x 5 mm overall envelope,RapidDirect,,https://www.rapiddirect.com/,16.00,16.00,,Thermally couples the BC PCB to the chassis; install with thermal paste (CONS-007). Not in the CAD assembly model.
+3324,"BC PCB Heatsink, 5 mm",Equipment,1,1,laser-cut,Aluminum,"5 mm plate, 116 x 16 mm; the 5 mm variant supersedes the earlier 4 mm one",RapidDirect,,https://www.rapiddirect.com/,16.00,16.00,,Thermally couples the BC PCB to the chassis; install with thermal paste (CONS-007). Not in the CAD assembly model.
 3330,"Flight Controller PCB, assembled",Equipment,1,1,pcb-assembly,,,,,,25.00,25.00,,Adapter board; stacks on the Main PCB. Not a separate CAD part.
 3331,"Attachment Interface PCB, assembled",Equipment,3,6,pcb-assembly,,,,,,10.00,60.00,order extras; JLCPCB minimum batch,"One per attachment interface (right, left, bottom)."
 3332,"Flight Controller, Holybro Pix32 v6",Equipment,1,1,cots,,,Holybro,,https://holybro.com/products/pix32-v6?variant=43020083527869,296.00,296.00,,Mounts on the FC PCB; not a separate CAD part.

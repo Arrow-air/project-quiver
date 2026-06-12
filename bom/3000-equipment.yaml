@@ -185,11 +185,12 @@ items:
     unit_cost_usd: 83.00
     notes: Order via JLCPCB or similar using the KiCad production files; see the BC PCB Assembly Guide.
   - id: "3324"
-    name: BC PCB Heatsink, 4 mm
+    name: BC PCB Heatsink, 5 mm
     qty: 1
     sourcing: laser-cut
     material: Aluminum
-    spec: 116 x 16 x 5 mm overall envelope
+    spec: 5 mm plate, 116 x 16 mm; the 5 mm variant supersedes the
+      earlier 4 mm one
     design_ref: src/manufacturing/3324_bc_pcb_heatsink.step
     unit_cost_usd: 16.00
     suppliers:
