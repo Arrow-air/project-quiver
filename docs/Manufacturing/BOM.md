@@ -1,6 +1,7 @@
 ---
 title: Bill of Materials
 sidebar_label: Bill of Materials
+sidebar_position: 1
 description: Quality reference BOM for the Quiver Dev-Kit
 ---
 
@@ -87,7 +88,7 @@ Indicative build cost: **$6,590.36** (component prices as of
 | 3331 | Attachment Interface PCB, assembled | 3 (order 6) | pcb-assembly |  |  | $10.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/pcb/attach_pcb/) |
 | 3332 | Flight Controller, Holybro Pix32 v6 | 1 | cots |  | [Holybro](https://holybro.com/products/pix32-v6?variant=43020083527869) | $296.00 |  |
 | 3410 | Battery, Tattu 4.0 14S 30000 mAh | 1 | cots |  | Tattu Tattu 4.0 14S 30000 mAh | $735.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/battery/steps/vendor/3410_battery.step) |
-| 3501 | Remote Control | 1 | cots |  |  | $150.00 |  |
+| 3501 | Remote Control Transmitter | 1 | cots |  | [RadioMaster Boxer](https://www.radiomasterrc.com/products/boxer-radio-controller-m2) | $150.00 |  |
 | 3510 | Transport Case | 1 | cots |  |  | $600.00 |  |
 
 ## Harness

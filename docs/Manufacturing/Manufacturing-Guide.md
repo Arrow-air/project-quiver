@@ -1,6 +1,7 @@
 ---
 title: Dev-Kit Manufacturing Guide
 sidebar_label: Dev-Kit Manufacturing Guide
+sidebar_position: 2
 ---
 
 # Dev-Kit Manufacturing Guide
