@@ -34,9 +34,9 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 3202,"Remote ID Module, DroneBeacon db201",Equipment,1,1,cots,,,DroneScout (DroneBeacon),db201,https://dronescout.co/product/dronebeacon-mavlink-db201-transponder/,54.00,54.00,,
 3210,"Obstacle Avoidance LiDAR, RPLidar S2L",Equipment,1,1,cots,,,DFRobot,,https://www.dfrobot.com/product-2617.html,380.00,380.00,,
 3220,"Radar Altimeter, Nanoradar NRA15",Equipment,1,1,cots,,,Nanoradar,NRA15,https://www.nanoradar.com/Products_1/4.html,240.00,240.00,,
-3230,"Telemetry Antenna, Front",Equipment,1,0,cots,,,,,,,,included with 3280,TBC — confirm the front/rear telemetry parts are the HM30 antenna set before revision B.
-3240,"Telemetry Antenna, Rear",Equipment,1,0,cots,,,,,,,,included with 3280,TBC — confirm the front/rear telemetry parts are the HM30 antenna set before revision B.
-3250,"GNSS Module, Primary",Equipment,1,1,cots,,,IR-LOCK (CubePilot),Here4,https://irlock.com/products/here4-multiband-rtk-gnss,288.00,288.00,,"TBC — sources disagree (Here4 vs Holybro F9P Rover Mini vs CAD ""wren mini""); confirm the shipped module before revision B."
+3230,"Telemetry Antenna, Front",Equipment,1,0,cots,,,,,,,,included with 3280,Supplied with the SIYI HM30 Standard Combo (3280).
+3240,"Telemetry Antenna, Rear",Equipment,1,0,cots,,,,,,,,included with 3280,Supplied with the SIYI HM30 Standard Combo (3280).
+3250,"GNSS Module, Primary",Equipment,1,1,cots,,,IR-LOCK (CubePilot),Here4,https://irlock.com/products/here4-multiband-rtk-gnss,288.00,288.00,,Either listed module is acceptable. The CAD model still shows the retired Wren Mini; update the STEP on the next CAD export.
 3251,"GNSS Module, Backup, Mateksys M9N-G4-3100",Equipment,1,1,cots,,,Mateksys,M9N-G4-3100,https://www.mateksys.com/?portfolio=m9n-g4-3100,125.00,125.00,,DroneCAN. Not in the CAD model.
 3260,"Power Switch, E-Switch PVHC4F23SS344",Equipment,1,1,cots,,,Digi-Key,PVHC4F23SS344,https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861,16.00,16.00,,
 3270,"Gimbal Camera, SIYI A8 mini",Equipment,1,1,cots,,,SIYI,,https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera,251.63,251.63,,
@@ -46,7 +46,7 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 3312,"Companion Computer, Raspberry Pi 5",Equipment,1,1,cots,,8 GB RAM,Raspberry Pi,,https://www.raspberrypi.com/products/raspberry-pi-5/,200.00,200.00,,Mounts on the Main PCB; not a separate CAD part.
 3313,"Ethernet Switch, BotBlox GigaBlox Nano",Equipment,2,2,cots,,,BotBlox,,https://botblox.io/products/micro-gigabit-ethernet-switch,95.67,191.34,,Mounts on the Main PCB; not a separate CAD part.
 3320,"Battery Connector PCB, assembled",Equipment,1,1,pcb-assembly,,,,,,83.00,83.00,,Order via JLCPCB or similar using the KiCad production files; see the BC PCB Assembly Guide.
-3324,"BC PCB Heatsink, 4 mm",Equipment,1,1,laser-cut,Aluminum,4 mm plate,RapidDirect,,https://www.rapiddirect.com/,16.00,16.00,,TBC — design file not yet in the repo; add a drawing before revision B.
+3324,"BC PCB Heatsink, 4 mm",Equipment,1,1,laser-cut,Aluminum,4 mm plate,RapidDirect,,https://www.rapiddirect.com/,16.00,16.00,,TBC — awaiting drawing export from the Fusion master model; add to the repo before revision B.
 3330,"Flight Controller PCB, assembled",Equipment,1,1,pcb-assembly,,,,,,25.00,25.00,,Adapter board; stacks on the Main PCB. Not a separate CAD part.
 3331,"Attachment Interface PCB, assembled",Equipment,3,6,pcb-assembly,,,,,,10.00,60.00,order extras; JLCPCB minimum batch,"One per attachment interface (right, left, bottom)."
 3332,"Flight Controller, Holybro Pix32 v6",Equipment,1,1,cots,,,Holybro,,https://holybro.com/products/pix32-v6?variant=43020083527869,296.00,296.00,,Mounts on the FC PCB; not a separate CAD part.
