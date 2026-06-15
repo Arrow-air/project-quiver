@@ -18,13 +18,16 @@ Vendor parts in steps/vendor/:
     3270_camera.step            Camera (no transform)
     3280_telemetry.step         Telemetry air unit (no transform)
     3290_oa_radar.step          Obstacle avoidance radar (translate only)
+
+Position constants are center-of-mass coordinates measured from the
+Fusion 360 PT3 master model export.
 """
 
 from pathlib import Path
 
 from build123d import Axis, Compound, Location
 
-from quiver.common import load_step
+from quiver.common import load_step, place_at
 
 _DIR = Path(__file__).parent
 
@@ -66,22 +69,12 @@ def make_assembly() -> Compound | None:
 
     lidar = load_step(_DIR, "3210_oa_lidar", vendor=True)
     if lidar:
-        com = lidar.center()
-        lidar.move(Location((
-            _OA_LIDAR_POS[0] - com.X,
-            _OA_LIDAR_POS[1] - com.Y,
-            _OA_LIDAR_POS[2] - com.Z,
-        )))
+        place_at(lidar, *_OA_LIDAR_POS)
         children.append(lidar)
 
     oa_radar = load_step(_DIR, "3290_oa_radar", vendor=True)
     if oa_radar:
-        com = oa_radar.center()
-        oa_radar.move(Location((
-            _OA_RADAR_POS[0] - com.X,
-            _OA_RADAR_POS[1] - com.Y,
-            _OA_RADAR_POS[2] - com.Z,
-        )))
+        place_at(oa_radar, *_OA_RADAR_POS)
         children.append(oa_radar)
 
     # --- Parts needing rotation + CoM translation ---
@@ -89,34 +82,19 @@ def make_assembly() -> Compound | None:
     radar_alt = load_step(_DIR, "3220_radar_altimeter", vendor=True)
     if radar_alt:
         radar_alt = radar_alt.rotate(Axis.Z, 180)
-        com = radar_alt.center()
-        radar_alt.move(Location((
-            _RADAR_ALT_POS[0] - com.X,
-            _RADAR_ALT_POS[1] - com.Y,
-            _RADAR_ALT_POS[2] - com.Z,
-        )))
+        place_at(radar_alt, *_RADAR_ALT_POS)
         children.append(radar_alt)
 
     ppp = load_step(_DIR, "3201_ppp_adapter", vendor=True)
     if ppp:
         ppp = ppp.rotate(Axis.Z, 45)
-        com = ppp.center()
-        ppp.move(Location((
-            _PPP_ADAPTER_POS[0] - com.X,
-            _PPP_ADAPTER_POS[1] - com.Y,
-            _PPP_ADAPTER_POS[2] - com.Z,
-        )))
+        place_at(ppp, *_PPP_ADAPTER_POS)
         children.append(ppp)
 
     beacon = load_step(_DIR, "3202_drone_beacon", vendor=True)
     if beacon:
         beacon = beacon.rotate(Axis.Z, 135)
-        com = beacon.center()
-        beacon.move(Location((
-            _DRONE_BEACON_POS[0] - com.X,
-            _DRONE_BEACON_POS[1] - com.Y,
-            _DRONE_BEACON_POS[2] - com.Z,
-        )))
+        place_at(beacon, *_DRONE_BEACON_POS)
         children.append(beacon)
 
     if not children:

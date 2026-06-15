@@ -26,13 +26,16 @@ Vendor parts in steps/vendor/:
     3111_motor.step         Motor (used 4x)
     3112_propeller.step     CW propeller (used 2x: FR, BR)
     3122_propeller.step     CCW propeller (used 2x: FL, BL)
+
+Position constants are center-of-mass coordinates measured from the
+Fusion 360 PT3 master model export.
 """
 
 from pathlib import Path
 
-from build123d import Axis, Compound, Location
+from build123d import Axis, Compound
 
-from quiver.common import load_step
+from quiver.common import load_step, place_at
 
 _DIR = Path(__file__).parent
 
@@ -64,12 +67,7 @@ def make_assembly() -> Compound | None:
         if motor:
             motor = motor.rotate(Axis.X, 90)
             motor = motor.rotate(Axis.Z, arm_angle)
-            com = motor.center()
-            motor.move(Location((
-                sx * _MOTOR_XY - com.X,
-                sy * _MOTOR_XY - com.Y,
-                _MOTOR_Z - com.Z,
-            )))
+            place_at(motor, sx * _MOTOR_XY, sy * _MOTOR_XY, _MOTOR_Z)
             children.append(motor)
 
         # --- Propeller ---
@@ -82,12 +80,7 @@ def make_assembly() -> Compound | None:
                 prop = prop.rotate(Axis.Z, 270 + arm_angle)
             else:
                 prop = prop.rotate(Axis.Z, 90 + arm_angle)
-            com = prop.center()
-            prop.move(Location((
-                sx * _PROP_XY - com.X,
-                sy * _PROP_XY - com.Y,
-                _PROP_Z - com.Z,
-            )))
+            place_at(prop, sx * _PROP_XY, sy * _PROP_XY, _PROP_Z)
             children.append(prop)
 
     if not children:

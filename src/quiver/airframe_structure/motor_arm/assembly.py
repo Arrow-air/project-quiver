@@ -23,6 +23,9 @@ Vendor parts in steps/vendor/:
 
 Generated parts:
     1412 Arm tube — 30mm OD, 2mm wall carbon-fiber tube, 360mm long (used 4x)
+
+Position constants are center-of-mass coordinates measured from the
+Fusion 360 PT3 master model export.
 """
 
 from pathlib import Path

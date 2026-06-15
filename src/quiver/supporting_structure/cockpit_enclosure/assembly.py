@@ -34,13 +34,16 @@ STEP files in steps/:
     2412_enclosure_top_cap.step     Domed top cap
     2420_hinge.step                 Hinge anchor (used 2x, mirrored)
     2430_latch.step                 Latch clip (used 2x, mirrored)
+
+Position constants are center-of-mass coordinates measured from the
+Fusion 360 PT3 master model export.
 """
 
 from pathlib import Path
 
-from build123d import Axis, Compound, Location, Plane
+from build123d import Axis, Compound, Plane
 
-from quiver.common import PETG, load_step
+from quiver.common import PETG, load_step, place_at
 
 _DIR = Path(__file__).parent
 
@@ -74,12 +77,7 @@ def make_assembly() -> Compound | None:
     if right_hinge:
         right_hinge.color = PETG
         right_hinge = right_hinge.rotate(Axis.X, 90)
-        com = right_hinge.center()
-        right_hinge.move(Location((
-            _RIGHT_HINGE_POS[0] - com.X,
-            _RIGHT_HINGE_POS[1] - com.Y,
-            _RIGHT_HINGE_POS[2] - com.Z,
-        )))
+        place_at(right_hinge, *_RIGHT_HINGE_POS)
         children.append(right_hinge)
 
         # Left hinge — mirror the positioned right hinge across YZ plane.
@@ -95,12 +93,7 @@ def make_assembly() -> Compound | None:
     if right_latch:
         right_latch.color = PETG
         right_latch = right_latch.rotate(Axis.Z, -90)
-        com = right_latch.center()
-        right_latch.move(Location((
-            _RIGHT_LATCH_POS[0] - com.X,
-            _RIGHT_LATCH_POS[1] - com.Y,
-            _RIGHT_LATCH_POS[2] - com.Z,
-        )))
+        place_at(right_latch, *_RIGHT_LATCH_POS)
         children.append(right_latch)
 
         # Left latch — mirror the positioned right latch across YZ plane.

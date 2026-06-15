@@ -2,6 +2,14 @@
 
 DXFs, cut sheets, and fabrication drawings for CNC and laser-cut parts.
 
+> **Status:** no fabrication drawings are checked in yet — part geometry
+> currently lives in the STEP files under
+> [`src/quiver/`](../quiver/) (e.g.
+> `quiver/airframe_structure/plates/steps/1111_upper_plate.step`), and
+> Dev-Kit foam cut profiles are in
+> [`task-grant-bounty/Dev-Kit/data/`](../../task-grant-bounty/Dev-Kit/data/).
+> Contributions of per-part DXFs and drawings are welcome.
+
 ## Metal parts
 
 The following BOM subcategories contain CNC or laser-cut metal parts:

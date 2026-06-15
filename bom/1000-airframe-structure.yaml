@@ -1,0 +1,154 @@
+category: "1000"
+name: Airframe Structure
+items:
+  - id: "1111"
+    name: Upper Plate
+    qty: 1
+    sourcing: laser-cut
+    material: Aluminum
+    spec: 1 mm sheet
+    design_ref: src/quiver/airframe_structure/plates/steps/1111_upper_plate.step
+    unit_cost_usd: 26.00
+    suppliers:
+      - name: RapidDirect
+        url: https://www.rapiddirect.com/
+        note: reference service; any shop meeting the spec is acceptable
+  - id: "1112"
+    name: Middle Plate
+    qty: 1
+    sourcing: laser-cut
+    material: Aluminum
+    spec: 1 mm sheet
+    design_ref: src/quiver/airframe_structure/plates/steps/1112_middle_plate.step
+    unit_cost_usd: 26.00
+    suppliers:
+      - name: RapidDirect
+        url: https://www.rapiddirect.com/
+  - id: "1113"
+    name: Lower Plate
+    qty: 1
+    sourcing: laser-cut
+    material: Aluminum
+    spec: 1 mm sheet
+    design_ref: src/quiver/airframe_structure/plates/steps/1113_lower_plate.step
+    unit_cost_usd: 47.00
+    suppliers:
+      - name: RapidDirect
+        url: https://www.rapiddirect.com/
+  - id: "1211"
+    name: Cockpit Support Beam, CW Long
+    qty: 1
+    sourcing: laser-cut
+    material: Aluminum
+    spec: 40x40x2 mm box section
+    design_ref: src/quiver/airframe_structure/beams/steps/1211_cw_long.step
+    unit_cost_usd: 43.00
+    suppliers:
+      - name: RapidDirect
+        url: https://www.rapiddirect.com/
+  - id: "1212"
+    name: Cockpit Support Beam, CCW Back
+    qty: 2
+    sourcing: laser-cut
+    material: Aluminum
+    spec: 40x40x2 mm box section
+    design_ref: src/quiver/airframe_structure/beams/steps/1212_ccw_back.step
+    unit_cost_usd: 27.00
+    suppliers:
+      - name: RapidDirect
+        url: https://www.rapiddirect.com/
+  - id: "1221"
+    name: Battery Wall
+    qty: 2
+    sourcing: laser-cut
+    material: Aluminum
+    design_ref: src/quiver/airframe_structure/beams/steps/1221_battery_wall.step
+    unit_cost_usd: 49.00
+    suppliers:
+      - name: RapidDirect
+        url: https://www.rapiddirect.com/
+  - id: "1310"
+    name: Landing Gear Vertical Tube
+    qty: 4
+    sourcing: cut-to-length
+    material: Carbon fiber 3K
+    spec: 30x28 mm tube; see landing_gear assembly for cut length
+    design_ref: src/quiver/airframe_structure/landing_gear/assembly.py
+    unit_cost_usd: 45.00
+    purchase:
+      qty: 2
+      note: 30x28x1000 mm stock, any color; each tube yields two legs
+    suppliers:
+      - name: RJXHobby
+        url: https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm
+  - id: "1320"
+    name: Landing Gear Horizontal Tube
+    qty: 2
+    sourcing: cut-to-length
+    material: Carbon fiber 3K
+    spec: 30x28 mm tube; see landing_gear assembly for cut length
+    design_ref: src/quiver/airframe_structure/landing_gear/assembly.py
+    unit_cost_usd: 45.00
+    purchase:
+      qty: 1
+      note: 30x28x1000 mm stock, any color; one tube yields both skids
+    suppliers:
+      - name: RJXHobby
+        url: https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm
+  - id: "1330"
+    name: Landing Gear Main Adapter
+    qty: 4
+    sourcing: cots
+    spec: 30 mm tube quick-release tilt seat
+    design_ref: src/quiver/airframe_structure/landing_gear/steps/vendor/1330_main_adapter.step
+    unit_cost_usd: 30.00
+    suppliers:
+      - name: RJXHobby
+        url: https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1
+  - id: "1340"
+    name: Landing Gear Tube Joint
+    qty: 4
+    sourcing: cots
+    spec: 30 mm
+    design_ref: src/quiver/airframe_structure/landing_gear/steps/1340_tube_joint.step
+    unit_cost_usd: 13.99
+    suppliers:
+      - name: INNLOI
+        url: https://www.innloi.com/productinfo/448455.html
+  - id: "1350"
+    name: Landing Gear Foam Wrap
+    qty: 4
+    sourcing: cots
+    material: EPP foam
+    design_ref: src/quiver/airframe_structure/landing_gear/assembly.py
+    unit_cost_usd: 14.00
+    purchase:
+      qty: 1
+      note: one pack wraps all four lower tubes
+    suppliers:
+      - name: Amazon
+        url: https://a.co/d/ggzWXc4
+  - id: "1411"
+    name: Foldable Motor Arm Connector
+    qty: 4
+    sourcing: cots
+    spec: 30 mm tube option
+    design_ref: src/quiver/airframe_structure/motor_arm/steps/vendor/1411_arm_connector.step
+    unit_cost_usd: 25.00
+    suppliers:
+      - name: Alibaba
+        url: https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html
+  - id: "1412"
+    name: Motor Arm Tube
+    qty: 4
+    sourcing: cut-to-length
+    material: Carbon fiber 3K
+    spec: 30x28 mm tube, cut to 360 mm
+    design_ref: src/quiver/airframe_structure/motor_arm/assembly.py
+    unit_cost_usd: 45.00
+    purchase:
+      qty: 2
+      note: 30x28x1000 mm stock, any color; each tube yields two arms
+    suppliers:
+      - name: RJXHobby
+        url: https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm
