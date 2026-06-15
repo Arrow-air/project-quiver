@@ -122,8 +122,10 @@ derating
 desireable
 desync
 DEVID
+Devkit
 DFLS
 dialout
+Digi
 Digimat
 DIONC
 dipul
@@ -139,11 +141,13 @@ EAHR
 EASA
 ECCN
 edgecolor
+EdgeTX
 Eeschema
 Elektronik
 elembox
 elems
 elif
+ELRS
 ENABL
 endangle
 ENIG
@@ -200,6 +204,7 @@ Hollybro
 Holybro
 Hondex
 HORIZ
+HSUP
 Iavg
 ibom
 Icrj
@@ -209,6 +214,7 @@ Imager
 imgdata
 IMSAFE
 inet
+INNLOI
 Inno
 interlayer
 intref
@@ -363,6 +369,8 @@ PSCD
 PSCE
 PSCN
 psutil
+PTFE
+PTSM
 Pushback
 PVHC
 pygltflib
@@ -376,6 +384,7 @@ quadcopter
 Quicktune
 Quik
 quiktune
+RadioMaster
 rangefinding
 Rapiddirect
 RCIN
@@ -509,6 +518,7 @@ WCAP
 wheeldelta
 WHEP
 whep
+Winco
 Wurth
 Würth
 XCLASS

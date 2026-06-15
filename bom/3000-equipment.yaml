@@ -1,0 +1,262 @@
+category: "3000"
+name: Equipment
+items:
+  - id: "3111"
+    name: Motor + ESC, Hobbywing XRotor X6 Plus
+    qty: 4
+    sourcing: cots
+    design_ref: src/quiver/equipment/propulsion/steps/vendor/3111_motor.step
+    unit_cost_usd: 120.00
+    suppliers:
+      - name: Hobbywing
+        part_number: XRotor X6 Plus G2
+        url: https://www.hobbywing.com/en/products/x6-plus-g2
+    notes: Propellers are ordered separately (3112/3122).
+  - id: "3112"
+    name: Propeller, Hobbywing MFP 24x8.0, CW
+    qty: 2
+    sourcing: cots
+    design_ref: src/quiver/equipment/propulsion/steps/vendor/3112_propeller.step
+    unit_cost_usd: 20.00
+    suppliers:
+      - name: Hobbywing
+        part_number: MFP 24x8.0 CW
+        url: https://www.hobbywing.com/en/products/mfp-24x80
+  - id: "3122"
+    name: Propeller, Hobbywing MFP 24x8.0, CCW
+    qty: 2
+    sourcing: cots
+    design_ref: src/quiver/equipment/propulsion/steps/vendor/3122_propeller.step
+    unit_cost_usd: 20.00
+    suppliers:
+      - name: Hobbywing
+        part_number: MFP 24x8.0 CCW
+        url: https://www.hobbywing.com/en/products/mfp-24x80
+  - id: "3201"
+    name: PPP Adapter, CubePilot CubeNode ETH
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3201_ppp_adapter.step
+    unit_cost_usd: 121.98
+    suppliers:
+      - name: IR-LOCK (CubePilot)
+        url: https://irlock.com/products/cube-node-eth?variant=42727353122867
+  - id: "3202"
+    name: Remote ID Module, DroneBeacon db201
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3202_drone_beacon.step
+    unit_cost_usd: 54.00
+    suppliers:
+      - name: DroneScout (DroneBeacon)
+        part_number: db201
+        url: https://dronescout.co/product/dronebeacon-mavlink-db201-transponder/
+  - id: "3210"
+    name: Obstacle Avoidance LiDAR, RPLidar S2L
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3210_oa_lidar.step
+    unit_cost_usd: 380.00
+    suppliers:
+      - name: DFRobot
+        url: https://www.dfrobot.com/product-2617.html
+  - id: "3220"
+    name: Radar Altimeter, Nanoradar NRA15
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3220_radar_altimeter.step
+    unit_cost_usd: 240.00
+    suppliers:
+      - name: Nanoradar
+        part_number: NRA15
+        url: https://www.nanoradar.com/Products_1/4.html
+  - id: "3230"
+    name: Telemetry Antenna, Front
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3230_front_telemetry.step
+    included_in: "3280"
+    notes: Supplied with the SIYI HM30 Standard Combo (3280).
+  - id: "3240"
+    name: Telemetry Antenna, Rear
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3240_rear_telemetry.step
+    included_in: "3280"
+    notes: Supplied with the SIYI HM30 Standard Combo (3280).
+  - id: "3250"
+    name: GNSS Module, Primary
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3250_gnss_wren_mini.step
+    unit_cost_usd: 288.00
+    suppliers:
+      - name: IR-LOCK (CubePilot)
+        part_number: Here4
+        url: https://irlock.com/products/here4-multiband-rtk-gnss
+      - name: Holybro
+        part_number: H-RTK F9P (DroneCAN)
+        url: https://holybro.com/
+        note: equally acceptable alternative to the Here4
+    notes: Either listed module is acceptable. The CAD model still shows the
+      retired Wren Mini; update the STEP on the next CAD export.
+  - id: "3251"
+    name: GNSS Module, Backup, Mateksys M9N-G4-3100
+    qty: 1
+    sourcing: cots
+    unit_cost_usd: 125.00
+    suppliers:
+      - name: Mateksys
+        part_number: M9N-G4-3100
+        url: https://www.mateksys.com/?portfolio=m9n-g4-3100
+    notes: DroneCAN. Not in the CAD model.
+  - id: "3260"
+    name: Power Switch, E-Switch PVHC4F23SS344
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3260_power_switch.step
+    unit_cost_usd: 16.00
+    suppliers:
+      - name: Digi-Key
+        part_number: PVHC4F23SS344
+        url: https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861
+  - id: "3270"
+    name: Gimbal Camera, SIYI A8 mini
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3270_camera.step
+    unit_cost_usd: 251.63
+    suppliers:
+      - name: SIYI
+        url: https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera
+  - id: "3280"
+    name: Telemetry / FPV System, SIYI HM30
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3280_telemetry.step
+    unit_cost_usd: 282.04
+    suppliers:
+      - name: SIYI
+        part_number: HM30 Standard Combo
+        url: https://shop.siyi.biz/products/siyi-hm30-digital-image-transmission?VariantsId=10748
+  - id: "3290"
+    name: Obstacle Avoidance Radar, Nanoradar MR82
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3290_oa_radar.step
+    unit_cost_usd: 285.00
+    suppliers:
+      - name: Nanoradar
+        part_number: MR82
+        url: https://www.nanoradar.com/Products_1/7.html
+  - id: "3310"
+    name: Main PCB, assembled
+    qty: 1
+    sourcing: pcb-assembly
+    design_ref: src/pcb/main_pcb/
+    production_bom: src/pcb/main_pcb/production/bom.csv
+    unit_cost_usd: 400.00
+    notes: Order via JLCPCB or similar using the KiCad production files; see the Main PCB Assembly Guide.
+  - id: "3312"
+    name: Companion Computer, Raspberry Pi 5
+    qty: 1
+    sourcing: cots
+    spec: 8 GB RAM
+    unit_cost_usd: 200.00
+    suppliers:
+      - name: Raspberry Pi
+        url: https://www.raspberrypi.com/products/raspberry-pi-5/
+    notes: Mounts on the Main PCB; not a separate CAD part.
+  - id: "3313"
+    name: Ethernet Switch, BotBlox GigaBlox Nano
+    qty: 2
+    sourcing: cots
+    unit_cost_usd: 95.67
+    suppliers:
+      - name: BotBlox
+        url: https://botblox.io/products/micro-gigabit-ethernet-switch
+    notes: Mounts on the Main PCB; not a separate CAD part.
+  - id: "3320"
+    name: Battery Connector PCB, assembled
+    qty: 1
+    sourcing: pcb-assembly
+    design_ref: src/pcb/battery_pcb/
+    production_bom: src/pcb/battery_pcb/production/bom.csv
+    unit_cost_usd: 83.00
+    notes: Order via JLCPCB or similar using the KiCad production files; see the BC PCB Assembly Guide.
+  - id: "3324"
+    name: BC PCB Heatsink, 5 mm
+    qty: 1
+    sourcing: laser-cut
+    material: Aluminum
+    spec: 5 mm plate, 116 x 16 mm; the 5 mm variant supersedes the
+      earlier 4 mm one
+    design_ref: src/manufacturing/3324_bc_pcb_heatsink.step
+    unit_cost_usd: 16.00
+    suppliers:
+      - name: RapidDirect
+        url: https://www.rapiddirect.com/
+    notes: Thermally couples the BC PCB to the chassis; install with thermal
+      paste (CONS-007). Not in the CAD assembly model.
+  - id: "3330"
+    name: Flight Controller PCB, assembled
+    qty: 1
+    sourcing: pcb-assembly
+    design_ref: src/pcb/fc_pcb/
+    production_bom: src/pcb/fc_pcb/production/bom.csv
+    unit_cost_usd: 25.00
+    notes: Adapter board; stacks on the Main PCB. Not a separate CAD part.
+  - id: "3331"
+    name: Attachment Interface PCB, assembled
+    qty: 3
+    sourcing: pcb-assembly
+    design_ref: src/pcb/attach_pcb/
+    production_bom: src/pcb/attach_pcb/production/bom.csv
+    unit_cost_usd: 10.00
+    purchase:
+      qty: 6
+      note: order extras; JLCPCB minimum batch
+    notes: One per attachment interface (right, left, bottom).
+  - id: "3332"
+    name: Flight Controller, Holybro Pix32 v6
+    qty: 1
+    sourcing: cots
+    unit_cost_usd: 296.00
+    suppliers:
+      - name: Holybro
+        url: https://holybro.com/products/pix32-v6?variant=43020083527869
+    notes: Mounts on the FC PCB; not a separate CAD part.
+  - id: "3410"
+    name: Battery, Tattu 4.0 14S 30000 mAh
+    qty: 1
+    sourcing: cots
+    design_ref: src/quiver/equipment/battery/steps/vendor/3410_battery.step
+    unit_cost_usd: 735.00
+    suppliers:
+      - name: Tattu
+        part_number: Tattu 4.0 14S 30000 mAh
+    notes: Smart battery with CAN telemetry.
+  - id: "3501"
+    name: Remote Control Transmitter
+    qty: 1
+    sourcing: cots
+    unit_cost_usd: 150.00
+    suppliers:
+      - name: RadioMaster
+        part_number: Boxer
+        url: https://www.radiomasterrc.com/products/boxer-radio-controller-m2
+        note: reference example; no model is formally specified
+    notes: Builder's choice — any transmitter compatible with the chosen
+      receiver and ELRS/EdgeTX-class link works. The team flies a
+      RadioMaster Boxer.
+  - id: "3510"
+    name: Transport Case, Nanuk 976
+    qty: 1
+    sourcing: cots
+    unit_cost_usd: 600.00
+    suppliers:
+      - name: Nanuk
+        part_number: "976"
+        url: https://nanuk.com/products/nanuk-976
+    notes: Foam cut profiles for the case insert are in
+      task-grant-bounty/Dev-Kit/data/ (Foam_1.dxf, Foam_2.dxf).

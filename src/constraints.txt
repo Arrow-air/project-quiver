@@ -182,7 +182,9 @@ python-dateutil==2.9.0.post0
     #   jupyter-client
     #   matplotlib
 pyyaml==6.0.3
-    # via pyaml
+    # via
+    #   quiver-cad (src/pyproject.toml)
+    #   pyaml
 pyzmq==27.1.0
     # via
     #   ipykernel
