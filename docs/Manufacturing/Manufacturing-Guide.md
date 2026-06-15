@@ -1,6 +1,7 @@
 ---
 title: Dev-Kit Manufacturing Guide
 sidebar_label: Dev-Kit Manufacturing Guide
+sidebar_position: 2
 ---
 
 # Dev-Kit Manufacturing Guide
@@ -23,97 +24,11 @@ This Dev-Kit Manufacturing Guide keeps only vehicle-side routing and installatio
 
 ## BOM for the Assembly
 
-### Table 1. Structure Parts
-
-|	 ID	|	Part Name	|	Material	|	Sourcing	|	Quantity	|
-|	--------	|	--------	|	--------	|	--------	|	--------	|
-|	1111	|	 Upper plate	|	Aluminum	|	Laser Cut	|	1	|
-|	1112	|	 Middle plate   	|	Aluminum	|	Laser Cut	|	1	|
-|	1113	|	 Lower plate    	|	Aluminum	|	Laser Cut	|	1	|
-|	1211	|	 Cockpit Support Beam CW Long	|	Aluminum	|	Laser Cut	|	1	|
-|	121X	|	 Cockpit Support Beam CCW Back	|	Aluminum	|	Laser Cut	|	2	|
-|	122X	|	Battery Wall	|	Aluminum	|	Laser Cut	|	2	|
-|	131X	|	Landing Gear Vertical Tubes	|	Carbon-Fiber	|	Cut-to-Length	|	4	|
-|	132X	|	Landing Gear Horizontal Tubes	|	Carbon-Fiber	|	Cut-to-Length	|	2	|
-|	133X	|	Landing Gear Main Adapters	|	Aluminum	|	Off-the-Shelf	|	4	|
-|	134X	|	Landing Gear Tube Joints	|	Aluminum	|	Off-the-Shelf	|	4	|
-|	135X	|	Landing Gear Foam Wrap	|	Foam	|	Off-the-Shelf	|	4	|
-|	14X1	|	 Foldable Motor Arm Connectors	|	Aluminum	|	Off-the-Shelf	|	4	|
-|	14X2	|	Motor Arm Tubes	|	Carbon-Fiber	|	Cut-to-Length	|	4	|
-|	21X2	|	Attachment Interface	|	Aluminum	|	Off-the-Shelf	|	3	|
-|	21X1	|	Attachment Interface Spacer Left & Right	|	PETG-CF	|	3D Print	|	2	|
-|	2131	|	Attachment Interface Spacer Bottom	|	PETG-CF	|	3D Print	|	1	|
-|	221X	|	Battery sliders	|	PETG-CF	|	3D Print	|	2	|
-|	2311	|	Main PCB Mount	|	PETG-CF	|	3D Print	|	1	|
-|	2312	|	BC PCB Mount	|	PETG-CF	|	3D Print	|	1	|
-|	2313	|	BC PCB Cover	|	PETG-CF	|	3D Print	|	1	|
-|	2321	|	Sensor Mount	|	PETG-CF	|	3D Print	|	1	|
-|	2331	|	GNSS Mount	|	PETG-CF	|	3D Print	|	1	|
-|	2341	|	PPP Adapter & Beacon Mount	|	PETG-CF	|	3D Print	|	1	|
-|	2411	|	Main Enclosure	|	PETG-CF	|	3D Print	|	1	|
-|	2412	|	Enclosure Top Cap	|	PETG-CF	|	3D Print	|	1	|
-|	242X	|	Enclosure Hinge	|	Zinc	|	Off-the-Shelf	|	2	|
-|	243X	|	Enclosure Latch	|	Steel	|	Off-the-Shelf	|	2	|
-
-
-### Table 2. Fasteners
-|	Fastener ID	|	Fastener Description	|	Quantity	|	Reference Part	|
-|	--	|	--	|	--	|	--	|
-|	Rivet 1	|	4mm Diameter for 1 mm - 2.5 mm thickness	|	26	|	[97525A224](https://www.mcmaster.com/97525A224/)	|
-|	Rivet 2	|	4mm Diameter for 2.5 mm - 4.5 mm thickness	|	10	|	[97525A251](https://www.mcmaster.com/97525A251)	|
-|	Rivet 3	|	4mm Diameter for 4.5 mm - 6.4 mm thickness	|	10	|	[97525A226](https://www.mcmaster.com/97525A226)	|
-|	Screw 1	|	Socket Head Screw M3x10	|	8	|	[91292A113](https://www.mcmaster.com/91292A113)	|
-|	Screw 2	|	Flanged Button Head Screw M4x10	|	16	|	[92095A190](https://www.mcmaster.com/92095A190)	|
-| Screw 3  | Button Head Hex-Drive Screw M2x4   | 12 | [92095A451](https://www.mcmaster.com/92095A451/) |
-|	Screw 4	|	Socket Head Screw M3x12	|	8	|	[91292A114](https://www.mcmaster.com/91292A114)	|
-|	Screw 5	|	Socket Head Screw M3x8	|	79	|	[91292A112](https://www.mcmaster.com/91292A112)	|
-|	Screw 6	|	Socket Head Screw M3x40	|	16	|	[91292A024](https://www.mcmaster.com/91292A024)	|
-|	Screw 7	|	Socket Head Screw M2.5x6	|	4	|	[91292A010](https://www.mcmaster.com/91292A010/)	|
-|	Screw 8	|	Hex Drive Flat Head Screw M3x10	|	8	|	[92125A130](https://www.mcmaster.com/92125A130/)	|
-|	Screw 9	|	Socket Head Screw M4x8	|	8	|	[91292A108](https://www.mcmaster.com/91292A108)	|
-| Screw 10  | Socket Head Screw M2x6   | 4 | [91292A832](https://www.mcmaster.com/91292A832/) |
-| Screw 11  | Flanged Button Head Hex-Drive Screw M3x6   | 23 | [97654A674](https://www.mcmaster.com/products/97654a674/) |
-| Screw 12  | Socket Head Hex-Drive Screw M2x5   | 4 | [92855A837](https://www.mcmaster.com/92855A837/) |
-| Screw 13  | Socket Head Hex-Drive Screw M2.5x8   | 4 | [91292A012](https://www.mcmaster.com/91292A012/) |
-| Screw 14  | Socket Head Hex-Drive Screw M2x10   | 4 | [91292A833](https://www.mcmaster.com/91292A833/) |
-| Screw 15  | Socket Head Hex-Drive Screw M5x8   | 4 | [91292A191](https://www.mcmaster.com/91292A191) |
-| Screw 16  | Button Head Hex Drive Screw M3x40   | 4 | [92095A203](https://www.mcmaster.com/92095A203/) |
-| Screw 17  | Socket Head Screw M3x6   | 8 | [90751A110](https://www.mcmaster.com/90751A110/) |
-|	Insert 1 |	M3 Threaded Inserts - 5.7 mm	|	50	|	[94459A140](https://www.mcmaster.com/94459A140/)	|
-|	Insert 2 |	M4 Threaded Inserts	|	8	|	[94180A351](https://www.mcmaster.com/94180A351/)	|
-| Insert 3 | M2 Threaded Inserts | 4 | [94180A312](https://www.mcmaster.com/94180A312/) |
-| Insert 4 | M3 Threaded Inserts - 3.8 mm | 16 | [94180A331](https://www.mcmaster.com/94180A331) |
-| Insert 5 | M2.5 Threaded Inserts | 4 | [94459A439](https://www.mcmaster.com/94459A439/) |
-|	Washer 1 |	M3 General Purpose Washer 3.2 mm ID, 6 mm OD	|	115	|	[98689A112](https://www.mcmaster.com/98689A112)	|
-|	Washer 2 |	M4 General Purpose Washer 4.3 mm ID, 9 mm OD	|	8	|	[93475A230](https://www.mcmaster.com/93475A230)	|
-|	Washer 3 |	M2 Nylon Washer 2.2 mm ID, 5 mm OD	|	12	|	[95610A110](https://www.mcmaster.com/95610A110)	|
-| Washer 4 |	M2.5 Nylon Washer 2.7 mm ID, 5.6 mm OD	|	8	|	[95610A011](https://www.mcmaster.com/95610A011/)	|
-| Washer 5 |	M3 Nylon Washer 3.2 mm ID, 6 mm OD	|	4	|	[95610A704](https://www.mcmaster.com/95610A704/)	|
-| Washer 6 |	M5 General Purpose Washer 5.3 mm ID, 10 mm OD	|	4	|	[93475A240](https://www.mcmaster.com/93475A240/)	|
-|	 Nut 1	|	Nylon-Insert Locknut M3	|	12	|	[90576A811](https://www.mcmaster.com/90576A811)	|
-| Vibration Mount | M3 Rubber Anti-Vibration Spacer | 5 | [Amazon](https://www.amazon.com/iRCMATRC-Stretchy-Anti-Vibration-Controllers-Accessories/dp/B09KCGKX1F?th=1) |
-| Grommet 1| Circular Grommet OD: 20 mm | 4 | [Amazon](https://amzn.eu/d/0acx4eWp) |
-| Grommet 2| Oval Grommet 27x13 mm | 12 | [Amazon](https://amzn.eu/d/06VwAZfb) |
-| Silicone Foam Seal Strip| Circular, OD: 8 mm | 1 | [Amazon](https://www.amazon.com/uxcell-Silicone-Meters-Weather-Warehouse/dp/B0CB6H3BJ4/ref=sr_1_2?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&nsdOptOutParam=true&refresh=1&sr=8-2) |
-
-
-
-
-### Table 3. Tools and Consumables
-
-| Item | Description | Reference |
-|--|--|--|
-| Allen key set | Metric, M2 - M5 | |
-| Wrench set | Metric | |
-| Cordless screwdriver or drill press | | |
-| Riveting tool | For 4 mm rivets | |
-| Double-Sided Tape | Heavy Duty | |
-| Loctite Threadlocker Purple 222 | Low-strength threadlocker | [McMaster-Carr 1810A28](https://www.mcmaster.com/1810A28/) |
-| Loctite Threadlocker Blue 242 | Medium-strength threadlocker | [McMaster-Carr 91458A113](https://www.mcmaster.com/91458A113/) |
-| Loctite Threadlocker Red 262 | High-strength threadlocker | [McMaster-Carr 91458A170](https://www.mcmaster.com/91458A170/) |
-| Würth Super RTV Silicone Black | 200 ml, black RTV silicone | [Model Number: 08933311](https://www.wurthusa.com/Lucid-Motors/Super-RTV-Silicone-Black-200ml/p/08933311) |
-| Bambulab PETG-CF Filament | PETG-CF Filament | [Bambulab US Store](https://us.store.bambulab.com/products/petg-cf?srsltid=AfmBOopdlzFPMQbKaH_SlJhs1Kp4MEZ4SKowusCq7by1Bgfgniv4fXBB&skr=yes&p=W3sicHJvcGVydHlLZXkiOiJDb2xvciIsInByb3BlcnR5VmFsdWUiOiJCbGFjayAoMzExMDApIn0seyJwcm9wZXJ0eUtleSI6IlR5cGUiLCJwcm9wZXJ0eVZhbHVlIjoiIn0seyJwcm9wZXJ0eUtleSI6IlNpemUiLCJwcm9wZXJ0eVZhbHVlIjoiMSBrZyJ9XQ%3D%3D) |
-
+The complete, versioned bill of materials lives on the
+[Bill of Materials](./BOM.md) page, generated from the BOM master data
+in [`bom/`](https://github.com/Arrow-air/project-quiver/tree/main/bom).
+It covers structure parts, fasteners, equipment, harnesses, consumables,
+and tools, with supplier links and a downloadable procurement CSV.
 
 -------
 
