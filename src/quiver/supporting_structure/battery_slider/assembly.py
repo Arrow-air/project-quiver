@@ -22,13 +22,16 @@ mirrored via rotY(180) to face the opposite wall.
 
 STEP files in steps/:
     2211_battery_slider.step    Battery slider (used 2x)
+
+Position constants are center-of-mass coordinates measured from the
+Fusion 360 PT3 master model export.
 """
 
 from pathlib import Path
 
-from build123d import Axis, Compound, Location
+from build123d import Axis, Compound
 
-from quiver.common import PETG, load_step
+from quiver.common import PETG, load_step, place_at
 
 _DIR = Path(__file__).parent
 
@@ -45,12 +48,7 @@ def make_assembly() -> Compound | None:
     left = load_step(_DIR, "2211_battery_slider")
     if left:
         left.color = PETG
-        com = left.center()
-        left.move(Location((
-            _LEFT_POS[0] - com.X,
-            _LEFT_POS[1] - com.Y,
-            _LEFT_POS[2] - com.Z,
-        )))
+        place_at(left, *_LEFT_POS)
         children.append(left)
 
     # Right slider — mirror across YZ plane to face the opposite wall.
@@ -58,12 +56,7 @@ def make_assembly() -> Compound | None:
     if right:
         right.color = PETG
         right = right.rotate(Axis.Y, 180)
-        com = right.center()
-        right.move(Location((
-            _RIGHT_POS[0] - com.X,
-            _RIGHT_POS[1] - com.Y,
-            _RIGHT_POS[2] - com.Z,
-        )))
+        place_at(right, *_RIGHT_POS)
         children.append(right)
 
     if not children:

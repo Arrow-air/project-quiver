@@ -23,13 +23,16 @@ Vendor parts in steps/vendor/:
     3310_main_pcb.step      Main PCB assembly (no transform, extract_solids >=50mm³)
     3320_bc_pcb.step        BC PCB (dZ -4.30, extract_solids >=1mm³)
     3331_attach_pcb.step    Attachment interface PCB (used 3x, rotated per position)
+
+Position constants are center-of-mass coordinates measured from the
+Fusion 360 PT3 master model export.
 """
 
 from pathlib import Path
 
 from build123d import Axis, Compound, Location
 
-from quiver.common import load_step
+from quiver.common import load_step, place_at
 
 _DIR = Path(__file__).parent
 
@@ -74,12 +77,7 @@ def make_assembly() -> Compound | None:
     right = load_step(_DIR, "3331_attach_pcb", vendor=True)
     if right:
         right = right.rotate(Axis.Y, 90)
-        com = right.center()
-        right.move(Location((
-            _RIGHT_ATTACH_POS[0] - com.X,
-            _RIGHT_ATTACH_POS[1] - com.Y,
-            _RIGHT_ATTACH_POS[2] - com.Z,
-        )))
+        place_at(right, *_RIGHT_ATTACH_POS)
         children.append(right)
 
     # Left: rotX(180) + rotY(90) + CoM translate
@@ -87,12 +85,7 @@ def make_assembly() -> Compound | None:
     if left:
         left = left.rotate(Axis.X, 180)
         left = left.rotate(Axis.Y, 90)
-        com = left.center()
-        left.move(Location((
-            _LEFT_ATTACH_POS[0] - com.X,
-            _LEFT_ATTACH_POS[1] - com.Y,
-            _LEFT_ATTACH_POS[2] - com.Z,
-        )))
+        place_at(left, *_LEFT_ATTACH_POS)
         children.append(left)
 
     # Rear: rotX(180) + rotZ(270) + CoM translate
@@ -100,12 +93,7 @@ def make_assembly() -> Compound | None:
     if rear:
         rear = rear.rotate(Axis.X, 180)
         rear = rear.rotate(Axis.Z, 270)
-        com = rear.center()
-        rear.move(Location((
-            _REAR_ATTACH_POS[0] - com.X,
-            _REAR_ATTACH_POS[1] - com.Y,
-            _REAR_ATTACH_POS[2] - com.Z,
-        )))
+        place_at(rear, *_REAR_ATTACH_POS)
         children.append(rear)
 
     if not children:

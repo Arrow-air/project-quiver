@@ -16,6 +16,7 @@ ignoreRegExp:
 ignorePaths:
   - "node_modules"
   - "build"
+  - "**/constraints.txt"
   - "**/*.3dshapes"
   - "**/*.abin"
   - "**/*.apj"

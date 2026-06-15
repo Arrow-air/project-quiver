@@ -8,12 +8,14 @@ version = "0.1.0"
 description = "Open-source CAD assembly for the Arrow Quiver drone platform"
 requires-python = ">=3.10"
 dependencies = [
-    "build123d>=0.7",
+    "build123d>=0.7,<1.0",
+    "pyyaml>=6",
 ]
 
 [project.optional-dependencies]
 dev = [
     "ocp-vscode>=2.0",
+    "pytest>=8.0",
 ]
 
 [tool.setuptools.packages.find]
