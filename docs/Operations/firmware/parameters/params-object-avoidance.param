@@ -1,7 +1,8 @@
 # Object Avoidance Parameters
 # Load AFTER standard-params.param to enable RPLidar S2 obstacle avoidance
 #
-# Requires: RPLidar S2 connected to SERIAL3 (configured in standard-params.param)
+# Requires: RPLidar S2 on SERIAL5 = TELEM3 connector = USART2 (configured in standard-params.param)
+#           NOT SERIAL3 (that maps to the GPS1 connector, empty when GPS is DroneCAN)
 #           PRX1_TYPE=5 is already set in standard-params.param
 #
 # Avoidance behavior: BendyRuler path planning, stop+slide mode

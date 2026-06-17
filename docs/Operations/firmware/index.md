@@ -50,7 +50,7 @@ Cherry-picks [PR #31663](https://github.com/ArduPilot/ardupilot/pull/31663) from
 
 - Adds RPLidar S2 as a proximity sensor (`PRX1_TYPE = 5`)
 - Reuses the RPLidar A2 serial protocol with an additional dense-express scan mode
-- Connect to SERIAL3: `SERIAL3_PROTOCOL = 11`, `SERIAL3_BAUD = 1000` (1 Mbaud)
+- Connect to **SERIAL5** (the TELEM3 connector = USART2): `SERIAL5_PROTOCOL = 11`, `SERIAL5_BAUD = 1000` (1 Mbaud). **Not SERIAL3** — that maps to the GPS1 connector, which is empty when the GPS runs on DroneCAN.
 - Enable via [`params-object-avoidance.param`](./parameters/params-object-avoidance.param) when needed
 
 ### PPP Networking (Raspberry Pi Ethernet over UART)
