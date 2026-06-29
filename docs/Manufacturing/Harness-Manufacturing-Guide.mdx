@@ -29,7 +29,7 @@ Use this table only as a harness-side checklist for endpoints and major routing 
 | HAR-0002 BC_PCB Signal | Bat_PCB J2 | Main_PCB J43 | Direct PCB interconnect. |
 | HAR-0003 BC_PCB SSR | Bat_PCB J3 | Main_PCB J46 | Direct PCB interconnect. |
 | HAR-0004 / HAR-0005 / HAR-0006 / HAR-0007 ESC Power | Main_PCB J27 | ESC power leads | Route through the circular upper-plate opening to the middle plate. |
-| HAR-0008 / HAR-0009 / HAR-0010 / HAR-0011 ESC Signal | Bat_PCB J2 | Main_PCB J43 | No special routing constraint currently noted. |
+| HAR-0008 / HAR-0009 / HAR-0010 / HAR-0011 ESC Signal | Main_PCB J23/J27/J32/J40 | ESC signal leads | Route with the matching ESC power harness through the motor-arm bend; protect the bend with heat shrink. |
 | HAR-0012 / HAR-0013 Side Payloads | Main_PCB J29, J37 | ATT_INT right/left | Route under the Main PCB to the side circular openings; watch telemetry air-unit clearance. |
 | HAR-0014 Bottom Payload | Main_PCB J31, J39 | ATT_INT bottom | Route through the right-side and mid-plate openings to the underside; watch cable crowding and zip-tie points. |
 | HAR-0015 Altimeter | Main PCB J8 | NRA15 | Route from the right-side top-plate entry to the bottom plate; watch other cables and marked zip tie. |
@@ -348,6 +348,8 @@ Use this table only as a harness-side checklist for endpoints and major routing 
 | Main_PCB J32|ESC3 Signal |
 | Main_PCB J40|ESC4 Signal |
 
+The Hobbywing X6 Plus signal lead uses **green for CAN-Low (CL)** and **gray for CAN-High (CH)**. Match the wire function labels below and verify continuity.
+
 <Steps>
 
   <Step title="Nailboard">
@@ -394,13 +396,13 @@ Use this table only as a harness-side checklist for endpoints and major routing 
 
 *Connect End A to End B following this chart.*
 
-| Wire ID | Color | From: 1704857  | To: 1704858 | Function / Signal |
+| Wire ID | Color | From: 1704858 | To: Hobbywing X6 Plus Signal Lead | Function / Signal |
 | :--- | :--- | :--- | :--- | :--- |
-| **W1** | Yellow | **Pin 1** | 4 | GND |
-| **W2** | Green | **Pin 2** | 3 | CAN1_L |
-| **W3** | Gray | **Pin 3** | 2| CAN1_H |
-| **W4** | Black | **Pin 4** | 1 | GND |
-| **W5** | White | **Pin 5** | 1 | PWM  |
+| **W1** | Yellow | **Pin 1** | Ground | GND |
+| **W2** | Green | **Pin 2** | CL / CAN-Low | CAN1_L |
+| **W3** | Gray | **Pin 3** | CH / CAN-High | CAN1_H |
+| **W4** | Black | **Pin 4** | Ground | GND |
+| **W5** | White | **Pin 5** | PWM signal | PWM |
 
   </Step>
 
@@ -1258,4 +1260,3 @@ N/A
   </Step>
 
 </Steps>
-
