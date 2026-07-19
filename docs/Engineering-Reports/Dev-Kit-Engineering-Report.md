@@ -8,7 +8,7 @@ description: Engineering report for Project Quiver Dev-Kit
 
 ## Executive Summary
 
-The Quiver Dev-Kit is the first commercial release of Project Quiver, an open source heavy lift quadcopter platform developed by Arrow Air. This report documents the technical work carried out from September 2025 through early 2026 to bring the PT3 prototype to a stable developer release. It is a delta document. The structural modifications, electronics revisions, software development, and obstacle avoidance integration covered here represent changes from PT3. A Platform Engineering Report providing a complete reference for the Quiver platform as a whole is planned as a separate document.
+The Quiver Dev-Kit is the first commercial release of Project Quiver, an open source heavy lift quadcopter platform developed by Arrow Air. This report documents the technical work carried out from September 2025 through early 2026 to bring the PT3 prototype to a stable developer release. It is a delta document. The structural modifications, electronics revisions, software development, and obstacle avoidance integration covered here represent changes from PT3. See the [Platform Engineering Report](./Platform-Engineering-Report.md) for the complete, source-traceable reference to the Quiver platform as a whole.
 
 The structural modifications centered on weight reduction and weatherproofing. Plate thinning succeeded on the upper airframe but failed under payload on the lower frame, an outcome that FEA did not predict and that a 7 kg payload flight test was required to surface. The final configuration retains thinned upper plates and keeps the lower frame and battery bay walls at original thickness. Weatherproofing was validated to IP53 through garden hose testing and confirmed suitable for light rain operations.
 
@@ -588,4 +588,3 @@ Remote ID integration was validated in April 2026 via DroneCAN, clearing the las
 - [PT1](https://github.com/Arrow-air/project-quiver/blob/main/docs/Engineering-Reports/PT1-Engineering-Report.md)
 - [PT2](https://github.com/Arrow-air/project-quiver/blob/main/docs/Engineering-Reports/PT2-Engineering-Report.md)
 - [PT3](https://github.com/Arrow-air/project-quiver/blob/main/docs/Engineering-Reports/PT3-Engineering-Report.md)
-
