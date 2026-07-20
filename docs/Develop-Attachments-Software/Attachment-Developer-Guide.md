@@ -1,9 +1,25 @@
+---
+title: Quiver Attachment Developer Guide
+sidebar_label: Attachment Developer Guide
+sidebar_position: 1
+description: Mechanical, electrical, networking, software, and verification guidance for Quiver payload attachments.
+---
+
 # Quiver Attachment Developer Guide
 
-**Version:** July 2026
-**Applies to:** Project Quiver PT3 and Quiver Dev-Kit aircraft using the three quick-release attachment interfaces
+**Document status:** Draft — pending attachment electrical and mounting-interface redesign validation
 
-This guide takes an attachment from concept to a bench-tested, flight-ready integration. It covers the mechanical interface, electrical power, Ethernet, CAN, the flight-controller signal, payload software, and the evidence expected in a contribution.
+**Target platforms:** PT3 and Dev-Kit aircraft revisions equipped with the three C1/C2/C3 attachment interfaces
+
+**Source baseline:** project-quiver commit `ef316bc9f4e9e001dd5421f8070e54f3180f1600`
+
+**Last reviewed:** July 2026
+
+:::warning Revision-dependent interface
+Maintainer feedback indicates that the attachment PCB and mounting interface are being revised. Confirm mechanical dimensions, current limits, CAN configuration, and `FMU_CH1` characteristics against the target aircraft revision before manufacturing or flight use.
+:::
+
+This guide provides a staged path from attachment concept through bench validation and flight-readiness review. It covers the mechanical interface, electrical power, Ethernet, CAN, the flight-controller signal, payload software, and the evidence expected in a contribution.
 
 > **Safety boundary**
 >
@@ -19,11 +35,44 @@ Quiver evolves quickly, and some archived documents retain older connector or CA
 4. Use the [Manufacturing Guide](../Manufacturing/Manufacturing-Guide.md) for aircraft-side interface orientation and harness routing.
 5. Ask the Arrow engineering team to confirm the available power budget and payload mass/CG envelope for the specific aircraft before ordering hardware.
 
+V1.4 is the current repository design baseline for the attachment PCB, but operational use remains subject to electrical, mechanical-fit, and manufacturability validation.
+
+### 1.1 Source and confidence matrix
+
+| Topic | Source to check | Revision/status | Appropriate use |
+| --- | --- | --- | --- |
+| Attachment PCB geometry | [`src/pcb/attach_pcb`](../../src/pcb/attach_pcb/) | V1.4 repository baseline; validation pending | Candidate PCB and mechanical geometry |
+| Attachment functions | Current KiCad schematic and production netlist in [`src/pcb/attach_pcb`](../../src/pcb/attach_pcb/) | Commit-specific | Logical connectivity, not a released connector-control drawing |
+| Aircraft-side payload ports | [`src/pcb/main_pcb`](../../src/pcb/main_pcb/) | Target-aircraft revision | Aircraft-side routing and connector designations |
+| V1.4 design changes | [2026 update information note](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/information-note.md) | Marked valid; electrical, fit, and manufacturability tests remain | Change rationale and known validation work |
+| Mechanical mounting | [Manufacturing Guide](../Manufacturing/Manufacturing-Guide.md) and released CAD | Revision-specific | Position, orientation, assembly, and released geometry |
+| Payload networking and Hub integration | [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) | April 2026 | Static addressing, companion services, and Hub data paths |
+
 The original attachment PCB documentation calls the differential CAN pair `CAN1_P`/`CAN1_N`. Current PT3 Main PCB documentation routes payload ports on `CAN2_H`/`CAN2_L`. Treat these as revision-dependent names for the attachment CAN pair and confirm continuity against the current schematics before wiring.
+
+### 1.2 Requirement language
+
+- **Required** means an explicit repository requirement, maintainer decision, or formal acceptance item.
+- **Recommended baseline** means engineering guidance to use unless Arrow approves an alternative.
+- **Revision-dependent** means the value or behavior must be verified for the target aircraft.
+
+Unless a checklist item is explicitly identified as Arrow-required, the verification gates in this guide are recommended engineering baselines rather than a published Arrow qualification standard.
+
+### 1.3 Logical system context
+
+This is a data-flow overview, not a wiring diagram or permission to use an unverified interface:
+
+```text
+Attachment sensor or actuator
+   |-- verified +12V / 12VSW power path
+   |-- Ethernet --> Main PCB switch --> Raspberry Pi --> Quiver Hub
+   |-- CAN pair --> aircraft CAN2 / DroneCAN network
+   `-- FMU_CH1 --> protected, revision-confirmed auxiliary interface
+```
 
 ## 2. Choose an interface position
 
-PT3 provides three aircraft-side quick-release positions:
+The targeted PT3 and Dev-Kit revisions provide three aircraft-side quick-release positions. Verify the connector and harness designations on the target revision:
 
 | Position | Main PCB connector | Recommended payload IP | Typical use |
 | --- | --- | --- | --- |
@@ -32,6 +81,8 @@ PT3 provides three aircraft-side quick-release positions:
 | Side 2 | `J30` | `192.168.144.102` | Cameras, compact sensors, light actuators |
 
 The IPs are conventions, not DHCP leases. Any unused address in `192.168.144.100`–`192.168.144.199` may be assigned after checking for conflicts. Do not use the reserved addresses listed in the [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md#3-network-configuration).
+
+Validate the power, CAN, auxiliary-signal, and Ethernet harness for `J29`, `J30`, and `J31` independently. Do not validate one position and assume the other two have identical routing or population.
 
 Select a position by considering:
 
@@ -54,6 +105,16 @@ Build against the released CAD rather than measuring a printed part or marketpla
 - quick-release parts `2112`/`2122`/`2132` in the [Manufacturing Guide](../Manufacturing/Manufacturing-Guide.md#2112-2122--2132---attachment-interfaces);
 - the current attachment PCB STEP model in [`src/pcb/attach_pcb`](../../src/pcb/attach_pcb/).
 
+The following repository images are orientation aids for the source baseline, not dimensioned interface-control drawings. Replace or re-annotate them when the redesigned mounting interface is released.
+
+| Side-interface notch orientation | Bottom-interface notch and forward orientation |
+| --- | --- |
+| <img src="../Manufacturing/Assembly-Guides/assets/images/structural/step15_3.png" alt="Side attachment interface notch facing upward" width="420" /> | <img src="../Manufacturing/Assembly-Guides/assets/images/structural/step15_4.png" alt="Bottom attachment interface notch and cable tray facing forward" width="420" /> |
+
+The current V1.4 attachment PCB render shows the spring-contact layout and silkscreen orientation cue. Use the KiCad and STEP sources, not this raster image, for geometry or contact numbering.
+
+<img src="../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new1.jpg" alt="V1.4 attachment PCB repository render" width="600" />
+
 The aircraft-side interface PCB is mounted with the spring-contact side facing outward. The PCB orientation mark must align with the quick-release notch. On the side interfaces the notch faces upward; on the bottom interface the notch faces forward, toward the sensor mount.
 
 ### 3.2 Attachment-side design checklist
@@ -73,9 +134,13 @@ Record the final mass, mounting position, center of gravity relative to the inte
 
 The attachment PCB carries one 100BASE-TX Ethernet link, a differential CAN pair, regulated 12 V rails, ground, and one flight-controller auxiliary signal. The V1.4 board replaces the legacy header arrangement with individual spring contacts and enlarged mating pads while retaining the original functions.
 
-### 4.1 Functional pin map
+### 4.1 Provisional logical pin map
 
 The 12-circuit locking connector used by the attachment PCB is Molex `207760-1281`; the cable-side mating housing is Molex `204523-1201`. The current design files remain authoritative for physical orientation and pin numbering.
+
+:::caution Not a released connector-control drawing
+This table records logical connectivity from the current repository sources. Before manufacturing a cable or mating PCB, validate every contact against the target attachment PCB, aircraft Main PCB, harness continuity, and the connector manufacturer's pin-1 view.
+:::
 
 | Pin | Net/function | Integration rule |
 | --- | --- | --- |
@@ -87,12 +152,12 @@ The 12-circuit locking connector used by the attachment PCB is Molex `207760-128
 | 6 | `GND` | Power and signal reference |
 | 7 | `ETH_TX-` | Keep paired with pin 5 |
 | 8 | `GND` | Power and signal reference |
-| 9 | CAN low / legacy `CAN1_N` | Current PT3 aircraft routes the payload bus as CAN2 |
+| 9 | Legacy `CAN1_N` | CAN2-low candidate; verify continuity and polarity on the target position |
 | 10 | `+12V` | Main regulated 12 V payload supply |
-| 11 | CAN high / legacy `CAN1_P` | Current PT3 aircraft routes the payload bus as CAN2 |
+| 11 | Legacy `CAN1_P` | CAN2-high candidate; verify continuity and polarity on the target position |
 | 12 | `FMU_CH1` | Flight-controller auxiliary signal; define direction and voltage before use |
 
-This table describes logical connectivity. Verify the connector drawing and schematic before crimping or laying out a mating PCB; never determine pin 1 from a rendered image alone.
+Do not infer permanent CAN high/low polarity from the legacy `P`/`N` names alone. Verify the current KiCad sources and harness continuity for `J29`, `J30`, and `J31`; never determine pin 1 from a rendered image alone.
 
 ### 4.2 Power budget and protection
 
@@ -106,7 +171,7 @@ Before connecting a payload, obtain written confirmation of:
 
 The PT3 Main PCB update notes mention a 2 A fuse upgrade for a switched 12 V output, but that is not a universal payload allowance. Cable gauge, connector contacts, regulator thermal limits, other active payloads, and aircraft configuration may impose a lower limit.
 
-Every attachment should include:
+Unless the maintainer approves an alternative protection strategy, the recommended baseline is to include:
 
 - input fuse or resettable protection sized below the verified port limit;
 - reverse-polarity protection where practical;
@@ -204,7 +269,7 @@ Choose the simplest data path that meets the requirement:
 | Existing telemetry combined into a dashboard | Quiver Hub stream subscription |
 | Prototype with clean JSON | Quiver Hub passthrough app |
 
-The [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) describes network addresses, companion services, Hub endpoints, custom apps, and service deployment. A production attachment service should:
+The [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) describes network addresses, companion services, Hub endpoints, custom apps, and service deployment. The recommended production baseline for an attachment service is to:
 
 - run under `systemd` with bounded restart behavior;
 - use an environment file for configuration and secrets;
@@ -214,6 +279,78 @@ The [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) describes netw
 - log connection state and counters without logging API keys;
 - reject commands when the aircraft or payload is not in an allowed state;
 - recover cleanly after attachment power cycling.
+
+### 6.1 End-to-end example: Ethernet environmental sensor
+
+This reference flow validates networking and software without depending on unreleased mechanical or power limits. It is an integration example, not production sensor code.
+
+1. Select the physical position and its revision-specific harness. This example uses Bottom/J31 and its conventional address `192.168.144.100`; Side 1/J29 conventionally uses `.101`, and Side 2/J30 uses `.102`.
+2. Configure the payload with a static `/24` address and no DHCP server. Check the [reserved-address table](./Quiver-SDK-Developer-Guide.md#reserved-addresses-do-not-use) before assignment.
+3. Expose deterministic local `/health` and `/data` resources. The following standard-library service returns representative data; replace `read_sample()` with the real, bounded-time sensor driver:
+
+```python
+import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+
+def read_sample():
+    return {"temperature_c": 23.4, "humidity_percent": 51.2}
+
+
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == "/health":
+            body, status = {"status": "ok"}, 200
+        elif self.path == "/data":
+            body, status = read_sample(), 200
+        else:
+            body, status = {"error": "not found"}, 404
+        encoded = json.dumps(body).encode()
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(encoded)))
+        self.end_headers()
+        self.wfile.write(encoded)
+
+
+HTTPServer(("0.0.0.0", 8000), Handler).serve_forever()
+```
+
+4. For Linux payloads, a recommended `systemd` template is:
+
+```ini
+[Unit]
+Description=Quiver environmental sensor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=quiver-payload
+Group=quiver-payload
+ExecStart=/usr/bin/python3 /opt/quiver-sensor/sensor_payload.py
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
+```
+
+5. From the Raspberry Pi companion, verify local behavior:
+
+```bash
+ping -c 3 192.168.144.100
+curl --fail --max-time 2 http://192.168.144.100:8000/health
+curl --fail --max-time 2 http://192.168.144.100:8000/data
+```
+
+Expected responses are JSON objects such as `{"status": "ok"}` and `{"temperature_c": 23.4, "humidity_percent": 51.2}`. Confirm that unplugging Ethernet, cycling attachment power, restarting the service, and returning malformed sensor data all produce bounded failures and automatic recovery without an unsafe output.
+
+6. To display the data in Quiver Hub, follow [SDK Guide section 9.2](./Quiver-SDK-Developer-Guide.md#92-mode-a-custom-endpoint-external-sensor--rest--parser--ui): create a custom payload endpoint, have a companion-side forwarder read `/data`, and POST the JSON to `/api/rest/payload/{appId}/ingest`. Keep the Hub API key only on the companion, use timeouts and rate limits, and verify the App Builder connection indicator and parsed values.
 
 ## 7. Verification gates
 
@@ -234,7 +371,7 @@ The [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) describes netw
 - [ ] No short from either 12 V rail to ground or data pairs
 - [ ] Attachment starts on a current-limited bench supply
 - [ ] Inrush, steady current, and brownout behavior recorded
-- [ ] Ethernet or CAN health test passes for at least 30 minutes
+- [ ] Recommended initial Ethernet or CAN soak test passes for at least 30 minutes; replace this duration if Arrow publishes a formal qualification value
 - [ ] Power cycling does not require manual recovery
 - [ ] Loss of Ethernet, CAN, and companion process is safe
 - [ ] Thermal test completed at representative load
@@ -287,7 +424,20 @@ Submit one PR with a reproducible package:
 
 Link claims to repository sources or manufacturer datasheets. Mark assumptions and unvalidated limits explicitly instead of presenting them as released specifications.
 
-## 10. Maintainer questions before final release
+## 10. Guide validation
+
+- [x] Repository-relative links resolve locally
+- [ ] Heading anchors verified in the rendered documentation site
+- [ ] Documentation website build completed in the publishing repository
+- [x] Pin-map entries trace to repository design sources and are labeled provisional
+- [x] Mechanical claims link to CAD or manufacturing documentation
+- [x] No unconfirmed numeric value is presented as a released interface limit
+- [ ] Page rendering reviewed on desktop and mobile
+- [ ] Maintainer questions tracked to resolution
+
+This repository provides Markdown link and spelling checks but does not contain the complete documentation-site build configuration. Complete the rendering checks in the publishing environment before release.
+
+## 11. Maintainer questions before final release
 
 The following values must be confirmed per aircraft revision and should be promoted into this guide once released:
 
@@ -297,3 +447,10 @@ The following values must be confirmed per aircraft revision and should be promo
 4. `FMU_CH1` electrical levels and the standard ArduPilot output assignment;
 5. approved environmental and vibration qualification levels;
 6. whether any attachment revision is explicitly rated for live mating.
+
+## 12. Revision history
+
+| Guide version | Hardware baseline | Changes | Status |
+| --- | --- | --- | --- |
+| 0.1 | Main branch at `ef316bc9f4e9e001dd5421f8070e54f3180f1600`, July 2026 | Initial complete draft and source-to-claim review | Under review |
+| 0.2 | New attachment electrical and mounting-interface revision | Update released geometry, connector views, power limits, CAN, and `FMU_CH1` data | Planned |
