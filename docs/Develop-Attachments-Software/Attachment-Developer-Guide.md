@@ -59,7 +59,7 @@ This guide provides a staged path from attachment concept through bench validati
 
 > **Safety boundary**
 >
-> The quick-release mechanism is a mechanical feature; it is not permission to connect or remove a powered attachment. Unless a specific aircraft revision has a validated live-mating procedure, disarm the aircraft, isolate propulsive power, switch payload rails off, and verify zero voltage before mating or removing an attachment.
+> The [Dev-Kit Engineering Report](../Engineering-Reports/Dev-Kit-Engineering-Report.md) describes the interface as designed for hot-swap operation, but the repository does not provide a released live-mating procedure or electrical qualification envelope. Treat that statement as design intent, not permission to connect or remove a powered attachment. Unless a specific aircraft revision has a validated live-mating procedure, disarm the aircraft, isolate propulsive power, switch payload rails off, and verify zero voltage before mating or removing an attachment.
 
 ## 1. Start with the correct source revision
 
@@ -82,7 +82,8 @@ V1.4 is the current repository design baseline for the attachment PCB, but opera
 | Aircraft-side payload ports | [Main PCB schematic](https://github.com/Arrow-air/project-quiver/blob/ef316bc9f4e9e001dd5421f8070e54f3180f1600/src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch), [netlist](https://github.com/Arrow-air/project-quiver/blob/ef316bc9f4e9e001dd5421f8070e54f3180f1600/src/pcb/main_pcb/Quiver_PT3_Main_PCB.net), and [design note](https://github.com/Arrow-air/project-quiver/blob/ef316bc9f4e9e001dd5421f8070e54f3180f1600/task-grant-bounty/pt3/electronics/0007-Main-PCB/information_note.md) | Target-aircraft revision | Aircraft-side routing and connector designations |
 | V1.4 design changes | [2026 update information note](https://github.com/Arrow-air/project-quiver/blob/ef316bc9f4e9e001dd5421f8070e54f3180f1600/task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/information-note.md) | Marked valid; electrical, fit, and manufacturability tests remain | Change rationale and known validation work |
 | Mechanical mounting | [Manufacturing Guide](../Manufacturing/Manufacturing-Guide.md) and released CAD | Revision-specific | Position, orientation, assembly, and released geometry |
-| Payload networking and Hub integration | [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) | April 2026 | Static addressing, companion services, and Hub data paths |
+| System-level Dev-Kit context | [Dev-Kit Engineering Report](../Engineering-Reports/Dev-Kit-Engineering-Report.md) | System summary with revision-dependent implementation details | Validated system context and known design intent, not pin-level authority |
+| Payload networking and Hub integration | [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) | April 2026 guide; implementation status is revision-dependent | Static addressing, companion services, and Hub data paths |
 
 The [legacy attachment PCB documentation](https://github.com/Arrow-air/project-quiver/blob/ef316bc9f4e9e001dd5421f8070e54f3180f1600/task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/README.md) calls the differential CAN pair `CAN1_P`/`CAN1_N`. The [PT3 Main PCB update note](https://github.com/Arrow-air/project-quiver/blob/ef316bc9f4e9e001dd5421f8070e54f3180f1600/task-grant-bounty/pt3/electronics/0007-Main-PCB/Updates/information_note.md) moves payload operation to `CAN2_H`/`CAN2_L`. Treat these as revision-dependent names for the attachment CAN pair and confirm continuity against the current schematics before wiring.
 
@@ -239,6 +240,8 @@ The Pilot Handbook identifies `P1 12V` for the separate bottom-port supply and `
 
 Use Ethernet for cameras, LiDAR, companion computers, and other high-rate payloads.
 
+Ethernet population is revision-dependent. The [Dev-Kit Engineering Report](../Engineering-Reports/Dev-Kit-Engineering-Report.md) says in its Attachment Interface section that Ethernet is present on C1 and C2, while its Ethernet Integration section says the switches provide connectivity to C1, C2, and C3. Verify link continuity and switch-port population on each target position rather than resolving this source conflict by assumption.
+
 - Configure a static IPv4 address in `192.168.144.100`–`192.168.144.199` with prefix `/24`.
 - Check the [reserved address table](./Quiver-SDK-Developer-Guide.md#reserved-addresses-do-not-use) before assignment.
 - Do not run a DHCP server on the aircraft network.
@@ -313,7 +316,9 @@ Choose the simplest data path that meets the requirement:
 | Existing telemetry combined into a dashboard | Quiver Hub stream subscription |
 | Prototype with clean JSON | Quiver Hub passthrough app |
 
-The [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) describes network addresses, companion services, Hub endpoints, custom apps, and service deployment. The recommended production baseline for an attachment service is to:
+The [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md) describes network addresses, companion services, Hub endpoints, custom apps, and service deployment. The [Dev-Kit Engineering Report](../Engineering-Reports/Dev-Kit-Engineering-Report.md) distinguishes the validated terrain-mapping pipeline and existing companion scripts from the planned formal `quiver-sdk` packages, which it says are not yet implemented. Verify each package and endpoint in the target software release rather than treating the SDK architecture as proof of deployment.
+
+The recommended production baseline for an attachment service is to:
 
 - run under `systemd` with bounded restart behavior;
 - use an environment file for configuration and secrets;
