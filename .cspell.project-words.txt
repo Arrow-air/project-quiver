@@ -178,6 +178,7 @@ FWPULL
 Geofence
 Geoportal
 gerbers
+getent
 getenv
 GIGA
 Giga
@@ -312,6 +313,7 @@ netplan
 nmcli
 NMEA
 NODEID
+nologin
 Nooploop
 NOPASSWD
 nslookup
@@ -494,9 +496,11 @@ Ultrafuse
 uncommanded
 undervoltage
 unlisten
+unpowered
 Unsort
 untented
 unticked
+unvalidated
 unviable
 urllib
 USART
@@ -516,6 +520,7 @@ VLOS
 Vreg
 WCAP
 wheeldelta
+wfile
 WHEP
 whep
 Winco
