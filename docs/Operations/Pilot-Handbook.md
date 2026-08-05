@@ -15,16 +15,16 @@ Heavy-Lift Multipurpose UAV (<25 kg MTOW)
 ### 1.1 General Safety Principles
 The Quiver Dev-Kit is a battery powered heavy-lift quadcopter (MTOW ~25kg). It is engineered for industrial aerial applications. It is **not** designed for the deployment of munitions/explosives, or critical life-support transport.
 
-> [!CAUTION]  
->
-> Any improper or reckless action can result in:
-> 
-> - Immediate fatality or severe permanent injury.
-> - Electrical or metal fire hazards (Class C & D).
-> - Property damage.
-> - False public alert, panic or unnecessary crowds.
-> - Noise pollution or disruptions.
-> - Legal liability and reputational damage.
+:::danger
+Any improper or reckless action can result in:
+
+- Immediate fatality or severe permanent injury.
+- Electrical or metal fire hazards (Class C & D).
+- Property damage.
+- False public alert, panic or unnecessary crowds.
+- Noise pollution or disruptions.
+- Legal liability and reputational damage.
+:::
 
 All operators must be trained and familiar with the aircraft and local aviation regulations. The Pilot in Command (PIC) must remain alert and strictly adhere to the **IMSAFE** protocol (Illness, Medication, Stress, Alcohol, Fatigue, Emotion) before operations.
 
@@ -80,9 +80,9 @@ The pilot must establish a local geo-fence for every flight.
 
 Setup: Configure the FENCE_RADIUS and FENCE_ALT_MAX in the ground station software to contain the drone within the authorized flight volume.
 
-> [!WARNING]  
-> 
-> Geo-fencing relies on minimum GNSS. It may not function during a navigation system error or location source failure.
+:::warning
+Geo-fencing relies on minimum GNSS. It may not function during a navigation system error or location source failure.
+:::
 
 **Experimental Systems Disclaimer**:
 
@@ -100,21 +100,21 @@ These systems may be activated for controlled testing only when there is zero ri
 #### 1.3.1 Arcing & Spark Risk
 The electrical system is designed to be spark-free during connection via a pre-charge circuit.
 
-> [!WARNING]  
-> 
-> If you observe any visible spark or audible "crack" when connecting the battery :
-> - STOP immediately.
-> - Disconnect and contact support.
-> - Do not fly.
-> 
-> This indicates a failure in the pre-charge circuit or a short in the power system.
+:::warning
+If you observe any visible spark or audible "crack" when connecting the battery :
+- STOP immediately.
+- Disconnect and contact support.
+- Do not fly.
+
+This indicates a failure in the pre-charge circuit or a short in the power system.
+:::
 
 #### 1.3.2 Flight Battery Handling
 **General Principles：**
 
-> [!NOTE] 
-> 
-> The following principles apply to both battery and charger.
+:::note
+The following principles apply to both battery and charger.
+:::
 
 - Use only Tattu 3.5 or 4.0 14S Smart LiHV batteries.
 - Use the official Tattu-supported charger compatible with 14S LiHV chemistry or SkyRC equivalent.
@@ -136,29 +136,29 @@ The electrical system is designed to be spark-free during connection via a pre-c
 
 **In-Flight Emergency:**
 
-> [!WARNING] 
-> 
-> To prevent escalating a failure, minimize aggressive maneuvers during any battery system emergency.
-> - If battery temperature exceeds **56°C**, land immediately.
-> - If voltage sags rapidly, oscillates abnormally, or stops updating, land immediately.
+:::warning
+To prevent escalating a failure, minimize aggressive maneuvers during any battery system emergency.
+- If battery temperature exceeds **56°C**, land immediately.
+- If voltage sags rapidly, oscillates abnormally, or stops updating, land immediately.
+:::
 
 **Battery Fire Emergency**:
 
-> [!CAUTION] 
-> 
-> In case of pungent gas, irregular popping sounds or smoke, **IMMEDIATELY:**
-> - **Disconnect** the battery immediately (if safe to do so).
-> - **Evacuate** the battery to an open outdoor area away from flammable materials (do not leave it in a corridor).
-> - **Observe** from at least 15 meters away with a Class D fire extinguisher ready.
+:::danger
+In case of pungent gas, irregular popping sounds or smoke, **IMMEDIATELY:**
+- **Disconnect** the battery immediately (if safe to do so).
+- **Evacuate** the battery to an open outdoor area away from flammable materials (do not leave it in a corridor).
+- **Observe** from at least 15 meters away with a Class D fire extinguisher ready.
+:::
 
-> [!CAUTION] 
-> 
-> In case of an **ACTIVE BATTERY FIRE** indoors:
-> - **Evacuate** all personnel, order them to call emergency department as "Battery Fire".
-> - **Cover** the battery with a fire blanket if the condition is still safe.
-> - **Remove** proximate flammable objects as possible.
-> - **Cut off** the main power supply.
-> - **Exit** to an open area.
+:::danger
+In case of an **ACTIVE BATTERY FIRE** indoors:
+- **Evacuate** all personnel, order them to call emergency department as "Battery Fire".
+- **Cover** the battery with a fire blanket if the condition is still safe.
+- **Remove** proximate flammable objects as possible.
+- **Cut off** the main power supply.
+- **Exit** to an open area.
+:::
 
 ### 1.4 Establishing Safety Zones (Kinetic Energy)
 
@@ -176,9 +176,9 @@ To ensure no harm can come to any person or animal in the event of a complete po
 
 A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 
-> [!NOTE] 
-> 
-> Minimum Safety Buffer = Flight Altitude (AGL)
+:::note
+Minimum Safety Buffer = Flight Altitude (AGL)
+:::
 
 - **Example**: If flying at 50 meters (164 ft) altitude, you must ensure a clear zone of at least 50 meters horizontally from your flight path where no uninvolved persons are present.
 
@@ -196,15 +196,15 @@ A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 
 ## 2. System Setup
 ### 2.1 Unbox and assemble
-> [!TIP] 
-> 
-> Due to the large size of the aircraft, a two-person lift or assistance is recommended for assembly.
+:::tip
+Due to the large size of the aircraft, a two-person lift or assistance is recommended for assembly.
+:::
 
-> [!WARNING] 
-> 
-> Be aware of pinch and cut.
-> 
-> Unlocked folding motor arms will rotate while horizontal force or unwise handling technique being applied.
+:::warning
+Be aware of pinch and cut.
+
+Unlocked folding motor arms will rotate while horizontal force or unwise handling technique being applied.
+:::
 
 **1. Preparation:**
 - Reserve enough working space for transport case, devices and the aircraft assembly.
@@ -238,15 +238,15 @@ A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 - Check for dust and debris at lens and gimbal motor gaps and apply proper cleaning.
 
 ### 2.2 Installing battery
-> [!NOTE] 
-> 
-> Acknowledge the "Flight Battery Handling" chapter before handling the battery.
+:::note
+Acknowledge the "Flight Battery Handling" chapter before handling the battery.
+:::
 
-> [!WARNING] 
-> 
-> During the following steps:
-> - Do not power on the battery.
-> - Do not press the battery power button right after the installation.
+:::warning
+During the following steps:
+- Do not power on the battery.
+- Do not press the battery power button right after the installation.
+:::
 
 1. Align the battery to the 3D-printed guide rails with the connector side up. 
 2. Insert the battery by sliding it into the aluminum chassis.
@@ -272,13 +272,13 @@ The drone push button is used to initiate the pre-charge of the power system and
 
 After the flight controller boots, the Quiver SSR auto-engage Lua script shall automatically activate Relay 1 and close the high-voltage SSR / main power MOSFETs. This removes the normal need for the pilot to manually toggle Relay 1 before flight.
 
-> [!WARNING]
->
-> The auto-engage Lua script must be installed and enabled on the aircraft before operation. If Relay 1 / SSR does not activate automatically after boot, do not assume the aircraft is ready for flight. Troubleshoot the script or relay state before arming.
+:::warning
+The auto-engage Lua script must be installed and enabled on the aircraft before operation. If Relay 1 / SSR does not activate automatically after boot, do not assume the aircraft is ready for flight. Troubleshoot the script or relay state before arming.
+:::
 
-> [!CAUTION]
->
-> If Relay 1 / SSR is intentionally or accidentally deactivated while the aircraft is powered, keep the avionics PCB temperature under observation. The pre-charge resistor is not intended to carry sustained aircraft load, and overheating risk increases with higher power consumption from equipment such as companion computers or powered attachments.
+:::danger
+If Relay 1 / SSR is intentionally or accidentally deactivated while the aircraft is powered, keep the avionics PCB temperature under observation. The pre-charge resistor is not intended to carry sustained aircraft load, and overheating risk increases with higher power consumption from equipment such as companion computers or powered attachments.
+:::
 
 ### 2.5 1st time setup
 Each Quiver Dev-Kit aircraft is shipped with a validated firmware image, pre-loaded baseline parameters, and completed sensor calibrations performed by the manufacturer prior to shipment.
@@ -359,10 +359,10 @@ Unauthorized parameter changes may invalidate:
 
 #### 2.6.2 Parameters the Pilot Must Understand
 
-> [!TIP]
->
-> The official baseline parameter file can be downloaded from:  
-> https://github.com/Arrow-air/project-quiver/tree/vector/firmware-docs-clean/docs/firmware/parameters
+:::tip
+The official baseline parameter file can be downloaded from:
+https://github.com/Arrow-air/project-quiver/tree/vector/firmware-docs-clean/docs/firmware/parameters
+:::
 
 **Geo-Fence**
 - `FENCE_ENABLE`
@@ -490,9 +490,9 @@ Before flight, set the relay labels in Mission Planner so the operator can ident
 
 Relays 7 and above are not part of the standard Quiver Dev-Kit pilot workflow unless a specific aircraft or attachment configuration documents them.
 
-> [!NOTE]
->
-> Relay labels are an operator-facing safety aid. The labels do not change wiring or firmware behavior; they only make the Mission Planner relay controls easier to identify.
+:::note
+Relay labels are an operator-facing safety aid. The labels do not change wiring or firmware behavior; they only make the Mission Planner relay controls easier to identify.
+:::
 
 
 ## 3. Power Up Procedure
@@ -532,12 +532,12 @@ This sequence defines the only approved process from battery installation to tak
 
 11. Keep main motor power disabled during configuration.
 12. Load mission or RTK data if applicable.
-> [!NOTE]
->
-> Steps 11–13 require the mission to be loaded before enabling motor power. This ensures:
-> - Waypoints and geo-fence are verified while the aircraft is safe on the ground,
-> - Any upload errors or configuration issues are caught before the motors are live,
-> - The pilot can abort without risk if the mission is incorrect.
+:::note
+Steps 11–13 require the mission to be loaded before enabling motor power. This ensures:
+- Waypoints and geo-fence are verified while the aircraft is safe on the ground,
+- Any upload errors or configuration issues are caught before the motors are live,
+- The pilot can abort without risk if the mission is incorrect.
+:::
 13. Enable main motor power.
 14. Select LOITER mode.
 15. Arm via RC.
@@ -560,12 +560,12 @@ Abort immediately if:
 ## 4. Emergency Procedures
 ### 4.1 Kill switch
 
-> [!WARNING] 
-> 
-> The kill switch was design to deliberately freeze and crash the aircraft. It should only be used when the aircraft is about to collide or cause serious damage. 
-> 
-> Use "Kill Switch" feature only after assessing the expected loss.
-> Only use while the aircraft poses an immediate threat to life, or lost of every available control.
+:::warning
+The kill switch was design to deliberately freeze and crash the aircraft. It should only be used when the aircraft is about to collide or cause serious damage.
+
+Use "Kill Switch" feature only after assessing the expected loss.
+Only use while the aircraft poses an immediate threat to life, or lost of every available control.
+:::
 
 - When users toggle the dedicated "Kill" switch on the RC.
     - The SSR will open immediately and cutting all power to the motors. 
@@ -587,9 +587,9 @@ Abort immediately if:
 
 #### 4.2.3 Single Motor Failure
 
->[!CAUTION]
->
->For motor failure cases on a quadcopter aircraft, there is **NO** known method for in-flight recovery. The aircraft will crash.
+:::danger
+For motor failure cases on a quadcopter aircraft, there is **NO** known method for in-flight recovery. The aircraft will crash.
+:::
 
 **Indications of Motor Failure:**
 - GCS warning messages: "Motor X output saturated", "Thrust loss", "Motor X RPM low"
@@ -612,9 +612,9 @@ Abort immediately if:
 #### 4.2.4 Fly-Away or Lost Control
 #### 4.2.4 Fly-Away or Lost Control
 
-> [!WARNING]
->
-> A fly-away occurs when the aircraft stops responding to pilot commands and drifts or flies away from the operational zone. Time is critical — act quickly.
+:::warning
+A fly-away occurs when the aircraft stops responding to pilot commands and drifts or flies away from the operational zone. Time is critical — act quickly.
+:::
 
 **Step 1: Attempt to Regain Control**
 
@@ -644,13 +644,13 @@ Abort immediately if:
 
 ### 4.3 Aircraft search and rescue in wilderness 
 
-> [!NOTE] 
-> 
-> If the aircraft lost connection mid-air and its exact location may variant, consider bring the ground station to the search area, to help regain the connection to the aircraft.
+:::note
+If the aircraft lost connection mid-air and its exact location may variant, consider bring the ground station to the search area, to help regain the connection to the aircraft.
+:::
 
-> [!WARNING] 
-> 
-> Do not enter hazardous terrain alone or without proper preparation. Maintain communication with a base station.
+:::warning
+Do not enter hazardous terrain alone or without proper preparation. Maintain communication with a base station.
+:::
 
 1. Record last telemetry frame from the ground station (Shall include attitude and coordinate).
 2. Report aircraft lost to the business team and assemble search team and supply team.
@@ -670,9 +670,9 @@ Abort immediately if:
 
 ### 4.4 Contact the development team for help
 
->[!TIP]
->
-> Prepare flight log, screenshot, photo or any material in advance could help resolve issues quicker.
+:::tip
+Prepare flight log, screenshot, photo or any material in advance could help resolve issues quicker.
+:::
 
 If any Quiver aircraft unit encounters difficult problem or requires urgent / emergency assistance, please contact the Quiver development team for help.
 
