@@ -4,7 +4,10 @@
       "pattern": "^https?://"
     },
     {
-      "pattern": "\\.(bin|dxf|step|stl|zip)$"
+      "pattern": "\\.([bB][iI][nN]|dxf|step|stl|zip)$"
+    },
+    {
+      "pattern": "^\\./assets/[0-9]+/logs/$"
     },
     {
       "pattern": "^\\./assets/readme$"
