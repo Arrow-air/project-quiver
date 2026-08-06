@@ -26,6 +26,12 @@ STEP files in steps/:
     2112_attach_plate.step          Quick-release interface plate (used 3x)
     2131_attach_spacer_bottom.step  Spacer for bottom, with wiring notch (used 1x)
 
+Reference (not loaded by this assembly):
+    2112_attach_plate_payload_side.step
+        Payload-side clip half of the BOM 2112 COTS quick-release set
+        ("Replaceable Base", 50x50 mm) - the part a payload bolts to.
+        Payload designs live in https://github.com/Arrow-air/payload-systems
+
 Position constants are center-of-mass coordinates measured from the
 Fusion 360 PT3 master model export.
 """
