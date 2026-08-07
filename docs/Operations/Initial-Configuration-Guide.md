@@ -150,7 +150,7 @@ What a reflash does and does not touch:
 
 Procedure:
 
-1. **Back up first, on the current build.** Mission Planner → Config → Full Parameter Tree → Save. For the first unit, `parameters/params-HOU.param` is the current working export (what is loaded on the drone), with `params-HOU-2.param` as an earlier copy. Make sure the file reflects the current state. This is the restore point. Do **not** restore from `params-HOU-625.param`: that 2026-06-25 snapshot contains `ARMING_SKIPCHK,-1`, which skips every arming check.
+1. **Back up first, on the current build.** Mission Planner → Config → Full Parameter Tree → Save. For the first unit, `parameters/params-HOU-713.param` (2026-07-13, battery power, post M9N replacement) is the current restore point, superseding `params-HOU.param` (2026-07-08, predates the swap and the first-flight deviations) and the earlier `params-HOU-2.param`. Make sure the file reflects the current state. Do **not** restore from `params-HOU-625.param`: that 2026-06-25 snapshot contains `ARMING_SKIPCHK,-1`, which skips every arming check.
 2. **Flash the test build** the same way as §1 (Load custom firmware → its `.apj`). Do not reconfigure anything. The SERIAL5 lidar params carry over.
 3. **Test only the target subsystem, props off.** For the lidar the S2 is powered from avionics 5 V on TELEM3, not the HV bus, so SSR / Relay 1 state does not matter. Watch for a stable lock rather than the spin-up then coast-down loop. Ethernet and Remote ID will be dead on a stock build, which is expected.
 4. **Revert** by loading the Arrow `.apj` again (`docs/Operations/firmware/arducopter-pixhawk6c.apj`).
@@ -218,9 +218,15 @@ On the first unit, **Setup → Mandatory Hardware → Compass** detected three:
 
 | Priority | DevID | Bus | Addr | Device | Action |
 |---|---|---|---|---|---|
-| 1 | 96771 | UAVCAN | 122 | Mateksys M9N magnetometer (external) | keep (primary) |
+| 1 | 96003 | UAVCAN | 119 | Mateksys M9N magnetometer (external) | keep (primary) |
 | 2 | 96515 | UAVCAN | 121 | Holybro F9P magnetometer (external) | keep |
 | 3 | 658433 | I2C | 12 | Pix32 V6 internal IST8310 | **disable** |
+
+The DevID encodes the DroneCAN node ID, so it changes whenever a GNSS module is replaced. The original M9N was node 122 (DevID 96771). Its 2026-07-13 replacement enumerated at node 119 (DevID 96003), and the table above shows the current unit. After any GNSS swap, the new magnetometer appears as a new uncalibrated device at the bottom of the priority list and the old one shows as missing: remove the missing entry, promote the new module back to its priority slot, reboot, and re-run the outdoor calibration below.
+
+> [!NOTE]
+>
+> **Priority number and parameter index are two different things.** `COMPASS_PRIO1/2/3_ID` and `COMPASS_USE/USE2/USE3` follow the **priority** order above. The offset, external, and device-ID parameters (`COMPASS_OFS*`, `COMPASS_EXTERN*`, `COMPASS_DEV_ID*`) follow the **detection slot**, which is whatever order the drivers registered in. After the 2026-07-13 M9N swap the slots reshuffled: slot 1 = internal IST8310, slot 2 = F9P, slot 3 = Mateksys. So the primary compass's offsets now live in `COMPASS_OFS3_*`, not `COMPASS_OFS_*`. When reading offsets back after a calibration, match the slot to the device through `COMPASS_DEV_ID1/2/3` first. Stale offsets left on a disabled slot (the old Matek values now sitting on the internal's slot 1) are harmless and are skipped by the calibration.
 
 **Indoor config (done on first unit):**
 1. **Setup → Mandatory Hardware → Compass.** Uncheck **"Use Compass 3"** to disable the internal IST8310 (DevID 658433). Leave Use Compass 1 and 2 checked. Click **Reboot** to apply. (Optional: "Remove Missing" to clear the disabled row.) The slot numbers come from this unit's enumeration, so on another airframe disable whichever slot shows the I2C IST8310, it is not always Compass 3.
@@ -252,6 +258,15 @@ First-unit result, MP Large Vehicle MagCal (nose at 350° magnetic, true heading
 
 Both are well under the ~400 healthy ceiling. Verified immediately after: with the nose still at 351° true the HUD heading read **348°** (3° error, within tolerance — a static offset this small is what MagFit refines out). This run is consistent with the earlier 2026-06-20 MAVLink run on the same unit (Matek −54, 36, 247 / ~255; F9P 40, 79, 51 / ~102; heading read 4° vs 1° expected, EKF compass variance 0.055) — same Z-dominant Matek and smaller F9P, the spread is heading and magnetometer noise.
 
+Re-run 2026-07-13 after the M9N replacement (new module = node 119, so its offsets landed in `COMPASS_OFS3_*` per the slot note above):
+
+| Compass | Param slot | Offsets (x, y, z) mGauss | Magnitude |
+|---|---|---|---|
+| Matek (new unit, primary) | `COMPASS_OFS3_*` | −29, 19, 226 | ~229 |
+| F9P | `COMPASS_OFS2_*` | 28, 40, 24 | ~55 |
+
+Verified by readback over MAVLink: both enabled magnetometers reported 463 and 464 mGauss field strength, agreeing within 2 counts, with no compass pre-arm messages. The new Matek shows the same Z-dominant signature as the old unit in the same mount location. The disabled internal IST8310 read 620 mGauss, which is the expected uncalibrated in-hull value and does not matter.
+
 4. Quick check in LOITER or POSHOLD after calibration: no toilet-bowling, no yaw drift, no mag warnings.
 
 ### 3.3 MagFit (recommended)
@@ -259,6 +274,7 @@ Both are well under the ~400 healthy ceiling. Verified immediately after: with t
 For best heading performance, collect a MagFit dataset and run it through WebTools.
 
 - Dataset: either a manual 6-minute flight with step inputs, throttle sweeps, 360° turns, and circles, or an auto figure-8 mission from the MagFit helper script.
+- The dataset must be flown on the compass hardware currently installed. A log recorded before a compass or GNSS module swap fits the old magnetometer and cannot be used. On the first unit, the 2026-07-09 logs predate the 2026-07-13 M9N replacement for exactly this reason. Valid datasets: log 63 (2026-07-23, full 360° heading coverage, §17.6 finding 3) and log 72 (2026-07-24, after the field LVMC). Whether the refinement run is needed on this unit is with Zeynep (2026-07-27), since in-flight compass behavior looks good.
 - Run MagFit via WebTools with Battery1 current offsets + scale enabled.
 - Assign compass priority based on the MagFit error metrics. On prior builds the Mateksys gave lower mean Gaussian error and was set primary.
 
@@ -269,7 +285,7 @@ See `task-grant-bounty/pt3/flight-controller/0003-compass-setup` for the full pr
 1. Bind the receiver and confirm input in Mission Planner. On this aircraft the transmitter is the MK32 talking to the HM30 air unit, so if it has never been bound, do **§16.3 (firmware match) and §16.4 (bind) now**, then come back here. §16.5 records the finished channel map.
 2. **Setup → Mandatory Hardware → Radio Calibration.** Move all sticks and switches to extremes.
 3. Apply **no trims or sub-trims**.
-4. Map the mandatory controls: Arm/Disarm, a 3-position flight mode switch, RTL, and a guarded Kill Switch. The as-built map on the first unit is in §16.5 (ch9 = STABILIZE / LOITER / RTL, ch5 = arm, ch8 = kill). Pilot Handbook §2.7.1 lists LOITER / AUTO / STABILIZE with a separate RTL switch instead, so reconcile with the Handbook if AUTO missions are planned.
+4. Map the mandatory controls per Pilot Handbook §2.7.1: Arm/Disarm, a 3-position flight mode switch (LOITER / AUTO / STABILIZE), a dedicated RTL switch, and a guarded Kill Switch. The as-built map on the first unit is in §16.5 (ch9 = mode, ch10 = RTL, ch5 = arm, ch8 = kill). An earlier first-unit map put RTL on the third mode-switch position with no AUTO. It was re-mapped 2026-07-08 to match the Handbook. Since 2026-07-09 the first unit flies a documented deviation, STABILIZE / ALTHOLD / LOITER with AUTO off the switch while no auto missions are flown (decided 2026-07-20, see the §16.5 note).
 5. Verify each switch produces the intended mode and the kill switch is protected against accidental activation.
 
 ### 3.5 Barometer
@@ -280,7 +296,7 @@ Barometer ground pressure is auto-calibrated on boot. Confirm a sane altitude re
 
 ### 3.6 Outdoor calibration field session
 
-These outdoor steps cannot be completed on the bench, because they need open sky for a GPS fix or distance from rebar, vehicles, and tools for clean magnetometer data. The accel, level, barometer, and RC steps above are bench work and stay indoors. Take the aircraft to an open area away from buildings, parked cars, and structural steel, and run these four in order. Each depends on the one before it. Steps 1 and 2 complete on the first outdoor session. Step 3 needs a flight, so it only happens after the entire bench configuration (§4 through §12) is done and the aircraft is cleared to fly. Plan on two outdoor sessions.
+These outdoor steps cannot be completed on the bench, because they need open sky for a GPS fix or distance from rebar, vehicles, and tools for clean magnetometer data. Steps 1 and 2 are also re-run after every shipment or relocation to a new operating site, per Pilot Handbook §2.5.5 (Post-Shipment Recalibration). The accel, level, barometer, and RC steps above are bench work and stay indoors. Take the aircraft to an open area away from buildings, parked cars, and structural steel, and run these four in order. Each depends on the one before it. Steps 1 and 2 complete on the first outdoor session. Step 3 needs a flight, so it only happens after the entire bench configuration (§4 through §12) is done and the aircraft is cleared to fly. Plan on two outdoor sessions.
 
 | Step | Calibration | Depends on | Detail |
 |---|---|---|---|
@@ -404,14 +420,16 @@ Both GNSS units are configured as DroneCAN (`GPS1_TYPE = 9`, `GPS2_TYPE = 9`).
 
 ### 5.1 GPS role assignment (F9P primary)
 
-The design intent (Engineering Report, with background in GNSS note 0006 and FC setup note 0002) is **F9P = primary** (the multi-band RTK unit) and **Mateksys M9N = backup** (non-RTK). On the first unit the DroneCAN instances enumerated **flipped** — GPS 1 = Mateksys (node 122), GPS 2 = F9P (node 121). Pin them with `CAN_OVRIDE` so the F9P is GPS 1:
+The design intent (Engineering Report, with background in GNSS note 0006 and FC setup note 0002) is **F9P = primary** (the multi-band RTK unit) and **Mateksys M9N = backup** (non-RTK). On the first unit the DroneCAN instances enumerated **flipped** — GPS 1 = Mateksys (then node 122), GPS 2 = F9P (node 121). Pin them with `CAN_OVRIDE` so the F9P is GPS 1:
 
 ```
 GPS1_CAN_OVRIDE = 121   ; F9P node → GPS 1 (primary)
-GPS2_CAN_OVRIDE = 122   ; Mateksys node → GPS 2
+GPS2_CAN_OVRIDE = 119   ; Mateksys node → GPS 2
 ```
 
-Write, reboot. Verify `GPS1_CAN_NODEID` reads `121` after reboot. (Confirmed working on the first unit.)
+Write, reboot. Verify `GPS1_CAN_NODEID` and `GPS2_CAN_NODEID` read back the same node IDs after reboot, on battery power (the CAN peripherals are unpowered on USB alone, so the `NODEID` fields read 0 there). Confirmed working on the first unit.
+
+The node IDs are assigned by the flight controller's dynamic node allocation (DNA) server and are unit-specific. The first unit's original M9N sat at node 122. Its 2026-07-13 replacement came up at **node 119**, because the DNA server keeps the old ID reserved against the dead unit's hardware serial and hands a new module the next free slot. So after any GNSS swap: read the new node ID off the DroneCAN screen, point the matching `CAN_OVRIDE` at it, and do not expect the old number to come back. Do not clear the DNA database to force a reuse, since that would re-allocate every dynamic node on the bus and break the other override and both compass device IDs.
 
 Keep `GPS_AUTO_SWITCH = 1` (**Use Best**) — do **not** blend an RTK unit with a non-RTK one. (FC note 0002 suggests blending. That advice is superseded, do not follow it.) `GPS_INJECT_TO = 127` sends RTCM to both, so RTK reaches the F9P regardless of instance.
 
@@ -441,6 +459,16 @@ Keep `GPS_AUTO_SWITCH = 1` (**Use Best**) — do **not** blend an RTK unit with 
 > **The wedge can recur.** On the first unit it returned days later and needed the cold start repeated. When it does not recover immediately, confirm the `M9N-RST` bridge actually made solid contact for a full second or two, then give it a full open-sky soak of 10 to 12 minutes before treating it as recovered or as failed. The recovery is repeatable, so a recurrence is not by itself evidence of a hardware fault.
 >
 > **Only if a cold start plus a re-soak under clear sky still yields 0 satellites** should you treat the module as faulted hardware and pursue an RMA. RMA stands for Return Merchandise Authorization, the vendor's warranty return process: contact Mateksys or the reseller, obtain an RMA number, and ship the unit back for repair or replacement. A faulted GNSS RF front end or antenna is the remaining cause once a cold start is ruled out. The M9N also carries **Compass 1 (the primary, the one LVMC ran on)**, so a replacement means re-running **LVMC** and reassigning compass priority on the new module. Either way this is not a flight blocker on its own: the F9P alone is flyable, and you only lose GPS redundancy.
+>
+> **How the first unit ended.** The cold start recovered it twice, but the module kept degrading: it produced an in-flight velocity glitch (22.7 m/s reported while stationary, §17.3 finding 3) and then dropped off the CAN bus entirely, and it was **replaced on 2026-07-13**. So the cold start is the right first move, but a module that needs repeated cold starts and then starts glitching in flight is on its way out.
+>
+> **Replacing the M9N (done on the first unit 2026-07-13):**
+> 1. Swap the module (J9, CAN1), mounted in the same orientation as the old one.
+> 2. Power up on battery and read the new node ID off the DroneCAN screen. Expect a **new** node ID, not the old one (§5.1 explains the DNA allocation). The replacement came up at node 119 with Mode OPERATIONAL, Health OK, and a steadily climbing uptime.
+> 3. Set `GPS2_CAN_OVRIDE` to the new node ID, reboot, and confirm `GPS2_CAN_NODEID` reads it back on battery power.
+> 4. Compass cleanup (§3.2): remove the missing old magnetometer, promote the new one to priority 1, reboot, then re-run LVMC outdoors.
+> 5. Acceptance before trusting it: 3D fix held, 12+ sats in open sky after a 10 minute soak, HDOP at or under ~1.5, and reported ground speed staying in the noise (under 0.5 m/s stationary, no sustained ramps). The 07-13 bench readback showed fix 3, 11 sats, HDOP 2.08 under a partial sky view, velocity peak 0.30 m/s.
+> 6. `GPS_AUTO_SWITCH` stays at 4 (pinned to the F9P, §17.2) until the new unit's velocities track the F9P through a real flight log, then restore 1 (Use Best). **First attempt FAILED 2026-07-23: the replacement unit reproduced the old unit's velocity glitch in log 63 (§17.6 finding 2), so the pin stays and the cause now looks systemic to the M9N position rather than the module.**
 
 > [!NOTE]
 >
@@ -774,7 +802,7 @@ DID_BARO_ACC  = -1
 
 > [!NOTE]
 >
-> **Module board and firmware.** The first unit's module reports its board as **BlueMark db200** running **ArduRemoteID** firmware (the db201 is the same family). Keep the module firmware current. Stale firmware can leave the module healthy on its own WiFi but silent on DroneCAN, which presents as `ODID: lost transmitter` on the flight controller. Update it over the web interface (see §8.3). When working, the module enumerates as a normal DroneCAN node on CAN1 (it came up as **node 123** on the first unit, alongside the GNSS nodes 121 / 122 and the BMS at 125).
+> **Module board and firmware.** The first unit's module reports its board as **BlueMark db200** running **ArduRemoteID** firmware (the db201 is the same family). Keep the module firmware current. Stale firmware can leave the module healthy on its own WiFi but silent on DroneCAN, which presents as `ODID: lost transmitter` on the flight controller. Update it over the web interface (see §8.3). When working, the module enumerates as a normal DroneCAN node on CAN1 (it came up as **node 123** on the first unit, alongside the GNSS nodes 121 / 119 and the BMS at 125).
 
 ### 8.1 Per-operator identity (required before flight / shipment)
 
@@ -1250,7 +1278,7 @@ Before first flight, confirm (Pilot Handbook §2.5.3):
 | Params | standard + ethernet + remoteid (+ OA) loaded in order | ☐ |
 | Accel/Level | Calibrated, no errors | ☐ |
 | Compass | External cals done outdoors, MagFit applied, internal disabled | ☐ |
-| RC | Calibrated, no trims, modes + kill switch mapped | ☐ |
+| RC | Calibrated, no trims, mode switch (LOITER / AUTO / STABILIZE), RTL switch, kill switch mapped | ☐ |
 | GNSS | Both units enumerate, 3D fix on both (RTK not used on this drone) | ☐ |
 | Ethernet FC | Boot shows IP 192.168.144.51 (NOT .11 — SIYI air unit) | ☐ |
 | RPi | eth0 = .49, pings .50 (CubeNode) and .51 (FC) | ☐ |
@@ -1294,15 +1322,15 @@ This unit's live configuration differs from the repo param files (`docs/Operatio
 | `PRX2_TYPE` | `0` | `17` | NanoRadar MR82 forward proximity (RadarCAN) |
 | `PRX2_RECV_ID` | `0` | `2` | listen only to the MR82 (set to CAN ID 2) so it does not swallow the rangefinder's frames — see §9.2. **Needs a reboot to take effect.** |
 | `MOT_SPOOL_TIME` | `0.5` | `2` | Hobbywing X6-Plus-G2 manual — avoid catapult takeoff from the 400 ms folding-prop delay |
-| `SERIAL1_BAUD` | `57` | `115` | HM30 link raised to 115200 on 2026-06-30 so the QGC parameter download survives Stream GCS Position (§8.2). Change the SIYI side together with it. `params-HOU.param` still records `57`, re-export after confirming the live value |
+| `SERIAL1_BAUD` | `57` | `115` | HM30 link raised to 115200 on 2026-06-30 so the QGC parameter download survives Stream GCS Position (§8.2). Change the SIYI side together with it. Recorded in the exports since `params-HOU.param` (2026-07-08) |
 | `GPS1_CAN_OVRIDE` | `0` | `121` | pin the F9P (RTK) as GPS 1 — **node ID is unit-specific, will differ per aircraft** |
-| `GPS2_CAN_OVRIDE` | `0` | `122` | pin the Mateksys as GPS 2 — **unit-specific node ID** |
+| `GPS2_CAN_OVRIDE` | `0` | `119` | pin the Mateksys as GPS 2 — **unit-specific node ID** (was `122` until the M9N was replaced 2026-07-13, §5.1) |
 
 `TERRAIN_ENABLE,1` and `RNGFND1_RECV_ID,1` were merged into `standard-params.param` on 2026-06-25 and are no longer deviations.
 
 > [!WARNING]
 >
-> `GPS1/2_CAN_OVRIDE` values (`121`/`122`) are **specific to this airframe's DroneCAN node IDs** and will not be correct on another aircraft. Re-read the node IDs per unit (§5.1). Do not copy these two verbatim into the baseline.
+> `GPS1/2_CAN_OVRIDE` values (`121`/`119`) are **specific to this airframe's DroneCAN node IDs** and will not be correct on another aircraft, or even on this aircraft after a GNSS module swap (the first unit's M9N slot went `122` → `119` when the module was replaced, §5.1). Re-read the node IDs per unit (§5.1). Do not copy these two verbatim into the baseline.
 
 ### 14.3 Not parameter-file items (device-side / per-drone)
 
@@ -1334,7 +1362,7 @@ Burn-down of the full initial configuration against the Pilot Handbook. Updated 
 > 5. **Base param-file defects (§14, Open Items 4–5): PATCHED 2026-06-25 in the overlays.** `params-ethernet.param` now carries `NET_P1_TYPE,4`; `standard-params.param` uses `ARMING_SKIPCHK,0` (was `ARMING_CHECK,1`) and adds `BATT_LOW_VOLT,46.2`; `params-object-avoidance.param` drops `AVOID_ANGLE_MAX`. Reload the overlays on the unit to confirm they take.
 > 6. **SIYI check: DONE 2026-06-19.** HM30 telemetry on SERIAL1 (TELEM1 / UART7, §16.2). A8 video confirmed in the FPV app and in QGC RTSP on the MK32 (gotcha: the MK32 Chinese keyboard typed a full-width colon in the URL, now fixed, §16.6).
 >
-> **Outdoor, clear sky (§2.5.2):** GPS 3D fix / HDOP and compass LVMC **DONE 2026-06-22 via Mission Planner** (GPS1/F9P DGPS 20 sats HDOP 0.72; LVMC offsets Matek ~279, F9P ~125, heading verified; §3.2, §5.2 click-paths validated). GPS2 Matek M9N No-Fix **RESOLVED 2026-06-23** by an M9N-RST cold start (wedged u-blox, not faulted hardware; §5.2 note). Remaining: MagFit refinement (needs a flight log). RTK is not used on this drone.
+> **Outdoor, clear sky (§2.5.2):** GPS 3D fix / HDOP and compass LVMC **DONE 2026-06-22 via Mission Planner** (GPS1/F9P DGPS 20 sats HDOP 0.72; LVMC offsets Matek ~279, F9P ~125, heading verified; §3.2, §5.2 click-paths validated). GPS2 Matek M9N No-Fix was recovered twice by cold start but the module kept degrading and was **REPLACED 2026-07-13** (new module = DroneCAN node 119, `GPS2_CAN_OVRIDE` updated, compass re-prioritized, LVMC re-run, all verified by readback; §5.1, §5.2, §3.2). Remaining: MagFit refinement (needs a flight log), and restore `GPS_AUTO_SWITCH` 4 → 1 once the new M9N tracks the F9P through a flight log (§17.5). RTK is not used on this drone.
 >
 > **Blocked on the team (do not work around):**
 > - **Network IP (§0 and Open Item 3), RESOLVED 2026-06-19.** The FC has no IP of its own (no `NET_IPADDR`, confirmed by direct query). It is PPP-assigned the CubeNode's address + 1, so it booted at `.11` (CubeNode `.10` + 1), colliding with the SIYI air unit. Team-approved fix: move the CubeNode to `.50`, which puts the FC at `.51` (clear of all SIYI-reserved addresses), with the Pi at `.49`. Applied and verified 2026-06-19: a full power cycle (not an FC reboot, see §4.4) brought the FC up at `.51` with gateway `.50`. Keep clearing the SIYI-reserved addresses before powering the HM30.
@@ -1358,7 +1386,7 @@ Firmware flash (PR #230, git `20622a39`, S2 + Arrow features confirmed) · **360
 | Network IP to final scheme | §0 / §4.4 | **DONE 2026-06-19.** CubeNode moved to `.50`, FC verified at `.51` / gateway `.50` after a full power cycle. |
 
 ### Remaining — outdoor (clear sky)
-Compass LVMC + GPS 3D fix / HDOP **DONE 2026-06-22 via MP** (§3.2, §5.2). GPS2 Matek M9N No-Fix **RESOLVED 2026-06-23** by an M9N-RST cold start (wedged u-blox, not a hardware fault; §5.2 note). Remaining: MagFit refinement (flight log → WebTools, §3.3). RTK is not used on this drone.
+Compass LVMC + GPS 3D fix / HDOP **DONE 2026-06-22 via MP** (§3.2, §5.2), and **redone 2026-07-13** on the replacement M9N (node 119, offsets in `COMPASS_OFS3_*`, §3.2). The original M9N's No-Fix was cold-start recoverable (§5.2 note) but the module later failed for good and was **replaced 2026-07-13** (§5.1, §5.2). Remaining: MagFit refinement (dataset acquired 2026-07-23, log 63, WebTools run pending, §3.3), and `GPS_AUTO_SWITCH` 4 → 1, blocked since the replacement unit failed its 2026-07-23 flight validation with the same velocity glitch (§17.6 finding 2). RTK is not used on this drone.
 
 ### Remaining — ops / per-flight
 Geo-fence site values (§2.5.3) · flight-tracking-platform registration (§6) · pre-flight checklist (§5.1) · first-flight authorization gate (§2.5.4).
@@ -1408,13 +1436,25 @@ RC calibration done (radio bars move with the MK32 sticks). Channel map on the f
 
 | Channel | Function | Params | Notes |
 |---|---|---|---|
-| ch9 | 3-pos flight mode | `FLTMODE_CH = 9`; Pos1 STABILIZE, Pos2 LOITER, Pos3 RTL | Set on the **Setup → Flight Modes** page (it highlights the active position as you flip the switch) |
+| ch9 | 3-pos flight mode | `FLTMODE_CH = 9`; Pos1 LOITER, Pos2 AUTO, Pos3 STABILIZE | Handbook §2.7.1 map. Set on the **Setup → Flight Modes** page (it highlights the active position as you flip the switch) |
+| ch10 | RTL | `RC10_OPTION = 4` | Dedicated 2-pos switch (Handbook §2.7.1). Set in **Config → Full Parameter Tree**. Switch high = RTL. Returning it low hands control back to whatever mode ch9 selects |
 | ch5 | Arm / Disarm | `RC5_OPTION = 153` | **Reversed on the MK32 transmitter side** |
 | ch8 | Kill (SSR / Relay 1) | `RC8_OPTION = 28` | **Reversed on the MK32 transmitter side**; up = SSR closed, down = kill (§11.5) |
 
+> [!WARNING]
+>
+> **Re-mapped 2026-07-08 to match Pilot Handbook §2.7.1.** The original first-unit map was Pos1 STABILIZE, Pos2 LOITER, Pos3 RTL with no AUTO and no separate RTL switch. Two consequences of the new map to internalize before flying it:
+>
+> - **The middle position is now AUTO.** A fast LOITER ↔ STABILIZE flip transits it. With no mission loaded ArduPilot refuses the change and stays in the current mode, but with a mission loaded, resting on the middle position starts the mission. Flip through it deliberately and quickly.
+> - **Pos3, which used to command RTL, now commands STABILIZE.** On a self-centering throttle that is close to a mid-throttle demand, a very different aircraft response than the old RTL. Retrain the muscle memory before flight, and use the ch10 switch for RTL.
+
 > [!NOTE]
 >
-> **Reverse aux switches on the MK32 (SIYI TX → Channel Settings → channel → Reverse), not with `RCx_REVERSED`.** `RCx_REVERSED` only affects control channels (roll/pitch/throttle/yaw), not aux switch functions — confirmed it has no effect on ch5/ch8. On the first unit both **ch5 (arm) and ch8 (kill)** had to be reversed on the transmitter.
+> **Reverse aux switches on the MK32 (SIYI TX → Channel Settings → channel → Reverse), not with `RCx_REVERSED`.** `RCx_REVERSED` only affects control channels (roll/pitch/throttle/yaw), not aux switch functions — confirmed it has no effect on ch5/ch8. On the first unit both **ch5 (arm) and ch8 (kill)** had to be reversed on the transmitter. Check **ch10 (RTL)** direction the same way when mapping its switch: props off, flip it high and confirm the HUD mode changes (or the refusal message appears when there is no GPS fix), and reverse it on the transmitter if it engages in the intended off position.
+
+> [!NOTE]
+>
+> **Operating deviation (decided 2026-07-20).** The aircraft currently flies **Pos1 STABILIZE / Pos2 ALTHOLD / Pos3 LOITER** (`FLTMODE1/3/4/5/6 = 0/2/2/5/5`, set at the field 2026-07-09, §17.2). AUTO is off the switch because no auto missions are flown yet, which also removes the mid-position mission-start trap in the warning above. The table above remains the documented standard map and is restored when auto missions enter the program. RTL stays on ch10 in both maps.
 
 The Flight Modes page is under the **Setup** tab in Mission Planner (not Config).
 
@@ -1432,19 +1472,185 @@ The Flight Modes page is under the **Setup** tab in Mission Planner (not Config)
 
 So the link that matters is **MK32 → the PC's Mission Planner**, and it needs **low latency** because it is what the engineer watches live. Ranked best first:
 
-1. **Recommended, wired USB-C (lowest latency).** SIYI TX → **Datalink → Connection = USB COM**, plug the MK32 USB-C into the PC, then Mission Planner → connect on that COM port. A direct wire adds essentially no latency and gives a clean bidirectional MAVLink. The MK32 keeps **video** (HDMI / WiFi hotspot / LAN are separate from the Datalink output) and only loses its own telemetry HUD while Datalink is on USB COM, which is fine because the PC's MP is the telemetry GCS.
-2. **Local WiFi or LAN.** Put the PC on the **SIYI network** (USB WiFi dongle to the MK32 hotspot, or Ethernet to the ground LAN), then MP → **UDP `192.168.144.12:19856`** (the SIYI ground unit), or TCP to the FC at `192.168.144.51:5760` directly. A local hop, low latency, and it leaves the MK32 Datalink free. The PC's built-in WiFi keeps internet for the Discord stream.
+1. **Wired USB-C (lowest latency), but see the Remote ID warning below.** SIYI TX → **Datalink → Connection = USB COM**, plug the MK32 USB-C into the PC, then Mission Planner → connect on that COM port. A direct wire adds essentially no latency and gives a clean bidirectional MAVLink. The MK32 keeps **video** (HDMI / WiFi hotspot / LAN are separate from the Datalink output) and only loses its own telemetry HUD while Datalink is on USB COM, which is fine because the PC's MP is the telemetry GCS.
+2. **Local WiFi or LAN — the field-validated setup (2026-07-23).** Put the PC on the **SIYI network** (USB WiFi dongle to the MK32 hotspot, or Ethernet to the ground LAN), then MP → **UDP `192.168.144.12:19856`** (the SIYI ground unit), or TCP to the FC at `192.168.144.51:5760` directly. A local hop, low latency, and it leaves the MK32 Datalink free. The PC's built-in WiFi keeps internet for the Discord stream. **Confirmed working at the field 2026-07-23: MP over the FC TCP server at `.51:5760` alongside QGC on the MK32 over UDP, both live through two flights.**
 3. **Remote only, Tailscale (§6.5).** Use when the PC is **not** at the field. Latency is the internet round-trip, so it is not the low-latency field path.
+
+> [!WARNING]
+>
+> **USB COM and QGC-based Remote ID are mutually exclusive (field finding, 2026-07-23).** The SIYI Datalink outputs **one** mode at a time, so switching Connection to USB COM stops the UDP push to `19856` and dark-screens QGC on the MK32. With QGC down, no `OPEN_DRONE_ID_SYSTEM` operator location reaches the FC and **arming is blocked** by the Remote ID gate (§8). While QGC on the MK32 is the operator location source, use option 2 (Datalink stays UDP, PC on the SIYI network). Option 1 becomes viable only if the PC's Mission Planner has its own GPS and supplies operator location itself.
 
 > [!WARNING]
 >
 > **Do not use the MK32-forwards-to-PC pattern for this.** Forwarding MAVLink out of the MK32's own QGC to the PC (MK32 QGC → Application Settings → MAVLink → Forward to `<PC-IP>:14550`, PC MP listening on UDP `14550`) is a lossy one-way double hop. Mission Planner hangs on the full param download (`getting param STAT_RUNTIME`), so it is fine only for a throwaway glance. Connect the PC **directly** instead (USB COM, or `192.168.144.12:19856`), not through the MK32's GCS.
 
-**Confirmed 2026-06-19:** the HM30 telemetry is on **SERIAL1 (TELEM1 = UART7)**, MAVLink2 (`J15` → FC UART7), at 115200 since 2026-06-30 (was 57600, see §8.2). `SERIAL4` (GPS2) is also MAVLink @ 57600 but is an unused spare. **A8 video confirmed** working both in the SIYI FPV app and in QGC on the MK32 via RTSP `rtsp://192.168.144.25:8554/main.264`.
+**Confirmed 2026-06-19:** the HM30 telemetry is on **SERIAL1 (TELEM1 = UART7)**, MAVLink2 (`J15` → FC UART7), at 115200 since 2026-06-30 (was 57600, see §8.2). `SERIAL4` (GPS2/UART8) was a spare MAVLink @ 57600 until 2026-07-27, when it became the A8 gimbal port via J12 (§16.7). **A8 video confirmed** working both in the SIYI FPV app and in QGC on the MK32 via RTSP `rtsp://192.168.144.25:8554/main.264`.
 
 > [!WARNING]
 >
 > **MK32 keyboard gotcha.** If QGC sits at "waiting for video" with a URL that looks correct, check the colon. The MK32's Chinese input mode types a full-width colon `：` (U+FF1A) instead of the ASCII `:` (U+003A), which silently breaks the RTSP URL with no error. Switch the keyboard to English and re-type the `:` before the port. This, not codec or network, was the actual cause on the first unit.
+
+---
+
+### 16.7 A8 mini gimbal control from the MK32 (set up 2026-07-27)
+
+The A8 mini accepts control on three independent inputs (spec sheet: S.Bus / UART / UDP), and knowing which is which saves a day of confusion:
+
+- **UDP over Ethernet.** What the SIYI FPV app touchscreen uses (slide for pitch/yaw, double tap to center). Works with no control wiring at all, because it rides the same network path as the video. Always available as a fallback.
+- **S.Bus.** The gimbal listens to RC channels directly through its control-signal port, wired to the air unit RC port via a Y cable. Not used on this aircraft (it would splice the flight-critical RC line). Note the A8 still holds a channel config from a brief attempt (Yaw = ch15, Pitch = ch16, set via SIYI PC Assistant), inert without the wire.
+- **UART + ArduPilot mount driver (the installed path).** The FC drives the gimbal over serial using the SIYI protocol, and the MK32 dials reach it as RC options through the FC. This integrates the gimbal with ArduPilot (missions, ROI, GCS gimbal control, camera commands) and needs one additive wire.
+
+**Wiring (as built).** The Main PCB has a dedicated **J12 "Gimbal UART"** connector on **UART8 = SERIAL4** (the port §16.2 previously listed as a spare MAVLink at 57600, repurposed 2026-07-27). The A8's control-port lead (6-pin connector, three wires populated) carries: **green = gimbal TX** (idles ~3.3 V, that's how to identify it with a DMM), **white = gimbal RX**, **black = GND**. Working arrangement: **green → J12 pin 1, white → J12 pin 2, black → pin 3**. The schematic nets (`UART8_TX_GPS2` on pin 1, `UART8_RX_GPS2` on pin 2) read device-side, pin 2 is electrically the FC's transmit (proven in operation, commands flow through white on pin 2). Nothing connects to pin 4. When in doubt, trust a meter over the labels: a UART transmit pin idles ~3.3 V, and the gimbal's TX (green) must land on a pin that does **not** idle high.
+
+**MK32 setup** (SIYI TX app → Channel Settings): assign **ch15 = LD2** (left dial) and **ch16 = RD2** (right dial). Assignments commit when you back out of the Channel Settings screen cleanly. They were observed to drop once when the screen was left without backing out, so re-open the page and confirm the rows survived.
+
+**FC parameters** (Mission Planner → Config → Full Parameter Tree, reboot after):
+
+| Parameter | Value | Meaning |
+|---|---|---|
+| `SERIAL4_PROTOCOL` | 8 | SIYI gimbal serial driver on UART8/J12 |
+| `SERIAL4_BAUD` | 115 | 115200, the A8 UART rate |
+| `MNT1_TYPE` | 8 | SIYI mount (driver instantiates on reboot) |
+| `MNT1_PITCH_MIN` / `MAX` | −135 / 45 | A8 mini pitch travel |
+| `MNT1_YAW_MIN` / `MAX` | −160 / 160 | A8 mini yaw travel |
+| `MNT1_RC_RATE` | 90 | dial full deflection = 90°/s |
+| `RC15_OPTION` | 214 | left dial = Mount1 yaw |
+| `RC16_OPTION` | 213 | right dial = Mount1 pitch |
+| `CAM1_TYPE` | 4 | camera commands (photo/record) via the mount driver |
+
+**Behavior:** the dials are rate control, deflection sets speed, center stops, full deflection 90°/s. The gimbal boots in Follow mode every power-up, so yaw follows the airframe and dial yaw steers relative to it. Verified working 2026-07-27: right dial tilts, left dial pans, touch control remains active in parallel (both paths command the same gimbal, last input wins, avoid driving both at once).
+
+**Post-setup export:** `parameters/params-HOU-727.param` (2026-07-27, battery power, 1214 of 1214 params) is the **restore point**, superseding 724. Enabling the mount grew the tree by the `MNT1_*`/`CAM1_*` subtrees (31 params, including `MNT1_DEFLT_MODE = 3`, RC targeting, the mode the dials use). `MNT1_DEVID` reads 0 in it, which is the parameter-level marker of the open return-path item below (it populates when the driver identifies the gimbal).
+
+> [!WARNING]
+>
+> **Open item (as of 2026-07-27): the gimbal-to-FC return path is not working.** Dial control is fully functional (FC → gimbal proven), but the FC's device-information handshake fails, so the gimbal's responses are not arriving on UART8 RX. Until fixed there is no gimbal health or attitude telemetry (nothing in dataflash logs, no angle feedback to the GCS, no photo/record acknowledgment). Discriminating test: with everything powered and connected, measure J12 pin 1 to ground. ~3.3 V means the gimbal's signal reaches the board and the fault is board-side (check the J12 pin-1 net, and remember the U5 lidar connector was mirrored on this board). ~0 V means the green crimp is not making contact (the lead was re-pinned repeatedly during setup). Verification once fixed: a `GIMBAL_DEVICE_INFORMATION` request returns the camera model and firmware instead of failing.
+
+## 17. Initial Flight Tuning (first flights, 2026-07-09)
+
+The first unit flew its first four flights on 2026-07-09. This section records how the flights were conducted, what the log review found, and the tuning and inspection actions that came out of it. It is the bridge between the bench configuration above and a validated flight tune. Dataflash logs: `00000057` through `00000060`, one armed cycle each (log 57 was retrieved from the SD card afterward over MAVLink log download on COM6). The post-flight parameter state is captured in `parameters/params-HOU-709.param` (§17.4).
+
+> [!NOTE]
+>
+> The stats counters reconcile exactly with the four logs. `STAT_FLTCNT` advanced 25 → 29, one per takeoff. `STAT_FLTTIME` advanced 622 s, which matches the summed **airborne** time (49 + 169 + 143 + 263 ≈ 624 s), not the armed time, so the counter tracks time in the air. Logs 55 and 56 also exist on the SD from earlier that morning (~07:34 and ~08:05, ~11 MB each), consistent with ground arms or checks before the first hop. They were not analyzed.
+
+### 17.1 Flight summary
+
+Times are local (log GPS time). Altitudes are AGL from the downward NRA15 rangefinder, which is the trustworthy reference at these heights (the EKF altitude datum sat below zero for parts of the day, a baro origin offset, not a sensor fault).
+
+| # | Log | Armed | Airborne | Mode(s) | Max AGL | Max lean (R/P) | Bat1 start → min | Used |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 00000057 | 08:06:09 | 49 s | ALTHOLD | 1.8 m | 5.8° / 4.5° | 57.7 → 56.2 V | 583 mAh |
+| 2 | 00000058 | 08:12:40 | 169 s | ALTHOLD | 2.8 m | 5.7° / 7.7° | 57.3 → 54.7 V | 2389 mAh |
+| 3 | 00000059 | 08:58:28 | 143 s | LOITER | 2.8 m | 5.3° / 8.8° | 55.8 → 53.3 V | 2058 mAh |
+| 4 | 00000060 | 09:13:11 | 263 s | LOITER | 7.4 m | 8.7° / 10.5° | 54.6 → 51.1 V | 3901 mAh |
+
+All four flights were gentle hover and low-speed position work: ground speed held under ~1 m/s for 90% of samples, with small translations. Flight 1 was a short shakedown hop to ~1.8 m. Flight 4 climbed to about 7.4 m AGL and worked the climb and descent rates (−1.5 to +1.3 m/s). Hover current ran roughly 45 to 50 A with a session peak of 82.5 A (flight 4). One battery pack across the session, ending at 51.1 V minimum under load (~3.65 V/cell).
+
+All flights were flown by Erick at the Hockley, TX field (zip 77447) between 07:00 and 10:00 local, in calm wind with no real gusts (historical weather for 77447 corroborates). Takeoffs were a manual throttle-up in the active mode and landings a manual throttle-down, in both ALTHOLD and LOITER. The session plan was two flights per mode: a hover with light maneuvering, then a prolonged hover with maneuvering, first in ALTHOLD and then repeated in LOITER, all to characterize how the aircraft flies and responds. No oscillations were felt in flight. Before the final flight a wobble was noticed in the **rear-right (M4) arm** on the ground, and it flew fine afterward. Post-flight, the **rear-right (M4) and front-left (M3) motors were both noticeably warmer** than the other two. Both observations feed directly into the §17.3 yaw imbalance finding: M3 and M4 are the CW pair the logs show running ~13% harder.
+
+### 17.2 Field configuration deviations
+
+The live post-flight params differ from the 2026-07-08 baseline (`params-HOU.param`) in three deliberate settings, changed at the field for the first flights:
+
+| Parameter | Baseline | Flown | Meaning |
+|---|---|---|---|
+| `FLTMODE1/3/4/5/6` | 5 / 0 / 3 / 0 / 0 | 0 / 2 / 2 / 5 / 5 | Mode switch remapped for first flights: Pos1 **STABILIZE**, Pos2 **ALTHOLD**, Pos3 **LOITER**. Supersedes the §3.4 / §16.5 map (LOITER / AUTO / STABILIZE) for now. AUTO removed from the switch entirely. |
+| `AVOID_ENABLE` | 3 | 1 | Proximity avoidance disabled for the first flights, fence avoidance only. The OA sensor stack (§9) is unvalidated in flight, so this was the conservative choice. |
+| `GPS_AUTO_SWITCH` | 1 (UseBest) | 4 (Use primary if 3D fix) | Pins navigation to the F9P unless it loses fix, instead of letting the EKF switch on quality. |
+
+All three were deliberate team decisions for the first flights. The M9N that motivated the `GPS_AUTO_SWITCH` pin (off CAN, `GPS2_CAN_NODEID` reading 0 on battery power, the velocity glitch in §17.3 finding 3) was **replaced 2026-07-13** (§5.1, §5.2), but the pin stays until the new unit's velocities track the F9P through a real flight log. The FLTMODE deviation was **adopted as the operating map on 2026-07-20**: keep STABILIZE / ALTHOLD / LOITER while no auto missions are flown, with the Handbook map restored when they begin (deviation noted in §3.4 and §16.5, overlay files unchanged). The AVOID_ENABLE deviation and the final baseline treatment for it remain pending Zeynep's review.
+
+One parameter changed itself, and it is a keeper:
+
+- `MOT_THST_HOVER` learned 0.35 → **0.28** in flight (hover throttle learn). Mean throttle output in a hover ran 0.24 to 0.27, so the aircraft hovers at roughly a quarter of motor range with the current pack and no payload. Healthy thrust margin. Do not reset it.
+
+### 17.3 Log review findings
+
+**1. CW motor pair runs ~130 PWM high (open item, with Zeynep for review).** In every flight the CW motors (M3 front-left, M4 rear-right) averaged well above the CCW pair (M1, M2), 120 to 140 PWM in the three full flights, while the front/rear and left/right splits stayed within ±7 PWM:
+
+| Flight | M1 (CCW) | M2 (CCW) | M3 (CW) | M4 (CW) | CW − CCW | Mean yaw output |
+|---|---|---|---|---|---|---|
+| 1 | 1283 | 1260 | 1344 | 1359 | +80 | −0.149 |
+| 2 | 1441 | 1446 | 1583 | 1582 | +139 | −0.154 |
+| 3 | 1423 | 1434 | 1550 | 1548 | +121 | −0.128 |
+| 4 | 1449 | 1459 | 1591 | 1591 | +137 | −0.141 |
+
+(Flight 1's PWM means are diluted by its large share of ground idle time, but its yaw output matches the others.) The rate controller held a steady yaw output of −0.13 to −0.15 (13 to 15% of motor range) from the very first takeoff through the last landing. Read: the airframe carries a constant nose-right yaw disturbance, and the controller counters it by running the CW pair faster. Because the split is purely diagonal (CW vs CCW) and not front/back or left/right, this is a yaw torque imbalance, **not** a CG problem.
+
+Working hypothesis (team-confirmed, with precedent): motor arm alignment. The same CW/CCW output split has appeared on a prior build and was resolved by realigning the motor arms. Two field observations back it up. First, a wobble was noticed in the **rear-right (M4) arm** on the ground before the final flight, so start the inspection there. Second, the predicted thermal signature was observed: **M3 (front-left) and M4 (rear-right), the CW pair, were both noticeably warmer post-flight** than the CCW motors, confirming the extra output in the logs is real mechanical load and not a logging artifact. Check motor mount and arm twist on all four (a ~1° thrust-line tilt is enough to produce this) and verify prop seating while in there. Consequences while unfixed: reduced yaw authority in one direction, extra load and heat on M3/M4, and wasted hover current. After realignment, re-fly and confirm the mean yaw output drops toward zero.
+
+[TBD Zeynep: log review feedback and the corrective action.]
+
+**2. Vibration and EKF are clean.** Vibe peaks under 14 m/s² on all axes across all four flights, zero accel clipping, EKF in-flight yaw alignment completed normally. No ERR records, no failsafes. Two one-time messages in flight 1, both benign and both expected behavior: a `PreArm: OpenDroneID: LOC` gate at the first arm of the day (the Remote ID operator location had not arrived from the GCS yet, §8), and `EKF3 ground mag anomaly, yaw re-aligned` at the first liftoff (the EKF detected local magnetic interference at the takeoff spot and corrected yaw once airborne). Neither recurred in flights 2 through 4.
+
+**3. RESOLVED: the GPS speed spike in log 59 is an M9N velocity glitch.** Between T+27 and T+32 s after arming (about 8 to 13 s after liftoff), GPS instance 1 (the M9N) reported a smooth ground speed ramp to 22.7 m/s while its satellite count degraded from 12 to 8. The F9P (instance 0, 22 to 24 satellites) read ~0.1 m/s throughout, so the aircraft was stationary in hover and nothing was physically wrong. This is the M9N's degrading solution, the same unit that later dropped off CAN entirely, and it independently validates both `GPS_AUTO_SWITCH 4` (navigation pinned to the F9P) and the M9N replacement plan. With `GPS_AUTO_SWITCH 1` (UseBest) this glitch would have been a candidate for an EKF lane disturbance, so keep the pin until the M9N is replaced and verified.
+
+### 17.4 Post-flight parameter snapshot (`params-HOU-709.param`)
+
+Exported over COM6 after the flights, 1194 params, zero missing. First pulled on USB bench power, then re-exported the same day on battery power with the CAN peripherals up. (Superseded as the restore point by `params-HOU-713.param`, exported 2026-07-13 on battery power after the M9N replacement. Its diff against 709 contains only the swap params from §5.1 / §3.2, per-boot volatiles, and `MAV1_EXTRA2` 4 → 2, a benign GCS rate renegotiation, not the `MAV*_*` zeroing signature.) Findings from the two pulls:
+
+- The auto-detected device IDs (`COMPASS_DEV_ID`, `COMPASS_DEV_ID2`, `COMPASS_EXTERNAL`, `COMPASS_EXTERN2`, `GPS1_CAN_NODEID`) read 0 on USB power and re-populated on battery power, confirming they are a bench-power artifact. Rule for future exports: **pull param snapshots on battery power**, or the CAN device IDs in the file will be zeroed.
+- **`GPS2_CAN_NODEID` stayed 0 even on battery power: the M9N is no longer enumerating on CAN.** This is real, consistent with its velocity glitch in flight (§17.3 finding 3) and its cold-start history (§5.2). The unit was **replaced 2026-07-13** (new module = node 119, §5.1), so this snapshot predates the swap. `GPS_AUTO_SWITCH 4` stays until the replacement is flight-validated.
+- The `MAV2_*` stream rates read 0 on both pulls, where the baseline recorded 10/10/3/2/3/2/2 from earlier network GCS sessions. Same signature as the 2026-07-08 `MAV1_*` zeroing (cause never confirmed). Working hypothesis from the field, unconfirmed: it happens when Mission Planner over TCP and QGC on the MK32 are connected at the same time. A notice about MAV1 and MAV2 compatibility appeared on the MK32 during the session but was not recorded. [TBD: capture that message verbatim next time it appears.] Benign on MAV2 (a connecting GCS re-requests its rates), but if the same thing ever hits `MAV1_*` the SIYI FPV telemetry HUD goes blank, so re-read `MAV1_*` first if that happens.
+
+Everything else that differs from `params-HOU.param` is per-boot volatile (gyro offsets and cal temps, baro ground pressure, `STAT_*` counters) plus the deliberate deviations in §17.2 and the learned `MOT_THST_HOVER`.
+
+### 17.5 Actions before the next flight session
+
+1. Realign the motor arms (§17.3 finding 1, working hypothesis with precedent), starting with the rear-right (M4) arm that wobbled before the final flight. Re-fly and confirm the yaw output offset drops toward zero. **DEFERRED 2026-07-22:** no reliable way to measure and correct the arm alignment is on hand, so the imbalance stays for now. The aircraft has flown four flights in this state. Known costs while unfixed (§17.3): reduced yaw authority in one direction, extra load and heat on M3 and M4, and wasted hover current. Until the fix lands, keep yaw demands gentle, check M3 and M4 temperature between flights, and check the M4 arm for wobble at every inspection. Keep running the post-flight log report so the CW/CCW output delta has a continuous baseline for when the realignment happens.
+   **Alignment measured and ADJUSTED 2026-07-23, after flight session 2.** A digital level was calibrated against the airframe structure, then read at the motor attachment interface at the end of each CF motor beam, all four arms measured. Out of tolerance before adjustment: front-left (M3) **−1.7°** and front-right (M1) **−1.5°**, both tilted in the CCW direction viewed from the drone side. The rear arms measured within tolerance and were left alone. The two front arms were realigned to **within ±0.1° of zero**. This is the first quantified alignment data for the imbalance and it confirms thrust-line tilt on the order the §17.3 hypothesis predicted (~1° is enough to produce the logged CW/CCW split). Remaining gate: re-fly and confirm the mean yaw output and the CW/CCW PWM delta drop toward zero (session 2 pre-adjustment baseline in §17.6).
+   **★ VERIFIED 2026-07-24 (flight 7, log 72, §17.7): CW − CCW delta +19 PWM (was +135/+144) and mean yaw output −0.024 (was −0.13 to −0.18). The yaw torque imbalance tracked since the first flights is closed.** The front arm thrust-line misalignment was the dominant cause, as the precedent predicted.
+2. Get Zeynep's log review and fold her feedback into this section. [TBD]
+3. **Replace the M9N GPS: DONE 2026-07-13.** New module enumerated at **DroneCAN node 119** (DNA assigns a fresh ID, the old 122 stays reserved, §5.1). `GPS2_CAN_OVRIDE` set to 119 and `GPS2_CAN_NODEID` confirmed reading 119 on battery power. Compass priority reassigned (new Matek mag = priority 1, DevID 96003) and LVMC re-run, offsets in `COMPASS_OFS3_*` (§3.2). Bench readback: 3D fix, 11 sats, HDOP 2.08 under a partial sky view, ground speed peak 0.30 m/s over 15 s, no compass or DroneCAN pre-arm messages. Remaining from this item: restore `GPS_AUTO_SWITCH` 4 → 1 after the new unit's velocities track the F9P in a flight log (§5.2 step 6). **VALIDATION FAILED 2026-07-23: the replacement unit reproduced the velocity glitch in log 63 (§17.6 finding 2). `GPS_AUTO_SWITCH` stays 4. The cause now looks systemic to the M9N position rather than a defective module, raise with the team.**
+   - Bench observation during the 07-13 verification, worth a check: the pre-arm run reported `OpenDroneID: UA_TYPE required in BasicID` even though identity was set 2026-07-07 (§8.1). Hypothesis, unconfirmed: no RID-capable GCS was connected to feed BasicID at the time, same as the pre-07-07 bench state. Confirm it clears next time mainline QGC on the MK32 is up. If it persists with QGC connected, the db200's stored identity needs a re-check.
+4. **Mode map: DECIDED 2026-07-20.** Keep the flown STABILIZE / ALTHOLD / LOITER as the operating map while no auto missions are flown. Documented as a deviation in §3.4 and §16.5 (the Handbook map stays the standard and returns with auto missions). No parameter change needed.
+5. Capture the MK32 MAV1/MAV2 compatibility message verbatim if it reappears, and test the dual-GCS hypothesis for the `MAV2_*` zeroing (§17.4) on the bench. **CAPTURED 2026-07-23** (mainline QGC on the MK32, UDP 19856 link, at connect): "MAVLink V1 traffic detected on 'Siyi'. QGroundControl Daily only supports MAVLink2. Please Ensure your vehicle is configured to use MAVLink v2." The FC's SIYI link runs MAVLink2 (`SERIAL1_PROTOCOL 2`, verified live 2026-07-22), so the V1 frames are not the vehicle's own telemetry. **Field observation, same day: the notice appears only at the moment Mission Planner connects to the FC's Ethernet TCP server at `.51:5760` (which worked, §16.6 option 2 confirmed in the field), and never otherwise.** Leading hypothesis, revised to fit that correlation: Mission Planner opens its connection with MAVLink1 framed packets before it detects the vehicle speaks MAVLink2 and switches, and ArduPilot routes GCS traffic between its links, so those first V1 frames reach the SIYI link where QGC flags them. A SIYI datalink injecting V1 status packets on its own was the earlier guess, but it does not fit, since that would trigger the notice with no MP session at all. QGC discards V1 frames and MP switches to V2 after the handshake, so the warning is cosmetic as long as telemetry and parameters flow and the RemoteID panel works. This MP-over-TCP plus QGC-on-UDP combination is also the suspected trigger for the `MAV2_*` zeroing (§17.4), so re-read the `MAV1_*` and `MAV2_*` rates after the session. **Post-session readback 2026-07-23: `MAV2_*` all zeroed again, `MAV1_*` healthy (§17.6 finding 4). The dual-GCS combination was the only GCS configuration used that day, so the correlation is now strong, though the mechanism is still unconfirmed.**
+6. **Bench verification PASSED 2026-07-22** (read-only over COM6, aircraft on battery power) ahead of the second flight session. Every First-Flight-Checklist §1 authorization gate parameter read back at its expected value, and a full pull (1194 of 1194) matched `params-HOU-713.param` in every configuration parameter. The only diffs were per-boot volatiles, `MAV1_EXTRA2` renegotiated back to 4, and a benign compass detection slot swap (the Matek 96003 moved to slot 1 with its offsets intact, the disabled internal to slot 3, priorities unchanged, expect slot order to vary between boots). Bench health: Bat1 58.17 V (4.15 V per cell), BMS at 94%, SSR closed with ESC telemetry alive, 60 logs listed on SD, all ten expected CAN1 nodes present including the new M9N (119) and the db200 (123). The `UA_TYPE required in BasicID` pre-arm appeared again with no GCS connected, so the item 3 hypothesis is still untested. Check it first at the field with mainline QGC up, and treat it as a flight blocker if it survives with QGC connected.
+7. **Fly the MagFit dataset (§3.3) in this session if a slot allows.** Logs 57 to 60 predate the 2026-07-13 compass replacement and fit the old magnetometer, so they cannot be used. The first valid dataset is a flight on the new Matek. One §3.3 profile flight closes MagFit, the M9N velocity validation (item 3), and the yaw baseline check (item 1) in a single session. **DATASET FLOWN 2026-07-23: log 63 covers all 24 fifteen-degree yaw bins on the new Matek (§17.6), and log 72 (2026-07-24) also qualifies. Whether the run is needed is Zeynep's call (2026-07-27), since in-flight compass behavior looks good.**
+
+### 17.6 Second flight session (2026-07-23)
+
+Two flights at the Hockley field, both LOITER throughout, flown by Erick with the dual-GCS field setup from §16.6 option 2 (QGC on the MK32 over UDP for Remote ID operator location, Mission Planner on the field PC over the FC TCP server at `.51:5760`, validated this session). Flight 5 was gentle pitch and roll work with deliberately minimal yaw (known imbalance, §17.3). Flight 6 flew a square pattern and assorted maneuvers with full 360° heading coverage. Times local, altitudes AGL from the NRA15 (the EKF altitude datum again sat low, same baro origin offset as the first session).
+
+| # | Log | Armed | Airborne | Mode | Max AGL | Max lean (R/P) | Bat1 start → min | Used |
+|---|---|---|---|---|---|---|---|---|
+| 5 | 00000062 | 07:49:07 | 169 s | LOITER | 5.9 m | 5.3° / 7.5° | 57.8 → 55.2 V | 2345 mAh |
+| 6 | 00000063 | 08:18:30 | 581 s | LOITER | 10.6 m | 9.6° / 12.5° | 56.3 → 50.3 V | 8639 mAh |
+
+`STAT_FLTCNT` 29 → 31 and `STAT_FLTTIME` +749 s reconcile with the two logs. Both logs are on the flight tracking platform (anonymized, log 63 with the raw IMU batches stripped to fit the bucket limit). A post-flight full pull on battery power (1194 of 1194) showed **zero configuration diffs against `params-HOU-713.param`**, only per-boot volatiles, the benign compass slot swap, and the `MAV1_EXTRA2` renegotiation, so nothing changed at the field and **713 remains the restore point** (no new export committed, same call as 2026-07-22). Findings:
+
+1. **Yaw imbalance baseline held, pre-adjustment.** CW − CCW delta +135 PWM (flight 5) and +144 PWM (flight 6), mean yaw output −0.182 and −0.167 (airborne samples, throttle output above 0.15). Same signature and direction as the 07-09 band (−0.13 to −0.15, deltas 121 to 139). These are the last flights before the arm realignment (§17.5 item 1), so they close out the pre-fix baseline. The next flight is the realignment verdict: expect the delta and the mean yaw output to drop toward zero.
+2. **★ M9N flight validation FAILED: the replacement unit (node 119) reproduced the old unit's velocity glitch.** In log 63, GPS instance 1 reported ground speeds up to 20.8 m/s (87 samples above 6 m/s) while the F9P read 0.1 to 0.3 m/s, with M9N satellites sagging from ~12 to 7 and HDOP reaching 2.8. The F9P (19 to 29 sats, HDOP ≤ 0.66) never exceeded 2.1 m/s, which matches the actual maneuvering. No flight impact because navigation stayed pinned to the F9P. **Keep `GPS_AUTO_SWITCH = 4`.**
+   Deeper characterization (same day, both logs): **the glitch is fully gated by the motors running.** With motors off (310 samples across both logs, including 187 in log 63) the M9N never exceeded 0.92 m/s, zero samples above 1 m/s. With motors on, 25% of log 63 samples read above 1 m/s across 23 spike windows, all at ordinary hover current (43 to 60 A), so it tracks propulsion being active rather than a current excursion. It is also not a velocity-only artifact: **the M9N's reported position wanders with the velocity** (one 11.6 s window walked 92 m of reported position while the F9P held under 1.01 m/s), and the receiver flags its own degradation (speed accuracy estimate ballooning from ~0.3 to 9.0 m/s). That is a genuine signal-domain disturbance while motors run, an interference signature rather than random receiver scatter. The clean F9P does not contradict this: it is a dual-band receiver on a different antenna at a different location, and single-band L1 patch receivers are the standard canary for RF interference. Two different modules with the same signature makes a defective unit unlikely. Leading hypothesis (unconfirmed): ESC or power-stage RF coupling into the M9N antenna or supply at its mounting position. Discriminating tests: outdoor static run comparing SSR-open vs motors spinning props-off vs throttle sweep, then a temporary antenna relocation and repeat. Also worth asking whether the German build's M9N shows Spd above 1 m/s while stationary in their logs, and checking the module's u-blox firmware level. Raise with the team before buying a third module.
+3. **MagFit dataset acquired.** Log 63 is the first flight on the replacement Matek compass and covers all 24 fifteen-degree yaw bins. Run WebTools MagFit on it and apply the compensation (§3.3).
+4. **`MAV2_*` zeroing recurred, trigger correlation now strong.** Post-session readback: all seven `MAV2_*` stream rates 0 again (`MAV1_*` healthy at 2/4/4/2/2/2/2, FPV HUD unaffected). This session ran exactly the suspected combination (MP over TCP plus QGC on UDP), and the MK32 notice fired at the MP connect (§17.5 item 5). Still benign on MAV2.
+5. **Clean otherwise.** Vibes ≤ 10.7 m/s² all axes, zero clipping, no ERR records, no failsafes, EKF in-flight yaw alignment normal on both flights. One benign arming retry on flight 6 (`Arm: Yaw (RC4) is not neutral`). `MOT_THST_HOVER` stable at 0.28. Weather (Open-Meteo, interpolated to takeoff times): 27.9 to 28.4 °C, RH 76%, wind NNE to NE 12 to 14 km/h gusting to ~29 km/h, no precipitation.
+
+### 17.7 Realignment verdict and GPS2 relocation test (2026-07-24)
+
+Third field session at Hockley, the morning after the front arm realignment. Session sequence: a static GPS2 relocation test (log 65), GNSS constellation experiments and a compass recalibration during the middle of the session (logs 66 to 71, which also contain two brief hops totaling ~164 s airborne per the STAT deltas, not analyzed), then the realignment verdict flight with everything reverted and GPS2 back in its original mount (flight 7, log 72). Logs 65 and 72 are on the flight tracking platform (anonymized, log 65 with raw IMU batches stripped).
+
+| # | Log | Armed | Airborne | Mode | Max AGL | Max lean (R/P) | Bat1 start → min | Used |
+|---|---|---|---|---|---|---|---|---|
+| 7 | 00000072 | 09:13:53 | 142 s | LOITER | 5.9 m | 10.8° / 10.2° | 57.1 → 54.9 V | 1919 mAh |
+
+1. **★ REALIGNMENT VERIFIED (closes §17.3 finding 1).** CW − CCW motor output delta **+19 PWM** against the pre-fix band of +121 to +144, and mean yaw output **−0.024** against −0.13 to −0.18 across all six pre-fix flights. The residual is near the noise floor for a short flight in gusty wind. Consequences recovered: symmetric yaw authority, no more chronic extra load on M3/M4. Keep the delta in the routine post-flight report to confirm it stays down over longer flights.
+2. **★ GNSS constellation change (standing config change, not an experiment).** `GPS1_GNSS_MODE` 77 → **0** and `GPS2_GNSS_MODE` 69 → **0**, kept through flight 7 and recorded in `params-HOU-724.param`. The old values date to the baseline overlays: 69 on the M9N meant GPS + Galileo + GLONASS with **BeiDou disabled**, 77 on the F9P included BeiDou. 0 hands constellation selection back to the receiver defaults (all four constellations plus SBAS and QZSS on an M9-generation u-blox). So the M9N gained BeiDou, QZSS, and SBAS, while the F9P gained only QZSS/SBAS, and the sat counts moved accordingly (M9N up ~5 sats, F9P roughly unchanged).
+3. **GPS2 relocation ground test (log 65, no flight).** The M9N was temporarily mounted on top of the lid, rotated 180° from its original orientation, and left to collect ~6 minutes of static data. It was never armed: the rotation flipped its magnetometer and the compass consistency pre-arm checks blocked arming, as expected. Result: **12 to 23 sats, mean 18.5** vs 12.3 (min 9) in the original position the day before. The comparison is confounded by item 2 (the constellation change was active on the lid, not in the day-before baseline). The cleaner position read: lid static mean 18.5 vs original position in flight the same day at 16.9, a modest gap attributable to position, motors, or both. **The log contains no motors-on data (arming was blocked), so the §17.6 motors-on interference correlation is still untested.** The static armed throttle-sweep test remains open.
+4. **M9N in flight 7 (original position): markedly healthier than the day before.** 13 to 21 sats with motors on (mean 16.9 vs 11.5 in log 63), a single 2.2 s divergence to 5.2 m/s while the F9P read 1.14 m/s of real motion. The only large excursions (9 to 11 m/s at 6 sats) came 42 s after disarm with the F9P stationary, consistent with post-flight handling rather than a solution fault. **Leading explanation, revised after item 2 was identified: the constellation change.** More satellites in the solution makes it more robust against the same motors-on RF degradation, so this looks like effective **mitigation** rather than proof the interference is gone. The underlying disturbance may still be present with a deeper margin before it shows. A longer flight with maneuvering decides, then `GPS_AUTO_SWITCH` 4 → 1.
+5. **Compass work mid-session.** LVMC was re-run at the field (confirmed by Erick), new offsets Matek −93/−8/249, F9P −13/58/36, both legitimate current cal states, and log 72 remains MagFit-usable. During log 65 `COMPASS_ORIENT2 = 4` (Yaw180) was set, but detection slot 2 that boot was the F9P mag (96515) by DEV_ID, the rotated M9N mag (96003) sat in slot 1, so the correction landed on the wrong physical device. That boot the correct param was `COMPASS_ORIENT` (instance 1). This is the §3.2 slot-vs-priority trap extended to orientations: **`COMPASS_ORIENTx` indexes by detection slot, and slot order varies boot to boot on this FC, so check `COMPASS_DEV_IDx` in the same boot before setting any per-compass param.** With the module back in its original orientation, all `COMPASS_ORIENT*` correctly read 0 again.
+6. **Housekeeping.** `MOT_THST_HOVER` re-learned 0.28 → **0.318** during flight 7 (gusty southerly day, learned value, do not reset, watch where it settles on the next longer flight). The in-between logs 66 to 71 were a deliberate test hop to verify motor outputs before the extended flight (per Erick, nothing to record). **`params-HOU-724.param` (exported at the field post-flight, on battery, 1194 params) is the new restore point**, superseding 713 (and itself superseded 2026-07-27 by `params-HOU-727.param` after the gimbal setup, §16.7). Its real content diffs vs 713: the GNSS_MODE change (item 2), the new LVMC offsets, `MOT_THST_HOVER`, a benign compass slot swap, and `MAV5_*` stream rates newly populated (a GCS session landed on a fifth MAVLink channel this session, benign, but note the channel numbering shifts between sessions when chasing the `MAV2_*` zeroing). Post-session live readback: `COMPASS_ORIENT*` 0, `LOG_DISARMED` 0, gate params intact (`ARMING_SKIPCHK` 0, `GPS_AUTO_SWITCH` 4, `AVOID_ENABLE` 1, node 119 up). One oddity: **flight 7 never registered in AP_Stats at all**: the post-flight export from the same boot already showed `STAT_FLTCNT`/`STAT_FLTTIME` at their pre-takeoff values (33 / 1957 s), so this is not a failed save, the counters never incremented in RAM, while the same morning's test hop did count (+2 / +164 s). Cause unknown, cosmetic. **Verify the counters increment after the next flight, and investigate AP_Stats if they miss again** (checklist §9 row added).
+7. Weather (Open-Meteo, interpolated): log 65 session 26.9 °C, RH 92%, wind S 14 km/h gusting 31. Flight 7 at 14:14 UTC, 28.1 °C, RH 91%, wind S 17 km/h gusting 32. No precipitation. Vibes ≤ 13.5 m/s² (gusty day), zero clipping, no errors or failsafes.
+
+### 17.8 Fifth field session: endurance record and first autonomous mode engagement (2026-07-30)
+
+Flights 10 and 11 at Hockley. (The fourth session, flights 8 and 9 on 2026-07-28, is not yet written up here. Its GPS2 finding, the worst M9N performance to date with kilometer scale position disagreement at arm, is reflected in §5.2 and the §17.6 systemic interference hypothesis.) Flight 10 set the platform endurance record at **20.7 minutes** and ended when the Battery 2 capacity failsafe commanded RTL, working as configured (§7 posture). Full log review is pending. Logs are uploaded to the flight tracking platform.
+
+1. **★ First autonomous mode engagement, and the OA path planner came with it.** The BendyRuler object avoidance path planner (`OA_TYPE = 1`, loaded with the object avoidance overlay, §9) runs only in autonomous modes: AUTO, GUIDED, and RTL. Every flight in the campaign had been flown manually on the deviation mode map (STABILIZE / ALTHOLD / LOITER, §17.2), so the failsafe RTL in flight 10 was the first time an autonomous mode had ever engaged on this aircraft, and with it came the first live activation of the path planner. It detected the trees off the left side and steered the aircraft up and away from them instead of flying a straight line back to home. Note the distinction from simple proximity avoidance (`AVOID_ENABLE`, held at 1, fence only, §17.2), which was and remains inactive: the path planner is a separate subsystem and arrives automatically with any autonomous mode, including a failsafe triggered one. Internalize this before flying: anything that commands RTL enables avoidance path planning even when simple avoidance is disabled, so the aircraft may take an indirect route home.
+2. **Pilot recovery procedure (Handbook item).** Erick recovered by switching out of RTL from the mapped mode switch and landed normally. On this unit's map a ch9 edge exits RTL and ch10 high re-commands it (§16 mode map, ch10 RTL switch). Both the recovery procedure and the path planner note above go to the Pilot's Handbook.
+3. **Battery failsafe posture change.** The first battery failsafe stage has been reconfigured to warn instead of commanding RTL, so a capacity warning no longer takes the aircraft autonomous without pilot action. Parameter readback and a fresh restore point export are pending, and the change belongs in the §7.4 failsafe source design review (Zeynep).
+4. **★ Orientation item closed in full.** The HM30 air unit and the MR82 forward radar were physically flipped 180° after the session, closing the hardware half of the long deferred orientation item. The CAD model was updated and the radar orientation parameters verified 2026-08-06, closing the item completely.
 
 ---
 
