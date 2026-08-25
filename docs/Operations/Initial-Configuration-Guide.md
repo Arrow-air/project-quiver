@@ -331,6 +331,12 @@ This is the dev-kit Main PCB path using the CubeNode ETH (PPP2ETH) module on **C
 1. Plug each GigaBlox Nano switch into its connector on the Main PCB.
 2. Secure each with 2× M2x6 screws. Dev-kit PCBs have the spacers pre-soldered.
 
+> [!WARNING]
+>
+> **The two GigaBlox switches are now prime suspects for the M9N GNSS degradation (hypothesis, 2026-08-13).** The second unit produced the first clean before/after evidence in the interference thread: it flew before its Ethernet install with strong sat counts on both the M9N and the F9P, and after this section's install (switches, CubeNode PPP, RPi) the M9N stopped working. The switches mount directly beside the M9N. This fits the first unit's history (§5.1, §17.6, §17.7), where the failure followed the position rather than the module: it survived a full M9N replacement and only eased with constellation mitigation.
+>
+> To confirm: first rule out the §5.2 receiver wedge with a cold start. Then A/B outdoors, static: log GPS 2 sat count and HDOP with the switches powered, then depower or unplug both switches with everything else running and watch for recovery. If the switches are confirmed, the options are shielding, relocating the M9N, or relocating the switches. Flag the result to the team either way.
+
 ### 4.2 CubeNode ETH physical connection (dev-kit PCB)
 
 Connect all three included cables to the CubeNode ETH, then to the Main PCB:
@@ -468,7 +474,7 @@ Keep `GPS_AUTO_SWITCH = 1` (**Use Best**) — do **not** blend an RTK unit with 
 > 3. Set `GPS2_CAN_OVRIDE` to the new node ID, reboot, and confirm `GPS2_CAN_NODEID` reads it back on battery power.
 > 4. Compass cleanup (§3.2): remove the missing old magnetometer, promote the new one to priority 1, reboot, then re-run LVMC outdoors.
 > 5. Acceptance before trusting it: 3D fix held, 12+ sats in open sky after a 10 minute soak, HDOP at or under ~1.5, and reported ground speed staying in the noise (under 0.5 m/s stationary, no sustained ramps). The 07-13 bench readback showed fix 3, 11 sats, HDOP 2.08 under a partial sky view, velocity peak 0.30 m/s.
-> 6. `GPS_AUTO_SWITCH` stays at 4 (pinned to the F9P, §17.2) until the new unit's velocities track the F9P through a real flight log, then restore 1 (Use Best). **First attempt FAILED 2026-07-23: the replacement unit reproduced the old unit's velocity glitch in log 63 (§17.6 finding 2), so the pin stays and the cause now looks systemic to the M9N position rather than the module.**
+> 6. `GPS_AUTO_SWITCH` stays at 4 (pinned to the F9P, §17.2) until the new unit's velocities track the F9P through a real flight log, then restore 1 (Use Best). **First attempt FAILED 2026-07-23: the replacement unit reproduced the old unit's velocity glitch in log 63 (§17.6 finding 2), so the pin stays and the cause now looks systemic to the M9N position rather than the module.** Update 2026-08-13: the second unit adds before/after evidence pointing at the adjacent GigaBlox Ethernet switches, see the §4.1 warning.
 
 > [!NOTE]
 >
@@ -882,9 +888,11 @@ If the flight controller repeats `ODID: lost transmitter` while the module is re
 
 **Fix that worked on the first unit:**
 
-1. Connect to the module's RID WiFi access point and open its web interface.
-2. Use the web **Firmware Update** to flash the current ArduRemoteID release (OTA).
+1. Connect to the module's RID WiFi access point (SSID `RID_xxxx`, password `ArduRemoteID`) and open its web interface at `http://192.168.4.1`.
+2. Download the current release from <https://github.com/ArduPilot/ArduRemoteID/releases>. The file for the web updater is **`ArduRemoteID_BLUEMARK_DB200_OTA.bin`** (the `_OTA` variant is the app image the web updater expects, the plain `ArduRemoteID-BLUEMARK_DB200.bin` is the full image for serial flashing below). The first unit went from 1.13 to 1.14 this way on 2026-06-29. Use the web **Firmware Update** box to flash it.
 3. **Power-cycle the aircraft.** A DroneCAN node only brings up its CAN interface at boot.
+
+**Untested fallback (not yet done on any unit).** If the web interface does not respond (the AP hands out a DHCP lease and `192.168.4.1` pings but port 80 times out, which the first unit showed on 2026-06-25 before the web UI came back on its own), the documented recovery per the BlueMark manual and the ArduRemoteID README is a serial reflash: remove it from the airframe, connect a 3.3 V USB-UART, hold the download button while connecting (pogo-pin clamp, see the BlueMark manual at <https://download.bluemark.io/db200.pdf>, Fig. 4), and flash the full image `ArduRemoteID-BLUEMARK_DB200.bin` (not the `_OTA` file) with esptool (chip `esp32c3`). A serial reflash also wipes a corrupt config and restores the web server. If neither path brings back the web UI and node 123, contact BlueMark (`info@bluemark.io`) for RMA.
 
 Reseating the cable or power-cycling alone did **not** fix it. The firmware update did. After the update and power cycle the module joined CAN1 (node 123) and `ODID: lost transmitter` cleared, leaving only the operator-location item in §8.2.
 
@@ -1252,6 +1260,46 @@ The Quiver kill switch opens the SSR to cut HV (Handbook §4.1). It is mapped to
 > [!IMPORTANT]
 >
 > **Kill-switch ↔ auto-engage Lua interaction (design decision):** the auto-engage script (§11.4) **always** closes the SSR ~12 s after boot, regardless of the kill-switch position. This is **intentional** — if the SSR stayed open while the avionics and companion computer draw power, that load would run through the pre-charge resistor, which is not rated for it and would overheat (Pilot Handbook §2.4). The trade-off: the kill switch is an **in-flight kill**, not a boot-time lockout. In flight it works correctly (the Lua fires only once at 12 s, so flipping kill afterward opens the SSR and it stays open). Booting with the kill engaged will still close the SSR at 12 s. The Lua was deliberately **not** modified to read the kill channel, to keep pre-charge protection.
+
+### 11.6 Payload port PWM (FMU AUX channels)
+
+Each payload port carries one FMU AUX channel (see the payload port pinout in the Engineering Report). The mapping, confirmed on the second unit's bench session (2026-08-12):
+
+| Payload port | FC pin | Servo output | HOU baseline state |
+|---|---|---|---|
+| Bottom | FMU_CH1 | 9 | GPIO (mask bit set), function 0 |
+| Side 1 | FMU_CH7 | 15 | GPIO (mask bit set), function 0 |
+| Side 2 | FMU_CH8 | 16 | GPIO (mask bit set), function 0 |
+
+The HOU baseline ships `SERVO_GPIO_MASK = 65520`, which claims every output 5 through 16 as a GPIO at boot. A channel claimed by the mask cannot generate PWM even with its `SERVOx_FUNCTION` at 0, so all three payload channels boot as GPIO by default.
+
+**To enable PWM on a payload channel** (Mission Planner: Config → Full Parameter List):
+
+1. Clear that channel's bit from `SERVO_GPIO_MASK`:
+
+   | Channels made PWM | New `SERVO_GPIO_MASK` |
+   |---|---|
+   | Bottom only | 65264 |
+   | Side 1 only | 49136 |
+   | Side 2 only | 32752 |
+   | Side 1 + Side 2 | 16368 |
+   | All three | 16112 |
+
+   (Each value is 65520 minus the bits for output 9 = 256, output 15 = 16384, output 16 = 32768. Combine as needed.)
+
+2. Write and **reboot**. Pin allocation between the PWM and GPIO drivers happens once at boot, so the mask change does nothing until then.
+
+3. Set the output range for the payload device: `SERVOx_MIN` / `SERVOx_MAX` (baseline 1100 / 1900, trim 1500). These are FC-side clamps on everything that commands the channel.
+
+4. Leave `SERVOx_FUNCTION = 0` for manual control. With function 0 the channel accepts `MAV_CMD_DO_SET_SERVO`, which in Mission Planner is the **Servo 9 / 15 / 16 row on the Flight Data → Servo/Relay page**. The Low/High boxes on that page are MP-side button values, so type the same numbers you set in `SERVOx_MIN`/`MAX`. Assign a real function instead if a driver (mount, gripper, sprayer) should own the channel.
+
+**Verify (powered, payload connected or scope on the port pin):** command Low / Mid / High from the Servo/Relay page and confirm the output follows. `SERVO_OUTPUT_RAW` readback proves the FMU side, the scope proves the harness.
+
+> [!NOTE]
+>
+> `BRD_SAFETY_MASK = 16368` covers outputs 5 through 14 only, so outputs 15 and 16 sit outside it. With `BRD_SAFETY_DEFLT = 0` (baseline) this has no effect, but if a safety switch is ever enabled, Side 1 and Side 2 PWM would be held until safety is released. Revisit the mask at that point.
+
+Worked example, second unit 2026-08-12: that unit shipped with mask 61168 (outputs 9 and 13 already excluded, a deviation from the 65520 baseline). Side 1 and Side 2 were enabled by writing the mask to 12016, then `SERVO15_MIN/MAX = 1315/1750` and `SERVO16_MIN/MAX = 1000/2000`. All three channels tracked a DO_SET_SERVO sweep after reboot.
 
 ---
 
