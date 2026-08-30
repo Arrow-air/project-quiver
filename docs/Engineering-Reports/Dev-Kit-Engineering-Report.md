@@ -463,11 +463,10 @@ The 4 m obstacle margin is intentionally set low to allow maneuvering within tre
 
 **SITL simulation:**
 
-A Software in the Loop simulation environment was established using the same ArduPilot branch and parameter set as the flight hardware. An SF45 LiDAR model substitutes for the RPLidar S2L. The environment is launched with:
+A Software in the Loop simulation environment was established using the same ArduPilot branch and parameter set as the flight hardware. Upstream ArduPilot natively supports the Slamtec RPLidar S2 SITL model (`sim:rplidars2`, PR #31730 merged 2025-12-16) and proximity driver (`PRX1_TYPE=5`, PR #31663 merged 2026-05-26). The environment is launched with:
 
 ```bash
-../Tools/autotest/sim_vehicle.py --map --console \
-  -A "--serial5=sim:sf45b --serial6=sim:obstacle"
+../Tools/autotest/sim_vehicle.py --map --console -A "--serial5=sim:rplidars2"
 ```
 
 SITL results are used to identify safe parameter ranges and inform flight test planning. They are not a substitute for real hardware validation.
