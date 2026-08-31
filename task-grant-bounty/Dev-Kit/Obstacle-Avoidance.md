@@ -6,11 +6,11 @@
 
 `Status: Valid`
 
-`Revision History: None`
+`Revision History: v1.1 (2026-08-29) — QGB-02 testing roadmap, Texas Baseline candidate, S2L dropout notes`
 
 `Replacement Log: None`
 
-`Reference: None` 
+`Reference: [QGB-02](https://github.com/Arrow-air/project-quiver/issues/203), [OA Testing Roadmap](../../flight-test/OA/testing-roadmap.md)` 
 
 # Project Description
 
@@ -116,16 +116,67 @@ This margin setting is appropriate for:
 
 For higher-speed autonomous missions, an increased margin may be required to account for vehicle inertia and braking distance, sensor latency and update rates, and accumulated navigation uncertainty. Dynamic margin scaling as a function of ground speed is under investigation as a future enhancement to expand the safe operational envelope.
 
+## Parameter Baselines
+
+Two parameter files are maintained for different operating environments:
+
+| Baseline | File | Status | Environment |
+|----------|------|--------|-------------|
+| Germany | [`params-object-avoidance.param`](../../docs/Operations/firmware/parameters/params-object-avoidance.param) | Field-tuned (low-speed, tree-dense) | Cluttered / Germany site |
+| Texas v1 | [`params-object-avoidance-texas-v1.param`](../../docs/Operations/firmware/parameters/params-object-avoidance-texas-v1.param) | **Candidate** — pending Phase 2 validation | Open field / Texas site |
+
+See [OA-Texas-Baseline-v1.md](./OA-Texas-Baseline-v1.md) for the SITL exploration matrix and tuning rationale.
+
+Validate any parameter file before upload:
+
+```bash
+python task-grant-bounty/Tools/OA-Analysis/compare_oa_params.py <path-to-param-file>
+```
+
+## Known Issue: S2L Flight Dropouts
+
+The RPLidar S2L exhibits intermittent proximity data loss in flight that is not present on the ground. Symptoms, diagnostic steps, and log-analysis tooling are documented in [OA-S2L-Dropout-Investigation.md](./OA-S2L-Dropout-Investigation.md).
+
+**Structured OA flight testing (Phases 1–4) is blocked until Phase 1 sensor checks pass without dropouts.**
+
+## Flight Testing Status
+
+A structured four-phase test roadmap is published in [`flight-test/OA/`](../../flight-test/OA/README.md), aligned with the [Arrow DAO forum roadmap](https://dao.arrowair.com/t/project-quiver-obstacle-avoidance-testing-roadmap/142).
+
+| Phase | Focus | Status (2026-08-29) |
+|-------|-------|---------------------|
+| 1 | Sensor alignment, 360° yaw PRX check | Not started |
+| 2 | Manual avoidance → Texas Baseline v1 validation | Not started |
+| 3 | AUTO missions (≥ 95% success) | Not started |
+| 4 | Germany tree-dense cross-validation | Not started |
+
+SITL parameter exploration uses the environment documented in [SITL-Evaluation.md](./SITL-Evaluation.md). SITL informs parameter selection; it does not replace hardware validation.
+
+## Recommended Operating Conditions
+
+Until Texas Baseline v1 is flight-validated, use the Germany baseline with the following limits:
+
+| Condition | Recommendation |
+|-----------|----------------|
+| Ground speed | ≤ 5 m/s in cluttered environments |
+| Altitude | ≥ 5 m AGL for OA evaluation (reduce ground reflection) |
+| Wind | Avoid OA AUTO missions above 8 m/s sustained |
+| Payload | Verify PRX continuity with Brush-Bullet active before OA missions |
+| Failsafe | SmartRTL for payload / dense-environment tests |
+
 ## Current Limitations and Development Status
 
 - Obstacle avoidance performance is sensitive to ground speed, sensor update rate, and environmental density.
-- The current parameter set is validated primarily for low-speed operations in cluttered environments.
+- The Germany parameter set is validated primarily for low-speed operations in cluttered environments.
+- Texas Baseline v1 is a SITL-informed candidate; open-field flight validation is pending.
 - High-speed avoidance behavior has not yet been fully characterized.
 - Sensor fusion behavior between LiDAR and radar remains under evaluation.
 - Vertical avoidance relies on altitude estimation and does not include independent vertical obstacle sensing.
-
-Further work will include structured flight testing and SITL-based validation to characterize avoidance limits, evaluate dynamic margin strategies, and improve robustness across mixed-sensor and higher-speed scenarios.
+- S2L in-flight dropouts remain under investigation (see above).
 
 # Remarks
+
+- OA log analysis tooling: [`task-grant-bounty/Tools/OA-Analysis/`](../Tools/OA-Analysis/information-note.md)
+- Forum discussion: [Obstacle Avoidance Testing Roadmap](https://dao.arrowair.com/t/project-quiver-obstacle-avoidance-testing-roadmap/142)
 
 
