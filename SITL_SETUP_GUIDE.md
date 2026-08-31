@@ -4,6 +4,13 @@
 **Date**: 2026-08-30  
 **Target Platform**: ArduCopter SITL (Master branch `af2a1ba`)  
 
+> **Path convention used in this document**  
+> Commands below reference an `$ARDUPILOT` shell variable that points to your local ArduPilot checkout:
+> ```bash
+> export ARDUPILOT=/path/to/your/ardupilot/checkout
+> ```
+> Paths beginning with `docs/` or `bom/` are relative to the root of this repository.
+
 ---
 
 ## 1. Overview & Verification Summary
@@ -46,7 +53,7 @@ Upstream ArduPilot natively supports both the RPLidar S2 proximity driver and th
 **Resolution**: Upstream ArduPilot master natively supports the RPLidar S2 proximity driver and SITL simulator model (`sim:rplidars2`). Separate custom driver patching or proxy models are no longer required.
 
 ### Hardware Identification Note (Open Item for Erick)
-- **Repo Specification**: Quiver BOM ([bom/3000-equipment.yaml](file:///home/mahmudsudo/project-quiver/bom/3000-equipment.yaml#L55)) specifies `RPLidar S2L` (DFRobot SKU DFR0987 / Product 2617).
+- **Repo Specification**: Quiver BOM ([bom/3000-equipment.yaml](bom/3000-equipment.yaml#L55)) specifies `RPLidar S2L` (DFRobot SKU DFR0987 / Product 2617).
 - **Driver Match**: Slamtec's taxonomy designates **S2L** as the 5V TTL UART serial model of the S2 family (Model ID `0x71`). ArduPilot's `PRX1_TYPE = 5` driver detects Model `0x71` and uses the 1 Mbaud Dense Express scan protocol.
 - **Open Action Item for Erick**: Confirm physical airframe hardware inventory matches DFRobot SKU DFR0987 (TTL UART version) and verify pinout for the Pixhawk 6C TELEM3 connector.
 
@@ -54,13 +61,13 @@ Upstream ArduPilot natively supports both the RPLidar S2 proximity driver and th
 
 ## 3. Baud Rate Parameter Mapping Source Analysis
 
-In Quiver's [standard-params.param](file:///home/mahmudsudo/project-quiver/docs/Operations/firmware/parameters/standard-params.param#L235):
+In Quiver's [standard-params.param](docs/Operations/firmware/parameters/standard-params.param#L235):
 ```ini
 SERIAL5_BAUD,1000
 ```
 
 ### Source Code Mapping Citation
-In ArduPilot's [AP_SerialManager.cpp](file:///home/mahmudsudo/ardupilot/libraries/AP_SerialManager/AP_SerialManager.cpp#L737-L770):
+In ArduPilot's [AP_SerialManager.cpp](libraries/AP_SerialManager/AP_SerialManager.cpp#L737-L770) (path relative to `$ARDUPILOT`):
 ```cpp
 uint32_t AP_SerialManager::map_baudrate(int32_t rate)
 {
@@ -92,16 +99,16 @@ uint32_t AP_SerialManager::map_baudrate(int32_t rate)
 
 ### Prerequisites
 - Environment: Linux / WSL2
-- ArduPilot location: `/home/mahmudsudo/ardupilot`
-- Python environment: `venv-ardupilot` with `pymavlink` installed
+- ArduPilot location: `$ARDUPILOT` (see path convention note at the top of this document)
+- Python environment: a virtualenv with `pymavlink` installed (activate before running any `python3` commands below)
 
 ### Step 1: Build ArduCopter SITL
 ```bash
-cd /home/mahmudsudo/ardupilot
+cd "$ARDUPILOT"
 ./waf configure --board sitl
 ./waf build --target bin/arducopter
 ```
-*Verified output*: Binary compiled at `/home/mahmudsudo/ardupilot/build/sitl/bin/arducopter`.
+*Verified output*: Binary compiled at `$ARDUPILOT/build/sitl/bin/arducopter`.
 
 ### Step 2: Launch SITL with Native RPLidar S2 Sensor Model & Quiver Parameters
 
@@ -111,23 +118,28 @@ Primary launch command:
 ```
 
 Full launch command with Quiver parameter files and custom location:
+
+> **Activate your Python virtualenv first**, then run:
+
 ```bash
-cd /home/mahmudsudo/ardupilot/ArduCopter
-/home/mahmudsudo/venv-ardupilot/bin/python3 ../Tools/autotest/sim_vehicle.py -N -v ArduCopter \
+cd "$ARDUPILOT/ArduCopter"
+python3 ../Tools/autotest/sim_vehicle.py -N -v ArduCopter \
   --map --console \
   -A "-O 51.8752066,14.6487830,0,0" \
   -A "--serial5=sim:rplidars2" \
-  --add-param-file=/home/mahmudsudo/project-quiver/docs/Operations/firmware/parameters/standard-params.param \
-  --add-param-file=/home/mahmudsudo/project-quiver/docs/Operations/firmware/parameters/params-object-avoidance.param
+  --add-param-file=<quiver-repo>/docs/Operations/firmware/parameters/standard-params.param \
+  --add-param-file=<quiver-repo>/docs/Operations/firmware/parameters/params-object-avoidance.param
 ```
+
+> Replace `<quiver-repo>` with the absolute path to your local clone of this repository.
 
 #### Verified Console Output Evidence
 ```text
 SIM_VEHICLE: Start
-SIM_VEHICLE: Adding parameters from (/home/mahmudsudo/project-quiver/docs/Operations/firmware/parameters/standard-params.param)
-SIM_VEHICLE: Adding parameters from (/home/mahmudsudo/project-quiver/docs/Operations/firmware/parameters/params-object-avoidance.param)
+SIM_VEHICLE: Adding parameters from (<quiver-repo>/docs/Operations/firmware/parameters/standard-params.param)
+SIM_VEHICLE: Adding parameters from (<quiver-repo>/docs/Operations/firmware/parameters/params-object-avoidance.param)
 SIM_VEHICLE: Run ArduCopter
-RiTW: Starting ArduCopter : /home/mahmudsudo/ardupilot/build/sitl/bin/arducopter --model + --speedup 1 --slave 0 -O 51.8752066,14.6487830,0,0 --serial5=sim:rplidars2 --defaults /home/mahmudsudo/project-quiver/docs/Operations/firmware/parameters/standard-params.param,/home/mahmudsudo/project-quiver/docs/Operations/firmware/parameters/params-object-avoidance.param --sim-address=127.0.0.1 -I0
+RiTW: Starting ArduCopter : $ARDUPILOT/build/sitl/bin/arducopter --model + --speedup 1 --slave 0 -O 51.8752066,14.6487830,0,0 --serial5=sim:rplidars2 --defaults <quiver-repo>/docs/Operations/firmware/parameters/standard-params.param,<quiver-repo>/docs/Operations/firmware/parameters/params-object-avoidance.param --sim-address=127.0.0.1 -I0
 Connect tcp:127.0.0.1:5760 source_system=255
 STABILIZE> Mode STABILIZE
 AP: Initialising ArduPilot
@@ -141,7 +153,7 @@ AP: ArduPilot Ready
 
 ### Known Gotcha: EKF Origin Required for Proximity Data
 
-In ArduPilot's [AP_Proximity_Backend.cpp](file:///home/mahmudsudo/ardupilot/libraries/AP_Proximity/AP_Proximity_Backend.cpp#L97):
+In ArduPilot's [AP_Proximity_Backend.cpp](libraries/AP_Proximity/AP_Proximity_Backend.cpp#L97) (path relative to `$ARDUPILOT`):
 ```cpp
 bool AP_Proximity_Backend::database_prepare_for_push(Vector3f &current_pos, Matrix3f &body_to_ned)
 {
