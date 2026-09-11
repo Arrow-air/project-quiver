@@ -1,3 +1,10 @@
+---
+title: Quiver SDK Developer Guide
+sidebar_label: Quiver SDK Developer Guide
+sidebar_position: 2
+description: Companion computer, Hub, and payload software integration for Quiver.
+---
+
 # Quiver SDK Developer Guide
 
 **Version:** April 2026

@@ -4,6 +4,6 @@
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "Developer guidance for using Quiver as a payload, software, and integration platform."
+    "description": "Build attachments on the Quiver interface and integrate them with companion software and Hub. Start with the Attachment Developer Guide for the physical and electrical contract, then the SDK Developer Guide for software."
   }
 }

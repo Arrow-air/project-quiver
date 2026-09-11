@@ -69,6 +69,7 @@ buildout
 busbar
 busbars
 Bussmann
+BWCD
 BYGX
 cadquery
 CANB
@@ -224,6 +225,7 @@ isoformat
 ispkg
 IXYS
 iדdg
+Javelina
 Jetson
 JLCPCB
 JMRRC
@@ -392,6 +394,7 @@ rclpy
 RCOU
 RCOUT
 recalc
+RECOM
 reflookup
 relpos
 rels
@@ -449,6 +452,7 @@ SPST
 SSHL
 stackable
 startangle
+Starlink
 statsbtn
 stra
 strb
@@ -474,6 +478,7 @@ Threadlocker
 threejs
 THST
 timedatectl
+timepulse
 topdivider
 topmostdiv
 Topo
