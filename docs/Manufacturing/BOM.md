@@ -9,7 +9,7 @@ description: Quality reference BOM for the Quiver Dev-Kit
 
 # Bill of Materials
 
-**Dev-Kit configuration** — updated 2026-06-12
+**Dev-Kit configuration** — updated 2026-09-18
 
 This page is generated from the version-controlled BOM master data in
 [`bom/`](https://github.com/Arrow-air/project-quiver/tree/main/bom).
@@ -56,6 +56,7 @@ Indicative build cost: **$6,590.36** (component prices as of
 | 2331 | GNSS Mount Base | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2331_gnss_mount_base.step) |
 | 2332 | GNSS Mount Clamp | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2332_gnss_mount_clamp.step) |
 | 2341 | PPP Adapter and Beacon Mount | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2341_ppp_beacon_mount.step) |
+| 2342 | PPP Adapter and Beacon Mounting Board | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2342_ppp_beacon_board.step) |
 | 2411 | Main Enclosure | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/cockpit_enclosure/steps/2411_main_enclosure.step) |
 | 2412 | Enclosure Top Cap | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/cockpit_enclosure/steps/2412_enclosure_top_cap.step) |
 | 2420 | Enclosure Hinge | 2 | cots | Zinc die-cast | [JW Winco GN 237-ZD-30-30-A-SW](https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type) | $10.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/cockpit_enclosure/steps/2420_hinge.step) |

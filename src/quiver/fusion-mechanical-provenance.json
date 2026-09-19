@@ -1,0 +1,237 @@
+{
+  "source_document": "Quiver_PT3_Drone_Assembly",
+  "source_id": "urn:adsk.wipprod:dm.lineage:9oN8C4XRRKKRNwM33eENQg",
+  "source_version": 148,
+  "source_modified_utc": "2026-07-30T17:55:10Z",
+  "exported_date": "2026-09-18",
+  "parts": [
+    {
+      "path": "src/quiver/supporting_structure/equipment_mount/steps/2311_main_pcb_mount.step",
+      "component": "New_Main_PCB_Adapter_0226_2",
+      "reference_id": "urn:adsk.wipprod:dm.lineage:yCnipc_uRGOfphDOA2cZsQ",
+      "reference_version": 4,
+      "occurrence": "2000-SupportStructure:1+2300-EquipmentMount:1+2310 - PCB Mount:1+2311 - MainPCBMount:1+New_Main_PCB_Adapter_0226_2:1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -0.7850000000000001,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "sha256": "7097971b07dcc59764bb075b5e84221a45012953c35fa1b4d0c090551b628ec3",
+      "direct_body_bounds_mm": [
+        [
+          -95.0000013411045,
+          -84.6464138670492,
+          29.450000000000003
+        ],
+        [
+          95.00000000000001,
+          124.99999999999999,
+          34.45
+        ]
+      ]
+    },
+    {
+      "path": "src/quiver/supporting_structure/equipment_mount/steps/2313_bc_pcb_cover.step",
+      "component": "UPDATED_2313 - BCPCBCover.f3d ",
+      "reference_id": "urn:adsk.wipprod:dm.lineage:KtpzUhzzSg-YPieRborwAQ",
+      "reference_version": 1,
+      "occurrence": "2000-SupportStructure:1+2300-EquipmentMount:1+2310 - PCB Mount:1+2313 - BCPCBCover:1+UPDATED_2313 - BCPCBCover.f3d :2",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "sha256": "07ef0ea878397bea3c6ae099d7f227450dac557b5b8687042b2e457ff414ed9a",
+      "direct_body_bounds_mm": [
+        [
+          -136.46446609406803,
+          -163.351535362944,
+          -22.0
+        ],
+        [
+          136.46460930831603,
+          -135.99999999999898,
+          22.0
+        ]
+      ]
+    },
+    {
+      "path": "src/quiver/supporting_structure/equipment_mount/steps/2321_altitude_sensor_mount.step",
+      "component": "2321-Sensor_Mount",
+      "reference_id": null,
+      "reference_version": null,
+      "occurrence": "2000-SupportStructure:1+2300-EquipmentMount:1+2320-Sensor_Mount:1+2321-Sensor_Mount:1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "sha256": "6981091f7a4da20217a2593ffc58cd74add04605aa6dd4a2582b329fbf0d9b5d",
+      "direct_body_bounds_mm": [
+        [
+          -119.85000000000163,
+          116.25651510749329,
+          -131.99999999999912
+        ],
+        [
+          119.85,
+          169.74348489251327,
+          -69.54999999999939
+        ]
+      ]
+    },
+    {
+      "path": "src/quiver/supporting_structure/cockpit_enclosure/steps/2411_main_enclosure.step",
+      "component": "UPDATED_2411-MainEnclosure",
+      "reference_id": "urn:adsk.wipprod:dm.lineage:IwTuRxj3QiOO06UHEEgrDA",
+      "reference_version": 3,
+      "occurrence": "2000-SupportStructure:1+2400-CockpitEnclosure:1+2410-Enclosure:1+2411-MainEnclosure:1+UPDATED_2411-MainEnclosure:1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "sha256": "ca87fa75119a61a68899c045df75bd2a300e5879a064ebd9240b92a95ca75640",
+      "direct_body_bounds_mm": [
+        [
+          -158.39482681719,
+          -160.8600334917183,
+          -38.9999999999261
+        ],
+        [
+          171.80000000000007,
+          158.39482681718903,
+          51.9999999993216
+        ]
+      ]
+    },
+    {
+      "path": "src/quiver/supporting_structure/cockpit_enclosure/steps/2412_enclosure_top_cap.step",
+      "component": "UPDATED_2412-TopCap.f3d ",
+      "reference_id": "urn:adsk.wipprod:dm.lineage:qR3jJmWZQMajpVeI1kK1og",
+      "reference_version": 1,
+      "occurrence": "2000-SupportStructure:1+2400-CockpitEnclosure:1+2410-Enclosure:1+2412-TopCap:1+UPDATED_2412-TopCap.f3d :1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "sha256": "c3f3be3459d05771f2e371c4fed2c987128d0acca2cfd3e5a67cbb556473123c",
+      "direct_body_bounds_mm": [
+        [
+          -159.599999999997,
+          -155.860033491721,
+          45.7000000000032
+        ],
+        [
+          159.60000000013702,
+          153.29999999999959,
+          100.55
+        ]
+      ]
+    },
+    {
+      "path": "src/quiver/supporting_structure/equipment_mount/steps/2342_ppp_beacon_board.step",
+      "component": "2340-PPP, Beacon_mounting_board_v3",
+      "reference_id": "urn:adsk.wipprod:dm.lineage:n6v7BQtnSg2XPvvTcOTZDw",
+      "reference_version": 12,
+      "occurrence": "2000-SupportStructure:1+2300-EquipmentMount:1+2340-PPP,Beacon_mounting_board:1+2340-PPP, Beacon_mounting_board_v3:1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "sha256": "54e837ad2e78a7ea9769334372b03030184bc3a9c374dc28b15023fd6fd697d2",
+      "direct_body_bounds_mm": [
+        [
+          -147.28867513459494,
+          68.0965153177089,
+          37.5
+        ],
+        [
+          -68.09651531770892,
+          147.28867513459494,
+          45.5
+        ]
+      ]
+    }
+  ]
+}

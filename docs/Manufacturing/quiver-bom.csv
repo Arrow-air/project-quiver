@@ -16,13 +16,14 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 2112,Quick-Release Interface Plate,Supporting Structure,3,3,cots,Aluminum,,Alibaba,,https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html,34.00,102.00,,
 2131,"Attachment Interface Spacer, Bottom",Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,Has a wiring notch the left/right spacer does not.
 2211,Battery Slider,Supporting Structure,2,2,3d-print,PETG-CF,,,,,,,,
-2311,Main PCB Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
+2311,Main PCB Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,"Fusion v148 adapter assembly includes inserts, screws and five rubber spacers for visualization. Print only the adapter body. Step 6 specifies 16 short M3 inserts (FAST-024) and five vibration mounts (FAST-033); M3x6 screws are included in FAST-014 totals, not additional quantities."
 2312,BC PCB Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2313,BC PCB Cover,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2321,Altitude Sensor Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2331,GNSS Mount Base,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2332,GNSS Mount Clamp,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2341,PPP Adapter and Beacon Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
+2342,PPP Adapter and Beacon Mounting Board,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,"Additional board from Fusion master v148, linked board v12. Used with the original mount (2341), not instead of it."
 2411,Main Enclosure,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2412,Enclosure Top Cap,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2420,Enclosure Hinge,Supporting Structure,2,2,cots,Zinc die-cast,,JW Winco,GN 237-ZD-30-30-A-SW,https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type,10.00,20.00,,
