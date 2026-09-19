@@ -530,3 +530,15 @@ Yout
 YSCROLLER
 Zeynep
 zoomd
+
+# Fusion source labels, provenance identifiers, and CAD commands
+BCPCB
+PYTHONPATH
+wipprod
+XRRKKR
+Cnipc
+Ofph
+Ktpz
+Uhzz
+Rborw
+Majp

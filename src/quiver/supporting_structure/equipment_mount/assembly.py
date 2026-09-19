@@ -35,7 +35,8 @@ STEP files in steps/:
     2321_altitude_sensor_mount.step Radar/LiDAR altimeter mount
     2331_gnss_mount_base.step       GNSS antenna mount base (Z offset needed)
     2332_gnss_mount_clamp.step      GNSS antenna mount clamp (Z offset needed)
-    2341_ppp_beacon_mount.step      PPP/beacon mount
+    2341_ppp_beacon_mount.step      Original PPP/beacon mount
+    2342_ppp_beacon_board.step      Additional PPP/beacon mounting board
 """
 
 from pathlib import Path
@@ -49,7 +50,7 @@ _DIR = Path(__file__).parent
 # Z corrections for parts whose Fusion export offset differs from
 # the reference assembly. Derived by comparing raw STEP CoM against
 # the 2000-SupportStructure.step reference.
-_MAIN_PCB_MOUNT_DZ = 13.15       # raw Z=9.96, ref Z=23.11
+_MAIN_PCB_MOUNT_DZ = -7.85       # Fusion v148 occurrence transform, cm -> mm
 _GNSS_BASE_DZ = -11.95           # raw Z=66.67, ref Z=54.72
 _GNSS_CLAMP_DZ = -3.85           # raw Z=81.85, ref Z=78.00
 
@@ -103,6 +104,11 @@ def make_assembly() -> Compound | None:
     if ppp_beacon:
         ppp_beacon.color = PETG
         children.append(ppp_beacon)
+
+    ppp_board = load_step(_DIR, "2342_ppp_beacon_board")
+    if ppp_board:
+        ppp_board.color = PETG
+        children.append(ppp_board)
 
     if not children:
         return None
