@@ -213,7 +213,7 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 | Image| <img src="Assembly-Guides/assets/images/structural/2321.png" alt="Alt Text" width="600"> |
 | CAD File|[2321](Assembly-Guides/assets/models/structural/2321.stl)|
 ---
-### 2331 - GNSS Mount
+### 2331 - GNSS Mount (Holybro NEO-F9P)
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
@@ -224,6 +224,13 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 | Image| <img src="Assembly-Guides/assets/images/structural/2331.png" alt="Alt Text" width="600"> |
 | CAD File|[2331](Assembly-Guides/assets/models/structural/2331.stl)|
 ---
+### 2333 - GNSS Mount (Here4)
+
+- 3D printed in PETG-CF.
+- Use this mount for Here4 only; Holybro NEO-F9P uses mount 2331.
+- [Download the Here4 mount STL](Assembly-Guides/assets/models/structural/2333.stl).
+
+
 ### 2341 - PPP & Beacon Mount
 - 3D printed.
 - PETG-CF.
@@ -645,7 +652,12 @@ See the reference image for the required clearance.
 |--|--|
 |<img src="Assembly-Guides/assets/images/structural/step12_4.png" alt="Alt Text" width="600">|<img src="Assembly-Guides/assets/images/structural/step12_3.png" alt="Alt Text" width="600">|
 
-- Place F9P NEO RTK GNSS on the GNSS Mount.
+> This procedure and its photos cover the Holybro H-RTK NEO-F9P Rover,
+> RM3100 compass, DroneCAN 4-Pin (SKU 12072), with mount 2331.
+> Here4 uses mount 2333; do not apply this fastening procedure to Here4.
+> Select one primary GPS. Wren Mini and clamp 2332 are no longer used.
+
+- Place the Holybro NEO-F9P Rover on the GNSS Mount.
   - The direction of the arrow on the RTK GNSS should match the one provided in the picture.
   - Secure it with Screw 14 and Washer 3 under the mount.
     - Use Loctite Threadlocker Purple.

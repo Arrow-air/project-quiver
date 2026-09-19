@@ -6,6 +6,8 @@ and cockpit enclosure subcategories.
 
 from build123d import Compound
 
+from quiver.gps import DEFAULT_PRIMARY_GPS, validate_primary_gps
+
 from quiver.supporting_structure.attachment_interface.assembly import (
     make_assembly as attachment_interface,
 )
@@ -20,12 +22,13 @@ from quiver.supporting_structure.cockpit_enclosure.assembly import (
 )
 
 
-def make_assembly() -> Compound | None:
+def make_assembly(primary_gps: str = DEFAULT_PRIMARY_GPS) -> Compound | None:
     """Build the complete supporting structure from all subcategories."""
+    validate_primary_gps(primary_gps)
     subassemblies = [
         attachment_interface(),
         battery_slider(),
-        equipment_mount(),
+        equipment_mount(primary_gps=primary_gps),
         cockpit_enclosure(),
     ]
     children = [s for s in subassemblies if s is not None]

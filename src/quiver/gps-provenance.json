@@ -1,0 +1,157 @@
+{
+  "source_document": "Quiver_PT3_Drone_Assembly",
+  "source_version": 148,
+  "source_id": "urn:adsk.wipprod:dm.lineage:9oN8C4XRRKKRNwM33eENQg",
+  "reference_version": 2,
+  "exported_date": "2026-09-18",
+  "coordinate_frame": "Fusion master world coordinates, mm; assembled from leaf STEP exports and recorded occurrence transforms",
+  "parts": [
+    {
+      "component": "GPS_HERE4_2022_TOCASE.stp.STEP.STEP.STEP.STEP",
+      "source_step": "298_GPS_HERE4_2022_TOCASE.stp.STEP.STEP.STEP.STEP.step",
+      "source_sha256": "18a05dafe226f754b3e3f3feb20f0996e0ebd7d451e46e6f2ab82b415154f9a0",
+      "occurrence": "3000-Equipment:1+3200-Peripheral:1+3251-RTK_GNSS(CubePilot_Here4):1+CubePilot_Here4_RTK-GNSS (4):1+CubePilot_Here4_RTK-GNSS:1+CubePilot_Here4_RTK-GNSS (1):1+CubePilot_Here4_RTK-GNSS (2):1+CubePilot_Here4_RTK-GNSS (3):1+here4_2022_topcase_asm20230313.stp.STEP.STEP.STEP.STEP:1+GPS_HERE4_2022_TOCASE.stp.STEP.STEP.STEP.STEP:1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.844999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "component": "NUT_HERE4_2022_M2-5MM.stp.STEP.STEP.STEP.STEP",
+      "source_step": "299_NUT_HERE4_2022_M2-5MM.stp.STEP.STEP.STEP.STEP.step",
+      "source_sha256": "473f6e50c6cf4b53f9ed15931d43737e18130688101f61d147e86ea86eb62283",
+      "occurrence": "3000-Equipment:1+3200-Peripheral:1+3251-RTK_GNSS(CubePilot_Here4):1+CubePilot_Here4_RTK-GNSS (4):1+CubePilot_Here4_RTK-GNSS:1+CubePilot_Here4_RTK-GNSS (1):1+CubePilot_Here4_RTK-GNSS (2):1+CubePilot_Here4_RTK-GNSS (3):1+here4_2022_topcase_asm20230313.stp.STEP.STEP.STEP.STEP:1+NUT_HERE4_2022_M2-5MM.stp.STEP.STEP.STEP.STEP:1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.844999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "component": "Here4 shielding.STEP.STEP.STEP.STEP",
+      "source_step": "301_Here4_shielding.STEP.STEP.STEP.STEP.step",
+      "source_sha256": "a077a3cb4b7d8fb0d82f5043111fc0e897f5addf394fdc7323a780aa17d75311",
+      "occurrence": "3000-Equipment:1+3200-Peripheral:1+3251-RTK_GNSS(CubePilot_Here4):1+CubePilot_Here4_RTK-GNSS (4):1+CubePilot_Here4_RTK-GNSS:1+CubePilot_Here4_RTK-GNSS (1):1+CubePilot_Here4_RTK-GNSS (2):1+CubePilot_Here4_RTK-GNSS (3):1+Here4 shielding.STEP.STEP.STEP.STEP:1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.844999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "component": "here4_led_lens20230313.stp.STEP.STEP.STEP.STEP",
+      "source_step": "302_here4_led_lens20230313.stp.STEP.STEP.STEP.STEP.step",
+      "source_sha256": "ab3d610386e4ff97fc85394f731cc65ac9c8874d645ad5f726af56efb147b621",
+      "occurrence": "3000-Equipment:1+3200-Peripheral:1+3251-RTK_GNSS(CubePilot_Here4):1+CubePilot_Here4_RTK-GNSS (4):1+CubePilot_Here4_RTK-GNSS:1+CubePilot_Here4_RTK-GNSS (1):1+CubePilot_Here4_RTK-GNSS (2):1+CubePilot_Here4_RTK-GNSS (3):1+here4_led_lens20230313.stp.STEP.STEP.STEP.STEP:1",
+      "world_transform_cm": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.844999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "component": "here4_led_lens20230313.stp.STEP.STEP.STEP.STEP",
+      "source_step": "302_here4_led_lens20230313.stp.STEP.STEP.STEP.STEP.step",
+      "source_sha256": "ab3d610386e4ff97fc85394f731cc65ac9c8874d645ad5f726af56efb147b621",
+      "occurrence": "3000-Equipment:1+3200-Peripheral:1+3251-RTK_GNSS(CubePilot_Here4):1+CubePilot_Here4_RTK-GNSS (4):1+CubePilot_Here4_RTK-GNSS:1+CubePilot_Here4_RTK-GNSS (1):1+CubePilot_Here4_RTK-GNSS (2):1+CubePilot_Here4_RTK-GNSS (3):1+here4_led_lens20230313.stp.STEP.STEP.STEP.STEP:2",
+      "world_transform_cm": [
+        -1.0,
+        7e-15,
+        0.0,
+        0.0,
+        -7e-15,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.844999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ],
+  "output_sha256": "b6aa58d7a4cd4606a74d0f37f3eadede7f9a38b0d7c75b56a7bc9a992c7e632d",
+  "here4_mount": {
+    "path": "src/quiver/supporting_structure/equipment_mount/steps/2333_gnss_mount_here4.step",
+    "source_component": "2330-GNSS Mount",
+    "sha256": "a2eaa371546b5def8847d5656fd546a30dbec6e8ba0161b218ffbbf101748eec",
+    "coordinate_frame": "Fusion master world coordinates, mm; no transform"
+  },
+  "holybro": {
+    "product_url": "https://holybro.com/products/h-rtk-neo-f9p-rover-rm3100-compass?variant=44639194644669",
+    "sku": "12072",
+    "variant": "DroneCAN 4-Pin (CAN Port)",
+    "download_page": "https://docs.holybro.com/gps-and-rtk-system/h-rtk-neo-f9p-series-rm3100-compass/downloads",
+    "source_filename": "H-RTK NEO-F9P Rover Case.stp",
+    "downloaded_date": "2026-09-18",
+    "path": "src/quiver/equipment/peripheral/steps/vendor/3250_gnss_holybro_neo_f9p.step",
+    "sha256": "d295fcc8578e959cee06ba7ab7bb427709dc6325ea685684d2864d8825c35442",
+    "rotation_x_degrees": 90,
+    "translation_mm": [
+      0,
+      -3.125,
+      79.65
+    ],
+    "placement_basis": "Match three mounting axes and seat case bottom on retained F9P mount; not measured from a Fusion F9P assembly occurrence. Physical stack-up, connector and compass orientation require review.",
+    "mount_source_product": "2341-GNSSMount_F9P v6 v1",
+    "mount_sha256": "16039d9944402fc490fdfc05513dde1987cdb684106b178789bd71c3448cf17c",
+    "mount_z_correction_mm": -11.95
+  }
+}
