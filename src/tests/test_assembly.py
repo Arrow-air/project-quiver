@@ -66,7 +66,13 @@ def test_bounding_box(assembly):
 
 
 def test_total_solid_count(assembly):
-    assert len(assembly.solids()) == TOTAL_SOLIDS
+    peripheral = next(c for c in assembly.children if c.label == "Equipment")
+    peripheral = next(c for c in peripheral.children if c.label == "Peripheral")
+    receiver = next(c for c in peripheral.children if c.label.startswith("3250_"))
+    # Remove the legacy 328-solid Wren receiver and one clamp; add selected GPS.
+    receiver_solids = 5 if receiver.label == "3250_gnss_here4" else 19
+    assert len(receiver.solids()) == receiver_solids
+    assert len(assembly.solids()) == TOTAL_SOLIDS - 328 - 1 + receiver_solids
 
 
 def _step_references(module_dir: Path) -> set[str]:

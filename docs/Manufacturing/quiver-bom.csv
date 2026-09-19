@@ -20,8 +20,8 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 2312,BC PCB Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2313,BC PCB Cover,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2321,Altitude Sensor Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
-2331,GNSS Mount Base,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
-2332,GNSS Mount Clamp,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
+2331,GNSS Mount Base,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,Holybro NEO-F9P Rover option only; omit for Here4. Existing F9P v6 geometry is retained; review stack-up and print fit before release.
+2333,"GNSS Mount, Here4",Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,"Here4 option only; omit for Holybro. Imported from Fusion v148. Select one primary receiver and its matching mount, not both."
 2341,PPP Adapter and Beacon Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2342,PPP Adapter and Beacon Mounting Board,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,"Additional board from Fusion master v148, linked board v12. Used with the original mount (2341), not instead of it."
 2411,Main Enclosure,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
@@ -37,7 +37,7 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 3220,"Radar Altimeter, Nanoradar NRA15",Equipment,1,1,cots,,,Nanoradar,NRA15,https://www.nanoradar.com/Products_1/4.html,240.00,240.00,,
 3230,"Telemetry Antenna, Front",Equipment,1,0,cots,,,,,,,,included with 3280,Supplied with the SIYI HM30 Standard Combo (3280).
 3240,"Telemetry Antenna, Rear",Equipment,1,0,cots,,,,,,,,included with 3280,Supplied with the SIYI HM30 Standard Combo (3280).
-3250,"GNSS Module, Primary",Equipment,1,1,cots,,,IR-LOCK (CubePilot),Here4,https://irlock.com/products/here4-multiband-rtk-gnss,288.00,288.00,,Either listed module is acceptable. The CAD model still shows the retired Wren Mini; update the STEP on the next CAD export.
+3250,"GNSS Module, Primary",Equipment,1,1,cots,,,IR-LOCK (CubePilot),Here4,https://irlock.com/products/here4-multiband-rtk-gnss,288.00,288.00,,"Select exactly one primary GPS. Here4 uses mount 2333; Holybro H-RTK NEO-F9P Rover (RM3100 compass, DroneCAN 4-Pin, SKU 12072) uses mount 2331. Alternate receiver CAD is 3250_gnss_holybro_neo_f9p.step in the same vendor directory. Wren Mini and its clamp 2332 are retired. The listed unit cost remains the Here4 planning allowance, not a quote for both options."
 3251,"GNSS Module, Backup, Mateksys M9N-G4-3100",Equipment,1,1,cots,,,Mateksys,M9N-G4-3100,https://www.mateksys.com/?portfolio=m9n-g4-3100,125.00,125.00,,DroneCAN. Not in the CAD model.
 3260,"Power Switch, E-Switch PVHC4F23SS344",Equipment,1,1,cots,,,Digi-Key,PVHC4F23SS344,https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861,16.00,16.00,,
 3270,"Gimbal Camera, SIYI A8 mini",Equipment,1,1,cots,,,SIYI,,https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera,251.63,251.63,,

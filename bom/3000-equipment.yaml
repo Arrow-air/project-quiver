@@ -88,18 +88,21 @@ items:
     name: GNSS Module, Primary
     qty: 1
     sourcing: cots
-    design_ref: src/quiver/equipment/peripheral/steps/vendor/3250_gnss_wren_mini.step
+    design_ref: src/quiver/equipment/peripheral/steps/vendor/3250_gnss_here4.step
     unit_cost_usd: 288.00
     suppliers:
       - name: IR-LOCK (CubePilot)
         part_number: Here4
         url: https://irlock.com/products/here4-multiband-rtk-gnss
       - name: Holybro
-        part_number: H-RTK F9P (DroneCAN)
-        url: https://holybro.com/
+        part_number: H-RTK NEO-F9P Rover, DroneCAN 4-Pin, SKU 12072
+        url: https://holybro.com/products/h-rtk-neo-f9p-rover-rm3100-compass?variant=44639194644669
         note: equally acceptable alternative to the Here4
-    notes: Either listed module is acceptable. The CAD model still shows the
-      retired Wren Mini; update the STEP on the next CAD export.
+    notes: Select exactly one primary GPS. Here4 uses mount 2333; Holybro H-RTK
+      NEO-F9P Rover (RM3100 compass, DroneCAN 4-Pin, SKU 12072) uses mount 2331.
+      Alternate receiver CAD is 3250_gnss_holybro_neo_f9p.step in the same vendor
+      directory. Wren Mini and its clamp 2332 are retired. The listed unit cost
+      remains the Here4 planning allowance, not a quote for both options.
   - id: "3251"
     name: GNSS Module, Backup, Mateksys M9N-G4-3100
     qty: 1

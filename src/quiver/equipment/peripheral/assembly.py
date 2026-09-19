@@ -13,7 +13,8 @@ Vendor parts in steps/vendor/:
     3220_radar_altimeter.step   Radar altimeter (rotZ 180)
     3230_front_telemetry.step   Front telemetry antenna (no transform)
     3240_rear_telemetry.step    Rear telemetry antenna (no transform)
-    3250_gnss_wren_mini.step    GNSS receiver (Z offset only, extract_solids)
+    3250_gnss_here4.step        Here4 (Fusion world placement)
+    3250_gnss_holybro_neo_f9p.step  Holybro NEO-F9P Rover (vendor coordinates)
     3260_power_switch.step      Power switch (no transform)
     3270_camera.step            Camera (no transform)
     3280_telemetry.step         Telemetry air unit (no transform)
@@ -28,6 +29,7 @@ from pathlib import Path
 from build123d import Axis, Compound, Location
 
 from quiver.common import load_step, place_at
+from quiver.gps import DEFAULT_PRIMARY_GPS, F9P_RECEIVER_POSITION, validate_primary_gps
 
 _DIR = Path(__file__).parent
 
@@ -35,14 +37,14 @@ _DIR = Path(__file__).parent
 # (from Fusion reference 3000-Equipment.step).
 _OA_LIDAR_POS = (-100.00, 2.42, 95.10)
 _RADAR_ALT_POS = (-47.99, 143.00, -139.86)
-_GNSS_DZ = 2.30                                    # raw Z=85.03, ref Z=87.33
 _OA_RADAR_POS = (-1.64, 165.07, -96.05)
 _PPP_ADAPTER_POS = (-119.14, 118.84, 51.77)
 _DRONE_BEACON_POS = (-98.92, 99.37, 48.50)
 
 
-def make_assembly() -> Compound | None:
+def make_assembly(primary_gps: str = DEFAULT_PRIMARY_GPS) -> Compound | None:
     """Build the peripheral subassembly from imported STEP files."""
+    validate_primary_gps(primary_gps)
     children = []
 
     # --- Parts already at correct position (no transform) ---
@@ -58,11 +60,16 @@ def make_assembly() -> Compound | None:
         if part:
             children.append(part)
 
-    # --- Parts needing Z offset only ---
+    # --- Primary GPS: receiver and mount are selected together ---
 
-    gnss = load_step(_DIR, "3250_gnss_wren_mini", vendor=True, extract_solids=True)
+    if primary_gps == "here4":
+        gnss = load_step(_DIR, "3250_gnss_here4", vendor=True, extract_solids=True)
+    else:
+        gnss = load_step(_DIR, "3250_gnss_holybro_neo_f9p", vendor=True, extract_solids=True)
+        if gnss:
+            gnss = gnss.rotate(Axis.X, 90)
+            gnss.move(Location(F9P_RECEIVER_POSITION))
     if gnss:
-        gnss.move(Location((0, 0, _GNSS_DZ)))
         children.append(gnss)
 
     # --- Parts needing CoM translation ---

@@ -9,8 +9,8 @@ import pytest
 from quiver.assembly import make_assembly
 
 
-@pytest.fixture(scope="session")
-def assembly():
-    asm = make_assembly()
+@pytest.fixture(scope="session", params=["here4", "holybro-f9p"])
+def assembly(request):
+    asm = make_assembly(primary_gps=request.param)
     assert asm is not None, "make_assembly() returned None — no STEP files loaded"
     return asm
