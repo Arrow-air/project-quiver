@@ -62,8 +62,13 @@ allowance, not a current price quote for both options.
 - Confirm F9P base-to-PCB stack-up, cable routing, forward-arrow orientation,
   compass orientation/configuration, and enclosure clearance on the actual build.
   Matching screw axes and seating surfaces are not a full aircraft fit check.
-- Review Here4 fastening and produce a validated print mesh for mount 2333; this
-  draft adds its STEP source, not a qualified manufacturing STL.
+- Review Here4 fastening and physical fit. Mount 2333 now has a print STL exported
+  from its single STEP solid using the pinned CAD dependencies and 0.05 mm linear
+  tolerance. Two zero-area triangles were discarded; no holes were filled or
+  surfaces remodeled. The saved STL has consistent winding and is watertight.
+  Its volume differs from Fusion's native measurement by 0.0245% and its bounds
+  agree within 0.00002 mm. See [print mesh checks](print-mesh-checks.json).
+  These are mesh-integrity checks, not a physical print/fit test.
 - The current assembly-guide photos and fastener instructions describe the F9P
   installation. Do not apply them to Here4 unchanged. Review variant-specific
   fasteners and instructions before release; this draft does not invent quantities.

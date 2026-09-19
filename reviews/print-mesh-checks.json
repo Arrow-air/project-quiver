@@ -40,6 +40,18 @@
       "preserved_existing_file": true
     },
     {
+      "part": "2333",
+      "sha256": "d4391e44cb1381ab896e1599c623dd17358f48df16a06ece067f42e01d39b5cd",
+      "watertight": true,
+      "consistent_winding": true,
+      "faces": 68642,
+      "mesh_volume_mm3": 13142.706950856611,
+      "fusion_volume_mm3": 13145.920294242616,
+      "volume_error_percent": 0.024443654868444575,
+      "max_bounds_error_mm": 1.3732924060150253e-05,
+      "preserved_existing_file": false
+    },
+    {
       "part": "2342",
       "sha256": "f9c409b0f2913d2aee6808732b319c4743d891b383990e0a6299ca3ed4706f46",
       "watertight": true,

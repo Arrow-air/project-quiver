@@ -224,6 +224,13 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 | Image| <img src="Assembly-Guides/assets/images/structural/2331.png" alt="Alt Text" width="600"> |
 | CAD File|[2331](Assembly-Guides/assets/models/structural/2331.stl)|
 ---
+### 2333 - GNSS Mount (Here4)
+
+- 3D printed in PETG-CF.
+- Use this mount for Here4 only; Holybro NEO-F9P uses mount 2331.
+- [Download the Here4 mount STL](Assembly-Guides/assets/models/structural/2333.stl).
+
+
 ### 2341 - PPP & Beacon Mount
 - 3D printed.
 - PETG-CF.
