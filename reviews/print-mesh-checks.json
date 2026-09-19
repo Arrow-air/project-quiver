@@ -1,0 +1,79 @@
+{
+  "source_document": "Quiver_PT3_Drone_Assembly",
+  "source_version": 148,
+  "checks": "Closed consistent triangle mesh; volume within 0.1 percent and bounds within 0.025 mm of Fusion native body measurements. Not an exact surface-equivalence or physical-fit proof.",
+  "parts": [
+    {
+      "part": "2311",
+      "sha256": "227b7a8cb7b0f7020c1c96c24b1f1b5390fb0e7c7660a9dcc9bc92ce4e3b8212",
+      "watertight": true,
+      "consistent_winding": true,
+      "faces": 19226,
+      "mesh_volume_mm3": 27593.346800616626,
+      "fusion_volume_mm3": 27579.453762772002,
+      "volume_error_percent": 0.050374593942748014,
+      "max_bounds_error_mm": 0.01398468017576704,
+      "preserved_existing_file": true
+    },
+    {
+      "part": "2313",
+      "sha256": "debff87c01d91da6c89012abf4d04b3631bf0af420ab646ad0a32784f4a25c44",
+      "watertight": true,
+      "consistent_winding": true,
+      "faces": 17326,
+      "mesh_volume_mm3": 64653.13607918483,
+      "fusion_volume_mm3": 64644.779727707755,
+      "volume_error_percent": 0.012926568103832636,
+      "max_bounds_error_mm": 0.0021667480478981815,
+      "preserved_existing_file": true
+    },
+    {
+      "part": "2321",
+      "sha256": "1c5adccb8e1190b1936c0bbd94c5a6a1709edecc7ce4829bc4f2c39abe8b015c",
+      "watertight": true,
+      "consistent_winding": true,
+      "faces": 20354,
+      "mesh_volume_mm3": 63337.16593853809,
+      "fusion_volume_mm3": 63327.05865324126,
+      "volume_error_percent": 0.015960452785557244,
+      "max_bounds_error_mm": 3.0517584264089237e-06,
+      "preserved_existing_file": true
+    },
+    {
+      "part": "2342",
+      "sha256": "f9c409b0f2913d2aee6808732b319c4743d891b383990e0a6299ca3ed4706f46",
+      "watertight": true,
+      "consistent_winding": true,
+      "faces": 40228,
+      "mesh_volume_mm3": 10288.166321939605,
+      "fusion_volume_mm3": 10288.281496937556,
+      "volume_error_percent": 0.0011194775141554203,
+      "max_bounds_error_mm": 5.89567849829109e-06,
+      "preserved_existing_file": false
+    },
+    {
+      "part": "2411",
+      "sha256": "3cb7e6f193bfca829961ebc3aa78515588e3f1a941b62d0614984b22b31afaa3",
+      "watertight": true,
+      "consistent_winding": true,
+      "faces": 73012,
+      "mesh_volume_mm3": 311170.17954173515,
+      "fusion_volume_mm3": 310932.5458051523,
+      "volume_error_percent": 0.07642613801250864,
+      "max_bounds_error_mm": 0.006299516094202318,
+      "preserved_existing_file": true
+    },
+    {
+      "part": "2412",
+      "sha256": "bbcf80133125fd5229b8e5d0d683da5754cff45c1980eea4524de4594842dcf8",
+      "watertight": true,
+      "consistent_winding": true,
+      "faces": 38444,
+      "mesh_volume_mm3": 343468.4259160161,
+      "fusion_volume_mm3": 343297.4540695653,
+      "volume_error_percent": 0.0498028297105213,
+      "max_bounds_error_mm": 6.103518614963832e-06,
+      "preserved_existing_file": true
+    }
+  ]
+}
