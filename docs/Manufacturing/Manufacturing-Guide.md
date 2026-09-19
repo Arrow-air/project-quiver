@@ -213,10 +213,6 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 | Image| <img src="Assembly-Guides/assets/images/structural/2321.png" alt="Alt Text" width="600"> |
 | CAD File|[2321](Assembly-Guides/assets/models/structural/2321.stl)|
 ---
-> **Fusion v148 CAD review:** the sensor-mount STEP has changed, but the existing
-> `2321.stl` is retained pending a fresh, validated Fusion mesh export. Do not
-> treat it as a matching print release. See [the sync review](Fusion-v148-Sync.md).
-
 ### 2331 - GNSS Mount (Holybro NEO-F9P)
 - 3D printed.
 - PETG-CF.
@@ -649,11 +645,10 @@ See the reference image for the required clearance.
 |--|--|
 |<img src="Assembly-Guides/assets/images/structural/step12_4.png" alt="Alt Text" width="600">|<img src="Assembly-Guides/assets/images/structural/step12_3.png" alt="Alt Text" width="600">|
 
-> **Primary GPS variants:** this step and its photos describe the Holybro
-> H-RTK NEO-F9P Rover, RM3100 compass, DroneCAN 4-Pin (SKU 12072), with mount 2331.
-> Here4 is equally supported but uses mount 2333 and needs its own reviewed
-> fastening procedure. Choose one; Wren Mini and clamp 2332 are retired.
-> See [Primary GPS Options](Primary-GPS-Options.md).
+> This procedure and its photos cover the Holybro H-RTK NEO-F9P Rover,
+> RM3100 compass, DroneCAN 4-Pin (SKU 12072), with mount 2331.
+> Here4 uses mount 2333; do not apply this fastening procedure to Here4.
+> Select one primary GPS. Wren Mini and clamp 2332 are no longer used.
 
 - Place the Holybro NEO-F9P Rover on the GNSS Mount.
   - The direction of the arrow on the RTK GNSS should match the one provided in the picture.
@@ -1153,17 +1148,3 @@ Route PPP2ETH and Remote ID harnesses while installing the PPP adapter and beaco
 -----
 
 
-
-## Fusion v148 mechanical review
-
-See [the mechanical sync review](Fusion-v148-Sync.md) for the revised enclosure,
-PCB adapter, sensor mount, and additional PPP/beacon board. This is a CAD review
-snapshot, not a new manufacturing release.
-
-- The revised main-PCB adapter includes modeled purchased hardware. Print only
-  the adapter body. Continue using Step 6 and the existing BOM fastener quantities;
-  the modeled inserts and screws are not extra procurement line items.
-- Part 2342, the [additional PPP/beacon board](Assembly-Guides/assets/models/structural/2342.stl),
-  is present together with the original 2341 mount in Fusion. Its placement is
-  included in the CAD assembly. Review the fastening and assembly sequence before
-  adding it to the Step 22 manufacturing procedure. Do not substitute it for 2341.

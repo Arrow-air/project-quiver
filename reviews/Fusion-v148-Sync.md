@@ -29,7 +29,7 @@ The adapter's native export requires a **−7.85 mm Z translation**, measured fr
 the Fusion occurrence, replacing the old +13.15 mm correction. The other five
 updated bodies already contain their world placement. Independent source bounds,
 occurrences, linked versions, and file hashes are recorded in
-[the provenance manifest](../../src/quiver/fusion-mechanical-provenance.json).
+[the provenance manifest](../src/quiver/fusion-mechanical-provenance.json).
 Regression tests compare printable-body world bounds with those measurements.
 
 The adapter STEP contains 34 solids, including 12 screws, 16 inserts, and five

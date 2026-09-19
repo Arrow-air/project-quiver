@@ -38,7 +38,7 @@ supported hardware choices.
 - The old clamp 2332 is not part of the F9P screw-mounted interface or the Here4
   mount. Historical geometry remains available in Git history.
 
-See [the provenance manifest](../../src/quiver/gps-provenance.json) for source
+See [the provenance manifest](../src/quiver/gps-provenance.json) for source
 identities, transforms, and SHA-256 hashes. The variant selection flows through
 both supporting structure and equipment, so a receiver cannot silently retain
 the other option's mount.

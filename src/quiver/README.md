@@ -88,7 +88,7 @@ python -m quiver.assembly --gps holybro-f9p -o quiver-f9p.step
 ```
 
 In Python, use `make_assembly(primary_gps="holybro-f9p")`. Wren Mini is retired.
-See [Primary GPS Options](../../docs/Manufacturing/Primary-GPS-Options.md) for
+See [Primary GPS Options](../../reviews/Primary-GPS-Options.md) for
 source geometry, placement evidence, and outstanding physical-fit review.
 
 ## Assembly hierarchy
