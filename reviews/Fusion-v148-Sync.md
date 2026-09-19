@@ -45,12 +45,17 @@ unchanged pending physical confirmation.
 The repository is a mixed snapshot: several existing, watertight manufacturing
 STLs already have the revised envelopes even though their STEP sources were old.
 The existing 2311, 2313, 2321, 2411, and 2412 STLs are therefore **not overwritten**.
-Envelope agreement alone does not establish detailed mesh equivalence.
+All six meshes in this draft pass closed-surface and consistent-winding checks.
+Against the source Fusion body measurements, their volume differences are below
+0.08% and their maximum bound differences are below 0.014 mm. Recorded results
+and file hashes are in [print mesh checks](print-mesh-checks.json). These checks
+support retaining the existing files; they do not prove exact surface equivalence
+or physical fit.
 
 - **Correction: the existing 2321 STL is not established to be stale.** Its volume
   is approximately 63,337 mm³; Fusion records 63,327 mm³ and the valid imported
   STEP solid measures 63,332 mm³. The earlier 62,450 mm³ figure came from the
-  defective generated mesh, not the STEP solid. The STEP-to-STL mesher skipped
+  defective generated mesh, not the STEP solid. The STEP-to-STL exporter skipped
   geometry; that trial was discarded. Keep the existing watertight STL. A direct
   Fusion export remains the preferred way to establish exact revision provenance,
   but these measurements are not evidence that the existing print file is wrong.
