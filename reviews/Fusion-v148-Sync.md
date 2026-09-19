@@ -47,11 +47,14 @@ STLs already have the revised envelopes even though their STEP sources were old.
 The existing 2311, 2313, 2321, 2411, and 2412 STLs are therefore **not overwritten**.
 Envelope agreement alone does not establish detailed mesh equivalence.
 
-- **2321 needs a matching print export before manufacturing release.** Its existing
-  mesh volume is approximately 63,337 mm³ versus 62,450 mm³ for the new STEP body.
-  A trial Open CASCADE STL export skipped a face and was discarded; no defective
-  replacement mesh is committed.
-- Reconcile the remaining retained meshes with the revised sources before a new
+- **Correction: the existing 2321 STL is not established to be stale.** Its volume
+  is approximately 63,337 mm³; Fusion records 63,327 mm³ and the valid imported
+  STEP solid measures 63,332 mm³. The earlier 62,450 mm³ figure came from the
+  defective generated mesh, not the STEP solid. The STEP-to-STL mesher skipped
+  geometry; that trial was discarded. Keep the existing watertight STL. A direct
+  Fusion export remains the preferred way to establish exact revision provenance,
+  but these measurements are not evidence that the existing print file is wrong.
+- Confirm revision provenance for retained meshes with the revised sources before a new
   print release. They remain the existing manufacturing files, not newly validated
   exports from this PR.
 - The new 2342 STL was exported from its single STEP solid with linear tolerance
