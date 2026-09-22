@@ -1,3 +1,4 @@
+<!-- 2026-09-10: derived copies exist for review, Initial-Configuration-Guide-procedure-draft.md (sections 0 to 13, 16) and first-unit-commissioning-record.md (14, 15, 17, open items). This file is the master. Edit here and re-extract. -->
 # Initial Configuration Guide
 Quiver Dev-Kit
 
@@ -150,7 +151,7 @@ What a reflash does and does not touch:
 
 Procedure:
 
-1. **Back up first, on the current build.** Mission Planner → Config → Full Parameter Tree → Save. For the first unit, `parameters/params-HOU-713.param` (2026-07-13, battery power, post M9N replacement) is the current restore point, superseding `params-HOU.param` (2026-07-08, predates the swap and the first-flight deviations) and the earlier `params-HOU-2.param`. Make sure the file reflects the current state. Do **not** restore from `params-HOU-625.param`: that 2026-06-25 snapshot contains `ARMING_SKIPCHK,-1`, which skips every arming check.
+1. **Back up first, on the current build.** Mission Planner → Config → Full Parameter Tree → Save. For the first unit, `parameters/params-HOU-824_OA.param` (2026-08-24, battery power, GigaBlox switches removed, GPS2 on, `LOG_DISARMED 0`, combined OA sensing config) is the current restore point, superseding `params-HOU-713.param` (2026-07-13, post M9N replacement), `params-HOU.param` (2026-07-08, predates the swap and the first-flight deviations) and the earlier `params-HOU-2.param`. Make sure the file reflects the current state. Do **not** restore from `params-HOU-625.param`: that 2026-06-25 snapshot contains `ARMING_SKIPCHK,-1`, which skips every arming check.
 2. **Flash the test build** the same way as §1 (Load custom firmware → its `.apj`). Do not reconfigure anything. The SERIAL5 lidar params carry over.
 3. **Test only the target subsystem, props off.** For the lidar the S2 is powered from avionics 5 V on TELEM3, not the HV bus, so SSR / Relay 1 state does not matter. Watch for a stable lock rather than the spin-up then coast-down loop. Ethernet and Remote ID will be dead on a stock build, which is expected.
 4. **Revert** by loading the Arrow `.apj` again (`docs/Operations/firmware/arducopter-pixhawk6c.apj`).
@@ -337,6 +338,20 @@ This is the dev-kit Main PCB path using the CubeNode ETH (PPP2ETH) module on **C
 >
 > To confirm: first rule out the §5.2 receiver wedge with a cold start. Then A/B outdoors, static: log GPS 2 sat count and HDOP with the switches powered, then depower or unplug both switches with everything else running and watch for recovery. If the switches are confirmed, the options are shielding, relocating the M9N, or relocating the switches. Flag the result to the team either way.
 
+> [!NOTE]
+>
+> **Confirmed on the first unit, 2026-08-24 (bench, static, high confidence).** Both GigaBlox switches were removed from the aircraft and the M9N came back to full health on the first power-up: 22 to 24 satellites, HDOP 0.60 to 0.66, 3D DGPS fix, ground speed noise under 0.11 m/s, and a 2 m horizontal agreement with the F9P (27 to 32 satellites, HDOP 0.52 to 0.62). Compare with the pre-removal record in the same position: minimum 3 satellites, 1.4 to 1.6 km disagreement at arm, and velocity glitches to 34 m/s (§17.6, §17.7). Two different M9N modules showed the fault and one removal cleared it, so the switches are the source, not the receiver. What remains open is whether the interference is radiated (PHY clock harmonics from the switch, its Ethernet cables, or its onboard regulator) or conducted through the shared ground and supply, and a flight log with `GPS2_TYPE = 9` still has to confirm the fix under motors. `GPS_AUTO_SWITCH` stays 4 until it does.
+>
+> **Reinstall plan.** 51 mm standoffs (McMaster-Carr) will raise the M9N above the switch plane when the switches go back in. Distance alone is the weakest of the available mitigations, so treat the reinstall as an experiment and keep the readback numbers above as the pass bar. Options, roughly in order of expected effect per hour of work:
+>
+> 1. **Ground plane under the M9N.** The M9N-G4-3100 patch antenna sits on a small onboard ground plane. Add a 70 to 100 mm metal disc (aluminum or copper-clad FR4) under the module, bonded to airframe ground at one point. A patch antenna's rear-hemisphere rejection depends on the plane under it, and the switches are exactly in that hemisphere. This is the standard fix for L1 patch receivers next to digital electronics and it also improves multipath rejection.
+> 2. **Shield the switches.** A grounded shield can or a copper-tape wrap over each GigaBlox, bonded to the Main PCB ground pour, with the Ethernet cable exits kept short. If a can is impractical, a small grounded aluminum plate between the switches and the M9N does most of the work.
+> 3. **Ferrites and shielded Ethernet.** The cables radiate common-mode noise from the PHY. Clip-on ferrites at the switch end of every Ethernet lead, and shielded (STP) patch leads with the shield grounded at the switch end, cut the cable contribution.
+> 4. **Filter the switch supply.** Every Ethernet link on this aircraft is already 100BASE-TX (J2 carries only the two 100 Mbit pairs, §6.2, and the payload ports and CubeNode are 100 Mbit), so link speed is not a lever. The GigaBlox regulator and the shared 5 V return are the conducted path. An LC or ferrite-bead filter on each switch's supply lead, with the switch ground returned to the Main PCB at a single point, separates the two hypotheses (radiated vs conducted) and helps either way.
+> 5. **Relocate rather than mitigate.** If the standoffs plus items 1 to 3 still leave GPS 2 short of the pass bar, the lid-top position from the 2026-07-24 test (§17.7 item 3) is the fallback for the M9N, or the switches move to the far side of the enclosure.
+>
+> **A/B method when the switches go back in:** same bench, aircraft on battery power, switches powered, 10 minute soak, read GPS 2 satellites, HDOP, and ground speed noise. Then unplug both switches and repeat. Change one mitigation at a time between runs. Log GPS 2 speed accuracy (`GPA.SAcc` in the dataflash log) as the sensitive indicator, since it ballooned from 0.3 to 9 m/s during the in-flight glitches. Note that with the switches out, the RPi (J2), the SIYI ground LAN path, and the FC TCP server at `.51:5760` are all unreachable, so the aircraft runs FC plus RC plus SIYI telemetry only.
+
 ### 4.2 CubeNode ETH physical connection (dev-kit PCB)
 
 Connect all three included cables to the CubeNode ETH, then to the Main PCB:
@@ -474,7 +489,7 @@ Keep `GPS_AUTO_SWITCH = 1` (**Use Best**) — do **not** blend an RTK unit with 
 > 3. Set `GPS2_CAN_OVRIDE` to the new node ID, reboot, and confirm `GPS2_CAN_NODEID` reads it back on battery power.
 > 4. Compass cleanup (§3.2): remove the missing old magnetometer, promote the new one to priority 1, reboot, then re-run LVMC outdoors.
 > 5. Acceptance before trusting it: 3D fix held, 12+ sats in open sky after a 10 minute soak, HDOP at or under ~1.5, and reported ground speed staying in the noise (under 0.5 m/s stationary, no sustained ramps). The 07-13 bench readback showed fix 3, 11 sats, HDOP 2.08 under a partial sky view, velocity peak 0.30 m/s.
-> 6. `GPS_AUTO_SWITCH` stays at 4 (pinned to the F9P, §17.2) until the new unit's velocities track the F9P through a real flight log, then restore 1 (Use Best). **First attempt FAILED 2026-07-23: the replacement unit reproduced the old unit's velocity glitch in log 63 (§17.6 finding 2), so the pin stays and the cause now looks systemic to the M9N position rather than the module.** Update 2026-08-13: the second unit adds before/after evidence pointing at the adjacent GigaBlox Ethernet switches, see the §4.1 warning.
+> 6. `GPS_AUTO_SWITCH` stays at 4 (pinned to the F9P, §17.2) until the new unit's velocities track the F9P through a real flight log, then restore 1 (Use Best). **First attempt FAILED 2026-07-23: the replacement unit reproduced the old unit's velocity glitch in log 63 (§17.6 finding 2), so the pin stays and the cause now looks systemic to the M9N position rather than the module.** Update 2026-08-13: the second unit adds before/after evidence pointing at the adjacent GigaBlox Ethernet switches, see the §4.1 warning. **Confirmed 2026-08-24: removing both switches restored the M9N on the bench (22 to 24 sats, HDOP 0.6, no velocity noise). Reinstall on standoffs with the §4.1 mitigations, then fly a `GPS2_TYPE = 9` log to close the pin.**
 
 > [!NOTE]
 >
@@ -775,6 +790,9 @@ Bat1 is the ESC monitor; Bat2 is the pack's smart BMS. Recommended Bat2 settings
 | `BATT2_CRT_VOLT` | `44.8` | `0` | 3.2 V/cell, consistent with Bat1 |
 | `BATT2_OPTIONS` | `0` | `0` | Leave **"Ignore DroneCAN SoC" (bit 0) CLEAR** so ArduPilot uses the BMS's accurate reported state-of-charge instead of estimating its own. Already `0` — do not set bit 0. |
 | `BATT2_SERIAL_NUM` | `-1` | `-1` | Accept any BatteryInfo source; pin to the pack's battery ID only if a second source (e.g. a node-110 bridge) is ever added |
+| `BATT2_LOW_MAH` | `7500` | `0` | **Proposed 2026-09-10, pending #248.** Low stage at 25 % remaining. The 911 card carries `6000`. See §7.4. |
+| `BATT2_CRT_MAH` | `4500` | `0` | **Proposed 2026-09-10, pending #248.** Critical stage at 15 % remaining, lands in place. Not in any card yet. |
+| `BATT2_ARM_MAH` | `0` | `0` | Unchanged. An arming block at 30 % remaining (`9000`) is a **separate question** in #248, not part of the proposed posture. |
 
 Reboot after changing `BATT2_MONITOR`.
 
@@ -784,7 +802,30 @@ Reboot after changing `BATT2_MONITOR`.
 
 ### 7.4 Low-battery failsafe source (decision — align with the Quiver team)
 
-The documented baseline drives the low-battery failsafe from **Bat1 (ESC, voltage-based)** with **Bat2 (BMS) monitor-only** (`BATT2_FS_LOW_ACT = 0`, `BATT2_FS_CRT_ACT = 0`). The first unit's live config currently runs voltage failsafes on **both** instances (`BATT_FS_LOW_ACT = BATT2_FS_LOW_ACT = 2` RTL at 46.2 V, `BATT_FS_CRT_ACT = BATT2_FS_CRT_ACT = 1` Land at 44.8 V, see `params-HOU.param`). But the Pilot Handbook §4.2.1 failsafe is **"≤ 20% → RTL"**, a *state-of-charge* rule, and the BMS reports true SoC while the ESC monitor only coulomb-counts. So the BMS is the more accurate source for that exact rule.
+> [!IMPORTANT]
+>
+> **Decision taken 2026-09-10 (Project Lead), PROPOSED pending Julius's yes or no in issue #248. Do not cut a parameter card from this block until #248 closes.** Bat2 (the pack BMS) becomes the primary failsafe source on consumed capacity, Bat1 (ESC voltage) stays as the backstop, both monitors keep their voltage thresholds.
+>
+> | Parameter | 911 card | Proposed | Meaning |
+> |---|---|---|---|
+> | `BATT2_LOW_MAH` | 6000 | **7500** | Low stage, 25 % remaining |
+> | `BATT2_FS_LOW_ACT` | 0 | **0 through the OA campaign, 2 (RTL) once Test 5 (RTL + OA) passes** | An automatic RTL before Test 5 is an unplanned Test 5 |
+> | `BATT2_CRT_MAH` | 0 | **4500** | Critical stage, 15 % remaining |
+> | `BATT2_FS_CRT_ACT` | 1 | 1 | Land in place |
+> | `BATT2_LOW_VOLT` / `BATT2_CRT_VOLT` | 46.2 / 44.8 | unchanged | Last line on Bat2 |
+> | `BATT_*` (Bat1) | 46.2 warn / 44.8 land, `BATT_FS_VOLTSRC 1` | unchanged | Independent backstop if the BMS stops reporting |
+>
+> **Why the BMS count is trusted.** Validated against the charger 2026-09-03: 23,889 mAh restored into a pack whose BMS had counted 25,476 mAh consumed, 93.8 %, inside normal charge efficiency. The BMS sees the whole aircraft while Bat1 sums the ESCs and misses the avionics, which is the 22 % gap between the two on the same flight (log 45: 26,106 vs 21,291 mAh, log 47: 27,365 vs 22,377). The count persists across boots (logs 48 to 49, same pack: ended 7,652, restarted 7,840), so remaining capacity is right for a pack installed half used, which the ESC counter can never be. At the log 47 capacity trip (24,005 mAh, 22.3 min airborne) the pack read 48.75 V raw, 3.48 V/cell, so no voltage threshold can lead the capacity stage without firing early under heavy mass.
+>
+> **Reserve sizing.** BMS hover draw 50 to 80 A, about 1,100 mAh per minute. Return from the 60 m fence at mission speed plus the landing plus a 6 % counter error band is about 5,000 mAh. 7,500 (25 %) covers it with margin for pack ageing and payload. 4,500 (15 %) is where the aircraft lands itself. Hover flights end at the current 6,000 mAh warning around 22 min, so the low stage moves about two minutes earlier.
+>
+> **Separate question in #248, not part of the posture above:** an arming block at 30 % remaining (`BATT2_ARM_MAH 9000`). The BMS count persists across boots, so it would hold for a pack installed half used. Adopted only if Julius says yes to it on its own.
+>
+> **Not changed on purpose.** Voltage thresholds stay at 3.3 / 3.2 V/cell (raising them would pre-empt the capacity logic). Bat1 stays armed as a backstop (a silent BMS with no backstop is worse than an occasional double warning). The open item 8 quirks (negative current sign, coarse `CurrTot` steps, zero `VoltR`/`Res`) do not touch the consumed count the failsafe reads.
+>
+> **When #248 closes with a yes:** cut the 912 card with these deltas alongside the AUTO phase changes, remove the PROPOSED markers here, in §7.3, and in Pilot Handbook §4.2.1, and export a restore point. With a no: Julius's values replace these and the same three places are updated.
+
+The documented baseline (superseded by the block above once #248 closes) drove the low-battery failsafe from **Bat1 (ESC, voltage-based)** with **Bat2 (BMS) monitor-only** (`BATT2_FS_LOW_ACT = 0`, `BATT2_FS_CRT_ACT = 0`). The first unit's live config currently runs voltage failsafes on **both** instances (`BATT_FS_LOW_ACT = BATT2_FS_LOW_ACT = 2` RTL at 46.2 V, `BATT_FS_CRT_ACT = BATT2_FS_CRT_ACT = 1` Land at 44.8 V, see `params-HOU.param`). But the Pilot Handbook §4.2.1 failsafe is **"≤ 20% → RTL"**, a *state-of-charge* rule, and the BMS reports true SoC while the ESC monitor only coulomb-counts. So the BMS is the more accurate source for that exact rule.
 
 Two options, to be decided with the team (do not flip unilaterally — it changes the documented baseline):
 - **Keep baseline:** Bat1 voltage failsafe, Bat2 rich monitor.
@@ -874,6 +915,16 @@ The trade-off is that mainline QGC does not have SIYI's in-app A8 Mini video and
 >
 > **Confirmed on the first unit (2026-07-07):** with mainline QGC connected over the SIYI datalink and **Application Settings → General → Stream GCS Position = `Always`**, `ODID: lost operator location` clears. The RemoteID feature that the SIYI QGC fork lacks is what makes this work. The full Remote ID chain is now closed: transmitter (db200 on CAN1), drone location (FC GPS over DroneCAN), and operator location (mainline QGC on the MK32).
 
+> [!TIP]
+>
+> **Slow operator location on the MK32 is a cold GNSS start, not a QGC fault.** The MK32's internal receiver has to download almanac and ephemeris over the air when it has been off, moved a long way, or had no internet, which takes 30 s to several minutes under open sky and longer in a case or indoors. QGC only starts sending `OPEN_DRONE_ID_SYSTEM` once Android reports a position, so `ODID: lost operator location` persists until then. Three fixes, in order of effect:
+>
+> 1. **Internet before QGC.** Put the MK32 on a WiFi network with internet (the Quiver field router) as the first step at the field, before opening QGC. Assisted GNSS (SUPL) then pulls the satellite data over the network and the fix drops to seconds.
+> 2. **Android location settings, once.** Settings → Location → on, High accuracy. Location services → WiFi scanning on, and Google Location Accuracy on if the MK32 has Play services. Apps → QGroundControl → Permissions → Location = Allow all the time, precise location on. Battery → QGroundControl → Unrestricted, so Android does not throttle the receiver while the HUD is up.
+> 3. **Warm up early.** Power the MK32 on outdoors with QGC running while the aircraft is being set up, screen facing the sky for the first minute. Ten minutes of lead time covers a cold start. Confirm the RemoteID panel shows operator location before the aircraft is powered (First-Flight-Checklist §2 and §4).
+>
+> To tell a slow receiver from a settings problem, sideload GPSTest on the MK32: it shows time to first fix and whether assistance data is loaded, and can force a fresh download. If the fix is still slow after all three, the tablet's internal antenna is the limit and the laptop GPS path below is the fallback.
+
 **With SIYI camera integration.** Fly on the SIYI QGC or UniGCS app for the camera, and run **Mission Planner with a GPS** on a laptop at the same time for operator location, using the steps above. ArduPilot serves both ground stations at once.
 
 > [!NOTE]
@@ -889,7 +940,7 @@ If the flight controller repeats `ODID: lost transmitter` while the module is re
 **Fix that worked on the first unit:**
 
 1. Connect to the module's RID WiFi access point (SSID `RID_xxxx`, password `ArduRemoteID`) and open its web interface at `http://192.168.4.1`.
-2. Download the current release from <https://github.com/ArduPilot/ArduRemoteID/releases>. The file for the web updater is **`ArduRemoteID_BLUEMARK_DB200_OTA.bin`** (the `_OTA` variant is the app image the web updater expects, the plain `ArduRemoteID-BLUEMARK_DB200.bin` is the full image for serial flashing below). The first unit went from 1.13 to 1.14 this way on 2026-06-29. Use the web **Firmware Update** box to flash it.
+2. Download the current release from <https://github.com/ArduPilot/ArduRemoteID/releases>. The file for the web updater is **`ArduRemoteID_BLUEMARK_DB200_OTA.bin`** (the `_OTA` variant is the app image the web updater expects, the plain `ArduRemoteID-BLUEMARK_DB200.bin` is the full image for serial flashing below). The first unit went from 1.13 to 1.14 this way on 2026-06-29. Use the web **Firmware Update** box to flash it. **The module's CAN cables must be disconnected (power only) for the web portal to respond** (confirmed by Thomas, 2026-08-25).
 3. **Power-cycle the aircraft.** A DroneCAN node only brings up its CAN interface at boot.
 
 **Untested fallback (not yet done on any unit).** If the web interface does not respond (the AP hands out a DHCP lease and `192.168.4.1` pings but port 80 times out, which the first unit showed on 2026-06-25 before the web UI came back on its own), the documented recovery per the BlueMark manual and the ArduRemoteID README is a serial reflash: remove it from the airframe, connect a 3.3 V USB-UART, hold the download button while connecting (pogo-pin clamp, see the BlueMark manual at <https://download.bluemark.io/db200.pdf>, Fig. 4), and flash the full image `ArduRemoteID-BLUEMARK_DB200.bin` (not the `_OTA` file) with esptool (chip `esp32c3`). A serial reflash also wipes a corrupt config and restores the web server. If neither path brings back the web UI and node 123, contact BlueMark (`info@bluemark.io`) for RMA.
@@ -1424,7 +1475,7 @@ Firmware flash (PR #230, git `20622a39`, S2 + Arrow features confirmed) · **360
 ### Remaining — indoor / bench
 | Gap | Ref (this guide or Handbook) | Notes |
 |---|---|---|
-| GCS link to PC | §2.8 | **Decided 2026-06-22.** MK32 = sole control; PC MP = telemetry view, screen-shared to the remote engineer over Discord (engineer is view-only, no own MP, no VPN relay). Open task: set the **low-latency MK32 → PC link** — wired USB-C Datalink USB COM preferred, or PC on the SIYI net → UDP `192.168.144.12:19856` (§16.6). |
+| GCS link to PC | §2.8 | **Decided 2026-06-22.** MK32 = sole control; PC MP = telemetry view, screen-shared to the remote engineer over Discord (engineer is view-only, no own MP, no VPN relay). **USB COM confirmed working 2026-08-24** (MK32 Datalink = USB COM, enumerates as a COM port, 115200, full 1214 param pull and writes verified). It is the bench and config link. For flight it blocks the QGC Remote ID feed (§16.6 warning), so the field PC uses the SIYI network path or gives MP its own GPS. Open: whether the SIYI ground unit serves MP and QGC on `19856` at once, and whether QGC MAVLink forwarding is usable on a dedicated field router (§16.6). |
 | OA sensor data clean | §9 | **RESOLVED.** 360 RPLidar S2 fixed 2026-06-17 (firmware PR #230 + SERIAL5, §9.1). Forward MR82 + down NRA15 fixed 2026-06-18: both were at CAN ID 0 and colliding on CAN2; assigned distinct CAN IDs (NRA15 = 1, MR82 = 2) with matching `RNGFND1_RECV_ID`/`PRX2_RECV_ID` filters (§9.2). All three OA sensors now report together. Remaining (tuning, not blocking): confirm the intermittent `Proximity 337 deg, 0.00m` is a real return. |
 | SIYI camera / video | §2.8.4 | **DONE 2026-06-19.** A8 video confirmed in the FPV app and QGC RTSP. (MK32 Chinese keyboard had typed a full-width colon in the URL, see §16.6.) |
 | Remote ID IDs | §8 | **DONE 2026-07-07.** Identity (UA_TYPE, UAS ID, Operator ID) plus operator location (mainline QGC on the MK32). No RID pre-arm remains. |
@@ -1434,7 +1485,7 @@ Firmware flash (PR #230, git `20622a39`, S2 + Arrow features confirmed) · **360
 | Network IP to final scheme | §0 / §4.4 | **DONE 2026-06-19.** CubeNode moved to `.50`, FC verified at `.51` / gateway `.50` after a full power cycle. |
 
 ### Remaining — outdoor (clear sky)
-Compass LVMC + GPS 3D fix / HDOP **DONE 2026-06-22 via MP** (§3.2, §5.2), and **redone 2026-07-13** on the replacement M9N (node 119, offsets in `COMPASS_OFS3_*`, §3.2). The original M9N's No-Fix was cold-start recoverable (§5.2 note) but the module later failed for good and was **replaced 2026-07-13** (§5.1, §5.2). Remaining: MagFit refinement (dataset acquired 2026-07-23, log 63, WebTools run pending, §3.3), and `GPS_AUTO_SWITCH` 4 → 1, blocked since the replacement unit failed its 2026-07-23 flight validation with the same velocity glitch (§17.6 finding 2). RTK is not used on this drone.
+Compass LVMC + GPS 3D fix / HDOP **DONE 2026-06-22 via MP** (§3.2, §5.2), and **redone 2026-07-13** on the replacement M9N (node 119, offsets in `COMPASS_OFS3_*`, §3.2). The original M9N's No-Fix was cold-start recoverable (§5.2 note) but the module later failed for good and was **replaced 2026-07-13** (§5.1, §5.2). Remaining: MagFit refinement (dataset acquired 2026-07-23, log 63, WebTools run pending, §3.3), and `GPS_AUTO_SWITCH` 4 → 1, blocked since the replacement unit failed its 2026-07-23 flight validation with the same velocity glitch (§17.6 finding 2). **Cause found 2026-08-24: the GigaBlox switches (§4.1 note).** With the switches out the M9N reads 22 to 24 sats and HDOP 0.6 on the bench. Remaining for the pin: one flight log with `GPS2_TYPE = 9` showing the M9N tracking the F9P, then the reinstall on standoffs with mitigations and a repeat. RTK is not used on this drone.
 
 ### Remaining — ops / per-flight
 Geo-fence site values (§2.5.3) · flight-tracking-platform registration (§6) · pre-flight checklist (§5.1) · first-flight authorization gate (§2.5.4).
@@ -1702,6 +1753,17 @@ Flights 10 and 11 at Hockley. (The fourth session, flights 8 and 9 on 2026-07-28
 
 ---
 
+### 17.9 Bench session, GigaBlox removal and OA flight prep (2026-08-24, no flight)
+
+Aircraft on battery power, PC on the MK32 USB COM link (COM6, 115200), reads and one write.
+
+1. **★ GigaBlox switches removed, M9N healthy.** First power-up with both switches out: GPS 2 at 22 to 24 sats, HDOP 0.60 to 0.66, DGPS fix, speed noise under 0.11 m/s, 2 m from the F9P. Confirms the §4.1 hypothesis on the bench. Reinstall plan and mitigation ladder in the §4.1 note. Ethernet, the RPi, and the FC TCP server are unavailable while the switches are out.
+2. **`GPS2_TYPE = 9` confirmed live** (it had been re-zeroed at some point after the 08-04 export). `GPS2_CAN_OVRIDE 119`, `GPS_AUTO_SWITCH 4`, `GPS2_GNSS_MODE 0` all as expected.
+3. **Full 1214 param pull matched `params-HOU-805_OA.param`** in every configuration parameter. `MAV2_*` stream rates were zeroed again (§17.4 recurrence, cosmetic).
+4. **`LOG_DISARMED` 1 → 0 written and read back** (the 08-04 ground-card temporary, decision D2 revert). `PRX_LOG_RAW` stays 1 for the flight campaign. `BATT_FS_LOW_ACT / BATT2_FS_LOW_ACT = 0` confirmed as decision D1 (Zeynep), not an open item.
+5. **OA flight card files exported** to `parameters/`: `params-HOU-824_OA.param` (FLT-03 combined, avoidance OFF, the aircraft's state as left), `_FLT01_S2Lonly`, `_FLT02_MR82only`, `_FLT04_LoiterStop` (`AVOID_BEHAVE 0`, `AVOID_BACKUP_SPD 0`, `AVOID_BACKZ_SPD 0`, proximity avoidance via ch6 only). Card mapping and field sequence in `2026 OA Testing/houston-oa-testing-sessions.md`, decision D6.
+6. **Remote ID firmware side verified present** by the `DID_*` group in the pull and the `ODID:` messages on the link. `UA_TYPE required in BasicID` and `lost operator location` both appeared with no RID GCS connected, as expected on USB COM.
+
 ## Open Items to Confirm With the Quiver Team
 
 These are unresolved conflicts in the source documentation found while writing this guide. Confirm before treating any as settled:
@@ -1715,4 +1777,6 @@ These are unresolved conflicts in the source documentation found while writing t
    - `AVOID_ANGLE_MAX` (in `params-object-avoidance.param`) no longer exists. This was the "missing 1 param" reported on load. The line has been dropped from the overlay.
 6. **Sensor loadout corrected.** This unit does NOT use the Ainstein US-D1 or Benewake TF03 (older memory/eng-report listed those). Actual sensors: downward **NanoRadar NRA15** altimeter (`RNGFND1_TYPE = 39`, NRA24_CAN, correct) and forward **NanoRadar MR82** for avoidance. Both NanoRadar devices share CAN2 RadarCAN (`CAN_D2_PROTOCOL2 = 14`). The MR82 needs `PRX2_TYPE = 17` added (was unset); the 360° RPLidar S2 stays on `PRX1_TYPE = 5`. The two NanoRadar devices now carry distinct CAN IDs (NRA15 = 1, MR82 = 2, done 2026-06-18, §9.2). Note `EK3_RNG_USE_HGT = -1`, so the EKF does not use the rangefinder for height (baro-primary).
 7. **Bat2 failsafe posture — superseded by §7.** Bat2 turned out to be the pack's native BMS, and its leftover defaults were real defects: `BATT2_CAPACITY = 3300` corrupts the Bat2 SoC and was set to `30000` (§7.3). The live config currently runs voltage failsafes on both instances (`BATT2_FS_LOW_ACT = 2`, `BATT2_FS_CRT_ACT = 1`), which differs from the documented Bat1-only baseline. Zeynep owns the final failsafe-source design (§7.4).
-8. **SSR control is unconfigured in the baseline; auto-engage script now committed.** `SCR_ENABLE = 0` and all `RELAY*_FUNCTION = 0` on the first unit, so the SSR had no control path (manual or automatic). The auto-engage script is now at `docs/Operations/firmware/scripts/relay_delayed_close.lua`. To enable: set `RELAY1_FUNCTION = 1` / `RELAY1_PIN = 105` (IO_CH5, confirmed working on the first unit) / `RELAY1_DEFAULT = 0`, put the script on the SD card, then `SCR_ENABLE = 1`. The baseline param file should adopt these once the script ships on every unit's SD card. See §11.
+8. **Bat2 monitor telemetry integrity — OPEN (found 2026-09-01, logs 45 and 47).** The native BMS (Bat2, node 125) reports discharge current with a **negative sign** (steady −50 to −80 A in hover while Bat1's shunt reads the same load positive), `CurrTot` advances in coarse frozen steps, and `VoltR`/`Res` stay at 0, so sag and resistance estimation never run on that instance. Its consumed total also runs about **22 percent above Bat1** on the same flight (log 45: 26106 vs 21291 mAh, log 47: 27365 vs 22377 mAh), and Bat2 is the instance that fires the capacity failsafe (`BATT2_LOW_MAH 6000` on a 30000 capacity trips at 24000 mAh used). Both 2026-09-01 flights ended on that warning at 22.3 min airborne. If the over-count is a calibration error rather than real pack imbalance, roughly 4 to 5 minutes of usable endurance is being given up per flight. Action: bench cross-check Bat2 current against a clamp meter or the Bat1 shunt under the same load, confirm the BMS sign convention, then correct at the source (the monitor is DroneCAN native, so the fix likely lives in the BMS configuration rather than a `BATT2_*` scale param, to be confirmed) or move the capacity failsafe to a trusted instance. Related: the Session 5 per-cell voltage check on pack 1 is still open.
+9. **SSR control is unconfigured in the baseline; auto-engage script now committed.** `SCR_ENABLE = 0` and all `RELAY*_FUNCTION = 0` on the first unit, so the SSR had no control path (manual or automatic). The auto-engage script is now at `docs/Operations/firmware/scripts/relay_delayed_close.lua`. To enable: set `RELAY1_FUNCTION = 1` / `RELAY1_PIN = 105` (IO_CH5, confirmed working on the first unit) / `RELAY1_DEFAULT = 0`, put the script on the SD card, then `SCR_ENABLE = 1`. The baseline param file should adopt these once the script ships on every unit's SD card. See §11.
+10. **Battery temperature logging — OPEN (carried from May 2026, Julius's list).** The pack BMS (Bat2, node 125) publishes battery temperature over DroneCAN (§7.3), and the Pilot Handbook §1.2.1 sets a 56 °C pack limit against it, but nobody has confirmed the value is actually recorded in the dataflash log (`BAT[1].Temp` for the second instance) or that it reads a sane number in flight. Two sub questions: (a) on the Arrow build (`20622a39`), does `BAT[1].Temp` populate in a campaign log, and does `BATT2_*` expose a temperature source selection that needs setting; (b) on the stable ArduCopter that Gray's unit runs, is the same field logged at all, since that build lacks the Arrow features. Separately, the Battery PCB carries its own temperature sensing and it is unknown whether that value reaches the FC by any path. Action: pull one campaign log and one log from Gray's unit, read `BAT[1].Temp` in both, and record the answer here plus the source that feeds it. If nothing logs it, decide whether the BMS field is enough for the Handbook limit or the Battery PCB sensor needs a DroneCAN path.
