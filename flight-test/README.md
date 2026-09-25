@@ -10,5 +10,6 @@ Current and future flight tests will be logged and tracked on our [flight tracki
 - **PT2/** - Prototype 2 flight test logs and documentation
 - **PT3/** - Prototype 3 flight test documentation
 - **PT3-TX/** - Prototype 3 flight test documentation in Texas
+- **OA/** - Obstacle avoidance structured test roadmap (QGB-02)
 - **20hr-flight-plan.md** - Original 20-hour flight plan
 - **performance-metrics-flight-plan.md** - Performance metrics flight plan

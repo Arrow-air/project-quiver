@@ -4,7 +4,7 @@
       "pattern": "^https?://"
     },
     {
-      "pattern": "\\.(bin|dxf|step|stl|zip)$"
+      "pattern": "\\.(bin|BIN|dxf|step|stl|zip)$"
     },
     {
       "pattern": "^\\./assets/readme$"
@@ -14,6 +14,9 @@
     },
     {
       "pattern": "^/task-grant-bounty/Dev-Kit/images/SITL/"
+    },
+    {
+      "pattern": "\\./assets/.*/logs/?$"
     }
   ]
 }
