@@ -5545,7 +5545,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "Samacsys:NX3225GD-STD-CRA-3"
+		(property "Footprint" "Samacsys:NX3225GB-16M-STD-CRA-2"
 			(at 178.232 116.84 0)
 			(effects
 				(font
