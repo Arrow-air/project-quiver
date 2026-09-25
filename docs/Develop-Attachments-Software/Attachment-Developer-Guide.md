@@ -213,7 +213,7 @@ A single board design serves both sides of the interface by populating different
 
 ## 3. Electrical Contract
 
-Every voltage, rail limit, pinout, and signal in this chapter is verified against the official KiCad hardware design files:
+ The official KiCad hardware design files are as follows:
 - Main PCB Schematic: [`src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch)
 - Main PCB Layout: [`src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_pcb)
 - Main PCB CAN Circuitry: [`src/pcb/main_pcb/CAN circuit.kicad_sch`](../../src/pcb/main_pcb/CAN%20circuit.kicad_sch)
