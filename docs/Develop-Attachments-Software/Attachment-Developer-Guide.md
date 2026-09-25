@@ -24,7 +24,7 @@ Each bay has the same standardized mounting footprint and electrical connection.
 
 ### How an Attachment Mates
 
-Connecting an attachment to Quiver involves two parts: a mechanical clamp and a blind-mate circuit board.
+Connecting an attachment to Quiver involves two parts: a mechanical clamp and an Attachment Interface PCB.
 
 1. **Mechanical Clamp:** You mount your payload to the drone using an off-the-shelf aluminum quick-release clamp plate pair (BOM 2112, 50 x 50 mm). The drone carries the fixed half with release levers; your payload carries the sliding base half. No tools are needed to latch or unlatch the payload once installed.
 2. **Blind-Mate Interface PCB:** Recessed inside the clamp plate is a small circuit board called the **Attachment Interface PCB** ([`QuiverAttachPCB.kicad_pcb`](../../src/pcb/attach_pcb/QuiverAttachPCB.kicad_pcb)). The drone side has spring-loaded pogo pins (`U1` to `U10`). Your payload carries an identical board populated with flat copper landing pads (`U11` to `U20`). When you slide and latch the quick-release clamp, the drone's pogo pins press against your board's landing pads.
@@ -66,9 +66,9 @@ Connecting an attachment to Quiver involves two parts: a mechanical clamp and a 
 | **CAN2** | The onboard vehicle CAN bus running at 500 kbit/s. All three payload bays connect to CAN2. CAN1 is kept separate for flight-critical motor controllers (ESCs) and GPS. |
 | **DroneCAN** | The standard open communication protocol running on CAN2. Microcontrollers on your payload join as DroneCAN nodes. |
 | **FMU** | Flight Management Unit (the ArduPilot flight controller). Each bay gets an auxiliary PWM/GPIO line from the FMU. |
-| **Switched 12V (`+12V_PL`)** | The shared 12V payload power rail (pin 10 on Molex J1), controlled by solid-state relay U5 (`FMU_CH4`). All three bays share roughly 13W total. |
-| **Motor 12V (`12VSW`)** | A secondary 12V line on the **bottom bay only** (pins 2 and 4 on Molex J1), controlled by solid-state relay K1 (`FMU_CH2`). Dedicated to driving the brush bullet DC motor payload. |
-| **Switched HV (`J26`)** | Raw 14S battery power (~50V to 58.8V) from a dedicated 2-pin connector on the Main PCB for power-hungry attachments exceeding 13W. |
+| **Switched 12V (`+12V_PL`)** | The shared 12V payload power rail (pin 10 on Molex J1), switched by SSR K2 (CPC1019N) driving MOSFET Q2, controlled via `FMU_CH4`. All three bays share roughly 13W total. |
+| **Motor 12V (`12VSW`)** | A secondary 12V line on the **bottom bay only** (pins 2 and 4 on Molex J1), switched by SSR K1 (CPC1019N), controlled via `FMU_CH2`. Dedicated to driving the brush bullet DC motor payload. |
+| **Switched HV (`J26`)** | Raw 14S battery power (~50V to 58.8V) from a dedicated 2-pin connector on the Main PCB for power-hungry attachments exceeding 13W, switched by K3/Q3, controlled via `IO_CH7`. |
 
 ---
 
@@ -154,9 +154,10 @@ To give your payload proper clearance from the aircraft body and make assembly e
 
 ### 2.3 The Quick-Release Clamp Plate (BOM 2112)
 
-Mechanically, your payload attaches via an off-the-shelf CNC aluminum quick-release clamp assembly (BOM 2112, based on the JMRRC 50 x 50 mm quick-release clamp spec):
+Mechanically, your payload attaches via the JMRRC CNC aluminum quick-release clamp assembly (BOM 2112, 50 x 50 mm):
 
 ![Figure 6: Quick Release Clamp Plate Assembly](../../docs/Manufacturing/Assembly-Guides/assets/images/structural/2112_2122_2132.png)
+
 *Figure 6: Quick-release clamp plate assembly (BOM 2112).*
 
 - **Footprint:** 50.0 mm x 50.0 mm square.
@@ -227,17 +228,28 @@ The three bays share power and CAN, but have different auxiliary lines:
 
 | Capability | Bottom Bay | Side 1 / Right Bay | Side 2 / Left Bay | Source Citation |
 |---|---|---|---|---|
-| **Main 12V Rail (`+12V_PL`)** | **Switched** (SSR U5) | **Switched** (SSR U5) | **Switched** (SSR U5) | [`Quiver_PT3_Main_PCB.kicad_sch`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch) line 10733 |
-| **Motor 12V Rail (`12VSW`)** | **Switched** (SSR K1) | **No Connect (NC)** | **No Connect (NC)** | [`Quiver_PT3_Main_PCB.kicad_sch`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch) lines 10713, 10817 |
-| **CAN Bus** | **CAN2** (500 kbit/s) | **CAN2** (500 kbit/s) | **CAN2** (500 kbit/s) | [`Quiver_PT3_Main_PCB.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_pcb) (J29, J30, J31) |
-| **Ethernet 100BASE-TX** | Yes (Switch 1, J48) | Yes (Switch 1, J48) | Yes (Switch 2, J52) | [`ETHERNET.kicad_sch`](../../src/pcb/main_pcb/ETHERNET.kicad_sch) lines 3288, 3877 |
-| **FMU Aux PWM/GPIO** | `FMU_CH1` (Servo 9) | `FMU_CH7` (Servo 15) | `FMU_CH8` (Servo 16) | [`Quiver_PT3_Main_PCB.kicad_sch`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch) lines 10827 to 11340 |
-| **Main PCB Header** | `J31` (PTSM 1814951) | `J29` (PTSM 1778735) | `J30` (PTSM 1778735) | [`Quiver_PT3_Main_PCB.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_pcb) |
+| **Main 12V Rail (`+12V_PL`)** | **Switched** (K2→Q2) | **Switched** (K2→Q2) | **Switched** (K2→Q2) | [`Power_control.kicad_sch`](../../src/pcb/main_pcb/Power_control.kicad_sch) |
+| **Motor 12V Rail (`12VSW`)** | **Switched** (K1, FMU_CH2) | **No Connect (NC)** | **No Connect (NC)** | [`Power_control.kicad_sch`](../../src/pcb/main_pcb/Power_control.kicad_sch) |
+| **CAN Bus** | **CAN2** (500 kbit/s) | **CAN2** (500 kbit/s) | **CAN2** (500 kbit/s) | [`Quiver_PT3_Main_PCB-rounded.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_pcb) (J29, J30, J31) |
+| **Ethernet 100BASE-TX** | Yes (Switch 1 J47, via J39) | Yes (Switch 1 J47, via J37) | Yes (Switch 2 J51, via J38) | [`ETHERNET.kicad_sch`](../../src/pcb/main_pcb/ETHERNET.kicad_sch) |
+| **FMU Aux PWM/GPIO** | `FMU_CH1` (Servo 9) | `FMU_CH7` (Servo 15) | `FMU_CH8` (Servo 16) | [`Quiver_PT3_Main_PCB-rounded.kicad_sch`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_sch) |
+| **Avionics Header** | `J31` (PTSM 1814951) | `J29` (PTSM 1778735) | `J30` (PTSM 1778735) | [`Quiver_PT3_Main_PCB-rounded.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_pcb) |
+| **Ethernet Header** | `J39` (PTSM 1814935) | `J37` (PTSM 1778719) | `J38` (PTSM 1778719) | [`ETHERNET.kicad_sch`](../../src/pcb/main_pcb/ETHERNET.kicad_sch) |
 | **Default Static IP** | `192.168.144.100` | `192.168.144.101` | `192.168.144.102` | Network Topology Spec |
 
-### 3.2 Main PCB Payload Headers (J29, J30, J31)
+### 3.2 Main PCB Payload Headers (J29, J30, J31) and Ethernet Connectors (J37, J38, J39)
 
-On the aircraft's Main PCB, each payload bay connects to a 6-pin Phoenix Contact PTSM connector:
+On the aircraft's Main PCB, each payload bay connects to a 6-pin Phoenix Contact PTSM connector for power, CAN, and FMU signals, **and** to a separate 4-pin JST-GH Ethernet connector carrying the 100BASE-TX pair:
+
+| Bay | Avionics Header (power + CAN + FMU) | Ethernet Header (100BASE-TX) |
+|---|---|---|
+| **Bottom** | `J31` (PTSM `1814951`, 6-pin) | `J39` (Phoenix PTSM `1814935`, 4-pin) |
+| **Side 1 (Right)** | `J29` (PTSM `1778735`, 6-pin) | `J37` (PTSM `1778719`, 4-pin) |
+| **Side 2 (Left)** | `J30` (PTSM `1778735`, 6-pin) | `J38` (PTSM `1778719`, 4-pin) |
+
+The avionics (J29/J30/J31) and Ethernet (J37/J38/J39) connectors are each internal to the aircraft harness; your attachment only sees the signals arriving at Molex J1 on the Attachment Interface PCB.
+
+**Avionics headers pinout (J29, J30, J31):**
 
 | Pin | Bottom Bay (`J31`) Net | Side 1 Bay (`J29`) Net | Side 2 Bay (`J30`) Net | Function |
 |:---:|---|---|---|---|
@@ -253,7 +265,7 @@ On the aircraft's Main PCB, each payload bay connects to a 6-pin Phoenix Contact
 ### 3.3 Payload Harness Connector: Molex J1 Pinout
 
 The **12-pin Molex connector (J1)** on the back of your payload board is where your attachment wiring connects:
-- **Board Header (J1):** Molex part `2077601281` (12-circuit, 1.25 mm pitch, right-angle locking connector).
+- **Board Header (J1):** Molex part `2077601281` (12-circuit, 1.25 mm pitch, vertical locking connector).
 - **Mating Cable Plug:** Molex housing `2045231201` with gold-plated crimp terminals `2045250001`.
 
 | Pin | Signal Name | Type | Electrical Rating | Description |
@@ -298,10 +310,10 @@ When you check electrical continuity with a multimeter, here is how the 10 conta
 *Figure 10: Quiver network routing showing Ethernet switches and CAN separation.*
 
 If your payload uses high-bandwidth data (video streams, raw point clouds, or network links like Starlink), use the 100BASE-TX Ethernet connection:
-- **Switch Hardware:** The Main PCB includes a BotBlox GigaBlox Nano module (`J47`, Samtec LSHM header) providing managed Ethernet switching.
+- **Switch Hardware:** The Main PCB includes **two** BotBlox GigaBlox Nano switch modules (`J47` and `J51`, Samtec LSHM headers) providing managed Ethernet switching.
 - **Port Assignment:**
-  - Bottom Bay and Side 1 Bay route to Switch 1 (`J48`, 4-pin JST-GH SM04B-GHS-TB).
-  - Side 2 Bay routes to Switch 2 (`J52`, 4-pin JST-GH SM04B-GHS-TB).
+  - **Switch 1 (`J47`):** Bottom Bay (via J39) and Side 1 Bay (via J37) route to Switch 1's managed port `J48` (4-pin JST-GH SM04B-GHS-TB).
+  - **Switch 2 (`J51`):** Side 2 Bay (via J38) routes to Switch 2's managed port `J52` (4-pin JST-GH SM04B-GHS-TB).
 - **Wiring to the Bay:** The harness carries the `ETH_TX` and `ETH_RX` pairs straight to pins 1, 3, 5, and 7 on Molex J1.
 
 ### 3.6 CAN Bus Architecture
@@ -321,7 +333,7 @@ Quiver keeps its vehicle traffic strictly separated across two independent CAN b
 
 > [!NOTE]
 > **Why the Attachment Board Silkscreen Says `CAN1_P / CAN1_N`:**
-> The Attachment Interface PCB was created as a standalone board before the Main PCB finalized its vehicle net labels. While the attachment silkscreen says `CAN1_P` and `CAN1_N`, the aircraft Main PCB wiring ([`Quiver_PT3_Main_PCB.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_pcb)) routes all three payload ports to vehicle bus **CAN2**.
+> The Attachment Interface PCB was created as a standalone board before the Main PCB finalized its vehicle net labels. While the attachment silkscreen says `CAN1_P` and `CAN1_N`, the aircraft Main PCB wiring ([`Quiver_PT3_Main_PCB-rounded.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_pcb)) routes all three payload ports to vehicle bus **CAN2**.
 
 - **Bus Termination:** The Main PCB already provides a switchable 120 ohm termination resistor (R14 via dip-switch S2). **Do not install a 120 ohm termination resistor inside your attachment.**
 
@@ -335,9 +347,9 @@ Quiver does not provide an always-on, unswitched battery feed on the attachment 
          ├───> [ Fuse F4 (5A) ] ───> [ Isolated DC-DC Converter (30W / 2.5A) ]
          │                                       │
          │                                       ▼ (+12V avionics supply)
-         │                           [ Relay U5 (CPC1907B) ] <── Toggled by FMU_CH4 ("12V Pay")
-         │                                       │
-         │                                       ▼
+         │                           [ SSR K2 (CPC1019N) ] <── Toggled by FMU_CH4 ("12V Pay")
+         │                                 │  (drives gate of MOSFET Q2)
+         │                                 ▼
          │                           [ PTC F8 (1.1A) + Fuse F7 (2A) ]
          │                                       │
          │                                       ├───> J31 Pin 2 (+12V_PL, Bottom)
@@ -349,15 +361,15 @@ Quiver does not provide an always-on, unswitched battery feed on the attachment 
          │              ▼
          │         [ Fuse F1 (2A) ] ───> J31 Pin 6 (12VSW, Bottom ONLY for Brush Bullet)
          │
-         └───> [ Relay U4 (CPC1907B) ] <── Toggled by FMU_CH3 ("Add HV")
-                        │
+         └───> [ SSR K3 (CPC1019N) ] <── Toggled by IO_CH7
+                        │  (drives gate of MOSFET Q3)
                         ▼
-                   [ Fuse F2 (5A) ] ───> J26 Pin 2 (Switched High-Voltage Port)
+                   [ Fuse F2 (5A) ] ───> J26 Pin 1 (AC_HV−, Switched High-Voltage Port)
 ```
 
 #### A. Main 12V Payload Rail (`+12V_PL`)
 - **Available on:** All three bays (Molex J1 pin 10; Pogo pin U6/U16).
-- **Electronic Switch:** Solid-state relay **U5 (CPC1907B)** on the Main PCB ([`Quiver_PT3_Main_PCB.kicad_sch`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch) line 10733).
+- **Electronic Switch:** SSR **K2 (CPC1019N)** drives MOSFET **Q2 (SIRA99DP-T1-GE3)** on the Main PCB ([`Power_control.kicad_sch`](../../src/pcb/main_pcb/Power_control.kicad_sch)).
 - **Control Signal:** Flight controller channel **`FMU_CH4`**, labeled **`12V Pay`** in ground control software.
 - **Protection:** Protected by fast fuse **F7** (2A) and self-resetting PTC **F8** (Littelfuse `1812L110`, ~1.1A hold current, ~2.2A trip current).
 - **Safe Power Budget:** The shared `+12V_PL` rail supplies roughly **13W total continuous power combined across all three bays**. Drawing more than ~1.1A total trips PTC F8.
@@ -376,7 +388,7 @@ If your payload requires more than 13W (such as spray pumps, high-power floodlig
 - **Dedicated Switched HV Port (J26):**
   - High-power attachments tap direct flight battery power from **J26** on the Main PCB (Phoenix Contact PTSM 2-pin connector, part `1814919`).
   - Provides full 14S LiPo battery voltage (~50.0V to 58.8V DC).
-  - Switched by solid-state relay **U4 (CPC1907B)** and protected by a **5A fuse (F2)**. Controlled by relay channel `FMU_CH3` (`Add HV`).
+  - Switched by SSR **K3 (CPC1019N)** driving MOSFET **Q3 (SIR570DP-T1-RE3)**, controlled by `IO_CH7`, and protected by a **5A fuse (F2)**.
 - **Never Tap the ESC Connectors:**
   - Connectors **J25, J28, J34, and J42** (yellow XT60PW-F sockets) on the Main PCB are **strictly for motor ESCs**. Never tap or connect payloads to these ports.
 - **Local Voltage Step-Down:** High-power attachments must bring their own onboard DC-DC converter to step down the 50V battery rail to whatever local voltages their electronics need.
@@ -409,20 +421,24 @@ Before you fly your design, check these practical items:
 | **J31** | Phoenix PTSM `1814951` | Main PCB | Bottom bay avionics header (6-pin SMT). |
 | **J29** | Phoenix PTSM `1778735` | Main PCB | Side 1 (Right) bay avionics header (6-pin SMT). |
 | **J30** | Phoenix PTSM `1778735` | Main PCB | Side 2 (Left) bay avionics header (6-pin SMT). |
+| **J39** | Phoenix PTSM `1814935` | Main PCB | Bottom bay Ethernet header (4-pin SMT, 100BASE-TX to Switch 1 J47). |
+| **J37** | Phoenix PTSM `1778719` | Main PCB | Side 1 (Right) bay Ethernet header (4-pin SMT, 100BASE-TX to Switch 1 J47). |
+| **J38** | Phoenix PTSM `1778719` | Main PCB | Side 2 (Left) bay Ethernet header (4-pin SMT, 100BASE-TX to Switch 2 J51). |
 | **J26** | Phoenix PTSM `1814919` | Main PCB | Switched High-Voltage (HV) payload port (2-pin SMT, 5A fused). |
-| **J47** | GigaBlox Nano Module | Main PCB | Onboard 100BASE-TX Ethernet switch. Routes to J48 and J52. |
+| **J47** | GigaBlox Nano Module | Main PCB | **Switch 1:** Onboard 100BASE-TX Ethernet switch. Serves Bottom (J39) and Side 1 (J37) bays. Management via J48. |
+| **J51** | GigaBlox Nano Module | Main PCB | **Switch 2:** Onboard 100BASE-TX Ethernet switch. Serves Side 2 (J38) bay. Management via J52. |
 | **J25, 28, 34, 42** | Amass XT60PW-F | Main PCB | **Exclusively for Motor ESC power.** Do not connect attachments here. |
 
 ### Relays and Control Channels
 
-| Flight Controller Channel | Solid-State Relay | Rail Controlled | Function |
-|---|---|---|---|
-| **`FMU_CH4`** (`12V Pay`) | SSR U5 (`CPC1907B`) | `+12V_PL` | Main 12V payload rail across all 3 bays. Protected by F7 (2A) and PTC F8 (1.1A hold). |
-| **`FMU_CH2`** | SSR K1 (`CPC1019N`) | `12VSW` | Switched 12V motor power for **brush bullet payload** (Bottom bay J31 only). Protected by F1 (2A). |
-| **`FMU_CH3`** (`Add HV`) | SSR U4 (`CPC1907B`) | `HV` on J26 | Switched direct battery power (~50V to 58.8V) for high-power payloads. Protected by F2 (5A). |
-| **`FMU_CH1`** | Flight Controller | PWM / GPIO | Bottom bay auxiliary signal (Servo 9 in ArduPilot). |
-| **`FMU_CH7`** | Flight Controller | PWM / GPIO | Side 1 (Right) bay auxiliary signal (Servo 15 in ArduPilot). |
-| **`FMU_CH8`** | Flight Controller | PWM / GPIO | Side 2 (Left) bay auxiliary signal (Servo 16 in ArduPilot). |
+| Control Signal | SSR (Gate Driver) | MOSFET | Rail Controlled | Function |
+|---|---|---|---|---|
+| **`FMU_CH4`** (`12V Pay`) | K2 (`CPC1019N`) | Q2 (`SIRA99DP`) | `+12V_PL` | Main 12V payload rail across all 3 bays. Protected by F7 (2A) and PTC F8 (1.1A hold). |
+| **`FMU_CH2`** | K1 (`CPC1019N`) | _(direct)_ | `12VSW` | Switched 12V motor power for **brush bullet payload** (Bottom bay J31 only). Protected by F1 (2A). |
+| **`IO_CH7`** | K3 (`CPC1019N`) | Q3 (`SIR570DP`) | `AC_HV−` on J26 | Switched direct battery power (~50V to 58.8V) for high-power payloads. Protected by F2 (5A). |
+| **`FMU_CH1`** | _(flight controller output)_ | — | PWM / GPIO | Bottom bay auxiliary signal (Servo 9 in ArduPilot). |
+| **`FMU_CH7`** | _(flight controller output)_ | — | PWM / GPIO | Side 1 (Right) bay auxiliary signal (Servo 15 in ArduPilot). |
+| **`FMU_CH8`** | _(flight controller output)_ | — | PWM / GPIO | Side 2 (Left) bay auxiliary signal (Servo 16 in ArduPilot). |
 
 ### Official Board and Design Files
 
@@ -430,8 +446,9 @@ Before you fly your design, check these practical items:
 |---|---|
 | [`src/pcb/attach_pcb/QuiverAttachPCB.kicad_pcb`](../../src/pcb/attach_pcb/QuiverAttachPCB.kicad_pcb) | Physical board layout: 23.5 x 15.8 x 1.2 mm outline, pad locations, Molex J1 footprint. |
 | [`src/pcb/attach_pcb/QuiverAttachPCB.kicad_sch`](../../src/pcb/attach_pcb/QuiverAttachPCB.kicad_sch) | Attachment board schematic and pinout mapping. |
-| [`src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_pcb) | Main aircraft board routing: J29, J30, J31 pinouts confirming all bays on CAN2. |
-| [`src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB.kicad_sch) | Main board schematic: U5, K1, U4 relays; F1, F2, F7, F8 fuses; FMU channel wiring. |
+| [`src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_pcb) | Main aircraft board routing: J29, J30, J31 pinouts confirming all bays on CAN2. |
+| [`src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_sch`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_sch) | Main board schematic: top-level sheet linking sub-sheets below. |
+| [`src/pcb/main_pcb/Power_control.kicad_sch`](../../src/pcb/main_pcb/Power_control.kicad_sch) | Power switching sub-sheet: K1, K2, K3 SSRs; Q1, Q2, Q3 MOSFETs; F1, F2, F7, F8 fuses; control channels. |
 | [`src/pcb/main_pcb/CAN circuit.kicad_sch`](../../src/pcb/main_pcb/CAN%20circuit.kicad_sch) | Bus separation circuitry: CAN1 flight-critical bus vs CAN2 payload bus. |
-| [`src/pcb/main_pcb/ETHERNET.kicad_sch`](../../src/pcb/main_pcb/ETHERNET.kicad_sch) | GigaBlox switch routing to the payload bay headers. |
+| [`src/pcb/main_pcb/ETHERNET.kicad_sch`](../../src/pcb/main_pcb/ETHERNET.kicad_sch) | GigaBlox switch routing (J47, J51) to the payload bay Ethernet headers (J37, J38, J39). |
 | [`src/quiver/supporting_structure/attachment_interface/steps/`](../../src/quiver/supporting_structure/attachment_interface/steps/) | STEP files for `2111_attach_spacer.step`, `2112_attach_plate.step`, and `2131_attach_spacer_bottom.step`. |
