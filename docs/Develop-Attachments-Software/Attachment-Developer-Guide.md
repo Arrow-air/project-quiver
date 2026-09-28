@@ -225,6 +225,8 @@ A single board design serves both sides of the interface by populating different
 | The pogo pins face outward toward the docking bay. | The landing pads face inward toward the aircraft. |
 | Rear Molex J1 connects to the aircraft internal avionics harness. | Rear Molex J1 connects to your payload internal electronics. |
 
+In reality, The PCB is the same for both sides. The payload is however mirrored in placement but not in fabrication. 
+
 | Physical PCB: Mating Face | Physical PCB: Rear Connector Face |
 |:---:|:---:|
 | ![Physical Hardware Mating Face](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new1.jpg) | ![Physical Hardware Rear Face](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new2.jpg) |
@@ -355,26 +357,20 @@ The Main PCB design uses two CAN nets; the payload connectors are routed to CAN2
 Quiver does not provide an always-on, unswitched battery feed on the attachment connectors. Every power rail is controlled by an electronic switch.
 
 ```
-[ 14S LiPo Flight Battery (~50V to 58.8V) ]
-         │
-         ├───> [ Fuse F4 (5A) ] ───> [ Isolated DC-DC Converter (30W / 2.5A) ]
-         │                                       │
-         │                                       ▼ (+12V avionics supply)
-         │                                       ├───> [ P-MOSFET Q1 ] ──> [ Fuse F1 (2A) ] ──> J31 Pin 6 (+12VSW)
-         │                                       │           ▲
-         │                                       │           └── Gate control via SSR K1 (CPC1019N) <── FMU_CH2
-         │                                       │
-         │                                       └───> [ MOSFET Q2 ] ──> [ PTC F8 (1.1A) + Fuse F7 (2A) ]
-         │                                                     ▲                         │
-         │                                                     └── Gate control via SSR K2 <── FMU_CH4
-         │                                                                               ├──> J31 Pin 2 (+12V_PL, Bottom)
-         │                                                                               ├──> J29 Pin 2 (+12V_PL, Side 1)
-         │                                                                               └──> J30 Pin 2 (+12V_PL, Side 2)
-         │
-         └───> [ SSR K3 (CPC1019N) ] <── Toggled by IO_CH7
-                        │  (drives gate of MOSFET Q3)
-                        ▼
-                   [ Fuse F2 (5A) ] ───> J26 Pin 1 (AC_HV−, Switched High-Voltage Port)
+[14S LiPo, ~50–58.8V] ──/HV+,/HV-── (unfused at both converters' VIN)
+   │
+   ├─> PS2 (REC30K-4812SZ, 30W/2.5A) ─VOUT─> F4 (5A) ─> +12V
+   │                                                       │
+   │        ┌───────────────────── K1 (CPC1019N) ─LOAD_1─> F1 (2A) ─> /12VSW ─> J31 pin 6 only
+   │        │    ctrl: R1 <─ /FMU_CH2
+   │        │
+   │        └───────────────────── F8 (PTC ~1.1A hold) ─> F7 (2A) ─> U5 (CPC1907B) ─D1─> +12V_PL ─> J29/J30/J31 pin 6/16
+   │                                                              ctrl: R15 <─ /FMU_CH4 ("12V Pay")
+   │
+   ├─> PS1 (REC20K-4805SZ, 20W) ─VOUT─> F3 (5A) ─> +5V ─> companion computer (J1, Raspberry Pi 5 header), CAN transceiver U1, misc headers
+   │
+   └─> U4 (CPC1907B) ─D1─(from /HV+ directly)─D2─> F2 (5A) ─> J26 pin 1, switched HV
+                    ctrl: R23 <─ /IO_CH7 ("Add HV")
 ```
 
 #### A. Main 12V Payload Rail (`+12V_PL`)
