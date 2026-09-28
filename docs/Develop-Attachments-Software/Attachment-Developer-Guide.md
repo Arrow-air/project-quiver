@@ -2,13 +2,13 @@
 
 If you are designing or building a hardware attachment for Quiver, this guide covers everything you need: how the attachment mounts to the airframe, what off-the-shelf parts to order, how the electrical connectors mate, and how to safely wire power, CAN, PWM, and Ethernet.
 
-For software integration (using the Quiver SDK, writing a payload app, and communicating with the ground station), see the companion [Quiver SDK Developer Guide](./Quiver-SDK-Developer-Guide.md).
+This guide covers the mechanical and electrical attachment interface, plus the payload software handoff.
 
 ---
 
 ## Quick Start: The Mental Model
 
-This guide summarizes the checked-in Quiver attachment design. Board routing and CAD geometry are distinguished from values that still need measurement or system-level validation:
+Use the board routing and CAD geometry below as design references. Verify fit, electrical levels, protocol compatibility, and load limits on the aircraft before flight:
 
 - the attachment uses the BOM 2112 quick-release interface plate and its associated spacers,
 - each bay uses the same pogo-pin contact interface, but the aux line is different per bay,
@@ -16,17 +16,17 @@ This guide summarizes the checked-in Quiver attachment design. Board routing and
 - the bottom bay has an extra dedicated `12VSW` motor line,
 - the high-power path is the switched HV line on the Main PCB, not the shared 12V payload rail.
 
-The electrical descriptions below are checked against the current Main PCB V1.2 and Attachment Interface PCB V1.4 source files. The V1.4 update note still calls for electrical and mechanical validation, so source-file design intent is not treated as proof of tested operating behavior.
+The electrical design described here is for Main PCB V1.2 and Attachment Interface PCB V1.4. Design files describe intended routing and geometry; they do not certify a completed aircraft-level test.
 
 ### Builder-First Summary
 
-A developer should be able to answer the following without opening any other document:
+A payload developer should be able to determine:
 
 - the payload bay layout and where the three ports sit on the aircraft,
 - the PCB dimensions present in the current KiCad layout and the attachment CAD assembly placement,
 - what the payload-side board looks like and how the pogo-pin / landing-pad pairing works,
 - the bay-by-bay electrical contract for power, CAN, PWM, and Ethernet,
-- which values are currently hardware-verified and which remain open engineering questions.
+- which interface details are fixed by the board design and which require aircraft-level verification.
 
 ![Figure 1: Quiver multirotor drone](./Images/fig01_quiver_photo.jpg)
 *Figure 1: Project Quiver multirotor drone.*
@@ -44,8 +44,8 @@ Each bay uses the same mechanical interface and contact layout; auxiliary signal
 
 Connecting an attachment to Quiver involves two parts: a mechanical clamp and an Attachment Interface PCB.
 
-1. **Mechanical Interface:** The aircraft CAD assembly uses BOM 2112 quick-release interface plates. The repository does not provide complete payload-side clamp dimensions or a load rating; use current supplier drawings or physical measurements for mating geometry.
-2. **Pogo-Pin Contact Interface:** The current V1.4 Attachment Interface PCB design has spring-loaded pin positions (`U1` to `U10`) and corresponding pad positions (`U11` to `U20`). The update note describes these as spring-loaded pin headers and enlarged solder pads.
+1. **Mechanical Interface:** The aircraft uses BOM 2112 quick-release interface plates. Confirm the payload-side mating dimensions and fasteners against the hardware you will install; this guide does not specify a clamp load rating.
+2. **Pogo-Pin Contact Interface:** The Attachment Interface PCB has spring-loaded contact positions (`U1` to `U10`) and corresponding pad positions (`U11` to `U20`). The aircraft side uses pins; the payload side uses pads.
 3. **Internal Wiring:** **You do not solder or wire to the pogo pins or landing pads.** On the back face of the provided payload PCB is a 12-pin locking Molex connector (**J1**). All of your internal sensors, servos, cameras, and microcontrollers plug into this Molex connector via a simple wire harness.
 
 ```
@@ -76,7 +76,7 @@ Connecting an attachment to Quiver involves two parts: a mechanical clamp and an
 ### Key Terms
 
 > [!IMPORTANT]
-> Board routing and nominal geometry below are taken from the current V1.4 Attachment Interface PCB and V1.2 Main PCB design files. The V1.4 update note calls for electrical and mechanical validation; design files alone are not operational test results.
+> Board routing and nominal geometry below describe Main PCB V1.2 and Attachment Interface PCB V1.4. Verify operating behavior, mating fit, and electrical limits on the specific aircraft.
 
 | Term | What It Means |
 |---|---|
@@ -84,8 +84,8 @@ Connecting an attachment to Quiver involves two parts: a mechanical clamp and an
 | **Pogo Pins (`U1` to `U10`)** | Spring-loaded brass pins on the **drone-side** board. |
 | **Landing Pads (`U11` to `U20`)** | Flat circular copper pads on the **payload-side** board that contact the drone pogo pins. |
 | **Molex J1** | The 12-pin locking connector (Molex part 2077601281) on the back of the payload board. This is where your harness plugs in. |
-| **CAN2** | The Main PCB routes all three payload bays to CAN2. The NanoRadar integration note specifies 500 kbit/s for its device; verify the deployed bus rate and protocol against the aircraft configuration. |
-| **DroneCAN** | A supported CAN protocol; the current Main PCB routes payload CAN pins to CAN2, but simultaneous DroneCAN and NanoRadar operation is not validated in the checked-in integration note. |
+| **CAN2** | All three payload bays are routed to CAN2. Configure the bus rate and protocol for the attached devices; the PCB does not set them. |
+| **DroneCAN** | A supported CAN protocol. Do not assume DroneCAN can share the bus with a NanoRadar MR82; test protocol compatibility on the complete aircraft before use. |
 | **FMU** | Flight Management Unit (the ArduPilot flight controller). Each bay has a routed FMU signal net; waveform and output configuration require aircraft-specific verification. |
 | **Switched 12V (`+12V_PL`)** | The shared 12V payload power rail (pin 10 on Molex J1), switched by SSR K2 (CPC1019N) driving MOSFET Q2, controlled via `FMU_CH4`. The F8 hold rating implies about 13W at nominal 12V; this is an estimate, not a measured system budget. |
 | **Motor 12V (`12VSW`)** | A secondary 12V line on the **bottom bay only** (pins 2 and 4 on Molex J1). SSR K1 controls MOSFET Q1, which switches regulated `+12V` onto this line; K1 is controlled via `FMU_CH2`. Dedicated to the brush bullet DC motor payload. |
@@ -117,21 +117,18 @@ The three bays are integrated into the fuselage structure:
 
 ### Practical Rules Before You Build
 
-- **Hot-Swap Status:** PT3 and Dev-Kit engineering reports describe hot-swapping as a design capability, but the current V1.4 attachment-board update note still lists electrical validation as outstanding. Do not assume live connection is validated for a particular aircraft and payload combination; follow the aircraft operator's approved procedure until testing confirms otherwise.
-- **Do Not Treat Old Schematic Notes as Fresh Hardware Truth:** Older PT3 and stale `.net` exports are not used as the current source of truth for the attachment contract. Any value that has not been checked against the current Main PCB V1.2 copper or the V1.4 attachment PCB is treated as a design intent note and not as a confirmed spec.
+- **Live Connection:** Live attachment or removal is not established as a tested operating procedure here. Keep the aircraft unpowered unless live connection has been specifically tested and approved for that aircraft and payload.
 - **Example Integration Patterns:** An actuator may use a bay aux signal and its own local regulation; a data payload may use the routed CAN or Ethernet pairs. Confirm protocol compatibility, signal levels, power draw, and physical fit on the actual assembly before flight.
 
 ---
 
 ## 2. Mechanical Interface
 
-This chapter is intentionally written as a stand-alone build document. A payload developer should not need to open a different drawing package, a KiCad file, or a separate issue to answer the basic questions: what the attachment plate looks like, what the bay spacing is, what the mating PCB dimensions are, and where the payload ports sit on the aircraft.
-
-The following facts are restated here because they are part of the actual build contract for a payload. If a value has not been verified against the current board hardware, it is called out as an open question instead of being presented as a requirement.
+This chapter describes the attachment plate, bay locations, spacers, and mating PCB dimensions. Values that require aircraft-level measurement are marked for verification.
 
 ### 2.1 Coordinate Frame and Bay Locations
 
-The CAD assembly places the three attachment-plate STEP models at the coordinates below. In `attachment_interface/assembly.py`, the constants are explicitly described as center-of-mass placement coordinates from the Fusion reference model; they are not identified as mounting-hole centers or validated clearance limits.
+The coordinates below are the placement points used for the three attachment-plate CAD models. They are model placement coordinates, not mounting-hole centers or validated clearance limits.
 
 Quiver uses standard aircraft coordinates with the origin `(0, 0, 0)` at the center of the fuselage interior:
 - **+X:** To the right (Starboard)
@@ -158,11 +155,11 @@ Quiver uses standard aircraft coordinates with the origin `(0, 0, 0)` at the cen
 | **Side 1 (Right)** | `(+185.65, -0.02, -71.00) mm` | Right (+X) | Assembly includes spacer `2111` and interface plate `2112` |
 | **Side 2 (Left)** | `(-185.65, +0.02, -71.00) mm` | Left (-X) | Assembly includes spacer `2111` and interface plate `2112` |
 
-The `assembly.py` module overview also gives approximate interface locations at X = ±150 mm and Z = -125 mm without defining them as the same datum. Resolve that datum difference against the master mechanical model before using either set for payload clearance design.
+An approximate overview datum also places interfaces at X = ±150 mm and Z = -125 mm; its relationship to the model placement points above is unspecified. Use the aircraft CAD assembly to establish the datum before designing clearances.
 
 ### 2.2 Drone-Side Hardware and Spacers
 
-The checked-in CAD assembly contains the drone-side interface plate and spacers. The BOM identifies three quick-release interface plates (2112), two side spacers (2111), and one bottom spacer (2131). The assembly source does not define a payload mass rating or a validated clearance envelope.
+The aircraft uses three quick-release interface plates (2112), two side spacers (2111), and one bottom spacer (2131). Payload mass rating and clearance envelope are not specified here; verify both for the installed aircraft.
 
 The builder should be able to answer these questions from this section alone:
 - what the payload side and drone side mating hardware look like,
@@ -177,8 +174,8 @@ The assembly uses PETG spacers at the attachment locations:
 | ![Figure 5a: Bottom payload interface](./Images/fig05a_bottom_interface_cad.jpg) | ![Figure 5b: Side payload interface exploded](./Images/fig05b_side_interface_exploded_cad.jpg) |
 | *Figure 5a: Bottom interface assembly showing the wire notch.* | *Figure 5b: Side interface exploded view showing the 30 mm spacer.* |
 
-- **Side Ports (Right and Left):** Each side bay uses spacer `2111` ([`2111_attach_spacer.step`](../../src/quiver/supporting_structure/attachment_interface/steps/2111_attach_spacer.step)). The Dev-Kit engineering report describes a 30 mm side-interface extension adapter; verify the assembled dimension against the aircraft model before designing the payload envelope.
-- **Bottom Port:** The bottom bay uses spacer `2131` ([`2131_attach_spacer_bottom.step`](../../src/quiver/supporting_structure/attachment_interface/steps/2131_attach_spacer_bottom.step)), which the CAD assembly source identifies as having a wiring notch.
+- **Side Ports (Right and Left):** Each side bay uses spacer `2111` ([`2111_attach_spacer.step`](../../src/quiver/supporting_structure/attachment_interface/steps/2111_attach_spacer.step)). Confirm the assembled standoff against the aircraft before setting the payload envelope.
+- **Bottom Port:** The bottom bay uses spacer `2131` ([`2131_attach_spacer_bottom.step`](../../src/quiver/supporting_structure/attachment_interface/steps/2131_attach_spacer_bottom.step)), which has a wiring notch.
 
 | Side Spacer (`2111_attach_spacer`) | Bottom Spacer with Notch (`2131_attach_spacer_bottom`) |
 |:---:|:---:|
@@ -186,23 +183,17 @@ The assembly uses PETG spacers at the attachment locations:
 
 ### 2.3 The Quick-Release Clamp Plate (BOM 2112)
 
-The repository BOM identifies part 2112 as a quick-release interface plate, quantity three, aluminum, and points to a supplier listing. The checked-in STEP model is the aircraft-side portion used in the CAD assembly; it does not establish all dimensions or ratings of the supplied plate pair.
+Part 2112 is the aluminum quick-release interface plate used at all three bays. The dimensions, fasteners, and load rating of the mating plate pair are not specified here; measure the hardware you will use.
 
 ![Figure 6: Quick Release Clamp Plate Assembly](../../docs/Manufacturing/Assembly-Guides/assets/images/structural/2112_2122_2132.png)
 
 *Figure 6: Quick-release clamp plate assembly (BOM 2112).*
 
-Use the supplied hardware and its current manufacturer drawing or physical measurements to determine the payload-side mating geometry, fasteners, thickness, and load limits. Those values are not specified by the checked-in BOM or the drone-side STEP model.
+Determine payload-side mating geometry, fasteners, thickness, and load limits from the actual hardware before designing the attachment.
 
 ### 2.4 Attachment Interface PCB Dimensions
 
 This section describes the current V1.4 Attachment Interface PCB layout. Confirm the supplied payload-side assembly and mechanical fit before manufacturing an attachment.
-
-This section is intentionally self-contained so a developer can design the payload board, enclosure, or cable route without leaving the guide. The builder should be able to extract from this section:
-- the mating PCB outer dimensions,
-- the board thickness and edge-cut hole geometry,
-- the PCB outline and silkscreen orientation features,
-- the fact that the payload-side board is the board you install, not the drone-side pogo board.
 
 The electrical connection is made by the **Quiver Attachment Interface PCB** ([`src/pcb/attach_pcb/QuiverAttachPCB.kicad_pcb`](../../src/pcb/attach_pcb/QuiverAttachPCB.kicad_pcb)); verify its installed position using the current mechanical assembly:
 
@@ -216,7 +207,7 @@ The electrical connection is made by the **Quiver Attachment Interface PCB** ([`
   - Vertical spacing (Y axis): **8.00 mm** center-to-center.
   - KiCad board coordinates: `(100.0, 129.0)`, `(120.0, 129.0)`, `(100.0, 137.0)`, `(120.0, 137.0)`.
   - The KiCad outline defines the holes as 2.00 mm diameter; it does not specify threaded holes or fasteners.
-- **Orientation:** The board outline has chamfered corners and the V1.4 design note identifies a silkscreen orientation notch. Use the released assembly drawing to determine installation orientation; the PCB file alone does not establish the clamp cavity fit.
+- **Orientation:** The board outline has chamfered corners and a silkscreen orientation notch. Confirm the payload board orientation against the aircraft-side board before mating.
 
 ![Figure 8: PCB Rear View Showing J1 Connector](./Images/fig09_pcb_back_j1.png)
 *Figure 8: Rear face of the payload board showing the 12-pin Molex J1 connector.*
@@ -239,7 +230,7 @@ A single board design serves both sides of the interface by populating different
 | ![Physical Hardware Mating Face](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new1.jpg) | ![Physical Hardware Rear Face](../../task-grant-bounty/pt3/electronics/0003-Attachment-Interface-PCB/2026-Update/images/QuiverAttachPCB_new2.jpg) |
 
 > [!WARNING]
-> **Wiring rule:** The V1.4 design note describes U1–U10 as spring-loaded pins and U11–U20 as enlarged contact pads. Use the released assembly configuration for the aircraft or payload side. Connect payload wiring through Molex J1, not directly to the contact positions.
+> **Wiring rule:** The aircraft-side board uses spring-loaded pins U1–U10; the payload-side board uses copper pads U11–U20. Connect payload wiring through Molex J1, not directly to the contacts.
 
 ---
 
@@ -255,7 +246,7 @@ The current design references are the board layouts and schematics for the Main 
 
 The three bays share power and CAN, but have different auxiliary lines:
 
-| Capability | Bottom Bay | Side 1 / Right Bay | Side 2 / Left Bay | Source Citation |
+| Capability | Bottom Bay | Side 1 / Right Bay | Side 2 / Left Bay | Details |
 |---|---|---|---|---|
 | **Main 12V Rail (`+12V_PL`)** | **Switched** (K2→Q2) | **Switched** (K2→Q2) | **Switched** (K2→Q2) | Main PCB layout and schematic |
 | **Motor 12V Rail (`12VSW`)** | **Switched** (+12V via Q1; K1 controlled by `FMU_CH2`) | **No Connect (NC)** | **No Connect (NC)** | Main PCB layout and schematic |
@@ -264,7 +255,7 @@ The three bays share power and CAN, but have different auxiliary lines:
 | **FMU Aux signal net** | `FMU_CH1` | `FMU_CH7` | `FMU_CH8` | Main PCB layout and schematic |
 | **Avionics Header** | `J31` (PTSM 1814951) | `J29` (PTSM 1778735) | `J30` (PTSM 1778735) | [`Quiver_PT3_Main_PCB-rounded.kicad_pcb`](../../src/pcb/main_pcb/Quiver_PT3_Main_PCB-rounded.kicad_pcb) |
 | **Ethernet Header** | `J39` (PTSM 1814935) | `J37` (PTSM 1778719) | `J38` (PTSM 1778719) | Main PCB layout and schematic |
-| **Recommended payload IP** | `192.168.144.100` | `192.168.144.101` | `192.168.144.102` | Dev-Kit report and SDK guide |
+| **Recommended payload IP** | `192.168.144.100` | `192.168.144.101` | `192.168.144.102` | Static address; match the installed bay |
 
 ### 3.2 Main PCB Payload Headers (J29, J30, J31) and Ethernet Connectors (J37, J38, J39)
 
@@ -312,7 +303,7 @@ The **12-pin Molex connector (J1)** on the back of your payload board is where y
 | **11** | `CAN_H` | I/O | CAN high | Aircraft **CAN2_H**. *(Board silkscreen says `CAN1_P`)* |
 | **12** | `FMU_AUX` | I/O | FMU signal; verify voltage and waveform on aircraft | Bay auxiliary net: **Bottom:** `FMU_CH1`, **Side 1:** `FMU_CH7`, **Side 2:** `FMU_CH8` |
 
-*(Pin mapping checked against the current Attachment Interface PCB layout and schematic linked above.)*
+*(Molex J1 signal and pin mapping.)*
 
 ### 3.4 Pogo Pin and Landing Pad Map
 
@@ -331,14 +322,14 @@ When you check electrical continuity with a multimeter, here is how the 10 conta
 | `CAN_H` | `U9` | `U19` | Vehicle CAN2 high pair |
 | `CAN_L` | `U10` | `U20` | Vehicle CAN2 low pair |
 
-*(Contact designators and net mapping checked against the current Attachment Interface PCB layout and schematic linked above.)*
+*(Contact designators and corresponding signals.)*
 
 ### 3.5 Network and Ethernet Routing
 
 ![Figure 10: Quiver Payload Network Architecture](./Images/Quiver%20Payload%20Network.png)
 *Figure 10: Quiver network routing showing Ethernet switches and CAN separation.*
 
-If your payload uses Ethernet, its differential pairs route through the onboard switch modules. The board files do not specify the link speed negotiated with a payload:
+If your payload uses Ethernet, its differential pairs route through the onboard switch modules. Verify the negotiated link speed with the attached equipment:
 - **Switch Hardware:** Two BotBlox GigaBlox Nano modules are installed on the Main PCB. Their board-mount connectors are internal module mounts, not user-facing payload connectors.
 - **Port Assignment:**
   - Switch 1 serves the Bottom and Side 1 bay Ethernet headers.
@@ -351,12 +342,11 @@ The Main PCB design uses two CAN nets; the payload connectors are routed to CAN2
 
 1. **CAN1:** The Main PCB keeps the payload connector nets off CAN1.
 2. **CAN2:** Bottom J31, Side 1 J29, and Side 2 J30 route to `/CAN2_H` and `/CAN2_L`.
-  - The obstacle-avoidance note specifies 500 kbit/s and a non-DroneCAN protocol for the NanoRadar MR82. The Dev-Kit report identifies one MR82; its RPLidar S2L connects over serial.
-  - The integration note says to isolate the NanoRadar CAN port from DroneCAN nodes while testing. Simultaneous protocol compatibility is not established; validate the deployed firmware and nodes together.
+  - The NanoRadar MR82 uses CAN at 500 kbit/s with a non-DroneCAN protocol. The RPLidar S2L connects over serial.
+  - Keep the NanoRadar separate from DroneCAN nodes unless the combination has been tested successfully. Before flight, verify the bitrate, protocol, wiring, and termination of all devices on the bus.
 
 > [!NOTE]
-> **Why the Attachment Board Silkscreen Says `CAN1_P / CAN1_N`:**
-> The current Attachment Interface PCB layout labels its CAN nets `CAN1_P` and `CAN1_N`. The current Main PCB layout routes the three payload connectors to `CAN2_H` and `CAN2_L`; the hardware routing therefore maps the attachment-board CAN pair to Main PCB CAN2.
+> **CAN label mapping:** The attachment-board labels are `CAN1_P` and `CAN1_N`; at all three aircraft payload ports these conductors connect to Main PCB `CAN2_H` and `CAN2_L`.
 
 - **Bus Termination:** The Main PCB layout includes a 120 ohm resistor (R14) that slide switch S2 can connect across CAN2_H and CAN2_L. Enable it only when the Main PCB is an endpoint in the CAN bus topology. Do not add another terminator inside an attachment by default; account for the complete bus and its two endpoints.
 
@@ -389,7 +379,7 @@ Quiver does not provide an always-on, unswitched battery feed on the attachment 
 
 #### A. Main 12V Payload Rail (`+12V_PL`)
 - **Available on:** All three bays (Molex J1 pin 10; Pogo pin U6/U16).
-- **Electronic Switch:** SSR **K2 (CPC1019N)** drives MOSFET **Q2 (SIRA99DP-T1-GE3)** on the Main PCB; see the Main PCB schematic linked above.
+- **Electronic Switch:** SSR **K2 (CPC1019N)** drives MOSFET **Q2 (SIRA99DP-T1-GE3)** on the Main PCB.
 - **Control Signal:** Flight controller channel **`FMU_CH4`**, labeled **`12V Pay`** in ground control software.
 - **Protection:** Protected by fast fuse **F7** (2A) and self-resetting PTC **F8** (Littelfuse `1812L110`, 1.10A hold-current part).
 - **Conservative Design Estimate:** The F8 hold rating corresponds to about **13W at nominal 12V** across all three bays. This is not a measured system-level payload budget, and exceeding 1.1A is not the PTC trip specification.
@@ -417,9 +407,9 @@ The approximate 13W estimate is derived from the F8 hold-current rating, not fro
 
 ## 4. Power Budgeting and Worked Examples
 
-This chapter summarizes source-backed rail routing and an approximate current-derived estimate. The actual continuous payload budget has not been established by a system-level load test.
+This chapter explains the rail routing and the current-derived estimate from the installed protection components. The continuous payload budget for a complete aircraft has not been measured here.
 
-The aircraft power system is shared. The source-backed information below describes routing and component ratings; it does not establish a measured payload budget:
+The aircraft power system is shared. Treat the component ratings below as constraints, not as a measured system payload budget:
 
 - `+12V_PL` is a shared 12V rail across all three bays. F8 is a 1.10A hold-current PTC, equivalent to about **13W at nominal 12V**; treat this as a conservative design estimate, not a measured system-level payload budget.
 - The 12V rail is protected by PTC F8 and fuse F7. The PTC hold rating is not its trip threshold.
@@ -453,13 +443,13 @@ This is the design pattern recommended for high-power floodlights, spray pumps, 
 
 ### 4.3 Payload Load Validation
 
-The checked-in sources reviewed for this guide do not include a system-level `+12V_PL` load-test result. Measure the combined rail draw on the specific aircraft and compare it with the component ratings and approved operating limits; do not treat the 13W arithmetic estimate as a validated budget.
+Measure the combined `+12V_PL` draw on the aircraft and compare it with the component ratings and approved operating limits. Do not treat the 13W arithmetic estimate as a validated budget.
 
 ---
 
 ## 5. Control and Data Paths
 
-This section is the payload builder's electrical routing guide. It tells you which signal path to choose for triggers, sensors, and telemetry, and it is written to stand on its own so a developer does not have to infer the contract from separate hardware notes or legacy board silkscreen guesses.
+Choose a signal path based on the payload's control and data needs. Verify electrical levels and protocol compatibility on the aircraft before flight.
 
 Quiver gives each payload a specific job based on what it needs to do. In practice, the rule is simple:
 
@@ -473,7 +463,7 @@ Quiver gives each payload a specific job based on what it needs to do. In practi
 |---|---|---|---|
 | Trigger or actuator control | Bay FMU signal net | Payload-specific control input | Electrical levels and ArduPilot output setup require system verification |
 | CAN device | CAN2 pair at the payload port | Protocol-compatible CAN device | Do not assume simultaneous DroneCAN and NanoRadar compatibility |
-| Networked device | Ethernet pairs at the payload port | Payload Ethernet interface | Board routing does not specify negotiated link speed |
+| Networked device | Ethernet pairs at the payload port | Payload Ethernet interface | Link speed depends on the attached equipment and must be verified |
 
 ### 5.2 Aux Signal Mapping and PWM Rules
 
@@ -485,44 +475,44 @@ The Main PCB routes a different FMU net to each bay:
 | Side 1 | `FMU_CH7` |
 | Side 2 | `FMU_CH8` |
 
-The PCB files establish the routed signal nets, not their configured waveform, voltage level, or ArduPilot servo-output number. The checked-in parameter set includes `SERVO_GPIO_MASK`; choose and validate the correct flight-controller output configuration on the aircraft before connecting a payload.
+The bay nets are `FMU_CH1`, `FMU_CH7`, and `FMU_CH8`. Their waveform, voltage level, and ArduPilot output assignment depend on aircraft configuration. Configure and measure the selected output at the payload connector before attaching an actuator.
 
 ### 5.3 CAN2 Rules
 
 The Main PCB routes all three payload connectors to the shared vehicle bus **CAN2**:
 
-- bitrate: the NanoRadar integration note specifies **500 kbit/s** for the MR82; confirm the configured rate for each aircraft use
-- bus: the Dev-Kit obstacle-avoidance configuration includes one NanoRadar MR82 using a non-DroneCAN CAN protocol
-- protocol compatibility: not established for simultaneous NanoRadar and DroneCAN payload traffic; the NanoRadar integration note says to keep its CAN port isolated from DroneCAN nodes while testing
-- termination: Main PCB R14 is selectable with S2; configure it only if the Main PCB is a bus endpoint. Do not add an attachment terminator by default; the complete bus should have termination at its two physical endpoints.
+- bitrate: set the bus rate required by attached devices; the NanoRadar MR82 uses **500 kbit/s**
+- bus: the three payload bays share the physical CAN2 pair
+- protocol compatibility: NanoRadar MR82 uses a non-DroneCAN protocol. Keep it separate from DroneCAN nodes unless the combination has been tested successfully
+- termination: Main PCB R14 is selectable with S2; enable it only when the Main PCB is a bus endpoint. The complete bus should be terminated at its two physical endpoints; do not add another terminator inside an attachment by default.
 
-The board files establish the routing, not protocol interoperability. Validate the deployed firmware and all attached CAN nodes as one system before flight.
+Validate the configured bitrate, termination, and compatibility of all attached CAN nodes before flight.
 
 ### 5.4 Ethernet Paths and Network Conventions
 
-If your attachment uses Ethernet, its pairs route through the onboard switches. The Quiver SDK guide documents the payload address range and recommended per-port addresses below:
+If your attachment uses Ethernet, its pairs route through the onboard switches. Assign a static address on the aircraft subnet. The payload range and recommended defaults are:
 
 - `192.168.144.100` to `192.168.144.199`
 - bottom bay default is `192.168.144.100`
 - side 1 default is `192.168.144.101`
 - side 2 default is `192.168.144.102`
 
-The Dev-Kit report and SDK guide agree that the Raspberry Pi uses `192.168.144.50`. The Dev-Kit report lists the CubeNode ETH adapter at `.10`; this guide does not infer infrastructure assignments from PCB routing.
+Use these onboard device addresses when configuring payload networking:
 
-| Device | Address in Dev-Kit Report |
+| Device | Address |
 |---|---|
 | Raspberry Pi (companion computer) | `192.168.144.50` |
 | CubeNode ETH adapter | `192.168.144.10` |
 | Flight controller | `192.168.144.51` |
 
-Use the operational configuration for the specific aircraft; these addresses are reported software/network configuration, not facts established by the PCB design files.
+Confirm the active aircraft network configuration before assigning an address; avoid duplicating any address already in use.
 
 ### 5.5 The Standard Payload Network Table
 
-| Function | Address in Dev-Kit Report / SDK Guide | Notes |
+| Function | Address | Notes |
 |---|---|---|
 | Companion computer | `192.168.144.50` | Pi on the drone network |
-| CubeNode ETH | `192.168.144.10` | Dev-Kit report assignment |
+| CubeNode ETH | `192.168.144.10` | Ethernet adapter |
 | Flight controller | `192.168.144.51` | ArduPilot MAVLink endpoint |
 | Payload bottom | `192.168.144.100` | Default bottom port payload |
 | Payload side 1 | `192.168.144.101` | Default right-side payload |
@@ -535,13 +525,13 @@ Use static addressing within the payload range and do not rely on DHCP. The netw
 
 ## 6. Flight Controller Integration
 
-This section is the flight-controller contract a payload engineer must follow when wiring the bay. The important point is that the guide intentionally repeats the operational semantics here so the developer can design and validate the payload without relying on hidden assumptions from the Pilot Handbook or other source documents.
+This section describes the flight-controller signals exposed at the payload bays and the checks required before connecting an actuator.
 
 The flight controller does not treat the attachment as a generic consumer. It provides power timing, aux signals, and bus routing under a few explicit rules that the developer must respect.
 
 ### 6.1 Relay Labels and Power Semantics
 
-The current Main PCB design and firmware documentation use these control labels:
+The aircraft control labels used for the attachment power paths are:
 
 - `12V Pay` = `FMU_CH4` drives the shared `+12V_PL` rail.
 - `Add HV` = the switched high-voltage battery line for power-hungry attachments.
@@ -556,11 +546,11 @@ The system power hierarchy is:
 2. `12VSW` for the bottom-bay dedicated motor line.
 3. `Add HV` for high-power payloads that need direct flight-battery power.
 
-This hierarchy is not arbitrary. It is the documented safety behavior meant to prevent the small shared payload rail from becoming the sink for every attachment, which would quickly push the aircraft toward a brownout.
+Use the shared 12V rail only within the measured aircraft power limit; use the switched high-voltage port and local conversion when the payload requires a different power path.
 
 ### 6.3 Arming, Disarming, and Hot-Swap Rules
 
-The engineering reports describe hot-swapping as an intended capability, but current V1.4 documentation still calls for electrical validation. Follow the approved aircraft procedure and do not assume live attachment or removal is validated until it has been tested on the relevant aircraft and payload.
+Live attachment or removal is not established as a tested operating procedure here. Keep the aircraft unpowered unless live connection has been tested and approved for the specific aircraft and payload.
 
 Practical rules:
 
@@ -571,7 +561,7 @@ Practical rules:
 
 ### 6.4 Direct Flight Controller Wiring for a Servo or Latch
 
-The auxiliary nets connect to flight-controller channels, but the PCB files do not establish output waveform, voltage, or servo-function configuration. Treat the electrical interface as requiring aircraft-specific verification before connecting an actuator.
+The auxiliary nets connect to flight-controller channels, but their waveform, voltage, and servo-function configuration depend on the aircraft setup. Verify these before connecting an actuator.
 
 The basic pattern is:
 
@@ -585,17 +575,11 @@ This is the recommended path for a latch, release mechanism, or shutter trigger.
 
 ## 7. Software Handoff
 
-The attachment itself is only half of the system. The companion computer and the Hub software provide the operational layer that turns the electrical interface into a working payload.
+The attachment application should communicate with its hardware locally and expose only the data and controls required by the aircraft operator.
 
-### 7.1 Start with the SDK and Template
+### 7.1 Payload Application
 
-The software side already has a clear path:
-
-- use the Quiver SDK for the Python-side hardware abstraction,
-- use the payload template repository as the starting point for a new payload app,
-- keep the payload app isolated from the aircraft flight stack while still exposing a clean interface to the Hub.
-
-This is the correct pattern for payload authors. The attachment hardware contract is documented here; the software contract is kept in the software guide.
+Implement payload-specific device control in the payload application. Keep it separate from flight-control logic, and define the required inputs, outputs, startup behavior, and failure response before integration.
 
 ### 7.2 Recommended Handoff Pattern
 
@@ -608,9 +592,9 @@ This allows the payload to remain independent while still integrating with the w
 
 ### 7.3 Hub and Companion Interaction
 
-The companion computer is the bridge between the flight controller and the payload. It hosts the services that relay telemetry, logs, and app jobs, and it exposes the payload to the ground station through the Hub ecosystem.
+When the aircraft uses a companion computer, it can relay payload telemetry, logs, and operator commands between the aircraft network and the ground station.
 
-Avoid building a direct, ad hoc control path from the payload to the ground station. The architecture is intentionally layered:
+Keep payload device control, vehicle control, and operator-facing services as separate responsibilities:
 
 - flight controller handles flight control,
 - companion computer handles payload network and telemetry,
@@ -630,8 +614,8 @@ This checklist is written so you can use it on a bench or in a hangar without re
 - [ ] **Power check:** Measure `+12V_PL` current on the aircraft and compare it with the conservative 1.10A F8 hold-current rating and the approved system limit.
 - [ ] **Fuse and protection check:** The payload does not exceed the fuse and PTC limits for the rail being used.
 - [ ] **PWM check:** The aux signal is measured on the actual bay connector and the correct output is confirmed for the bay (`FMU_CH1`, `FMU_CH7`, or `FMU_CH8`).
-- [ ] **CAN validation:** Verify bitrate, node protocol compatibility, and termination on the complete bus; account for Main PCB R14/S2 and the NanoRadar integration note.
-- [ ] **Ethernet validation:** Confirm the payload link comes up and the Tx/Rx pairs are wired correctly; the PCB source does not specify negotiated link speed.
+- [ ] **CAN validation:** Verify bitrate, node protocol compatibility, and termination on the complete bus. Account for Main PCB R14/S2 and keep NanoRadar separate from DroneCAN nodes unless interoperability has been tested.
+- [ ] **Ethernet validation:** Confirm the payload link comes up and the Tx/Rx pairs are wired correctly; verify negotiated link speed with the attached equipment.
 - [ ] **No rail sag:** The payload does not pull the avionics rail down under normal operation.
 - [ ] **Mechanical fit:** The payload clears the bay envelope and does not interfere with propeller clearance, battery motion, or harness routing.
 
@@ -647,9 +631,9 @@ Use the aircraft-specific operating procedure and record test results for the de
 
 ---
 
-## 9. Lessons Learned from the Builds
+### 9. Integration Checklist
 
-The Dev-Kit engineering report lists an actuated payload latch and a multispectral camera payload as work in progress, not completed operational examples. Treat them as development efforts rather than validated reference builds. The current Attachment Interface PCB V1.4 update note also calls for electrical and mechanical validation.
+Before flight, verify mechanical fit, contact alignment, power draw, auxiliary signal levels, CAN bitrate/protocol/termination, and Ethernet connectivity on the aircraft configuration that will be used. Do not treat an untested payload or operating mode as validated.
 
 ---
 
