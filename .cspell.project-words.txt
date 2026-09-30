@@ -1,3 +1,4 @@
+12VSW
 AAPS
 abin
 Adafruit
@@ -97,6 +98,8 @@ chipset
 chkbxs
 copytds
 Cpath
+CPC1019N
+CPC1907B
 Crect
 CRSF
 CSGP
@@ -182,6 +185,7 @@ getenv
 GIGA
 Giga
 giga
+GigaBlox
 GLONASS
 GNDCLEAR
 GNDCLR
@@ -354,6 +358,7 @@ Pinout
 pinout
 pinouts
 Pixhawk
+pogo
 pointcloud
 pointermap
 polyfuse
@@ -391,7 +396,9 @@ RCIN
 rclpy
 RCOU
 RCOUT
+REC30K
 recalc
+RECOM
 reflookup
 relpos
 rels
@@ -399,6 +406,7 @@ remoteid
 repairability
 reputational
 resarr
+resettable
 returncode
 rmax
 RMETRIC
@@ -440,6 +448,7 @@ Skynode
 Slamtec
 SLCAN
 sliceability
+SlimStack
 Snapeda
 socketcan
 socketio
@@ -448,6 +457,7 @@ sortmark
 SPST
 SSHL
 stackable
+Starlink
 startangle
 statsbtn
 stra
@@ -493,7 +503,9 @@ UFLY
 Ultrafuse
 uncommanded
 undervoltage
+undocumented
 unlisten
+unpowered
 Unsort
 untented
 unticked
@@ -523,6 +535,7 @@ Wurth
 Würth
 XCLASS
 XSCROLLER
+XT60
 xxmm
 YAGEO
 YDLIDAR
