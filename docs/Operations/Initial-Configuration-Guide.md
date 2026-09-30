@@ -495,7 +495,7 @@ Keep `GPS_AUTO_SWITCH = 1` (**Use Best**) — do **not** blend an RTK unit with 
 >
 > One FC setup note described the Mateksys M9N on a UART (`GPS_TYPE2 = 1`). The current baseline puts both units on DroneCAN. Trust the baseline, but if the secondary GPS does not enumerate on CAN, confirm whether your M9N is wired to a UART and adjust `GPS2_TYPE` accordingly.
 
-**Verify:** Two GPS instances reporting, EKF happy, HDOP improving outdoors.
+**Verify:** Two GPS instances reporting, EKF happy, HDOP improving outdoors. The pre flight gate is the Pilot Handbook §3.3 value: 3D fix with 14 or more satellites and HDOP at or under 1.6. The 12+ satellite, HDOP 1.5 figures in the M9N troubleshooting note below are the acceptance test for a repaired GPS 2, not the flight gate.
 
 ---
 
@@ -786,9 +786,9 @@ ip -details link show can0   # confirm bitrate 1M, no errors
 >
 > | Unit has | Set during configuration |
 > |---|---|
-> | Any pack | `BATT_LOW_VOLT 46.2` and `BATT_CRT_VOLT 44.8` on Bat1 (3.3 and 3.2 V per cell). `BATT_LOW_VOLT` is not in the baseline (held out of PR #273), and the firmware default of about 10 V never triggers on 14S, so a unit that skips this line has no voltage-based low-battery action. Confirm by readback in the first flight checklist. |
-> | Pack with CAN telemetry (Tattu smart BMS) | The Bat2 table below, then the §7.4 posture once #248 closes. |
-> | Pack without CAN telemetry | Leave `BATT2_MONITOR` at the baseline value and do not set any `BATT2_*` line from this section. The Bat1 voltage thresholds are the only battery failsafe on that unit, so the §7.4 capacity stages do not exist for it. |
+> | Any pack | `BATT_LOW_VOLT 46.2` and `BATT_CRT_VOLT 44.8` on Bat1 (3.3 and 3.2 V per cell), `BATT_FS_CRT_ACT 1` (Land). `BATT_LOW_VOLT` is not in the baseline (held out of PR #273), and the firmware default of about 10 V never triggers on 14S, so a unit that skips this line has no voltage-based low-battery action. Confirm by readback in the first flight checklist. |
+> | Pack with CAN telemetry (Tattu smart BMS) | The Bat2 table below and the §7.4 posture (approved 2026-09-30 in #248). Bat2 carries the capacity stages and the arming block. Bat1 becomes the voltage backstop: `BATT_FS_LOW_ACT 0` (warn only, the 911 card value), critical stays Land. |
+> | Pack without CAN telemetry | Leave `BATT2_MONITOR` at the baseline value and do not set any `BATT2_*` line from this section. Bat1 carries the actions on its own: `BATT_FS_LOW_ACT 2` (RTL at 46.2 V, the baseline value) and `BATT_FS_CRT_ACT 1` (Land at 44.8 V). The §7.4 capacity stages do not exist for that unit. |
 
 Bat1 is the ESC monitor; Bat2 is the pack's smart BMS. Recommended Bat2 settings:
 
@@ -800,9 +800,10 @@ Bat1 is the ESC monitor; Bat2 is the pack's smart BMS. Recommended Bat2 settings
 | `BATT2_CRT_VOLT` | `44.8` | `0` | 3.2 V/cell, consistent with Bat1 |
 | `BATT2_OPTIONS` | `0` | `0` | Leave **"Ignore DroneCAN SoC" (bit 0) CLEAR** so ArduPilot uses the BMS's accurate reported state-of-charge instead of estimating its own. Already `0` — do not set bit 0. |
 | `BATT2_SERIAL_NUM` | `-1` | `-1` | Accept any BatteryInfo source; pin to the pack's battery ID only if a second source (e.g. a node-110 bridge) is ever added |
-| `BATT2_LOW_MAH` | `7500` | `0` | **Proposed 2026-09-10, pending #248.** Low stage at 25 % remaining. The 911 card carries `6000`. See §7.4. |
-| `BATT2_CRT_MAH` | `4500` | `0` | **Proposed 2026-09-10, pending #248.** Critical stage at 15 % remaining, lands in place. Not in any card yet. |
-| `BATT2_ARM_MAH` | `0` | `0` | Unchanged. An arming block at 30 % remaining (`9000`) is a **separate question** in #248, not part of the proposed posture. |
+| `BATT2_LOW_MAH` | `7500` | `0` | **Approved 2026-09-30 (Julius, #248).** Low stage at 25 % remaining. The 911 card carries `6000`, the 912 card takes `7500`. See §7.4. |
+| `BATT2_CRT_MAH` | `4500` | `0` | **Approved 2026-09-30 (Julius, #248).** Critical stage at 15 % remaining, lands in place. Goes in the 912 card. |
+| `BATT2_ARM_MAH` | `9000` | `0` | **Approved 2026-09-30 (Julius, #248, judged on its own).** Refuses arming below 30 % remaining. The BMS count persists across boots, so a pack installed half used is caught on the ground. Goes in the 912 card. |
+| `LAND_REPOSITION` | `1` | `1` | Keep enabled (Julius, 2026-09-30): the pilot can steer away from a bad spot during a failsafe landing. Already `1` on the first unit. |
 
 Reboot after changing `BATT2_MONITOR`.
 
@@ -814,14 +815,15 @@ Reboot after changing `BATT2_MONITOR`.
 
 > [!IMPORTANT]
 >
-> **Decision taken 2026-09-10 (Project Lead), PROPOSED pending Julius's yes or no in issue #248. Do not cut a parameter card from this block until #248 closes.** Bat2 (the pack BMS) becomes the primary failsafe source on consumed capacity, Bat1 (ESC voltage) stays as the backstop, both monitors keep their voltage thresholds.
+> **Decision taken 2026-09-10 (Project Lead), APPROVED 2026-09-30 by Julius in issue #248, both questions yes. The 912 card is cut from this block.** Bat2 (the pack BMS) becomes the primary failsafe source on consumed capacity, Bat1 (ESC voltage) stays as the backstop, both monitors keep their voltage thresholds.
 >
 > | Parameter | 911 card | Proposed | Meaning |
 > |---|---|---|---|
 > | `BATT2_LOW_MAH` | 6000 | **7500** | Low stage, 25 % remaining |
 > | `BATT2_FS_LOW_ACT` | 0 | **0 through the OA campaign, 2 (RTL) once Test 5 (RTL + OA) passes** | An automatic RTL before Test 5 is an unplanned Test 5 |
 > | `BATT2_CRT_MAH` | 0 | **4500** | Critical stage, 15 % remaining |
-> | `BATT2_FS_CRT_ACT` | 1 | 1 | Land in place |
+> | `BATT2_FS_CRT_ACT` | 1 | 1 | Land in place, `LAND_REPOSITION 1` keeps the pilot's horizontal control |
+> | `BATT2_ARM_MAH` | 0 | **9000** | Arming refused below 30 % remaining (approved as its own question) |
 > | `BATT2_LOW_VOLT` / `BATT2_CRT_VOLT` | 46.2 / 44.8 | unchanged | Last line on Bat2 |
 > | `BATT_*` (Bat1) | 46.2 warn / 44.8 land, `BATT_FS_VOLTSRC 1` | unchanged | Independent backstop if the BMS stops reporting |
 >
@@ -829,13 +831,13 @@ Reboot after changing `BATT2_MONITOR`.
 >
 > **Reserve sizing.** BMS hover draw 50 to 80 A, about 1,100 mAh per minute. Return from the 60 m fence at mission speed plus the landing plus a 6 % counter error band is about 5,000 mAh. 7,500 (25 %) covers it with margin for pack ageing and payload. 4,500 (15 %) is where the aircraft lands itself. Hover flights end at the current 6,000 mAh warning around 22 min, so the low stage moves about two minutes earlier.
 >
-> **Separate question in #248, not part of the posture above:** an arming block at 30 % remaining (`BATT2_ARM_MAH 9000`). The BMS count persists across boots, so it would hold for a pack installed half used. Adopted only if Julius says yes to it on its own.
+> **Arming block, approved 2026-09-30 as its own question:** `BATT2_ARM_MAH 9000` refuses arming below 30 % remaining. The BMS count persists across boots, so it holds for a pack installed half used. Julius's side note, adopted: keep `LAND_REPOSITION 1` for manual flights so the pilot can steer away from a bad spot if a failsafe landing triggers.
 >
 > **Not changed on purpose.** Voltage thresholds stay at 3.3 / 3.2 V/cell (raising them would preempt the capacity logic). Bat1 stays armed as a backstop (a silent BMS with no backstop is worse than an occasional double warning). The open item 8 quirks (negative current sign, coarse `CurrTot` steps, zero `VoltR`/`Res`) do not touch the consumed count the failsafe reads.
 >
-> **When #248 closes with a yes:** cut the 912 card with these deltas alongside the AUTO phase changes, remove the PROPOSED markers here, in §7.3, and in Pilot Handbook §4.2.1, and export a restore point. With a no: Julius's values replace these and the same three places are updated.
+> **Next (from 2026-09-30):** cut the 912 card with these deltas (`BATT2_LOW_MAH 7500`, `BATT2_CRT_MAH 4500`, `BATT2_ARM_MAH 9000`, `BATT2_FS_LOW_ACT` stays `0` until Test 5 passes) alongside the AUTO phase changes, export a restore point, and confirm the arming block fires on a half used pack at the bench before the first flight on the card. Pilot Handbook §4.2.1 carries the approved rule. These are Bat2 lines and stay out of the baseline file (§7.3 block above): they are set on units with a smart pack during configuration.
 
-The documented baseline (superseded by the block above once #248 closes) drove the low-battery failsafe from **Bat1 (ESC, voltage-based)** with **Bat2 (BMS) monitor-only** (`BATT2_FS_LOW_ACT = 0`, `BATT2_FS_CRT_ACT = 0`). The first unit's live config currently runs voltage failsafes on **both** instances (`BATT_FS_LOW_ACT = BATT2_FS_LOW_ACT = 2` RTL at 46.2 V, `BATT_FS_CRT_ACT = BATT2_FS_CRT_ACT = 1` Land at 44.8 V, see `params-HOU.param`). But the Pilot Handbook §4.2.1 failsafe is **"≤ 20% → RTL"**, a *state-of-charge* rule, and the BMS reports true SoC while the ESC monitor only coulomb-counts. So the BMS is the more accurate source for that exact rule.
+The documented baseline (superseded by the block above, approved 2026-09-30) drove the low-battery failsafe from **Bat1 (ESC, voltage-based)** with **Bat2 (BMS) monitor-only** (`BATT2_FS_LOW_ACT = 0`, `BATT2_FS_CRT_ACT = 0`). The first unit's live config currently runs voltage failsafes on **both** instances (`BATT_FS_LOW_ACT = BATT2_FS_LOW_ACT = 2` RTL at 46.2 V, `BATT_FS_CRT_ACT = BATT2_FS_CRT_ACT = 1` Land at 44.8 V, see `params-HOU.param`). But the Pilot Handbook §4.2.1 failsafe is **"≤ 20% → RTL"**, a *state-of-charge* rule, and the BMS reports true SoC while the ESC monitor only coulomb-counts. So the BMS is the more accurate source for that exact rule.
 
 Two options, to be decided with the team (do not flip unilaterally — it changes the documented baseline):
 - **Keep baseline:** Bat1 voltage failsafe, Bat2 rich monitor.
@@ -1369,7 +1371,7 @@ Worked example, second unit 2026-08-12: that unit shipped with mask 61168 (outpu
 Before first flight, confirm (Pilot Handbook §2.5.3):
 
 - [ ] All arming checks enabled. **On 4.8-dev this is `ARMING_SKIPCHK = 0`** (skip-none bitmask), not the legacy `ARMING_CHECK = 1`, which was removed. `standard-params.param` ships `ARMING_SKIPCHK,0` since the 2026-06-25 patch. Read the live value back and confirm it is `0`: one first-unit snapshot (`params-HOU-625.param`) captured `-1`, which skips **every** arming check. Never fly that way.
-- [ ] Battery failsafes: `BATT_FS_LOW_ACT = 2` (RTL), `BATT_FS_CRT_ACT = 1` (Land), thresholds correct for 14S LiHV. **Confirm `BATT_LOW_VOLT` reads `46.2`.** The baseline does not set it (held out of PR #273 on 2026-09-30 until the battery telemetry posture in §7.4 settles), so it is set during configuration per §7.3. The firmware default (about 10 V) never triggers on a 14S pack, so a unit that skipped §7.3 flies with no working voltage-based low-battery RTL.
+- [ ] Battery failsafes, thresholds correct for 14S LiHV: `BATT_FS_CRT_ACT = 1` (Land) on every unit. `BATT_FS_LOW_ACT = 2` (RTL) on a unit without CAN telemetry, `0` (warn) on a unit with the smart pack, where Bat2 carries the capacity stages and the `BATT2_ARM_MAH 9000` arming block (§7.4, approved 2026-09-30). **Confirm `BATT_LOW_VOLT` reads `46.2`.** The baseline does not set it (held out of PR #273 on 2026-09-30 until the battery telemetry posture in §7.4 settles), so it is set during configuration per §7.3. The firmware default (about 10 V) never triggers on a 14S pack, so a unit that skipped §7.3 flies with no working voltage-based low-battery RTL.
 - [ ] RC and GCS failsafe behavior understood and configured.
 - [ ] RTL altitude appropriate for the site. This unit uses `RTL_ALT_TYPE = 1` (terrain-relative), which requires `TERRAIN_ENABLE = 1` plus terrain data, or a working downward rangefinder (used when `WPNAV_RFND_USE = 1`). The `above-terrain` pre-arm warning clears once terrain data is available.
 - [ ] Geo-fence set for the test site: `FENCE_ENABLE = 1`, `FENCE_RADIUS`, `FENCE_ALT_MAX`.
@@ -1565,7 +1567,7 @@ RC calibration done (radio bars move with the MK32 sticks). Channel map on the f
 
 > [!NOTE]
 >
-> **Operating deviation (decided 2026-07-20).** The aircraft currently flies **Pos1 STABILIZE / Pos2 ALTHOLD / Pos3 LOITER** (`FLTMODE1/3/4/5/6 = 0/2/2/5/5`, set at the field 2026-07-09, §17.2). AUTO is off the switch because no auto missions are flown yet, which also removes the mid-position mission-start trap in the warning above. The table above remains the documented standard map and is restored when auto missions enter the program. RTL stays on ch10 in both maps.
+> **Configuration stage map (decided 2026-07-20, confirmed 2026-09-30).** During configuration and validation the first unit flies **Pos1 STABILIZE / Pos2 ALTHOLD / Pos3 LOITER** (`FLTMODE1/3/4/5/6 = 0/2/2/5/5`, set at the field 2026-07-09, §17.2). AUTO is off the switch because no auto missions are flown at this stage, which also removes the mid-position mission-start trap in the warning above. The Pilot Handbook §2.7.1 map (LOITER / AUTO / STABILIZE plus RTL on ch10) is the standard for an operating aircraft and is restored before handover or when auto missions enter the program. RTL stays on ch10 in both maps.
 
 The Flight Modes page is under the **Setup** tab in Mission Planner (not Config).
 
