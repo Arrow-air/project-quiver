@@ -780,6 +780,16 @@ ip -details link show can0   # confirm bitrate 1M, no errors
 
 ### 7.3 Flight controller battery monitor parameters
 
+> [!IMPORTANT]
+>
+> **Batteries with CAN telemetry and without (decision 2026-09-30).** Not every Quiver ships with the Tattu smart pack, so the baseline parameter file configures only what every unit has: Bat1, the ESC monitor (`BATT_MONITOR 9`). The Bat2 table below and the failsafe posture in §7.4 apply only to a unit whose pack reports over DroneCAN. Configure accordingly:
+>
+> | Unit has | Set during configuration |
+> |---|---|
+> | Any pack | `BATT_LOW_VOLT 46.2` and `BATT_CRT_VOLT 44.8` on Bat1 (3.3 and 3.2 V per cell). `BATT_LOW_VOLT` is not in the baseline (held out of PR #273), and the firmware default of about 10 V never triggers on 14S, so a unit that skips this line has no voltage-based low-battery action. Confirm by readback in the first flight checklist. |
+> | Pack with CAN telemetry (Tattu smart BMS) | The Bat2 table below, then the §7.4 posture once #248 closes. |
+> | Pack without CAN telemetry | Leave `BATT2_MONITOR` at the baseline value and do not set any `BATT2_*` line from this section. The Bat1 voltage thresholds are the only battery failsafe on that unit, so the §7.4 capacity stages do not exist for it. |
+
 Bat1 is the ESC monitor; Bat2 is the pack's smart BMS. Recommended Bat2 settings:
 
 | Param | Set to | Base default | Why |
@@ -821,7 +831,7 @@ Reboot after changing `BATT2_MONITOR`.
 >
 > **Separate question in #248, not part of the posture above:** an arming block at 30 % remaining (`BATT2_ARM_MAH 9000`). The BMS count persists across boots, so it would hold for a pack installed half used. Adopted only if Julius says yes to it on its own.
 >
-> **Not changed on purpose.** Voltage thresholds stay at 3.3 / 3.2 V/cell (raising them would pre-empt the capacity logic). Bat1 stays armed as a backstop (a silent BMS with no backstop is worse than an occasional double warning). The open item 8 quirks (negative current sign, coarse `CurrTot` steps, zero `VoltR`/`Res`) do not touch the consumed count the failsafe reads.
+> **Not changed on purpose.** Voltage thresholds stay at 3.3 / 3.2 V/cell (raising them would preempt the capacity logic). Bat1 stays armed as a backstop (a silent BMS with no backstop is worse than an occasional double warning). The open item 8 quirks (negative current sign, coarse `CurrTot` steps, zero `VoltR`/`Res`) do not touch the consumed count the failsafe reads.
 >
 > **When #248 closes with a yes:** cut the 912 card with these deltas alongside the AUTO phase changes, remove the PROPOSED markers here, in §7.3, and in Pilot Handbook §4.2.1, and export a restore point. With a no: Julius's values replace these and the same three places are updated.
 
@@ -1359,7 +1369,7 @@ Worked example, second unit 2026-08-12: that unit shipped with mask 61168 (outpu
 Before first flight, confirm (Pilot Handbook §2.5.3):
 
 - [ ] All arming checks enabled. **On 4.8-dev this is `ARMING_SKIPCHK = 0`** (skip-none bitmask), not the legacy `ARMING_CHECK = 1`, which was removed. `standard-params.param` ships `ARMING_SKIPCHK,0` since the 2026-06-25 patch. Read the live value back and confirm it is `0`: one first-unit snapshot (`params-HOU-625.param`) captured `-1`, which skips **every** arming check. Never fly that way.
-- [ ] Battery failsafes: `BATT_FS_LOW_ACT = 2` (RTL), `BATT_FS_CRT_ACT = 1` (Land), thresholds correct for 14S LiHV. **Confirm `BATT_LOW_VOLT` reads `46.2`.** It ships in `standard-params.param` since the 2026-06-25 patch. The firmware default (about 10 V) never triggers on a 14S pack, so a unit configured from an older base file flies with no working voltage-based low-battery RTL.
+- [ ] Battery failsafes: `BATT_FS_LOW_ACT = 2` (RTL), `BATT_FS_CRT_ACT = 1` (Land), thresholds correct for 14S LiHV. **Confirm `BATT_LOW_VOLT` reads `46.2`.** The baseline does not set it (held out of PR #273 on 2026-09-30 until the battery telemetry posture in §7.4 settles), so it is set during configuration per §7.3. The firmware default (about 10 V) never triggers on a 14S pack, so a unit that skipped §7.3 flies with no working voltage-based low-battery RTL.
 - [ ] RC and GCS failsafe behavior understood and configured.
 - [ ] RTL altitude appropriate for the site. This unit uses `RTL_ALT_TYPE = 1` (terrain-relative), which requires `TERRAIN_ENABLE = 1` plus terrain data, or a working downward rangefinder (used when `WPNAV_RFND_USE = 1`). The `above-terrain` pre-arm warning clears once terrain data is available.
 - [ ] Geo-fence set for the test site: `FENCE_ENABLE = 1`, `FENCE_RADIUS`, `FENCE_ALT_MAX`.
@@ -1401,13 +1411,14 @@ This unit's live configuration differs from the repo param files (`docs/Operatio
 
 | Parameter | Repo baseline | Set on this unit | Why | Repo action |
 |---|---|---|---|---|
-| `NET_P1_TYPE` | *(absent)* | `4` | `params-ethernet.param` omits it, so `NET_P1_PORT`/`NET_P1_PROTOCOL` never instantiate and the FC opens no MAVLink TCP server | **Patched 2026-06-25** — `NET_P1_TYPE,4` added to `params-ethernet.param` |
-| `BATT_LOW_VOLT` | *(absent → default ~`10`)* | `46.2` | not in the old `standard-params.param`; the ~10 V default never triggers on 14S, so voltage-based low-battery RTL was effectively off | **Patched 2026-06-25** — `BATT_LOW_VOLT,46.2` added to `standard-params.param` |
+| `NET_P1_TYPE` | *(absent)* | `4` | `params-ethernet.param` omits it, so `NET_P1_PORT`/`NET_P1_PROTOCOL` never instantiate and the FC opens no MAVLink TCP server | **Patched 2026-06-25, published in PR #273 (2026-09-30)** — `NET_P1_TYPE,4` in `params-ethernet.param` |
+| `BATT_LOW_VOLT` | *(absent → default ~`10`)* | `46.2` | not in `standard-params.param`; the ~10 V default never triggers on 14S, so voltage-based low-battery RTL is off on a unit that does not set it | **Held out of the baseline (PR #273, 2026-09-30)** until the failsafe posture in §7.4 and #248 settles. Set during configuration, §7.3 |
 | `RELAY1_FUNCTION` | `0` | `1` | baseline leaves all relays unconfigured, so the SSR has no control path | Add once the SSR Lua ships on the SD card |
 | `RELAY1_PIN` | *(absent)* | `105` | IO_CH5 (`SSR_S`) drives the main SSR | Add with `RELAY1_FUNCTION` |
 | `RELAY1_DEFAULT` | *(absent)* | `0` | SSR starts open; the Lua script closes it after boot | Add with `RELAY1_FUNCTION` |
-| `ARMING_CHECK` | `1` | *(removed in 4.8)* | replaced by `ARMING_SKIPCHK`; the line is silently ignored on 4.8-dev | **Patched 2026-06-25** — `standard-params.param` now uses `ARMING_SKIPCHK,0` |
-| `AVOID_ANGLE_MAX` | `1000` | *(removed in 4.8)* | the "missing 1 param" on load; gone in 4.8-dev | **Patched 2026-06-25** — dropped from `params-object-avoidance.param` |
+| `ARMING_CHECK` | `1` | *(removed in 4.8)* | replaced by `ARMING_SKIPCHK`; the line is silently ignored on 4.8-dev | **Patched 2026-06-25, published in PR #273 (2026-09-30)** — `standard-params.param` uses `ARMING_SKIPCHK,0` |
+| `AVOID_ANGLE_MAX` | `1000` | *(removed in 4.8)* | the "missing 1 param" on load; gone in 4.8-dev | **Patched 2026-06-25, published in PR #273 (2026-09-30)** — dropped from `params-object-avoidance.param` |
+| `ANGLE_MAX`, `ATC_ACCEL_*`, `ATC_SLEW_YAW`, `LAND_*`, `LOIT_*`, `PILOT_*`, `RTL_ALT*`, `WPNAV_*` (23 lines) | pre 4.8 names, cm and 0.01 degree values | metric names: `ATC_ANGLE_MAX`, `ATC_ACC_*`, `LAND_ALT_LOW_M`, `LAND_SPD_MS`, `LOIT_*_M` / `LOIT_SPEED_MS`, `PILOT_ACC_Z` / `PILOT_SPD_UP`, `RTL_ALT_M`, `WP_*` | the 4.8 build renamed the navigation envelope to metric units. The old names load as unknown parameters and are skipped, so a unit configured from the old file flies on firmware defaults for speed, angle, RTL altitude, and landing. Automatic conversion only runs against values already in FC storage at a firmware flash, never on a file load. Every export from this unit (from `params-HOU-2.param`) and the West Texas unit carries the new names. Found 2026-09-30 | **Published in PR #273 (2026-09-30)** — 22 lines renamed with converted values, `ATC_SLEW_YAW` removed (no longer exists on the build) |
 | `MOT_SPOOL_TIME` | `0.5` | `2` | Hobbywing G2 folding-prop startup delay, catapult-takeoff risk (§10.3, manufacturer instruction) | Still `0.5` in the base file. Candidate to patch, safety item |
 
 ### 14.2 Hardware / config values applied this unit
@@ -1418,8 +1429,9 @@ This unit's live configuration differs from the repo param files (`docs/Operatio
 | `BATT2_CAPACITY` | `3300` | `30000` | match the 30 Ah pack (default corrupts Bat2 SoC) |
 | `BATT2_LOW_VOLT` | `48` | `46.2` | 3.3 V/cell, consistent with Bat1 |
 | `BATT2_CRT_VOLT` | `0` | `44.8` | 3.2 V/cell, consistent with Bat1 |
-| `PRX2_TYPE` | `0` | `17` | NanoRadar MR82 forward proximity (RadarCAN) |
-| `PRX2_RECV_ID` | `0` | `2` | listen only to the MR82 (set to CAN ID 2) so it does not swallow the rangefinder's frames — see §9.2. **Needs a reboot to take effect.** |
+| `PRX2_TYPE` | `0` | `17` | NanoRadar MR82 forward proximity (RadarCAN). In the baseline since PR #273 (2026-09-30) |
+| `PRX2_RECV_ID` | `0` | `2` | listen only to the MR82 (set to CAN ID 2) so it does not swallow the rangefinder's frames — see §9.2. **Needs a reboot to take effect.** In the baseline since PR #273 |
+| `PRX2_ORIENT` | `0` | `1` | the MR82 mounts rolled 180° by design (cable routing). Without this the azimuth is mirrored: a target on the right reads on the left. Found 2026-08-04 in the live proximity viewer, set and verified both sides the same day, fleet standard since 2026-08-06 (OA campaign anomaly A3). In the baseline since PR #273. The mounting and the parameter go together: see the Manufacturing Guide radar installation note |
 | `MOT_SPOOL_TIME` | `0.5` | `2` | Hobbywing X6-Plus-G2 manual — avoid catapult takeoff from the 400 ms folding-prop delay |
 | `SERIAL1_BAUD` | `57` | `115` | HM30 link raised to 115200 on 2026-06-30 so the QGC parameter download survives Stream GCS Position (§8.2). Change the SIYI side together with it. Recorded in the exports since `params-HOU.param` (2026-07-08) |
 | `GPS1_CAN_OVRIDE` | `0` | `121` | pin the F9P (RTK) as GPS 1 — **node ID is unit-specific, will differ per aircraft** |
@@ -1458,7 +1470,7 @@ Burn-down of the full initial configuration against the Pilot Handbook. Updated 
 > 2. **Remote ID identity (§8): DONE 2026-07-07.** UA_TYPE = multirotor, UAS ID, and Operator ID set. Operator location supplied by mainline QGC on the MK32 (§8.2). No RID pre-arm remains.
 > 3. **Logging + SD verify (§2.5.3): DONE 2026-07-07.** FC dataflash logging to SD confirmed working.
 > 4. **Servo/Relay labels 1 to 6 (§2.8.5): DONE 2026-06-19.** Six MP labels set (cosmetic, per-PC). Relays 2–6 intentionally left unconfigured (enable only when an attachment needs one).
-> 5. **Base param-file defects (§14, Open Items 4–5): PATCHED 2026-06-25 in the overlays.** `params-ethernet.param` now carries `NET_P1_TYPE,4`; `standard-params.param` uses `ARMING_SKIPCHK,0` (was `ARMING_CHECK,1`) and adds `BATT_LOW_VOLT,46.2`; `params-object-avoidance.param` drops `AVOID_ANGLE_MAX`. Reload the overlays on the unit to confirm they take.
+> 5. **Base param-file defects (§14, Open Items 4–5): PATCHED 2026-06-25 in the overlays, PUBLISHED in PR #273 (2026-09-30).** `params-ethernet.param` carries `NET_P1_TYPE,4`; `standard-params.param` uses `ARMING_SKIPCHK,0` (was `ARMING_CHECK,1`), adds `PRX2_TYPE,17` / `PRX2_RECV_ID,2` / `PRX2_ORIENT,1`, and uses the 4.8 metric names for the navigation envelope; `params-object-avoidance.param` drops `AVOID_ANGLE_MAX`. `BATT_LOW_VOLT,46.2` was held out of the baseline (see §14.1 and §7.3) and is set per unit. Reload the overlays on the unit to confirm they take.
 > 6. **SIYI check: DONE 2026-06-19.** HM30 telemetry on SERIAL1 (TELEM1 / UART7, §16.2). A8 video confirmed in the FPV app and in QGC RTSP on the MK32 (gotcha: the MK32 Chinese keyboard typed a full-width colon in the URL, now fixed, §16.6).
 >
 > **Outdoor, clear sky (§2.5.2):** GPS 3D fix / HDOP and compass LVMC **DONE 2026-06-22 via Mission Planner** (GPS1/F9P DGPS 20 sats HDOP 0.72; LVMC offsets Matek ~279, F9P ~125, heading verified; §3.2, §5.2 click-paths validated). GPS2 Matek M9N No-Fix was recovered twice by cold start but the module kept degrading and was **REPLACED 2026-07-13** (new module = DroneCAN node 119, `GPS2_CAN_OVRIDE` updated, compass re-prioritized, LVMC re-run, all verified by readback; §5.1, §5.2, §3.2). Remaining: MagFit refinement (needs a flight log), and restore `GPS_AUTO_SWITCH` 4 → 1 once the new M9N tracks the F9P through a flight log (§17.5). RTK is not used on this drone.
