@@ -344,7 +344,7 @@ The Main PCB design uses two CAN nets; the payload connectors are routed to CAN2
 
 1. **CAN1:** The Main PCB keeps the payload connector nets off CAN1.
 2. **CAN2:** Bottom J31, Side 1 J29, and Side 2 J30 route to `/CAN2_H` and `/CAN2_L`.
-  - The NanoRadar MR82 uses CAN at 500 kbit/s with a non-DroneCAN protocol. The RPLidar S2L connects over serial.
+  - The NanoRadar MR82 uses CAN at 500 kbit/s with a non-DroneCAN protocol. The RPLidar S2 connects over serial.
   - Keep the NanoRadar separate from DroneCAN nodes unless the combination has been tested successfully. Before flight, verify the bitrate, protocol, wiring, and termination of all devices on the bus.
 
 > [!NOTE]
@@ -357,20 +357,21 @@ The Main PCB design uses two CAN nets; the payload connectors are routed to CAN2
 Quiver does not provide an always-on, unswitched battery feed on the attachment connectors. Every power rail is controlled by an electronic switch.
 
 ```
-[14S LiPo, ~50–58.8V] ──/HV+,/HV-── (unfused at both converters' VIN)
-   │
-   ├─> PS2 (REC30K-4812SZ, 30W/2.5A) ─VOUT─> F4 (5A) ─> +12V
-   │                                                       │
-   │        ┌───────────────────── K1 (CPC1019N) ─LOAD_1─> F1 (2A) ─> /12VSW ─> J31 pin 6 only
-   │        │    ctrl: R1 <─ /FMU_CH2
-   │        │
-   │        └───────────────────── F8 (PTC ~1.1A hold) ─> F7 (2A) ─> U5 (CPC1907B) ─D1─> +12V_PL ─> J29/J30/J31 pin 6/16
-   │                                                              ctrl: R15 <─ /FMU_CH4 ("12V Pay")
-   │
-   ├─> PS1 (REC20K-4805SZ, 20W) ─VOUT─> F3 (5A) ─> +5V ─> companion computer (J1, Raspberry Pi 5 header), CAN transceiver U1, misc headers
-   │
-   └─> U4 (CPC1907B) ─D1─(from /HV+ directly)─D2─> F2 (5A) ─> J26 pin 1, switched HV
-                    ctrl: R23 <─ /IO_CH7 ("Add HV")
+[14S LiPo, ~50-58.8V] --/HV+,/HV-- (unfused at both converters' VIN)
+   |
+   +-> PS2 (REC30K-4812SZ, 30W/2.5A) -VOUT-> F4 (5A) -> +12V
+   |      |
+   |      +-- K1 (CPC1019N) -> Q1 -> F1 (2A) -> /12VSW -> J31 pin 6 only
+   |      |      ctrl: /FMU_CH2
+   |      |
+   |      +-- K2 (CPC1019N) -> Q2 -> F8 (PTC ~1.1A hold) -> F7 (2A) -> +12V_PL -> J29/J30/J31 pin 2
+   |             ctrl: /FMU_CH4 ("12V Pay")
+   |
+   +-> PS1 (REC20K-4805SZ, 20W) -VOUT-> F3 (5A) -> +5V -> companion computer (J1, Raspberry Pi 5 header), misc headers
+   |
+   +-> J26 switched HV: HV+ -> F2 (5A) -> J26 pin 2
+                        HV- -> Q3 (low-side switch) -> J26 pin 1 (AC_HV-)
+                        ctrl: K3 (CPC1019N) <- /IO_CH7 ("Add HV")
 ```
 
 #### A. Main 12V Payload Rail (`+12V_PL`)
@@ -497,9 +498,13 @@ Use these onboard device addresses when configuring payload networking:
 
 | Device | Address |
 |---|---|
-| Raspberry Pi (companion computer) | `192.168.144.50` |
-| CubeNode ETH adapter | `192.168.144.10` |
-| Flight controller | `192.168.144.51` |
+| Raspberry Pi (companion computer) | `192.168.144.49` |
+| CubeNode ETH adapter | `192.168.144.50` |
+| Flight controller | `192.168.144.51` (assigned over PPP as the CubeNode address plus 1) |
+
+The SIYI hardware on the same subnet uses fixed addresses that cannot be changed: `.11` (air unit), `.12` (ground unit), `.20` (Android ground station), `.25` (A8 Mini camera), and `.60` (reserved). Never assign these to a payload. Ground stations and development machines use `.200` to `.254`.
+
+The payload-systems Interface Control Document (ICD 1.0-draft) lists the companion Pi as `.50`. The current aircraft configuration is Pi `.49`, CubeNode `.50`, flight controller `.51` (Initial Configuration Guide, network topology), so the ICD needs a revision.
 
 Confirm the active aircraft network configuration before assigning an address; avoid duplicating any address already in use.
 
@@ -507,9 +512,9 @@ Confirm the active aircraft network configuration before assigning an address; a
 
 | Function | Address | Notes |
 |---|---|---|
-| Companion computer | `192.168.144.50` | Pi on the drone network |
-| CubeNode ETH | `192.168.144.10` | Ethernet adapter |
-| Flight controller | `192.168.144.51` | ArduPilot MAVLink endpoint |
+| Companion computer | `192.168.144.49` | Pi on the drone network |
+| CubeNode ETH | `192.168.144.50` | Ethernet adapter; the flight controller's PPP peer and gateway |
+| Flight controller | `192.168.144.51` | ArduPilot MAVLink endpoint; PPP-assigned as CubeNode address plus 1 |
 | Payload bottom | `192.168.144.100` | Default bottom port payload |
 | Payload side 1 | `192.168.144.101` | Default right-side payload |
 | Payload side 2 | `192.168.144.102` | Default left-side payload |
