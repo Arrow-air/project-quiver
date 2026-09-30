@@ -573,24 +573,24 @@ This sequence defines the only approved process from battery installation to tak
     * *If the pack has no CAN telemetry:* Mission Planner may not provide an obvious live indication that the Lua script has changed the relay state. If unsure, reboot the aircraft and allow the auto-engage script to run again, or press the physical button again. You can also manually activate/deactivate the SSR with the Mission Planner relay button and watch for the expected voltage change.
     * *Fault / uncertainty:* The SSR normally activates reliably. These checks are mainly for troubleshooting if something seems wrong. If the SSR is deactivated and the aircraft is armed, the motors may spin only briefly before the system drops into undervoltage. If the SSR is not confirmed closed, do not fly; troubleshoot the script, relay state, or power system before continuing.
 
-### 3.4 Motor Power and Arming
+### 3.4 Mission Load and Arming
 
-11. Keep main motor power disabled during configuration.
-12. Load mission or RTK data if applicable.
+Main motor power is already on: the SSR auto-engage script closed it after boot (§2.4, §3.3 step 10). The aircraft is safe during mission load because it is not armed, not because motor power is off. Do not open the SSR to load a mission (§2.4 caution).
+
+11. Load mission or RTK data if applicable.
 > [!NOTE]
 >
-> Steps 11–13 require the mission to be loaded before enabling motor power. This ensures:
+> Load and verify the mission before arming. This ensures:
 > - Waypoints and geo-fence are verified while the aircraft is safe on the ground,
-> - Any upload errors or configuration issues are caught before the motors are live,
+> - Any upload errors or configuration issues are caught before the motors can spin,
 > - The pilot can abort without risk if the mission is incorrect.
-13. Enable main motor power.
-14. Select LOITER mode.
-15. Arm via RC.
+12. Select LOITER mode.
+13. Arm via RC.
     * *Expectation:* Motors spin at idle.
     * *Fault:* If a motor fails to spin, disarm immediately.
-16. Observe motors for abnormal behavior.
-17. Take off slowly and climb to a safe hover altitude.
-18. Verify stability before proceeding with mission modes.
+14. Observe motors for abnormal behavior.
+15. Take off slowly and climb to a safe hover altitude.
+16. Verify stability before proceeding with mission modes.
 
 ### 3.5 Abort Criteria
 
