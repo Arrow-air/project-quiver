@@ -626,3 +626,5 @@ BACKZ
 esptool
 Lonly
 SUPL
+multipath
+autoconnect
