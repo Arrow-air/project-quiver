@@ -154,7 +154,6 @@ ELRS
 ENABL
 endangle
 ENIG
-Erick
 errrks
 Eurostyle
 extrafields
