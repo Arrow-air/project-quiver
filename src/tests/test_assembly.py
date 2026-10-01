@@ -37,7 +37,8 @@ BBOX_MIN = (-673.6, -664.5, -547.9)
 BBOX_MAX = (673.6, 673.6, 193.7)
 BBOX_TOL = 1.0
 
-TOTAL_SOLIDS = 1242
+# Fusion v148: adapter +18 solids; additional PPP/beacon board +1.
+TOTAL_SOLIDS = 1261
 
 
 def test_top_level_structure(assembly):
