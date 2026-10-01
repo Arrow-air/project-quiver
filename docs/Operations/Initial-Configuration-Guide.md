@@ -1266,7 +1266,7 @@ The high-voltage main power path is gated by a Solid State Relay (SSR). Until th
 ### 11.1 How it works
 
 1. The BC PCB pre-charge pushbutton brings up the Main PCB 5V/12V regulators and boots the FC. The pre-charge resistor partially fills the ESC bulk capacitors to limit inrush, but cannot carry motor current.
-2. The SSR (Main PCB U3 plus the BC PCB main-power SSR) bypasses the pre-charge resistor to connect the full HV bus. Its control input is the FC signal **IO_CH5 (`SSR_S`)**, with `IO_CH6` / `SSR_S2` as a redundant path.
+2. The SSR (Main PCB U3 plus the BC PCB main-power SSR) bypasses the pre-charge resistor to connect the full HV bus. Its control input is the FC signal **`IO_CH5`**, with **`IO_CH5_Backup`** (J46 pin 5) as a redundant trace of the same signal. Those are the net names on the Main PCB V1.2 schematic; there is no `SSR_S` or `SSR_S2` net on the board, and `IO_CH6` is a separate channel that plays no part in SSR control (corrected 2026-09-30 against the schematic).
 3. ArduPilot maps `RELAY1` to the GPIO pin driving that signal. Setting Relay 1 high closes the SSR. In Mission Planner this is the **Servo/Relay** page button.
 4. The auto-engage Lua script automates step 3: on boot it waits a short delay then calls `relay:on(0)` to close the SSR so the pilot does not press the button manually.
 
@@ -1282,7 +1282,7 @@ The baseline param set ships with the SSR control unconfigured. This is a baseli
 
 ```
 RELAY1_FUNCTION = 1     ; Relay
-RELAY1_PIN      = 105   ; IO_CH5 (SSR_S), confirmed correct for the Dev-Kit Main PCB
+RELAY1_PIN      = 105   ; IO_CH5, confirmed correct for the Dev-Kit Main PCB
 RELAY1_DEFAULT  = 0     ; SSR starts open
 ```
 
@@ -1416,7 +1416,7 @@ This unit's live configuration differs from the repo param files (`docs/Operatio
 | `NET_P1_TYPE` | *(absent)* | `4` | `params-ethernet.param` omits it, so `NET_P1_PORT`/`NET_P1_PROTOCOL` never instantiate and the FC opens no MAVLink TCP server | **Patched 2026-06-25, published in PR #273 (2026-09-30)** — `NET_P1_TYPE,4` in `params-ethernet.param` |
 | `BATT_LOW_VOLT` | *(absent → default ~`10`)* | `46.2` | not in `standard-params.param`; the ~10 V default never triggers on 14S, so voltage-based low-battery RTL is off on a unit that does not set it | **Held out of the baseline (PR #273, 2026-09-30)** until the failsafe posture in §7.4 and #248 settles. Set during configuration, §7.3 |
 | `RELAY1_FUNCTION` | `0` | `1` | baseline leaves all relays unconfigured, so the SSR has no control path | Add once the SSR Lua ships on the SD card |
-| `RELAY1_PIN` | *(absent)* | `105` | IO_CH5 (`SSR_S`) drives the main SSR | Add with `RELAY1_FUNCTION` |
+| `RELAY1_PIN` | *(absent)* | `105` | `IO_CH5` drives the main SSR (`IO_CH5_Backup` on J46 pin 5 is the redundant trace) | Add with `RELAY1_FUNCTION` |
 | `RELAY1_DEFAULT` | *(absent)* | `0` | SSR starts open; the Lua script closes it after boot | Add with `RELAY1_FUNCTION` |
 | `ARMING_CHECK` | `1` | *(removed in 4.8)* | replaced by `ARMING_SKIPCHK`; the line is silently ignored on 4.8-dev | **Patched 2026-06-25, published in PR #273 (2026-09-30)** — `standard-params.param` uses `ARMING_SKIPCHK,0` |
 | `AVOID_ANGLE_MAX` | `1000` | *(removed in 4.8)* | the "missing 1 param" on load; gone in 4.8-dev | **Patched 2026-06-25, published in PR #273 (2026-09-30)** — dropped from `params-object-avoidance.param` |
