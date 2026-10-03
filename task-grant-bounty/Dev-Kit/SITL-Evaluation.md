@@ -32,26 +32,22 @@ This approach allows relative comparison of parameter effects while maintaining 
 ## Sensor Simulation
 
 ### Top-Mounted LiDAR
-The top-mounted 360° LiDAR used on Quiver is not directly available as a native SITL sensor model. To approximate its behavior:
-- The SF45 LiDAR model was used in simulation.
-- The model was configured to reflect the operational limitations of Quiver's top-mounted LiDAR (range and horizontal-only awareness).
-- The simulated sensor feeds obstacle data into the ArduPilot proximity framework in the same manner as the real system.
-
-This substitution provides a functional approximation suitable for studying avoidance logic and parameter interactions, while acknowledging that it does not replicate exact sensor physics or noise characteristics.
+The top-mounted 360° LiDAR used on Quiver is natively supported in ArduPilot SITL via the RPLidar S2 model (`sim:rplidars2`):
+- PR #31730 (native RPLidarS2 SITL model) merged into upstream master on 2025-12-16.
+- PR #31663 (RPLidar S2 driver) merged on 2026-05-26.
+- The simulated sensor feeds 360° obstacle range data directly into the ArduPilot proximity framework.
 
 ## Simulation Startup Configuration
 
 The SITL environment is launched using the following command:
 
 ```bash
-../Tools/autotest/sim_vehicle.py --map --console \
-  -A "--serial5=sim:sf45b --serial6=sim:obstacle"
+../Tools/autotest/sim_vehicle.py --map --console -A "--serial5=sim:rplidars2"
 ```
 
 Key elements:
-- `sim:sf45b` is used to simulate the top-mounted LiDAR input.
-- `sim:obstacle` enables the obstacle simulation backend.
-- The simulation is visualized and monitored using QGroundControl.
+- `sim:rplidars2` is used to simulate the top-mounted RPLidar S2 input.
+- The simulation is visualized and monitored using MAVProxy and QGroundControl.
 
 ## Obstacle and Fence Interaction
 
