@@ -40,7 +40,7 @@ items:
     qty: 1
     sourcing: laser-cut
     material: Aluminum
-    spec: 40x40x2 mm box section
+    spec: 40x40x1 mm box section
     design_ref: src/quiver/airframe_structure/beams/steps/1211_cw_long.step
     unit_cost_usd: 43.00
     suppliers:
@@ -51,7 +51,7 @@ items:
     qty: 2
     sourcing: laser-cut
     material: Aluminum
-    spec: 40x40x2 mm box section
+    spec: 40x40x1 mm box section
     design_ref: src/quiver/airframe_structure/beams/steps/1212_ccw_back.step
     unit_cost_usd: 27.00
     suppliers:
