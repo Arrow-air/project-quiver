@@ -31,10 +31,14 @@ EXPECTED_TREE = {
 }
 
 # Full-assembly bounding box (mm), dominated by the propeller sweep and
-# landing gear. Tolerance is generous enough for tessellation noise but
-# tight enough to catch a mispositioned part.
-BBOX_MIN = (-673.6, -664.5, -547.9)
-BBOX_MAX = (673.6, 673.6, 193.7)
+# landing gear. The propeller handedness fix (diagonal CW/CCW pairs to match
+# Fusion v148) reoriented the rear props, so the X/Y extremes now follow
+# Fusion's mirror symmetry: X +/-664.5 (short prop axis), Y +/-673.6 (long
+# prop axis). Previously X/Y were swapped on the min side from the buggy
+# orientation. Tolerance is generous enough for tessellation noise but tight
+# enough to catch a mispositioned part.
+BBOX_MIN = (-664.5, -673.6, -547.9)
+BBOX_MAX = (664.5, 673.6, 193.7)
 BBOX_TOL = 1.0
 
 # Fusion v148: adapter +18 solids; the PPP/beacon board replaces the old

@@ -103,6 +103,65 @@ or physical fit.
 - Review enclosure/hinge/latch fit and sensor clearance; the automated tests check
   source placement and assembly integrity, not every physical interface.
 
+## Final sync: handed parts, full poses, Fusion retired (October 16, 2026)
+
+Decisions after the full build123d review: the mirrored parts are real, the
+BOM/CAD numbering stays, the Fusion master is retired, and placement switches to
+full poses. The build123d model is now the master.
+
+Earlier the same day: the propellers were regrouped into diagonal CW/CCW pairs
+(Quad X; the repository had same-side pairs), the carbon tube walls went from 2 mm
+to 1 mm (30x28 tube, as in the BOM and Fusion), and the right 2111 spacer was
+turned about Y, as Fusion places it.
+
+**Handed parts.** Parts the repository modeled as one STEP used twice are mirror
+images in Fusion. Each hand now has its own BOM number and STEP file:
+
+| BOM | Part | Hands | Source |
+| --- | --- | --- | --- |
+| 1212 / 1213 | Cockpit support beam, CCW back / front | 1213 mirrors 1212 | Fusion components 1212-CCW_Back, 1213-CCW_Front |
+| 1221 / 1222 | Battery wall, left / right | 1221 mirrors 1222 | Fusion 1221-LeftWall, 1222-RightWall (the old 1221 STEP is the right wall) |
+| 1331 / 1332 | Landing gear main adapter | FR, BL / FL, BR | 1332 is 1331 mirrored about its own YZ plane; matches Fusion 1332-FL and 1333-BR within 3e-5 mm |
+| 1341 / 1342 | Landing gear tube joint | FR, BL / FL, BR | Same, within 2e-5 mm. Fusion models the joint this way; still to be confirmed |
+
+**Full poses.** Every part is placed with `place(part, pos, rot)`, a full rigid
+transform equal to its Fusion v148 occurrence transform. The pose of each of the
+82 part instances was solved from the Fusion geometry (B-rep vertex or per-solid
+fits); after rounding, nearly every part lands within 1e-4 mm of Fusion.
+`place_at()`, which matched only the center of mass, is gone. The new
+`tests/test_placement.py` checks bounds, centroid and 16 reference vertices of
+every instance against `src/quiver/part-poses.json`. Errors this exposed, now fixed:
+
+| Part | Was | Now |
+| --- | --- | --- |
+| Landing gear adapters, tubes, joints | 21.18° tilt, derived from two rounded distances | Fusion's 21.000° |
+| 3112 BL propeller | Turned 180° about its shaft (7.8 mm vertex error; same center and bounds) | Fusion pose |
+| 3320 BC PCB | 19.2 mm above the 2312 mount | Seated in the mount |
+| 1212 CCW back beam | 0.024 mm off | Fusion pose |
+| 2112 bottom interface | 0.09 mm and 0.02° off | Fitted to Fusion's pins and springs, kept square |
+
+**BC PCB and busbars.** The 3320 STEP was already V1.3: it is identical to Fusion's
+`Front_PCB_V1.3` (229 solids, fit within 1e-12 mm), including the heatsink and
+connector bodies that the KiCad V1.3 export from #271 lacks. The 3310 and 3320
+board bodies match the KiCad sources (Dev-Kit V1.2 main board, V1.3 battery board)
+exactly. The 4010 busbars now use Fusion's 40.3 mm 3322/3323 design (the old ones
+were 29 mm tall).
+
+Kept on the repository pose instead of Fusion's: the foam sleeves (Fusion draws
+them 2 mm above the tube axis), and the GNSS mount and Wren Mini, which are not in v148.
+
+**BOM and guide.** BOM: the handed items above, cockpit beams 40x40x1 mm, lower
+plate 4 mm sheet. The Manufacturing Guide now uses BOM/CAD numbers throughout; it
+used Fusion instance numbers, which differ from the BOM in 3200 and 3300.
+
+Open items:
+
+- 1332 and 1342 are marked TBC: the RJX listing shows one adapter version, and the
+  joint's handedness is not confirmed outside Fusion.
+- The 2420 hinge is chiral. CAD and Fusion mirror the left hinge, but the BOM buys
+  one JW Winco part twice; one of the two is wrong (2.6 mm difference).
+- Fusion calls the +Y beam "CCW back", but +Y is forward everywhere else.
+
 ## Validation
 
 With Python 3.12 and `src/constraints.txt` installed:
@@ -110,8 +169,12 @@ With Python 3.12 and `src/constraints.txt` installed:
 ```bash
 PYTHONPATH=src python -m pytest src/tests/ -q
 PYTHONPATH=src python -m quiver.bom render --check
+PYTHONPATH=src python -m quiver.placement check
 PYTHONPATH=src python -m quiver.assembly -o /tmp/quiver-mechanical.step
 ```
 
-The full-assembly count changes from 1,242 to 1,260 solids: +18 in the adapter
-assembly. The outer drone envelope is unchanged.
+The full-assembly count changed from 1,242 to 1,260 solids: +18 in the adapter
+assembly. Since the propeller handedness fix, the envelope's X and Y extents are
+±664.5 and ±673.6 mm (they were swapped). The exported STEP re-imports with the
+same 1,260 solids; six pre-existing solids in vendor and print models (top cap,
+LiDAR, radar altimeter, battery) fail OCC's validity check, none in changed parts.

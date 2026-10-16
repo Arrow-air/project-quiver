@@ -40,16 +40,15 @@ STEP files in steps/:
 
 from pathlib import Path
 
-from build123d import Compound, Location
+from build123d import Compound
 
-from quiver.common import PETG, load_step
+from quiver.common import PETG, load_step, place
 from quiver.gps import DEFAULT_PRIMARY_GPS, F9P_MOUNT_DZ, validate_primary_gps
 
 _DIR = Path(__file__).parent
 
-# Z corrections for parts whose Fusion export offset differs from
-# the reference assembly. Derived by comparing raw STEP CoM against
-# the 2000-SupportStructure.step reference.
+# Z correction for the PCB adapter, whose STEP export offset differs from
+# the assembly (poses: see quiver.common.place). GNSS mounts: see quiver.gps.
 _MAIN_PCB_MOUNT_DZ = -7.85       # Fusion v148 occurrence transform, cm -> mm
 
 
@@ -63,7 +62,7 @@ def make_assembly(primary_gps: str = DEFAULT_PRIMARY_GPS) -> Compound | None:
     main_pcb = load_step(_DIR, "2311_main_pcb_mount")
     if main_pcb:
         main_pcb.color = PETG
-        main_pcb.move(Location((0, 0, _MAIN_PCB_MOUNT_DZ)))
+        place(main_pcb, (0, 0, _MAIN_PCB_MOUNT_DZ))
         children.append(main_pcb)
 
     bc_mount = load_step(_DIR, "2312_bc_pcb_mount")
@@ -90,7 +89,7 @@ def make_assembly(primary_gps: str = DEFAULT_PRIMARY_GPS) -> Compound | None:
     else:
         gnss_mount = load_step(_DIR, "2331_gnss_mount_base")
         if gnss_mount:
-            gnss_mount.move(Location((0, 0, F9P_MOUNT_DZ)))
+            place(gnss_mount, (0, 0, F9P_MOUNT_DZ))
     if gnss_mount:
         gnss_mount.color = PETG
         children.append(gnss_mount)

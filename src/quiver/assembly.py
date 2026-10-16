@@ -36,7 +36,10 @@ def make_assembly(primary_gps: str = DEFAULT_PRIMARY_GPS) -> Compound | None:
     children = [s for s in subassemblies if s is not None]
     if not children:
         return None
-    return Compound(children=children, label="Quiver Drone")
+    assembly = Compound(children=children, label="Quiver Drone")
+    # Placement records for the GNSS parts apply to one receiver option.
+    assembly.primary_gps = primary_gps
+    return assembly
 
 
 def export(output: Path | None = None, primary_gps: str = DEFAULT_PRIMARY_GPS) -> Path:
