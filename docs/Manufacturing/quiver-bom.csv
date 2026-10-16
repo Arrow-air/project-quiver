@@ -23,7 +23,6 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 2331,GNSS Mount Base,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,Holybro NEO-F9P Rover option only; omit for Here4. Existing F9P v6 geometry is retained; review stack-up and print fit before release.
 2333,"GNSS Mount, Here4",Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,"Here4 option only; omit for Holybro. Imported from Fusion v148. Select one primary receiver and its matching mount, not both."
 2341,PPP Adapter and Beacon Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
-2342,PPP Adapter and Beacon Mounting Board,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,"Additional board from Fusion master v148, linked board v12. Used with the original mount (2341), not instead of it."
 2411,Main Enclosure,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2412,Enclosure Top Cap,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2420,Enclosure Hinge,Supporting Structure,2,2,cots,Zinc die-cast,,JW Winco,GN 237-ZD-30-30-A-SW,https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type,10.00,20.00,,

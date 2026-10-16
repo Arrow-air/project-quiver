@@ -20,7 +20,7 @@ Custom PCBs for the distributed board architecture.
                 Rear Attach PCB
 
 Vendor parts in steps/vendor/:
-    3310_main_pcb.step      Main PCB assembly (no transform, extract_solids >=50mm³)
+    3310_main_pcb.step      Main PCB assembly (dZ -7.40, extract_solids >=50mm³)
     3320_bc_pcb.step        BC PCB (dZ -4.30, extract_solids >=1mm³)
     3331_attach_pcb.step    Attachment interface PCB (used 3x, rotated per position)
 
@@ -36,6 +36,9 @@ from quiver.common import load_step, place_at
 
 _DIR = Path(__file__).parent
 
+# Main PCB Z offset: the board rests on the 2311 adapter (Fusion v148).
+_MAIN_PCB_DZ = -7.40
+
 # BC PCB Z offset (raw Z=14.10, reference Z=9.81).
 _BC_PCB_DZ = -4.30
 
@@ -50,7 +53,7 @@ def make_assembly() -> Compound | None:
     """Build the PCB subassembly from imported STEP files."""
     children = []
 
-    # --- Main PCB — no transform needed ---
+    # --- Main PCB — Z offset only ---
     # extract_solids with min_solid_volume drops tiny SMD components
     # that overwhelm the viewer (1607 → ~206 solids).
 
@@ -59,6 +62,7 @@ def make_assembly() -> Compound | None:
         extract_solids=True, min_solid_volume=50.0,
     )
     if main_pcb:
+        main_pcb.move(Location((0, 0, _MAIN_PCB_DZ)))
         children.append(main_pcb)
 
     # --- BC PCB — Z offset only ---

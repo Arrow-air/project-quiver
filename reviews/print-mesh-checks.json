@@ -52,16 +52,16 @@
       "preserved_existing_file": false
     },
     {
-      "part": "2342",
-      "sha256": "f9c409b0f2913d2aee6808732b319c4743d891b383990e0a6299ca3ed4706f46",
+      "part": "2341",
+      "sha256": "29f2f2db6b6ec88de575bd04d164b333ecbe0d5a2a76d2bd84e9e3dfe3b74b15",
       "watertight": true,
       "consistent_winding": true,
-      "faces": 40228,
-      "mesh_volume_mm3": 10288.166321939605,
+      "faces": 9776,
+      "mesh_volume_mm3": 10289.043672833832,
       "fusion_volume_mm3": 10288.281496937556,
-      "volume_error_percent": 0.0011194775141554203,
+      "volume_error_percent": 0.007408194424917519,
       "max_bounds_error_mm": 5.89567849829109e-06,
-      "preserved_existing_file": false
+      "preserved_existing_file": true
     },
     {
       "part": "2411",
