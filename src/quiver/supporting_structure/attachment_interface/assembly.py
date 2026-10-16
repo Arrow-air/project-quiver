@@ -26,32 +26,32 @@ STEP files in steps/:
     2112_attach_plate.step          Quick-release interface plate (used 3x)
     2131_attach_spacer_bottom.step  Spacer for bottom, with wiring notch (used 1x)
 
-Position constants are center-of-mass coordinates measured from the
-Fusion 360 PT3 master model export.
+Poses are full rigid transforms (see quiver.common.place) from the Fusion
+360 v148 master.
 """
 
 from pathlib import Path
 
-from build123d import Axis, Compound
+from build123d import Compound
 
-from quiver.common import ALUMINUM, PETG, load_step, place_at
+from quiver.common import ALUMINUM, PETG, load_step, place
 
 _DIR = Path(__file__).parent
 
-# Interface plate target positions (center of mass, from Fusion reference).
-# The plate STEP contains only the drone-side of the quick-release mechanism
-# (Fixed_Top + press pins + springs). The mechanism direction runs along
-# local -Y in the raw STEP file. Each mounting point needs two rotations:
-#   1. A primary rotation to aim the mechanism outward (away from drone).
-#   2. A 180-deg flip to correct the internal feature orientation.
-_RIGHT_PLATE_POS = (185.65, -0.02, -71.00)
-_LEFT_PLATE_POS = (-185.65, 0.02, -71.00)
-_BOTTOM_PLATE_POS = (0.0, 0.0, -160.70)
+# Interface plate poses (STEP origin mm, intrinsic XYZ deg). The plate STEP
+# contains only the drone side of the quick-release mechanism (Fixed_Top +
+# press pins + springs), with the mechanism along local -Y. rotZ aims it
+# outward, rotX(180) flips it to the drone-side orientation.
+_RIGHT_PLATE_POSE = ((164.7019, 3.8438, -22.9383), (180, 0, 90))     # mechanism faces +X
+_LEFT_PLATE_POSE = ((-164.7019, -3.8438, -22.9383), (180, 0, -90))   # mechanism faces -X
+# Fusion's bottom fixed top is a slightly different body, turned 0.02 deg
+# off square; this pose keeps it square, fitted to the press pins and springs.
+_BOTTOM_PLATE_POSE = ((3.8438, -48.1421, -139.7019), (-90, 0, 180))  # mechanism faces -Z
 
-# Right spacer center of mass (Fusion v148). The left spacer STEP is baked
-# at the correct left position, but mirroring it to the right with rotate(Z)
-# alone left it ~3.3 mm off; pin the CoM to the Fusion placement.
-_RIGHT_SPACER_POS = (165.0, 0.0, -71.0)
+# The spacer STEP is baked at the left position (X = -165). Fusion's right
+# occurrence is the same block turned 180 deg about Y (transform diag
+# -1,+1,-1), which also lifts it by 142 mm; the origin moves down to match.
+_RIGHT_SPACER_POSE = ((0, 0, -142), (0, 180, 0))
 
 
 def make_assembly() -> Compound | None:
@@ -60,23 +60,15 @@ def make_assembly() -> Compound | None:
 
     # --- Right side (2110) ---
 
-    # The spacer STEP has a baked-in position on the left side (X = -165).
-    # Fusion's right occurrence is a 180 deg turn about Y (transform diag
-    # -1,+1,-1); mirror it the same way, then pin the CoM to +165.
     right_spacer = load_step(_DIR, "2111_attach_spacer")
     if right_spacer:
         right_spacer.color = PETG
-        right_spacer = right_spacer.rotate(Axis.Y, 180)
-        place_at(right_spacer, *_RIGHT_SPACER_POS)
-        children.append(right_spacer)
+        children.append(place(right_spacer, *_RIGHT_SPACER_POSE))
 
     right_plate = load_step(_DIR, "2112_attach_plate")
     if right_plate:
         right_plate.color = ALUMINUM
-        right_plate = right_plate.rotate(Axis.Z, 90)    # mechanism faces +X (outward)
-        right_plate = right_plate.rotate(Axis.X, 180)    # flip to match reference
-        place_at(right_plate, *_RIGHT_PLATE_POS)
-        children.append(right_plate)
+        children.append(place(right_plate, *_RIGHT_PLATE_POSE))
 
     # --- Left side (2120) ---
 
@@ -89,10 +81,7 @@ def make_assembly() -> Compound | None:
     left_plate = load_step(_DIR, "2112_attach_plate")
     if left_plate:
         left_plate.color = ALUMINUM
-        left_plate = left_plate.rotate(Axis.Z, -90)     # mechanism faces -X (outward)
-        left_plate = left_plate.rotate(Axis.X, 180)      # flip to match reference
-        place_at(left_plate, *_LEFT_PLATE_POS)
-        children.append(left_plate)
+        children.append(place(left_plate, *_LEFT_PLATE_POSE))
 
     # --- Bottom (2130) ---
 
@@ -106,10 +95,7 @@ def make_assembly() -> Compound | None:
     bottom_plate = load_step(_DIR, "2112_attach_plate")
     if bottom_plate:
         bottom_plate.color = ALUMINUM
-        bottom_plate = bottom_plate.rotate(Axis.X, 90)   # mechanism faces -Z (downward)
-        bottom_plate = bottom_plate.rotate(Axis.Z, 180)   # flip to match reference
-        place_at(bottom_plate, *_BOTTOM_PLATE_POS)
-        children.append(bottom_plate)
+        children.append(place(bottom_plate, *_BOTTOM_PLATE_POSE))
 
     if not children:
         return None

@@ -248,6 +248,7 @@ Licence
 licence
 licences
 linepoint
+linalg
 Littelfuse
 loadout
 Loctite
@@ -461,6 +462,7 @@ svgpathtools
 swapable
 swappable
 Syncer
+SYIY
 Systork
 tablehead
 tailscale

@@ -85,8 +85,8 @@ def load_step(
     """Import a STEP file from a subassembly's steps/ directory.
 
     The imported geometry is flattened (internal placement transforms are
-    baked into vertices) so that subsequent rotate/move calls render
-    correctly in the OCP CAD Viewer.
+    baked into vertices) so that a subsequent place() renders correctly
+    in the OCP CAD Viewer.
 
     Args:
         subassembly_dir: Path to the subassembly module directory.
@@ -124,13 +124,22 @@ def load_step(
     return part
 
 
-def place_at(part: Compound, x: float, y: float, z: float) -> Compound:
-    """Translate a part so its center of mass lands at (x, y, z).
+def place(
+    part: Compound,
+    pos: tuple[float, float, float] = (0.0, 0.0, 0.0),
+    rot: tuple[float, float, float] = (0.0, 0.0, 0.0),
+) -> Compound:
+    """Place a part with a full rigid pose.
 
-    Assembly modules position imported parts against center-of-mass
-    coordinates measured from the Fusion 360 master model; apply any
-    rotations first, since they change the center.
+    The part is rotated about its own (STEP file) origin by intrinsic X-Y-Z
+    Euler angles ``rot`` in degrees, then its origin is moved to ``pos``
+    (mm) -- the same convention as a Fusion 360 occurrence transform.
+
+    The poses in the assembly modules are the Fusion v148 occurrence
+    transforms, frozen when the Fusion master was retired; the build123d
+    model is now the source of truth. tests/test_placement.py checks every
+    part against them. Unlike matching a center of mass, a full pose cannot
+    hide a part that is turned 180 deg about its own center.
     """
-    com = part.center()
-    part.move(Location((x - com.X, y - com.Y, z - com.Z)))
+    part.move(Location(pos, rot))
     return part

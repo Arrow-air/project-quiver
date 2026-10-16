@@ -40,15 +40,16 @@ STEP files in steps/:
 
 from pathlib import Path
 
-from build123d import Compound, Location
+from build123d import Compound
 
-from quiver.common import PETG, load_step
+from quiver.common import PETG, load_step, place
 
 _DIR = Path(__file__).parent
 
-# Z corrections for parts whose Fusion export offset differs from
-# the reference assembly. Derived by comparing raw STEP CoM against
-# the 2000-SupportStructure.step reference.
+# Z corrections for parts whose STEP export offset differs from the
+# assembly (poses: see quiver.common.place). The GNSS mount is not in the
+# Fusion v148 master; its offsets come from the 2000-SupportStructure.step
+# reference (raw STEP center of mass vs reference).
 _MAIN_PCB_MOUNT_DZ = -7.85       # Fusion v148 occurrence transform, cm -> mm
 _GNSS_BASE_DZ = -11.95           # raw Z=66.67, ref Z=54.72
 _GNSS_CLAMP_DZ = -3.85           # raw Z=81.85, ref Z=78.00
@@ -63,7 +64,7 @@ def make_assembly() -> Compound | None:
     main_pcb = load_step(_DIR, "2311_main_pcb_mount")
     if main_pcb:
         main_pcb.color = PETG
-        main_pcb.move(Location((0, 0, _MAIN_PCB_MOUNT_DZ)))
+        place(main_pcb, (0, 0, _MAIN_PCB_MOUNT_DZ))
         children.append(main_pcb)
 
     bc_mount = load_step(_DIR, "2312_bc_pcb_mount")
@@ -88,13 +89,13 @@ def make_assembly() -> Compound | None:
     gnss_base = load_step(_DIR, "2331_gnss_mount_base")
     if gnss_base:
         gnss_base.color = PETG
-        gnss_base.move(Location((0, 0, _GNSS_BASE_DZ)))
+        place(gnss_base, (0, 0, _GNSS_BASE_DZ))
         children.append(gnss_base)
 
     gnss_clamp = load_step(_DIR, "2332_gnss_mount_clamp")
     if gnss_clamp:
         gnss_clamp.color = PETG
-        gnss_clamp.move(Location((0, 0, _GNSS_CLAMP_DZ)))
+        place(gnss_clamp, (0, 0, _GNSS_CLAMP_DZ))
         children.append(gnss_clamp)
 
     # --- PPP / beacon mount (2340) ---
