@@ -6,8 +6,8 @@ KiCad projects for the Quiver's distributed PCB architecture.
 
 | Directory | BOM | KiCad project | Description |
 |---|---|---|---|
-| `battery_pcb/` | 3311 | `Front_PCB` | Battery PCB — power switching and protection |
-| `main_pcb/` | 3321 | `Quiver_PT3_Main_PCB` | Main PCB — power and data distribution hub |
+| `battery_pcb/` | 3311 | `Front_PCB` (V1.3) | Battery PCB — power switching and protection |
+| `main_pcb/` | 3321 | `Quiver_PT3_Main_PCB-rounded` (V1.2) | Main PCB — power and data distribution hub. V1.2 is the board on the Dev-Kit aircraft. |
 | `fc_pcb/` | 3331 | `Quiver_PT3_FC_PCB` | Flight Controller PCB — Pix32 V6 adapter board |
 | `attach_pcb/` | 3341 | `QuiverAttachPCB` (V1.4) | Attachment Interface PCB (x3) |
 

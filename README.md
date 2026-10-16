@@ -19,21 +19,21 @@ Developed by [Arrow Air](https://arrowair.com) and released under the CERN Open 
 
 ## Documentation
 
-📖 **[Full Documentation](https://arrowair.com/docs/quiver)** — Platform overview, capabilities, and roadmap
+📖 **[Full Documentation](https://arrowair.com/quiver/)** — Platform overview, capabilities, and roadmap
 
-The `docs/` folder is hosted on the [Arrow website](https://arrowair.com/docs/quiver).
+The `docs/` folder is hosted on the [Arrow website](https://arrowair.com/quiver/).
 
 | Resource | Description |
 |----------|-------------|
-| [Assembly Guides](https://arrowair.com/docs/quiver/pt3-assembly-guides) | Step-by-step build instructions |
-| [Engineering Reports](https://arrowair.com/docs/quiver/Engineering-Reports) | Technical details for each prototype |
+| [Assembly Guides](https://arrowair.com/quiver/category/manufacturing/) | Step-by-step build instructions |
+| [Engineering Reports](https://arrowair.com/quiver/category/reference--engineering-reports/) | Technical details for each prototype |
 | [Meeting Notes](https://github.com/Arrow-air/project-quiver/wiki) | Engineering call notes |
 
 ## Repository Structure
 
 ```
 project-quiver/
-├── docs/                    # Documentation (hosted at arrowair.com/docs/quiver)
+├── docs/                    # Documentation (hosted at arrowair.com/quiver)
 ├── src/
 │   ├── quiver/              # CAD assembly — build123d Python package
 │   ├── pcb/                 # KiCad PCB designs (4 custom boards)
@@ -49,7 +49,7 @@ The CAD source is a [build123d](https://github.com/gumyr/build123d) Python packa
 
 ## Getting Started
 
-**Want to build one?** Start with the [Assembly Guides](https://arrowair.com/docs/quiver/pt3-assembly-guides).
+**Want to build one?** Start with the [Assembly Guides](https://arrowair.com/quiver/category/manufacturing/).
 
 **Want to develop attachments?** Check out:
 - [Possible Attachment List](task-grant-bounty/equipment/attachment/0001-possible_attachment_list/information-note.md)
