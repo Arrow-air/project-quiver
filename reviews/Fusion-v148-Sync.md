@@ -177,4 +177,4 @@ The full-assembly count changed from 1,242 to 1,260 solids: +18 in the adapter
 assembly. Since the propeller handedness fix, the envelope's X and Y extents are
 ±664.5 and ±673.6 mm (they were swapped). The exported STEP re-imports with the
 same 1,260 solids; six pre-existing solids in vendor and print models (top cap,
-LiDAR, radar altimeter, battery) fail OCC's validity check, none in changed parts.
+LiDAR, radar altimeter, battery) fail the geometry kernel's validity check, none in changed parts.
