@@ -77,14 +77,6 @@ items:
     sourcing: 3d-print
     material: PETG-CF
     design_ref: src/quiver/supporting_structure/equipment_mount/steps/2341_ppp_beacon_mount.step
-  - id: "2342"
-    name: PPP Adapter and Beacon Mounting Board
-    qty: 1
-    sourcing: 3d-print
-    material: PETG-CF
-    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2342_ppp_beacon_board.step
-    notes: Additional board from Fusion master v148, linked board v12. Used with
-      the original mount (2341), not instead of it.
   - id: "2411"
     name: Main Enclosure
     qty: 1

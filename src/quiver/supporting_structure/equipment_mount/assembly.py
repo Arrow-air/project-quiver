@@ -35,8 +35,7 @@ STEP files in steps/:
     2321_altitude_sensor_mount.step Radar/LiDAR altimeter mount
     2331_gnss_mount_base.step       GNSS antenna mount base (Z offset needed)
     2332_gnss_mount_clamp.step      GNSS antenna mount clamp (Z offset needed)
-    2341_ppp_beacon_mount.step      Original PPP/beacon mount
-    2342_ppp_beacon_board.step      Additional PPP/beacon mounting board
+    2341_ppp_beacon_mount.step      PPP/beacon mounting board
 """
 
 from pathlib import Path
@@ -104,11 +103,6 @@ def make_assembly() -> Compound | None:
     if ppp_beacon:
         ppp_beacon.color = PETG
         children.append(ppp_beacon)
-
-    ppp_board = load_step(_DIR, "2342_ppp_beacon_board")
-    if ppp_board:
-        ppp_board.color = PETG
-        children.append(ppp_board)
 
     if not children:
         return None

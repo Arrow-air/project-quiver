@@ -14,14 +14,51 @@ or modified. This is a review snapshot, **not a manufacturing release**.
 | 2321 sensor mount | Same envelope; detail geometry changes, volume +0.79% | In-document component |
 | 2411 enclosure | Envelope 330.19 × 347.39 × 93.00 → 330.19 × 319.25 × 91.00 mm | `UPDATED_2411-MainEnclosure`, v3 |
 | 2412 top cap | Envelope 306.60 × 306.66 × 50.31 → 319.20 × 309.16 × 54.85 mm | `UPDATED_2412-TopCap.f3d`, v1 |
-| 2342 PPP/beacon board | Additional 79.19 × 79.19 × 8.00 mm board; retain original 2341 mount | `2340-PPP, Beacon_mounting_board_v3`, v12 |
+| 2341 PPP/beacon mount | Old bracket replaced by the 79.19 × 79.19 × 8.00 mm mounting board | `2340-PPP, Beacon_mounting_board_v3`, v12 |
+| 3200 peripherals, 3310 main PCB | Eight parts moved to their Fusion occurrence placement (see below) | `3000-Equipment` occurrences |
 
 ![Before and after printable bodies](assets/fusion-v148-comparison.png)
 
 Dimensions are axis-aligned CAD envelopes, not manufacturing tolerances. Volume
 changes are geometric measurements, not weight estimates. Plates, compared cockpit
-beams, battery slider, original PPP/beacon mount, and attachment spacers match the
-existing STEP geometry and are intentionally unchanged. GPS changes are separate.
+beams, battery slider, and attachment spacers match the existing STEP geometry and
+are intentionally unchanged. GPS changes are separate.
+
+## PPP/beacon mount: replacement, not an addition
+
+The first draft of this PR added the mounting board as a new part (2342) next to
+the old 2341 bracket, because both are visible in the Fusion master. That was
+wrong. As placed in v148 the two parts overlap by about 990 mm³, and the
+relocated PPP adapter overlaps the old bracket, so they cannot both be built.
+The published `2341.stl` and Step 22 of the Manufacturing Guide already show the
+board as part 2341 (the STL matches the board within 0.008% volume); only the
+2341 STEP source was stale. The board STEP now replaces it, and the 2342 part,
+BOM line, and duplicate STL are gone. The old bracket in the Fusion master
+looks like a leftover that should be hidden or deleted there.
+
+## Equipment placement (review follow-up, October 2026)
+
+Erick's review flagged three peripherals. A check of every 3200 part against the
+v148 occurrences found four more, mostly side effects of the parts this PR
+updates, and the main PCB floated above the new adapter. Each correction
+reproduces the Fusion occurrence transform; after the move, repository and
+Fusion geometry agree to within 0.06 mm.
+
+| BOM (Fusion) | Part | Was | Now |
+| --- | --- | --- | --- |
+| 3260 (3231) | Push button | Right (+X) side, 2 mm high, inside the new 2411 wall | Left (−X) side of the front face, clear of the enclosure |
+| 3280 (3223) | SIYI HM30 air unit | Component frame, not rotated | Rotated 180° about Z |
+| 3290 (3212) | Nanoradar MR82 | Component frame: upside down, tilted 5°, into the 2321 mount | Rotated 180°, tilt removed, clear of the mount |
+| 3210 (3211) | RPLidar S2L | 4 mm low, inside the new 2412 top cap | Seated in the top-cap slot |
+| 3201 (3271) | PPP adapter | Old bracket position | On the 2341 board (37 mm move) |
+| 3202 (3261) | Remote ID beacon | Old bracket position | On the 2341 board (17 mm move) |
+| 3220 (3213) | NRA15 radar altimeter | 5 mm off in X | Fusion position |
+| 3310 (3310) | Main PCB | 7.4 mm above the adapter | Resting on the adapter, where its screws reach |
+
+The repository BOM numbers differ from the Fusion component numbers in this
+subassembly; the first column lists both. Antennas and camera already matched.
+A regression test now checks the world bounds and center of mass of all ten
+peripherals and the main PCB board against the recorded Fusion placements.
 
 ## Placement and hardware
 
@@ -44,8 +81,8 @@ unchanged pending physical confirmation.
 
 The repository is a mixed snapshot: several existing, watertight manufacturing
 STLs already have the revised envelopes even though their STEP sources were old.
-The existing 2311, 2313, 2321, 2411, and 2412 STLs are therefore **not overwritten**.
-All six meshes in this draft pass closed-surface and consistent-winding checks.
+The existing 2311, 2313, 2321, 2341, 2411, and 2412 STLs are therefore **not overwritten**.
+All six meshes pass closed-surface and consistent-winding checks.
 Against the source Fusion body measurements, their volume differences are below
 0.08% and their maximum bound differences are below 0.014 mm. Recorded results
 and file hashes are in [print mesh checks](print-mesh-checks.json). These checks
@@ -62,9 +99,6 @@ or physical fit.
 - Confirm revision provenance for retained meshes with the revised sources before a new
   print release. They remain the existing manufacturing files, not newly validated
   exports from this PR.
-- The new 2342 STL was exported from its single STEP solid with linear tolerance
-  0.05 mm and checked as a watertight mesh. Review print orientation and fastening;
-  its presence in Fusion does not establish an assembly procedure or fastener BOM.
 - Confirm adapter insert lengths and physical stack-up against the current build.
 - Review enclosure/hinge/latch fit and sensor clearance; the automated tests check
   source placement and assembly integrity, not every physical interface.
@@ -79,5 +113,5 @@ PYTHONPATH=src python -m quiver.bom render --check
 PYTHONPATH=src python -m quiver.assembly -o /tmp/quiver-mechanical.step
 ```
 
-The full-assembly count changes from 1,242 to 1,261 solids: +18 in the adapter
-assembly and +1 new board. The outer drone envelope is unchanged.
+The full-assembly count changes from 1,242 to 1,260 solids: +18 in the adapter
+assembly. The outer drone envelope is unchanged.
