@@ -48,6 +48,11 @@ _RIGHT_PLATE_POS = (185.65, -0.02, -71.00)
 _LEFT_PLATE_POS = (-185.65, 0.02, -71.00)
 _BOTTOM_PLATE_POS = (0.0, 0.0, -160.70)
 
+# Right spacer center of mass (Fusion v148). The left spacer STEP is baked
+# at the correct left position, but mirroring it to the right with rotate(Z)
+# alone left it ~3.3 mm off; pin the CoM to the Fusion placement.
+_RIGHT_SPACER_POS = (165.0, 0.0, -71.0)
+
 
 def make_assembly() -> Compound | None:
     """Build the attachment interface subassembly from imported STEP files."""
@@ -56,11 +61,13 @@ def make_assembly() -> Compound | None:
     # --- Right side (2110) ---
 
     # The spacer STEP has a baked-in position on the left side (X = -165).
-    # Rotate 180 deg around Z to mirror it to the right side (X = +165).
+    # Fusion's right occurrence is a 180 deg turn about Y (transform diag
+    # -1,+1,-1); mirror it the same way, then pin the CoM to +165.
     right_spacer = load_step(_DIR, "2111_attach_spacer")
     if right_spacer:
         right_spacer.color = PETG
-        right_spacer = right_spacer.rotate(Axis.Z, 180)
+        right_spacer = right_spacer.rotate(Axis.Y, 180)
+        place_at(right_spacer, *_RIGHT_SPACER_POS)
         children.append(right_spacer)
 
     right_plate = load_step(_DIR, "2112_attach_plate")

@@ -13,19 +13,20 @@ corners spin opposite directions (CW/CCW) for yaw control.
     (-X) ---+--- (+X)
             /  |  \\
         /   |      \\
-        BL(CCW)     BR(CW)
+        BL(CW)      BR(CCW)
             |
 
 Each motor is aligned along the arm diagonal via rotX(90) to point
 the shaft upward, then rotZ(arm_angle) to face the correct corner.
 
-CW propellers (3112) are on FR and BR arms.
-CCW propellers (3122) are on FL and BL arms.
+Diagonal corners share a direction: CW on FR+BL, CCW on FL+BR, so the
+two spin directions balance yaw (a Quad X layout: FRAME_CLASS 1,
+FRAME_TYPE 1). Same-side pairing would leave a net yaw torque.
 
 Vendor parts in steps/vendor/:
     3111_motor.step         Motor (used 4x)
-    3112_propeller.step     CW propeller (used 2x: FR, BR)
-    3122_propeller.step     CCW propeller (used 2x: FL, BL)
+    3112_propeller.step     CW propeller (used 2x: FR, BL)
+    3122_propeller.step     CCW propeller (used 2x: FL, BR)
 
 Position constants are center-of-mass coordinates measured from the
 Fusion 360 PT3 master model export.
@@ -50,8 +51,8 @@ _PROP_Z = 56.27
 _CORNERS = [
     ( -45,  1,  1, "3112_propeller", True),    # FR — CW
     (  45, -1,  1, "3122_propeller", False),   # FL — CCW
-    (-135,  1, -1, "3112_propeller", True),    # BR — CW
-    ( 135, -1, -1, "3122_propeller", False),   # BL — CCW
+    (-135,  1, -1, "3122_propeller", False),   # BR — CCW
+    ( 135, -1, -1, "3112_propeller", True),    # BL — CW
 ]
 
 

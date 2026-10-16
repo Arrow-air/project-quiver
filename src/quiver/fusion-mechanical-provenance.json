@@ -665,6 +665,45 @@
           28.11
         ]
       ]
+    },
+    {
+      "label": "2111_attach_spacer",
+      "occurrence": "2000-SupportStructure:1+2100-AttachmentInterface:1+2110-Right:1+2111-Spacer:1",
+      "world_transform_cm": [
+        -1.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        1.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -1.0,
+        -14.2,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "world_centroid_mm": [
+        165.0,
+        -0.0,
+        -71.0
+      ],
+      "world_bounds_mm": [
+        [
+          150.0,
+          -25.0,
+          -96.0
+        ],
+        [
+          180.0,
+          25.0,
+          -46.0
+        ]
+      ]
     }
   ]
 }

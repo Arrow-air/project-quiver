@@ -42,8 +42,8 @@ Custom parts in steps/:
     1340_tube_joint.step        3D-printed PETG-CF joint (used 4x)
 
 Generated parts:
-    1310 Vertical tube  -- 30mm OD, 2mm wall CF tube, 400mm long (used 4x)
-    1320 Horizontal tube -- 30mm OD, 2mm wall CF tube, 500mm long (used 2x)
+    1310 Vertical tube  -- 30mm OD, 1mm wall CF tube, 400mm long (used 4x)
+    1320 Horizontal tube -- 30mm OD, 1mm wall CF tube, 500mm long (used 2x)
     1350 Foam sleeve    -- 40mm OD, 30mm ID foam sleeve, 66mm long (used 4x)
 
 Position constants are center-of-mass coordinates measured from the
@@ -61,7 +61,7 @@ _DIR = Path(__file__).parent
 
 # Carbon-fiber tube dimensions (shared by vertical and horizontal tubes)
 _TUBE_OD = 30        # outer diameter (mm)
-_TUBE_WALL = 2       # wall thickness (mm)
+_TUBE_WALL = 1       # wall thickness (mm); 30x28 tube, matches BOM + Fusion v148
 _VERT_TUBE_LENGTH = 400    # vertical tube length (mm)
 _HORIZ_TUBE_LENGTH = 500   # horizontal tube length (mm)
 

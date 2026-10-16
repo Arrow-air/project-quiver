@@ -22,7 +22,7 @@ Vendor parts in steps/vendor/:
     1411_arm_connector.step     Foldable arm connector (used 4x)
 
 Generated parts:
-    1412 Arm tube — 30mm OD, 2mm wall carbon-fiber tube, 360mm long (used 4x)
+    1412 Arm tube — 30mm OD, 1mm wall carbon-fiber tube, 360mm long (used 4x)
 
 Position constants are center-of-mass coordinates measured from the
 Fusion 360 PT3 master model export.
@@ -38,7 +38,7 @@ _DIR = Path(__file__).parent
 
 # Arm tube dimensions (carbon-fiber tube)
 _TUBE_OD = 30        # outer diameter (mm)
-_TUBE_WALL = 2       # wall thickness (mm)
+_TUBE_WALL = 1       # wall thickness (mm); 30x28 tube, matches BOM + Fusion v148
 _TUBE_LENGTH = 360   # length (mm)
 
 # Distance from plate center to each part along the 45-deg diagonal axes
