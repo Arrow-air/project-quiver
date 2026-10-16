@@ -140,7 +140,7 @@ items:
     suppliers:
       - name: RJXHobby
         url: https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1
-    notes: Mirror image of 1331. TBC — the RJX listing shows one version; confirm the mirrored hand when ordering the 30 mm customization.
+    notes: Mirror image of 1331 (handed pair confirmed). The RJX listing shows a single version; order the correct hand, or specify the mirror, for the 30 mm tube seat.
   - id: "1341"
     name: Landing Gear Tube Joint, FR/BL
     qty: 2
@@ -161,7 +161,7 @@ items:
     suppliers:
       - name: INNLOI
         url: https://www.innloi.com/productinfo/448455.html
-    notes: Mirror image of 1341, as in the Fusion v148 master. TBC — confirm the joint is handed and that INNLOI supplies both hands.
+    notes: Mirror image of 1341 (handed pair confirmed, as in the Fusion v148 master). Confirm INNLOI can supply or customize both hands of the 30 mm joint.
   - id: "1350"
     name: Landing Gear Foam Wrap
     qty: 4

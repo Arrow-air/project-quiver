@@ -156,10 +156,13 @@ used Fusion instance numbers, which differ from the BOM in 3200 and 3300.
 
 Open items:
 
-- 1332 and 1342 are marked TBC: the RJX listing shows one adapter version, and the
-  joint's handedness is not confirmed outside Fusion.
-- The 2420 hinge is chiral. CAD and Fusion mirror the left hinge, but the BOM buys
-  one JW Winco part twice; one of the two is wrong (2.6 mm difference).
+- 1332 and 1342 are confirmed handed (Thomas, October 16). The BOM carries both
+  hands as separate lines; the remaining note is procurement only — confirm the RJX
+  adapter and INNLOI joint can be sourced or customized in both hands.
+- The 2420 hinge is a symmetric COTS part (JW Winco GN 237). The mirrored CAD
+  instance is the same hinge flipped for the far side, not a different part, so one
+  part number bought twice is correct; GN 237 has no handed variant. (Contrast with the
+  printed and custom structural parts above, where a mirror is a genuine second part.)
 - Fusion calls the +Y beam "CCW back", but +Y is forward everywhere else.
 
 ## Validation
