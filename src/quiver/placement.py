@@ -130,11 +130,15 @@ def main(argv=None) -> int:
     sub.add_parser("check", help="compare the built assembly with part-poses.json")
     rec = sub.add_parser("record", help="re-record parts (by key or label) from the current build")
     rec.add_argument("names", nargs="+")
-    rec.add_argument("--gps-only", action="store_true",
-                     help="new records apply only to the --gps receiver option")
+    rec.add_argument(
+        "--gps-only", action="store_true",
+        help="new records apply only to the --gps receiver option",
+    )
     for cmd in sub.choices.values():
-        cmd.add_argument("--gps", choices=PRIMARY_GPS_OPTIONS, default=DEFAULT_PRIMARY_GPS,
-                         help="primary GPS receiver option to build")
+        cmd.add_argument(
+            "--gps", choices=PRIMARY_GPS_OPTIONS, default=DEFAULT_PRIMARY_GPS,
+            help="primary GPS receiver option to build",
+        )
     args = parser.parse_args(argv)
 
     from quiver.assembly import make_assembly
