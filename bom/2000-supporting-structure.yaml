@@ -65,12 +65,16 @@ items:
     sourcing: 3d-print
     material: PETG-CF
     design_ref: src/quiver/supporting_structure/equipment_mount/steps/2331_gnss_mount_base.step
-  - id: "2332"
-    name: GNSS Mount Clamp
+    notes: Holybro NEO-F9P Rover option only; omit for Here4. Existing F9P v6
+      geometry is retained; review stack-up and print fit before release.
+  - id: "2333"
+    name: GNSS Mount, Here4
     qty: 1
     sourcing: 3d-print
     material: PETG-CF
-    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2332_gnss_mount_clamp.step
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2333_gnss_mount_here4.step
+    notes: Here4 option only; omit for Holybro. Imported from Fusion v148.
+      Select one primary receiver and its matching mount, not both.
   - id: "2341"
     name: PPP Adapter and Beacon Mount
     qty: 1
