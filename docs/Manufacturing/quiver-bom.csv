@@ -29,7 +29,7 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 2341,PPP Adapter and Beacon Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2411,Main Enclosure,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2412,Enclosure Top Cap,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
-2420,Enclosure Hinge,Supporting Structure,2,2,cots,Zinc die-cast,,JW Winco,GN 237-ZD-30-30-A-SW,https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type,10.00,20.00,,
+2420,Enclosure Hinge,Supporting Structure,2,2,cots,Zinc die-cast,,JW Winco,GN 237-ZD-30-30-A-SW,https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type,10.00,20.00,,"One part number for both sides. The CAD mirrors the left hinge, but a stock hinge turned 180° fits the same bores and pin line."
 2430,Enclosure Latch,Supporting Structure,2,2,cots,Steel,,McMaster-Carr,6082A11,https://www.mcmaster.com/6082A11/,10.42,20.84,,
 3111,"Motor + ESC, Hobbywing XRotor X6 Plus",Equipment,4,4,cots,,,Hobbywing,XRotor X6 Plus G2,https://www.hobbywing.com/en/products/x6-plus-g2,120.00,480.00,,Propellers are ordered separately (3112/3122).
 3112,"Propeller, Hobbywing MFP 24x8.0, CW",Equipment,2,2,cots,,,Hobbywing,MFP 24x8.0 CW,https://www.hobbywing.com/en/products/mfp-24x80,20.00,40.00,,
