@@ -46,46 +46,46 @@ and tools, with supplier links and a downloadable procurement CSV.
 | Image| <img src="Assembly-Guides/assets/images/structural/1111.png" alt="Alt Text" width="600"> | <img src="Assembly-Guides/assets/images/structural/1112.png" alt="Alt Text" width="600"> | <img src="Assembly-Guides/assets/images/structural/1113.png" alt="Alt Text" width="600"> |
 | CAD File|[1111](Assembly-Guides/assets/models/structural/1111.step)| [1112](Assembly-Guides/assets/models/structural/1112.step)| [1113](Assembly-Guides/assets/models/structural/1113.step)|
 ---
-### 1211, 1212 & 1213 - Cockpit Support Beams
+### 1211 & 1212 - Cockpit Support Beams
 - All three are aluminum 6 series, 40x40x1 mm square tubes, laser cut, sanded.
 - Part 1211; Qty: 1.
-- Parts 1212 and 1213 are identical; Qty: 2.
+- Part 1212 (CCW back and front) is used twice; Qty: 2. The front one is turned 180°.
 - Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
 
-| | 1211 (Cockpit Support Beam CW Long) | 1212 & 1213 (Cockpit Support Beam CCW Back & Front) |
+| | 1211 (Cockpit Support Beam CW Long) | 1212 (Cockpit Support Beam CCW, back & front) |
 |--|--|--|
 |Length|289.2 mm|124.2 mm|
 | Image| <img src="Assembly-Guides/assets/images/structural/1211.png" alt="Alt Text" width="600"> | <img src="Assembly-Guides/assets/images/structural/1212_1213.png" alt="Alt Text" width="600"> |
-| CAD File|[1211](Assembly-Guides/assets/models/structural/1211.step)| [1212 & 1213](Assembly-Guides/assets/models/structural/1212_1213.step)|
+| CAD File|[1211](Assembly-Guides/assets/models/structural/1211.step)| [1212](Assembly-Guides/assets/models/structural/1212.step)|
 ---
-### 1221 & 1222 - Battery Walls
-- Both are aluminum 6 series, 1000x30x2 mm rectangular tubes, laser cut, sanded.
+### 1221 - Battery Walls
+- Aluminum 6 series, 100x30x2 mm rectangular tube, laser cut, sanded.
 - Length is 300 mm for each.
-- Parts are identical; Qty: 2.
+- Parts are identical; Qty: 2. The left wall is the right one turned 180°.
 - Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
 
-| | 1221 & 1222 (Battery Wall Left & Right) |
+| | 1221 (Battery Walls) |
 |--|--|
 | Image| <img src="Assembly-Guides/assets/images/structural/1221_1222.png" alt="Alt Text" width="600"> |
-| CAD File|[1221 & 1222](Assembly-Guides/assets/models/structural/1221_1222.step)|
+| CAD File|[1221](Assembly-Guides/assets/models/structural/1221.step)|
 ---
-### 1311, 1312, 1313 & 1314 - Landing Gear Vertical Tubes
+### 1310 - Landing Gear Vertical Tubes
 - Carbon-fiber tubes, 30 mm diameter, 1 mm thickness.
 - Length is 400 mm for each.
 - Parts are identical; Qty: 4.
   - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
 ---
-### 1321 & 1322 - Landing Gear Horizontal Tubes
+### 1320 - Landing Gear Horizontal Tubes
 - Carbon-fiber tubes, 30 mm diameter, 1 mm thickness.
 - Length is 500 mm for each.
 - Parts are identical; Qty: 2.
   - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
 ---
-### 1331, 1332, 1333 & 1334 - Landing Gear Main Adapters
+### 1330 - Landing Gear Main Adapters
 - Off-the-shelf component.
 - 30 mm option.
 - Product Link: [Link](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1)
-- Qty: 4.
+- The same part on all four legs; Qty: 4.
 
 :::note
 - This product became available in RJXHobby catalog after a customized order for 30 mm tube diameter.
@@ -97,77 +97,77 @@ and tools, with supplier links and a downloadable procurement CSV.
 If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
 :::
 
-| 1331, 1332, 1333 & 1334 (Landing Gear Main Adapter) |
+| 1330 (Landing Gear Main Adapters) |
 |--|
 | <img src="Assembly-Guides/assets/images/structural/133X.jpeg" alt="Alt Text" width="600"> |
 ---
-### 1341, 1342, 1343 & 1344 - Landing Gear Tube Joints
+### 1340 - Landing Gear Tube Joints
 
 - Off-the-shelf component.
 - Product Link: [Link](https://www.innloi.com/productinfo/448455.html)
-- Qty: 4.
+- The same part on all four legs; Qty: 4.
 
-| | 1341, 1342, 1343 & 1344  (Landing Gear Tube Joint) |
+| | 1340 (Landing Gear Tube Joints) |
 |--|--|
 | Image| <img src="Assembly-Guides/assets/images/structural/134X.png" alt="Alt Text" width="600"> |
 ---
-### 1351, 1352, 1353 & 1354 - Landing Gear Foam Wraps.
+### 1350 - Landing Gear Foam Wraps
 - Pipe insulation foam, 28 mm inner diameter, 46 mm outer diameter.
 - Length is 103 mm each.
 - Parts are identical; Qty: 4.
 - Cut from stock material to length.
 - Product Link: [Link](https://a.co/d/06ePWuUq)
 
-| 1351, 1352, 1353 & 1354 (Landing Gear Foam Wrap) |
+| 1350 (Landing Gear Foam Wrap) |
 |--|
 | <img src="Assembly-Guides/assets/images/structural/135X.jpg" alt="Alt Text" width="600"> |
 ---
-### 1411, 1421, 1431 & 1441 - Motor Arm Foldable Connectors
+### 1411 - Motor Arm Foldable Connectors
 - 30 mm tube diameter version.
 - Parts are identical; Qty: 4.
 - Product Link: [Link](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html?spm=a2756.order-detail-ta-bn-b.0.0.78e1f19cegXkOZ)
 
-| 1411, 1421, 1431 & 1441 (Motor Arm Foldable Connectors) |
+| 1411 (Motor Arm Foldable Connectors) |
 |--|
 | <img src="Assembly-Guides/assets/images/structural/14X1.jpg" alt="Alt Text" width="600"> |
 ---
-### 1412, 1422, 1432 & 1442 - Motor Arms
+### 1412 - Motor Arms
 - Carbon-fiber tubes, 30 mm diameter, 1 mm thickness.
 - Length is 360 mm for each.
 - Parts are identical; Qty: 4.
   - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
 ---
-### 2111, 2121 & 2131 - Attachment Interface Spacers
+### 2111 & 2131 - Attachment Interface Spacers
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
-- Parts 2111 and 2121 are identical; Qty: 2.
+- Part 2111 (left and right spacers); Qty: 2.
 - Part 2131; Qty: 1.
 
-| | 2111 & 2121 (Attachment Interface Spacers, Left and Right) | 2131 (Attachment Interface Spacer, Bottom) |
+| | 2111 (Attachment Interface Spacers, Left and Right) | 2131 (Attachment Interface Spacer, Bottom) |
 |--|--|--|
 | Image| <img src="Assembly-Guides/assets/images/structural/2111_2121.png" alt="Alt Text" width="600"> | <img src="Assembly-Guides/assets/images/structural/2131.png" alt="Alt Text" width="600"> |
-| CAD File|[2111 & 2121](Assembly-Guides/assets/models/structural/2111_2121.stl)| [2131](Assembly-Guides/assets/models/structural/2131.stl)|
+| CAD File|[2111](Assembly-Guides/assets/models/structural/2111.stl)| [2131](Assembly-Guides/assets/models/structural/2131.stl)|
 ---
-### 2112, 2122 & 2132 - Attachment Interfaces
+### 2112 - Attachment Interfaces
 - Parts are identical, order 3 parts.
 - Select "Without PCB Board" option.
 - Product Link: [Link](https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html?chatToken=dTVOQ0lHSDBGNnNIYWVkZGdQNnBUSmFhUzNnb3dTTktRdTFiYjZVZzJRb25RRjBPTUs0bVZqdUd5MHUvYWVCblk4R2ZnVHdnREZwTWh3bjZ6bTJmRXYwWXdUVm1sOUd3Sk5YaVRGVWpCK2h4MXlSRkhRcHk0cWI4US9VUDI5R0kmdmVyc2lvbj0xLjAuMA%3D%3D&encryptTargetLoginId=8pctgRBMALNqZAuqE6c17aH4RKPxocV0)
 
-| 2112, 2122 & 2132 (Attachment Interface) |
+| 2112 (Attachment Interface) |
 |--|
 | <img src="Assembly-Guides/assets/images/structural/2112_2122_2132.png" alt="Alt Text" width="600"> |
 ---
-### 2211 & 2212 - Battery Sliders
+### 2211 - Battery Sliders
 - 3D printed.
 - PETG-CF.
 - Use 6 wall loops.
 - Parts are identical; Qty: 2.
 
-| | 2211 & 2212  (Battery Slider) |
+| | 2211 (Battery Slider) |
 |--|--|
 | Image| <img src="Assembly-Guides/assets/images/structural/2211_2212.png" alt="Alt Text" width="600"> |
-| CAD File|[2211 & 2212](Assembly-Guides/assets/models/structural/2211_2212.stl)|
+| CAD File|[2211](Assembly-Guides/assets/models/structural/2211.stl)|
 ---
 ### 2311 - Main PCB Mount
 - 3D printed.
@@ -259,17 +259,17 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 | Print Orientation| <img src="Assembly-Guides/assets/images/structural/2412_2.png" alt="Alt Text" width="600"> |
 | CAD File|[2412](Assembly-Guides/assets/models/structural/2412.stl)|
 ---
-### 2421 & 2422 - Enclosure Hinges
+### 2420 - Enclosure Hinges
 - Off-the-shelf component.
 - Part Number: GN 237-ZD-30-30-A-SW
 - Product Link: [Link](https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type)
 - Qty: 2.
 
-| 2421 & 2422  (Enclosure Hinges) |
+| 2420 (Enclosure Hinges) |
 |--|
 | <img src="Assembly-Guides/assets/images/structural/2421_2422.png" alt="Alt Text" width="600"> |
 ---
-### 2431 & 2432 - Enclosure Latches
+### 2430 - Enclosure Latches
 - Off-the-shelf component.
 - Screw on draw latch.
 - Parts are identical; Qty: 2.
@@ -279,16 +279,16 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
     - [Latch](https://protex.com/21-1785SS-non-adjustable-toggle-latch-light-duty-stainless-steel-natural)
     - [Catch Plate](https://protex.com/01-1785SS-catch-plate-for-toggle-latch-stainless-steel-natural)
 ---
-### 3322 & 3323 - Busbars
+### 4010 - Busbars
 - Both are Copper C110 | CU ETP, laser cut, bent.
-- Bounding box dimension is 300x300 mm for each.
-- Qty: 1 each.
+- Bent size 18x49x40.3 mm each.
+- Qty: 1 positive, 1 negative.
 - Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
 
-| | 3322 (Busbar Positive) | 3323 (Busbar Negative) |
+| | 4010 (Busbar Positive) | 4010 (Busbar Negative) |
 |--|--|--|
 | Image| <img src="Assembly-Guides/assets/images/structural/3322.png" alt="Alt Text" width="600"> | <img src="Assembly-Guides/assets/images/structural/3323.png" alt="Alt Text" width="600"> |
-| CAD File|[3322](Assembly-Guides/assets/models/structural/3322.step)| [3323](Assembly-Guides/assets/models/structural/3323.step)|
+| CAD File|[4010 Positive](Assembly-Guides/assets/models/structural/4010_busbar_positive.step)| [4010 Negative](Assembly-Guides/assets/models/structural/4010_busbar_negative.step)|
 --
 ### 3324 - BC PCB Heatsink
 - Aluminum 6 series, laser cut, sanded.
@@ -308,7 +308,7 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 ### Step 1. Assemble the Cockpit Support Beams on Mid Plate
 - Parts needed:
   - 1112 (Mid Plate)
-  - 1211, 1212 & 1213 (Cockpit Support Beams)
+  - 1211, 1212 x2 (Cockpit Support Beams)
   - Rivet 1 x13 (4mm Diameter for 1 mm - 2.5 mm thickness)
 
 - Place the cockpit support beams on the mid plate as shown in the picture.
@@ -321,7 +321,7 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 
 ### Step 2. Install the Battery Walls
 - Parts needed:
-  - 1221 & 1222 (Battery Walls)
+  - 1221 x2 (Battery Walls)
   - Rivet 2 x10 (4mm Diameter for 2.5 mm - 4.5 mm thickness)
 - Place the battery walls on the sides of the chassis as shown in the picture.
   - Make sure the dented side stays on the chassis side.
@@ -334,7 +334,7 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 
 ### Step 3. Install the Motor Arm Connectors
 - Parts needed:
-  - 14X1 x4 (Foldable Motor Arm Connectors)
+  - 1411 x4 (Foldable Motor Arm Connectors)
   - Screw 5 x16 (Socket Head Screw M3x8)
   - Screw 1 x8 (Socket Head Screw M3x10)
   - Washer 1 x24 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
@@ -449,7 +449,7 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 
 ### Step 8. Install the Battery Sliders
 - Parts needed:
-  - 2211, 2212 (Battery Sliders)
+  - 2211 x2 (Battery Sliders)
   - Insert 2 x8 (M4 Threaded Inserts)
   - Screw 9 x8 (Socket Head Screw M4x8)
   - Washer 2 x8 (M4 General Purpose Washer 4.3 mm ID, 9 mm OD)
@@ -470,10 +470,10 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 ---
 ### Step 9. Install the Landing Gear
 - Parts needed:
-  - 131X, 132X (Landing Gear Horizontal & Vertical Tubes)
-  - 133X (Landing Gear Main Adapters)
-  - 134X (Landing Gear Tube Joints)
-  - 135X (Landing Gear Foam)
+  - 1310 x4, 1320 x2 (Landing Gear Vertical & Horizontal Tubes)
+  - 1330 x4 (Landing Gear Main Adapters)
+  - 1340 x4 (Landing Gear Tube Joints)
+  - 1350 x4 (Landing Gear Foam)
   - Screw 2 x16 (Flanged Button Head Screw M4x10)
   - Screw 5 x16 (Socket Head Screw M3x8)
   - Washer 1 x16 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
@@ -583,14 +583,14 @@ Due to the lack of the landing gear tee joint geometry, this image depicts the o
 ### Step 12. Install PCBs & Onboard Components
 - Parts needed:
   - 2331 (GNSS Mount)
-  - 3311 (Main PCB)
-  - 3321 (BC PCB)
-  - 3331 (FC PCB)
+  - 3310 (Main PCB)
+  - 3320 (BC PCB)
+  - 3330 (FC PCB)
   - 3332 (Flight Controller)
   - 3312 (RPI 5)
   - 3313 x2 (GigaBlox Nano Ethernet Switch)
-  - 3315 (Mateksys GNSS M9N-G4-3100)
-  - 3251 (RTK GNSS)
+  - 3251 (Mateksys GNSS M9N-G4-3100)
+  - 3250 (RTK GNSS)
   - Screw 4 x4 (Socket Head Screw M3x12)
   - Screw 11 x14 (Flanged Button Head Hex-Drive Screw M3x6)
   - Screw 12 x4 (Socket Head Hex-Drive Screw M2x5)
@@ -700,8 +700,8 @@ Route the PCB interconnect and navigation harnesses after the BC PCB, Main PCB, 
 ---
 ### Step 13. Install Busbars
 - Parts needed:
-  - 3322 (Busbar Positive)
-  - 3323 (Busbar Negative)
+  - 4010 (Busbar Positive)
+  - 4010 (Busbar Negative)
   - Screw 15 x4 (Socket Head Hex-Drive Screw M5x8)
   - Washer 6 x4 (M5 General Purpose Washer 5.3 mm ID, 10 mm OD)
   - Loctite Threadlocker Blue 242
@@ -737,8 +737,8 @@ Route the PCB interconnect and navigation harnesses after the BC PCB, Main PCB, 
 ---
 ### Step 15. Install Attachment Interfaces
 - Parts needed:
-  - 2111, 2121 & 2131 (Attachment Interface Spacers)
-  - 2112, 2122 & 2132 (Attachment Interfaces)
+  - 2111 x2 & 2131 (Attachment Interface Spacers)
+  - 2112 x3 (Attachment Interfaces)
   - Screw 6 x8 (Socket Head Screw M3x40)
   - Screw 16 x4 (Button Head Hex Drive Screw M3x40)
   - Washer 1 x12 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
@@ -770,8 +770,8 @@ Route the PCB interconnect and navigation harnesses after the BC PCB, Main PCB, 
 ---
 ### Step 16. Install Radar Sensors
 - Parts needed:
-  - 3212 (Obstacle Avoidance Radar, Nanoradar MR82)
-  - 3213 (Radar Altimeter, Nanoradar NRA15)
+  - 3290 (Obstacle Avoidance Radar, Nanoradar MR82)
+  - 3220 (Radar Altimeter, Nanoradar NRA15)
   - Screw 5 x4 (Socket Head Screw M3x8)
   - Screw 11 x4 (Flanged Button Head Hex-Drive Screw M3x6)
   - Loctite Threadlocker Purple 222
@@ -812,7 +812,7 @@ Route radar and altimeter harnesses while installing the sensors.
 ---
 ### Step 17. Install Camera
 - Parts needed:
-  - 3241 (SIYI A8 Mini Gimbal Camera)
+  - 3270 (SIYI A8 Mini Gimbal Camera)
   - Screw 7 x4 (Socket Head Screw M2.5x6)
   - Washer 4 x4 (M2.5 Nylon Washer 2.7 mm ID, 5.6 mm OD)
   - Insert 5 x4 (M2.5 Threaded Inserts)
@@ -844,8 +844,8 @@ Route the camera harness while installing the SIYI camera.
 ---
 ### Step 18. Install Motor Arm Tubes & Motors
 - Parts needed:
-  - 14X2 (4x Motor Arm Tubes)
-  - 31X1 (4x Hobbywing X6 Plus Motors)
+  - 1412 x4 (Motor Arm Tubes)
+  - 3111 x4 (Hobbywing X6 Plus Motors)
   - Screw 6 x8
   - Washer 1 x16
   - Nut 1 x8
@@ -920,8 +920,8 @@ Route motor/ESC harnesses with the motor arms.
 
 ### Step 19. Install Telemetry Air Unit & Attachment Interface PCBs
 - Parts needed:
-  - 3223 (HM30 Telemetry Air Unit)
-  - 3341, 3342, 3343 (Attachment Interface PCBs)
+  - 3280 (HM30 Telemetry Air Unit)
+  - 3331 x3 (Attachment Interface PCBs)
   - Screw 3 x12 (Button Head Hex-Drive Screw M2x4)
   - Loctite Threadlocker Purple 222
   - Double-Sided Tape
@@ -971,8 +971,8 @@ Route HM30 and attachment-interface harnesses while installing the telemetry air
 - Parts needed:
   - 2411 (Main Enclosure)
   - 2412 (Top Cap)
-  - 2421 & 2422 (Enclosure Hinges)
-  - 2431 & 2432 (Enclosure Latches)
+  - 2420 x2 (Enclosure Hinges)
+  - 2430 x2 (Enclosure Latches)
   - Insert 1 x28 (M3 Threaded Inserts - 5.7 mm)
   - Silicone Foam Seal Strip (OD: 8 mm)
   - Screw 5 x4 (Socket Head Screw M3x8)
@@ -1036,9 +1036,9 @@ Route HM30 and attachment-interface harnesses while installing the telemetry air
 
 ### Step 21. Install the Push Button, Antennas & LIDAR
 - Parts needed:
-  - 3211 (Obstacle Avoidance Lidar S2L)
-  - 3221, 3222 (Front & Rear Telemetry Antennas)
-  - 3231 (Power Switch)
+  - 3210 (Obstacle Avoidance Lidar S2L)
+  - 3230, 3240 (Front & Rear Telemetry Antennas)
+  - 3260 (Power Switch)
   - Screw 5 x4 (Socket Head Screw M3x8)
   - Washer 1 x4 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)
   - Würth Super RTV Silicone Black
@@ -1092,8 +1092,8 @@ Route the pushbutton, LIDAR, and antenna harnesses while installing the enclosur
 ### Step 22. Install the PPP Adapter & Beacon
 - Parts needed:
   - 2341 (PPP Adapter & Beacon Mount)
-  - 3261 (Remote ID Beacon)
-  - 3314 (PPP Adapter, CubeNode ETH)
+  - 3202 (Remote ID Beacon)
+  - 3201 (PPP Adapter, CubeNode ETH)
   - Screw 5 x2 (Socket Head Screw M3x8)
   - Screw 10 x4 (Socket Head Screw M2x6)
   - Washer 1 x2 (M3 General Purpose Washer 3.2 mm ID, 6 mm OD)

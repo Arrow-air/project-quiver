@@ -1,14 +1,14 @@
 id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_part_number,supplier_url,unit_cost_usd,order_cost_usd,order_details,notes
 1111,Upper Plate,Airframe Structure,1,1,laser-cut,Aluminum,1 mm sheet,RapidDirect,,https://www.rapiddirect.com/,26.00,26.00,,
 1112,Middle Plate,Airframe Structure,1,1,laser-cut,Aluminum,1 mm sheet,RapidDirect,,https://www.rapiddirect.com/,26.00,26.00,,
-1113,Lower Plate,Airframe Structure,1,1,laser-cut,Aluminum,1 mm sheet,RapidDirect,,https://www.rapiddirect.com/,47.00,47.00,,
-1211,"Cockpit Support Beam, CW Long",Airframe Structure,1,1,laser-cut,Aluminum,40x40x2 mm box section,RapidDirect,,https://www.rapiddirect.com/,43.00,43.00,,
-1212,"Cockpit Support Beam, CCW Back",Airframe Structure,2,2,laser-cut,Aluminum,40x40x2 mm box section,RapidDirect,,https://www.rapiddirect.com/,27.00,54.00,,
-1221,Battery Wall,Airframe Structure,2,2,laser-cut,Aluminum,,RapidDirect,,https://www.rapiddirect.com/,49.00,98.00,,
+1113,Lower Plate,Airframe Structure,1,1,laser-cut,Aluminum,4 mm sheet,RapidDirect,,https://www.rapiddirect.com/,47.00,47.00,,
+1211,"Cockpit Support Beam, CW Long",Airframe Structure,1,1,laser-cut,Aluminum,40x40x1 mm box section,RapidDirect,,https://www.rapiddirect.com/,43.00,43.00,,
+1212,"Cockpit Support Beam, CCW",Airframe Structure,2,2,laser-cut,Aluminum,40x40x1 mm box section,RapidDirect,,https://www.rapiddirect.com/,27.00,54.00,,Same part front and back; the front one is turned 180 deg.
+1221,Battery Wall,Airframe Structure,2,2,laser-cut,Aluminum,"100x30x2 mm rectangular tube, 300 mm long",RapidDirect,,https://www.rapiddirect.com/,49.00,98.00,,Same part on both sides; the left one is turned 180 deg.
 1310,Landing Gear Vertical Tube,Airframe Structure,4,2,cut-to-length,Carbon fiber 3K,30x28 mm tube; see landing_gear assembly for cut length,RJXHobby,,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,45.00,90.00,"30x28x1000 mm stock, any color; each tube yields two legs",
 1320,Landing Gear Horizontal Tube,Airframe Structure,2,1,cut-to-length,Carbon fiber 3K,30x28 mm tube; see landing_gear assembly for cut length,RJXHobby,,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,45.00,45.00,"30x28x1000 mm stock, any color; one tube yields both skids",
-1330,Landing Gear Main Adapter,Airframe Structure,4,4,cots,,30 mm tube quick-release tilt seat,RJXHobby,,https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1,30.00,120.00,,
-1340,Landing Gear Tube Joint,Airframe Structure,4,4,cots,,30 mm,INNLOI,,https://www.innloi.com/productinfo/448455.html,13.99,55.96,,
+1330,Landing Gear Main Adapter,Airframe Structure,4,4,cots,,"30 mm tube quick-release tilt seat, 21 deg",RJXHobby,,https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1,30.00,120.00,,Same part on all four legs.
+1340,Landing Gear Tube Joint,Airframe Structure,4,4,cots,,30 mm,INNLOI,,https://www.innloi.com/productinfo/448455.html,13.99,55.96,,Same part on all four legs.
 1350,Landing Gear Foam Wrap,Airframe Structure,4,1,cots,EPP foam,,Amazon,,https://a.co/d/ggzWXc4,14.00,14.00,one pack wraps all four lower tubes,
 1411,Foldable Motor Arm Connector,Airframe Structure,4,4,cots,,30 mm tube option,Alibaba,,https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html,25.00,100.00,,
 1412,Motor Arm Tube,Airframe Structure,4,2,cut-to-length,Carbon fiber 3K,"30x28 mm tube, cut to 360 mm",RJXHobby,,https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm,45.00,90.00,"30x28x1000 mm stock, any color; each tube yields two arms",
@@ -16,7 +16,7 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 2112,Quick-Release Interface Plate,Supporting Structure,3,3,cots,Aluminum,,Alibaba,,https://www.alibaba.com/product-detail/Quick-Release-Clip-Plate-Clamp-Quick_1600982145247.html,34.00,102.00,,
 2131,"Attachment Interface Spacer, Bottom",Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,Has a wiring notch the left/right spacer does not.
 2211,Battery Slider,Supporting Structure,2,2,3d-print,PETG-CF,,,,,,,,
-2311,Main PCB Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
+2311,Main PCB Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,"Fusion v148 adapter assembly includes inserts, screws and five rubber spacers for visualization. Print only the adapter body. Step 6 specifies 16 short M3 inserts (FAST-024) and five vibration mounts (FAST-033); M3x6 screws are included in FAST-014 totals, not additional quantities."
 2312,BC PCB Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2313,BC PCB Cover,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2321,Altitude Sensor Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
@@ -25,7 +25,7 @@ id,name,category,qty_vehicle,qty_order,sourcing,material,spec,supplier,supplier_
 2341,PPP Adapter and Beacon Mount,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2411,Main Enclosure,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
 2412,Enclosure Top Cap,Supporting Structure,1,1,3d-print,PETG-CF,,,,,,,,
-2420,Enclosure Hinge,Supporting Structure,2,2,cots,Zinc die-cast,,JW Winco,GN 237-ZD-30-30-A-SW,https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type,10.00,20.00,,
+2420,Enclosure Hinge,Supporting Structure,2,2,cots,Zinc die-cast,,JW Winco,GN 237-ZD-30-30-A-SW,https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type,10.00,20.00,,"One part number for both sides. The CAD mirrors the left hinge, but a stock hinge turned 180° fits the same bores and pin line."
 2430,Enclosure Latch,Supporting Structure,2,2,cots,Steel,,McMaster-Carr,6082A11,https://www.mcmaster.com/6082A11/,10.42,20.84,,
 3111,"Motor + ESC, Hobbywing XRotor X6 Plus",Equipment,4,4,cots,,,Hobbywing,XRotor X6 Plus G2,https://www.hobbywing.com/en/products/x6-plus-g2,120.00,480.00,,Propellers are ordered separately (3112/3122).
 3112,"Propeller, Hobbywing MFP 24x8.0, CW",Equipment,2,2,cots,,,Hobbywing,MFP 24x8.0 CW,https://www.hobbywing.com/en/products/mfp-24x80,20.00,40.00,,
