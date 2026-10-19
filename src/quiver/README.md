@@ -57,8 +57,11 @@ Each subcategory has a `steps/` directory for STEP files:
   components (motors, tubes, hinges, etc.)
 
 Handed parts get their own BOM number and STEP file: a mirror image is a
-different part, not a second copy (for example `1212_ccw_back.step` and
-`1213_ccw_front.step`, or the FR/BL and FL/BR landing gear adapters).
+different part, not a second copy (for example the CW and CCW propellers,
+3112 and 3122). A part that is symmetric where it mates stays one part, even
+where the retired Fusion master drew a mirror image of it: the CCW cockpit
+beam (1212), the landing gear adapter (1330) and tube joint (1340), and the
+battery wall (1221) are each one part, placed turned rather than mirrored.
 
 ## Placement and source of truth
 
@@ -80,7 +83,7 @@ After moving a part on purpose, re-record it:
 
 ```bash
 python -m quiver.placement check            # compare the build with the records
-python -m quiver.placement record 1213      # re-record by key or label
+python -m quiver.placement record 1212-front   # re-record by key or label
 ```
 
 ## Running the assembly

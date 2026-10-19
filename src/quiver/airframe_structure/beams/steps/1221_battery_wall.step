@@ -9,7 +9,7 @@ FILE_DESCRIPTION(
 /* implementation_level */ '2;1');
 
 FILE_NAME(
-/* name */ '1222_battery_wall_right.step',
+/* name */ '1221_battery_wall.step',
 /* time_stamp */ '2026-02-03T14:12:35-06:00',
 /* author */ (''),
 /* organization */ (''),

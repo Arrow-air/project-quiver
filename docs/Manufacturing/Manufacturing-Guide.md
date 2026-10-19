@@ -46,28 +46,28 @@ and tools, with supplier links and a downloadable procurement CSV.
 | Image| <img src="Assembly-Guides/assets/images/structural/1111.png" alt="Alt Text" width="600"> | <img src="Assembly-Guides/assets/images/structural/1112.png" alt="Alt Text" width="600"> | <img src="Assembly-Guides/assets/images/structural/1113.png" alt="Alt Text" width="600"> |
 | CAD File|[1111](Assembly-Guides/assets/models/structural/1111.step)| [1112](Assembly-Guides/assets/models/structural/1112.step)| [1113](Assembly-Guides/assets/models/structural/1113.step)|
 ---
-### 1211, 1212 & 1213 - Cockpit Support Beams
+### 1211 & 1212 - Cockpit Support Beams
 - All three are aluminum 6 series, 40x40x1 mm square tubes, laser cut, sanded.
 - Part 1211; Qty: 1.
-- Parts 1212 and 1213 are mirror images of each other, not two copies; Qty: 1 each.
+- Part 1212 (CCW back and front) is used twice; Qty: 2. The front one is turned 180°.
 - Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
 
-| | 1211 (Cockpit Support Beam CW Long) | 1212 & 1213 (Cockpit Support Beam CCW Back & Front) |
+| | 1211 (Cockpit Support Beam CW Long) | 1212 (Cockpit Support Beam CCW, back & front) |
 |--|--|--|
 |Length|289.2 mm|124.2 mm|
 | Image| <img src="Assembly-Guides/assets/images/structural/1211.png" alt="Alt Text" width="600"> | <img src="Assembly-Guides/assets/images/structural/1212_1213.png" alt="Alt Text" width="600"> |
-| CAD File|[1211](Assembly-Guides/assets/models/structural/1211.step)| [1212](Assembly-Guides/assets/models/structural/1212.step), [1213](Assembly-Guides/assets/models/structural/1213.step)|
+| CAD File|[1211](Assembly-Guides/assets/models/structural/1211.step)| [1212](Assembly-Guides/assets/models/structural/1212.step)|
 ---
-### 1221 & 1222 - Battery Walls
-- Both are aluminum 6 series, 100x30x2 mm rectangular tubes, laser cut, sanded.
+### 1221 - Battery Walls
+- Aluminum 6 series, 100x30x2 mm rectangular tube, laser cut, sanded.
 - Length is 300 mm for each.
-- 1221 (left) and 1222 (right) are mirror images of each other; Qty: 1 each.
+- Parts are identical; Qty: 2. The left wall is the right one turned 180°.
 - Reference supplier: [Rapiddirect](https://www.rapiddirect.com/)
 
-| | 1221 & 1222 (Battery Wall Left & Right) |
+| | 1221 (Battery Walls) |
 |--|--|
 | Image| <img src="Assembly-Guides/assets/images/structural/1221_1222.png" alt="Alt Text" width="600"> |
-| CAD File|[1221](Assembly-Guides/assets/models/structural/1221.step), [1222](Assembly-Guides/assets/models/structural/1222.step)|
+| CAD File|[1221](Assembly-Guides/assets/models/structural/1221.step)|
 ---
 ### 1310 - Landing Gear Vertical Tubes
 - Carbon-fiber tubes, 30 mm diameter, 1 mm thickness.
@@ -81,12 +81,11 @@ and tools, with supplier links and a downloadable procurement CSV.
 - Parts are identical; Qty: 2.
   - Note: Order parts pre-cut to the specified length if available; otherwise, cut to length.
 ---
-### 1331 & 1332 - Landing Gear Main Adapters
+### 1330 - Landing Gear Main Adapters
 - Off-the-shelf component.
 - 30 mm option.
 - Product Link: [Link](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1)
-- 1331 (FR and BL legs) and 1332 (FL and BR legs) are mirror images of each other; Qty: 2 each.
-  - The RJX listing shows one version; confirm the mirrored hand when ordering.
+- The same part on all four legs; Qty: 4.
 
 :::note
 - This product became available in RJXHobby catalog after a customized order for 30 mm tube diameter.
@@ -98,18 +97,17 @@ and tools, with supplier links and a downloadable procurement CSV.
 If detachable landing gear is not favored, you may use 30 mm version of [this product](https://www.rjxhobby.com/rjxhobby-1pcs-20mm-25mm-30mm-landing-gear-vertical-mount-base-nozzle-connecting-rod-fixing-parts-for-rc-plant-agriculture-uav-drone).
 :::
 
-| 1331 & 1332 (Landing Gear Main Adapters) |
+| 1330 (Landing Gear Main Adapters) |
 |--|
 | <img src="Assembly-Guides/assets/images/structural/133X.jpeg" alt="Alt Text" width="600"> |
 ---
-### 1341 & 1342 - Landing Gear Tube Joints
+### 1340 - Landing Gear Tube Joints
 
 - Off-the-shelf component.
 - Product Link: [Link](https://www.innloi.com/productinfo/448455.html)
-- 1341 (FR and BL legs) and 1342 (FL and BR legs) are mirror images of each other in the CAD model; Qty: 2 each.
-  - TBC: confirm the joint is handed and that both hands are available.
+- The same part on all four legs; Qty: 4.
 
-| | 1341 & 1342 (Landing Gear Tube Joints) |
+| | 1340 (Landing Gear Tube Joints) |
 |--|--|
 | Image| <img src="Assembly-Guides/assets/images/structural/134X.png" alt="Alt Text" width="600"> |
 ---
@@ -317,7 +315,7 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 ### Step 1. Assemble the Cockpit Support Beams on Mid Plate
 - Parts needed:
   - 1112 (Mid Plate)
-  - 1211, 1212 & 1213 (Cockpit Support Beams)
+  - 1211, 1212 x2 (Cockpit Support Beams)
   - Rivet 1 x13 (4mm Diameter for 1 mm - 2.5 mm thickness)
 
 - Place the cockpit support beams on the mid plate as shown in the picture.
@@ -330,7 +328,7 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 
 ### Step 2. Install the Battery Walls
 - Parts needed:
-  - 1221 & 1222 (Battery Walls)
+  - 1221 x2 (Battery Walls)
   - Rivet 2 x10 (4mm Diameter for 2.5 mm - 4.5 mm thickness)
 - Place the battery walls on the sides of the chassis as shown in the picture.
   - Make sure the dented side stays on the chassis side.
@@ -480,8 +478,8 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 ### Step 9. Install the Landing Gear
 - Parts needed:
   - 1310 x4, 1320 x2 (Landing Gear Vertical & Horizontal Tubes)
-  - 1331 x2, 1332 x2 (Landing Gear Main Adapters)
-  - 1341 x2, 1342 x2 (Landing Gear Tube Joints)
+  - 1330 x4 (Landing Gear Main Adapters)
+  - 1340 x4 (Landing Gear Tube Joints)
   - 1350 x4 (Landing Gear Foam)
   - Screw 2 x16 (Flanged Button Head Screw M4x10)
   - Screw 5 x16 (Socket Head Screw M3x8)
@@ -491,7 +489,6 @@ If detachable landing gear is not favored, you may use 30 mm version of [this pr
 
 - Place the landing gear main adapters below the chassis, as shown in the picture.
   -  The adapters are facing outward, to the left and right of the structure.
-  -  Use 1331 on the FR and BL corners and its mirror image 1332 on FL and BR.
   -  Screw the adapters with 16x Screw 2 to the chassis.
   -  Use Loctite Threadlocker Blue to secure the screws.
 
@@ -516,7 +513,6 @@ Due to the lack of the detachable landing gear adapter geometry, this image depi
   -  If not, measure and equalize the tube lengths.
 
 - Assemble landing gear tube joints and the horizontal tubes as shown in the picture.
-  - Use 1341 on the FR and BL legs and its mirror image 1342 on FL and BR.
   - Insert the vertical tubes inside the holes before tightening the screws.
   - Use Screw 5.
   - Use Washer 1.

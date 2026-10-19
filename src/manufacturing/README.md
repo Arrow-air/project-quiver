@@ -17,7 +17,7 @@ The following BOM subcategories contain CNC or laser-cut metal parts:
 | BOM | Subcategory | Material | Parts |
 |---|---|---|---|
 | 1100 | Plates | Aluminum sheet (1mm, 4mm) | Upper, middle (1mm) and lower (4mm) plates |
-| 1200 | Beams | Aluminum tube (40x40x1mm, 100x30x2mm) | Cockpit beams; left and right battery walls (mirror images) |
+| 1200 | Beams | Aluminum tube (40x40x1mm, 100x30x2mm) | Cockpit beams; battery walls (one part, used on both sides) |
 | 1400 | Motor Arm | Aluminum (30mm) | Arm connectors |
 | 1300 | Landing Gear | Aluminum (30mm) | Main adapters (two mirror-image hands) |
 
