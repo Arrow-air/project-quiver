@@ -159,10 +159,13 @@ Open items:
 - 1332 and 1342 are confirmed handed (Thomas, October 16). The BOM carries both
   hands as separate lines; the remaining note is procurement only — confirm the RJX
   adapter and INNLOI joint can be sourced or customized in both hands.
-- The 2420 hinge is a symmetric COTS part (JW Winco GN 237). The mirrored CAD
-  instance is the same hinge flipped for the far side, not a different part, so one
-  part number bought twice is correct; GN 237 has no handed variant. (Contrast with the
-  printed and custom structural parts above, where a mirror is a genuine second part.)
+- The 2420 hinge (JW Winco GN 237) is chiral: its four knuckles alternate between
+  the leaves, and the screw bores are countersunk on one face. Its mounting pattern
+  is symmetric, though. A stock hinge turned 180° lands exactly on the mirrored left
+  hinge's four bores and pin line; only which leaf carries which knuckle differs. One
+  part number bought twice is correct, and GN 237 has no handed variant. (The printed
+  and custom structural parts above are different: their mirror images are genuine
+  second parts.)
 - Fusion calls the +Y beam "CCW back", but +Y is forward everywhere else.
 
 ## Validation
