@@ -14,12 +14,16 @@ horizontal cross-tubes. Foam sleeves cushion the landing points.
                                     [J] = tube joint, [F] = foam sleeve
 
 Each leg has three parts stacked along its axis:
-    1. An aluminum adapter (1331/1332) bolted to the lower plate
+    1. An aluminum adapter (1330) bolted to the lower plate
     2. A carbon-fiber vertical tube (1310) angled 21 deg outward
-    3. A tube joint (1341/1342) connecting to the horizontal tube
+    3. A tube joint (1340) connecting to the horizontal tube
 
-The adapters and tube joints are handed: the FL and BR legs use mirror
-images of the FR and BL parts, so all four legs are mirror-symmetric.
+All four legs use the same adapter and the same tube joint. The Fusion v148
+master drew the FL and BR ones as mirror images, but each part is symmetric
+where it mates: placed with the same signed pose, the one part puts every
+bore and bolt hole where the mirror image has it (the adapter's lower-plate
+holes and tube clamp, the joint's two tube bores). Only details like the
+clamp lever end up on the other side.
 
 The two horizontal cross-tubes (1320) run front-to-back (along Y),
 one on each side, connecting the left and right pairs of legs.
@@ -39,12 +43,10 @@ Looking from above, the four legs are at the same Y positions
                 |
 
 Vendor parts in steps/vendor/:
-    1331_main_adapter.step      Aluminum adapter, FR/BL hand (used 2x)
-    1332_main_adapter.step      Aluminum adapter, FL/BR hand (used 2x, mirror of 1331)
+    1330_main_adapter.step      Aluminum adapter (used 4x)
 
 Parts in steps/:
-    1341_tube_joint.step        Tube joint, FR/BL hand (used 2x)
-    1342_tube_joint.step        Tube joint, FL/BR hand (used 2x, mirror of 1341)
+    1340_tube_joint.step        Tube joint (used 4x)
 
 Generated parts:
     1310 Vertical tube  -- 30mm OD, 1mm wall CF tube, 400mm long (used 4x)
@@ -52,8 +54,7 @@ Generated parts:
     1350 Foam sleeve    -- 40mm OD, 30mm ID foam sleeve, 66mm long (used 4x)
 
 Poses are full rigid transforms (see quiver.common.place) from the Fusion
-360 v148 master. The mirror-hand STEPs are mirrored about their own YZ
-plane, so one pose pattern, signed per corner, places every leg.
+360 v148 master; one pose pattern, signed per corner, places every leg.
 """
 
 from pathlib import Path
@@ -117,15 +118,12 @@ def make_assembly() -> Compound | None:
     children = []
 
     for sx, sy in _CORNERS:
-        # FR and BL use the 1331/1341 hand, FL and BR its mirror image.
-        right_hand = sx * sy > 0
         # Each STEP stands along its own Z axis; rotZ turns it to face the
         # corner, rotY tilts it outward with the leg.
         leg_rot = (0, -sx * _TILT_ANGLE, sx * 90)
 
         # --- Main adapter (bolted to the lower plate) ---
-        adapter = load_step(
-            _DIR, "1331_main_adapter" if right_hand else "1332_main_adapter", vendor=True)
+        adapter = load_step(_DIR, "1330_main_adapter", vendor=True)
         if adapter:
             adapter.color = ALUMINUM
             place(adapter, (sx * _ADAPTER_X, sy * _LEG_Y, _ADAPTER_Z), leg_rot)
@@ -138,7 +136,7 @@ def make_assembly() -> Compound | None:
         children.append(v_tube)
 
         # --- Tube joint (connects vertical to horizontal tube) ---
-        joint = load_step(_DIR, "1341_tube_joint" if right_hand else "1342_tube_joint")
+        joint = load_step(_DIR, "1340_tube_joint")
         if joint:
             joint.color = PETG
             place(joint, (sx * _JOINT_X, sy * _LEG_Y, _JOINT_Z), leg_rot)

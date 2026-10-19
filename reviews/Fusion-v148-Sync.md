@@ -103,26 +103,36 @@ or physical fit.
 - Review enclosure/hinge/latch fit and sensor clearance; the automated tests check
   source placement and assembly integrity, not every physical interface.
 
-## Final sync: handed parts, full poses, Fusion retired (October 16, 2026)
+## Final sync: full poses and Fusion retired (October 16, 2026)
 
-Decisions after the full build123d review: the mirrored parts are real, the
-BOM/CAD numbering stays, the Fusion master is retired, and placement switches to
-full poses. The build123d model is now the master.
+Decisions after the full build123d review: the BOM/CAD numbering stays, the
+Fusion master is retired, and placement switches to full poses. The build123d
+model is now the master.
 
 Earlier the same day: the propellers were regrouped into diagonal CW/CCW pairs
 (Quad X; the repository had same-side pairs), the carbon tube walls went from 2 mm
 to 1 mm (30x28 tube, as in the BOM and Fusion), and the right 2111 spacer was
 turned about Y, as Fusion places it.
 
-**Handed parts.** Parts the repository modeled as one STEP used twice are mirror
-images in Fusion. Each hand now has its own BOM number and STEP file:
+**One part each, not mirror pairs (corrected October 19).** On October 16 this
+PR split four parts into handed pairs (1212/1213, 1221/1222, 1331/1332,
+1341/1342) because Fusion v148 draws one of each as a mirror image. That was
+wrong: each is one part, as on main. One RJX adapter serves all four legs, and
+the same tube joint, battery wall and CCW beam are used everywhere. The CAD now
+places the one part turned instead of mirrored:
 
-| BOM | Part | Hands | Source |
-| --- | --- | --- | --- |
-| 1212 / 1213 | Cockpit support beam, CCW back / front | 1213 mirrors 1212 | Fusion components 1212-CCW_Back, 1213-CCW_Front |
-| 1221 / 1222 | Battery wall, left / right | 1221 mirrors 1222 | Fusion 1221-LeftWall, 1222-RightWall (the old 1221 STEP is the right wall) |
-| 1331 / 1332 | Landing gear main adapter | FR, BL / FL, BR | 1332 is 1331 mirrored about its own YZ plane; matches Fusion 1332-FL and 1333-BR within 3e-5 mm |
-| 1341 / 1342 | Landing gear tube joint | FR, BL / FL, BR | Same, within 2e-5 mm. Fusion models the joint this way; still to be confirmed |
+| BOM | Part | Qty | Fusion's mirror image | The one part, turned, against it |
+| --- | --- | --- | --- | --- |
+| 1212 | Cockpit support beam, CCW | 2 | Front beam (component 1213) | Identical, within 0.0002 mm |
+| 1221 | Battery wall | 2 | Left wall | All 154 holes coincide; whole part within 0.05 mm |
+| 1330 | Landing gear main adapter | 4 | FL and BR legs | All 21 bores and holes coincide, including the lower-plate bolt holes and the tube clamp; whole part within 2.5 mm |
+| 1340 | Landing gear tube joint | 4 | FL and BR legs | All 38 bores and holes coincide, including both tube bores; whole part within 0.75 mm |
+
+"Coincide" means within 0.05 mm and 0.05°. Each turned part also lines up with
+the same plate holes and tube axes as Fusion's mirror image. What differs is
+detail away from the joints, such as the adapter's clamp lever, which ends up
+on the other side. The adapter and joint use the same signed pose at all four
+legs; the left wall and the front beam sit where main placed them.
 
 **Full poses.** Every part is placed with `place(part, pos, rot)`, a full rigid
 transform equal to its Fusion v148 occurrence transform. The pose of each of the
@@ -150,23 +160,17 @@ were 29 mm tall).
 Kept on the repository pose instead of Fusion's: the foam sleeves (Fusion draws
 them 2 mm above the tube axis), and the GNSS mount and Wren Mini, which are not in v148.
 
-**BOM and guide.** BOM: the handed items above, cockpit beams 40x40x1 mm, lower
-plate 4 mm sheet. The Manufacturing Guide now uses BOM/CAD numbers throughout; it
+**BOM and guide.** BOM: cockpit beams 40x40x1 mm, lower plate 4 mm sheet, and
+the single parts above (as on main). The Manufacturing Guide now uses BOM/CAD numbers throughout; it
 used Fusion instance numbers, which differ from the BOM in 3200 and 3300.
 
-Open items:
+Also checked:
 
-- 1332 and 1342 are confirmed handed (Thomas, October 16). The BOM carries both
-  hands as separate lines; the remaining note is procurement only — confirm the RJX
-  adapter and INNLOI joint can be sourced or customized in both hands.
 - The 2420 hinge (JW Winco GN 237) is chiral: its four knuckles alternate between
   the leaves, and the screw bores are countersunk on one face. Its mounting pattern
   is symmetric, though. A stock hinge turned 180° lands exactly on the mirrored left
   hinge's four bores and pin line; only which leaf carries which knuckle differs. One
-  part number bought twice is correct, and GN 237 has no handed variant. (The printed
-  and custom structural parts above are different: their mirror images are genuine
-  second parts.)
-- Fusion calls the +Y beam "CCW back", but +Y is forward everywhere else.
+  part number bought twice is correct, and GN 237 has no handed variant.
 
 ## Validation
 

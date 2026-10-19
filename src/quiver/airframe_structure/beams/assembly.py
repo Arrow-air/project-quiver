@@ -21,24 +21,23 @@ plates. Looking down from above (top view):
 
 The CW long beam spans the full diagonal. The two CCW beams span the
 other diagonal, with a gap at the center where they meet the CW beam.
-Each CCW beam covers one half of its diagonal. The CCW front beam is the
-mirror image of the CCW back beam, not a second copy of it.
+Each CCW beam covers one half of its diagonal. Both are the same part
+(1212): the front one is the back one turned 180 deg about Z. (Fusion v148
+has the front one as a separate component, 1213, but the two are identical.)
 
 The battery walls are vertical rectangular tubes on the left (-X) and
 right (+X) sides, running the full 300mm depth between the middle and
-lower plates. The left wall is the mirror image of the right wall.
+lower plates. Both are the same part: the left one is the right one turned
+180 deg about Y. Fusion v148 draws the left wall as a mirror image, but the
+wall is symmetric where it mates, so every hole lands in the same place.
 
 Expected STEP files in steps/:
     1211_cw_long.step               40x40x1mm aluminum tube (CW long)
-    1212_ccw_back.step              40x40x1mm aluminum tube (CCW back)
-    1213_ccw_front.step             40x40x1mm aluminum tube (CCW front, mirror of 1212)
-    1221_battery_wall_left.step     100x30x2mm aluminum tube, 300mm (left, mirror of 1222)
-    1222_battery_wall_right.step    100x30x2mm aluminum tube, 300mm (right)
+    1212_ccw_back.step              40x40x1mm aluminum tube (CCW, used 2x)
+    1221_battery_wall.step          100x30x2mm aluminum tube, 300mm (used 2x)
 
 Poses are full rigid transforms (see quiver.common.place) from the Fusion
-360 v148 master. Each STEP is in its Fusion component frame: 1212 and 1213
-share one frame (the front beam's geometry sits on the far side of it), so
-they also share a pose.
+360 v148 master.
 """
 
 from pathlib import Path
@@ -52,10 +51,10 @@ _DIR = Path(__file__).parent
 # (STEP file, position mm, intrinsic XYZ rotation deg)
 _PARTS = [
     ("1211_cw_long", (-102.4526, -102.4526, 0), (0, 0, -45)),
-    ("1212_ccw_back", (-14.2128, 14.2128, 0), (0, 0, 45)),
-    ("1213_ccw_front", (-14.2128, 14.2128, 0), (0, 0, 45)),
-    ("1221_battery_wall_left", (-135, 150, -71), (0, 0, 180)),
-    ("1222_battery_wall_right", (135, 150, -71), (180, 0, 0)),
+    ("1212_ccw_back", (-14.2128, 14.2128, 0), (0, 0, 45)),  # back
+    ("1212_ccw_back", (14.2128, -14.2128, 0), (0, 0, -135)),  # front
+    ("1221_battery_wall", (-135, -150, -71), (0, 180, 0)),  # left
+    ("1221_battery_wall", (135, 150, -71), (180, 0, 0)),  # right
 ]
 
 
