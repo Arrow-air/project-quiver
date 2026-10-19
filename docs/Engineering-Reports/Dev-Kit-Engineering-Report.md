@@ -14,7 +14,7 @@ The structural modifications centered on weight reduction and weatherproofing. P
 
 Electronics revisions focused on reliability and tighter integration of the companion computer and networking hardware. The four-PCB architecture received improved power protection, a dedicated backup supply for the flight controller, and a vibration isolation mount that decouples the PCB stack from propulsion vibration. Copper bus bars replaced cabling on the battery board for high current capacity, and surface mounted standoffs now secure the Raspberry Pi and Ethernet switches directly to the Main PCB. For convenience, various connectors were updated on the PCBs to match the default on the system peripherals. 
 
-Obstacle avoidance integration combined an RPLidar S2L and NanoRadar MR82 with a custom ArduPilot firmware build running the BendyRuler algorithm. Software in the loop (SITL) simulation established safe operating parameters ahead of field testing, which is structured across four phases and has not yet begun. An intermittent LiDAR dropout under flight conditions is under active investigation.
+Obstacle avoidance integration combined an RPLidar S2 and NanoRadar MR82 with a custom ArduPilot firmware build running the BendyRuler algorithm. Software in the loop (SITL) simulation established safe operating parameters ahead of field testing, which is structured across four phases. The intermittent LiDAR dropout reported in March was traced in June 2026 to two causes, the wrong serial port in the base parameter file and a firmware build without the S2 driver, and is resolved (see Obstacle Avoidance below).
 
 The software work produced two things: Quiver Hub, a web application with five core operator applications and an extensibility framework for custom payload integrations, and the Quiver SDK, which runs two persistent services on the Raspberry Pi for telemetry relay and job execution. As a first integration, point cloud data from an RPLidar payload was streamed through the companion computer to Quiver Hub and rendered in the browser in real time, confirming the data path from onboard sensor to operator display works as intended.
 
@@ -39,10 +39,10 @@ With Remote ID integration validated in April 2026 via DroneCAN, endurance fligh
 | **PCB Strategy**             | Repurposed from Feather Testbed | Custom main PCB       | Multiple custom PCBs (first revision)          | Revised PCBs: JST-GH connectors, 5V backup, vibration mount |
 | **Battery Management**       | Contactor controlled by Arduino | SSR & Pre-charge      | Battery PCB w/ temp monitoring and kill switch | Battery PCB: upgraded MOSFETs, copper bus bars       |
 | **PCB Vibration Isolation**  | None                            | None                  | None                                           | Rubber dampener mount (3D printed adapter plate)     |
-| **Altimeter Sensors**        | Radar altimeter                 | LiDAR                 | Ainstein US-D1 Radar, Benewake TF03-180 LiDAR  | Same sensors, redesigned X-pattern mount             |
+| **Altimeter Sensors**        | Radar altimeter                 | LiDAR                 | Ainstein US-D1 Radar, Benewake TF03-180 LiDAR  | NanoRadar NRA15 radar altimeter on CAN2, redesigned X-pattern mount |
 | **Communication**            | CAN, Serial, Analog             | CAN, Serial, Analog   | CAN, Serial, Analog, Ethernet                  | CAN, Serial, Analog, Ethernet                        |
 | **Raspberry Pi Integration** | None                            | Optional              | Optional                                       | Integrated on Main PCB (SMD standoffs)               |
-| **Obstacle Avoidance**       | None                            | None                  | Sensors selected                               | RPLidar S2L + NanoRadar MR82, BendyRuler             |
+| **Obstacle Avoidance**       | None                            | None                  | Sensors selected                               | RPLidar S2 + NanoRadar MR82, BendyRuler              |
 | **Software Platform**        | None                            | None                  | None                                           | Quiver SDK + Quiver Hub                              |
 | **Remote ID**                | None                            | None                  | None                                           | DroneCAN integration validated; per-operator configuration required |
 | **Transport Case**           | None                            | None                  | None                                           | Pelican 1640 w/ custom laser cut foam                |
@@ -105,7 +105,7 @@ New curved cable anchors compatible with zip ties and large cables were integrat
 
 **Embedded LiDAR Mount**
 
-The cockpit lid incorporates a dedicated mounting slot for the SLAMTEC RPLidar S2L 360° LiDAR module. The slot minimizes the module's height profile above the lid while preserving the full optical path of the laser beam. Drainage gaps and cable outlets are sized to pass the full LiDAR electrical connector and are compatible with sealant application.
+The cockpit lid incorporates a dedicated mounting slot for the SLAMTEC RPLidar S2 360° LiDAR module (model `S2M1-R2`; SLAMTEC rates it 30 m on a white, high reflectivity target and 10 m on a black, low reflectivity one, against 18 m white for the S2L the report previously named). The slot minimizes the module's height profile above the lid while preserving the full optical path of the laser beam. Drainage gaps and cable outlets are sized to pass the full LiDAR electrical connector and are compatible with sealant application.
 
 | Version 1 | Version 2 |
 | :---: | :---: |
@@ -194,7 +194,7 @@ _Quiver loaded in the Pelican 1640 transport case._
 
 #### Altitude Sensor Mount Redesign
 
-The altitude sensor mount was fully redesigned to accommodate the two new sensor modules (Ainstein US-D1 radar altimeter and Benewake TF03-180 LiDAR altimeter) and to simplify the wiring process of the previous design.
+The altitude sensor mount was fully redesigned to accommodate two sensor modules and to simplify the wiring process of the previous design. The mount was designed around the Ainstein US-D1 radar altimeter and the Benewake TF03-180 LiDAR altimeter. The Dev-Kit as configured carries a NanoRadar NRA15 radar altimeter instead (`RNGFND1_TYPE 39`, downward), which shares the CAN2 RadarCAN bus with the forward NanoRadar MR82 (`PRX2_TYPE 17`). The two NanoRadar devices ship at the same CAN ID and collide on the bus, so each unit is assigned a distinct ID at configuration (NRA15 = 1, MR82 = 2) with matching receive filters on the flight controller (Initial Configuration Guide §9.2).
 
 The new mount uses an X-pattern upper structure for weight reduction and improved 3D printing sliceability. The pattern also provides natural cable organization for altitude sensor wiring. Screw insert bases for the forward facing radar use large chamfers to enable supportless 3D printing.
 
@@ -255,7 +255,7 @@ The Main PCB is the central hub routing power and signals between the flight con
   - Fuses, LED indicators, and protection circuitry added (see schematic for full detail)
 
 **Redundancy:**
-- Redundant SSR control trace added: J46 Pin 5 (IO_CH5_Backup) provides a backup signal path to prevent signal loss
+- Redundant SSR control trace added: J46 Pin 5 (`IO_CH5_Backup`, the net name on the Main PCB V1.2 schematic) provides a backup signal path for the `IO_CH5` SSR control signal to prevent signal loss
 
 **Mechanical integration:**
 - SMD-soldered threaded standoffs added for GNSS (U3, U6–U8), Raspberry Pi (U9–U12), and Ethernet switches (U13–U16)
@@ -301,13 +301,16 @@ All onboard devices share a flat 192.168.144.0/24 network. Several addresses are
 
 | Device | IP Address |
 | :--- | :--- |
-| CubeNode ETH adapter | 192.168.144.10 |
-| Raspberry Pi (companion computer) | 192.168.144.50 |
+| CubeNode ETH adapter | 192.168.144.50 |
+| Raspberry Pi (companion computer) | 192.168.144.49 |
 | Flight Controller | 192.168.144.51 |
 | Payload bottom port (C1) | 192.168.144.100 |
 | Payload side port 1 (C2) | 192.168.144.101 (default, see note) |
 | Payload side port 2 (C3) | 192.168.144.102 (default, see note) |
 | Ground station laptops / dev machines | 192.168.144.200–254 |
+
+> [!NOTE]
+> The flight controller has no IP address of its own. It reaches Ethernet over PPP through the CubeNode ETH and is handed the CubeNode's address + 1, so CubeNode `.50` produces FC `.51`, and the FC's gateway is the CubeNode at `.50`. To change the FC address, change the CubeNode address. The Raspberry Pi at `.49` is a companion host on the same subnet.
 
 **SIYI reserved addresses (do not use):**
 
@@ -324,13 +327,19 @@ Payload and attachment developers should assign static IPs in the 192.168.144.10
 > [!NOTE]
 > **On side port IPs:** The bottom port assignment (.100) is fixed because that port is always the bottom. Side port assignments (.101/.102) are defaults based on physical port position. Attachments designed to work on either side port should treat their IP as a configurable parameter rather than a hardcoded value, so operators can reassign it to match whichever port the attachment is actually mounted on.
 
-The switches are secured to the Main PCB using M2x6 screws. Dev-Kit PCBs have spacers already soldered; older PCBs require a separate spacer and nut.
+The switches are secured to the Main PCB using M2x6 screws. Dev-Kit PCBs have spacers already soldered; older PCBs require a separate spacer and nut. Every link on the drone network is 100BASE-TX; the switches are gigabit capable but no attached device negotiates above 100 Mbit.
+
+**GNSS interference from the switches (found 2026-07 to 2026-08, testing in progress):**
+
+The GigaBlox switches degrade the Mateksys M9N (GPS 2) mounted next to them. Two different M9N modules showed the same signature on the first unit: velocity glitches up to 20 m/s while stationary and a low satellite count, appearing when the aircraft is on battery power with the switches running. On 2026-08-24 both switches were removed from the aircraft and the M9N recovered on the first power up (22 to 24 satellites, HDOP 0.60 to 0.66, ground speed noise under 0.11 m/s, 2 m from the F9P), which confirmed the source. The aircraft has flown the obstacle avoidance campaign with the switches out and the F9P as the single GPS. Mitigation, in the order it will be tried, is a ground plane under the M9N, shielding the switches, ferrites and shielded twisted pair leads, a supply filter on the switch rail, and relocating the M9N on a longer cable with a new cradle. This testing is a work in progress as of September 2026: a spectrum analyzer characterization on the bench precedes the choice of mitigation, the second unit repeats the measurement on its own switch build, and the dual GPS configuration is restored only after a clean validation flight. The Initial Configuration Guide §4.1 carries the procedure and the current state.
 
 #### Remote ID Integration
 
 A DroneBeacon db201 (Bluemark) is mounted inside the main enclosure on the floating module mounting plate alongside the Ethernet adapter. The module runs ArduRemoteID firmware on an ESP32 processor and broadcasts operator and drone identity over WiFi and Bluetooth Low Energy simultaneously. Integration was validated on April 10, 2026 running ArduCopter V4.7.0-dev on the Pix32 v6, connected via DroneCAN.
 
-Remote ID requires the Quiver custom ArduPilot firmware build (PR #183, `feature/firmware-docs-v2`), compiled with `AP_OPENDRONEID_ENABLED=1`. Stock ArduPilot firmware does not include this capability. Operator and drone IDs are configured per operator via Mission Planner or automated through a Python script running as a systemd service on the Raspberry Pi.
+Remote ID requires the Quiver custom ArduPilot firmware build, compiled with `AP_OPENDRONEID_ENABLED=1`. Stock ArduPilot firmware for the Pixhawk6C target does not include this capability. The current flight image is the PR #230 build, git `20622a39`, built from ArduPilot master on the upstream Pixhawk6C target with the Arrow features restored (networking, OpenDroneID, the RPLidar S2 driver). It supersedes the PR #183 `feature/firmware-docs-v2` build that the April validation used. Operator and drone IDs are configured per operator via Mission Planner or automated through a Python script running as a systemd service on the Raspberry Pi.
+
+**Module firmware.** The board identifies itself as a BlueMark db200 in firmware and joins CAN1 as DroneCAN node 123. A module on stale firmware fails in a specific way: it is healthy on its own RID WiFi access point but puts no frames on the CAN bus, and the flight controller repeats `ODID: lost transmitter`. Reseating or power cycling does not clear it. The fix on the first unit (2026-06-29, firmware 1.13 to 1.14) was the web updater on the module's access point (`http://192.168.4.1`) with `ArduRemoteID_BLUEMARK_DB200_OTA.bin` from <https://github.com/ArduPilot/ArduRemoteID/releases>, followed by a power cycle, since a DroneCAN node only brings up its CAN interface at boot. The plain `ArduRemoteID-BLUEMARK_DB200.bin` on the same release page is the full image for a serial reflash with esptool, untested on Quiver hardware. Procedure and recovery steps: Initial Configuration Guide §8.3.
 
 **GCS GPS requirement:**
 
@@ -426,13 +435,13 @@ GitHub: https://github.com/Arrow-air/quiver-sdk
 
 | Sensor | Coverage | Range | Role |
 | :--- | :--- | :--- | :--- |
-| RPLidar S2L | 360° horizontal | ~18 m | Primary proximity input to BendyRuler |
+| RPLidar S2 (`S2M1-R2`) | 360° horizontal | 30 m on white (high reflectivity) targets, 10 m on black | Primary proximity input to BendyRuler |
 | NanoRadar MR82 | Forward sector | ~30 m | Supplemental forward detection in degraded conditions |
 | Barometer + Rangefinder | Vertical | — | Altitude estimation and terrain clearance |
 
 **ArduPilot custom firmware:**
 
-The RPLidar S2L is not natively supported in upstream ArduPilot. The Dev-Kit operates on a custom ArduPilot build incorporating an in house sensor driver extension. The patch is limited to driver support and proximity interface integration, with no modifications to core navigation or avoidance algorithms. An upstream pull request has been submitted: https://github.com/ArduPilot/ardupilot/pull/31663
+The RPLidar S2 was not supported in the ArduPilot release the Dev-Kit started on. The Dev-Kit operates on a custom ArduPilot build incorporating a sensor driver extension. The patch is limited to driver support and proximity interface integration, with no modifications to core navigation or avoidance algorithms. The driver was submitted upstream as https://github.com/ArduPilot/ardupilot/pull/31663 and is included in the current flight image (PR #230 build, git `20622a39`). The earlier shipped image (`977fd8e`) predated the driver and detected the S2 as `RPLidar UNKNOWN`, which was one of the two causes of the dropouts noted below.
 
 **Obstacle avoidance algorithm: BendyRuler (`OA_TYPE = 1`)**
 
@@ -463,7 +472,7 @@ The 4 m obstacle margin is intentionally set low to allow maneuvering within tre
 
 **SITL simulation:**
 
-A Software in the Loop simulation environment was established using the same ArduPilot branch and parameter set as the flight hardware. An SF45 LiDAR model substitutes for the RPLidar S2L. The environment is launched with:
+A Software in the Loop simulation environment was established using the same ArduPilot branch and parameter set as the flight hardware. An SF45 LiDAR model substitutes for the RPLidar S2. The environment is launched with:
 
 ```bash
 ../Tools/autotest/sim_vehicle.py --map --console \
@@ -492,7 +501,7 @@ Pass criteria:
 - At least 95% AUTO mission success rate
 - Separation of at least `OA_MARGIN_MAX` − 1 m at all times
 
-**Known issue:** As of March 2026, the S2L LiDAR exhibits intermittent dropouts during flight, despite reliable ground performance. Suspected cause is vibration resonance or electrical load interaction. Under active investigation.
+**Resolved issue:** As of March 2026 the S2 LiDAR exhibited intermittent dropouts (turret spin up then coast down, `RPLidar UNKNOWN`) despite reliable ground performance. Two causes were found and fixed on 2026-06-17: the base parameter file addressed the lidar on SERIAL3 while it is wired to SERIAL5 (TELEM3, 1 Mbaud), and the flight image at the time lacked the S2 driver (fixed by the PR #230 build). Steady scan has been confirmed since, through the 2026 obstacle avoidance campaign.
 
 ---
 
@@ -502,8 +511,10 @@ Pass criteria:
 
 | Configuration | Battery | Battery mass | Empty weight | AUW | Payload capacity |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Standard | 20Ah LiPo (14S) | 7.90 kg | 9.65 kg | 17.55 kg | **7.45 kg** |
-| Long endurance | 30Ah LiPo (14S) | 11.40 kg | 9.65 kg | 21.40 kg | **3.95 kg** |
+| Standard | 20Ah LiHV (14S) | 7.90 kg | 9.65 kg | 17.55 kg | **7.45 kg** |
+| Long endurance | 30Ah LiHV (14S) | 11.40 kg | 9.65 kg | 21.40 kg | **3.95 kg** |
+
+Both packs are Tattu 14S LiHV. The Tattu 4.0 series pack carries its own smart battery management system (`GBMS063E12`) that reports over DroneCAN as node 125 using the CUAV CBAT messages: 14 per cell voltages, state of charge, state of health, cycle count, and pack temperature. On the flight controller it is battery instance 2 (`BATT2_MONITOR 8`) next to the ESC telemetry monitor on instance 1, and it is the source for the capacity based low battery failsafe adopted in September 2026 (Pilot's Handbook §4.2.1, Initial Configuration Guide §7). Packs without CAN telemetry fly on the instance 1 voltage thresholds alone.
 | MTOW limit | — | — | — | **25.00 kg** | — |
 
 Payload capacity = MTOW − empty weight − battery mass. MTOW is 25 kg per the intended regulatory category.
@@ -516,7 +527,7 @@ Empty weight covers the full Dev-Kit build as shipped, including the NanoRadar M
 | :--- | :--- | :--- |
 | Airframe Structure | Upper/mid plates, lower plate, motor arms, CF tubes, landing gear | TBD |
 | Propulsion | 4× XRotor X6 PLUS (motor + ESC + props, 790 g each) | **3.16 kg** |
-| Avionics & Sensors | Pix32 v6 (36 g), RPLidar S2L (190 g), NanoRadar MR82 (92 g), Ainstein US-D1 (110 g), Benewake TF03-180 (89 g), Holybro F9P (60 g), Mateksys M9N (16 g), SIYI A8 mini (95 g), SIYI HM30 air unit (74 g), DroneBeacon db201 (4 g), sensor mount (TBD) | TBD (≥ 766 g) |
+| Avionics & Sensors | Pix32 v6 (36 g), RPLidar S2 (TBD, the 190 g figure was the S2L), NanoRadar MR82 (92 g), NanoRadar NRA15 (81 g), Holybro F9P (60 g), Mateksys M9N (16 g), SIYI A8 mini (95 g), SIYI HM30 air unit (74 g), DroneBeacon db201 (4 g), sensor mount (TBD) | TBD (458 g for the weighed items; the S2 and the mount are measured in the aircraft weigh in, issue #209) |
 | Custom PCBs | Main PCB, Battery PCB, FC PCB, 3× Attachment Interface PCB | TBD |
 | Companion Computer | Raspberry Pi 5 (47 g), 2× GigaBlox Nano (18 g each), CubeNode ETH (7 g) | **90 g** |
 | Enclosure & Mounts | Enclosure body, cockpit lid, PCB vibration mount, module plate | TBD |
