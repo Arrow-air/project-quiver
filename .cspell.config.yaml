@@ -16,6 +16,9 @@ ignoreRegExp:
 ignorePaths:
   - "node_modules"
   - "build"
+  - ".venv"
+  - "**/__pycache__"
+  - "**/*.egg-info"
   - "**/constraints.txt"
   - "**/*.3dshapes"
   - "**/*.abin"

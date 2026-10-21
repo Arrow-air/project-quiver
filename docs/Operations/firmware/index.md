@@ -33,7 +33,8 @@ Load in order:
 |------|---------|
 | [`standard-params.param`](./parameters/standard-params.param) | Base configuration — load this first on every drone |
 | [`params-ethernet.param`](./parameters/params-ethernet.param) | *(optional)* Enable PPP networking via Raspberry Pi |
-| [`params-object-avoidance.param`](./parameters/params-object-avoidance.param) | *(optional)* Enable RPLidar S2 obstacle avoidance |
+| [`params-object-avoidance.param`](./parameters/params-object-avoidance.param) | *(optional)* Enable RPLidar S2 obstacle avoidance (Germany tree-dense baseline) |
+| [`params-object-avoidance-texas-v1.param`](./parameters/params-object-avoidance-texas-v1.param) | *(optional)* Texas open-field OA candidate — pending Phase 2 validation |
 | [`params-remoteid.param`](./parameters/params-remoteid.param) | *(optional)* Enable DroneBeacon db201 Remote ID via DroneCAN |
 
 See [Parameter Notes](#parameter-notes) below for full parameter documentation.
@@ -87,7 +88,8 @@ Documentation for the Quiver standard parameter configuration and key difference
 |------|---------|
 | `standard-params.param` | Load first — base config with ethernet and OA disabled |
 | `params-ethernet.param` | Layer on to enable PPP networking via Raspberry Pi |
-| `params-object-avoidance.param` | Layer on to enable RPLidar S2 obstacle avoidance |
+| `params-object-avoidance.param` | Layer on to enable RPLidar S2 obstacle avoidance (Germany baseline) |
+| `params-object-avoidance-texas-v1.param` | Texas open-field OA candidate (see [OA-Texas-Baseline-v1.md](../../../task-grant-bounty/Dev-Kit/OA-Texas-Baseline-v1.md)) |
 
 
 ### CAN Bus

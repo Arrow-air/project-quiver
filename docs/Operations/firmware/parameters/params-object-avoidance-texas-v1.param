@@ -1,0 +1,33 @@
+# Object Avoidance Parameters — Texas Baseline v1 (candidate)
+# Load AFTER standard-params.param
+#
+# Status: PROPOSED — pending Phase 2 open-field flight validation (QGB-02)
+# Derived from Germany baseline via SITL parameter exploration and open-field
+# operating assumptions (lower clutter density, higher cruise speeds).
+#
+# See: task-grant-bounty/Dev-Kit/Obstacle-Avoidance.md
+#      flight-test/OA/testing-roadmap.md
+
+AVOID_ENABLE,3
+AVOID_ACCEL_MAX,3
+AVOID_ALT_MIN,2
+AVOID_ANGLE_MAX,1000
+AVOID_BACKUP_DZ,0.1
+AVOID_BACKUP_SPD,0.75
+AVOID_BACKZ_SPD,0.75
+AVOID_BEHAVE,1
+AVOID_DIST_MAX,6
+AVOID_MARGIN,5
+OA_TYPE,1
+OA_BR_CONT_ANGLE,60
+OA_BR_CONT_RATIO,1.2
+OA_BR_LOOKAHEAD,14
+OA_BR_TYPE,1
+OA_DB_DIST_MAX,12
+OA_DB_EXPIRE,3
+OA_DB_OUTPUT,3
+OA_DB_QUEUE_SIZE,80
+OA_DB_RADIUS_MIN,0.2
+OA_DB_SIZE,100
+OA_MARGIN_MAX,5
+OA_OPTIONS,1
