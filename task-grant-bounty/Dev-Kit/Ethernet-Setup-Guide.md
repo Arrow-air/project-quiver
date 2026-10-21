@@ -1,5 +1,8 @@
 # Setup Note Quiver Ethernet
 
+> [!WARNING]
+> **Superseded for addressing (2026-09-30).** The IP scheme in this note (flight controller `.11`, Raspberry Pi `.20`, `/20` mask, gateway `.10`) collides with the SIYI reserved addresses and is retired. The current scheme is in the Initial Configuration Guide §4 and §6 and the Quiver SDK Developer Guide §3: CubeNode ETH `.50`, flight controller `.51` (PPP, CubeNode + 1), Raspberry Pi `.49`, payloads `.100` to `.199`, ground stations `.200` to `.254`, SIYI reserved `.11`, `.12`, `.20`, `.25`, `.60`, `/24` everywhere. The photos, the physical installation steps, and the CubeNode parameter walkthrough below remain valid. Do not copy the addresses.
+
 # Status  
 
 `Valid`
@@ -372,4 +375,4 @@ Check can bus status (Bitrate & Errors):
 > [!TIP]
 >**Success:**
 >The can bridge should be working now. Please select DroneCAN-BatteryInfo (Value 8) for the BATT_MONITOR parameter in ardupilot to test it. For testing please also deactivate all other BATT_MONITOR parameters like BATT_MONITOR1, BATT_MONITOR2 etc...
-:::
+:::
