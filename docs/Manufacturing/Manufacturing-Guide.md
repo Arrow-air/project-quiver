@@ -6,6 +6,8 @@ sidebar_position: 2
 
 # Dev-Kit Manufacturing Guide
 
+For a complete 3D reference of the final design, an interactive Fusion link of the entire Quiver assembly is available **[here](https://a360.co/4kQC2ny)**.
+
 ## PCB Fabrication and Assembly
 
 Build the vehicle PCBs using the standalone PCB assembly guides. These guides are the canonical source for ordering notes, interactive BOMs, stencil/reflow guidance, inspection images, and PCB-specific manual assembly steps.
