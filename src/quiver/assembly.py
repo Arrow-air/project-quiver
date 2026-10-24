@@ -63,7 +63,7 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output", type=Path, help="Output STEP file path")
     parser.add_argument(
         "--gps", choices=PRIMARY_GPS_OPTIONS, default=DEFAULT_PRIMARY_GPS,
-        help="Primary GPS receiver and matching mount (default: here4)",
+        help=f"Primary GPS receiver and matching mount (default: {DEFAULT_PRIMARY_GPS})",
     )
     args = parser.parse_args()
 

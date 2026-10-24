@@ -1,7 +1,8 @@
 """Supported primary GPS choices; neither option changes the backup GPS."""
 
-PRIMARY_GPS_OPTIONS = ("here4", "holybro-f9p")
-DEFAULT_PRIMARY_GPS = "here4"
+PRIMARY_GPS_OPTIONS = ("holybro-f9p", "here4")
+# The F9P is the primary GPS the Dev Kit flies with; Here4 is the alternative.
+DEFAULT_PRIMARY_GPS = "holybro-f9p"
 
 # Retain the existing F9P base placement pending physical stack-up review.
 F9P_MOUNT_DZ = -11.95

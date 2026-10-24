@@ -20,7 +20,7 @@ rather than this live page, which tracks the latest design.
 **Download:** [procurement CSV](./quiver-bom.csv) — one row per line
 item with order quantities, supplier links, and indicative costs.
 
-Indicative build cost: **$6,590.36** (component prices as of
+Indicative build cost: **$6,501.36** (component prices as of
 2026-04-14; verify with suppliers before ordering).
 
 ## Airframe Structure
@@ -74,7 +74,7 @@ Indicative build cost: **$6,590.36** (component prices as of
 | 3220 | Radar Altimeter, Nanoradar NRA15 | 1 | cots |  | [Nanoradar NRA15](https://www.nanoradar.com/Products_1/4.html) | $240.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3220_radar_altimeter.step) |
 | 3230 | Telemetry Antenna, Front | 1 | cots |  | included with 3280 |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3230_front_telemetry.step) |
 | 3240 | Telemetry Antenna, Rear | 1 | cots |  | included with 3280 |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3240_rear_telemetry.step) |
-| 3250 | GNSS Module, Primary | 1 | cots |  | [IR-LOCK (CubePilot) Here4](https://irlock.com/products/here4-multiband-rtk-gnss); [Holybro H-RTK NEO-F9P Rover, DroneCAN 4-Pin, SKU 12072](https://holybro.com/products/h-rtk-neo-f9p-rover-rm3100-compass?variant=44639194644669) | $288.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3250_gnss_here4.step) |
+| 3250 | GNSS Module, Primary | 1 | cots |  | [Holybro H-RTK NEO-F9P Rover, DroneCAN 4-Pin, SKU 12072](https://holybro.com/products/h-rtk-neo-f9p-rover-rm3100-compass?variant=44639194644669); [IR-LOCK (CubePilot) Here4](https://irlock.com/products/here4-multiband-rtk-gnss) | $199.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3250_gnss_holybro_neo_f9p.step) |
 | 3251 | GNSS Module, Backup, Mateksys M9N-G4-3100 | 1 | cots |  | [Mateksys M9N-G4-3100](https://www.mateksys.com/?portfolio=m9n-g4-3100) | $125.00 |  |
 | 3260 | Power Switch, E-Switch PVHC4F23SS344 | 1 | cots |  | [Digi-Key PVHC4F23SS344](https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861) | $16.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3260_power_switch.step) |
 | 3270 | Gimbal Camera, SIYI A8 mini | 1 | cots |  | [SIYI](https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera) | $251.63 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3270_camera.step) |

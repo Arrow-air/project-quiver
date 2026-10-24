@@ -9,8 +9,8 @@ on purpose, re-record it:
     python -m quiver.placement record KEY ...  # re-record parts by key or label
 
 Records of the GNSS receiver and mount carry the receiver option they
-belong to (``primary_gps``); pass ``--gps holybro-f9p`` to check or record
-that build (default: here4).
+belong to (``primary_gps``); pass ``--gps here4`` to check or record
+that build (default: holybro-f9p).
 """
 
 import argparse

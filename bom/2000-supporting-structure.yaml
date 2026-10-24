@@ -65,8 +65,8 @@ items:
     sourcing: 3d-print
     material: PETG-CF
     design_ref: src/quiver/supporting_structure/equipment_mount/steps/2331_gnss_mount_base.step
-    notes: Holybro NEO-F9P Rover option only; omit for Here4. Existing F9P v6
-      geometry is retained; review stack-up and print fit before release.
+    notes: For the Holybro NEO-F9P Rover, the default primary GPS; omit for Here4.
+      Existing F9P v6 geometry is retained; review stack-up and print fit before release.
   - id: "2333"
     name: GNSS Mount, Here4
     qty: 1

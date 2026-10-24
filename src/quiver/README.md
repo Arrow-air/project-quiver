@@ -108,16 +108,17 @@ python -m quiver.assembly -o path/to/output.step
 
 ## Primary GPS variants
 
-Both Here4 and the Holybro H-RTK NEO-F9P Rover (RM3100 compass, DroneCAN 4-Pin,
-SKU 12072) are supported hardware options. The default CAD build uses Here4,
-matching the inspected Fusion master. Select the receiver and matching mount:
+Both the Holybro H-RTK NEO-F9P Rover (RM3100 compass, DroneCAN 4-Pin,
+SKU 12072) and the CubePilot Here4 are supported hardware options. The default
+CAD build uses the Holybro, the primary GPS the Dev Kit flies with. Select the
+receiver and matching mount:
 
 ```bash
-python -m quiver.assembly --gps here4 -o quiver-here4.step
 python -m quiver.assembly --gps holybro-f9p -o quiver-f9p.step
+python -m quiver.assembly --gps here4 -o quiver-here4.step
 ```
 
-In Python, use `make_assembly(primary_gps="holybro-f9p")`. Wren Mini is retired.
+In Python, use `make_assembly(primary_gps="here4")` for the Here4. Wren Mini is retired.
 See [Primary GPS Options](../../reviews/Primary-GPS-Options.md) for
 source geometry, placement evidence, and outstanding physical-fit review.
 

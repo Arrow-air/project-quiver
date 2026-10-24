@@ -597,7 +597,7 @@ Due to the lack of the landing gear tee joint geometry, this image depicts the o
   - 3312 (RPI 5)
   - 3313 x2 (GigaBlox Nano Ethernet Switch)
   - 3251 (Mateksys GNSS M9N-G4-3100)
-  - 3250 (Primary RTK GNSS, Here4 or Holybro NEO-F9P)
+  - 3250 (Primary RTK GNSS, Holybro NEO-F9P or Here4)
   - Screw 4 x4 (Socket Head Screw M3x12)
   - Screw 11 x14 (Flanged Button Head Hex-Drive Screw M3x6)
   - Screw 12 x4 (Socket Head Hex-Drive Screw M2x5)

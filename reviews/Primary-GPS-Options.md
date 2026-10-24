@@ -6,14 +6,15 @@ from the active assembly and BOM.
 
 | Primary receiver | Mount | CAD selection |
 | --- | --- | --- |
-| CubePilot Here4 | 2333, from the Fusion v148 master | `--gps here4` (default) |
-| Holybro H-RTK NEO-F9P Rover, RM3100 compass, **DroneCAN 4-Pin**, SKU **12072** | Existing 2331 F9P v6 base | `--gps holybro-f9p` |
+| Holybro H-RTK NEO-F9P Rover, RM3100 compass, **DroneCAN 4-Pin**, SKU **12072** | Existing 2331 F9P v6 base | `--gps holybro-f9p` (default) |
+| CubePilot Here4 | 2333, from the Fusion v148 master | `--gps here4` |
 
 The Holybro choice is specifically
 [product variant 44639194644669](https://holybro.com/products/h-rtk-neo-f9p-rover-rm3100-compass?variant=44639194644669),
-not a UART version, ZED-F9P rover, or bare NEO-F9P module. Here4 being the CAD
-default reflects the inspected Fusion master, not a preference between the two
-supported hardware choices.
+not a UART version, ZED-F9P rover, or bare NEO-F9P module. It is the CAD default
+because the Dev Kit flies with an F9P as its primary GPS, and the assembly guide's
+photos and fastening steps show the F9P installation. The Here4 is a supported
+alternative.
 
 ![Primary GPS receiver and mount alternatives](assets/primary-gps-options.png)
 
@@ -46,16 +47,16 @@ the other option's mount.
 ## Build and review
 
 ```bash
-PYTHONPATH=src python -m quiver.assembly --gps here4 -o /tmp/quiver-here4.step
 PYTHONPATH=src python -m quiver.assembly --gps holybro-f9p -o /tmp/quiver-f9p.step
+PYTHONPATH=src python -m quiver.assembly --gps here4 -o /tmp/quiver-here4.step
 PYTHONPATH=src python -m pytest src/tests/ -q
 PYTHONPATH=src python -m quiver.bom render --check
 ```
 
 The BOM lists both **alternative** mount entries for traceability. Select only
 2331 for Holybro or 2333 for Here4; do not print or purchase both sets for one
-aircraft. Receiver 3250 remains quantity one. Its existing cost is a Here4 planning
-allowance, not a current price quote for both options.
+aircraft. Receiver 3250 remains quantity one. Its unit cost is the Holybro price
+($199 in October 2026); the Here4 was $255 at IR-LOCK.
 
 ### Before manufacturing release
 
