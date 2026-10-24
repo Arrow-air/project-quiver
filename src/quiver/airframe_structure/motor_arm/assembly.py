@@ -22,28 +22,28 @@ Vendor parts in steps/vendor/:
     1411_arm_connector.step     Foldable arm connector (used 4x)
 
 Generated parts:
-    1412 Arm tube — 30mm OD, 2mm wall carbon-fiber tube, 360mm long (used 4x)
+    1412 Arm tube — 30mm OD, 1mm wall carbon-fiber tube, 360mm long (used 4x)
 
-Position constants are center-of-mass coordinates measured from the
-Fusion 360 PT3 master model export.
+Poses are full rigid transforms (see quiver.common.place) from the Fusion
+360 v148 master.
 """
 
 from pathlib import Path
 
-from build123d import Axis, Compound, Cylinder, Location, Part
+from build123d import Axis, Compound, Cylinder, Part
 
-from quiver.common import ALUMINUM, CARBON_FIBER, load_step
+from quiver.common import ALUMINUM, CARBON_FIBER, load_step, place
 
 _DIR = Path(__file__).parent
 
 # Arm tube dimensions (carbon-fiber tube)
 _TUBE_OD = 30        # outer diameter (mm)
-_TUBE_WALL = 2       # wall thickness (mm)
+_TUBE_WALL = 1       # wall thickness (mm); 30x28 tube, matches BOM + Fusion v148
 _TUBE_LENGTH = 360   # length (mm)
 
-# Distance from plate center to each part along the 45-deg diagonal axes
-_CONNECTOR_OFFSET = 102.52   # connector center, ~145mm along diagonal
-_TUBE_OFFSET = 161.28        # tube center, ~228mm along diagonal
+# X and Y offsets (signed per corner) along the 45-deg diagonals
+_CONNECTOR_OFFSET = 102.5233  # connector STEP origin, ~145mm along the diagonal
+_TUBE_OFFSET = 161.2839       # inner end of the tube, ~228mm along the diagonal
 
 # (rotation angle, X sign, Y sign)
 _ARM_POSITIONS = [
@@ -55,7 +55,7 @@ _ARM_POSITIONS = [
 
 
 def _make_arm_tube() -> Part:
-    """Generate a carbon-fiber arm tube (hollow cylinder along Y)."""
+    """Generate a carbon-fiber arm tube, running along +Y from its origin."""
     outer = Cylinder(radius=_TUBE_OD / 2, height=_TUBE_LENGTH, align=None)
     inner = Cylinder(radius=_TUBE_OD / 2 - _TUBE_WALL, height=_TUBE_LENGTH, align=None)
     tube = outer - inner
@@ -72,14 +72,12 @@ def make_assembly() -> Compound | None:
         connector = load_step(_DIR, "1411_arm_connector", vendor=True)
         if connector:
             connector.color = ALUMINUM
-            connector = connector.rotate(Axis.Z, angle)
-            connector.move(Location((sx * _CONNECTOR_OFFSET, sy * _CONNECTOR_OFFSET, 0)))
+            place(connector, (sx * _CONNECTOR_OFFSET, sy * _CONNECTOR_OFFSET, 0), (0, 0, angle))
             children.append(connector)
 
         tube = _make_arm_tube()
         tube.color = CARBON_FIBER
-        tube = tube.rotate(Axis.Z, angle)
-        tube.move(Location((sx * _TUBE_OFFSET, sy * _TUBE_OFFSET, 0)))
+        place(tube, (sx * _TUBE_OFFSET, sy * _TUBE_OFFSET, 0), (0, 0, angle))
         children.append(tube)
 
     if not children:
