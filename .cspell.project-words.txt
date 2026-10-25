@@ -394,6 +394,7 @@ rclpy
 RCOU
 RCOUT
 recalc
+RECOM
 reflookup
 relpos
 rels
@@ -434,6 +435,7 @@ setuptools
 SHDRRA
 SHFU
 SIBA
+SIRA
 sidelobes
 Simulink
 SITL
@@ -450,6 +452,7 @@ sortmark
 SPST
 SSHL
 stackable
+Starlink
 startangle
 statsbtn
 stra
@@ -497,6 +500,7 @@ Ultrafuse
 uncommanded
 undervoltage
 unlisten
+unpowered
 Unsort
 untented
 unticked
