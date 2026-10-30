@@ -541,13 +541,13 @@ Empty weight covers the full Dev-Kit build as shipped, including the NanoRadar M
 
 The Dev-Kit performance evaluation follows a standardized methodology for comparing prototypes across control behavior, stability, efficiency, and navigation accuracy. Metrics are extracted from ArduPilot flight logs using Mission Planner, MAVExplorer, and custom scripts. Tests cover rate tracking error, vibration analysis, power efficiency, climb performance, yaw authority, waypoint tracking, and glide capability. Results are collected under consistent environmental and configuration conditions to ensure fair comparisons.
 
-**PENDING TEST RESULTS** — Endurance and performance metrics flight testing is planned for May 2026 / ongoing.
+**Status, October 2026.** Free flight endurance on the Houston unit, no payload, hover in LOITER, 20 Ah pack: 25.2 min (log 47, 2026-09-01), 24.1 min (log 45, 2026-09-01) and 20.7 min (log 79, 2026-07-30), each ended by the Battery 2 capacity stage with the reserve intact. The structured endurance matrix (0, 5 and 7 kg payload, hover and an AUTO figure 8, six flights) is planned for November 2026 and feeds the endurance study. The performance metrics comparison above has not been run on the Dev-Kit yet.
 
 ---
 
 ## Beta Testing
 
-External field testing of the first Dev-Kit units is planned following endurance flight validation, completion of the documentation suite, and GPS/4G RF interference investigation. Target beta operators have been identified.
+External field testing of the first Dev-Kit units follows the endurance matrix, completion of the documentation suite, and the GPS2 interference work. Two units are built and flying with the core team, in Houston since June 2026 and in Germany since August 2026. Target beta operators have been identified.
 
 **PENDING**
 
@@ -566,13 +566,12 @@ The obstacle avoidance system is the most analytically complete subsystem in the
 Remote ID integration was validated in April 2026 via DroneCAN, clearing the last hardware blocker ahead of external shipments. Per operator configuration of the UAS ID and operator credentials is required before each unit ships, which is an operational step rather than an open engineering item.
 
 **Open items heading into field deployment:**
-- Endurance and performance metrics flight validation (planned May 2026)
-- Obstacle avoidance field testing across four phases
-- MR82 short range phantom returns seen through the 2026 obstacle avoidance campaign (the March LiDAR dropout is resolved, see Obstacle Avoidance above)
-- GPS/4G RF interference investigation and resolution
-- Actuated payload latch mechanism (bounty in progress)
-- Multispectral camera payload (bounty in progress)
-- EASA C3 certification pathway (deferred, estimated €17k–20k)
+- Endurance matrix at 0, 5 and 7 kg payload, hover and figure 8, planned for November 2026. Two no payload hover references so far: 25.2 min (log 47) and 20.7 min (log 79), both ended by the Battery 2 capacity stage.
+- Obstacle avoidance AUTO phase (obstacle detour mission). Ground, sensing, Stop and Slide phases closed September 2026.
+- MR82 short range phantom returns seen through the 2026 campaign (the March LiDAR dropout is resolved, see Obstacle Avoidance above).
+- GPS2 (M9N) interference on both built units. Parameter file and Ethernet traffic ruled out October 2026, coupling path under bench test.
+- Attachment interface replacement: the quick release plate is out of production and the 12 V payload rail is limited to about 13 W across three ports. Latch V1 and multispectral camera V1 were delivered and flown at the August 2026 meetup.
+- EASA C3 certification pathway (deferred, estimated €17k–20k).
 
 ---
 
