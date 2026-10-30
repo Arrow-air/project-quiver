@@ -512,10 +512,10 @@ Pass criteria:
 | Configuration | Battery | Battery mass | Empty weight | AUW | Payload capacity |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Standard | 20Ah LiHV (14S) | 7.90 kg | 9.65 kg | 17.55 kg | **7.45 kg** |
-| Long endurance | 30Ah LiHV (14S) | 11.40 kg | 9.65 kg | 21.40 kg | **3.95 kg** |
+| Long endurance | 30Ah LiHV (14S) | 11.40 kg | 9.65 kg | 21.05 kg | **3.95 kg** |
+| MTOW limit | — | — | — | **25.00 kg** | — |
 
 Both packs are Tattu 14S LiHV. The Tattu 4.0 series pack carries its own smart battery management system (`GBMS063E12`) that reports over DroneCAN as node 125 using the CUAV CBAT messages: 14 per cell voltages, state of charge, state of health, cycle count, and pack temperature. On the flight controller it is battery instance 2 (`BATT2_MONITOR 8`) next to the ESC telemetry monitor on instance 1, and it is the source for the capacity based low battery failsafe adopted in September 2026 (Pilot's Handbook §4.2.1, Initial Configuration Guide §7). Packs without CAN telemetry fly on the instance 1 voltage thresholds alone.
-| MTOW limit | — | — | — | **25.00 kg** | — |
 
 Payload capacity = MTOW − empty weight − battery mass. MTOW is 25 kg per the intended regulatory category.
 
@@ -568,7 +568,7 @@ Remote ID integration was validated in April 2026 via DroneCAN, clearing the las
 **Open items heading into field deployment:**
 - Endurance and performance metrics flight validation (planned May 2026)
 - Obstacle avoidance field testing across four phases
-- LiDAR dropout root cause analysis (suspected vibration or electrical load interaction)
+- MR82 short range phantom returns seen through the 2026 obstacle avoidance campaign (the March LiDAR dropout is resolved, see Obstacle Avoidance above)
 - GPS/4G RF interference investigation and resolution
 - Actuated payload latch mechanism (bounty in progress)
 - Multispectral camera payload (bounty in progress)
