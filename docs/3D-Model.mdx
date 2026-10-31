@@ -1,0 +1,36 @@
+---
+title: 3D Model
+sidebar_label: 3D Model
+sidebar_position: 2
+description: Interactive 3D view of the Quiver drone assembly
+hide_table_of_contents: true
+---
+
+# Interactive 3D Model
+
+Explore the full Quiver assembly below. Toggle subassemblies in the
+tree to inspect the internals, drag to orbit, scroll to zoom, and hover
+a part to identify it. The tree mirrors the
+[Bill of Materials structure](https://github.com/Arrow-air/project-quiver/tree/main/src/quiver)
+of the CAD source.
+
+<QuiverModelViewer modelsBase="/quiver/3D-Model/models" height={680} />
+
+## About this model
+
+The models are generated directly from the
+[build123d CAD assembly](https://github.com/Arrow-air/project-quiver/tree/main/src/quiver)
+— the same source of truth used for manufacturing. Each subassembly is
+exported as a Draco-compressed GLB, so the entire drone streams in a
+few megabytes.
+
+To regenerate after a design change (requires the CAD dev setup from
+[CONTRIBUTING](https://github.com/Arrow-air/project-quiver/blob/main/CONTRIBUTING.md)
+plus node for the compression pipeline):
+
+```sh
+python -m quiver.web_export
+```
+
+The exporter writes the GLB files and `manifest.json` to
+`docs/3D-Model/models/`, which this page loads at runtime.

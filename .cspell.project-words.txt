@@ -184,6 +184,7 @@ GIGA
 Giga
 giga
 GLONASS
+gltf
 GNDCLEAR
 GNDCLR
 GNSS
@@ -524,6 +525,7 @@ whep
 Winco
 Wurth
 Würth
+XCAF
 XCLASS
 XSCROLLER
 xxmm
