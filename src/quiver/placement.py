@@ -7,6 +7,10 @@ on purpose, re-record it:
 
     python -m quiver.placement check           # compare the build with the records
     python -m quiver.placement record KEY ...  # re-record parts by key or label
+
+Records of the GNSS receiver and mount carry the receiver option they
+belong to (``primary_gps``); pass ``--gps here4`` to check or record
+that build (default: holybro-f9p).
 """
 
 import argparse
@@ -19,6 +23,8 @@ from datetime import date
 from pathlib import Path
 
 import numpy as np
+
+from quiver.gps import DEFAULT_PRIMARY_GPS, PRIMARY_GPS_OPTIONS
 
 POSES_PATH = Path(__file__).parent / "part-poses.json"
 _BOM_LABEL = re.compile(r"^(\d{4})[-_]")
@@ -78,6 +84,13 @@ def measure(part, key: str) -> dict:
     }
 
 
+def records_for(records: list[dict], assembly) -> list[dict]:
+    """The records that apply to this build: a record tagged with a receiver
+    option (``primary_gps``) applies only to that option's build."""
+    gps = getattr(assembly, "primary_gps", DEFAULT_PRIMARY_GPS)
+    return [r for r in records if r.get("primary_gps") in (None, gps)]
+
+
 def match(records: list[dict], instances: dict[str, list]) -> list[tuple[dict, object]]:
     """Pair each record with the built instance of its label nearest its centroid."""
     pairs, used = [], set()
@@ -117,13 +130,24 @@ def main(argv=None) -> int:
     sub.add_parser("check", help="compare the built assembly with part-poses.json")
     rec = sub.add_parser("record", help="re-record parts (by key or label) from the current build")
     rec.add_argument("names", nargs="+")
+    rec.add_argument(
+        "--gps-only", action="store_true",
+        help="new records apply only to the --gps receiver option",
+    )
+    for cmd in sub.choices.values():
+        cmd.add_argument(
+            "--gps", choices=PRIMARY_GPS_OPTIONS, default=DEFAULT_PRIMARY_GPS,
+            help="primary GPS receiver option to build",
+        )
     args = parser.parse_args(argv)
 
     from quiver.assembly import make_assembly
 
     data = json.loads(POSES_PATH.read_text())
-    instances = part_instances(make_assembly())
-    pairs = match(data["parts"], instances)
+    assembly = make_assembly(primary_gps=args.gps)
+    instances = part_instances(assembly)
+    active = records_for(data["parts"], assembly)
+    pairs = match(active, instances)
     if args.cmd == "check":
         bad = 0
         for record, part in pairs:
@@ -132,7 +156,7 @@ def main(argv=None) -> int:
                 bad += 1
                 print(f"{record['key']}: probe off by {dev:.3f} mm")
         counted = defaultdict(int)
-        for record in data["parts"]:
+        for record in active:
             counted[record["label"]] += 1
         for label, parts in instances.items():
             if len(parts) != counted.get(label, 0):
@@ -158,7 +182,8 @@ def main(argv=None) -> int:
     for label in sorted(wanted & set(instances)):
         for n, part in enumerate(p for p in instances[label] if id(p) not in matched):
             key = f"{label}#{n}"
-            data["parts"].append({"key": key, "label": label, "source": source, **measure(part, key)})
+            tag = {"primary_gps": args.gps} if args.gps_only else {}
+            data["parts"].append({"key": key, "label": label, **tag, "source": source, **measure(part, key)})
             print(f"recorded new {key}")
     POSES_PATH.write_text(dump(data))
     return 0

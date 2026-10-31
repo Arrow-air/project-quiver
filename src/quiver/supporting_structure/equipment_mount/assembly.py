@@ -3,8 +3,8 @@
 3D-printed mounts for PCBs, sensors, and GNSS antenna.
 
 Most STEP files are exported from Fusion 360 with correct X/Y positions
-baked in. Three parts have baked-in Z offsets that differ from the
-reference assembly and need explicit correction.
+baked in. The PCB adapter and F9P base need Z corrections; the Here4
+mount is already in Fusion master world coordinates.
 
     Side view (not to scale):
 
@@ -34,7 +34,7 @@ STEP files in steps/:
     2313_bc_pcb_cover.step          Battery PCB cover
     2321_altitude_sensor_mount.step Radar/LiDAR altimeter mount
     2331_gnss_mount_base.step       GNSS antenna mount base (Z offset needed)
-    2332_gnss_mount_clamp.step      GNSS antenna mount clamp (Z offset needed)
+    2333_gnss_mount_here4.step      Here4 mount (Fusion world placement)
     2341_ppp_beacon_mount.step      PPP/beacon mounting board
 """
 
@@ -43,20 +43,18 @@ from pathlib import Path
 from build123d import Compound
 
 from quiver.common import PETG, load_step, place
+from quiver.gps import DEFAULT_PRIMARY_GPS, F9P_MOUNT_DZ, validate_primary_gps
 
 _DIR = Path(__file__).parent
 
-# Z corrections for parts whose STEP export offset differs from the
-# assembly (poses: see quiver.common.place). The GNSS mount is not in the
-# Fusion v148 master; its offsets come from the 2000-SupportStructure.step
-# reference (raw STEP center of mass vs reference).
+# Z correction for the PCB adapter, whose STEP export offset differs from
+# the assembly (poses: see quiver.common.place). GNSS mounts: see quiver.gps.
 _MAIN_PCB_MOUNT_DZ = -7.85       # Fusion v148 occurrence transform, cm -> mm
-_GNSS_BASE_DZ = -11.95           # raw Z=66.67, ref Z=54.72
-_GNSS_CLAMP_DZ = -3.85           # raw Z=81.85, ref Z=78.00
 
 
-def make_assembly() -> Compound | None:
+def make_assembly(primary_gps: str = DEFAULT_PRIMARY_GPS) -> Compound | None:
     """Build the equipment mount subassembly from imported STEP files."""
+    validate_primary_gps(primary_gps)
     children = []
 
     # --- PCB mounts (2310) ---
@@ -86,17 +84,15 @@ def make_assembly() -> Compound | None:
 
     # --- GNSS mount (2330) ---
 
-    gnss_base = load_step(_DIR, "2331_gnss_mount_base")
-    if gnss_base:
-        gnss_base.color = PETG
-        place(gnss_base, (0, 0, _GNSS_BASE_DZ))
-        children.append(gnss_base)
-
-    gnss_clamp = load_step(_DIR, "2332_gnss_mount_clamp")
-    if gnss_clamp:
-        gnss_clamp.color = PETG
-        place(gnss_clamp, (0, 0, _GNSS_CLAMP_DZ))
-        children.append(gnss_clamp)
+    if primary_gps == "here4":
+        gnss_mount = load_step(_DIR, "2333_gnss_mount_here4")
+    else:
+        gnss_mount = load_step(_DIR, "2331_gnss_mount_base")
+        if gnss_mount:
+            place(gnss_mount, (0, 0, F9P_MOUNT_DZ))
+    if gnss_mount:
+        gnss_mount.color = PETG
+        children.append(gnss_mount)
 
     # --- PPP / beacon mount (2340) ---
 

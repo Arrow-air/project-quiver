@@ -16,7 +16,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from quiver.placement import centroid, part_instances
+from quiver.placement import centroid, part_instances, records_for
 
 POSES = json.loads((Path(__file__).parents[1] / "quiver/part-poses.json").read_text())["parts"]
 
@@ -37,14 +37,16 @@ def instances(assembly):
     return out
 
 
-def test_every_instance_is_recorded(instances):
+def test_every_instance_is_recorded(assembly, instances):
     built = Counter({label: len(parts) for label, parts in instances.items()})
-    recorded = Counter(record["label"] for record in POSES)
+    recorded = Counter(record["label"] for record in records_for(POSES, assembly))
     assert built == recorded
 
 
 @pytest.mark.parametrize("record", POSES, ids=lambda r: r["key"])
-def test_part_pose(instances, record):
+def test_part_pose(assembly, instances, record):
+    if not records_for([record], assembly):
+        pytest.skip(f"record applies to the {record['primary_gps']} build")
     candidates = instances.get(record["label"])
     assert candidates, f"{record['label']} is not in the assembly"
     expected = np.array(record["centroid_mm"])

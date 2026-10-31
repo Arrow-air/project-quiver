@@ -13,7 +13,8 @@ Vendor parts in steps/vendor/:
     3220_radar_altimeter.step   Radar altimeter (rotZ 180)
     3230_front_telemetry.step   Front telemetry antenna (no transform)
     3240_rear_telemetry.step    Rear telemetry antenna (no transform)
-    3250_gnss_wren_mini.step    GNSS receiver (Z offset only, extract_solids)
+    3250_gnss_here4.step        Here4 (Fusion world placement)
+    3250_gnss_holybro_neo_f9p.step  Holybro NEO-F9P Rover (vendor coordinates)
     3260_power_switch.step      Power switch (translate only)
     3270_camera.step            Camera (no transform)
     3280_telemetry.step         Telemetry air unit (rotZ 180)
@@ -29,6 +30,7 @@ from pathlib import Path
 from build123d import Compound
 
 from quiver.common import load_step, place
+from quiver.gps import DEFAULT_PRIMARY_GPS, F9P_RECEIVER_POSITION, validate_primary_gps
 
 _DIR = Path(__file__).parent
 
@@ -36,16 +38,19 @@ _DIR = Path(__file__).parent
 # Checked against Fusion v148 by tests/test_placement.py.
 _OA_LIDAR_POSE = ((-100.0, 0, -17.3), (0, 0, 0))            # seated in the 2412 top cap
 _RADAR_ALT_POSE = ((5.0, 294.0, 0), (0, 0, 180))
-_GNSS_DZ = 2.30                                            # not in Fusion v148; raw Z=85.03, ref Z=87.33
 _OA_RADAR_POSE = ((0, -73.9027, -68.2230), (175, 0, 180))   # turned 180 about Y, tilt cancelled
 _PPP_ADAPTER_POSE = ((-151.7959, -60.4492, 14.6037), (0, 0, -45))   # on the 2341 mounting board
 _DRONE_BEACON_POSE = ((42.3389, 142.5650, 20.5), (0, 0, 135))       # on the 2341 mounting board
 _POWER_SWITCH_POSE = ((-146.515, 0, -2.0), (0, 0, 0))     # moved with the 2411 enclosure update
 _TELEMETRY_POSE = ((199.5695, 4.3628, 0), (0, 0, 180))
+# F9P: the vendor case's local -Y face is its mounting surface; rotX(90)
+# stands it on the 2331 base (see quiver.gps).
+_F9P_RECEIVER_POSE = (F9P_RECEIVER_POSITION, (90, 0, 0))
 
 
-def make_assembly() -> Compound | None:
+def make_assembly(primary_gps: str = DEFAULT_PRIMARY_GPS) -> Compound | None:
     """Build the peripheral subassembly from imported STEP files."""
+    validate_primary_gps(primary_gps)
     children = []
 
     # --- Parts already at correct position (no transform) ---
@@ -59,11 +64,15 @@ def make_assembly() -> Compound | None:
         if part:
             children.append(part)
 
-    # --- Parts needing Z offset only ---
+    # --- Primary GPS: receiver and mount are selected together ---
 
-    gnss = load_step(_DIR, "3250_gnss_wren_mini", vendor=True, extract_solids=True)
+    if primary_gps == "here4":
+        gnss = load_step(_DIR, "3250_gnss_here4", vendor=True, extract_solids=True)
+    else:
+        gnss = load_step(_DIR, "3250_gnss_holybro_neo_f9p", vendor=True, extract_solids=True)
+        if gnss:
+            place(gnss, *_F9P_RECEIVER_POSE)
     if gnss:
-        place(gnss, (0, 0, _GNSS_DZ))
         children.append(gnss)
 
     # --- Parts needing a pose ---
