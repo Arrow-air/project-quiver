@@ -85,7 +85,7 @@ The $1,500 USDC operator onboarding fund earmarked in QGB-FLEX is separate from 
 
 ## 9. First computations
 
-**T-13, Julius, 2026-10-02.** One replication flight flown against the T-13 task (switches installed, TCP session live), validated by the lead on 2026-10-27 from the raw logs. One campaign flight: 300 $ARROW. Paid in the November batch.
+**T-13, Julius, 2026-10-02.** One replication flight flown against the T-13 task (switches installed, TCP session live), a 28 second hover, validated by the lead on 2026-10-27 from the raw logs. The flight is under the 60 second floor in section 5 and shorter than the few minutes the task asked for. It was flown and accepted before these mechanics existed, so the lead pays it once at the campaign rate as a stated exception. The exception does not carry to any later flight. One campaign flight: 300 $ARROW. Paid in the November batch.
 
 **T-03, the endurance matrix, Erick.** Six flights, no payload, 5 kg and 7 kg, each as a hover and as the AUTO figure 8, flown at the ranch in November against the matrix on #250. Validated when KBM confirms the six logs are usable for the study. Six campaign flights: 1,800 $ARROW, inside the 2,500 cap for the phase. Paid in the batch after KBM's confirmation.
 
