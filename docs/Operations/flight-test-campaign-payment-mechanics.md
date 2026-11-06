@@ -73,11 +73,11 @@ Rules for milestones:
 
 ## 6. The cap
 
-One operator can draw at most 2,500 $ARROW from the pool in a phase (a three month funding period). That is a quarter of the pool. Flight pay and milestones both count toward it. The cap exists because the proposal promised the DAO that most of the pool would remain for operators who join as the dev kit fleet grows. The pool balance and the draws to date are published in every monthly progress report.
+One operator can draw at most 2,500 $ARROW from the pool in a funding period, which is three months under the current proposal. That is a quarter of the pool. Flight pay and milestones both count toward it. The cap exists because the proposal promised the DAO that most of the pool would remain for operators who join as the dev kit fleet grows. The pool balance and the draws to date are published in every monthly progress report.
 
 ## 7. The clock
 
-Computed monthly with the retro nominations, from the platform record as of the last day of the month. Paid in the same CSV airdrop batch as the retro, listed on its own row in the report's $ARROW table so campaign pay and retro are never mixed. The lead computes, the reviewer of record for each flight is named in the computation, and the GBC second signature on the batch is the check.
+Computed monthly with the retro nominations, from the platform record as of the last day of the month. Paid in the same CSV airdrop batch as the retro, listed on its own row in the report's $ARROW table so campaign pay and retro are never mixed. The lead computes, except for the lead's own flights, where the reviewer of record computes the draw. The reviewer of record for each flight is named in the computation, and the GBC second signature on the batch is the check.
 
 ## 8. Operator onboarding
 
@@ -87,10 +87,10 @@ The $1,500 USDC operator onboarding fund earmarked in QGB-FLEX is separate from 
 
 **T-13, Julius, 2026-10-02.** One replication flight flown against the T-13 task (switches installed, TCP session live), a 28 second hover, validated by the lead on 2026-10-27 from the raw logs. The flight is under the 60 second floor in section 5 and shorter than the few minutes the task asked for. It was flown and accepted before these mechanics existed, so the lead pays it once at the campaign rate as a stated exception. The exception does not carry to any later flight. One campaign flight: 300 $ARROW. Paid in the November batch.
 
-**T-03, the endurance matrix, Erick.** Six flights, no payload, 5 kg and 7 kg, each as a hover and as the AUTO figure 8, flown at the ranch in November against the matrix on #250. Validated when KBM confirms the six logs are usable for the study. Six campaign flights: 1,800 $ARROW, inside the 2,500 cap for the phase. Paid in the batch after KBM's confirmation.
+**T-03, the endurance matrix, Erick.** Six flights, no payload, 5 kg and 7 kg, each as a hover and as the AUTO figure 8, flown at the ranch in November against the matrix on #250. KBM is the reviewer of record for these six flights, in place of the default in section 2, because he writes the study from the logs. They are validated when he confirms the six logs are usable for the study. Six campaign flights: 1,800 $ARROW, inside the 2,500 cap for the funding period. KBM computes the final draw from the validated logs (section 7). Paid in the batch after KBM's confirmation.
 
 Pool after both: 10,000 minus 2,100 = 7,900 $ARROW.
 
 ## 10. Changes
 
-The Project Lead adopted V1 on 2026-11-05 without a team vote and revises it on team feedback. Every change is recorded in the wiki notes with its date, applies from the next month, and never applies to flights already flown. V2 is written when a second operator has flown ten validated flights, which is the first real test of the cap, the milestones and the reviewer rule.
+The Project Lead adopted V1 on 2026-11-05 without a team vote and revises it on team feedback. A team approval on the pull request that adds this page is the team's acceptance of V1. Every change is recorded in the wiki notes with its date, applies from the next month, and never applies to flights already flown. V2 is written when a second operator has flown ten validated flights, which is the first real test of the cap, the milestones and the reviewer rule.
