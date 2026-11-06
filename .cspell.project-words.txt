@@ -86,6 +86,7 @@ canvasdiv
 canvasdivid
 canvaslayout
 canvassplit
+CBAT
 Ccircle
 chamf
 chamfpos
@@ -105,6 +106,7 @@ Csvg
 Ctext
 Ctspan
 CTUN
+CUAV
 Curr
 Cygbot
 darkmode
@@ -153,6 +155,7 @@ ENABL
 endangle
 ENIG
 errrks
+esptool
 Eurostyle
 extrafields
 ezdxf
@@ -176,6 +179,7 @@ Freerchobby
 frontcanvas
 fulfilment
 FWPULL
+GBMS
 Geofence
 Geoportal
 gerbers
@@ -319,6 +323,7 @@ NOPASSWD
 nslookup
 objurl
 ocpsvg
+ODID
 offsetx
 offsety
 ondouble
@@ -394,6 +399,7 @@ rclpy
 RCOU
 RCOUT
 recalc
+reflash
 reflookup
 relpos
 rels
