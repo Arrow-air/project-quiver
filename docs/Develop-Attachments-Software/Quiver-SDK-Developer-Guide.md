@@ -22,7 +22,7 @@ The system supports five concurrent data pipelines: telemetry (MAVLink + UAVCAN)
                            │ HTTPS / WSS (cellular or WiFi)
 ┌──────────────────────────┴──────────────────────────────────────┐
 │              COMPANION COMPUTER  (Raspberry Pi)                  │
-│  192.168.144.50                                                  │
+│  192.168.144.49                                                  │
 │                                                                  │
 │  Services:                                                       │
 │    raspberry_pi_client.py   — Job polling & file delivery        │
@@ -58,7 +58,8 @@ The Quiver network is flat — no DHCP runs on the Pi (Siyi firmware conflicts w
 | 192.168.144.20 | Android GCS (Siyi reserved) |
 | 192.168.144.25 | Siyi A8 Mini camera |
 | 192.168.144.60 | Siyi camera reserved |
-| 192.168.144.50 | Raspberry Pi (companion computer) |
+| 192.168.144.49 | Raspberry Pi (companion computer) |
+| 192.168.144.50 | CubeNode ETH adapter (the FC's PPP gateway) |
 | 192.168.144.51 | Flight controller |
 
 ### Payload Port Assignments
@@ -80,7 +81,8 @@ Developer-assigned static range: `192.168.144.100` – `192.168.144.199`
 | Companion → FC Web Server | HTTP | `http://192.168.144.51:8080` (net_webserver.lua, FC log access) |
 | Companion → Payloads | Ethernet | `192.168.144.100–.199` via integrated switch |
 | Companion → Siyi Camera | Ethernet | `192.168.144.25` (RTSP stream + UDP SDK) |
-| Mission Planner → FC | RF telemetry | 915 MHz / 433 MHz radio (MAVLink) |
+| Mission Planner → FC | TCP (MAVLink) | `192.168.144.51:5760`, the FC's `NET_P1` server, from any host on the drone subnet: a laptop on the wired drone net, a laptop on the SIYI ground network (or UDP `192.168.144.12:19856` through the SIYI ground unit), or remote over Tailscale through the Pi (Initial Configuration Guide §16.6) |
+| Mission Planner → FC | RF telemetry | 915 MHz / 433 MHz radio (MAVLink), only if one is installed. The first units carry none; their RC link (SIYI HM30) carries telemetry on `SERIAL1` at 115200 |
 
 ---
 
@@ -335,11 +337,25 @@ Set these parameters via Mission Planner or MAVProxy:
 | `SCR_HEAP_SIZE` | 200000 | Heap size in bytes (recommended) |
 | `WEB_ENABLE` | 1 | Enable the web server |
 | `WEB_BIND_PORT` | 8080 | HTTP listen port |
-| `NET_ENABLE` | 1 | Enable networking stack |
-| `NET_IPADDR0–3` | 192.168.144.51 | FC static IP |
-| `NET_NETMASK` | 24 | Subnet mask |
-| `NET_GWADDR0–3` | 192.168.144.50 | Gateway (Pi) |
+| `NET_ENABLE` | 1 | Enable networking stack (`params-ethernet.param`) |
+| `NET_P1_TYPE` | 4 | TCP server on network port 1. Set it and reboot before `NET_P1_PORT` and `NET_P1_PROTOCOL` appear |
+| `NET_P1_PORT` | 5760 | MAVLink TCP port |
+| `NET_P1_PROTOCOL` | 1 | MAVLink on network port 1 |
 | `FWPULL_ENABLE` | 1 | Enable firmware pull from companion (required for OTA flash) |
+
+The flight controller has no IP address parameters of its own. It reaches Ethernet over PPP (SERIAL2) through the CubeNode ETH adapter and is assigned the CubeNode's address plus one, with the CubeNode as its gateway. The address parameters below live on the CubeNode and are set through Mission Planner's DroneCAN parameter screen (Setup → Optional Hardware → DroneCAN/UAVCAN → MAVLinkCAN1 → the CubeNode node → Menu → Parameters):
+
+| CubeNode ETH parameter | Value | Purpose |
+|---|---|---|
+| `NET_DHCP` | 0 | Static addressing |
+| `NET_ENABLE` | 1 | Enable the adapter's networking |
+| `NET_IPADDR0–3` | 192.168.144.50 | CubeNode address. The FC lands at `.51` |
+| `NET_NETMASK` | 24 | Subnet mask (the drone subnet is `/24`) |
+| `NET_GWADDR0–3` | 192.168.144.1 | Gateway on the drone subnet |
+| `NET_OPTIONS` | 1 | PPP to the FC |
+| `NET_P1_TYPE` | 0 | No port on the adapter itself; the MAVLink TCP server is the FC's `NET_P1` |
+
+After writing, read the parameters back (the DroneCAN grid does not always commit on the first attempt) and power cycle the whole aircraft. An FC reboot alone keeps the old address, because the CubeNode holds its running IP until it loses power. Full procedure: Initial Configuration Guide §4.4.
 
 ### Lua Scripts on the FC SD Card
 
@@ -349,7 +365,7 @@ Copy these applets to `APM/scripts/` on the FC SD card:
 |---|---|
 | `net_webserver.lua` | Serves the SD card over HTTP on port 8080 (directory listings, file downloads). Primary log access path. |
 | `net_webserver_put.lua` | Extends the web server with HTTP PUT support for file uploads to the SD card. Includes 30-second stall timeout and partial file cleanup. |
-| `firmware_puller.lua` | Polls the companion's HTTP server at `http://192.168.144.50:8080/firmware.abin` when `FWPULL_ENABLE=1`. Downloads firmware to SD card as `ardupilot.abin`, triggering ArduPilot's built-in flash-on-boot mechanism. Includes 30-second stall timeout. |
+| `firmware_puller.lua` | Polls the companion's HTTP server at `http://192.168.144.49:8080/firmware.abin` when `FWPULL_ENABLE=1`. Downloads firmware to SD card as `ardupilot.abin`, triggering ArduPilot's built-in flash-on-boot mechanism. Includes 30-second stall timeout. |
 
 Reboot the FC after copying scripts. Verify from the Pi:
 
