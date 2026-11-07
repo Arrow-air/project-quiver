@@ -108,6 +108,7 @@ Disabled in `standard-params.param`. Load `params-ethernet.param` to enable.
 | Parameter | Value | Notes |
 |-----------|-------|-------|
 | `NET_ENABLE` | `1` | Enables MAVLink networking stack |
+| `NET_P1_TYPE` | `4` | TCP server on network port 1. Set first and reboot: `NET_P1_PORT` and `NET_P1_PROTOCOL` only exist once this is non zero (added to the overlay in PR #273) |
 | `NET_P1_PORT` | `5760` | Standard MAVLink TCP port |
 | `NET_P1_PROTOCOL` | `1` | MAVLink 1 on network port 1 |
 | `SERIAL2_PROTOCOL` | `48` | PPP — bridges Ethernet from Raspberry Pi |

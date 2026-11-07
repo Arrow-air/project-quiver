@@ -35,22 +35,23 @@ STEP files in steps/:
     2420_hinge.step                 Hinge anchor (used 2x, mirrored)
     2430_latch.step                 Latch clip (used 2x, mirrored)
 
-Position constants are center-of-mass coordinates measured from the
-Fusion 360 PT3 master model export.
+Poses are full rigid transforms (see quiver.common.place) from the Fusion
+360 v148 master.
 """
 
 from pathlib import Path
 
-from build123d import Axis, Compound, Plane
+from build123d import Compound, Plane
 
-from quiver.common import PETG, load_step, place_at
+from quiver.common import PETG, load_step, place
 
 _DIR = Path(__file__).parent
 
-# Target center-of-mass positions (from Fusion reference).
-# Each pair is placed on the right side first, then mirrored across YZ.
-_RIGHT_HINGE_POS = (96.35, 155.83, 49.88)
-_RIGHT_LATCH_POS = (157.96, -91.35, 44.73)
+# Right-side poses: STEP origin (mm), intrinsic XYZ rotation (deg). Each
+# pair is placed on the right side first, then mirrored across YZ, as in
+# the Fusion v148 master.
+_RIGHT_HINGE_POSE = ((223.25, -92.4688, 20.25), (90, 0, 0))
+_RIGHT_LATCH_POSE = ((153.9, -91.3494, 43.7995), (0, 0, -90))
 
 
 def make_assembly() -> Compound | None:
@@ -71,13 +72,11 @@ def make_assembly() -> Compound | None:
 
     # --- Hinge anchors (2420) ---
 
-    # Right hinge — rotX(90) aligns the raw STEP to the correct orientation,
-    # then translate to the reference CoM position.
+    # Right hinge — rotX(90) stands the raw STEP up.
     right_hinge = load_step(_DIR, "2420_hinge")
     if right_hinge:
         right_hinge.color = PETG
-        right_hinge = right_hinge.rotate(Axis.X, 90)
-        place_at(right_hinge, *_RIGHT_HINGE_POS)
+        place(right_hinge, *_RIGHT_HINGE_POSE)
         children.append(right_hinge)
 
         # Left hinge — mirror the positioned right hinge across YZ plane.
@@ -87,13 +86,11 @@ def make_assembly() -> Compound | None:
 
     # --- Latch clips (2430) ---
 
-    # Right latch — rotZ(-90) swaps X/Y to match the reference orientation,
-    # then translate to the reference CoM position.
+    # Right latch — rotZ(-90) swaps X/Y to match the reference orientation.
     right_latch = load_step(_DIR, "2430_latch")
     if right_latch:
         right_latch.color = PETG
-        right_latch = right_latch.rotate(Axis.Z, -90)
-        place_at(right_latch, *_RIGHT_LATCH_POS)
+        place(right_latch, *_RIGHT_LATCH_POSE)
         children.append(right_latch)
 
         # Left latch — mirror the positioned right latch across YZ plane.

@@ -9,7 +9,7 @@ description: Quality reference BOM for the Quiver Dev-Kit
 
 # Bill of Materials
 
-**Dev-Kit configuration** — updated 2026-06-12
+**Dev-Kit configuration** — updated 2026-10-16
 
 This page is generated from the version-controlled BOM master data in
 [`bom/`](https://github.com/Arrow-air/project-quiver/tree/main/bom).
@@ -20,7 +20,7 @@ rather than this live page, which tracks the latest design.
 **Download:** [procurement CSV](./quiver-bom.csv) — one row per line
 item with order quantities, supplier links, and indicative costs.
 
-Indicative build cost: **$6,590.36** (component prices as of
+Indicative build cost: **$6,501.36** (component prices as of
 2026-04-14; verify with suppliers before ordering).
 
 ## Airframe Structure
@@ -29,13 +29,13 @@ Indicative build cost: **$6,590.36** (component prices as of
 |---|---|---|---|---|---|---|---|
 | 1111 | Upper Plate | 1 | laser-cut | Aluminum — 1 mm sheet | [RapidDirect](https://www.rapiddirect.com/) | $26.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/plates/steps/1111_upper_plate.step) |
 | 1112 | Middle Plate | 1 | laser-cut | Aluminum — 1 mm sheet | [RapidDirect](https://www.rapiddirect.com/) | $26.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/plates/steps/1112_middle_plate.step) |
-| 1113 | Lower Plate | 1 | laser-cut | Aluminum — 1 mm sheet | [RapidDirect](https://www.rapiddirect.com/) | $47.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/plates/steps/1113_lower_plate.step) |
-| 1211 | Cockpit Support Beam, CW Long | 1 | laser-cut | Aluminum — 40x40x2 mm box section | [RapidDirect](https://www.rapiddirect.com/) | $43.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/beams/steps/1211_cw_long.step) |
-| 1212 | Cockpit Support Beam, CCW Back | 2 | laser-cut | Aluminum — 40x40x2 mm box section | [RapidDirect](https://www.rapiddirect.com/) | $27.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/beams/steps/1212_ccw_back.step) |
-| 1221 | Battery Wall | 2 | laser-cut | Aluminum | [RapidDirect](https://www.rapiddirect.com/) | $49.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/beams/steps/1221_battery_wall.step) |
+| 1113 | Lower Plate | 1 | laser-cut | Aluminum — 4 mm sheet | [RapidDirect](https://www.rapiddirect.com/) | $47.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/plates/steps/1113_lower_plate.step) |
+| 1211 | Cockpit Support Beam, CW Long | 1 | laser-cut | Aluminum — 40x40x1 mm box section | [RapidDirect](https://www.rapiddirect.com/) | $43.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/beams/steps/1211_cw_long.step) |
+| 1212 | Cockpit Support Beam, CCW | 2 | laser-cut | Aluminum — 40x40x1 mm box section | [RapidDirect](https://www.rapiddirect.com/) | $27.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/beams/steps/1212_ccw_back.step) |
+| 1221 | Battery Wall | 2 | laser-cut | Aluminum — 100x30x2 mm rectangular tube, 300 mm long | [RapidDirect](https://www.rapiddirect.com/) | $49.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/beams/steps/1221_battery_wall.step) |
 | 1310 | Landing Gear Vertical Tube | 4 (order 2) | cut-to-length | Carbon fiber 3K — 30x28 mm tube; see landing_gear assembly for cut length | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/landing_gear/assembly.py) |
 | 1320 | Landing Gear Horizontal Tube | 2 (order 1) | cut-to-length | Carbon fiber 3K — 30x28 mm tube; see landing_gear assembly for cut length | [RJXHobby](https://www.rjxhobby.com/carbon-fiber/carbon-fiber-tube/rjx-1pcs-colored-3k-carbon-fiber-tube-1000mm-od-21-30mm) | $45.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/landing_gear/assembly.py) |
-| 1330 | Landing Gear Main Adapter | 4 | cots | 30 mm tube quick-release tilt seat | [RJXHobby](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) | $30.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/landing_gear/steps/vendor/1330_main_adapter.step) |
+| 1330 | Landing Gear Main Adapter | 4 | cots | 30 mm tube quick-release tilt seat, 21 deg | [RJXHobby](https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1) | $30.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/landing_gear/steps/vendor/1330_main_adapter.step) |
 | 1340 | Landing Gear Tube Joint | 4 | cots | 30 mm | [INNLOI](https://www.innloi.com/productinfo/448455.html) | $13.99 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/landing_gear/steps/1340_tube_joint.step) |
 | 1350 | Landing Gear Foam Wrap | 4 (order 1) | cots | EPP foam | [Amazon](https://a.co/d/ggzWXc4) | $14.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/landing_gear/assembly.py) |
 | 1411 | Foldable Motor Arm Connector | 4 | cots | 30 mm tube option | [Alibaba](https://www.alibaba.com/product-detail/30-40mm-Folding-arm-tube-Drone_1600762096177.html) | $25.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/airframe_structure/motor_arm/steps/vendor/1411_arm_connector.step) |
@@ -54,7 +54,7 @@ Indicative build cost: **$6,590.36** (component prices as of
 | 2313 | BC PCB Cover | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2313_bc_pcb_cover.step) |
 | 2321 | Altitude Sensor Mount | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2321_altitude_sensor_mount.step) |
 | 2331 | GNSS Mount Base | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2331_gnss_mount_base.step) |
-| 2332 | GNSS Mount Clamp | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2332_gnss_mount_clamp.step) |
+| 2333 | GNSS Mount, Here4 | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2333_gnss_mount_here4.step) |
 | 2341 | PPP Adapter and Beacon Mount | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/equipment_mount/steps/2341_ppp_beacon_mount.step) |
 | 2411 | Main Enclosure | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/cockpit_enclosure/steps/2411_main_enclosure.step) |
 | 2412 | Enclosure Top Cap | 1 | 3d-print | PETG-CF |  |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/supporting_structure/cockpit_enclosure/steps/2412_enclosure_top_cap.step) |
@@ -74,7 +74,7 @@ Indicative build cost: **$6,590.36** (component prices as of
 | 3220 | Radar Altimeter, Nanoradar NRA15 | 1 | cots |  | [Nanoradar NRA15](https://www.nanoradar.com/Products_1/4.html) | $240.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3220_radar_altimeter.step) |
 | 3230 | Telemetry Antenna, Front | 1 | cots |  | included with 3280 |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3230_front_telemetry.step) |
 | 3240 | Telemetry Antenna, Rear | 1 | cots |  | included with 3280 |  | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3240_rear_telemetry.step) |
-| 3250 | GNSS Module, Primary | 1 | cots |  | [IR-LOCK (CubePilot) Here4](https://irlock.com/products/here4-multiband-rtk-gnss); [Holybro H-RTK F9P (DroneCAN)](https://holybro.com/) | $288.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3250_gnss_wren_mini.step) |
+| 3250 | GNSS Module, Primary | 1 | cots |  | [Holybro H-RTK NEO-F9P Rover, DroneCAN 4-Pin, SKU 12072](https://holybro.com/products/h-rtk-neo-f9p-rover-rm3100-compass?variant=44639194644669); [IR-LOCK (CubePilot) Here4](https://irlock.com/products/here4-multiband-rtk-gnss) | $199.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3250_gnss_holybro_neo_f9p.step) |
 | 3251 | GNSS Module, Backup, Mateksys M9N-G4-3100 | 1 | cots |  | [Mateksys M9N-G4-3100](https://www.mateksys.com/?portfolio=m9n-g4-3100) | $125.00 |  |
 | 3260 | Power Switch, E-Switch PVHC4F23SS344 | 1 | cots |  | [Digi-Key PVHC4F23SS344](https://www.digikey.com/en/products/detail/e-switch/PVHC4F23SS344/24614861) | $16.00 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3260_power_switch.step) |
 | 3270 | Gimbal Camera, SIYI A8 mini | 1 | cots |  | [SIYI](https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera) | $251.63 | [design](https://github.com/Arrow-air/project-quiver/blob/main/src/quiver/equipment/peripheral/steps/vendor/3270_camera.step) |

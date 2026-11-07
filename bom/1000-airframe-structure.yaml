@@ -29,7 +29,7 @@ items:
     qty: 1
     sourcing: laser-cut
     material: Aluminum
-    spec: 1 mm sheet
+    spec: 4 mm sheet
     design_ref: src/quiver/airframe_structure/plates/steps/1113_lower_plate.step
     unit_cost_usd: 47.00
     suppliers:
@@ -40,33 +40,36 @@ items:
     qty: 1
     sourcing: laser-cut
     material: Aluminum
-    spec: 40x40x2 mm box section
+    spec: 40x40x1 mm box section
     design_ref: src/quiver/airframe_structure/beams/steps/1211_cw_long.step
     unit_cost_usd: 43.00
     suppliers:
       - name: RapidDirect
         url: https://www.rapiddirect.com/
   - id: "1212"
-    name: Cockpit Support Beam, CCW Back
+    name: Cockpit Support Beam, CCW
     qty: 2
     sourcing: laser-cut
     material: Aluminum
-    spec: 40x40x2 mm box section
+    spec: 40x40x1 mm box section
     design_ref: src/quiver/airframe_structure/beams/steps/1212_ccw_back.step
     unit_cost_usd: 27.00
     suppliers:
       - name: RapidDirect
         url: https://www.rapiddirect.com/
+    notes: Same part front and back; the front one is turned 180 deg.
   - id: "1221"
     name: Battery Wall
     qty: 2
     sourcing: laser-cut
     material: Aluminum
+    spec: 100x30x2 mm rectangular tube, 300 mm long
     design_ref: src/quiver/airframe_structure/beams/steps/1221_battery_wall.step
     unit_cost_usd: 49.00
     suppliers:
       - name: RapidDirect
         url: https://www.rapiddirect.com/
+    notes: Same part on both sides; the left one is turned 180 deg.
   - id: "1310"
     name: Landing Gear Vertical Tube
     qty: 4
@@ -99,12 +102,13 @@ items:
     name: Landing Gear Main Adapter
     qty: 4
     sourcing: cots
-    spec: 30 mm tube quick-release tilt seat
+    spec: 30 mm tube quick-release tilt seat, 21 deg
     design_ref: src/quiver/airframe_structure/landing_gear/steps/vendor/1330_main_adapter.step
     unit_cost_usd: 30.00
     suppliers:
       - name: RJXHobby
         url: https://www.rjxhobby.com/rjx-1pcs-20mm-quick-release-tripod-aluminum-tilt-fixed-seat-landing-gear-connector-1
+    notes: Same part on all four legs.
   - id: "1340"
     name: Landing Gear Tube Joint
     qty: 4
@@ -115,6 +119,7 @@ items:
     suppliers:
       - name: INNLOI
         url: https://www.innloi.com/productinfo/448455.html
+    notes: Same part on all four legs.
   - id: "1350"
     name: Landing Gear Foam Wrap
     qty: 4
