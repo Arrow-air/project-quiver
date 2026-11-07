@@ -41,7 +41,7 @@ While the fuselage features some water-resistant seals, flight in rain, snow, or
 
 **Temperature**:
 Ambient Air: Operating range is -10°C to +35°C.
-Battery Temp: Do not operate if battery core temperature exceeds 56 °C. Land immediately if this threshold is reached.
+Battery Temp: Do not operate if battery core temperature exceeds 56 °C. Land immediately if this threshold is reached. Check the pack by hand before and after each flight. On a pack with CAN telemetry (Tattu smart BMS) the BMS also reports temperature on Bat 2. Treat it as additional information until it is confirmed in a flight log (Initial Configuration Guide open item 10).
       
 #### 1.2.2 Visual Line of Sight (VLOS):
 The Pilot in Command (PIC) must maintain effective Visual Line of Sight at all times, unaided by binoculars or FPV goggles.
@@ -260,7 +260,7 @@ A widely accepted safety standard for rotary-wing aircraft is the 1:1 Rule:
 - The power button can be used to display the charging state or to awake the internal CAN bus communication of the battery.
 
 **For Tattu 4.0 series:**
-- The power button can be used to control the battery power up state. The output needs to be activated before the push button on the drone can power up the drone.
+- The power button controls the battery power output. The output must be on before the drone push button does anything. Sequence on the battery button: **short press, then long press** to activate the output. Only then does the drone push button power the aircraft (Initial Configuration Guide §0).
 
 ### 2.4 Drone push button
 The drone push button is used to initiate the pre-charge of the power system and to power up all low voltage systems, such as:
@@ -292,7 +292,7 @@ The pilot shall not modify firmware, parameters, or calibrations during initial 
 Before the first flight, the pilot must verify that:
 
 - The flight controller firmware version matches the version declared in the delivery documentation.
-- The official Quiver baseline parameter set is present and unchanged.
+- The parameters match the delivered parameter file for this aircraft (the export shipped with the delivery documentation). The repository baseline is the starting point for that file, not the reference: a configured aircraft carries values the baseline does not (site fence, `FLTMODE*`, `RELAY1_*`, and on a smart pack `BATT2_MONITOR 8` with the §4.2.1 capacity stages).
 - Frame configuration, motor order, and motor rotation direction match the documented airframe layout.
 - Battery monitor type, voltage scaling, and current sensing values match the baseline.
 - All failsafe behaviors are enabled and match the baseline configuration.
@@ -312,19 +312,23 @@ The following calibrations are completed by the manufacturer prior to shipment a
 If RTK positioning is used, verify correct GPS role assignment and correction data flow.
 
 Re-calibration shall only be performed if:
-- Hardware has been replaced or repositioned, or
+- Hardware has been replaced or repositioned,
+- The aircraft has been shipped or moved to a new site (see §2.5.5 for the exact triggers), or
 - Explicitly requested by the Quiver team.
 
 #### 2.5.3 Safety, Arming, and Logging Verification
 
 Before flight, verify that:
 
-- All arming checks are enabled.
+- All arming checks are enabled: `ARMING_SKIPCHK` reads `0` (skip nothing). The older `ARMING_CHECK` parameter does not exist on the current firmware.
+- Stick arming is off: `ARMING_RUDDER` reads `0`. The arm switch (ch5) is the only RC arming path. With the default `2` the throttle down plus full right yaw gesture arms the aircraft whatever the switch says.
 - Geo-fencing is enabled and configured for the current test site.
-- RTL altitude is appropriate for the operating environment.
-- Battery failsafe thresholds are correct.
+- RTL altitude is appropriate for the operating environment (`RTL_ALT_M`, terrain relative when `RTL_ALT_TYPE` is `1`, which needs `TERRAIN_ENABLE` `1` or a working downward rangefinder).
+- Battery failsafe thresholds are correct: Bat 1 `BATT_LOW_VOLT` `46.2` and `BATT_CRT_VOLT` `44.8` (3.3 and 3.2 V per cell) on every aircraft, plus the Bat 2 capacity stages of §4.2.1 on an aircraft with a smart pack. Both voltage lines are in the baseline file. Read them back anyway: an aircraft that lost `BATT_LOW_VOLT` refuses to arm with the pre-arm message `Battery 1 voltage failsafe critical >= low`, because the critical threshold then sits above the firmware's default low threshold. That message means the low threshold is missing, not that the failsafe is misconfigured in the air.
 - The kill switch is mapped and verified with motors disabled or propellers removed.
 - Onboard logging is enabled and an SD card is installed.
+
+The First Flight Checklist §1 carries the full parameter list for this gate.
 
 Flight without logging is not permitted.
 
@@ -336,6 +340,32 @@ The aircraft is considered authorized for first flight only when:
 - No unexplained warnings or errors are present,
 - Logging is confirmed active,
 - No unauthorized configuration changes exist.
+
+#### 2.5.5 Post-Shipment Recalibration
+
+<!-- Added 2026-07-20. Origin: team decision May 2026 (mandatory sensor recalibration after shipment or travel for loaner and devkit aircraft). Procedures live in the Initial Configuration Guide; this section defines when a pilot must re-run them. -->
+
+Perform this procedure after every carrier shipment, after any transport with the aircraft disassembled for its case, before the first flight at a site this aircraft has not flown from, and whenever the power-up heading check (First Flight Checklist §4) disagrees with the nose reference by more than 5°.
+
+Shipping exposes the aircraft to sustained vibration, temperature cycling, and unknown magnetic environments, and the aircraft is partially disassembled for its case. In addition, a compass calibration is only valid for the magnetic environment it was performed in, so a calibration from the origin site does not transfer to the destination.
+
+**Sequence:**
+
+1. **Reassemble and inspect** per §2.1. Check every motor arm latch for full engagement and every arm connector screw by hand. Arm screws are known to loosen in transit even with threadlocker.
+2. **Verify the configuration baseline is unchanged** (§2.5.1). If in doubt, export a parameter snapshot and compare against the last known-good file. Export on battery power, not USB, or CAN device IDs will read zero.
+3. **Level check.** On flat, level ground, confirm the ground station horizon is level and stationary. If it is off, re-run the accelerometer calibration and Level Horizon (Initial Configuration Guide §3.1).
+4. **GNSS verification at the new site** (Initial Configuration Guide §5.2). Both instances reach a 3D fix in open sky with 14 or more satellites and HDOP at or under 1.6 (the §3.3 gate). This comes before the compass step: LVMC needs the vehicle's position to look up the expected magnetic field.
+5. **Compass recalibration (mandatory, every shipment).** With the 3D fix held, re-run Large Vehicle MagCal outdoors at the destination site with the nose at a known true heading (Initial Configuration Guide §3.2). LVMC takes the heading in the earth frame and applies the local declination itself, so enter true heading, not magnetic. Get the reference by sighting the nose along a line between two points whose bearing comes from the map or from the F9P position, not from a phone compass: every degree of reference error goes straight into the offsets. The assembled aircraft cannot be hand-rotated, so LVMC is the standard method. Verify the reported heading is within 5° of the reference and no compass variance warnings appear. LVMC also resets the soft iron terms (`COMPASS_DIA*` to 1, `COMPASS_ODI*` to 0) on every compass it calibrates, so any earlier MagFit refinement is erased at this step. Only the motor compensation (`COMPASS_MOT*`) survives. This is expected and is why MagFit is not part of the field workflow.
+6. **Hover verification.** Before any mission work, fly a short low hover (the shakedown profile from the First Flight Checklist §6): stable position hold, no toilet-bowling, no yaw drift, no unexplained warnings.
+
+Record the recalibration in the flight tracking platform maintenance log (§6.5) with the shipment or transport event that triggered it.
+
+**MagFit, interim rule (2026-11-07, to be revised from pilot and customer feedback).** MagFit (the WebTools fit of compass offsets, soft iron terms, and motor compensation from a flight log) is not part of the field workflow, and not a release step at the factory, because the LVMC above erases its soft iron terms at the first destination. What stays in place:
+
+- Operator: LVMC at the destination per the sequence above, then the hover check. A change of location by itself needs nothing else, declination comes from the world magnetic model at the GPS position (`COMPASS_AUTODEC 1`).
+- Factory: the acceptance flight includes a full 360° of yaw and some throttle variation, so every unit ships with a log MagFit can use if it is ever needed.
+- Revisit on any of these from the field: heading off the reference by more than 5° after LVMC, compass variance or inconsistency warnings in flight, toilet bowling in LOITER, or a payload or wiring change near the compasses. That unit gets a MagFit run on its acceptance or field log. If motor interference is the finding, the motor compensation is the part to apply, since it survives LVMC.
+- Reports go through §6.6 with the log attached. This rule is revised here with the date and the reports that drove it.
 
 ### 2.6 Parameter walk through
 This section introduces flight-critical parameters that the pilot must understand, not modify.
@@ -352,6 +382,16 @@ The Quiver Dev-Kit is delivered with a locked, flight-validated configuration.
 
 Any request to modify flight-critical parameters must be submitted and approved before changes are applied.
 
+**Site parameters.** Three parameters describe the flying site rather than the aircraft, and the pilot sets them per site without a separate approval, within the limits below, and records each change per §2.6.3:
+
+| Parameter | Limit |
+|---|---|
+| `FENCE_RADIUS` | Inside the surveyed clear area, never beyond VLOS |
+| `FENCE_ALT_MAX` | At or below the site's legal ceiling (120 m AGL under Part 107 and EASA Open category) |
+| `RTL_ALT_M` | Above the tallest obstacle between the fence boundary and home, and below `FENCE_ALT_MAX` |
+
+Everything else stays as delivered.
+
 Unauthorized parameter changes may invalidate:
 - Manufacturer support,
 - Flight test data,
@@ -362,7 +402,7 @@ Unauthorized parameter changes may invalidate:
 > [!TIP]
 >
 > The official baseline parameter file can be downloaded from:  
-> https://github.com/Arrow-air/project-quiver/tree/vector/firmware-docs-clean/docs/firmware/parameters
+> https://github.com/Arrow-air/project-quiver/tree/main/docs/Operations/firmware/parameters
 
 **Geo-Fence**
 - `FENCE_ENABLE`
@@ -372,8 +412,9 @@ Unauthorized parameter changes may invalidate:
 Pilots must understand the configured response when the fence is breached (Brake / RTL / Land).
 
 **Battery Failsafes**
-- Battery monitor configuration (`BATT_*`)
-- Low and critical battery thresholds and actions (`FS_BATT_*`)
+- Battery monitor configuration (`BATT_*` for the ESC monitor, `BATT2_*` for the pack BMS)
+- Low and critical thresholds and actions (`BATT2_LOW_MAH`, `BATT2_CRT_MAH`, `BATT2_FS_LOW_ACT`, `BATT2_FS_CRT_ACT`, with the `BATT_*` voltage thresholds as the backstop) and the arming block (`BATT2_ARM_MAH`). The `BATT2_*` capacity stages exist only on an aircraft with a smart pack. On any other aircraft `BATT2_*` stays at the baseline (Initial Configuration Guide §7.3). The staged rule the pilot follows is in §4.2.1.
+- `LAND_REPOSITION` (`1`): the pilot keeps horizontal control during a failsafe landing.
 
 **RC and GCS Failsafes**
 - RC signal loss behavior
@@ -410,7 +451,8 @@ The following pilot-accessible controls are mandatory:
 
 - Arm / Disarm
 - Flight Mode selector (3-position)  
-  *(Typical: LOITER / AUTO / STABILIZE)*
+  *(Standard: ch9 Pos1 ALTHOLD / Pos2 LOITER / Pos3 AUTO. RTL on its own switch, ch10.)*  
+  Take off in LOITER, flick to AUTO for the mission, flick back to LOITER to take over. AUTO is at the end of the switch so no mode change passes through it, and the aircraft refuses to arm with the switch in AUTO. ALTHOLD stays on the switch as the GPS failure fallback (§4.2.2). STABILIZE is not on the switch; an operator who wants it can put it on a spare switch. This is one map for every unit (decided 2026-11-07 from the T-20 review). Revise it from pilot feedback through §6.6, for every unit at once, never as a per unit deviation.
 - Return-to-Launch (RTL)
 - Kill Switch (guarded or deliberately positioned)
 
@@ -445,20 +487,21 @@ Mission Planner is the primary supported ground control station for Quiver Dev-K
 #### 2.8.1 Pilot Station Setup
 
 - Laptop connected to stable power,
-- Telemetry radio securely connected,
+- RC transmitter charged, antennas open, and the telemetry link for the aircraft ready (the link depends on the RC system installed, see §2.8.6 for the SIYI MK32),
 - Optional external monitor for camera or payload feed (recommended).
 
-If telemetry connection fails, power-cycle the radio and retry.
+The telemetry link carries MAVLink from the flight controller to Mission Planner. Its physical form depends on the RC system delivered with the aircraft, and the delivery documentation names it.
 
 #### 2.8.2 Mission Planner Connection
 
 1. Launch Mission Planner.
-2. Select the correct COM port (or Auto).
-3. Set the baud rate to 57600 (default for SiK telemetry radios).
-4. Connect and verify:
+2. Connect on the telemetry path configured for the aircraft (COM port, UDP, or TCP as the delivery documentation states). The wired Ethernet path is always TCP to the flight controller at `192.168.144.51:5760`.
+3. Verify:
    - Live telemetry updates,
    - No critical system messages,
    - Stable estimator (EKF) status.
+
+If the link fails, power cycle the telemetry link and retry.
 
 #### 2.8.3 RTK / Correction Data (If Used)
 
@@ -495,6 +538,41 @@ Relays 7 and above are not part of the standard Quiver Dev-Kit pilot workflow un
 > Relay labels are an operator-facing safety aid. The labels do not change wiring or firmware behavior; they only make the Mission Planner relay controls easier to identify.
 
 
+#### 2.8.6 SIYI MK32 (when installed)
+
+The SIYI MK32 is the RC system on the first configured units. It is not the Quiver pilot standard: other RC transmitters and telemetry links can be installed, and the steps in this section apply only when the MK32 is the delivered system. With the MK32 the ground unit is the RC transmitter, the video screen, and the telemetry link (HM30 air unit on the flight controller's SERIAL1), and Mission Planner on the laptop is the telemetry view.
+
+**Preparation, before the aircraft is powered.** The MK32 supplies the operator location that Remote ID needs to arm, and its internal GNSS starts cold.
+
+1. Put the MK32 on a WiFi network with internet (the field router or a phone hotspot) as the first step at the field.
+2. Open QGroundControl on the MK32 and leave it open for at least 10 minutes before powering the aircraft.
+3. Confirm QGC shows the operator position before continuing. Without it the aircraft will not arm.
+
+**Mission Planner paths.** Pick one. They are exclusive on the SIYI datalink.
+
+| Path | Use when | How |
+|---|---|---|
+| Local WiFi or LAN (standard field setup) | The laptop is at the field | Laptop on the SIYI network (WiFi dongle to the MK32 hotspot, or Ethernet to the ground LAN). Mission Planner → UDP `192.168.144.12:19856` (the SIYI ground unit), or TCP `192.168.144.51:5760` (the flight controller directly). |
+| Wired USB-C | Troubleshooting only | SIYI TX → Datalink → Connection = USB COM, MK32 to the laptop by USB-C, Mission Planner on that COM port. **This stops the QGC feed on the MK32, so Remote ID loses operator location and the aircraft will not arm.** Switch back before flight. |
+| Remote (Tailscale) | The laptop is not at the field | Mission Planner → TCP `192.168.144.51:5760` over the tailnet. Internet latency, not a field monitoring link. |
+
+If the link fails, power cycle the MK32 datalink (SIYI TX → Datalink) and retry.
+
+**Kill switch guard (required since 2026-10-08).** The ch8 kill switch on the MK32 shall carry a hinged flip-up cover that holds the lever in the run position. Background: on 2026-10-06 (log 88 on the flight tracking platform) the kill switch changed state in the same RC frame as the RTL release on ch10 (the log shows both edges together, so a hand movement on the neighboring switch is the working hypothesis), the SSR opened at about 7.5 m and the aircraft fell. The RC8 relay function treats only the HIGH detent as "SSR closed", so both the middle and the down position of the 3-position switch are kill positions, and a half flip is enough (see §4.1).
+
+| Item | Value |
+|---|---|
+| Part | Toggle Switch Cover by LCruz3D on MakerWorld (derived from the firstgizmo cover), model 756035, print profile 690258 ("0.2mm layer, 4 walls, 25% infill") |
+| Link | https://makerworld.com/en/models/756035-toggle-switch-cover |
+| Variant | Use the cap that does **not** actuate the toggle when closed. The actuating cap pushes the lever as it closes and must not be used on a switch where the closed position is the run position. |
+| Material | PETG for both parts. The spring part fails in PLA. Print with the published profile, 0.2 mm layers, 4 walls, 25 % infill. |
+| Hinge | A short length of 1.75 mm filament through the hinge bores. Melt both ends flat with a lighter so the pin cannot walk out. |
+| Orientation | Mount it so the closed cover holds the lever **up** (SSR closed). On the first unit ch8 is reversed on the transmitter, up = run, down = kill, so the hinge goes on the bottom side of the switch. Confirm on the bench with props off: close the cover, check Relay 1 stays closed, then open the cover and flip down, check the SSR opens. |
+| Fit | Not yet verified on the MK32. The published files fit a 3 mm or a 12 mm panel hole and mount under the switch nut. The MK32 switch bushings sit inside the case, so the base may need adhesive mounting or a modified base. Measure the switch bushing and the panel clearance before printing. |
+| License | CC BY-NC-SA. Do not copy the STL or STEP files into this repository (CERN-OHL-S). Link to the source and keep any modified base as a separate file outside the repo until relicensed. |
+
+Record the guard on the ground station in the maintenance and modification log (§6.5) and confirm it closed on every pre-flight RC check (§2.7.4).
+
 ## 3. Power Up Procedure
 
 This sequence defines the only approved process from battery installation to takeoff.
@@ -510,42 +588,45 @@ This sequence defines the only approved process from battery installation to tak
 
 ### 3.2 Battery Installation
 
-5. **Install Battery:** Insert and latch mechanically.
-6.  **Battery Wake:** Press the Battery Button (if Tattu 4.0) to enable output.
+5. **Switches safe before power:** on the transmitter set ch5 to DISARM, ch8 to RUN (up) with the guard closed over it (§2.8.6), ch10 (RTL) low, ch9 on LOITER. The flight controller does not act on ch5 or ch8 at boot, only when they move, and the SSR closes about 12 s after boot whatever ch8 says. If ch8 were down at power-up, the SSR would close with the switch already in the kill position, and a kill in flight would then take two flips.
+6. **Install Battery:** Insert and latch mechanically.
+7.  **Battery Wake:** Press the Battery Button (if Tattu 4.0) to enable output.
 
 ### 3.3 Avionics Power-Up
 
-7.  **Drone Init:** Press the **Drone Push Button**.
+8.  **Drone Init:** Press the **Drone Push Button**.
     * *Expectation:* Air unit fan spins up, LEDs illuminate.
     * *Wait:* Allow 30-60 seconds for Flight Controller boot and GPS lock.
-8. **GCS Link:** Verify connection on GCS. Check for "Ready to Fly" status (GPS: 3D Fix).
-9. Verify:
+9. **GCS Link:** Verify connection on GCS. Check for "Ready to Fly" status (GPS: 3D Fix).
+10. Verify:
    - No critical pre-arm errors,
    - Stable EKF status,
    - GPS fix with HDOP ≤ 1.6 and ≥ 14 satellites (check GCS Status tab).
-10. **Verify SSR auto-engage:** Confirm the high-voltage SSR has closed after boot.
-    * *If the aircraft has a Raspberry Pi with the Tattu bridge installed:* Compare the GCS battery voltages for Bat 1 (`ESC`) and Bat 2 (`Tattu`). If the voltages are nearly equal, the SSR is closed. If Bat 1 is lower than Bat 2 by several volts, the SSR is likely not closed.
-    * *If the aircraft does not have a Raspberry Pi / Tattu bridge installed:* Mission Planner may not provide an obvious live indication that the Lua script has changed the relay state. If unsure, reboot the aircraft and allow the auto-engage script to run again, or press the physical button again. You can also manually activate/deactivate the SSR with the Mission Planner relay button and watch for the expected voltage change.
+11. **Verify SSR auto-engage:** Confirm the high-voltage SSR has closed after boot.
+    * *If the pack has CAN telemetry (Tattu smart BMS, shown as Bat 2):* Compare the GCS battery voltages for Bat 1 (`ESC`) and Bat 2 (`BMS`). If the voltages are nearly equal, the SSR is closed. If Bat 1 is lower than Bat 2 by several volts, the SSR is likely not closed.
+    * *If the pack has no CAN telemetry:* Mission Planner may not provide an obvious live indication that the Lua script has changed the relay state. If unsure, reboot the aircraft and allow the auto-engage script to run again, or press the physical button again. You can also manually activate/deactivate the SSR with the Mission Planner relay button and watch for the expected voltage change.
     * *Fault / uncertainty:* The SSR normally activates reliably. These checks are mainly for troubleshooting if something seems wrong. If the SSR is deactivated and the aircraft is armed, the motors may spin only briefly before the system drops into undervoltage. If the SSR is not confirmed closed, do not fly; troubleshoot the script, relay state, or power system before continuing.
 
-### 3.4 Motor Power and Arming
+### 3.4 Mission Load and Arming
 
-11. Keep main motor power disabled during configuration.
+Main motor power is already on: the SSR auto-engage script closes it about 12 s after boot (§2.4, §3.3 step 11), whatever the kill switch position. The aircraft is safe during mission load because it is not armed, not because motor power is off. Do not open the SSR to load a mission (§2.4 caution). "Not armed" holds only because the arming paths are controlled: the switches were set before power (§3.2 step 5), stick arming is off (`ARMING_RUDDER 0`, §2.5.3), and nobody touches the GCS arm button.
+
+From SSR close onward treat the propellers as live: nobody inside the propeller arc unless the PIC is holding the transmitter.
+
 12. Load mission or RTK data if applicable.
 > [!NOTE]
 >
-> Steps 11–13 require the mission to be loaded before enabling motor power. This ensures:
+> Load and verify the mission before arming. This ensures:
 > - Waypoints and geo-fence are verified while the aircraft is safe on the ground,
-> - Any upload errors or configuration issues are caught before the motors are live,
+> - Any upload errors or configuration issues are caught before the motors can spin,
 > - The pilot can abort without risk if the mission is incorrect.
-13. Enable main motor power.
-14. Select LOITER mode.
-15. Arm via RC.
+13. Select LOITER mode.
+14. Arm via RC.
     * *Expectation:* Motors spin at idle.
     * *Fault:* If a motor fails to spin, disarm immediately.
-16. Observe motors for abnormal behavior.
-17. Take off slowly and climb to a safe hover altitude.
-18. Verify stability before proceeding with mission modes.
+15. Observe motors for abnormal behavior.
+16. Take off slowly and climb to a safe hover altitude.
+17. Verify stability before proceeding with mission modes.
 
 ### 3.5 Abort Criteria
 
@@ -553,7 +634,7 @@ Abort immediately if:
 - Electrical arcing occurs,
 - Critical errors persist,
 - Estimator instability is observed,
-- Motor power enables unexpectedly,
+- Motors spin while disarmed, or the SSR state does not match the kill switch,
 - Any unsafe or unexplained behavior is detected.
 
 
@@ -571,19 +652,36 @@ Abort immediately if:
     - The SSR will open immediately and cutting all power to the motors. 
     - The aircraft will enter a ballistic free fall.
 
+> [!CAUTION]
+>
+> On a 3-position kill switch only the run detent keeps the SSR closed. The middle position opens the SSR exactly like the full kill position. A partial flip, or a bump while operating a neighboring switch, is a kill. The 2026-10-06 crash (log 88) happened this way while releasing RTL. Every MK32 shall carry the flip-up guard described in §2.8.6, closed over the run position for the whole flight.
+
 ### 4.2 Flight Mode Changes (Failures)
 
-#### 4.2.1 Low Battery (≤ 20%)
-* **System Action:** Triggers **RTL (Return to Land)**.
-* **Pilot Action:** Monitor the return path. Do not override unless the landing path is obstructed or unsafe.
-    * *Warning:* RTL relies on GPS. Be ready to take manual control if navigation fails.
+#### 4.2.1 Low Battery (two stages, capacity based)
+
+<!-- Decided 2026-09-10, approved 2026-09-30 in issue #248 (Julius, battery integration owner). Replaces the single "20 percent triggers RTL" rule. The numbers are owned by the Initial Configuration Guide §7.4; this section tells the pilot what to do. -->
+
+On an aircraft with a smart pack (Tattu with CAN telemetry) the flight controller reads the pack's own battery management system (Bat2) for consumed capacity. The count is validated against the charger and persists across power cycles, so it describes the pack, not the flight. One limit: the flight controller computes remaining capacity as `BATT2_CAPACITY` (30,000 mAh) minus the consumed figure, and the BMS counts consumption against its own full charge capacity. As a pack ages below 30 Ah every stage fires late by the difference (a 27 Ah pack reaches Critical with 1,500 mAh real). Where the BMS reports state of health, a pack reading below 90 % is reported before flight (§6.6) and either retired or flown with `BATT2_CAPACITY` lowered to its real capacity by the Quiver team.
+
+| Stage | Trigger | System action | Pilot action |
+|---|---|---|---|
+| Arming block | Less than 30 % remaining (9,000 mAh) when the pilot arms | The aircraft refuses to arm | Install a charged pack. Do not bypass the check. The count persists across power cycles, so a half used pack is caught here and not in the air. |
+| Low | 25 % remaining (7,500 mAh) | Warning on the GCS and the RC. Return to Land once autonomous operations are validated. | End the task and land within two minutes. In RTL, monitor the return path and do not override unless the landing path is obstructed or unsafe. RTL relies on GPS, be ready to take manual control if navigation fails. |
+| Critical | 15 % remaining (4,500 mAh) | Land in place | Clear the landing zone and let it land. The pilot keeps horizontal control during the descent (`LAND_REPOSITION` stays enabled) to steer away from people, water, or an obstacle. Do not fight the descent. |
+
+Voltage thresholds on both battery monitors (3.3 V per cell low, 3.2 V per cell critical) remain as a backstop for a battery management system fault. A voltage warning while capacity still shows above 25 % means the telemetry disagrees with the pack. Land.
+
+**Taking back control from any RTL** (ch10, battery, RC loss, GCS loss, fence): move ch9 to LOITER. That is the first move, because it keeps the hand away from the kill switch next to ch10 (§2.8.6). If ch9 is already on LOITER, move it to ALTHOLD and back, or flip ch10 up and back down with the guard closed; either returns the aircraft to the ch9 mode. **Do not lower ch10 with ch9 still on AUTO:** lowering the RTL switch returns to the ch9 mode, so the mission resumes. With the object avoidance overlay loaded (`OA_TYPE 1`), RTL also runs the path planner, so the aircraft may climb or detour around obstacles instead of flying straight home (flight 10, 2026-07-30).
+
+On an aircraft whose pack has no CAN telemetry there is no capacity count. The Bat1 voltage rule applies on its own: 46.2 V (3.3 V per cell) triggers Return to Land, 44.8 V (3.2 V per cell) lands in place. Voltage lags consumption under load, so land at the first warning rather than waiting for the second. Two things the pilot of such an aircraft will meet: the baseline leaves Bat2 configured as a second ESC monitor (`BATT2_MONITOR 9`, `BATT2_LOW_VOLT 48` on raw voltage), so a "Battery 2 low" message appears at 48 V under load, before Bat1's 46.2 V, and carries no action. Treat it as the early warning it is. And the only arming floor on such an aircraft is `BATT_ARM_VOLT 47.5`, far below the §5.1 minimum of 56.0 V, so the §5.1 check is the real charge gate.
+
+At the platform's hover draw one minute of flight costs roughly 1,100 mAh, so the 25 % reserve is about six minutes: a return from the fence boundary, the landing, and the counter's error band.
 
 #### 4.2.2 Sensor Failure (GPS Glitch/Compass Variance)
 - Indication: Drone "toilets" (swirls) or drifts uncontrollably.
 - Action: Switch to AltHold (Altitude Hold) immediately. This disables GPS positioning. You must manually counter wind drift to land safely.
 - High Vibration/Motor Loss: Land immediately.
-
-#### 4.2.3 Single Motor Failure (Signs of incoming failure)
 
 #### 4.2.3 Single Motor Failure
 
@@ -610,7 +708,6 @@ Abort immediately if:
 - The aircraft shall not takeoff before detailed inspection and testing.
 
 #### 4.2.4 Fly-Away or Lost Control
-#### 4.2.4 Fly-Away or Lost Control
 
 > [!WARNING]
 >
@@ -628,7 +725,7 @@ Abort immediately if:
 
 - If the aircraft remain uncontrolled while stays in visual line of sight and geofence,
     - Maintain observation and remove any property below the aircraft.
-    - The aircraft will automatically land itself when reaching low battery level.
+    - The aircraft lands itself at the critical battery stage (15 % remaining or 44.8 V, §4.2.1). The low stage only warns.
 - If the uncontrolled aircraft flies heading:
     - **To you**: **RUN AWAY** from the flight path.
     - To persons, creatures or properties: Activate the kill switch.
@@ -706,7 +803,7 @@ Take photos of the airframe, details where necessary.
 
 - [ ] Battery power control working normally
 
-- [ ] Relay 1 / `SSR` automatically activates after boot via the Quiver SSR auto-engage Lua script; verify by comparing Bat 1 (`ESC`) and Bat 2 (`Tattu`) voltage when available. Without a Raspberry Pi / Tattu bridge, Mission Planner relay indication may be unclear; if unsure, reboot or press the physical button again, and verify by observing the expected voltage change when toggling the SSR.
+- [ ] Relay 1 / `SSR` automatically activates after boot via the Quiver SSR auto-engage Lua script; verify by comparing Bat 1 (`ESC`) and Bat 2 (`BMS`) voltage on a pack with CAN telemetry. Without it, Mission Planner relay indication may be unclear; if unsure, reboot or press the physical button again, and verify by observing the expected voltage change when toggling the SSR.
 
 - [ ] Mission Planner Servo/Relay labels are set for relays 1–6 (`SSR`, `Bypass`, `Add HV`, `P1 Sig`, `P1 12V`, `12V Pay`)
 
@@ -731,15 +828,13 @@ Note anything that is missing on the aircraft or anything that doesn't feel righ
 
 ### 5.2 After flight check list
 
-- [ ] Logs: (Optional) Save flight logs for maintenance records.
-    1. Transfer and save the flight logs file with the GCS.
-    2. Upload to flight tracking platform is very welcome.
-
-- [ ] Power Down:
-    1. Disable main power breaker with the GCS or remote button.
-    2. Disable the push button.
-    3. Power down the battery.
+- [ ] Power Down, in this order:
+    1. Confirm the aircraft is disarmed.
+    2. Press the drone push button off. Leave the SSR closed: opening it from the GCS first puts the avionics on the pre-charge resistor for no benefit (§2.4).
+    3. Power down the battery output.
     4. Remove the battery from the drone.
+
+- [ ] Logs: download the dataflash logs and upload them to the flight tracking platform (§6.3). Every flight is logged and uploaded, this is not optional.
 
 - [ ] Inspection: 
     1. Check motor temperatures (shall not be scorching or being huge difference).
@@ -756,7 +851,7 @@ Note anything that is missing on the aircraft or anything that doesn't feel righ
 
 Quiver operates an in-house flight tracking and analysis platform:
 
-https://project-flight-tracking.vercel.app/
+https://flights.arrowair.com/
 
 The platform is used to:
 - Track accumulated flight hours,
@@ -812,3 +907,5 @@ For anomalies, near-misses, or incidents, upload:
 - Weather conditions
 - Description of expected vs observed behavior
 - Severity assessment
+
+The platform upload with these fields is the incident record. No separate written report is required in the repository. Where an incident leads to a hardware, procedure, or configuration change, this Handbook cites the platform flight by log number and the change is recorded in the maintenance and modification log (§6.5).
