@@ -7,42 +7,50 @@ Most parts are exported from Fusion 360 with correct positions baked in.
 Parts that need transforms are noted below.
 
 Vendor parts in steps/vendor/:
-    3201_ppp_adapter.step       PPP ethernet adapter (rotZ 45, on BL diagonal)
-    3202_drone_beacon.step      Drone beacon db201 (rotZ 135, on BL diagonal)
+    3201_ppp_adapter.step       PPP ethernet adapter (rotZ -45, on the 2341 board)
+    3202_drone_beacon.step      Drone beacon db201 (rotZ 135, on the 2341 board)
     3210_oa_lidar.step          Obstacle avoidance LiDAR (translate only)
     3220_radar_altimeter.step   Radar altimeter (rotZ 180)
     3230_front_telemetry.step   Front telemetry antenna (no transform)
     3240_rear_telemetry.step    Rear telemetry antenna (no transform)
-    3250_gnss_wren_mini.step    GNSS receiver (Z offset only, extract_solids)
-    3260_power_switch.step      Power switch (no transform)
+    3250_gnss_here4.step        Here4 (Fusion world placement)
+    3250_gnss_holybro_neo_f9p.step  Holybro NEO-F9P Rover (vendor coordinates)
+    3260_power_switch.step      Power switch (translate only)
     3270_camera.step            Camera (no transform)
-    3280_telemetry.step         Telemetry air unit (no transform)
-    3290_oa_radar.step          Obstacle avoidance radar (translate only)
+    3280_telemetry.step         Telemetry air unit (rotZ 180)
+    3290_oa_radar.step          Obstacle avoidance radar (rotY 180, rotX -5)
 
-Position constants are center-of-mass coordinates measured from the
-Fusion 360 PT3 master model export.
+Poses are full rigid transforms (see quiver.common.place): the Fusion 360
+v148 occurrence transforms (Quiver_PT3_Drone_Assembly). Several vendor
+STEPs are in their Fusion component's own frame.
 """
 
 from pathlib import Path
 
-from build123d import Axis, Compound, Location
+from build123d import Compound
 
-from quiver.common import load_step, place_at
+from quiver.common import load_step, place
+from quiver.gps import DEFAULT_PRIMARY_GPS, F9P_RECEIVER_POSITION, validate_primary_gps
 
 _DIR = Path(__file__).parent
 
-# Target center-of-mass positions for parts needing transforms
-# (from Fusion reference 3000-Equipment.step).
-_OA_LIDAR_POS = (-100.00, 2.42, 95.10)
-_RADAR_ALT_POS = (-47.99, 143.00, -139.86)
-_GNSS_DZ = 2.30                                    # raw Z=85.03, ref Z=87.33
-_OA_RADAR_POS = (-1.64, 165.07, -96.05)
-_PPP_ADAPTER_POS = (-119.14, 118.84, 51.77)
-_DRONE_BEACON_POS = (-98.92, 99.37, 48.50)
+# Poses for parts needing transforms: STEP origin (mm), intrinsic XYZ (deg).
+# Checked against Fusion v148 by tests/test_placement.py.
+_OA_LIDAR_POSE = ((-100.0, 0, -17.3), (0, 0, 0))            # seated in the 2412 top cap
+_RADAR_ALT_POSE = ((5.0, 294.0, 0), (0, 0, 180))
+_OA_RADAR_POSE = ((0, -73.9027, -68.2230), (175, 0, 180))   # turned 180 about Y, tilt cancelled
+_PPP_ADAPTER_POSE = ((-151.7959, -60.4492, 14.6037), (0, 0, -45))   # on the 2341 mounting board
+_DRONE_BEACON_POSE = ((42.3389, 142.5650, 20.5), (0, 0, 135))       # on the 2341 mounting board
+_POWER_SWITCH_POSE = ((-146.515, 0, -2.0), (0, 0, 0))     # moved with the 2411 enclosure update
+_TELEMETRY_POSE = ((199.5695, 4.3628, 0), (0, 0, 180))
+# F9P: the vendor case's local -Y face is its mounting surface; rotX(90)
+# stands it on the 2331 base (see quiver.gps).
+_F9P_RECEIVER_POSE = (F9P_RECEIVER_POSITION, (90, 0, 0))
 
 
-def make_assembly() -> Compound | None:
+def make_assembly(primary_gps: str = DEFAULT_PRIMARY_GPS) -> Compound | None:
     """Build the peripheral subassembly from imported STEP files."""
+    validate_primary_gps(primary_gps)
     children = []
 
     # --- Parts already at correct position (no transform) ---
@@ -50,52 +58,56 @@ def make_assembly() -> Compound | None:
     for name in [
         "3230_front_telemetry",
         "3240_rear_telemetry",
-        "3260_power_switch",
         "3270_camera",
-        "3280_telemetry",
     ]:
         part = load_step(_DIR, name, vendor=True)
         if part:
             children.append(part)
 
-    # --- Parts needing Z offset only ---
+    # --- Primary GPS: receiver and mount are selected together ---
 
-    gnss = load_step(_DIR, "3250_gnss_wren_mini", vendor=True, extract_solids=True)
+    if primary_gps == "here4":
+        gnss = load_step(_DIR, "3250_gnss_here4", vendor=True, extract_solids=True)
+    else:
+        gnss = load_step(_DIR, "3250_gnss_holybro_neo_f9p", vendor=True, extract_solids=True)
+        if gnss:
+            place(gnss, *_F9P_RECEIVER_POSE)
     if gnss:
-        gnss.move(Location((0, 0, _GNSS_DZ)))
         children.append(gnss)
 
-    # --- Parts needing CoM translation ---
+    # --- Parts needing a pose ---
 
     lidar = load_step(_DIR, "3210_oa_lidar", vendor=True)
     if lidar:
-        place_at(lidar, *_OA_LIDAR_POS)
-        children.append(lidar)
+        children.append(place(lidar, *_OA_LIDAR_POSE))
 
+    # The switch STEP still carries its position from before the enclosure
+    # update; Fusion moved it to the left (-X) side of the front face.
+    power_switch = load_step(_DIR, "3260_power_switch", vendor=True)
+    if power_switch:
+        children.append(place(power_switch, *_POWER_SWITCH_POSE))
+
+    telemetry = load_step(_DIR, "3280_telemetry", vendor=True)
+    if telemetry:
+        children.append(place(telemetry, *_TELEMETRY_POSE))
+
+    # The STEP holds the radar tilted 5 deg in its Fusion component frame;
+    # the occurrence turns it 180 deg and cancels the tilt (face vertical).
     oa_radar = load_step(_DIR, "3290_oa_radar", vendor=True)
     if oa_radar:
-        place_at(oa_radar, *_OA_RADAR_POS)
-        children.append(oa_radar)
-
-    # --- Parts needing rotation + CoM translation ---
+        children.append(place(oa_radar, *_OA_RADAR_POSE))
 
     radar_alt = load_step(_DIR, "3220_radar_altimeter", vendor=True)
     if radar_alt:
-        radar_alt = radar_alt.rotate(Axis.Z, 180)
-        place_at(radar_alt, *_RADAR_ALT_POS)
-        children.append(radar_alt)
+        children.append(place(radar_alt, *_RADAR_ALT_POSE))
 
     ppp = load_step(_DIR, "3201_ppp_adapter", vendor=True)
     if ppp:
-        ppp = ppp.rotate(Axis.Z, 45)
-        place_at(ppp, *_PPP_ADAPTER_POS)
-        children.append(ppp)
+        children.append(place(ppp, *_PPP_ADAPTER_POSE))
 
     beacon = load_step(_DIR, "3202_drone_beacon", vendor=True)
     if beacon:
-        beacon = beacon.rotate(Axis.Z, 135)
-        place_at(beacon, *_DRONE_BEACON_POS)
-        children.append(beacon)
+        children.append(place(beacon, *_DRONE_BEACON_POSE))
 
     if not children:
         return None

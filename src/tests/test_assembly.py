@@ -31,13 +31,19 @@ EXPECTED_TREE = {
 }
 
 # Full-assembly bounding box (mm), dominated by the propeller sweep and
-# landing gear. Tolerance is generous enough for tessellation noise but
-# tight enough to catch a mispositioned part.
-BBOX_MIN = (-673.6, -664.5, -547.9)
-BBOX_MAX = (673.6, 673.6, 193.7)
+# landing gear. The propeller handedness fix (diagonal CW/CCW pairs to match
+# Fusion v148) reoriented the rear props, so the X/Y extremes now follow
+# Fusion's mirror symmetry: X +/-664.5 (short prop axis), Y +/-673.6 (long
+# prop axis). Previously X/Y were swapped on the min side from the buggy
+# orientation. Tolerance is generous enough for tessellation noise but tight
+# enough to catch a mispositioned part.
+BBOX_MIN = (-664.5, -673.6, -547.9)
+BBOX_MAX = (664.5, 673.6, 193.7)
 BBOX_TOL = 1.0
 
-TOTAL_SOLIDS = 1242
+# Fusion v148: adapter +18 solids; the PPP/beacon board replaces the old
+# one-solid mount, so its count is unchanged.
+TOTAL_SOLIDS = 1260
 
 
 def test_top_level_structure(assembly):
@@ -65,7 +71,13 @@ def test_bounding_box(assembly):
 
 
 def test_total_solid_count(assembly):
-    assert len(assembly.solids()) == TOTAL_SOLIDS
+    peripheral = next(c for c in assembly.children if c.label == "Equipment")
+    peripheral = next(c for c in peripheral.children if c.label == "Peripheral")
+    receiver = next(c for c in peripheral.children if c.label.startswith("3250_"))
+    # Remove the legacy 328-solid Wren receiver and one clamp; add selected GPS.
+    receiver_solids = 5 if receiver.label == "3250_gnss_here4" else 19
+    assert len(receiver.solids()) == receiver_solids
+    assert len(assembly.solids()) == TOTAL_SOLIDS - 328 - 1 + receiver_solids
 
 
 def _step_references(module_dir: Path) -> set[str]:

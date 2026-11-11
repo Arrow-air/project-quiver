@@ -16,6 +16,7 @@ AOPEVM
 APJF
 Ardu
 arducopter
+argmax
 Ardupilot
 ardupilotmega
 argparse
@@ -85,6 +86,7 @@ canvasdiv
 canvasdivid
 canvaslayout
 canvassplit
+CBAT
 Ccircle
 chamf
 chamfpos
@@ -104,6 +106,7 @@ Csvg
 Ctext
 Ctspan
 CTUN
+CUAV
 Curr
 Cygbot
 darkmode
@@ -152,6 +155,7 @@ ENABL
 endangle
 ENIG
 errrks
+esptool
 Eurostyle
 extrafields
 ezdxf
@@ -175,6 +179,7 @@ Freerchobby
 frontcanvas
 fulfilment
 FWPULL
+GBMS
 Geofence
 Geoportal
 gerbers
@@ -248,6 +253,7 @@ Licence
 licence
 licences
 linepoint
+linalg
 Littelfuse
 loadout
 Loctite
@@ -317,6 +323,7 @@ NOPASSWD
 nslookup
 objurl
 ocpsvg
+ODID
 offsetx
 offsety
 ondouble
@@ -392,6 +399,7 @@ rclpy
 RCOU
 RCOUT
 recalc
+reflash
 reflookup
 relpos
 rels
@@ -461,6 +469,7 @@ svgpathtools
 swapable
 swappable
 Syncer
+SYIY
 Systork
 tablehead
 tailscale
@@ -532,15 +541,12 @@ Zeynep
 zoomd
 Betaflight
 cals
-CBAT
 Chibi
 CPORT
-CUAV
 depower
 DGPS
 DSDL
 FLTMODE
-GBMS
 GNGGA
 GPGGA
 gpshdop
@@ -551,13 +557,11 @@ hwdef
 kbaud
 LVMC
 MOTOCTL
-ODID
 OVRIDE
 pydronecan
 pydronecan's
 reassignable
 rebar
-reflash
 replug
 RFND
 satcount
@@ -593,9 +597,6 @@ hamcom
 Zeenko
 SAcc
 NSats
-gpsstatus
-satcount
-gpshdop
 GigaBlox
 BotBlox
 CubeNode
@@ -623,8 +624,21 @@ preselector
 RPi
 STABILIZE
 BACKZ
-esptool
 Lonly
 SUPL
 multipath
 autoconnect
+
+# Fusion source labels, provenance identifiers, and CAD commands
+BCPCB
+PYTHONPATH
+wipprod
+XRRKKR
+Cnipc
+Ofph
+Ktpz
+Uhzz
+Rborw
+Majp
+TOCASE
+topcase

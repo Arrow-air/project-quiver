@@ -56,6 +56,36 @@ Each subcategory has a `steps/` directory for STEP files:
 - **`steps/vendor/`** — Supplier-provided STEP models for off-the-shelf
   components (motors, tubes, hinges, etc.)
 
+Handed parts get their own BOM number and STEP file: a mirror image is a
+different part, not a second copy (for example the CW and CCW propellers,
+3112 and 3122). A part that is symmetric where it mates stays one part, even
+where the retired Fusion master drew a mirror image of it: the CCW cockpit
+beam (1212), the landing gear adapter (1330) and tube joint (1340), and the
+battery wall (1221) are each one part, placed turned rather than mirrored.
+
+## Placement and source of truth
+
+This build123d model is the master for the Quiver mechanical design. The
+Fusion 360 master (`Quiver_PT3_Drone_Assembly` v148) is retired; where its
+geometry came from is recorded in `fusion-mechanical-provenance.json` and
+`part-poses.json`.
+
+Every part is placed with a full rigid pose, `place(part, pos, rot)` in
+`common.py`: the part is rotated about its STEP origin by intrinsic X-Y-Z
+Euler angles `rot` (degrees), then its origin is moved to `pos` (mm), the
+same convention as a Fusion occurrence transform. The poses were frozen
+from the v148 occurrence transforms.
+
+`tests/test_placement.py` checks every part instance against
+`part-poses.json` (bounds, centroid and reference vertices), so a part
+turned about its own center fails even when its center of mass is right.
+After moving a part on purpose, re-record it:
+
+```bash
+python -m quiver.placement check            # compare the build with the records
+python -m quiver.placement record 1212-front   # re-record by key or label
+```
+
 ## Running the assembly
 
 Export the full drone as a STEP file:
@@ -75,6 +105,22 @@ Export to a custom path:
 ```bash
 python -m quiver.assembly -o path/to/output.step
 ```
+
+## Primary GPS variants
+
+Both the Holybro H-RTK NEO-F9P Rover (RM3100 compass, DroneCAN 4-Pin,
+SKU 12072) and the CubePilot Here4 are supported hardware options. The default
+CAD build uses the Holybro, the primary GPS the Dev Kit flies with. Select the
+receiver and matching mount:
+
+```bash
+python -m quiver.assembly --gps holybro-f9p -o quiver-f9p.step
+python -m quiver.assembly --gps here4 -o quiver-here4.step
+```
+
+In Python, use `make_assembly(primary_gps="here4")` for the Here4. Wren Mini is retired.
+See [Primary GPS Options](../../reviews/Primary-GPS-Options.md) for
+source geometry, placement evidence, and outstanding physical-fit review.
 
 ## Assembly hierarchy
 

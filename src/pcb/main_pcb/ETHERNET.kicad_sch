@@ -190,7 +190,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin passive line
 					(at 0 -10.16 0)
 					(length 5.08)
 					(name "MP"
@@ -201,6 +201,158 @@
 						)
 					)
 					(number "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Snapeda:SMTWEM245STR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "SMTWEM245STR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "EasyEDA_Lib:SCREW-SMD_BD4.4-D2.8-H4.5"
+				(at 0 -5.588 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://item.szlcsc.com/datasheet/SMTWEM245STR/6053346.html"
+				(at 0 -9.652 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "specifications:M2 surface treatment:Tin Plated Product Description:- material quality:Iron Rated current:- length:4.5mm"
+				(at -0.254 -3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part" "SMTWEM245STR"
+				(at -0.254 3.048 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "YIYUAN(怡远)"
+				(at 0 7.366 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Supplier Part" "C5301792"
+				(at 0 5.334 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Supplier" "LCSC"
+				(at 0 9.398 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part Name" "YIYUAN(怡远) 电路板表贴圆螺母柱 PCB贴片连接器 M2x4.35xL4.5+1.4mm 铁镀锡 SMTWEM245STR"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SMTWEM245STR_0_1"
+				(polyline
+					(pts
+						(xy -0.635 0.635) (xy 0.635 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -0.635) (xy 0.635 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SMTWEM245STR_1_0"
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin no_connect line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -716,24 +868,6 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at -5.08 2.54 0)
-					(length 5.08)
-					(name "MH1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "MH1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
 				(pin power_in line
 					(at 25.4 60.96 180)
 					(length 5.08)
@@ -1087,24 +1221,6 @@
 						)
 					)
 					(number "S2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 25.4 2.54 180)
-					(length 5.08)
-					(name "MH2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "MH2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1502,6 +1618,10 @@
 		(uuid "1e6f80c0-56d3-4105-9ea8-e3beb5f6732a")
 	)
 	(no_connect
+		(at 197.612 120.65)
+		(uuid "1f01e15f-1406-4747-8001-cf01a4b6c004")
+	)
+	(no_connect
 		(at 120.142 58.674)
 		(uuid "32b6a83d-9171-465a-94b7-95c9e2df2333")
 	)
@@ -1542,10 +1662,6 @@
 		(uuid "8845dcbe-83d1-4c37-9af7-c695ddf8f561")
 	)
 	(no_connect
-		(at 217.678 109.474)
-		(uuid "8c97d209-6185-4efe-87b8-0c9e8b5eecd4")
-	)
-	(no_connect
 		(at 89.662 84.074)
 		(uuid "9483dc6a-308a-4134-befb-49cd6cccdcbd")
 	)
@@ -1566,12 +1682,12 @@
 		(uuid "a84f15c5-2ec4-4363-a3a9-483a485b7d0d")
 	)
 	(no_connect
-		(at 120.142 109.474)
-		(uuid "aa8dc979-fb56-41b8-a762-e8148c029e75")
-	)
-	(no_connect
 		(at 217.678 104.394)
 		(uuid "b64fd335-bfd2-4a8e-96d6-9b60a4110d79")
+	)
+	(no_connect
+		(at 100.076 120.65)
+		(uuid "bd9bfa33-a0c6-4af7-a4f3-6460867aad53")
 	)
 	(no_connect
 		(at 120.142 63.754)
@@ -1596,14 +1712,6 @@
 	(no_connect
 		(at 217.678 76.454)
 		(uuid "e6fd0972-a56a-49aa-9867-2276a27f14a1")
-	)
-	(no_connect
-		(at 187.198 109.474)
-		(uuid "ed995372-3638-4904-87ad-de0a43197d86")
-	)
-	(no_connect
-		(at 89.662 109.474)
-		(uuid "f4b1925d-64aa-40d7-bccd-e371925390d2")
 	)
 	(no_connect
 		(at 89.662 58.674)
@@ -2996,16 +3104,233 @@
 		(pin "S1"
 			(uuid "ddab70f9-076f-4ffa-9a61-535ca5d0241b")
 		)
-		(pin "MH1"
-			(uuid "4af36302-526c-497b-9f2b-d3fb8e1060b3")
-		)
-		(pin "MH2"
-			(uuid "7840deb2-bc41-4364-9ec0-664ca5d7fa3b")
-		)
 		(instances
 			(project "Quiver_PT3_Main_PCB"
 				(path "/30df7be7-b115-437e-9af2-7bf229cedd34/4e2eb084-e4af-4488-a269-e3c3e0299f26"
 					(reference "J47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Snapeda:SMTWEM245STR")
+		(at 96.52 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "292e75aa-7937-48cb-bc9d-30375e0244ff")
+		(property "Reference" "U13"
+			(at 96.52 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SMTWEM245STR"
+			(at 95.758 37.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Snapeda:SCREW-SMD_BD4.4-D2.8-H4.5"
+			(at 96.52 41.148 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://item.szlcsc.com/datasheet/SMTWEM245STR/6053346.html"
+			(at 96.52 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "specifications:M2 surface treatment:Tin Plated Product Description:- material quality:Iron Rated current:- length:4.5mm"
+			(at 96.266 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "SMTWEM245STR"
+			(at 96.266 32.512 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YIYUAN(怡远)"
+			(at 96.52 28.194 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C5301792"
+			(at 96.52 30.226 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 96.52 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "YIYUAN(怡远) 电路板表贴圆螺母柱 PCB贴片连接器 M2x4.35xL4.5+1.4mm 铁镀锡 SMTWEM245STR"
+			(at 96.52 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1d2b29d2-ed54-40cd-b02b-71e985f6af4b")
+		)
+		(instances
+			(project ""
+				(path "/30df7be7-b115-437e-9af2-7bf229cedd34/4e2eb084-e4af-4488-a269-e3c3e0299f26"
+					(reference "U13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Snapeda:SMTWEM245STR")
+		(at 203.2 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2a1cef1a-a402-4d7a-a75b-f1688c87a144")
+		(property "Reference" "U16"
+			(at 203.2 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SMTWEM245STR"
+			(at 204.47 35.5599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Snapeda:SCREW-SMD_BD4.4-D2.8-H4.5"
+			(at 203.2 41.148 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://item.szlcsc.com/datasheet/SMTWEM245STR/6053346.html"
+			(at 203.2 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "specifications:M2 surface treatment:Tin Plated Product Description:- material quality:Iron Rated current:- length:4.5mm"
+			(at 202.946 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "SMTWEM245STR"
+			(at 202.946 32.512 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YIYUAN(怡远)"
+			(at 203.2 28.194 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C5301792"
+			(at 203.2 30.226 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 203.2 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "YIYUAN(怡远) 电路板表贴圆螺母柱 PCB贴片连接器 M2x4.35xL4.5+1.4mm 铁镀锡 SMTWEM245STR"
+			(at 203.2 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bf146457-2fae-4d14-b1cf-9a62ef816655")
+		)
+		(instances
+			(project ""
+				(path "/30df7be7-b115-437e-9af2-7bf229cedd34/4e2eb084-e4af-4488-a269-e3c3e0299f26"
+					(reference "U16")
 					(unit 1)
 				)
 			)
@@ -3139,6 +3464,229 @@
 			(project "Quiver_PT3_Main_PCB"
 				(path "/30df7be7-b115-437e-9af2-7bf229cedd34/4e2eb084-e4af-4488-a269-e3c3e0299f26"
 					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Snapeda:SMTWEM245STR")
+		(at 104.14 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "77b46f25-7400-4bbe-91a6-4e2cc2faeb42")
+		(property "Reference" "U14"
+			(at 104.14 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SMTWEM245STR"
+			(at 105.41 35.5599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Snapeda:SCREW-SMD_BD4.4-D2.8-H4.5"
+			(at 104.14 41.148 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://item.szlcsc.com/datasheet/SMTWEM245STR/6053346.html"
+			(at 104.14 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "specifications:M2 surface treatment:Tin Plated Product Description:- material quality:Iron Rated current:- length:4.5mm"
+			(at 103.886 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "SMTWEM245STR"
+			(at 103.886 32.512 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YIYUAN(怡远)"
+			(at 104.14 28.194 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C5301792"
+			(at 104.14 30.226 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 104.14 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "YIYUAN(怡远) 电路板表贴圆螺母柱 PCB贴片连接器 M2x4.35xL4.5+1.4mm 铁镀锡 SMTWEM245STR"
+			(at 104.14 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fd41cd84-696a-4351-9b7e-30f08bbd088c")
+		)
+		(instances
+			(project ""
+				(path "/30df7be7-b115-437e-9af2-7bf229cedd34/4e2eb084-e4af-4488-a269-e3c3e0299f26"
+					(reference "U14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Snapeda:SMTWEM245STR")
+		(at 195.58 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "85efed28-98d8-4ad2-b992-646e520ddbbb")
+		(property "Reference" "U15"
+			(at 195.58 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SMTWEM245STR"
+			(at 194.564 37.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Snapeda:SCREW-SMD_BD4.4-D2.8-H4.5"
+			(at 195.58 41.148 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://item.szlcsc.com/datasheet/SMTWEM245STR/6053346.html"
+			(at 195.58 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "specifications:M2 surface treatment:Tin Plated Product Description:- material quality:Iron Rated current:- length:4.5mm"
+			(at 195.326 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part" "SMTWEM245STR"
+			(at 195.326 32.512 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YIYUAN(怡远)"
+			(at 195.58 28.194 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Part" "C5301792"
+			(at 195.58 30.226 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "LCSC"
+			(at 195.58 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Name" "YIYUAN(怡远) 电路板表贴圆螺母柱 PCB贴片连接器 M2x4.35xL4.5+1.4mm 铁镀锡 SMTWEM245STR"
+			(at 195.58 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2eb7f3f8-9d16-4e9a-bcb4-0202f02f486b")
+		)
+		(instances
+			(project ""
+				(path "/30df7be7-b115-437e-9af2-7bf229cedd34/4e2eb084-e4af-4488-a269-e3c3e0299f26"
+					(reference "U15")
 					(unit 1)
 				)
 			)
@@ -3717,12 +4265,6 @@
 		)
 		(pin "S1"
 			(uuid "9f765e6d-d1af-41d6-b421-6742afdeed69")
-		)
-		(pin "MH1"
-			(uuid "9a7fa4db-c0c4-42b6-960b-1266372f3ad0")
-		)
-		(pin "MH2"
-			(uuid "161830cf-f885-4619-a9bc-69aaf2c4a0ba")
 		)
 		(instances
 			(project "Quiver_PT3_Main_PCB"

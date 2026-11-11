@@ -37,6 +37,10 @@ items:
     sourcing: 3d-print
     material: PETG-CF
     design_ref: src/quiver/supporting_structure/equipment_mount/steps/2311_main_pcb_mount.step
+    notes: Fusion v148 adapter assembly includes inserts, screws and five rubber
+      spacers for visualization. Print only the adapter body. Step 6 specifies
+      16 short M3 inserts (FAST-024) and five vibration mounts (FAST-033);
+      M3x6 screws are included in FAST-014 totals, not additional quantities.
   - id: "2312"
     name: BC PCB Mount
     qty: 1
@@ -61,12 +65,16 @@ items:
     sourcing: 3d-print
     material: PETG-CF
     design_ref: src/quiver/supporting_structure/equipment_mount/steps/2331_gnss_mount_base.step
-  - id: "2332"
-    name: GNSS Mount Clamp
+    notes: For the Holybro NEO-F9P Rover, the default primary GPS; omit for Here4.
+      Existing F9P v6 geometry is retained; review stack-up and print fit before release.
+  - id: "2333"
+    name: GNSS Mount, Here4
     qty: 1
     sourcing: 3d-print
     material: PETG-CF
-    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2332_gnss_mount_clamp.step
+    design_ref: src/quiver/supporting_structure/equipment_mount/steps/2333_gnss_mount_here4.step
+    notes: Here4 option only; omit for Holybro. Imported from Fusion v148.
+      Select one primary receiver and its matching mount, not both.
   - id: "2341"
     name: PPP Adapter and Beacon Mount
     qty: 1
@@ -96,6 +104,7 @@ items:
       - name: JW Winco
         part_number: GN 237-ZD-30-30-A-SW
         url: https://www.jwwinco.com/en-us/products/3.3-Hinging-latching-locking-of-doors-and-covers/Hinges/GN-237-Zinc-Die-Cast-or-Aluminum-Hinges-Countersunk-Thru-Holes-or-Threaded-Stud-Type
+    notes: One part number for both sides. The CAD mirrors the left hinge, but a stock hinge turned 180° fits the same bores and pin line.
   - id: "2430"
     name: Enclosure Latch
     qty: 2
