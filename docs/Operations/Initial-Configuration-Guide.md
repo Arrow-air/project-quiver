@@ -241,14 +241,14 @@ The DevID encodes the DroneCAN node ID, so it changes whenever a GNSS module is 
 
    **In Mission Planner:**
    1. Confirm a GPS 3D fix first (§5) — LVMC needs the vehicle's lat/lon to look up the expected field. Sit the aircraft level on its gear.
-   2. Point the nose at a known heading. Read it off a phone compass held about a meter from the airframe so the aircraft's own steel and magnets do not pull it. Convert to true (add the local declination).
+   2. Point the nose at a known true heading. Get the reference by sighting the nose along a line between two points whose bearing comes from the map or from the F9P position (two surveyed marks, a fence line, a runway edge). Do not use a phone compass: it reads magnetic, it is pulled by the airframe and by anything steel nearby, and every degree of reference error goes straight into the offsets. If a magnetic reference is all there is, add the local declination to get true.
    3. **Setup → Mandatory Hardware → Compass** → click **Large Vehicle MagCal**.
    4. A prompt appears: **"Enter current heading in degrees — NOTE: gps lock is required. Heading is true, not magnetic."** Type the nose's **true** heading in degrees, click OK.
    5. Mission Planner computes, writes, and autosaves the new offsets to the FC. It does **not** pop them up in a dialog. Read them back from **Config → Full Parameter Tree** (Refresh Params first), search `OFS`. The instance digit goes after `OFS`: Compass 1 = `COMPASS_OFS_X/_Y/_Z`, Compass 2 = `COMPASS_OFS2_X/_Y/_Z`, Compass 3 = `COMPASS_OFS3_X/_Y/_Z`. No reboot needed.
 
    Equivalent over MAVLink (used on the first unit's 2026-06-20 run, with Mission Planner disconnected so the COM port was free): `MAV_CMD_FIXED_MAG_CAL_YAW` — param1 = true yaw, param2 = 0 (all compasses), param3/param4 = 0 (use the live GPS position).
 
-In both cases **MagFit (§3.3) from a flight log is the real refinement**, so the ground cal only needs to be good enough to fly safely.
+LVMC is the calibration the aircraft flies on, not a placeholder for MagFit. `Compass::mag_cal_fixed_yaw` writes new offsets and resets `COMPASS_DIA*` to 1 and `COMPASS_ODI*` to 0 on every compass it calibrates, so an LVMC run erases any soft iron correction from an earlier MagFit (only `COMPASS_MOT*` survives). Since Pilot Handbook §2.5.5 makes LVMC mandatory at every destination, a factory MagFit would not survive delivery. See §3.3 for the interim rule (T-20 review, 2026-11-03).
 
 First-unit result, MP Large Vehicle MagCal (nose at 350° magnetic, true heading 351°):
 
@@ -270,9 +270,13 @@ Verified by readback over MAVLink: both enabled magnetometers reported 463 and 4
 
 4. Quick check in LOITER or POSHOLD after calibration: no toilet-bowling, no yaw drift, no mag warnings.
 
-### 3.3 MagFit (recommended)
+### 3.3 MagFit (on demand, not a release step)
 
-For best heading performance, collect a MagFit dataset and run it through WebTools.
+> [!NOTE]
+>
+> **Interim rule, 2026-11-07 (Pilot Handbook §2.5.5).** MagFit is not a release step and not part of the field workflow, because the post-shipment LVMC erases its soft iron terms (§3.2). The acceptance flight of every unit includes 360° of yaw and some throttle variation so a MagFit dataset exists on file. A MagFit run happens only when a unit comes back with heading error over 5° after LVMC, compass variance or inconsistency warnings in flight, toilet bowling in LOITER, or a payload or wiring change near the compasses. If motor interference is the finding, apply the motor compensation (`COMPASS_MOT*`), which survives LVMC. The procedure below is kept for that case.
+
+When a MagFit run is called for, collect the dataset and run it through WebTools.
 
 - Dataset: either a manual 6-minute flight with step inputs, throttle sweeps, 360° turns, and circles, or an auto figure-8 mission from the MagFit helper script.
 - The dataset must be flown on the compass hardware currently installed. A log recorded before a compass or GNSS module swap fits the old magnetometer and cannot be used. On the first unit, the 2026-07-09 logs predate the 2026-07-13 M9N replacement for exactly this reason. Valid datasets: log 63 (2026-07-23, full 360° heading coverage, §17.6 finding 3) and log 72 (2026-07-24, after the field LVMC). Whether the refinement run is needed on this unit is with Zeynep (2026-07-27), since in-flight compass behavior looks good.
@@ -286,7 +290,7 @@ See `task-grant-bounty/pt3/flight-controller/0003-compass-setup` for the full pr
 1. Bind the receiver and confirm input in Mission Planner. On this aircraft the transmitter is the MK32 talking to the HM30 air unit, so if it has never been bound, do **§16.3 (firmware match) and §16.4 (bind) now**, then come back here. §16.5 records the finished channel map.
 2. **Setup → Mandatory Hardware → Radio Calibration.** Move all sticks and switches to extremes.
 3. Apply **no trims or sub-trims**.
-4. Map the mandatory controls per Pilot Handbook §2.7.1: Arm/Disarm, a 3-position flight mode switch (LOITER / AUTO / STABILIZE), a dedicated RTL switch, and a guarded Kill Switch. The as-built map on the first unit is in §16.5 (ch9 = mode, ch10 = RTL, ch5 = arm, ch8 = kill). An earlier first-unit map put RTL on the third mode-switch position with no AUTO. It was re-mapped 2026-07-08 to match the Handbook. Since 2026-07-09 the first unit flies a documented deviation, STABILIZE / ALTHOLD / LOITER with AUTO off the switch while no auto missions are flown (decided 2026-07-20, see the §16.5 note).
+4. Map the mandatory controls per Pilot Handbook §2.7.1: Arm/Disarm, a 3-position flight mode switch (Pos1 ALTHOLD / Pos2 LOITER / Pos3 AUTO), a dedicated RTL switch, and a guarded Kill Switch. The as-built map on the first unit is in §16.5 (ch9 = mode, ch10 = RTL, ch5 = arm, ch8 = kill). This is one map for every unit (decided 2026-11-07 from the T-20 review). The first unit's earlier maps (RTL on Pos3 until 2026-07-08, then STABILIZE / ALTHOLD / LOITER from 2026-07-09 to the remap) are history in §16.5 and §17.2.
 5. Verify each switch produces the intended mode and the kill switch is protected against accidental activation.
 
 ### 3.5 Barometer
@@ -303,7 +307,7 @@ These outdoor steps cannot be completed on the bench, because they need open sky
 |---|---|---|---|
 | 1 | GPS 3D fix + HDOP check | sky view | §5.2 |
 | 2 | Compass mag-cal (LVMC on the assembled airframe, or onboard if you can rotate it) | a good 3D fix | §3.2, "Outdoor" |
-| 3 | MagFit refinement (flight log → WebTools) | a completed mag-cal to fly safely | §3.3 |
+| 3 | MagFit (only on a trigger from the field, §3.3 note) | a completed mag-cal to fly safely | §3.3 |
 | 4 | F9P RTK base-station survey-in (not used on this drone) | sky view | §5.2, step 3 |
 
 1. **Get a GPS fix first (§5.2).** Power up outdoors and wait for satellite counts to climb and the EKF to reach a 3D fix with HDOP settling. The mag-cal in the next step wants a good fix, and you cannot fly the MagFit log without one.
@@ -1388,8 +1392,8 @@ Before first flight, confirm (Pilot Handbook §2.5.3):
 | Firmware | Quiver build flashed (git `20622a39`, PR #230); Arrow features confirmed by boot (S2 lidar, NET IP, ODID) | ☐ |
 | Params | standard + ethernet + remoteid (+ OA) loaded in order | ☐ |
 | Accel/Level | Calibrated, no errors | ☐ |
-| Compass | External cals done outdoors, MagFit applied, internal disabled | ☐ |
-| RC | Calibrated, no trims, mode switch (LOITER / AUTO / STABILIZE), RTL switch, kill switch mapped | ☐ |
+| Compass | External cals done outdoors (LVMC, true heading from a sighted reference), heading within 5° of the reference, internal disabled. No MagFit (§3.3 note) | ☐ |
+| RC | Calibrated, no trims, mode switch (ALTHOLD / LOITER / AUTO, `FLTMODE1/2 = 2`, `FLTMODE3/4 = 5`, `FLTMODE5/6 = 3`, each position confirmed on the Flight Modes page), RTL switch, kill switch mapped and guarded, `ARMING_RUDDER 0` | ☐ |
 | GNSS | Both units enumerate, 3D fix on both (RTK not used on this drone) | ☐ |
 | Ethernet FC | Boot shows IP 192.168.144.51 (NOT .11 — SIYI air unit) | ☐ |
 | RPi | eth0 = .49, pings .50 (CubeNode) and .51 (FC) | ☐ |
@@ -1549,17 +1553,17 @@ RC calibration done (radio bars move with the MK32 sticks). Channel map on the f
 
 | Channel | Function | Params | Notes |
 |---|---|---|---|
-| ch9 | 3-pos flight mode | `FLTMODE_CH = 9`; Pos1 LOITER, Pos2 AUTO, Pos3 STABILIZE | Handbook §2.7.1 map. Set on the **Setup → Flight Modes** page (it highlights the active position as you flip the switch) |
+| ch9 | 3-pos flight mode | `FLTMODE_CH = 9`; Pos1 ALTHOLD, Pos2 LOITER, Pos3 AUTO (`FLTMODE1/2 = 2`, `FLTMODE3/4 = 5`, `FLTMODE5/6 = 3`) | Handbook §2.7.1 map, one map for every unit since 2026-11-07. Set on the **Setup → Flight Modes** page (it highlights the active position as you flip the switch) and confirm position by position. **First unit: write pending**, the FC still carries the 2026-07-09 map (`0/0/2/2/5/5`, §17.2) until the next bench session |
 | ch10 | RTL | `RC10_OPTION = 4` | Dedicated 2-pos switch (Handbook §2.7.1). Set in **Config → Full Parameter Tree**. Switch high = RTL. Returning it low hands control back to whatever mode ch9 selects |
 | ch5 | Arm / Disarm | `RC5_OPTION = 153` | **Reversed on the MK32 transmitter side** |
-| ch8 | Kill (SSR / Relay 1) | `RC8_OPTION = 28` | **Reversed on the MK32 transmitter side**; up = SSR closed, down = kill (§11.5) |
+| ch8 | Kill (SSR / Relay 1) | `RC8_OPTION = 28` | **Reversed on the MK32 transmitter side**; up = SSR closed, down = kill (§11.5). Flip-up guard required after log 88, 2026-10-08 (Handbook §2.8.6) |
 
 > [!WARNING]
 >
-> **Re-mapped 2026-07-08 to match Pilot Handbook §2.7.1.** The original first-unit map was Pos1 STABILIZE, Pos2 LOITER, Pos3 RTL with no AUTO and no separate RTL switch. Two consequences of the new map to internalize before flying it:
+> **Map history on the first unit.** The original map was Pos1 STABILIZE, Pos2 LOITER, Pos3 RTL with no AUTO and no separate RTL switch. It was re-mapped 2026-07-08 to the Handbook map of the time (LOITER / AUTO / STABILIZE), which put AUTO in the middle position where a fast flip transits it and, with a mission loaded, starts it. The first flights on 2026-07-09 flew STABILIZE / ALTHOLD / LOITER instead (§17.2). The 2026-11-07 standard (ALTHOLD / LOITER / AUTO) keeps AUTO at the end of the switch so no mode change passes through it, keeps ALTHOLD as the GPS failure fallback, and relies on `ModeAuto::allows_arming` refusing to arm in AUTO unless `AUTO_OPTIONS` bit 0 is set (no baseline file sets it). Two things to internalize before flying it:
 >
-> - **The middle position is now AUTO.** A fast LOITER ↔ STABILIZE flip transits it. With no mission loaded ArduPilot refuses the change and stays in the current mode, but with a mission loaded, resting on the middle position starts the mission. Flip through it deliberately and quickly.
-> - **Pos3, which used to command RTL, now commands STABILIZE.** On a self-centering throttle that is close to a mid-throttle demand, a very different aircraft response than the old RTL. Retrain the muscle memory before flight, and use the ch10 switch for RTL.
+> - **Releasing ch10 with ch9 on AUTO resumes the mission.** Lowering the RTL switch returns the aircraft to the ch9 mode. Move ch9 to LOITER first, then lower ch10 (Handbook §4.2.1).
+> - **Pos3 commands AUTO, not STABILIZE.** With no mission loaded ArduPilot refuses the change and stays in the current mode. With a mission loaded, Pos3 starts it. STABILIZE is not on the switch; use ALTHOLD as the manual fallback.
 
 > [!NOTE]
 >
@@ -1567,7 +1571,7 @@ RC calibration done (radio bars move with the MK32 sticks). Channel map on the f
 
 > [!NOTE]
 >
-> **Configuration stage map (decided 2026-07-20, confirmed 2026-09-30).** During configuration and validation the first unit flies **Pos1 STABILIZE / Pos2 ALTHOLD / Pos3 LOITER** (`FLTMODE1/3/4/5/6 = 0/2/2/5/5`, set at the field 2026-07-09, §17.2). AUTO is off the switch because no auto missions are flown at this stage, which also removes the mid-position mission-start trap in the warning above. The Pilot Handbook §2.7.1 map (LOITER / AUTO / STABILIZE plus RTL on ch10) is the standard for an operating aircraft and is restored before handover or when auto missions enter the program. RTL stays on ch10 in both maps.
+> **Configuration stage map, retired 2026-11-07.** From 2026-07-09 the first unit flew **Pos1 STABILIZE / Pos2 ALTHOLD / Pos3 LOITER** (`FLTMODE1/3/4/5/6 = 0/2/2/5/5`, §17.2) as a documented deviation while no auto missions were flown, with the Handbook map held as the standard for handover. The T-20 review (Zeynep, 2026-11-03) found three different maps across the Handbook, the First Flight Checklist and this guide and asked for one. Decision 2026-11-07: one map for every unit, ALTHOLD / LOITER / AUTO, no configuration stage variant. Revise it from pilot feedback through Handbook §6.6, for every unit at once. RTL stays on ch10.
 
 The Flight Modes page is under the **Setup** tab in Mission Planner (not Config).
 
@@ -1717,7 +1721,7 @@ Everything else that differs from `params-HOU.param` is per-boot volatile (gyro 
 2. Get Zeynep's log review and fold her feedback into this section. [TBD]
 3. **Replace the M9N GPS: DONE 2026-07-13.** New module enumerated at **DroneCAN node 119** (DNA assigns a fresh ID, the old 122 stays reserved, §5.1). `GPS2_CAN_OVRIDE` set to 119 and `GPS2_CAN_NODEID` confirmed reading 119 on battery power. Compass priority reassigned (new Matek mag = priority 1, DevID 96003) and LVMC re-run, offsets in `COMPASS_OFS3_*` (§3.2). Bench readback: 3D fix, 11 sats, HDOP 2.08 under a partial sky view, ground speed peak 0.30 m/s over 15 s, no compass or DroneCAN pre-arm messages. Remaining from this item: restore `GPS_AUTO_SWITCH` 4 → 1 after the new unit's velocities track the F9P in a flight log (§5.2 step 6). **VALIDATION FAILED 2026-07-23: the replacement unit reproduced the velocity glitch in log 63 (§17.6 finding 2). `GPS_AUTO_SWITCH` stays 4. The cause now looks systemic to the M9N position rather than a defective module, raise with the team.**
    - Bench observation during the 07-13 verification, worth a check: the pre-arm run reported `OpenDroneID: UA_TYPE required in BasicID` even though identity was set 2026-07-07 (§8.1). Hypothesis, unconfirmed: no RID-capable GCS was connected to feed BasicID at the time, same as the pre-07-07 bench state. Confirm it clears next time mainline QGC on the MK32 is up. If it persists with QGC connected, the db200's stored identity needs a re-check.
-4. **Mode map: DECIDED 2026-07-20.** Keep the flown STABILIZE / ALTHOLD / LOITER as the operating map while no auto missions are flown. Documented as a deviation in §3.4 and §16.5 (the Handbook map stays the standard and returns with auto missions). No parameter change needed.
+4. **Mode map: DECIDED 2026-07-20, SUPERSEDED 2026-11-07.** The 07-20 decision kept the flown STABILIZE / ALTHOLD / LOITER as the operating map while no auto missions were flown. The T-20 review replaced it with one map for every unit, ALTHOLD / LOITER / AUTO (§16.5, Handbook §2.7.1). **Open on the first unit:** write `FLTMODE1/2 = 2`, `FLTMODE3/4 = 5`, `FLTMODE5/6 = 3`, `ARMING_RUDDER = 0`, and the #248 Bat2 stages (`BATT2_ARM_MAH 9000`, `BATT2_LOW_MAH 7500`, `BATT2_CRT_MAH 4500`, the 10-01 export still reads 0 / 6000 / 0) at the next bench session, confirm each mode position on the Flight Modes page, export a new restore point.
 5. Capture the MK32 MAV1/MAV2 compatibility message verbatim if it reappears, and test the dual-GCS hypothesis for the `MAV2_*` zeroing (§17.4) on the bench. **CAPTURED 2026-07-23** (mainline QGC on the MK32, UDP 19856 link, at connect): "MAVLink V1 traffic detected on 'Siyi'. QGroundControl Daily only supports MAVLink2. Please Ensure your vehicle is configured to use MAVLink v2." The FC's SIYI link runs MAVLink2 (`SERIAL1_PROTOCOL 2`, verified live 2026-07-22), so the V1 frames are not the vehicle's own telemetry. **Field observation, same day: the notice appears only at the moment Mission Planner connects to the FC's Ethernet TCP server at `.51:5760` (which worked, §16.6 option 2 confirmed in the field), and never otherwise.** Leading hypothesis, revised to fit that correlation: Mission Planner opens its connection with MAVLink1 framed packets before it detects the vehicle speaks MAVLink2 and switches, and ArduPilot routes GCS traffic between its links, so those first V1 frames reach the SIYI link where QGC flags them. A SIYI datalink injecting V1 status packets on its own was the earlier guess, but it does not fit, since that would trigger the notice with no MP session at all. QGC discards V1 frames and MP switches to V2 after the handshake, so the warning is cosmetic as long as telemetry and parameters flow and the RemoteID panel works. This MP-over-TCP plus QGC-on-UDP combination is also the suspected trigger for the `MAV2_*` zeroing (§17.4), so re-read the `MAV1_*` and `MAV2_*` rates after the session. **Post-session readback 2026-07-23: `MAV2_*` all zeroed again, `MAV1_*` healthy (§17.6 finding 4). The dual-GCS combination was the only GCS configuration used that day, so the correlation is now strong, though the mechanism is still unconfirmed.**
 6. **Bench verification PASSED 2026-07-22** (read-only over COM6, aircraft on battery power) ahead of the second flight session. Every First-Flight-Checklist §1 authorization gate parameter read back at its expected value, and a full pull (1194 of 1194) matched `params-HOU-713.param` in every configuration parameter. The only diffs were per-boot volatiles, `MAV1_EXTRA2` renegotiated back to 4, and a benign compass detection slot swap (the Matek 96003 moved to slot 1 with its offsets intact, the disabled internal to slot 3, priorities unchanged, expect slot order to vary between boots). Bench health: Bat1 58.17 V (4.15 V per cell), BMS at 94%, SSR closed with ESC telemetry alive, 60 logs listed on SD, all ten expected CAN1 nodes present including the new M9N (119) and the db200 (123). The `UA_TYPE required in BasicID` pre-arm appeared again with no GCS connected, so the item 3 hypothesis is still untested. Check it first at the field with mainline QGC up, and treat it as a flight blocker if it survives with QGC connected.
 7. **Fly the MagFit dataset (§3.3) in this session if a slot allows.** Logs 57 to 60 predate the 2026-07-13 compass replacement and fit the old magnetometer, so they cannot be used. The first valid dataset is a flight on the new Matek. One §3.3 profile flight closes MagFit, the M9N velocity validation (item 3), and the yaw baseline check (item 1) in a single session. **DATASET FLOWN 2026-07-23: log 63 covers all 24 fifteen-degree yaw bins on the new Matek (§17.6), and log 72 (2026-07-24) also qualifies. Whether the run is needed is Zeynep's call (2026-07-27), since in-flight compass behavior looks good.**
