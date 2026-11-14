@@ -1,0 +1,4 @@
+# These files are copied to the Raspberry Pi as they are. Keep Unix line endings on every
+# checkout, a CRLF service file is not read correctly by systemd.
+*.service text eol=lf
+*.py text eol=lf
