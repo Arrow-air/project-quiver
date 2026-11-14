@@ -900,6 +900,10 @@ The flight controller cannot read the pack size by itself. `BATT2_CAPACITY` and 
 
 The 30 Ah column is the set approved in #248. The 20 Ah column keeps the same percentages and is **proposed, awaiting team confirmation**. The §7.4 reserve sizing put the return leg at about 5,000 mAh for the 30 Ah aircraft from the 60 m fence, so a 20 Ah low stage of 5,000 mAh has no margin by that figure. The aircraft is 3.7 kg lighter with the 20 Ah pack and draws less, and the fence has grown since that sizing was done. Both need a fresh look before the 20 Ah values are final.
 
+The gap between the low and critical stages is the number to watch. It is 3,000 mAh on the 30 Ah pack and 2,000 mAh on the 20 Ah pack at these percentages. On the 30 Ah endurance flight of 2026-11-11 (log 103) the aircraft used 2,369 mAh between the low stage message and touchdown: 630 mAh in the 34 s before the pilot triggered RTL, and 1,740 mAh for the return from 197 m and the landing. A 20 Ah flight that used the same amount would reach the critical stage, which lands in place, before it got home. The lighter aircraft should use less (a rough mass scaling gives about 1,800 mAh), but that is an estimate until a 20 Ah flight is logged. Trigger the return at the low stage message without delay, or raise `BATT2_LOW_MAH` for long range flights.
+
+First unit: the 20 Ah overlay was written and read back on 2026-11-14 with the 20 Ah pack fitted.
+
 Each column is a small overlay file in `docs/Operations/firmware/parameters/`:
 
 | File | Use |
