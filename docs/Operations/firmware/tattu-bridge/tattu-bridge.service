@@ -1,0 +1,18 @@
+[Unit]
+Description=Tattu Battery to DroneCAN Bridge
+After=network.target can-setup.service
+Requires=can-setup.service
+
+[Service]
+Type=simple
+User=USER
+WorkingDirectory=/home/USER/tattu_can_bridge
+ExecStart=/home/USER/venv/bin/python /home/USER/tattu_can_bridge/tattu_bridge.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
