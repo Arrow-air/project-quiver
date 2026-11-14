@@ -628,7 +628,6 @@ Lonly
 SUPL
 multipath
 autoconnect
-
 # Fusion source labels, provenance identifiers, and CAD commands
 BCPCB
 PYTHONPATH
@@ -642,3 +641,6 @@ Rborw
 Majp
 TOCASE
 topcase
+dtoverlay
+dtparam
+usedmah

@@ -23,9 +23,9 @@ This procedure assumes the following Dev-Kit configuration:
 | Radar altimeter (down) | NanoRadar NRA15 | CAN2 RadarCAN, `RNGFND1_TYPE=39` (NRA24_CAN) |
 | Networking | 2× GigaBlox Nano switches + CubeNode ETH (PPP2ETH module) | CAN1 + SERIAL2 (PPP) |
 | Companion computer | Raspberry Pi 5 on Main PCB (40-pin) | eth0 + CAN |
-| Battery telemetry | DroneCAN ESC monitor (Bat1) + the pack's native smart BMS (Bat2, node 125). No RPi Tattu bridge, see §7 | CAN1 |
+| Battery telemetry | DroneCAN ESC monitor (Bat1) + the pack BMS (Bat2). The 30 Ah pack reports natively (node 125). The 20 Ah Tattu 4.0 pack needs the RPi Tattu bridge (node 110), see §7 | CAN1 |
 | Remote ID | DroneBeacon db201 (ArduRemoteID on ESP32) | DroneCAN, CAN1 |
-| Battery | Tattu 14S LiHV (3.5 / 4.0 series) | — |
+| Battery | 14S, 30 Ah (native DroneCAN BMS) or 20 Ah Tattu 4.0 (Tattu raw CAN, needs the §7.2 bridge) | — |
 
 ### Motor numbering and orientation (read before touching any ESC)
 
@@ -686,7 +686,16 @@ On the first unit, **Bat2 is the battery pack's native smart BMS** (DroneCAN nod
 
 > [!IMPORTANT]
 >
-> **The pack's native BMS already provides full battery telemetry on Bat2, so the RPi Tattu bridge (§7.2) is very likely redundant.** `tattu_bridge.py` exists to translate a pack that speaks the *raw* Tattu protocol (CAN ID `0x01109216`) into DroneCAN — this pack does not need that. Confirm with the Quiver team whether the bridge is still required (and whether the deployed pack is Tattu or a CUAV smart battery) before building it. If the bridge is added later, give it its own instance (`BATT3_MONITOR = 8`) and pin both with `BATTx_SERIAL_NUM` so the two BatteryInfo sources do not collide on Bat2.
+> **Which pack needs the bridge (measured 2026-11-12 and 2026-11-14 on the first unit).** The two packs in use speak different protocols on CAN1:
+>
+> | Pack | What it sends on CAN1 | Bat2 source |
+> |---|---|---|
+> | 30 Ah (`GBMS063E12`) | Native DroneCAN from node 125: `BatteryInfo` plus `BatteryInfoAux` | The pack itself. No bridge |
+> | 20 Ah Tattu 4.0 14S | Tattu raw message only, CAN ID `0x01109216`, about 3.7 Hz. No `NodeStatus`, no `BatteryInfo` | The RPi Tattu bridge (§7.2), node 110 |
+>
+> With the 20 Ah pack and no bridge, Bat2 reads 0 V, the prearm check reports `Battery 2 unhealthy`, and the aircraft does not arm. The pack never appears in the Mission Planner DroneCAN node list because it sends no `NodeStatus`.
+>
+> With the 30 Ah pack fitted the bridge hears no Tattu frames and stays silent, so the two sources never collide on Bat2. `BATT2_SERIAL_NUM = -1` accepts either one. The flight controller parameters are the same for both packs except the capacity values (§7.3).
 
 > [!NOTE]
 >
@@ -700,14 +709,45 @@ Because both read ~55–56 V at idle they look alike — confirm which is which 
 - **Or open the SSR** (Relay 1 OFF, disarmed, briefly): Bat1 (ESC) drops as the ESCs depower, Bat2 (BMS) stays (it measures the pack ahead of the SSR) → confirms Bat1 = ESC. Re-close Relay 1.
 - **Tell-tale:** only Bat2 (the BMS) carries per-cell voltages, SOC %, SOH, and cycle count. Bat1 (ESC) has voltage + current only.
 
-### 7.2 Tattu DroneCAN bridge on the RPi (only if the team confirms it is needed)
+### 7.2 Tattu DroneCAN bridge on the RPi (required for the 20 Ah Tattu 4.0 pack)
 
-Skip this if the pack's native BMS (Bat2 above) is the battery source. Install only for a pack that speaks the raw Tattu protocol rather than DroneCAN.
+Skip this section if the unit only ever flies the 30 Ah pack, whose BMS reports natively. Install it for the 20 Ah Tattu 4.0 pack. The bridge can stay installed when the 30 Ah pack is fitted.
 
-Install Python and the CAN libraries:
+First installed on the first unit on 2026-11-14. Everything below was run on that unit (Raspberry Pi 5, Debian 13).
+
+#### 7.2.1 Enable the CAN interface on the RPi
+
+The Main PCB carries the CAN circuit for the RPi, but the RPi does not use it until SPI and the controller overlay are enabled. A fresh image has neither, and `can0` does not exist.
+
+| Item | Value (from the Main PCB schematic, confirmed on hardware) |
+|---|---|
+| Controller | MCP2515 on SPI0, chip select CE0 (GPIO 8) |
+| Crystal | 16 MHz |
+| Interrupt | GPIO 26 (RPi pin 37) |
+| Bus | CAN1, 1 Mbps, the same bus as the battery |
+
+Back up the boot configuration, add the two lines at the end of the file (under `[all]`), and reboot:
 
 ```bash
-sudo apt install python3-pip python3-venv -y
+sudo cp /boot/firmware/config.txt /boot/firmware/config.txt.bak
+echo 'dtparam=spi=on' | sudo tee -a /boot/firmware/config.txt
+echo 'dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=26' | sudo tee -a /boot/firmware/config.txt
+tail -n 4 /boot/firmware/config.txt
+sudo reboot
+```
+
+After the reboot, confirm the controller answered:
+
+```bash
+sudo dmesg | grep -i mcp251
+```
+
+Expected: `mcp251x spi0.0 can0: MCP2515 successfully initialized.` If the line is missing, the overlay did not load. Check that the two lines are in `config.txt` and sit under `[all]`.
+
+#### 7.2.2 Install the Python environment
+
+```bash
+sudo apt install python3-pip python3-venv can-utils -y
 mkdir -p ~/tattu_can_bridge
 python3 -m venv ~/venv
 source ~/venv/bin/activate
@@ -715,72 +755,107 @@ pip install python-can dronecan
 deactivate
 ```
 
-Copy `docs/Operations/firmware/tattu-bridge/tattu_bridge.py` to `~/tattu_can_bridge/tattu_bridge.py` on the RPi (SFTP). The script runs as DroneCAN node 110, listens for the Tattu pack, and rebroadcasts `BatteryInfo` on `can0`.
+#### 7.2.3 Copy the bridge and the service files
 
-Create the CAN interface service:
+Copy the files from the repository. Do not paste the service files into an editor. Pasting the indented text into `nano` dropped the `[Unit]` line on the first unit, and systemd then ignored the start order without an obvious error.
 
-```bash
-sudo nano /etc/systemd/system/can-setup.service
-```
-
-```ini
-[Unit]
-Description=Setup CAN Interface
-After=sys-subsystem-net-devices-can0.device
-Requires=sys-subsystem-net-devices-can0.device
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-ExecStart=/sbin/ip link set can0 type can bitrate 1000000
-ExecStart=/sbin/ip link set can0 txqueuelen 1000
-ExecStart=/sbin/ip link set can0 up
-ExecStop=/sbin/ip link set can0 down
-
-[Install]
-WantedBy=multi-user.target
-```
+From the computer that holds the repository, in the repository root (replace `USER` and `PI` with the RPi username and address):
 
 ```bash
+cd docs/Operations/firmware/tattu-bridge
+scp tattu_bridge_v2.py USER@PI:~/tattu_can_bridge/tattu_bridge.py
+scp can-setup.service tattu-bridge.service USER@PI:~/
+```
+
+`tattu_bridge_v2.py` is copied under the name `tattu_bridge.py`, which is the name the service starts. Use version 2 for the Tattu 4.0 pack. §7.2.6 explains why.
+
+On the RPi, install the two services. The second line replaces the `USER` placeholder in the service file with the logged in username:
+
+```bash
+sudo cp ~/can-setup.service ~/tattu-bridge.service /etc/systemd/system/
+sudo sed -i "s/USER/$USER/g" /etc/systemd/system/tattu-bridge.service
 sudo systemctl daemon-reload
-sudo systemctl enable can-setup
+sudo systemctl enable can-setup tattu-bridge
+sudo systemctl start can-setup tattu-bridge
 ```
 
-Create the bridge service (**replace USER with your RPi username**):
+`can-setup.service` brings `can0` up at 1 Mbps on every boot. `tattu-bridge.service` starts the bridge after it.
+
+#### 7.2.4 Verify on the RPi
 
 ```bash
-sudo nano /etc/systemd/system/tattu-bridge.service
+ip -br link show can0
+systemctl status can-setup tattu-bridge --no-pager
+candump can0,01109216:1FFFFFFF
 ```
 
-```ini
-[Unit]
-Description=Tattu Battery to DroneCAN Bridge
-After=network.target can-setup.service
-Requires=can-setup.service
+| Check | Expected |
+|---|---|
+| `can0` | Listed as `UP` |
+| `can-setup` | `active (exited)` |
+| `tattu-bridge` | `active (running)`, log ends with `DroneCAN node 110 started.` and `Bridge running...` |
+| `candump` with the 20 Ah pack powered | Bursts of 8 frames about four times per second. Stop with `Ctrl+C` |
 
-[Service]
-Type=simple
-User=USER
-WorkingDirectory=/home/USER/tattu_can_bridge
-ExecStart=/home/USER/venv/bin/python /home/USER/tattu_can_bridge/tattu_bridge.py
-Restart=always
-RestartSec=5
-StandardOutput=journal
-StandardError=journal
-Environment=PYTHONUNBUFFERED=1
+| Symptom in `systemctl status tattu-bridge` | Cause |
+|---|---|
+| `status=203/EXEC` | The `USER` placeholder is still in the service file |
+| `Could not access SocketCAN device can0` | `can0` does not exist, go back to §7.2.1 |
+| `Assignment outside of section` | The `[Unit]` line is missing, copy the file again |
 
-[Install]
-WantedBy=multi-user.target
-```
+#### 7.2.5 Verify on the flight controller
 
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable tattu-bridge
-sudo systemctl start tattu-bridge
-systemctl status tattu-bridge
-journalctl -u tattu-bridge -f
-ip -details link show can0   # confirm bitrate 1M, no errors
-```
+With the 20 Ah pack fitted and its output enabled:
+
+1. Mission Planner, **Setup → Optional Hardware → DroneCAN/UAVCAN → MAVLink-CAN1**. Node 110 `org.tattu.bridge` is listed. The pack itself is not listed, which is normal.
+2. **Messages** tab. `PreArm: Battery 2 unhealthy` is gone.
+3. **Status** tab, compare against the table:
+
+| Field | Expected |
+|---|---|
+| `battery_voltage2` | Within 0.5 V of `battery_voltage` with the SSR closed |
+| `battery_remaining2` | The percentage on the pack display |
+| `current2` | Positive. About 0.4 to 0.5 A with the aircraft idle |
+| `battery_usedmah2` | Pack capacity minus the remaining mAh, for example about 3,000 on a 20 Ah pack at 85 %. Not 0, and not negative |
+
+4. Reboot the flight controller and read `battery_usedmah2` again. It returns to the same value, because the count comes from the pack and not from the flight controller.
+
+A `battery_usedmah2` that starts at 0 and goes negative means the original `tattu_bridge.py` is running. Copy version 2 as in §7.2.3.
+
+> [!WARNING]
+>
+> **`PreArm: DroneCAN: Node 111 unhealthy!` after the CAN interface comes up.** Node 111 is the Quiver Hub telemetry forwarder (`~/quiver/telemetry_forwarder.py`). It joins the bus as soon as `can0` exists and, as shipped on 2026-11-14, never reports itself operational, which this firmware treats as unhealthy and blocks arming. Until the Hub ships the fix, patch the forwarder on the RPi so the node is created with `mode=0` (operational), then restart it:
+>
+> ```bash
+> cp ~/quiver/telemetry_forwarder.py ~/quiver/telemetry_forwarder.py.bak
+> sed -i 's/node_id=UAVCAN_NODE_ID)/node_id=UAVCAN_NODE_ID, mode=0)/' ~/quiver/telemetry_forwarder.py
+> grep -n "node_id=UAVCAN_NODE_ID" ~/quiver/telemetry_forwarder.py
+> sudo systemctl restart telemetry-forwarder
+> ```
+>
+> The `grep` line should show `mode=0` inside the `Node(...)` call. The prearm message clears within seconds, no flight controller reboot needed. A Hub installer update overwrites this patch.
+
+#### 7.2.6 What the bridge does, and why version 2
+
+The pack sends one message of 52 bytes in 8 CAN frames: pack voltage, current, temperature, state of charge, cycle count, health, 14 cell voltages, design capacity, remaining capacity and an error word. The bridge reassembles it and rebroadcasts it as DroneCAN from node 110.
+
+| | `tattu_bridge.py` (original) | `tattu_bridge_v2.py` |
+|---|---|---|
+| Voltage, temperature, state of charge | Yes | Yes |
+| Current sign | Negative on discharge, as the pack sends it | Positive on discharge, as ArduPilot expects |
+| Remaining and full capacity | Not sent | Sent |
+| `BatteryInfoAux` (cell voltages, cycle count) | Not sent | Sent |
+| Consumed mAh on the flight controller | Starts at 0 each boot and counts negative | Taken from the pack, survives a reboot |
+| `BATT2_LOW_MAH`, `BATT2_CRT_MAH`, `BATT2_ARM_MAH` | Never act | Act as on the 30 Ah pack |
+
+The reason is in how this firmware (ArduCopter 4.8.0-dev, `20622a39`) handles a DroneCAN battery. The capacity failsafes and the arming block compare `BATT2_CAPACITY` minus consumed mAh against the threshold. Without a `BatteryInfoAux` message the flight controller integrates the reported current itself, signed, from zero at each boot. With the original bridge that count went negative on the first unit (-10 mAh, then -56 mAh a few minutes later, while the pack had used about 3,200 mAh). The state of charge percentage still displayed correctly, so the problem is not visible on the GCS.
+
+With `BatteryInfoAux` present the flight controller takes consumed mAh from the capacity fields of `BatteryInfo`. That is the path the 30 Ah pack uses, and version 2 puts the 20 Ah pack on the same path.
+
+Measured on the first unit on 2026-11-14 with version 2 running: `current2` +0.39 A, `battery_usedmah2` 3,503 mAh at 83 % remaining (20,000 mAh pack), and 14 cell voltages on Bat2 (4.039 to 4.054 V). The flight controller reboot check in §7.2.5 step 4 was not run that day.
+
+The pack current is in 10 mA steps. That scale is confirmed at idle only (0.42 A measured by capacity drop against a raw reading of -40 to -50). Compare `current2` with the ESC sum on the first motor run.
+
+`test/replay_bridge.py` in the same folder replays a recorded capture of the pack through either version without any hardware.
 
 ### 7.3 Flight controller battery monitor parameters
 
@@ -791,7 +866,7 @@ ip -details link show can0   # confirm bitrate 1M, no errors
 > | Unit has | Set during configuration |
 > |---|---|
 > | Any pack | `BATT_LOW_VOLT 46.2` and `BATT_CRT_VOLT 44.8` on Bat1 (3.3 and 3.2 V per cell), `BATT_FS_CRT_ACT 1` (Land). `BATT_LOW_VOLT` is not in the baseline (held out of PR #273), and the firmware default of about 10 V never triggers on 14S, so a unit that skips this line has no voltage-based low-battery action. Confirm by readback in the first flight checklist. |
-> | Pack with CAN telemetry (Tattu smart BMS) | The Bat2 table below and the §7.4 posture (approved 2026-09-30 in #248). Bat2 carries the capacity stages and the arming block. Bat1 becomes the voltage backstop: `BATT_FS_LOW_ACT 0` (warn only, the 911 card value), critical stays Land. |
+> | Pack with CAN telemetry (the 30 Ah pack natively, or the 20 Ah Tattu 4.0 pack through the §7.2 bridge) | The Bat2 table below and the §7.4 posture (approved 2026-09-30 in #248). Bat2 carries the capacity stages and the arming block. Bat1 becomes the voltage backstop: `BATT_FS_LOW_ACT 0` (warn only, the 911 card value), critical stays Land. |
 > | Pack without CAN telemetry | Leave `BATT2_MONITOR` at the baseline value and do not set any `BATT2_*` line from this section. Bat1 carries the actions on its own: `BATT_FS_LOW_ACT 2` (RTL at 46.2 V, the baseline value) and `BATT_FS_CRT_ACT 1` (Land at 44.8 V). The §7.4 capacity stages do not exist for that unit. |
 
 Bat1 is the ESC monitor; Bat2 is the pack's smart BMS. Recommended Bat2 settings:
@@ -810,6 +885,38 @@ Bat1 is the ESC monitor; Bat2 is the pack's smart BMS. Recommended Bat2 settings
 | `LAND_REPOSITION` | `1` | `1` | Keep enabled (Julius, 2026-09-30): the pilot can steer away from a bad spot during a failsafe landing. Already `1` on the first unit. |
 
 Reboot after changing `BATT2_MONITOR`.
+
+#### 7.3.1 Capacity values per pack (30 Ah and 20 Ah)
+
+The flight controller cannot read the pack size by itself. `BATT2_CAPACITY` and the three capacity stages must match the pack that is fitted. Everything else in the table above is the same for both packs.
+
+| Param | 30 Ah pack | 20 Ah pack | Stage |
+|---|---|---|---|
+| `BATT_CAPACITY` | `30000` | `20000` | Bat1 display only |
+| `BATT2_CAPACITY` | `30000` | `20000` | Must match the pack |
+| `BATT2_LOW_MAH` | `7500` | `5000` | Low, 25 % remaining |
+| `BATT2_CRT_MAH` | `4500` | `3000` | Critical, 15 % remaining |
+| `BATT2_ARM_MAH` | `9000` | `6000` | Arming block, 30 % remaining |
+
+The 30 Ah column is the set approved in #248. The 20 Ah column keeps the same percentages and is **proposed, awaiting team confirmation**. The §7.4 reserve sizing put the return leg at about 5,000 mAh for the 30 Ah aircraft from the 60 m fence, so a 20 Ah low stage of 5,000 mAh has no margin by that figure. The aircraft is 3.7 kg lighter with the 20 Ah pack and draws less, and the fence has grown since that sizing was done. Both need a fresh look before the 20 Ah values are final.
+
+Each column is a small overlay file in `docs/Operations/firmware/parameters/`:
+
+| File | Use |
+|---|---|
+| `params-battery-20Ah.param` | Load after fitting the 20 Ah pack |
+| `params-battery-30Ah.param` | Load after returning to the 30 Ah pack |
+
+To swap packs:
+
+1. Fit the pack and power up.
+2. Mission Planner, **Config → Full Parameter List → Load from file**, pick the overlay for the fitted pack, then **Write Params**.
+3. **Refresh Params** and confirm `BATT2_CAPACITY` reads the fitted pack's capacity.
+4. On the **Status** tab confirm `battery_remaining2` matches the pack display.
+
+> [!WARNING]
+>
+> **A capacity mismatch moves every stage.** With the 20 Ah pack and the 30 Ah values, the flight controller believes 10,000 mAh more is available than the pack holds, so the low and critical stages never trigger before the pack is empty. With the 30 Ah pack and the 20 Ah values, the stages trigger 10,000 mAh early. Make the `BATT2_CAPACITY` readback a preflight item whenever both packs are in rotation.
 
 **On `BATT2_OPTIONS` and SoC:** the pack's BMS coulomb-counts and models the cells internally to report a true state-of-charge. `BATT2_OPTIONS` bit 0 ("Ignore DroneCAN SoC"), if set, makes ArduPilot discard the BMS value and estimate its own (less accurate). Keep it clear (`OPTIONS = 0`) to use the real BMS SoC — the reason for having a smart battery.
 
@@ -1485,7 +1592,7 @@ Burn-down of the full initial configuration against the Pilot Handbook. Updated 
 > - **Network IP (§0 and Open Item 3), RESOLVED 2026-06-19.** The FC has no IP of its own (no `NET_IPADDR`, confirmed by direct query). It is PPP-assigned the CubeNode's address + 1, so it booted at `.11` (CubeNode `.10` + 1), colliding with the SIYI air unit. Team-approved fix: move the CubeNode to `.50`, which puts the FC at `.51` (clear of all SIYI-reserved addresses), with the Pi at `.49`. Applied and verified 2026-06-19: a full power cycle (not an FC reboot, see §4.4) brought the FC up at `.51` with gateway `.50`. Keep clearing the SIYI-reserved addresses before powering the HM30.
 > - **Low-battery failsafe source (§7.4).** Bat1 voltage vs Bat2 BMS SoC. Delegated to Zeynep, who sets it from the shared param file.
 >
-> **Hub/SDK services (after the Pi is on the network):** telemetry forwarder, the OTA puller (the FC pulls from `.49:8080`), and camera streaming. These come once the Pi is imaged and on `.49`. No Tattu bridge.
+> **Hub/SDK services (after the Pi is on the network):** telemetry forwarder, the OTA puller (the FC pulls from `.49:8080`), and camera streaming. These come once the Pi is imaged and on `.49`. The Tattu bridge was added on 2026-11-14 for the 20 Ah pack (§7.2).
 
 ### Done (verified on the first unit)
 Firmware flash (PR #230, git `20622a39`, S2 + Arrow features confirmed) · **360 lidar fixed (RPLidar S2, steady scan, §9.1)** · all param overlays (+ §14 deltas) · accel + level cal · all 4 ESCs (nodes 1–4, directions, `MOT_SPOOL_TIME=2`) · SSR manual control + auto-engage Lua · GPS F9P set primary · internal compass disabled + externals prioritized · battery telemetry (Bat1 ESC, Bat2 pack BMS) · CubeNode ETH link up · **MK32 bound to HM30 (after firmware match) · RC cal + channel map (modes/arm/kill, §16.5) · kill switch on SSR (§11.5) · MK32 telemetry + A8 video working · Remote ID complete (identity + operator location via mainline QGC, 2026-07-07) · SD logging verified (2026-07-07)**.
@@ -1499,7 +1606,7 @@ Firmware flash (PR #230, git `20622a39`, S2 + Arrow features confirmed) · **360
 | Remote ID IDs | §8 | **DONE 2026-07-07.** Identity (UA_TYPE, UAS ID, Operator ID) plus operator location (mainline QGC on the MK32). No RID pre-arm remains. |
 | Servo/Relay labels 1–6 | §2.8.5 | **DONE 2026-06-19.** Six MP labels set (cosmetic, per-PC). Relays 2–6 left unconfigured by choice, not needed (enable per attachment). |
 | Logging + SD verify | Handbook §2.5.3 | **DONE 2026-07-07.** Dataflash log to SD confirmed. |
-| Raspberry Pi | §6 / SDK | **Network up 2026-06-19.** Imaged (OS Lite 64-bit), static `.49` on eth0, link verified (pings `.50` and `.51`, 0% loss). Tailscale remote access to the FC **confirmed working 2026-06-22** (§6.5). Remaining: Hub/SDK services. No Tattu bridge. |
+| Raspberry Pi | §6 / SDK | **Network up 2026-06-19.** Imaged (OS Lite 64-bit), static `.49` on eth0, link verified (pings `.50` and `.51`, 0% loss). Tailscale remote access to the FC **confirmed working 2026-06-22** (§6.5). Remaining: Hub/SDK services. **CAN interface (`can0`) and the Tattu bridge installed 2026-11-14** for the 20 Ah pack (§7.2). |
 | Network IP to final scheme | §0 / §4.4 | **DONE 2026-06-19.** CubeNode moved to `.50`, FC verified at `.51` / gateway `.50` after a full power cycle. |
 
 ### Remaining — outdoor (clear sky)
@@ -1509,7 +1616,7 @@ Compass LVMC + GPS 3D fix / HDOP **DONE 2026-06-22 via MP** (§3.2, §5.2), and 
 Geo-fence site values (§2.5.3) · flight-tracking-platform registration (§6) · pre-flight checklist (§5.1) · first-flight authorization gate (§2.5.4).
 
 ### Decisions for the team
-Low-battery failsafe source, Bat1 voltage vs Bat2 BMS SoC (§7.4), delegated to Zeynep · (resolved: network IP = CubeNode `.50` / FC `.51` / Pi `.49`, RID display, IP target = canonical, Tattu bridge skipped, RTK not used on this drone, **remote engineer = view-only via Discord with MK32 as sole control**).
+Low-battery failsafe source, Bat1 voltage vs Bat2 BMS SoC (§7.4), delegated to Zeynep · (resolved: network IP = CubeNode `.50` / FC `.51` / Pi `.49`, RID display, IP target = canonical, Tattu bridge skipped for the 30 Ah pack and installed 2026-11-14 for the 20 Ah pack (§7.2), RTK not used on this drone, **remote engineer = view-only via Discord with MK32 as sole control**).
 
 ---
 
@@ -1787,7 +1894,7 @@ Aircraft on battery power, PC on the MK32 USB COM link (COM6, 115200), reads and
 These are unresolved conflicts in the source documentation found while writing this guide. Confirm before treating any as settled:
 
 1. **GNSS secondary bus — RESOLVED.** Both GNSS enumerate on DroneCAN on the first unit (§5). The FC note showing the M9N on a UART was historical.
-2. **Battery monitor instance mapping — RESOLVED.** Bat2 is the pack's native smart BMS (node 125). No Tattu bridge (node 110) is installed, so nothing collides (§7). If a bridge is ever added, pin the instances with `BATTx_SERIAL_NUM`.
+2. **Battery monitor instance mapping — RESOLVED.** Bat2 is the pack's native smart BMS (node 125). No Tattu bridge (node 110) is installed, so nothing collides (§7). If a bridge is ever added, pin the instances with `BATTx_SERIAL_NUM`. **Update 2026-11-14:** the bridge is now installed for the 20 Ah Tattu 4.0 pack. It is silent when the 30 Ah pack is fitted, so only one source is ever present and no pinning is needed (§7, §7.2).
 3. **Network IP plan — RESOLVED 2026-06-19.** The FC has no `NET_IPADDR` of its own (confirmed by direct query: `NET_IPADDR0-3`, `NET_NETMASK`, `NET_GWADDR`, `NET_DHCP` all absent). It is PPP-assigned the CubeNode's address + 1, so CubeNode `.10` gave FC `.11`, the SIYI air unit's address. The team approved moving the **CubeNode to `.50`**, which makes the FC `.51` by the same +1 (clear of all SIYI-reserved addresses), with the Raspberry Pi at `.49` as a companion host and the CubeNode as the FC's gateway. This keeps the existing harness with no rewiring. The alternative (the FC PPP terminating at the Pi, `.50` → `.51`, with the CubeNode bridging payloads only) was not taken because it needs the FC PPP UART rewired from the CubeNode to the Pi, against the PPP2ETH harness (HAR-0025 carries the UART, HAR-0023 is its CAN cable). Apply via the CubeNode `NET_IPADDR3` `10` → `50` (§4.4), then verify `NET: IP 192.168.144.51` on the boot banner before powering the SIYI HM30. **Applied and verified on the first unit 2026-06-19:** the FC boots at `.51` with gateway `.50` after a full power cycle (an FC reboot alone is not enough, see §4.4). **The SIYI-reserved `.11` / `.12` / `.20` / `.25` / `.60` remain hardcoded, so keep avoiding them.**
 4. **`params-ethernet.param` is missing `NET_P1_TYPE`. PATCHED 2026-06-25.** Without it, `NET_P1_PORT` and `NET_P1_PROTOCOL` are never created, so the FC never opens its MAVLink TCP server. `NET_P1_TYPE,4` (TCP Server) has been added to the overlay file. Confirmed on the first unit (§4.3).
 5. **`standard-params.param` references parameters removed in ArduCopter 4.8-dev. PATCHED 2026-06-25.** Verified against the first unit's full param export:
