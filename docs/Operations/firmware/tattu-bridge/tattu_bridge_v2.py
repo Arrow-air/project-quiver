@@ -9,12 +9,12 @@ Changes against tattu_bridge.py:
 
 1. Current is negated. The pack reports discharge as negative, ArduPilot expects positive.
 2. BatteryInfo carries remaining_capacity_wh and full_charge_capacity_wh, and a
-   BatteryInfoAux message follows it. With both, ArduPilot takes consumed mAh from the
-   BMS count (persists across boots) and stops integrating current itself. This is the
-   same path the 30 Ah pack with the native DroneCAN BMS uses.
+    BatteryInfoAux message follows it. With both, ArduPilot takes consumed mAh from the
+    BMS count (persists across boots) and stops integrating current itself. This is the
+    same path the 30 Ah pack with the native DroneCAN BMS uses.
 3. The full payload is parsed: 14 cell voltages, cycle count, health, capacities, error word.
 4. A decode is rejected unless the cell voltages sum to the pack voltage. The transfer CRC
-   cannot be checked because the data type signature of the Tattu message is not published.
+    cannot be checked because the data type signature of the Tattu message is not published.
 5. The listener socket filters on the Tattu CAN ID.
 
 Offline check: test/replay_bridge.py replays a real capture through this file.
@@ -160,8 +160,9 @@ class TattuBridge:
             self.last_error_log = time.time()
             log.warning(f"Pack error word is 0x{d['error_word']:08X}")
 
-        log.debug(f"Broadcast: {d['voltage_v']:.2f} V  {d['current_a']:.2f} A  {d['soc']} %  "
-                  f"{d['remaining_mah']}/{d['design_mah']} mAh  {d['temp_c']} C")
+        log.debug(
+            f"Broadcast: {d['voltage_v']:.2f} V  {d['current_a']:.2f} A  {d['soc']} %  "
+            f"{d['remaining_mah']}/{d['design_mah']} mAh  {d['temp_c']} C")
 
     def _process_tattu_frame(self, msg):
         """Handle one raw Tattu CAN frame."""

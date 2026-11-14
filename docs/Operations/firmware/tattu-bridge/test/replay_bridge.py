@@ -1,7 +1,7 @@
 """Replay a candump-style capture of the Tattu pack through a bridge script, offline.
 
 usage: python replay_bridge.py <capture.log> [module]
-       module = tattu_bridge (default) or tattu_bridge_v2
+    module = tattu_bridge (default) or tattu_bridge_v2
 
 No CAN hardware is needed. Needs the `dronecan` package (pip install dronecan).
 python-can is stubbed if it is not installed. Broadcast messages are captured instead of sent.
