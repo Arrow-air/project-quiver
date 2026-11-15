@@ -1,0 +1,18 @@
+# Battery Parameters, 20 Ah pack (Tattu 4.0 14S, 20000 mAh)
+# Load AFTER the unit's normal parameter set, only when the 20 Ah pack is fitted.
+# To return to the 30 Ah pack, load params-battery-30Ah.param.
+#
+# Requires: the Tattu bridge on the Raspberry Pi (tattu_bridge_v2.py),
+# see Initial-Configuration-Guide.md section 7.2. Without it Bat2 has no data.
+#
+# The capacity stages keep the percentages approved for the 30 Ah pack in issue #248:
+# low 25 %, critical 15 %, arming block 30 %.
+# The 20 Ah absolute values below are proposed and await team confirmation.
+#
+# Not changed by this file: BATT2_MONITOR, failsafe actions, voltage thresholds.
+
+BATT_CAPACITY,20000
+BATT2_CAPACITY,20000
+BATT2_LOW_MAH,5000
+BATT2_CRT_MAH,3000
+BATT2_ARM_MAH,6000

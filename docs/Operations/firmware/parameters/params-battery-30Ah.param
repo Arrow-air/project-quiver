@@ -1,0 +1,15 @@
+# Battery Parameters, 30 Ah pack (native DroneCAN BMS, 30000 mAh)
+# Load AFTER the unit's normal parameter set to return from the 20 Ah pack
+# (params-battery-20Ah.param) to the 30 Ah pack.
+#
+# These are the values approved in issue #248 and already on a unit configured
+# from Initial-Configuration-Guide.md section 7.3. Nothing new is introduced here.
+# Low 25 %, critical 15 %, arming block 30 %.
+#
+# Not changed by this file: BATT2_MONITOR, failsafe actions, voltage thresholds.
+
+BATT_CAPACITY,30000
+BATT2_CAPACITY,30000
+BATT2_LOW_MAH,7500
+BATT2_CRT_MAH,4500
+BATT2_ARM_MAH,9000
