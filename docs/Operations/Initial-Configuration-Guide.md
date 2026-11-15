@@ -851,9 +851,11 @@ The reason is in how this firmware (ArduCopter 4.8.0-dev, `20622a39`) handles a 
 
 With `BatteryInfoAux` present the flight controller takes consumed mAh from the capacity fields of `BatteryInfo`. That is the path the 30 Ah pack uses, and version 2 puts the 20 Ah pack on the same path.
 
-Measured on the first unit on 2026-11-14 with version 2 running: `current2` +0.39 A, `battery_usedmah2` 3,503 mAh at 83 % remaining (20,000 mAh pack), and 14 cell voltages on Bat2 (4.039 to 4.054 V). The flight controller reboot check in §7.2.5 step 4 was not run that day.
+Measured on the first unit on 2026-11-14 with version 2 running: `current2` +0.39 A, `battery_usedmah2` 3,503 mAh at 83 % remaining (20,000 mAh pack), and 14 cell voltages on Bat2 (4.039 to 4.054 V). The count carried across a power cycle: 3,551 mAh on the bench, 3,609 mAh at the start of the next flight log.
 
-The pack current is in 10 mA steps. That scale is confirmed at idle only (0.42 A measured by capacity drop against a raw reading of -40 to -50). Compare `current2` with the ESC sum on the first motor run.
+First flight on the bridge (log 106, 2026-11-14, 101 s hover to 20 m): Bat2 updated at 3.70 Hz for the whole flight with no interval longer than 0.6 s and stayed healthy throughout. Consumed went from 3,609 to 5,288 mAh and remaining from 82 to 74 %. The pack's own count (1,669 mAh over the flight) matched the integral of its current (1,671 mAh). Lowest cell under load 3.745 V (cell 8), spread 21 mV.
+
+The pack current is in 10 mA steps. At idle, 0.42 A measured by capacity drop matched a raw reading of -40 to -50. In hover (log 106) Bat2 read 59.3 A against an ESC sum of 54.5 A, a ratio of 0.92. The 30 Ah pack shows the same relation (ESC sum 53.5 A against 57.8 A in the hover part of log 104), so the scale holds at flight current.
 
 `test/replay_bridge.py` in the same folder replays a recorded capture of the pack through either version without any hardware.
 
@@ -900,7 +902,7 @@ The flight controller cannot read the pack size by itself. `BATT2_CAPACITY` and 
 
 The 30 Ah column is the set approved in #248. The 20 Ah column keeps the same percentages and is **proposed, awaiting team confirmation**. The §7.4 reserve sizing put the return leg at about 5,000 mAh for the 30 Ah aircraft from the 60 m fence, so a 20 Ah low stage of 5,000 mAh has no margin by that figure. The aircraft is 3.7 kg lighter with the 20 Ah pack and draws less, and the fence has grown since that sizing was done. Both need a fresh look before the 20 Ah values are final.
 
-The gap between the low and critical stages is the number to watch. It is 3,000 mAh on the 30 Ah pack and 2,000 mAh on the 20 Ah pack at these percentages. On the 30 Ah endurance flight of 2026-11-11 (log 103) the aircraft used 2,369 mAh between the low stage message and touchdown: 630 mAh in the 34 s before the pilot triggered RTL, and 1,740 mAh for the return from 197 m and the landing. A 20 Ah flight that used the same amount would reach the critical stage, which lands in place, before it got home. The lighter aircraft should use less (a rough mass scaling gives about 1,800 mAh), but that is an estimate until a 20 Ah flight is logged. Trigger the return at the low stage message without delay, or raise `BATT2_LOW_MAH` for long range flights.
+The gap between the low and critical stages is the number to watch. It is 3,000 mAh on the 30 Ah pack and 2,000 mAh on the 20 Ah pack at these percentages. On the 30 Ah endurance flight of 2026-11-11 (log 103) the aircraft used 2,369 mAh between the low stage message and touchdown: 630 mAh in the 34 s before the pilot triggered RTL, and 1,740 mAh for the return from 197 m and the landing. A 20 Ah flight that used the same amount would reach the critical stage, which lands in place, before it got home. The lighter aircraft should use less (a rough mass scaling gives about 1,800 mAh), but that is an estimate until a 20 Ah flight is logged. No reduction applies when a payload makes up the mass: with the 4.02 kg payload the 20 Ah aircraft weighs 21.23 kg and hovered on 3,164 W (log 106), the same as the 30 Ah aircraft without payload at 20.94 kg (3,129 W, log 104). Trigger the return at the low stage message without delay, or raise `BATT2_LOW_MAH` for long range flights.
 
 First unit: the 20 Ah overlay was written and read back on 2026-11-14 with the 20 Ah pack fitted.
 
