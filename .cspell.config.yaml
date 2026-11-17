@@ -17,6 +17,7 @@ ignorePaths:
   - "node_modules"
   - "build"
   - "**/constraints.txt"
+  - "**/*.glb"
   - "**/*.3dshapes"
   - "**/*.abin"
   - "**/*.apj"

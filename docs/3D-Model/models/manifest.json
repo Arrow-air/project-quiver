@@ -1,0 +1,109 @@
+{
+  "generated_by": "python -m quiver.web_export",
+  "units": "mm",
+  "draco": true,
+  "categories": [
+    {
+      "label": "Airframe Structure",
+      "bom": 1000,
+      "models": [
+        {
+          "label": "Plates",
+          "bom": 1100,
+          "file": "1100_plates.glb",
+          "bytes": 23120
+        },
+        {
+          "label": "Beams",
+          "bom": 1200,
+          "file": "1200_beams.glb",
+          "bytes": 60580
+        },
+        {
+          "label": "Landing Gear",
+          "bom": 1300,
+          "file": "1300_landing_gear.glb",
+          "bytes": 69184
+        },
+        {
+          "label": "Motor Arm",
+          "bom": 1400,
+          "file": "1400_motor_arm.glb",
+          "bytes": 67712
+        }
+      ]
+    },
+    {
+      "label": "Supporting Structure",
+      "bom": 2000,
+      "models": [
+        {
+          "label": "Attachment Interface",
+          "bom": 2100,
+          "file": "2100_attachment_interface.glb",
+          "bytes": 177760
+        },
+        {
+          "label": "Battery Slider",
+          "bom": 2200,
+          "file": "2200_battery_slider.glb",
+          "bytes": 13000
+        },
+        {
+          "label": "Equipment Mount",
+          "bom": 2300,
+          "file": "2300_equipment_mount.glb",
+          "bytes": 78856
+        },
+        {
+          "label": "Cockpit Enclosure",
+          "bom": 2400,
+          "file": "2400_cockpit_enclosure.glb",
+          "bytes": 78336
+        }
+      ]
+    },
+    {
+      "label": "Equipment",
+      "bom": 3000,
+      "models": [
+        {
+          "label": "Propulsion",
+          "bom": 3100,
+          "file": "3100_propulsion.glb",
+          "bytes": 527232
+        },
+        {
+          "label": "Peripheral",
+          "bom": 3200,
+          "file": "3200_peripheral.glb",
+          "bytes": 950916
+        },
+        {
+          "label": "PCB",
+          "bom": 3300,
+          "file": "3300_pcb.glb",
+          "bytes": 1549964
+        },
+        {
+          "label": "Battery",
+          "bom": 3400,
+          "file": "3400_battery.glb",
+          "bytes": 144496
+        }
+      ]
+    },
+    {
+      "label": "Harness",
+      "bom": 4000,
+      "models": [
+        {
+          "label": "Harness",
+          "bom": 4000,
+          "file": "4000_harness.glb",
+          "bytes": 3936
+        }
+      ]
+    }
+  ]
+}
